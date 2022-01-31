@@ -1,0 +1,3070 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head class="at-element-marker">
+  <title>새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/set_up_storage_encryption_new_module.html" />
+	<meta property="og:description" content="교체한 컨트롤러 또는 새 컨트롤러의 HA 파트너가 스토리지 암호화를 사용하는 경우" />
+  <meta property="og:image" content="https://docs.netapp.com/ko-kr/ontap-systems-upgrade/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/>
+  
+  <meta name="description" content="교체한 컨트롤러 또는 새 컨트롤러의 HA 파트너가 스토리지 암호화를 사용하는 경우">
+  <meta name="keywords" content=" set up storage, encryption, controller, module, node">
+  
+  
+
+  <!-- Icons -->
+  <link rel="icon" href="/ko-kr/ontap-systems-upgrade/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed -->
+  
+
+  <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Controls AsciiDoctor Admonition Blocks -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/ontap-systems-upgrade/css/font-awesome.min.css">
+
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/ko-kr/ontap-systems-upgrade/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/ontap-systems-upgrade/css/netapp.css">
+
+  <!-- WWW CSS Content -->
+  <link rel="stylesheet" type="text/css" href="/ko-kr/ontap-systems-upgrade/css/www-luci-dotcom.min.css">
+  <link rel="stylesheet" type="text/css" href="/ko-kr/ontap-systems-upgrade/css/www-netapp-dotcom.css">
+  <link rel="stylesheet" href="/ko-kr/ontap-systems-upgrade/css/www-netapp-library-critical.min.css" media="all" >
+  <link rel="stylesheet" href="/ko-kr/ontap-systems-upgrade/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/ko-kr/ontap-systems-upgrade/css/www-netapp-library-global-header-footer.min.css">
+
+  <!-- NetApp IE Customizations -->
+  <link rel="stylesheet" href='/ko-kr/ontap-systems-upgrade/css/na-utility.css' type='text/css'>
+  <link rel="stylesheet" href='/ko-kr/ontap-systems-upgrade/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/ontap-systems-upgrade/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/ontap-systems-upgrade/css/na-pagenav.css' type='text/css'>
+
+  
+  <link rel="stylesheet" href="/ko-kr/ontap-systems-upgrade/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/ko-kr/ontap-systems-upgrade/css/tabbed-blocks.css" type="text/css">
+  <link rel="stylesheet" href='/ko-kr/ontap-systems-upgrade/css/product-family.css' type="text/css">
+  
+
+  
+  <link rel='stylesheet' href='/ko-kr/ontap-systems-upgrade/css/na-feature.css' type='text/css'>
+  
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+  
+    <script src='/ko-kr/ontap-systems-upgrade/js/na-search.js'></script>
+  
+
+  
+  <script src='/ko-kr/ontap-systems-upgrade/js/na-pagenav.js'></script>
+  
+
+  <link rel='stylesheet' href='/ko-kr/ontap-systems-upgrade/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/ko-kr/ontap-systems-upgrade/css/prism-netapp.css' type='text/css'>
+
+
+  <script src='/ko-kr/ontap-systems-upgrade/js/na-utility.js'></script>
+  <script src='/ko-kr/ontap-systems-upgrade/js/clouddocs.js'></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    var head = document.getElementsByTagName('head')[0];
+    var adobe = document.createElement("script");
+    adobe.type = "text/javascript";
+    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+    head.appendChild(adobe);
+  }
+  </script>
+  <script src='/ko-kr/ontap-systems-upgrade/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/ko-kr/ontap-systems-upgrade/js/toc.js'></script>
+  <script src='/ko-kr/ontap-systems-upgrade/js/customscripts.js'></script>
+
+  <script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-81697994-3');
+  }
+  </script>
+  <script src='/ko-kr/ontap-systems-upgrade/js/version-dropdown.js'></script>
+  <script src='/ko-kr/ontap-systems-upgrade/js/product-family.js'></script>
+  <script src='/ko-kr/ontap-systems-upgrade/js/FileSaver.min.js'></script>
+  <script src='/ko-kr/ontap-systems-upgrade/js/jszip-utils.min.js'></script>
+  <script src='/ko-kr/ontap-systems-upgrade/js/jszip.min.js'></script>
+  <script src='/ko-kr/ontap-systems-upgrade/js/pdf-ux.js'></script>
+</head>
+
+
+  <body class role="document">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">제품 및 솔루션</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">지원 및 교육</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">커뮤니티</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">블로그</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">고객 성공 사례</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">연락처</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">연락처</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/ko-kr/ontap-systems-upgrade/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/ko-kr/ontap-systems-upgrade/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/ko-kr/ontap-systems-upgrade/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/ko-kr/ontap-systems-upgrade/search.html"
+          data-type="widget" 
+          data-placeholder="설명서 검색" 
+          data-no-results-found="{query}에 대한 결과를 찾을 수 없음" 
+          data-did-you-mean="{suggestion}을(를) 검색해보십시오." 
+          data-no-results-found-did-you-mean="{query}에 대한 결과를 찾을 수 없습니다. {suggestion}을(를) 검색하려 하셨습니까?" 
+          data-results-found="{hitCount}개의 결과를 찾음"  
+          data-sk-es-pf-indexes=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-systems-upgrade/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
+      <div id="ie-i18n-menu">
+      <span class="ie-i18n-lang">한국어</span>
+        <button class="ie-i18n-icon-container" type="button">
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-systems-upgrade/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
+        <div class="n-language-selector-menu">
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/set_up_storage_encryption_new_module.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/set_up_storage_encryption_new_module.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ja-jp/ontap-systems-upgrade/upgrade-arl-auto-app/set_up_storage_encryption_new_module.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/ontap-systems-upgrade/upgrade-arl-auto-app/set_up_storage_encryption_new_module.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                </li></ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" id="sidebar-height">
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>사용 가능한 PDF<span>
+    </span>
+  </a>
+</div>
+<div class="n-pdf-body-container">
+  <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        <a target="_blank" href="/ko-kr/ontap-systems-upgrade/pdfs/fullsite-sidebar/AFF_및_FAS_시스템_업그레이드_설명서.pdf" >
+          <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>이 문서 사이트의 PDF</a>
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/볼륨_또는_스토리지를_이동하여_업그레이드.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            볼륨 또는 스토리지를 이동하여 업그레이드
+          </a>
+          
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/스토리지를_이동하여_업그레이드.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            스토리지를 이동하여 업그레이드
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/선택_사항___내부_스토리지를_이동하거나_드라이브_쉘프로_변환할_수_있습니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            선택 사항 - 내부 스토리지를 이동하거나 드라이브 쉘프로 변환할 수 있습니다
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/업그레이드를_완료합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            업그레이드를 완료합니다
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/개요.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            개요
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/ONTAP_9_8에서_완성.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            ONTAP 9.8에서 완성
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/ONTAP_9_7_이하에서_완료.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            ONTAP 9.7 이하에서 완료
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/볼륨을_이동하여_업그레이드.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            볼륨을 이동하여 업그레이드
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/SAN_LIFS를_이동__삭제_또는_생성합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            SAN LIFS를 이동, 삭제 또는 생성합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/애그리게이트_재배치를_사용하여_컨트롤러_하드웨어를_업그레이드합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            애그리게이트 재배치를 사용하여 컨트롤러 하드웨어를 업그레이드합니다
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/_system_controller_replace__명령을_사용하여_ONTAP_A700을_AFF_9_10_1_RC2_이상을_실행하는_AFF_A900으로_업그레이드합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            "system controller replace" 명령을 사용하여 ONTAP A700을 AFF 9.10.1 RC2 이상을 실행하는 AFF A900으로 업그레이드합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/1단계__업그레이드를_준비합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            1단계. 업그레이드를 준비합니다
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/2단계__리소스를_재배치하고_AFF_A700_노드_1을_폐기합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            2단계. 리소스를 재배치하고 AFF A700 노드 1을 폐기합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/3단계__AFF_A900_컨트롤러_모듈_및_NVS로_노드_1을_부팅합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            3단계. AFF A900 컨트롤러 모듈 및 NVS로 노드 1을 부팅합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/4단계__노드_2에서_리소스를_재배치하고_노드_2를_폐기합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            4단계. 노드 2에서 리소스를 재배치하고 노드 2를 폐기합니다
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/5단계__노드_2에_AFF_A900_NVS_및_컨트롤러_모듈을_설치합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            5단계. 노드 2에 AFF A900 NVS 및 컨트롤러 모듈을 설치합니다
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/6단계__AFF_A900_컨트롤러_모듈_및_NVS로_노드_2를_부팅합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            6단계. AFF A900 컨트롤러 모듈 및 NVS로 노드 2를 부팅합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/7단계__업그레이드를_완료합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            7단계. 업그레이드를 완료합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/문제_해결.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            문제 해결
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/_시스템_컨트롤러_교체__명령을_사용하여_ONTAP_9_8_이상을_실행하는_컨트롤러_하드웨어를_업그레이드합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            "시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 업그레이드합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/1단계__업그레이드를_준비합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            1단계. 업그레이드를 준비합니다
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/2단계__노드1을_재배치하거나_폐기합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            2단계. 노드1을 재배치하거나 폐기합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/3단계__노드3을_설치하고_부팅합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            3단계. 노드3을 설치하고 부팅합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/4단계__노드_2를_재배치하거나_폐기합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            4단계. 노드 2를 재배치하거나 폐기합니다
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/5단계__노드_4를_설치하고_부팅합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            5단계. 노드 4를 설치하고 부팅합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/6단계__업그레이드를_완료합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            6단계. 업그레이드를 완료합니다
+          </a>
+          
+
+
+
+
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/ko-kr/ontap-systems-upgrade/pdfs/pages/upgrade-arl-auto-app/set_up_storage_encryption_new_module.pdf" >
+    <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/문제_해결.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            문제 해결
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/ONTAP_9_8_이상을_실행하는_컨트롤러_하드웨어를_수동으로_업그레이드합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/1단계__업그레이드를_준비합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            1단계. 업그레이드를 준비합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/2단계__노드1을_재배치하거나_폐기합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            2단계. 노드1을 재배치하거나 폐기합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/3단계__노드3을_설치하고_부팅합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            3단계. 노드3을 설치하고 부팅합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/4단계__정보를_기록하고_노드2를_폐기합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            4단계. 정보를 기록하고 노드2를 폐기합니다
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/5단계__노드_4를_설치하고_부팅합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            5단계. 노드 4를 설치하고 부팅합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/6단계__업그레이드를_완료합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            6단계. 업그레이드를 완료합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/문제_해결.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            문제 해결
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/_system_controller_replace__명령을_사용하여_ONTAP_9_5를_실행하는_컨트롤러_하드웨어를_9_7로_업그레이드하십시오.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            "system controller replace" 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러 하드웨어를 9.7로 업그레이드하십시오
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/1단계__업그레이드를_준비합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            1단계. 업그레이드를 준비합니다
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/2단계__노드1을_재배치하거나_폐기합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            2단계. 노드1을 재배치하거나 폐기합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/3단계__노드3을_설치하고_부팅합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            3단계. 노드3을 설치하고 부팅합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/4단계__노드_재배치_및_폐기.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            4단계. 노드 재배치 및 폐기
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/5단계__노드_4를_설치하고_부팅합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            5단계. 노드 4를 설치하고 부팅합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/6단계__업그레이드를_완료합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            6단계. 업그레이드를 완료합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/문제_해결.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            문제 해결
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/ONTAP_9_7_이하를_실행하는_컨트롤러_하드웨어를_수동으로_업그레이드합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            ONTAP 9.7 이하를 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/ONTAP_9_1_이상에_대해_FC_스위치_레이아웃을_재구성합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            ONTAP 9.1 이상에 대해 FC 스위치 레이아웃을 재구성합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/1단계__업그레이드를_준비합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            1단계. 업그레이드를 준비합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/2단계__노드1을_재배치하거나_폐기합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            2단계. 노드1을 재배치하거나 폐기합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/3단계__노드3을_설치하고_부팅합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            3단계. 노드3을 설치하고 부팅합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/4단계__정보를_기록하고_노드2를_폐기합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            4단계. 정보를 기록하고 노드2를 폐기합니다
+          </a>
+          
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/5단계__노드_4를_설치하고_부팅합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            5단계. 노드 4를 설치하고 부팅합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/6단계__업그레이드를_완료합니다.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            6단계. 업그레이드를 완료합니다
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/문제_해결.pdf" 
+            
+          >
+            <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
+            문제 해결
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+</li></ul>
+  <div class="zip-pdf-link-container" style="display: none;">   
+    <a href="#" id="zipPdf">
+      <img src="/ko-kr/ontap-systems-upgrade/images/pdf-zip.png" width="16" height="16"/>
+      <pre>별도의 PDF 문서 모음<span class="zip-size"></span></pre>
+    </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+</div>
+<script>
+  $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+  });
+</script><div class="sidebar-nav-container">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/index.html">
+        AFF 및 FAS 시스템 업그레이드 설명서
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 볼륨 또는 스토리지를 이동하여 업그레이드</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-decide-to-use-this-guide.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-considerations.html">
+        고려 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-methods.html">
+        방법을 선택합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 스토리지를 이동하여 업그레이드</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-by-moving-storage-parent.html">
+        워크플로우
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-prepare-when-moving-storage.html">
+        준비
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-shutdown-remove-original-nodes.html">
+        원래 노드를 종료합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-remove-disk-ownership-new-nodes.html">
+        디스크 소유권을 제거합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-reset-default-configuration-node3-and-node4.html">
+        기본 구성을 재설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-install-new-nodes.html">
+        새 노드를 설치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-set-up-new-nodes.html">
+        새 노드 설정
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 선택 사항 - 내부 스토리지를 이동하거나 드라이브 쉘프로 변환할 수 있습니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-optional-move-internal-storage.html">
+        선택
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-move-internal-drives.html">
+        내부 드라이브를 이동합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-convert-node-to-shelf.html">
+        노드를 드라이브 쉘프로 변환할 수 있습니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-attach-shelves-reassign-disks.html">
+        스토리지 쉘프를 연결하고 디스크 소유권을 다시 할당합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-restore-root-volume-config.html">
+        루트 볼륨 구성을 복원합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 업그레이드를 완료합니다</div>
+      </a>
+      <ul><li class="subfolders "><a href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-complete.html">
+        <div class="na-navbar-padding"> 개요</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> ONTAP 9.8에서 완성</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-complete-ontap-9-8.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-map-network-ports-ontap-9-8.html">
+        ONTAP 9.8을 사용하여 네트워크 포트를 매핑합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-final-upgrade-steps-in-ontap-9-8.html">
+        ONTAP 9.8에서 마지막 단계를 수행합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> ONTAP 9.7 이하에서 완료</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-complete-ontap-9-7-or-earlier.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-map-network-ports-ontap-9-7-or-earlier.html">
+        ONTAP 9.7 이하를 사용하여 네트워크 포트를 매핑합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-final-steps-ontap-9-7-or-earlier-move-storage.html">
+        ONTAP 9.7 이전 버전에서 최종 단계를 수행합니다
+      </a></li></ul></li></ul></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 볼륨을 이동하여 업그레이드</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-by-moving-volumes-parent.html">
+        워크플로우
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-prepare-when-moving-volumes.html">
+        준비
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-install-and-join-new-nodes-move-vols.html">
+        새 노드를 설치하고 연결합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-create-aggregate-move-volumes.html">
+        Aggregate를 생성하고 볼륨을 이동합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-move-lifs-to-new-nodes.html">
+        SAN이 아닌 데이터 LIF 및 클러스터 관리 LIF를 이동합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> SAN LIFS를 이동, 삭제 또는 생성합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade_move_delete_recreate_san_lifs.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade_considerations_move_san_lifs.html">
+        SAN LIF 이동을 위한 고려 사항
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-delete-san-lifs.html">
+        SAN LIF를 삭제합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade_create_recreate_san_lifs.html">
+        새로운 SAN LIF를 생성하거나 삭제된 SAN LIF를 다시 생성하십시오
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-unjoin-original-nodes-move-volumes.html">
+        원래 노드의 연결을 해제합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade/upgrade-complete-move-volumes.html">
+        업그레이드를 완료합니다
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 애그리게이트 재배치를 사용하여 컨트롤러 하드웨어를 업그레이드합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl/index.html">
+        개요
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> "system controller replace" 명령을 사용하여 ONTAP A700을 AFF 9.10.1 RC2 이상을 실행하는 AFF A900으로 업그레이드합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/automate_the_controller_upgrade_process.html">
+        컨트롤러 업그레이드 프로세스를 자동화합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/decide_to_use_the_aggregate_relocation_guide.html">
+        집계 재배치 컨텐츠의 사용 여부를 결정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/required_tools_and_documentation.html">
+        필요한 도구 및 문서
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/guidelines_for_upgrading_controllers_with_arl.html">
+        ARL이 있는 AFF A700에서 AFF A900으로 업그레이드하기 위한 지침
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/overview_of_the_arl_upgrade.html">
+        ARL 업그레이드 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/upgrade_node_pair.html">
+        노드 쌍을 업그레이드합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 1단계. 업그레이드를 준비합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/verify_upgrade_hardware.html">
+        업그레이드 하드웨어를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/prepare_nodes_for_upgrade.html">
+        업그레이드할 노드를 준비합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/get_ip_address_of_external_kms_for_storage_encryption.html">
+        스토리지 암호화를 위한 외부 키 관리 서버의 IP 주소를 가져옵니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 2단계. 리소스를 재배치하고 AFF A700 노드 1을 폐기합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html">
+        노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/relocate_failed_or_vetoed_aggr.html">
+        장애가 발생하거나 거부권을 행사한 Aggregate를 재배치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/retire_node1.html">
+        노드1을 폐기합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/netboot_node1.html">
+        netboot 노드1
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 3단계. AFF A900 컨트롤러 모듈 및 NVS로 노드 1을 부팅합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html">
+        AFF A900 컨트롤러 모듈 및 NVS로 노드 1을 부팅합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/verify_node1_installation.html">
+        노드1 설치를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/restore_key_manager_config_upgraded_node1.html">
+        업그레이드된 노드1에서 키 관리자 구성을 복원합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html">
+        노드 1이 소유하는 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2에서 업그레이드된 노드 1로 이동합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 4단계. 노드 2에서 리소스를 재배치하고 노드 2를 폐기합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/relocate_non_root_aggr_nas_lifs_from_node2_to_node1.html">
+        루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 2에서 노드 1로 재배치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/retire_node2.html">
+        노드2를 폐기합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 5단계. 노드 2에 AFF A900 NVS 및 컨트롤러 모듈을 설치합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/install_a900_nvs_and_controller_on_node2.html">
+        노드 2에 AFF A900 NVS 및 컨트롤러 모듈을 설치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/netboot_node2.html">
+        netboot 노드2
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 6단계. AFF A900 컨트롤러 모듈 및 NVS로 노드 2를 부팅합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/boot_node2_with_a900_controller_and_nvs.html">
+        AFF A900 컨트롤러 모듈 및 NVS로 노드 2를 부팅합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/verify_node2_installation.html">
+        노드2 설치를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/restore_key_manager_config_node2.html">
+        노드 2에서 키 관리자 구성을 복원합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/move_non_root_aggr_and_nas_data_lifs_back_to_node2.html">
+        루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 2로 다시 이동합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 7단계. 업그레이드를 완료합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/ensure_new_controllers_are_set_up_correctly.html">
+        새 컨트롤러가 올바르게 설정되었는지 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/set_up_storage_encryption_new_module.html">
+        새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/set_up_netapp_volume_encryption_new_module.html">
+        새 컨트롤러 모듈에서 NetApp Volume Encryption 설정
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/decommission_old_system.html">
+        기존 시스템을 폐기합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/resume_snapmirror_operations.html">
+        SnapMirror 작업을 재개합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 문제 해결</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/troubleshoot_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/aggregate_relocation_failures.html">
+        애그리게이트 재배치 실패
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/reboots_panics_or_power_cycles.html">
+        재부팅, 패닉 또는 전원 껐다 켜기
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/issues_in_multiple_stages_of_procedure.html">
+        절차의 여러 단계에서 발생할 수 있는 문제입니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/lif_migration_failure.html">
+        LIF 마이그레이션 실패
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/other_references.html">
+        참조
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> "시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 업그레이드합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/automate_the_controller_upgrade_process.html">
+        컨트롤러 업그레이드 프로세스를 자동화합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/decide_to_use_the_aggregate_relocation_guide.html">
+        집계 재배치 컨텐츠의 사용 여부를 결정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/required_tools_and_documentation.html">
+        필요한 도구 및 문서
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/guidelines_for_upgrading_controllers_with_arl.html">
+        ARL을 사용한 컨트롤러 업그레이드 지침
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/verify_health_of_metrocluster_config.html">
+        MetroCluster 구성의 상태를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/check_for_metrocluster_config_errors.html">
+        MetroCluster 구성 오류를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/verify_switchover_healing_switchback.html">
+        전환, 복구, 스위치백을 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/overview_of_the_arl_upgrade.html">
+        ARL 업그레이드 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/upgrade_node_pair.html">
+        노드 쌍을 업그레이드합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 1단계. 업그레이드를 준비합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/stage_1_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/prepare_nodes_for_upgrade.html">
+        업그레이드할 노드를 준비합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/get_ip_address_of_external_kms_for_storage_encryption.html">
+        스토리지 암호화를 위한 외부 키 관리 서버의 IP 주소를 가져옵니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 2단계. 노드1을 재배치하거나 폐기합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/stage_2_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/relocate_non_root_aggr_nas_data_lifs_node1_node2.html">
+        노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/relocate_failed_vetoed_aggr.html">
+        장애가 발생하거나 거부권을 행사한 Aggregate를 재배치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/retire_node1.html">
+        노드1을 폐기합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/prepare_for_netboot.html">
+        netboot를 준비합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 3단계. 노드3을 설치하고 부팅합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/stage_3_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/install_boot_node3.html">
+        노드3을 설치하고 부팅합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/set_fc_or_uta_uta2_config_on_node3.html">
+        노드 3에 FC 또는 UTA/UTA2 구성을 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/verify_node3_installation.html">
+        노드3 설치를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/restore_key-manager_configuration_node3.html">
+        노드 3에서 키 관리자 구성을 복원합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/move_non-root_aggr_and_nas_data_lifs_node1_from_node2_to_node3.html">
+        노드 1이 소유하는 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2에서 노드 3으로 이동합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 4단계. 노드 2를 재배치하거나 폐기합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/stage_4_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html">
+        루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 2에서 노드 3으로 재배치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/retire_node2.html">
+        노드2를 폐기합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 5단계. 노드 4를 설치하고 부팅합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/stage_5_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/install_boot_node4.html">
+        노드 4를 설치하고 부팅합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/set_fc_or_uta_uta2_config_node4.html">
+        노드 4에 FC 또는 UTA/UTA2 구성을 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/verify_node4_installation.html">
+        노드 4 설치를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/restore_key-manager_config_node4.html">
+        노드 4의 키 관리자 구성을 복원합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/move_non_root_aggr_and_nas_data_lifs_node2_from_node3_to_node4.html">
+        노드 2가 소유한 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 3에서 노드 4로 이동합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 6단계. 업그레이드를 완료합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/stage_6_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/ensure_new_controllers_are_set_up_correctly.html">
+        새 컨트롤러가 올바르게 설정되었는지 확인합니다
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/set_up_storage_encryption_new_module.html">
+        새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/set_up_netapp_volume_encryption_new_module.html">
+        새 컨트롤러 모듈에서 NetApp Volume Encryption 설정
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/decommission_old_system.html">
+        기존 시스템을 폐기합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/resume_snapmirror_operations.html">
+        SnapMirror 작업을 재개합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 문제 해결</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/troubleshoot_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/aggregate_relocation_failures.html">
+        애그리게이트 재배치 실패
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/reboots_panics_or_power_cycles.html">
+        재부팅, 패닉 또는 전원 껐다 켜기
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/issues_in_multiple_stages_of_procedure.html">
+        절차의 여러 단계에서 발생할 수 있는 문제입니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/lif_migration_failure.html">
+        LIF 마이그레이션 실패
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/other_references.html">
+        참조
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/decide_to_use_arl_guide.html">
+        집계 재배치 컨텐츠의 사용 여부를 결정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/arl_upgrade_workflow.html">
+        ARL 업그레이드 워크플로
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/guidelines_upgrade_with_arl.html">
+        ARL을 사용한 컨트롤러 업그레이드 지침
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/required_tools_documentation.html">
+        필요한 도구 및 문서
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/worksheet_information_before_during_upgrade.html">
+        워크시트: 컨트롤러 업그레이드 전과 도중에 수집할 정보입니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/upgrade_node_pair.html">
+        노드 쌍을 업그레이드합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 1단계. 업그레이드를 준비합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/stage_1_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/determine_aggregates_on_internal_drives.html">
+        컨트롤러에 내부 디스크 드라이브에 Aggregate가 있는지 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/prepare_nodes_for_upgrade.html">
+        업그레이드할 노드를 준비합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/get_address_key_management_server_encryption.html">
+        스토리지 암호화를 위한 외부 키 관리 서버의 IP 주소를 가져옵니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/manage_authentication_kmip.html">
+        KMIP 서버를 사용하여 인증 관리
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/manage_authentication_okm.html">
+        온보드 키 관리자를 사용하여 인증을 관리합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/quiesce_snapmirror_relationships.html">
+        SnapMirror 관계를 중지합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/prepare_for_netboot.html">
+        netboot를 준비합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 2단계. 노드1을 재배치하거나 폐기합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/stage_2_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/relocate_non_root_aggr_node1_node2.html">
+        노드 1에서 노드 2로 비루트 애그리게이트를 재배치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/move_nas_lifs_node1_node2.html">
+        노드 1이 소유한 NAS 데이터 LIF를 노드 2로 이동합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/record_node1_information.html">
+        노드1 정보를 기록합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/retire_node1.html">
+        노드1을 폐기합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 3단계. 노드3을 설치하고 부팅합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/stage_3_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/install_boot_node3.html">
+        노드3을 설치하고 부팅합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/set_fc_uta_uta2_config_node3.html">
+        노드 3에 FC 또는 UTA/UTA2 구성을 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/map_ports_node1_node3.html">
+        노드 1의 포트를 노드 3으로 매핑합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/move_nas_lifs_node1_from_node2_node3_verify_san_lifs_node3.html">
+        노드 1이 소유한 NAS 데이터 LIF를 노드 2에서 노드 3으로 이동하고 노드 3의 SAN LIF를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/relocate_non_root_aggr_node2_node3.html">
+        노드 2에서 노드 3으로 비루트 애그리게이트를 재배치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/move_nas_lifs_node2_node3.html">
+        노드 2가 소유한 NAS 데이터 LIF를 노드 3으로 이동합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 4단계. 정보를 기록하고 노드2를 폐기합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/stage_4_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/record_node2_information.html">
+        노드2 정보를 기록합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/retire_node2.html">
+        노드2를 폐기합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 5단계. 노드 4를 설치하고 부팅합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/stage_5_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/install_boot_node4.html">
+        노드 4를 설치하고 부팅합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/set_fc_uta_uta2_config_node4.html">
+        노드 4에 FC 또는 UTA/UTA2 구성을 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/map_ports_node2_node4.html">
+        노드 2의 포트를 노드 4로 매핑합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/move_nas_lifs_node2_from_node3_node4_verify_san_lifs_node4.html">
+        노드 2가 소유한 NAS 데이터 LIF를 노드 3에서 노드 4로 이동하고 노드 4의 SAN LIF를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/relocate_node2_non_root_aggr_node3_node4.html">
+        노드 2의 루트 이외의 애그리게이트를 노드 3에서 노드 4로 이동합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 6단계. 업그레이드를 완료합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/stage_6_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/ensure_controllers_set_up_correctly.html">
+        새 컨트롤러가 올바르게 설정되었는지 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/set_up_storage_encryption_new_controller.html">
+        새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/set_up_netapp_encryption_on_new_controller.html">
+        새 컨트롤러 모듈에서 NetApp Volume Encryption 설정
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/decommission_old_system.html">
+        기존 시스템을 폐기합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/resume_snapmirror_ops.html">
+        SnapMirror 작업을 재개합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 문제 해결</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/troubleshoot_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/aggregate_relocation_failures.html">
+        애그리게이트 재배치 실패
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/reboots_panics_power_cycles.html">
+        재부팅, 패닉 또는 전원 껐다 켜기
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/issues_multiple_stages_of_procedure.html">
+        절차의 여러 단계에서 발생할 수 있는 문제입니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/lif_migration_failure.html">
+        LIF 마이그레이션 실패
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/lifs_invalid_ports_after_upgrade.html">
+        업그레이드 후 LIF가 잘못된 포트에 있습니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/other_references.html">
+        참조
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> "system controller replace" 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러 하드웨어를 9.7로 업그레이드하십시오</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/automate_the_controller_upgrade_process.html">
+        컨트롤러 업그레이드 프로세스를 자동화합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/decide_to_use_the_aggregate_relocation_guide.html">
+        집계 재배치 컨텐츠의 사용 여부를 결정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/required_tools_and_documentation.html">
+        필요한 도구 및 문서
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/guidelines_for_upgrading_controllers_with_arl.html">
+        ARL을 사용한 컨트롤러 업그레이드 지침
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/verify_health_of_metrocluster_config.html">
+        MetroCluster 구성의 상태를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/check_metrocluster_config_errors.html">
+        MetroCluster 구성 오류를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/verify_switchover_healing_switchback.html">
+        전환, 복구, 스위치백을 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/overview_of_the_arl_upgrade.html">
+        ARL 업그레이드 개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/upgrade_node_pair.html">
+        노드 쌍을 업그레이드합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 1단계. 업그레이드를 준비합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/stage_1_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/prepare_nodes_for_upgrade.html">
+        업그레이드할 노드를 준비합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/get_ip_address_of_external_kms_for_storage_encryption.html">
+        스토리지 암호화를 위한 외부 키 관리 서버의 IP 주소를 가져옵니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 2단계. 노드1을 재배치하거나 폐기합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/stage_2_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html">
+        노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/relocate_failed_or_vetoed_aggr.html">
+        장애가 발생하거나 거부권을 행사한 Aggregate를 재배치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/retire_node1.html">
+        노드1을 폐기합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/prepare_for_netboot.html">
+        netboot를 준비합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 3단계. 노드3을 설치하고 부팅합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/stage_3_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/install_boot_node3.html">
+        노드3을 설치하고 부팅합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/set_fc_or_uta_uta2_config_on_node3.html">
+        노드 3에 FC 또는 UTA/UTA2 구성을 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/map_ports_node1_node3.html">
+        노드 1의 포트를 노드 3으로 매핑합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/join_quorum_node_has_different_ports_stage3.html">
+        노드에 다른 네트워크 포트 집합이 있는 경우 쿼럼을 연결합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/verify_node3_installation.html">
+        노드3 설치를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/move_non_root_aggr_nas_lifs_node1_from_node2_to_node3.html">
+        노드 1이 소유하는 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2에서 노드 3으로 이동합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 4단계. 노드 재배치 및 폐기</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/stage_4_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html">
+        루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 2에서 노드 3으로 재배치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/retire_node2.html">
+        노드2를 폐기합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 5단계. 노드 4를 설치하고 부팅합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/stage_5_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/install_boot_node4.html">
+        노드 4를 설치하고 부팅합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/set_fc_or_uta_uta2_config_node4.html">
+        노드 4에 FC 또는 UTA/UTA2 구성을 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/map_ports_node2_node4.html">
+        노드 2의 포트를 노드 4로 매핑합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/join_quorum_node_has_different_ports_stage5.html">
+        노드에 다른 네트워크 포트 집합이 있는 경우 쿼럼을 연결합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/verify_node4_installation.html">
+        노드 4 설치를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/move_non_root_aggr_and_nas_data_lifs_node2_from_node3_to_node4.html">
+        노드 2가 소유한 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 3에서 노드 4로 이동합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 6단계. 업그레이드를 완료합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/stage_6_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/ensure_new_controllers_are_set_up_correctly.html">
+        새 컨트롤러가 올바르게 설정되었는지 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/set_up_storage_encryption_new_module.html">
+        새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/set_up_netapp_volume_encryption_new_module.html">
+        새 컨트롤러 모듈에서 NetApp Volume Encryption 설정
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/decommission_old_system.html">
+        기존 시스템을 폐기합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/resume_snapmirror_operations.html">
+        SnapMirror 작업을 재개합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 문제 해결</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/troubleshoot_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/aggregate_relocation_failures.html">
+        애그리게이트 재배치 실패
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/reboots_panics_or_power_cycles.html">
+        재부팅, 패닉 또는 전원 껐다 켜기
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/issues_in_multiple_stages_of_procedure.html">
+        절차의 여러 단계에서 발생할 수 있는 문제입니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/lif_migration_failure.html">
+        LIF 마이그레이션 실패
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/other_references.html">
+        참조
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> ONTAP 9.7 이하를 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/decide_to_use_arl_guide.html">
+        집계 재배치 컨텐츠의 사용 여부를 결정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/arl_upgrade_workflow.html">
+        ARL 업그레이드 워크플로
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/guidelines_upgrade_with_arl.html">
+        ARL을 사용한 컨트롤러 업그레이드 지침
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/required_tools_documentation.html">
+        필요한 도구 및 문서
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/worksheet_information_before_during_upgrade.html">
+        워크시트: 컨트롤러 업그레이드 전과 도중에 수집할 정보입니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> ONTAP 9.1 이상에 대해 FC 스위치 레이아웃을 재구성합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/reconfig_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/send_custom_asup_message_prior_reconfig_switches.html">
+        스위치를 다시 구성하기 전에 사용자 지정 AutoSupport 메시지를 보냅니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/verify_health_mcc_config.html">
+        MetroCluster 구성의 상태를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/check_mcc_config_errors.html">
+        MetroCluster 구성 오류를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/persist_disable_switches.html">
+        스위치를 영구적으로 비활성화합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/determine_new_cabling_layout.html">
+        새 케이블 연결 레이아웃을 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/apply_RCF_files_recable_switches.html">
+        RCF 파일을 적용하고 스위치를 재전송할 수 있습니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/persist_enable_switches.html">
+        스위치를 영구적으로 활성화합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/verify_swtichover_healing_switchback.html">
+        전환, 복구, 스위치백을 확인합니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/upgrade_node_pair.html">
+        노드 쌍을 업그레이드합니다
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 1단계. 업그레이드를 준비합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/stage_1_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/determine_aggregates_on_internal_drives.html">
+        컨트롤러에 내부 디스크 드라이브에 Aggregate가 있는지 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/prepare_nodes_for_upgrade.html">
+        업그레이드할 노드를 준비합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/get_address_key_management_server_encryption.html">
+        스토리지 암호화를 위한 외부 키 관리 서버의 IP 주소를 가져옵니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/manage_authentication_kmip.html">
+        KMIP 서버를 사용하여 인증 관리
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/manage_authentication_okm.html">
+        온보드 키 관리자를 사용하여 인증을 관리합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/quiesce_snapmirror_relationships.html">
+        SnapMirror 관계를 중지합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/prepare_for_netboot.html">
+        netboot를 준비합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 2단계. 노드1을 재배치하거나 폐기합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/stage_2_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/relocate_non_root_aggr_node1_node2.html">
+        노드 1에서 노드 2로 비루트 애그리게이트를 재배치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/move_nas_lifs_node1_node2.html">
+        노드 1이 소유한 NAS 데이터 LIF를 노드 2로 이동합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/record_node1_information.html">
+        노드1 정보를 기록합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/retire_node1.html">
+        노드1을 폐기합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 3단계. 노드3을 설치하고 부팅합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/stage_3_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/install_boot_node3.html">
+        노드3을 설치하고 부팅합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/set_fc_uta_uta2_config_node3.html">
+        노드 3에 FC 또는 UTA/UTA2 구성을 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/map_ports_node1_node3.html">
+        노드 1의 포트를 노드 3으로 매핑합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/verify_node3_installation.html">
+        노드3 설치를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/move_nas_lifs_node1_from_node2_node3_verify_san_lifs_node3.html">
+        노드 1이 소유한 NAS 데이터 LIF를 노드 2에서 노드 3으로 이동하고 노드 3의 SAN LIF를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/relocate_non_root_aggr_node2_node3.html">
+        노드 2에서 노드 3으로 비루트 애그리게이트를 재배치합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/move_nas_lifs_node2_node3.html">
+        노드 2가 소유한 NAS 데이터 LIF를 노드 3으로 이동합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 4단계. 정보를 기록하고 노드2를 폐기합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/stage_4_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/record_node2_information.html">
+        노드2 정보를 기록합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/retire_node2.html">
+        노드2를 폐기합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 5단계. 노드 4를 설치하고 부팅합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/stage_5_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/install_boot_node4.html">
+        노드 4를 설치하고 부팅합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/set_fc_uta_uta2_config_node4.html">
+        노드 4에 FC 또는 UTA/UTA2 구성을 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/map_ports_node2_node4.html">
+        노드 2의 포트를 노드 4로 매핑합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/verify_node4_installation.html">
+        노드 4 설치를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/move_nas_lifs_node2_from_node3_node4_verify_san_lifs_node4.html">
+        노드 2가 소유한 NAS 데이터 LIF를 노드 3에서 노드 4로 이동하고 노드 4의 SAN LIF를 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/relocate_node2_non_root_aggr_node3_node4.html">
+        노드 2의 루트 이외의 애그리게이트를 노드 3에서 노드 4로 이동합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 6단계. 업그레이드를 완료합니다</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/stage_6_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/ensure_controllers_set_up_correctly.html">
+        새 컨트롤러가 올바르게 설정되었는지 확인합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/set_up_storage_encryption_new_controller.html">
+        새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/set_up_netapp_encryption_on_new_controller.html">
+        새 컨트롤러 모듈에서 NetApp Volume Encryption 설정
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/decommission_old_system.html">
+        기존 시스템을 폐기합니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/resume_snapmirror_ops.html">
+        SnapMirror 작업을 재개합니다
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 문제 해결</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/troubleshoot_index.html">
+        개요
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/aggregate_relocation_failures.html">
+        애그리게이트 재배치 실패
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/reboots_panics_power_cycles.html">
+        재부팅, 패닉 또는 전원 껐다 켜기
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/issues_multiple_stages_of_procedure.html">
+        절차의 여러 단계에서 발생할 수 있는 문제입니다
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/lif_migration_failure.html">
+        LIF 마이그레이션 실패
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/lifs_invalid_ports_after_upgrade.html">
+        업그레이드 후 LIF가 잘못된 포트에 있습니다
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/other_references.html">
+        참조
+      </a></li></ul></li></ul></li></ul>
+</div>
+<script>
+  window.onscroll = () => {
+    const value = -40 - (document.body.scrollHeight - (window.innerHeight + document.scrollingElement.scrollTop));
+    
+    document.getElementById("sidebar-height").style.bottom = Math.max(0,value) + "px";
+};
+</script>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container -->
+    <article class="page-content">
+      <div class="ie-utility">
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://www.netapp.com">홈</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">설명서</a>
+        </li>
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/ko-kr/ontap-systems-upgrade/">AFF&nbsp;and&nbsp;FAS&nbsp;Controller&nbsp;Upgrade</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다
+        </li>
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="ie-nmt-disclaimer">
+  <span>
+    <div class="ie-nmt-disclaimer-container">
+      <div class="ie-nmt-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/ko-kr/ontap-systems-upgrade/common/svg/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-nmt-disclaimer-content">
+        <span> 본 한국어 번역은 사용자 편의를 위해 제공되는 기계 번역입니다. 영어 버전과 한국어 버전이 서로 어긋나는 경우에는 언제나 영어 버전이 우선합니다. </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2022-01-31 16:45:04 +0000">01/31/2022</time>
+    
+  
+
+<span>기여자
+</span>
+
+
+</p>
+
+
+<div class="paragraph lead">
+<p>교체된 컨트롤러 또는 새 컨트롤러의 HA 파트너가 Storage Encryption을 사용하는 경우, SSL 인증서 설치 및 키 관리 서버 설정을 포함하여 Storage Encryption에 대한 새 컨트롤러 모듈을 구성해야 합니다.</p>
+</div>
+<div class="paragraph">
+<p>이 절차에는 새 컨트롤러 모듈에서 수행되는 단계가 포함됩니다. 올바른 노드에 명령을 입력해야 합니다.</p>
+</div>
+<div class="olist arabic">
+<div class="title">단계</div>
+<ol class="arabic">
+<li>
+<p>키 관리 서버를 계속 사용할 수 있는지, 해당 상태 및 인증 키 정보를 확인합니다.</p>
+<div class="paragraph">
+<p>보안 키 관리자 표시 상태</p>
+</div>
+<div class="paragraph">
+<p>보안 키 관리자 쿼리</p>
+</div>
+</li>
+<li>
+<p>이전 단계에 나열된 키 관리 서버를 새 컨트롤러의 키 관리 서버 목록에 추가합니다.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>키 관리 서버를 추가합니다.</p>
+<div class="paragraph">
+<p>'Security key-manager-add &lt;key_management_server_ip_address&gt;'를 선택합니다</p>
+</div>
+</li>
+<li>
+<p>나열된 각 키 관리 서버에 대해 이전 단계를 반복합니다. 최대 4개의 키 관리 서버를 연결할 수 있습니다.</p>
+</li>
+<li>
+<p>키 관리 서버가 성공적으로 추가되었는지 확인합니다.</p>
+<div class="paragraph">
+<p>보안 키매니저 쇼</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>새 컨트롤러 모듈에서 키 관리 설정 마법사를 실행하여 키 관리 서버를 설정하고 설치합니다.</p>
+<div class="paragraph">
+<p>기존 컨트롤러 모듈에 설치된 것과 동일한 키 관리 서버를 설치해야 합니다.</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>새 노드에서 키 관리 서버 설정 마법사를 시작합니다.</p>
+<div class="paragraph">
+<p>'Security key-manager setup-node &lt;new_controller_name&gt;'</p>
+</div>
+</li>
+<li>
+<p>마법사의 단계를 완료하여 키 관리 서버를 구성합니다.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>연결된 모든 키 관리 서버에서 새 노드로 인증 키 복원:</p>
+<div class="paragraph">
+<p>'Security key-manager restore-node &lt;new_controller_name&gt;'입니다</p>
+</div>
+</li>
+</ol>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div id="version-dropdown"></div>
+    <div class="page-nav-contribute"  >
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/issues/new?body=Page%3A%20[새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다](https://docs.netapp.com/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/set_up_storage_encryption_new_module.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-systems-upgrade/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/blob/main/upgrade-arl-auto-app/set_up_storage_encryption_new_module.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-systems-upgrade/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/ontap-systems-upgrade/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">이 페이지의 내용</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  <div style="clear: both"></div><!-- Main needs to have height -->
+</div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+            </li>
+
+</ul>
+</div>
+<div class="n-footer__social-links">
+<ul class="n-footer__social-link-list">
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
+<span class="n-footer__social-link-text">blog</span>
+<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+  <title>blog@</title>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-systems-upgrade/common/svg/sprite.svg#blog"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
+<span class="n-footer__social-link-text">community</span>
+<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+<title>community@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-systems-upgrade/common/svg/sprite.svg#comments"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
+<span class="n-footer__social-link-text">twitter</span>
+<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+<title>twitter@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-systems-upgrade/common/svg/sprite.svg#twitter"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
+<span class="n-footer__social-link-text">facebook</span>
+<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+<title>facebook@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-systems-upgrade/common/svg/sprite.svg#facebook"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+<span class="n-footer__social-link-text">linkedin</span>
+<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+<title>linkedin@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-systems-upgrade/common/svg/sprite.svg#linkedin"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+<span class="n-footer__social-link-text">youtube</span>
+<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+<title>youtube@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-systems-upgrade/common/svg/sprite.svg#youtube"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+<span class="n-footer__social-link-text">slideshare</span>
+<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+<title>slideshare@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ko-kr/ontap-systems-upgrade/common/svg/sprite.svg#slideshare"></use>
+</svg>
+
+</a>
+</li>
+</ul>
+</div>
+
+</div>
+<div class="n-footer__bottom-right">
+  <p class="n-footer__fine-print">웹 사이트에 대한 피드백이 있으십니까?<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">의견을 공유해 주십시오</a>
+  <a href="https://docs.netapp.com/ko-kr/announcements/" class="n-footer__copyright">공지 사항</a>
+  </p>
+</div>
+</div>
+</div>
+</footer>
+
+      </div>
+
+      <!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/ko-kr/ontap-systems-upgrade/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/ko-kr/ontap-systems-upgrade/js/prism.js'></script>
+      <script type="text/javascript" src='/ko-kr/ontap-systems-upgrade/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/ko-kr/ontap-systems-upgrade/js/www-ntap.js'></script>
+    <script src='/ko-kr/ontap-systems-upgrade/js/tabbed-blocks.js'></script>
+  </body>
+
+  
+</html>
