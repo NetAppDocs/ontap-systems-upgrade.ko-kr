@@ -1,0 +1,112 @@
+---
+section: upgrade-arl-auto
+title: '"system controller replace" 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러 하드웨어를 9.7로 업그레이드하십시오'
+entries:
+- title: 개요
+  url: "/upgrade-arl-auto/index.html"
+- title: 컨트롤러 업그레이드 프로세스를 자동화합니다
+  url: "/upgrade-arl-auto/automate_the_controller_upgrade_process.html"
+- title: 집계 재배치 컨텐츠의 사용 여부를 결정합니다
+  url: "/upgrade-arl-auto/decide_to_use_the_aggregate_relocation_guide.html"
+- title: 필요한 도구 및 문서
+  url: "/upgrade-arl-auto/required_tools_and_documentation.html"
+- title: ARL을 사용한 컨트롤러 업그레이드 지침
+  url: "/upgrade-arl-auto/guidelines_for_upgrading_controllers_with_arl.html"
+- title: MetroCluster 구성의 상태를 확인합니다
+  url: "/upgrade-arl-auto/verify_health_of_metrocluster_config.html"
+- title: MetroCluster 구성 오류를 확인합니다
+  url: "/upgrade-arl-auto/check_metrocluster_config_errors.html"
+- title: 전환, 복구, 스위치백을 확인합니다
+  url: "/upgrade-arl-auto/verify_switchover_healing_switchback.html"
+- title: ARL 업그레이드 개요
+  url: "/upgrade-arl-auto/overview_of_the_arl_upgrade.html"
+- title: 노드 쌍을 업그레이드합니다
+  url: "/upgrade-arl-auto/upgrade_node_pair.html"
+- title: 1단계. 업그레이드를 준비합니다
+  entries:
+  - title: 개요
+    url: "/upgrade-arl-auto/stage_1_index.html"
+  - title: 업그레이드할 노드를 준비합니다
+    url: "/upgrade-arl-auto/prepare_nodes_for_upgrade.html"
+  - title: 스토리지 암호화를 위한 외부 키 관리 서버의 IP 주소를 가져옵니다
+    url: "/upgrade-arl-auto/get_ip_address_of_external_kms_for_storage_encryption.html"
+- title: 2단계. 노드1을 재배치하거나 폐기합니다
+  entries:
+  - title: 개요
+    url: "/upgrade-arl-auto/stage_2_index.html"
+  - title: 노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치합니다
+    url: "/upgrade-arl-auto/relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html"
+  - title: 장애가 발생하거나 거부권을 행사한 Aggregate를 재배치합니다
+    url: "/upgrade-arl-auto/relocate_failed_or_vetoed_aggr.html"
+  - title: 노드1을 폐기합니다
+    url: "/upgrade-arl-auto/retire_node1.html"
+  - title: netboot를 준비합니다
+    url: "/upgrade-arl-auto/prepare_for_netboot.html"
+- title: 3단계. 노드3을 설치하고 부팅합니다
+  entries:
+  - title: 개요
+    url: "/upgrade-arl-auto/stage_3_index.html"
+  - title: 노드3을 설치하고 부팅합니다
+    url: "/upgrade-arl-auto/install_boot_node3.html"
+  - title: 노드 3에 FC 또는 UTA/UTA2 구성을 설정합니다
+    url: "/upgrade-arl-auto/set_fc_or_uta_uta2_config_on_node3.html"
+  - title: 노드 1의 포트를 노드 3으로 매핑합니다
+    url: "/upgrade-arl-auto/map_ports_node1_node3.html"
+  - title: 노드에 다른 네트워크 포트 집합이 있는 경우 쿼럼을 연결합니다
+    url: "/upgrade-arl-auto/join_quorum_node_has_different_ports_stage3.html"
+  - title: 노드3 설치를 확인합니다
+    url: "/upgrade-arl-auto/verify_node3_installation.html"
+  - title: 노드 1이 소유하는 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2에서 노드 3으로 이동합니다
+    url: "/upgrade-arl-auto/move_non_root_aggr_nas_lifs_node1_from_node2_to_node3.html"
+- title: 4단계. 노드 재배치 및 폐기
+  entries:
+  - title: 개요
+    url: "/upgrade-arl-auto/stage_4_index.html"
+  - title: 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 2에서 노드 3으로 재배치합니다
+    url: "/upgrade-arl-auto/relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html"
+  - title: 노드2를 폐기합니다
+    url: "/upgrade-arl-auto/retire_node2.html"
+- title: 5단계. 노드 4를 설치하고 부팅합니다
+  entries:
+  - title: 개요
+    url: "/upgrade-arl-auto/stage_5_index.html"
+  - title: 노드 4를 설치하고 부팅합니다
+    url: "/upgrade-arl-auto/install_boot_node4.html"
+  - title: 노드 4에 FC 또는 UTA/UTA2 구성을 설정합니다
+    url: "/upgrade-arl-auto/set_fc_or_uta_uta2_config_node4.html"
+  - title: 노드 2의 포트를 노드 4로 매핑합니다
+    url: "/upgrade-arl-auto/map_ports_node2_node4.html"
+  - title: 노드에 다른 네트워크 포트 집합이 있는 경우 쿼럼을 연결합니다
+    url: "/upgrade-arl-auto/join_quorum_node_has_different_ports_stage5.html"
+  - title: 노드 4 설치를 확인합니다
+    url: "/upgrade-arl-auto/verify_node4_installation.html"
+  - title: 노드 2가 소유한 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 3에서 노드 4로 이동합니다
+    url: "/upgrade-arl-auto/move_non_root_aggr_and_nas_data_lifs_node2_from_node3_to_node4.html"
+- title: 6단계. 업그레이드를 완료합니다
+  entries:
+  - title: 개요
+    url: "/upgrade-arl-auto/stage_6_index.html"
+  - title: 새 컨트롤러가 올바르게 설정되었는지 확인합니다
+    url: "/upgrade-arl-auto/ensure_new_controllers_are_set_up_correctly.html"
+  - title: 새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다
+    url: "/upgrade-arl-auto/set_up_storage_encryption_new_module.html"
+  - title: 새 컨트롤러 모듈에서 NetApp Volume Encryption 설정
+    url: "/upgrade-arl-auto/set_up_netapp_volume_encryption_new_module.html"
+  - title: 기존 시스템을 폐기합니다
+    url: "/upgrade-arl-auto/decommission_old_system.html"
+  - title: SnapMirror 작업을 재개합니다
+    url: "/upgrade-arl-auto/resume_snapmirror_operations.html"
+- title: 문제 해결
+  entries:
+  - title: 개요
+    url: "/upgrade-arl-auto/troubleshoot_index.html"
+  - title: 애그리게이트 재배치 실패
+    url: "/upgrade-arl-auto/aggregate_relocation_failures.html"
+  - title: 재부팅, 패닉 또는 전원 껐다 켜기
+    url: "/upgrade-arl-auto/reboots_panics_or_power_cycles.html"
+  - title: 절차의 여러 단계에서 발생할 수 있는 문제입니다
+    url: "/upgrade-arl-auto/issues_in_multiple_stages_of_procedure.html"
+  - title: LIF 마이그레이션 실패
+    url: "/upgrade-arl-auto/lif_migration_failure.html"
+- title: 참조
+  url: "/upgrade-arl-auto/other_references.html"

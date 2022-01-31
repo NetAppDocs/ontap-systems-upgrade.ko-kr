@@ -1,0 +1,159 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/move_nas_lifs_node1_node2.html 
+keywords: node1, node3, nas, lifs, cluster, san 
+summary: 2노드 클러스터가 있는 경우 노드 1이 소유한 NAS 데이터 LIF를 노드 2로 이동하거나, 클러스터에 노드가 2개 이상인 경우 3번째 노드로 이동합니다. 
+---
+= 노드 1이 소유한 NAS 데이터 LIF를 노드 2로 이동합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+노드 1을 노드 3으로 교체하려면 먼저 노드 1이 소유한 NAS 데이터 LIF를 노드 2가 있는 경우 노드 2로 이동하거나, 클러스터에 노드가 2개 이상인 경우 노드 1을 노드 2로 이동해야 합니다. 사용하는 방법은 클러스터가 NAS에 대해 구성되었는지 SAN에 대해 구성되었는지 여부에 따라 다릅니다.
+
+원격 LIF는 업그레이드 절차 중에 SAN LUN의 트래픽을 처리합니다. 업그레이드 중에 클러스터 또는 서비스 상태를 위해 SAN LIF를 이동할 필요가 없습니다. 노드 3을 온라인으로 설정한 후 LIF가 정상 작동하는지 확인해야 합니다.
+
+.단계
+. 다음 명령을 입력하고 출력을 캡처하여 노드 1에서 호스팅되는 모든 NAS 데이터 LIF를 나열합니다.
++
+'network interface show-data-protocol nfs|cifs-curr-node<node1>'
+
++
+다음 예에 표시된 대로 시스템은 노드 1의 NAS 데이터 LIF를 표시합니다.
+
++
+[listing]
+----
+ cluster::> network interface show -data-protocol nfs|cifs -curr-node node1
+
+          Logical     Status      Network             Current   Current Is
+ Vserver  Interface   Admin/Oper  Address/Mask        Node      Port    Home
+ -------- ----------  ----------  ------------------  --------- ------- ----
+ vs0
+          a0a         up/down     10.63.0.53/24       node1     a0a     true
+          data1       up/up       10.63.0.50/18       node1     e0c     true
+          rads1       up/up       10.63.0.51/18       node1     e1a     true
+          rads2       up/down     10.63.0.52/24       node1     e1b     true
+ vs1
+          lif1        up/up       192.17.176.120/24   node1     e0c     true
+          lif2        up/up       172.17.176.121/24   node1     e1a     true
+----
+. 다음 작업 중 하나를 수행합니다.
++
+[cols="40,60"]
+|===
+| 노드 1인 경우 | 그러면... 
+
+
+| VLAN의 인터페이스 그룹이 구성되어 있습니다 | 로 이동합니다 <<man_move_lif_1_2_step3,3단계>>. 
+
+
+| 인터페이스 그룹 또는 VLAN이 구성되어 있지 않습니다 | 3단계를 건너뛰고 로 이동합니다 <<man_move_lif_1_2_step4,4단계>>. 
+|===
++
+'network port vlan show' 명령을 사용하여 VLAN에 연결된 네트워크 포트에 대한 정보를 표시하고 'network port ifgrp show' 명령을 사용하여 포트 인터페이스 그룹에 대한 정보를 표시합니다.
+
+. [[man_move_lif_1_2_step3]]노드 1의 인터페이스 그룹 및 VLAN에 호스팅된 NAS 데이터 LIF를 마이그레이션하려면 다음 단계를 수행하십시오.
++
+.. [[man_move_lif_1_2_substa]] 모든 인터페이스 그룹 및 노드 1의 VLAN에 호스팅된 LIF를 노드 2의 포트로 마이그레이션합니다. 노드 2의 포트는 각 LIF에 대해 다음 명령을 입력하여 인터페이스 그룹의 LIF와 동일한 네트워크에 LIF를 호스팅할 수 있습니다.
++
+'network interface migrate-vserver <Vserver_NAME> -lif <LIF_name> -destination-node <node2> – destination-port <NetPort | ifgrp>'
+
+.. 에서 LIF 및 VLAN의 홈 포트와 홈 노드를 수정합니다 <<man_move_lif_1_2_substepa,하위 단계 A>> 각 LIF에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
++
+'network interface modify -vserver <Vserver_NAME> -lif <LIF_name> -home-node <node2> -home-port <NetPort | ifgrp>'
+
+
+
+. [[man_move_lif_1_2_step4]] 다음 작업 중 하나를 수행합니다.
++
+[cols="20,80"]
+|===
+| 클러스터가 구성된 경우... | 그러면... 
+
+
+| NAS | 완료 <<man_move_lif_1_2_step5,5단계>> 부터 까지 <<man_move_lif_1_2_step8,8단계>>. 
+
+
+| 산 | 업그레이드 시 노드의 모든 SAN LIF를 비활성화:'network interface modify -vserver <Vserver-name> -lif <LIF_name> -home-node <node_to_upgrade> -home-port <NetPort | ifgrp> -status-admin down' 
+|===
+. [[man_move_lif_1_2_step5]] 각 데이터 LIF에 대해 다음 명령을 입력하여 노드 1에서 노드 2로 NAS 데이터 LIF를 마이그레이션합니다.
++
+'network interface migrate-vserver <Vserver-name> -lif <LIF_name> -destination-node <node2> -destination-port <data_port>'
+
+. [[step6]] 다음 명령을 입력하고 출력을 검사하여 LIF가 올바른 포트로 이동되었으며 LIF의 상태가 UP인지 확인하고, 두 노드 중 하나에 다음 명령을 입력하고 출력을 검사하여 확인합니다.
++
+'network interface show-curr-node <node2> - data-protocol nfs | cifs'
+
+. [[step7]] 마이그레이션된 LIF의 홈 노드를 수정하려면 다음 명령을 입력합니다.
++
+'network interface modify -vserver <Vserver-name> -lif <LIF_name> -home-node <node2> -home-port <port_name>'
+
+. [[man_move_lif_1_2_step8]] LIF가 포트를 홈 또는 현재 포트로 사용하고 있는지 확인합니다. 포트가 홈 또는 현재 포트가 아닌 경우 로 이동합니다 <<man_move_lif_1_2_step9,9단계>>:
++
+'network interface show-home-node <node2> - home-port <port_name>'
+
++
+'network interface show-curr-node <node_name>-curr-port <port_name>'
+
+. [[man_move_lif_1_2_step9]] LIF가 포트를 홈 포트 또는 현재 포트로 사용하고 있는 경우, LIF를 수정하여 다른 포트를 사용하도록 합니다.
++
+'network interface migrate-vserver <Vserver-name> -lif <LIF_name> -destination –node <node_name> -destination-port <port_name>'
+
++
+'network interface modify -vserver <Vserver-name> -lif <LIF_name> -home –node <node_name> -home-port <port_name>'
+
+. [[10단계]] 현재 데이터 LIF를 호스팅하는 포트가 새 하드웨어에 존재하지 않을 경우, 지금 브로드캐스트 도메인에서 제거하십시오.
++
+'network port broadcast-domain remove-ports-IPSpace Default-broadcast-domain Default-ports <node:port>'
+
+. [[11단계]] LIF가 하나라도 다운되면 각 LIF에 대해 다음 명령을 한 번 입력하여 LIF의 관리 상태를 "Up"으로 설정하십시오.
++
+'network interface modify -vserver <Vserver-name> -lif <LIF_name> -home-node <nodename> -status-admin up'
+
++
+
+NOTE: MetroCluster 구성의 경우, 대상 SVM(스토리지 가상 머신)의 LIF를 호스팅하는 포트와 연결되어 있으므로 포트의 브로드캐스트 도메인을 변경하지 못할 수 있습니다. 대상 LIF를 적절한 포트에 재할당하려면 원격 사이트의 해당 소스 SVM에서 'MetroCluster vserver resync -vserver <Vserver_NAME>' 명령을 입력합니다
+
+. [[step12]] 다음 명령을 입력하고 해당 출력을 확인하여 노드 1에 남아 있는 데이터 LIF가 없는지 확인합니다.
++
+'network interface show-curr-node <node1> - role data'
+
+. [[step13]] 인터페이스 그룹 또는 VLAN이 구성된 경우 다음 하위 단계를 완료합니다.
++
+.. 다음 명령을 입력하여 인터페이스 그룹에서 VLAN을 제거합니다.
++
+'network port vlan delete-node <nodename> -port <ifgrp_name> -vlan-id <VLAN_ID>'
+
+.. 다음 명령을 입력하고 해당 출력을 검사하여 노드에 구성된 인터페이스 그룹이 있는지 확인합니다.
++
+'network port ifgrp show-node <nodename>-ifgrp <ifgrp_name>-instance'
+
++
+다음 예에서와 같이 노드에 대한 인터페이스 그룹 정보가 표시됩니다.
+
++
+[listing]
+----
+  cluster::> network port ifgrp show -node node1 -ifgrp a0a -instance
+                   Node: node1
+   Interface Group Name: a0a
+  Distribution Function: ip
+          Create Policy: multimode_lacp
+            MAC Address: 02:a0:98:17:dc:d4
+     Port Participation: partial
+          Network Ports: e2c, e2d
+               Up Ports: e2c
+             Down Ports: e2d
+----
+.. 노드에 인터페이스 그룹이 구성되어 있는 경우 해당 그룹 및 그룹에 할당된 포트의 이름을 기록한 다음 각 포트에 대해 다음 명령을 한 번 입력하여 포트를 삭제합니다.
++
+'network port ifgrp remove-port-node <nodename>-ifgrp <ifgrp_name>-port <NetPort>'
+
+
+
+

@@ -1,0 +1,6 @@
+= 
+
+
+MetroCluster 구성의 전환, 복구 및 스위치백 작업을 확인해야 합니다.
+
+을 참조하십시오 link:other_references.html["참조"] MetroCluster 관리 및 재해 복구_컨텐츠에 연결하고 협상된 전환, 복구 및 스위치백에 대해 설명된 절차를 사용합니다.

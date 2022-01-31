@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/manage_authentication_okm.html 
+keywords: manage, authentication, onboard key manager, okm, key, passphrase, fips 
+summary: 온보드 키 관리자를 사용하여 인증 키를 관리할 수 있습니다. 
+---
+= 온보드 키 관리자를 사용하여 인증을 관리합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+온보드 키 관리자를 사용하여 인증 키를 관리할 수 있습니다. 온보드 키 관리자(OKM)를 사용하려는 경우 업그레이드를 시작하기 전에 암호문과 백업 자료를 기록해야 합니다.
+
+.단계
+. 클러스터의 모든 노드에서 키 관리 서버를 사용할 수 있는지 확인합니다.
++
+보안 키 관리자 키 쇼
+
+. 새 인증 키를 사용하여 모든 자체 암호화 디스크를 다시 입력하다
++
+'storage encryption disk modify -disk * [-data-key-id nonMSID AK>]'를 선택합니다
+
+. FIPS(Federal Information Processing Standard)를 사용하는 경우 새 인증 키를 사용하여 모든 자체 암호화 디스크를 다시 입력하다
++
+'Storage encryption disk * modify-disk * [-FIPS-key-id nonMSID AK]'
+
+

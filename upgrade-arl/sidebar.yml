@@ -1,0 +1,11 @@
+---
+section: upgrade-arl
+title: 애그리게이트 재배치를 사용하여 컨트롤러 하드웨어를 업그레이드합니다
+entries:
+- title: 개요
+  url: "/upgrade-arl/index.html"
+- section: upgrade-arl-auto-affa900
+- section: upgrade-arl-auto-app
+- section: upgrade-arl-manual-app
+- section: upgrade-arl-auto
+- section: upgrade-arl-manual

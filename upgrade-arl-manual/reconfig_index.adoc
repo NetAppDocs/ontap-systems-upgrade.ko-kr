@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/reconfig_index.html 
+keywords: reconfigure, fc, switch, layout, RCF, metrocluster 
+summary: 기존 시스템을 폐기합니다 
+---
+= ONTAP 9.1 이상에 대해 FC 스위치 레이아웃을 재구성합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+기존 FC 스위치 레이아웃이 ONTAP 9.1 이전에 구성된 경우 포트 레이아웃을 재구성하고 최신 RCF(Reference Configuration Files)를 적용해야 합니다. 이 절차는 MetroCluster FC 구성에만 적용됩니다.
+
+Fabric 도메인에 있는 FC 스위치를 식별해야 합니다.
+
+FTP 또는 SCP 서버에 대한 액세스 및 관리자 암호가 필요합니다.
+
+ONTAP 9.1 이전에 기존 FC 스위치 레이아웃을 구성하고 ONTAP 9.1 이상에서 지원되는 플랫폼 모델로 업그레이드할 경우 이 작업을 수행해야 합니다. ONTAP 9.1 이상으로 구성된 기존 스위치 레이아웃에서 업그레이드하는 경우 _not_required 입니다.
+
+이 절차는 무중단 운영이며 디스크를 제로화하면 완료하는 데 약 4시간이 소요됩니다(랙 및 스택 제외).
+
+.단계
+. link:send_custom_asup_message_prior_reconfig_switches.html["스위치를 다시 구성하기 전에 사용자 지정 AutoSupport 메시지를 보냅니다"]
+. link:verify_health_mcc_config.html["MetroCluster 구성의 상태를 확인합니다"]
+. link:check_mcc_config_errors.html["MetroCluster 구성 오류를 확인합니다"]
+. link:persist_disable_switches.html["스위치를 영구적으로 비활성화합니다"]
+. link:determine_new_cabling_layout.html["새 케이블 연결 레이아웃을 확인합니다"]
+. link:apply_RCF_files_recable_switches.html["RCF 파일을 적용하고 스위치를 재전송할 수 있습니다"]
+. link:persist_enable_switches.html["스위치를 영구적으로 활성화합니다"]
+. link:verify_swtichover_healing_switchback.html["전환, 복구, 스위치백을 확인합니다"]
+

@@ -1,0 +1,140 @@
+---
+section: upgrade-arl-manual
+title: ONTAP 9.7 이하를 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드합니다
+entries:
+- title: 개요
+  url: "/upgrade-arl-manual/index.html"
+- title: 집계 재배치 컨텐츠의 사용 여부를 결정합니다
+  url: "/upgrade-arl-manual/decide_to_use_arl_guide.html"
+- title: ARL 업그레이드 워크플로
+  url: "/upgrade-arl-manual/arl_upgrade_workflow.html"
+- title: ARL을 사용한 컨트롤러 업그레이드 지침
+  url: "/upgrade-arl-manual/guidelines_upgrade_with_arl.html"
+- title: 필요한 도구 및 문서
+  url: "/upgrade-arl-manual/required_tools_documentation.html"
+- title: '워크시트: 컨트롤러 업그레이드 전과 도중에 수집할 정보입니다'
+  url: "/upgrade-arl-manual/worksheet_information_before_during_upgrade.html"
+- title: ONTAP 9.1 이상에 대해 FC 스위치 레이아웃을 재구성합니다
+  entries:
+  - title: 개요
+    url: "/upgrade-arl-manual/reconfig_index.html"
+  - title: 스위치를 다시 구성하기 전에 사용자 지정 AutoSupport 메시지를 보냅니다
+    url: "/upgrade-arl-manual/send_custom_asup_message_prior_reconfig_switches.html"
+  - title: MetroCluster 구성의 상태를 확인합니다
+    url: "/upgrade-arl-manual/verify_health_mcc_config.html"
+  - title: MetroCluster 구성 오류를 확인합니다
+    url: "/upgrade-arl-manual/check_mcc_config_errors.html"
+  - title: 스위치를 영구적으로 비활성화합니다
+    url: "/upgrade-arl-manual/persist_disable_switches.html"
+  - title: 새 케이블 연결 레이아웃을 확인합니다
+    url: "/upgrade-arl-manual/determine_new_cabling_layout.html"
+  - title: RCF 파일을 적용하고 스위치를 재전송할 수 있습니다
+    url: "/upgrade-arl-manual/apply_RCF_files_recable_switches.html"
+  - title: 스위치를 영구적으로 활성화합니다
+    url: "/upgrade-arl-manual/persist_enable_switches.html"
+  - title: 전환, 복구, 스위치백을 확인합니다
+    url: "/upgrade-arl-manual/verify_swtichover_healing_switchback.html"
+- title: 노드 쌍을 업그레이드합니다
+  url: "/upgrade-arl-manual/upgrade_node_pair.html"
+- title: 1단계. 업그레이드를 준비합니다
+  entries:
+  - title: 개요
+    url: "/upgrade-arl-manual/stage_1_index.html"
+  - title: 컨트롤러에 내부 디스크 드라이브에 Aggregate가 있는지 확인합니다
+    url: "/upgrade-arl-manual/determine_aggregates_on_internal_drives.html"
+  - title: 업그레이드할 노드를 준비합니다
+    url: "/upgrade-arl-manual/prepare_nodes_for_upgrade.html"
+  - title: 스토리지 암호화를 위한 외부 키 관리 서버의 IP 주소를 가져옵니다
+    url: "/upgrade-arl-manual/get_address_key_management_server_encryption.html"
+  - title: KMIP 서버를 사용하여 인증 관리
+    url: "/upgrade-arl-manual/manage_authentication_kmip.html"
+  - title: 온보드 키 관리자를 사용하여 인증을 관리합니다
+    url: "/upgrade-arl-manual/manage_authentication_okm.html"
+  - title: SnapMirror 관계를 중지합니다
+    url: "/upgrade-arl-manual/quiesce_snapmirror_relationships.html"
+  - title: netboot를 준비합니다
+    url: "/upgrade-arl-manual/prepare_for_netboot.html"
+- title: 2단계. 노드1을 재배치하거나 폐기합니다
+  entries:
+  - title: 개요
+    url: "/upgrade-arl-manual/stage_2_index.html"
+  - title: 노드 1에서 노드 2로 비루트 애그리게이트를 재배치합니다
+    url: "/upgrade-arl-manual/relocate_non_root_aggr_node1_node2.html"
+  - title: 노드 1이 소유한 NAS 데이터 LIF를 노드 2로 이동합니다
+    url: "/upgrade-arl-manual/move_nas_lifs_node1_node2.html"
+  - title: 노드1 정보를 기록합니다
+    url: "/upgrade-arl-manual/record_node1_information.html"
+  - title: 노드1을 폐기합니다
+    url: "/upgrade-arl-manual/retire_node1.html"
+- title: 3단계. 노드3을 설치하고 부팅합니다
+  entries:
+  - title: 개요
+    url: "/upgrade-arl-manual/stage_3_index.html"
+  - title: 노드3을 설치하고 부팅합니다
+    url: "/upgrade-arl-manual/install_boot_node3.html"
+  - title: 노드 3에 FC 또는 UTA/UTA2 구성을 설정합니다
+    url: "/upgrade-arl-manual/set_fc_uta_uta2_config_node3.html"
+  - title: 노드 1의 포트를 노드 3으로 매핑합니다
+    url: "/upgrade-arl-manual/map_ports_node1_node3.html"
+  - title: 노드3 설치를 확인합니다
+    url: "/upgrade-arl-manual/verify_node3_installation.html"
+  - title: 노드 1이 소유한 NAS 데이터 LIF를 노드 2에서 노드 3으로 이동하고 노드 3의 SAN LIF를 확인합니다
+    url: "/upgrade-arl-manual/move_nas_lifs_node1_from_node2_node3_verify_san_lifs_node3.html"
+  - title: 노드 2에서 노드 3으로 비루트 애그리게이트를 재배치합니다
+    url: "/upgrade-arl-manual/relocate_non_root_aggr_node2_node3.html"
+  - title: 노드 2가 소유한 NAS 데이터 LIF를 노드 3으로 이동합니다
+    url: "/upgrade-arl-manual/move_nas_lifs_node2_node3.html"
+- title: 4단계. 정보를 기록하고 노드2를 폐기합니다
+  entries:
+  - title: 개요
+    url: "/upgrade-arl-manual/stage_4_index.html"
+  - title: 노드2 정보를 기록합니다
+    url: "/upgrade-arl-manual/record_node2_information.html"
+  - title: 노드2를 폐기합니다
+    url: "/upgrade-arl-manual/retire_node2.html"
+- title: 5단계. 노드 4를 설치하고 부팅합니다
+  entries:
+  - title: 개요
+    url: "/upgrade-arl-manual/stage_5_index.html"
+  - title: 노드 4를 설치하고 부팅합니다
+    url: "/upgrade-arl-manual/install_boot_node4.html"
+  - title: 노드 4에 FC 또는 UTA/UTA2 구성을 설정합니다
+    url: "/upgrade-arl-manual/set_fc_uta_uta2_config_node4.html"
+  - title: 노드 2의 포트를 노드 4로 매핑합니다
+    url: "/upgrade-arl-manual/map_ports_node2_node4.html"
+  - title: 노드 4 설치를 확인합니다
+    url: "/upgrade-arl-manual/verify_node4_installation.html"
+  - title: 노드 2가 소유한 NAS 데이터 LIF를 노드 3에서 노드 4로 이동하고 노드 4의 SAN LIF를 확인합니다
+    url: "/upgrade-arl-manual/move_nas_lifs_node2_from_node3_node4_verify_san_lifs_node4.html"
+  - title: 노드 2의 루트 이외의 애그리게이트를 노드 3에서 노드 4로 이동합니다
+    url: "/upgrade-arl-manual/relocate_node2_non_root_aggr_node3_node4.html"
+- title: 6단계. 업그레이드를 완료합니다
+  entries:
+  - title: 개요
+    url: "/upgrade-arl-manual/stage_6_index.html"
+  - title: 새 컨트롤러가 올바르게 설정되었는지 확인합니다
+    url: "/upgrade-arl-manual/ensure_controllers_set_up_correctly.html"
+  - title: 새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다
+    url: "/upgrade-arl-manual/set_up_storage_encryption_new_controller.html"
+  - title: 새 컨트롤러 모듈에서 NetApp Volume Encryption 설정
+    url: "/upgrade-arl-manual/set_up_netapp_encryption_on_new_controller.html"
+  - title: 기존 시스템을 폐기합니다
+    url: "/upgrade-arl-manual/decommission_old_system.html"
+  - title: SnapMirror 작업을 재개합니다
+    url: "/upgrade-arl-manual/resume_snapmirror_ops.html"
+- title: 문제 해결
+  entries:
+  - title: 개요
+    url: "/upgrade-arl-manual/troubleshoot_index.html"
+  - title: 애그리게이트 재배치 실패
+    url: "/upgrade-arl-manual/aggregate_relocation_failures.html"
+  - title: 재부팅, 패닉 또는 전원 껐다 켜기
+    url: "/upgrade-arl-manual/reboots_panics_power_cycles.html"
+  - title: 절차의 여러 단계에서 발생할 수 있는 문제입니다
+    url: "/upgrade-arl-manual/issues_multiple_stages_of_procedure.html"
+  - title: LIF 마이그레이션 실패
+    url: "/upgrade-arl-manual/lif_migration_failure.html"
+  - title: 업그레이드 후 LIF가 잘못된 포트에 있습니다
+    url: "/upgrade-arl-manual/lifs_invalid_ports_after_upgrade.html"
+- title: 참조
+  url: "/upgrade-arl-manual/other_references.html"

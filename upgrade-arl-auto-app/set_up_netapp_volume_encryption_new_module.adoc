@@ -1,0 +1,72 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app/set_up_netapp_volume_encryption_new_module.html 
+keywords: set up, netapp volume encryption, controller, module, nve, node 
+summary: 교체된 컨트롤러 또는 새 컨트롤러의 HA 파트너가 NetApp Volume Encryption을 사용하는 경우 
+---
+= 새 컨트롤러 모듈에서 NetApp Volume Encryption 설정
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+교체된 컨트롤러 또는 새 컨트롤러의 HA 파트너가 NetApp Volume Encryption(NVE)을 사용하는 경우, NVE를 위한 새 컨트롤러 모듈을 구성해야 합니다.
+
+이 절차에는 새 컨트롤러 모듈에서 수행되는 단계가 포함됩니다. 올바른 노드에 명령을 입력해야 합니다.
+
+.단계
+. 키 관리 서버를 계속 사용할 수 있는지, 해당 상태 및 인증 키 정보를 확인합니다.
++
+[cols="30,70"]
+|===
+| 이 ONTAP 버전의 경우... | 이 명령 사용... 
+
+
+| ONTAP 9.6 이상 | '보안 키 관리자 키 쿼리 노드 
+
+
+| ONTAP 9.5 이하 | 보안 키 관리자 키 쇼 
+|===
+. 이전 단계에 나열된 키 관리 서버를 새 컨트롤러의 키 관리 서버 목록에 추가합니다.
++
+.. 키 관리 서버를 추가합니다.
++
+'Security key-manager-add <key_management_server_ip_address>'를 선택합니다
+
+.. 나열된 각 키 관리 서버에 대해 이전 단계를 반복합니다. 최대 4개의 키 관리 서버를 연결할 수 있습니다.
+.. 키 관리 서버가 성공적으로 추가되었는지 확인합니다.
++
+보안 키매니저 쇼
+
+
+
+. 새 컨트롤러 모듈에서 키 관리 설정 마법사를 실행하여 키 관리 서버를 설정하고 설치합니다.
++
+기존 컨트롤러 모듈에 설치된 것과 동일한 키 관리 서버를 설치해야 합니다.
+
++
+.. 새 노드에서 키 관리 서버 설정 마법사를 시작합니다.
++
+'Security key-manager setup-node <new_controller_name>'
+
+.. 마법사의 단계를 완료하여 키 관리 서버를 구성합니다.
+
+
+. 연결된 모든 키 관리 서버에서 새 노드로 인증 키 복원:
++
+[cols="30,70"]
+|===
+| 대상... | 이 명령 사용... 
+
+
+| 외부 키 관리자 | '보안 키 관리자 외부 복원' 이 명령에는 OKM 암호가 필요합니다 
+
+
+| 온보드 키 관리자(OKM) | 보안 키매니저 온보드 동기화 
+|===
+
+
+인증 키를 사용할 수 없거나 외부 키 관리 서버에 연결할 수 없어 오프라인 상태인 볼륨이 있는지 확인합니다. 볼륨 온라인 명령을 사용하여 볼륨을 다시 온라인으로 설정합니다.

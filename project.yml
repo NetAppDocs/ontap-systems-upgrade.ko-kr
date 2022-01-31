@@ -1,0 +1,59 @@
+---
+settings:
+  name: AFF and FAS Controller Upgrade
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: ko-kr,us-en,ja-jp,zh-cn
+sidebar:
+  entries:
+  - title: AFF 및 FAS 시스템 업그레이드 설명서
+    url: "/index.html"
+  - section: upgrade
+  - section: upgrade-arl
+homepage:
+  tiles:
+  - title: 시작하십시오
+    links:
+    - title: ONTAP 릴리즈 노트
+      url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508
+  - title: 스토리지 또는 볼륨(대부분의 시스템)을 이동하여 업그레이드
+    links:
+    - title: 컨트롤러 하드웨어를 업그레이드합니다
+      url: "/upgrade/upgrade-decide-to-use-this-guide.html"
+  - title: ONTAP 9.8 이상을 실행하는 시스템에서 애그리게이트를 이동하여 업그레이드
+    links:
+    - title: '"시스템 컨트롤러 교체" 명령 사용(AFF A700 ~ AFF A900)'
+      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/
+    - title: '"시스템 컨트롤러 교체" 명령 사용(대부분의 시스템)'
+      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/
+    - title: 수동 명령을 사용합니다
+      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/
+  - title: ONTAP 9.7 이하를 실행하는 시스템에서 애그리게이트를 이동하여 업그레이드
+    links:
+    - title: '"시스템 컨트롤러 교체" 명령 사용(대부분의 시스템)'
+      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/
+    - title: 수동 명령을 사용합니다
+      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/
+  - title: MetroCluster 구성에서 시스템을 업그레이드합니다
+    links:
+    - title: MetroCluster 구성에 대한 업그레이드 절차를 선택합니다
+      url: https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html
+  - title: 더 많은 리소스
+    links:
+    - title: ONTAP 시스템 설명서
+      url: https://docs.netapp.com/us-en/ontap-systems/index.html
+    - title: ONTAP 스위치 설명서
+      url: https://docs.netapp.com/us-en/ontap-systems-switches/index.html
+    - title: ONTAP 소프트웨어 설명서
+      url: https://docs.netapp.com/us-en/ontap/index.html
+    - title: NetApp Hardware Universe를 참조하십시오
+      url: https://hwu.netapp.com/
+    - title: NetApp Active IQ Config Advisor를 참조하십시오
+      url: https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor
+    - title: NetApp 상호 운용성 매트릭스
+      url: https://mysupport.netapp.com/matrix/#welcome
+    - title: NetApp 커뮤니티
+      url: https://community.netapp.com/t5/ONTAP-and-FAS/ct-p/fas-ontap-oncommand-and-related-plug-ins

@@ -1,0 +1,25 @@
+---
+permalink: upgrade/upgrade-by-moving-volumes-parent.html 
+sidebar: sidebar 
+keywords: upgrade by moving volumes 
+summary: 볼륨을 이동하여 업그레이드할 경우 원래 노드를 준비하고 새 노드를 클러스터에 연결합니다. 볼륨을 새 노드로 이동하고 LIF를 구성한 다음 클러스터에서 원래 노드의 연결을 해제합니다. 볼륨을 이동하여 업그레이드하는 무중단 절차는 무중단 절차와 같습니다. 
+---
+= 볼륨을 이동하여 컨트롤러 하드웨어 업그레이드
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+볼륨을 이동하여 업그레이드할 경우 원래 노드를 준비하고 새 노드를 클러스터에 연결합니다. 볼륨을 새 노드로 이동하고 LIF를 구성한 다음 클러스터에서 원래 노드의 연결을 해제합니다. 볼륨을 이동하여 업그레이드하는 무중단 절차는 무중단 절차와 같습니다.
+
+image::../upgrade/media/workflow_for_upgrading_by_moving_volumes.gif[볼륨을 이동하여 컨트롤러 하드웨어 업그레이드 워크플로우를 따릅니다]
+
+.단계
+. xref:upgrade-prepare-when-moving-volumes.adoc[볼륨을 이동할 때 업그레이드를 준비합니다]
+. xref:upgrade-install-and-join-new-nodes-move-vols.adoc[새 노드를 설치하고 이를 클러스터에 연결합니다]
+. xref:upgrade-create-aggregate-move-volumes.adoc[애그리게이트를 생성하고 볼륨을 새 노드로 이동합니다]
+. xref:upgrade-move-lifs-to-new-nodes.adoc[SAN이 아닌 데이터 LIF 및 클러스터 관리 LIF를 새로운 노드로 이동]
+. xref:upgrade_move_delete_recreate_san_lifs.adoc[SAN LIFS를 이동, 삭제 또는 생성합니다]
+. xref:upgrade-unjoin-original-nodes-move-volumes.adoc[클러스터에서 원래 노드의 연결을 해제합니다]
+. xref:upgrade-complete-move-volumes.adoc[업그레이드를 완료합니다]
+

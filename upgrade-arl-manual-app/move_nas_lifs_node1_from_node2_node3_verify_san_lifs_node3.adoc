@@ -1,0 +1,164 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual-app/move_nas_lifs_node1_from_node2_node3_verify_san_lifs_node3.html 
+keywords: move, nas, san, lif, ports, broadcast domain, node1, node2, node3 
+summary: 현재 노드 2에 있는 노드 1에 속하는 NAS 데이터 LIF를 노드 2에서 노드 3으로 이동해야 합니다. 노드 3의 SAN LIF도 확인해야 합니다. 
+---
+= 노드 1이 소유한 NAS 데이터 LIF를 노드 2에서 노드 3으로 이동하고 노드 3의 SAN LIF를 확인합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+노드 2에서 노드 3으로 애그리게이트를 재배치하려면 현재 노드 2에 있는 노드 1에 속하는 NAS 데이터 LIF를 노드 2에서 노드 3으로 이동해야 합니다. 노드 3의 SAN LIF도 확인해야 합니다.
+
+원격 LIF는 업그레이드 절차 중에 SAN LUN의 트래픽을 처리합니다. 업그레이드 중에 클러스터 또는 서비스 상태를 위해 SAN LIF를 이동할 필요가 없습니다. SAN LIF는 새 포트에 매핑되지 않으면 이동하지 않습니다. 노드 3을 온라인으로 설정한 후 LIF가 정상 작동하는지 확인합니다.
+
+.단계
+. [[step1]] 노드 중 하나에 다음 명령을 입력하고 출력을 캡처하여 node2가 소유하지 않는 모든 NAS 데이터 LIF를 나열합니다.
++
+'network interface show-role data-curr-node <node2>-is-home false-home-node <node3>'
+
+. [[step2]] 다음 작업 중 하나를 수행합니다.
++
+[cols="35,65"]
+|===
+| 노드 1인 경우 | 그러면... 
+
+
+| 인터페이스 그룹 또는 VLAN이 구성되어 있었습니다 | 로 이동합니다 <<man_lif_verify_3_step3,3단계>>. 
+
+
+| 인터페이스 그룹 또는 VLAN이 구성되지 않았습니다 | 3단계를 건너뛰고 로 이동합니다 <<man_lif_verify_3_step4,4단계>>. 
+|===
+. [[man_lif_verify_3_step3]] 다음 하위 단계를 수행하여 노드 2에서 노드 3으로 노드 1에 원래 있던 인터페이스 그룹 및 VLAN에 호스팅된 NAS 데이터 LIF를 모두 마이그레이션합니다.
++
+.. [[man_lif_verify_3_substa]] 인터페이스 그룹의 노드 1에 있던 노드 2에 호스팅된 데이터 LIF를 노드 3의 포트로 마이그레이션: 각 LIF에 대해 다음 명령을 한 번 입력하여 동일한 네트워크에서 LIF를 호스팅할 수 있습니다.
++
+'network interface migrate -vserver <vserver_name> -lif <LIF_name> -destination-node <node3> – destination-port <NetPort | ifgrp>'
+
+.. 에서 LIF의 홈 포트 및 홈 노드를 수정합니다 <<man_lif_verify_3_substepa,하위 단계 A>> 각 LIF에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
++
+'network interface modify -vserver <vserver_name> -lif <LIF_name> -home-node <node3> -home-port <NetPort | ifgrp>'
+
+.. [[man_lif_verify_3_substeepc]] 이전에 VLAN 포트의 노드 1에 속해 있던 노드 2에 호스팅된 데이터 LIF를 노드 3의 포트로 마이그레이션: 각 LIF에 대해 다음 명령을 한 번 입력하여 동일한 네트워크에서 LIF를 호스팅할 수 있습니다.
++
+'network interface migrate -vserver <vserver_name> -lif <LIF_name> -destination-node <node3> – destination-port <NetPort | ifgrp>'
+
+.. 에서 LIF의 홈 포트 및 홈 노드를 수정합니다 <<man_lif_verify_3_substepc,하위 단계 c>> 각 LIF에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
++
+'network interface modify -vserver <vserver_name> -lif <LIF_name> -home-node <node3> -home-port <NetPort | ifgrp>'
+
+
+
+. [[man_lif_verify_3_step4]] 다음 작업 중 하나를 수행합니다.
++
+[cols="25,75"]
+|===
+| 클러스터가 구성된 경우... | 그러면... 
+
+
+| NAS | 완료 <<man_lif_verify_3_step5,5단계>> 및 <<man_lif_verify_3_step6,6단계>>, 7단계를 건너뛰고 완료합니다 <<man_lif_verify_3_step8,8단계>> 부터 까지 <<man_lif_verify_3_step11,11단계>>. 
+
+
+| 산 | 업그레이드 시 노드의 모든 SAN LIF를 비활성화:'network interface modify -vserver <vserver_name> -lif <LIF_name> -home-node <node_to_upgrade> -home-port <NetPort|ifgrp> -status-admin down' 
+|===
+. [[man_lif_verify_3_step5]] 플랫폼에서 동일하지 않은 데이터 포트가 있는 경우 포트를 브로드캐스트 도메인에 추가합니다.
++
+'network port broadcast-domain add-ports-IPSpace <IPspace_name> - broadcast-domain mgmt-ports <node:port>'
+
++
+다음 예에서는 노드 "8200-1"의 포트 "e0a"와 노드 "8060-1"의 포트 "e0i"를 IPspace "Default"의 브로드캐스트 도메인 "mgmt"에 추가합니다.
+
++
+[listing]
+----
+cluster::> network port broadcast-domain add-ports -ipspace Default -broadcast-domain mgmt -ports 8200-1:e0a, 8060-1:e0i
+----
+. [[man_lif_verify_3_step6]] 각 LIF에 대해 다음 명령을 한 번 입력하여 각 NAS 데이터 LIF를 노드 3으로 마이그레이션합니다.
++
+'network interface migrate -vserver <vserver_name> -lif <LIF_name> -destination-node <node3> -destination-port <NetPort | ifgrp>'
+
+. [[man_lif_verify_3_step7]] 데이터 마이그레이션이 영구한지 확인합니다.
++
+'network interface modify -vserver <vserver_name> -lif <LIF_name> -home-port <NetPort | ifgrp> -home-node <node3>'
+
+. [[man_lif_verify_3_step8]] SAN LIF가 노드 3의 올바른 포트에 있는지 확인합니다.
++
+.. 다음 명령을 입력하고 출력을 검사합니다.
++
+'network interface show-data-protocol iscsi | fcp-home-node <node3>'
+
++
+시스템은 다음 예제와 유사한 출력을 반환합니다.
+
++
+[listing]
+----
+cluster::> net int show -data-protocol iscsi|fcp -home-node node3
+              Logical     Status      Network             Current        Current  Is
+ Vserver      Interface   Admin/Oper  Address/Mask        Node           Port     Home
+ -----------  ----------  ----------  ------------------  -------------  -------  ----
+ vs0
+              a0a         up/down     10.63.0.53/24       node3          a0a      true
+              data1       up/up       10.63.0.50/18       node3          e0c      true
+              rads1       up/up       10.63.0.51/18       node3          e1a      true
+              rads2       up/down     10.63.0.52/24       node3          e1b      true
+ vs1
+              lif1        up/up       172.17.176.120/24   node3          e0c      true
+              lif2        up/up       172.17.176.121/24   node3          e1a      true
+----
+.. 노드 3에 노드 1에 없는 포트에 있거나 다른 포트에 매핑해야 하는 SAN LIF 그룹 또는 SAN LIF가 있는 경우 다음 하위 단계를 완료하여 노드 3의 적절한 포트로 LIF를 이동합니다.
++
+... LIF 상태를 "아래쪽"으로 설정합니다.
++
+'network interface modify -vserver <vserver_name> -lif <LIF_name> -status -admin down'
+
+... 포트 세트에서 LIF를 제거합니다.
++
+' remove-vserver <vserver_name> - 포트셋 <포트셋_이름> -포트-이름 <포트_이름>'
+
+... 다음 명령 중 하나를 입력합니다.
++
+**** 단일 LIF 이동:
++
+'network interface modify -vserver <vserver_name> -lif <LIF_name> -home-port <new_home_port>'
+
+**** 존재하지 않거나 잘못된 단일 포트에 있는 모든 LIF를 새 포트로 이동:
++
+'network interface modify {-home-port <port_on_node1>-home-node <node1>-role data} - home-port <new_home_port_on_node3>'
+
+**** 포트 세트에 LIF를 다시 추가합니다.
++
+'<add-vserver_name> - 포트셋 <포트셋_이름> -포트-이름 <포트_이름>'
+
++
+
+NOTE: SAN LIF를 원래 포트와 동일한 링크 속도를 가진 포트로 이동해야 합니다.
+
+
+
+
+
+
+
+. 모든 LIF의 상태를 "Up"으로 수정하여 LIF가 노드에서 트래픽을 수락 및 전송할 수 있도록 합니다.
++
+'network interface modify -home-port <port_name> -home-node <node3> -lif data-status-admin up'
+
+. 두 노드 중 하나에서 다음 명령을 입력하고 출력을 검사하여 LIF가 올바른 포트로 이동되었으며, LIF가 두 노드 중 하나에 다음 명령을 입력하고 출력을 검사하여 "Up" 상태인지 확인하십시오.
++
+'network interface show-home-node <node3> - role data'
+
+. [[man_lif_verify_3_step11]]LIF가 다운된 경우 각 LIF에 대해 다음 명령을 한 번 입력하여 LIF의 관리 상태를 "Up"으로 설정하십시오.
++
+'network interface modify -vserver <vserver_name> -lif <LIF_name> -status -admin up'
+
+. 노드 1의 경우 업그레이드 후 AutoSupport 메시지를 NetApp에 보냅니다.
++
+'system node AutoSupport invoke -node <node3> -type all-message "node1이 <platform_old>에서 <platform_new>로 업그레이드되었습니다.
+
+

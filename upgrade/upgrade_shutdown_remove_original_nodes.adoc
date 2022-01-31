@@ -1,0 +1,126 @@
+---
+permalink: upgrade/upgrade-shutdown-remove-original-nodes.html 
+sidebar: sidebar 
+keywords:  
+summary: 원래 노드를 종료 및 제거할 때 업그레이드에 대한 AutoSupport 메시지를 보내고, 사서함을 제거하고, 노드의 전원을 끄고, 섀시를 제거해야 합니다. 
+---
+= 원래 노드를 종료합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+원래 노드를 종료 및 제거할 때 업그레이드에 대한 AutoSupport 메시지를 보내고, 사서함을 제거하고, 노드의 전원을 끄고, 섀시를 제거해야 합니다.
+
+.단계
+. node1과 node2에서 AutoSupport 메시지를 보내 업그레이드 기술 지원을 알립니다.
++
+'system node AutoSupport invoke - node node_name - type all - message "MAINT=2h platform_original에서 platform_new로 node_name 업그레이드
+
+. 노드 1과 노드 2에서 고가용성 또는 스토리지 페일오버 해제:
++
+[cols="1,2"]
+|===
+| 있는 경우... | 입력... 
+
+
+ a| 
+2노드 클러스터
+ a| 
+.. 클러스터 하 수정-구성 거짓
+.. 'storage failover modify -node_name -enabled false'
+
+
+
+
+ a| 
+2개 이상의 노드가 있는 클러스터
+ a| 
+'storage failover modify -node_name -enabled false'
+
+|===
+. 노드 중단:
++
+'system node halt-node node_name'입니다
+
++
+재부팅 프로세스 중에 '-ignore-quorum-warnings' 옵션을 사용하여 쿼럼 검사를 억제할 수 있습니다.
+
+. 아직 연결하지 않은 경우 시리얼 콘솔에 연결하십시오. 노드가 LOADER 프롬프트에 있어야 합니다. 'boot_ONTAP maint' 명령을 사용하여 유지보수 모드로 부팅합니다.
++
+파트너 노드가 다운되었는지 또는 파트너 노드에서 수동으로 테이크오버 기능을 해제할지 묻는 메시지가 나타날 수 있습니다. 계속하려면 "예"를 입력할 수 있습니다.
+
+. [[SHUTDOWN_NODE_STep5]] 유지보수 모드의 디스크 소유권 정보를 통해 얻은 각 원래 노드의 시스템 ID를 기록합니다.
++
+'디스크 쇼-v'
+
++
+원래 노드의 디스크를 새 노드에 할당할 때 시스템 ID가 필요합니다.
+
++
+[listing]
+----
+*> disk show -v
+Local System ID: 118049495
+DISK    OWNER               POOL    SERIAL NUMBER          HOME
+----    -----               ----    -------------          ----
+0a.33   node1 (118049495)   Pool0   3KS6BN970000973655KL   node1 (118049495)
+0a.32   node1 (118049495)   Pool0   3KS6BCKD000097363ZHK   node1 (118049495)
+0a.36   node1 (118049495)   Pool0   3KS6BL9H000097364W74   node1 (118049495)
+...
+----
+. FC 또는 CNA 포트 구성을 사용하는 경우, 유지보수 모드에서 구성을 표시합니다.
++
+'ucadmin 쇼'
+
++
+나중에 참조할 수 있도록 명령 출력을 기록해야 합니다.
+
++
+[listing]
+----
+*> ucadmin show
+Current Current Pending   Pending
+Adapter Mode    Type      Mode    Type    Status
+------- ------- --------- ------- ------- ------
+0e      fc      initiator -       -       online
+0f      fc      initiator -       -       online
+0g      cna     target    -       -       online
+0h      cna     target    -       -       online
+...
+----
+. 유지보수 모드에서 thenode1 및 node2 사서함을 제거합니다: +
++
+'데일박스 파기 지역
+
++
+콘솔에 다음과 유사한 메시지가 표시됩니다.
+
++
+[listing]
+----
+Destroying mailboxes forces a node to create new empty mailboxes, which
+clears any takeover state, removes all knowledge of out-of-date plexes and
+mirrored volumes, and will prevent management services from going online in
+2-node cluster HA configurations.
+Are you sure you want to destroy the local mailboxes?
+----
+. 다음과 유사한 프롬프트가 나타나면 y를 입력하여 사서함을 제거합니다.
++
+[listing]
+----
+.............Mailboxes destroyed
+Takeover On Reboot option will be set to ON after the node boots.
+This option is ON by default except on setups that have iSCSI or FCP license.
+Use "storage failover modify -node <nodename> -onreboot false" to turn it OFF.
+
+*>
+----
+. 유지 관리 모드 종료:
++
+"중지"
+
+. 노드 1과 노드 2의 전원을 끈 다음 전원에서 분리합니다.
+. 노드 1과 노드 2에서 모든 케이블을 레이블 지정하고 제거합니다.
+. 노드 1과 노드 2가 포함된 섀시를 제거합니다.
+

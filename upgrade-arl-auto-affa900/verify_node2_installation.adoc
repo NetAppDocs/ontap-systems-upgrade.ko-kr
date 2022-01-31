@@ -1,0 +1,196 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/verify_node2_installation.html 
+keywords: verifying, verify, node, install, installation, aff, a900, nvs, controller 
+summary: AFF A900 컨트롤러 모듈 및 NVS를 사용하여 node2 설치를 확인합니다. 
+---
+= 노드2 설치를 확인합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+AFF A900 컨트롤러 모듈 및 NVS를 사용하여 node2 설치를 확인해야 합니다. 물리적 포트는 변경되지 않으므로 AFF A700 노드 2의 물리적 포트를 AFF A900 노드 2로 매핑할 필요가 없습니다.
+
+AFF A900 컨트롤러 모듈을 사용하여 노드 1을 부팅한 후 올바르게 설치되었는지 확인해야 합니다. 노드 2가 쿼럼에 참가할 때까지 기다린 다음 컨트롤러 교체 작업을 다시 시작해야 합니다.
+
+절차의 이 시점에서 노드 2가 쿼럼에 조인되는 동안 작업이 일시 중지됩니다.
+
+.단계
+. 노드 2가 쿼럼에 연결되었는지 확인합니다.
++
+클러스터 표시 노드 노드2-필드 상태
+
++
+건강필드의 출력은 사실이어야 합니다.
+
+. 노드 2가 노드 1과 동일한 클러스터의 일부이고 정상 상태인지 확인합니다.
++
+'클러스터 쇼'
+
+. 고급 권한 모드로 전환:
++
+진일진일보한 것
+
+. 컨트롤러 교체 작업의 상태를 확인하고 해당 상태가 노드 2가 중지되기 전의 일시 중지 상태와 동일한지 확인하여 새 컨트롤러 설치 및 케이블 이동에 대한 물리적 작업을 수행합니다.
++
+'시스템 컨트롤러 교체 쇼
+
++
+'시스템 컨트롤러 교체 쇼 디테일
+
+. 컨트롤러 교체 작업을 재개합니다.
++
+시스템 컨트롤러 교체 재개
+
+. 컨트롤러 교체 작업이 중재를 위해 다음 메시지와 함께 일시 중지됩니다.
++
+[listing]
+----
+Cluster::*> system controller replace show
+Node          Status                       Error-Action
+------------  ------------------------     ------------------------------------
+Node2         Paused-for-intervention      Follow the instructions given in
+                                           Step Details
+Node1         None
+
+Step Details:
+--------------------------------------------
+To complete the Network Reachability task, the ONTAP network configuration must be manually adjusted to match the new physical network configuration of the hardware. This includes:
+
+
+1. Re-create the interface group, if needed, before restoring VLANs. For detailed commands and instructions, refer to the "Re-creating VLANs, ifgrps, and broadcast domains" section of the upgrade controller hardware guide for the ONTAP version running on the new controllers.
+2. Run the command "cluster controller-replacement network displaced-vlans show" to check if any VLAN is displaced.
+3. If any VLAN is displaced, run the command "cluster controller-replacement network displaced-vlans restore" to restore the VLAN on the desired port.
+2 entries were displayed.
+----
++
+
+NOTE: 이 가이드 섹션에서 _VLAN, ifgrp 및 브로드캐스트 도메인 다시 만들기_가 node2_에서 _Restore 네트워크 구성 으로 변경되었습니다.
+
+. 컨트롤러 교체가 일시 중지 상태인 경우 로 진행합니다 <<Restore network configuration on node2>>.
+
+
+
+
+== 노드2에서 네트워크 구성을 복원합니다
+
+노드 2가 쿼럼에 있고 노드 1과 통신할 수 있는지 확인한 후 노드 1의 VLAN, 인터페이스 그룹 및 브로드캐스트 도메인이 노드 2에 표시되는지 확인합니다. 또한 모든 node2 네트워크 포트가 올바른 브로드캐스트 도메인에 구성되어 있는지 확인합니다.
+
+VLAN, 인터페이스 그룹 및 브로드캐스트 도메인을 만들고 다시 만드는 방법에 대한 자세한 내용은 을 참조하십시오 link:other_references.html["참조"] 를 눌러 _Network Management_content에 연결합니다.
+
+.단계
+. 업그레이드된 노드 2에 있는 모든 물리적 포트 나열:
++
+네트워크 포트 show-node node2
+
++
+노드의 모든 물리적 네트워크 포트, VLAN 포트 및 인터페이스 그룹 포트가 표시됩니다. 이 출력에서는 ONTAP가 '클러스터' 브로드캐스트 도메인으로 이동한 모든 물리적 포트를 볼 수 있습니다. 이 출력을 사용하면 인터페이스 그룹 구성원 포트, VLAN 기본 포트 또는 LIF 호스팅을 위한 독립 실행형 물리적 포트로 사용할 포트를 쉽게 결정할 수 있습니다.
+
+. 클러스터의 브로드캐스트 도메인을 나열합니다.
++
+방송-도메인 쇼
+
+. 노드 2의 모든 포트에 대한 네트워크 포트 도달 가능 여부 나열:
++
+네트워크 포트 도달 가능성 표시 노드2
+
++
+다음 예제와 유사한 출력이 표시됩니다. 포트 및 브로드캐스트 이름은 다양합니다.
+
++
+[listing]
+----
+Cluster::*> network port reachability show -node local
+Node      Port     Expected Reachability                Reachability Status
+--------- -------- ------------------------------------ ---------------------
+Node2
+          e0M      Default:Mgmt                         no-reachability
+          e10a     Default:Default-3                    ok
+          e10b     Default:Default-4                    ok
+          e11a     Cluster:Cluster                      no-reachability
+          e11b     Cluster:Cluster                      no-reachability
+          e11c     -                                    no-reachability
+          e11d     -                                    no-reachability
+          e2a      Default:Default-1                    ok
+          e2b      Default:Default-2                    ok
+          e9a      Default:Default                      no-reachability
+          e9b      Default:Default                      no-reachability
+          e9c      Default:Default                      no-reachability
+          e9d      Default:Default                      no-reachability
+13 entries were displayed.
+----
++
+위 예제에서 노드 2는 컨트롤러 교체 후 쿼럼(quorum)으로 부팅되고 조인되었습니다. 여기에는 연결 기능이 없고 연결 가능성 검사를 대기 중인 여러 포트가 있습니다.
+
+. [[restore_node2_step4] 다음 명령을 사용하여 노드 2의 각 포트에 대해 다음 순서로 "ok" 이외의 도달 가능성 상태로 복구:
++
+'network port reachability repair-node_name-port port port_name'
+
++
+--
+.. 물리적 포트
+.. VLAN 포트
+
+
+--
++
+다음과 같은 출력이 표시됩니다.
+
++
+[listing]
+----
+Cluster ::> reachability repair -node node2 -port e9d
+----
++
+[listing]
+----
+Warning: Repairing port "node2:e9d" may cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
+----
++
+위에 표시된 것처럼, 현재 위치한 브로드캐스트 도메인의 도달 가능성 상태와 다를 수 있는 도달 가능성 상태의 포트에 대해 경고 메시지가 표시됩니다. 포트의 연결을 검토하고 필요에 따라 y 또는 n으로 대답합니다.
+
++
+모든 물리적 포트에 예상되는 도달 능력이 있는지 확인합니다.
+
++
+네트워크 포트 도달 가능성
+
++
+도달 가능성 복구가 수행되면 ONTAP는 포트를 올바른 브로드캐스트 도메인에 배치하려고 시도합니다. 그러나 포트의 도달 가능 여부를 확인할 수 없고 기존 브로드캐스트 도메인에 속하지 않는 경우 ONTAP는 이러한 포트에 대한 새 브로드캐스트 도메인을 만듭니다.
+
+. 포트 도달 가능성 확인:
++
+네트워크 포트 도달 가능성
+
++
+모든 포트가 올바르게 구성되어 정확한 브로드캐스트 도메인에 추가되면 네트워크 포트 도달 가능성 표시 명령은 연결된 모든 포트에 대한 도달 가능성 상태를 '확인'으로 보고하고 물리적 연결이 없는 포트에 대해서는 상태를 '사용 불가'로 보고해야 합니다. 이 두 포트가 아닌 다른 상태를 보고하는 포트가 있는 경우 의 지침에 따라 연결 가능성 복구를 수행하고 브로드캐스트 도메인에서 포트를 추가 또는 제거합니다 <<restore_node2_step4,4단계>>.
+
+. 모든 포트가 브로드캐스트 도메인에 배치되었는지 확인합니다.
++
+네트워크 포트 쇼
+
+. 브로드캐스트 도메인의 모든 포트에 올바른 MTU(Maximum Transmission Unit)가 구성되어 있는지 확인합니다.
++
+네트워크 포트 브로드캐스트 도메인 쇼
+
+. 복원 LIF 홈 포트: SVM 홈 포트 및 LIF 홈 포트(있는 경우)를 지정하고 다음 단계를 사용하여 복원해야 합니다.
++
+.. 대체된 LIF를 나열합니다.
++
+디시퍼인터페이스 쇼
+
+.. LIF 홈 노드 및 홈 포트를 복원합니다.
++
+disspled-interface restore-home-node-node_name-vserver vserver_name-lif-name LIF_name'입니다
+
+
+
+. 모든 LIF에 홈 포트가 있고 관리상 작동하는지 확인합니다.
++
+네트워크 인터페이스 show-fields home-port, status-admin
+
+

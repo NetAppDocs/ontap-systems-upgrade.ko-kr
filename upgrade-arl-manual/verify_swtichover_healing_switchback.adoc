@@ -1,0 +1,18 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/verify_swtichover_healing_switchback.html 
+keywords: verify,switchover, healing, switchback, negotiated, mcc, metrocluster 
+summary: 전환, 복구 및 스위치백 작업을 확인합니다. 
+---
+= 전환, 복구, 스위치백을 확인합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+MetroCluster 구성의 전환, 복구 및 스위치백 작업을 확인해야 합니다.
+
+을 참조하십시오 link:other_references.html["참조"] MetroCluster 관리 및 Disaster Recovery_content에 연결하고 협상된 전환, 복구 및 스위치백에 대한 절차를 따릅니다.

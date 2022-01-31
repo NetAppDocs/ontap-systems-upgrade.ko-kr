@@ -1,0 +1,100 @@
+---
+permalink: upgrade/upgrade-attach-shelves-reassign-disks.html 
+sidebar: sidebar 
+keywords: reassign, disk, belong, node1, node2, node3, node4, node, attach, storage, shelves, shelf, reassign, ownership, attach storage shelves reassign disk ownership 
+summary: 노드 1과 노드 2에 속한 디스크를 노드 3과 노드 4에 각각 재할당해야 합니다. 
+---
+= 스토리지 쉘프를 연결하고 디스크 소유권을 다시 할당합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+노드 1과 노드 2에 속한 디스크를 노드 3과 노드 4에 각각 재할당해야 합니다.
+
+다음 단계로 진행하기 전에 노드 3과 노드 4에서 이 섹션의 단계를 수행하고 노드 3과 노드 4의 각 단계를 완료한 다음,
+
+.단계
+. 노드 1/노드 2의 스토리지 쉘프 케이블을 노드 3/노드 4에 연결합니다. 전원 공급 장치 및 쉘프의 물리적 연결을 확인합니다.
+. node3 Loader 프롬프트에서 유지보수 모드로 부팅합니다.
++
+boot_ONTAP maint를 선택합니다
+
+. 노드 3의 시스템 ID를 표시합니다.
++
+'디스크 쇼-v'
+
++
+[listing]
+----
+*> disk show -v
+Local System ID: 101268854
+...
+----
++
+아래의 4단계에서 사용할 노드 3의 시스템 ID를 기록합니다.
+
+. 노드 1의 스페어 디스크, 루트 애그리게이트에 속한 디스크 및 데이터 애그리게이트를 재할당합니다.
++
+'디스크 재할당 - s_node1_sysid_-d_node3_sysid_-p_node2_sysid_'
+
++
+--
+** 매개 변수 '_node1_sysid_'은(는) 원본 노드 종료 _ 에 기록한 값입니다. link:upgrade-shutdown-remove-original-nodes.html#shutdown_node_step5["5단계"].
+** 공유 디스크가 있는 경우에만 매개 변수 '_-p partner_sysid_'를 지정합니다.
+
+
+[NOTE]
+====
+노드 2의 스페어 디스크, 루트 애그리게이트에 속한 디스크 및 데이터 애그리게이트를 재할당할 경우 명령은 다음과 같습니다.
+
+disk reassign -s node2_sysid -d node4_sysid -p node3_sysid
+
+====
+--
++
+다음과 유사한 메시지가 표시됩니다.
+
++
+[listing]
+----
+Partner node must not be in Takeover mode during disk reassignment from maintenance mode.
+Serious problems could result!!
+Do not proceed with reassignment if the partner is in takeover mode. Abort reassignment (y/n)?n
+
+After the node becomes operational, you must perform a takeover and giveback of the HA partner node to ensure disk reassignment is successful.
+Do you want to continue (y/n)?y
+----
+. 계속하려면 y를 입력하십시오.
++
+다음과 유사한 메시지가 표시됩니다.
+
++
+[listing]
+----
+The system displays the following message:
+Disk ownership will be updated on all disks previously belonging to Filer with sysid
+<sysid>.
+Do you want to continue (y/n)? y
+----
+. 계속하려면 y를 입력하십시오.
+. options 필드에서 node1의 루트 애그리게이트를 "root"로 설정하고 다른 애그리게이트는 온라인 상태인지 확인합니다.
++
+'기정 상태'입니다
+
++
+다음과 유사한 출력이 표시됩니다.
+
++
+[listing]
+----
+*> aggr status
+           Aggr State           Status                Options
+          aggr0 online          raid_dp, aggr         root
+                                64-bit
+----
+. 유지 관리 모드 종료:
++
+"중지"
+
+

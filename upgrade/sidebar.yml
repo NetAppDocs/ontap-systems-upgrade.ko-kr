@@ -1,0 +1,85 @@
+---
+section: upgrade
+title: 볼륨 또는 스토리지를 이동하여 업그레이드
+entries:
+- title: 개요
+  url: "/upgrade/upgrade-decide-to-use-this-guide.html"
+- title: 고려 사항
+  url: "/upgrade/upgrade-considerations.html"
+- title: 방법을 선택합니다
+  url: "/upgrade/upgrade-methods.html"
+- title: 스토리지를 이동하여 업그레이드
+  entries:
+  - title: 워크플로우
+    url: "/upgrade/upgrade-by-moving-storage-parent.html"
+  - title: 준비
+    url: "/upgrade/upgrade-prepare-when-moving-storage.html"
+  - title: 원래 노드를 종료합니다
+    url: "/upgrade/upgrade-shutdown-remove-original-nodes.html"
+  - title: 디스크 소유권을 제거합니다
+    url: "/upgrade/upgrade-remove-disk-ownership-new-nodes.html"
+  - title: 기본 구성을 재설정합니다
+    url: "/upgrade/upgrade-reset-default-configuration-node3-and-node4.html"
+  - title: 새 노드를 설치합니다
+    url: "/upgrade/upgrade-install-new-nodes.html"
+  - title: 새 노드 설정
+    url: "/upgrade/upgrade-set-up-new-nodes.html"
+  - title: 선택 사항 - 내부 스토리지를 이동하거나 드라이브 쉘프로 변환할 수 있습니다
+    entries:
+    - title: 선택
+      url: "/upgrade/upgrade-optional-move-internal-storage.html"
+    - title: 내부 드라이브를 이동합니다
+      url: "/upgrade/upgrade-move-internal-drives.html"
+    - title: 노드를 드라이브 쉘프로 변환할 수 있습니다
+      url: "/upgrade/upgrade-convert-node-to-shelf.html"
+  - title: 스토리지 쉘프를 연결하고 디스크 소유권을 다시 할당합니다
+    url: "/upgrade/upgrade-attach-shelves-reassign-disks.html"
+  - title: 루트 볼륨 구성을 복원합니다
+    url: "/upgrade/upgrade-restore-root-volume-config.html"
+  - title: 업그레이드를 완료합니다
+    entries:
+    - title: 개요
+      url: "/upgrade/upgrade-complete.html"
+      entries:
+      - title: ONTAP 9.8에서 완성
+        entries:
+        - title: 개요
+          url: "/upgrade/upgrade-complete-ontap-9-8.html"
+        - title: ONTAP 9.8을 사용하여 네트워크 포트를 매핑합니다
+          url: "/upgrade/upgrade-map-network-ports-ontap-9-8.html"
+        - title: ONTAP 9.8에서 마지막 단계를 수행합니다
+          url: "/upgrade/upgrade-final-upgrade-steps-in-ontap-9-8.html"
+      - title: ONTAP 9.7 이하에서 완료
+        entries:
+        - title: 개요
+          url: "/upgrade/upgrade-complete-ontap-9-7-or-earlier.html"
+        - title: ONTAP 9.7 이하를 사용하여 네트워크 포트를 매핑합니다
+          url: "/upgrade/upgrade-map-network-ports-ontap-9-7-or-earlier.html"
+        - title: ONTAP 9.7 이전 버전에서 최종 단계를 수행합니다
+          url: "/upgrade/upgrade-final-steps-ontap-9-7-or-earlier-move-storage.html"
+- title: 볼륨을 이동하여 업그레이드
+  entries:
+  - title: 워크플로우
+    url: "/upgrade/upgrade-by-moving-volumes-parent.html"
+  - title: 준비
+    url: "/upgrade/upgrade-prepare-when-moving-volumes.html"
+  - title: 새 노드를 설치하고 연결합니다
+    url: "/upgrade/upgrade-install-and-join-new-nodes-move-vols.html"
+  - title: Aggregate를 생성하고 볼륨을 이동합니다
+    url: "/upgrade/upgrade-create-aggregate-move-volumes.html"
+  - title: SAN이 아닌 데이터 LIF 및 클러스터 관리 LIF를 이동합니다
+    url: "/upgrade/upgrade-move-lifs-to-new-nodes.html"
+  - title: SAN LIFS를 이동, 삭제 또는 생성합니다
+    entries:
+    - title: 개요
+      url: "/upgrade/upgrade_move_delete_recreate_san_lifs.html"
+    - title: SAN LIF 이동을 위한 고려 사항
+      url: "/upgrade/upgrade_considerations_move_san_lifs.html"
+    - title: SAN LIF를 삭제합니다
+      url: "/upgrade/upgrade-delete-san-lifs.html"
+    - title: 새로운 SAN LIF를 생성하거나 삭제된 SAN LIF를 다시 생성하십시오
+      url: "/upgrade/upgrade_create_recreate_san_lifs.html"
+  - title: 원래 노드의 연결을 해제합니다
+    url: "/upgrade/upgrade-unjoin-original-nodes-move-volumes.html"
+  - title: 업그레이드를 완료합니다
+    url: "/upgrade/upgrade-complete-move-volumes.html"

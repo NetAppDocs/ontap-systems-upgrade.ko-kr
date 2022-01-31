@@ -1,0 +1,60 @@
+= 
+
+
+노드 2를 노드 4로 교체하려면 먼저 노드 2가 소유한 비 루트 애그리게이트를 노드 3으로 재배치해야 합니다.
+
+이전 단계의 사후 검사가 완료되면 노드 2의 리소스 해제가 자동으로 시작됩니다. 루트가 아닌 애그리게이트 및 non-SAN 데이터 LIF는 노드 2에서 노드 3으로 마이그레이션됩니다.
+
+원격 LIF는 업그레이드 절차 중에 SAN LUN의 트래픽을 처리합니다. 업그레이드 중에 클러스터 또는 서비스 상태를 위해 SAN LIF를 이동할 필요가 없습니다.
+
+Aggregate 및 LIF가 마이그레이션되면 검증 목적으로 작업이 일시 중지됩니다. 이 단계에서는 모든 비루트 애그리게이트 및 비 SAN 데이터 LIF가 노드 3으로 마이그레이션되는지 여부를 확인해야 합니다.
+
+
+NOTE: Aggregate 및 LIF의 홈 소유자는 수정되지 않으며 현재 소유자만 수정됩니다.
+
+.단계
+. 루트가 아닌 모든 애그리게이트가 온라인 상태이고 노드 3의 상태가 온라인인지 확인합니다.
++
+'Storage aggregate show-node <node3> - state online-root false'
+
++
+다음 예제에서는 노드 2의 루트 이외의 애그리게이트가 온라인 상태인 것을 보여 줍니다.
+
++
+....
+cluster::> storage aggregate show -node node3 state online -root false
+
+Aggregate      Size         Available   Used%   State   #Vols  Nodes  RAID     Status
+----------     ---------    ---------   ------  -----   -----  ------ -------  ------
+aggr_1         744.9GB      744.8GB      0%     online  5      node2  raid_dp  normal
+aggr_2         825.0GB      825.0GB      0%     online  1      node2  raid_dp  normal
+2 entries were displayed.
+....
++
+노드 3에서 애그리게이트가 오프라인 상태가 되거나 노드 3에서 외부 상태가 된 경우, 각 애그리게이트에 대해 노드 3의 다음 명령을 사용하여 애그리게이트를 온라인 상태로 전환합니다.
+
++
+'Storage aggregate online-aggregate <aggr_name>'
+
+. 노드 3에서 다음 명령을 사용하고 출력을 검사하여 노드 3에서 모든 볼륨이 온라인 상태인지 확인합니다.
++
+'volume show-node <node3> - state offline(볼륨 표시 노드 <node3> - 상태 오프라인)
+
++
+노드 3에서 오프라인 상태인 볼륨이 있는 경우 각 볼륨에 대해 한 번씩 노드 3에서 다음 명령을 사용하여 온라인으로 전환합니다.
+
++
+'volume online-vserver <vserver_name> - volume <volume_name>'
+
++
+이 명령에 사용할 `<vserver_name>'은 이전 'volume show' 명령의 출력에서 확인할 수 있습니다.
+
+. LIF가 올바른 포트로 이동되었으며 'Up' 상태인지 확인합니다. LIF가 하나라도 다운되면 각 LIF에 대해 다음 명령을 한 번 입력하여 LIF의 관리 상태를 '가동'으로 설정하십시오.
++
+'network interface modify -vserver <vserver_name> -lif <LIF_name> -home-node <node_name> -status-admin up'
+
+. 현재 데이터 LIF를 호스팅하는 포트가 새 하드웨어에 없으면 브로드캐스트 도메인에서 제거합니다.
++
+네트워크 포트 브로드캐스트 도메인 제거 포트
+
+

@@ -1,0 +1,165 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html 
+keywords: boot, nvs, controller, module, node1, aff, a700, a900 
+summary: AFF A900 컨트롤러 모듈 및 NVS로 노드 1을 부팅합니다. 
+---
+= AFF A900 컨트롤러 모듈 및 NVS로 노드 1을 부팅합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+AFF A900 컨트롤러 모듈 및 NVS를 사용하는 node1을 이제 부팅할 준비가 되었습니다. 컨트롤러 모듈과 NVS를 교체하여 AFF A700에서 AFF A900으로 업그레이드하려면 콘솔 및 관리 연결만 이동합니다. 이 섹션에서는 AFF A900 컨트롤러 모듈 및 NVS로 node1을 부팅하는 데 필요한 단계를 제공합니다.
+
+.단계
+. NSE(NetApp Storage Encryption)를 이 구성에서 사용 중인 경우 'setup bootarg.storageencryption.support' 명령을 'true'로 설정해야 하며, node1 구성이 로드된 후 부트 루프를 방지하려면 kmip.init.maxwait` 변수를 'off'로 설정해야 합니다.
++
+에테네 부타그 storageencryption.support true
+
++
+'셋프 kmip.init.maxwait off'
+
+. 노드를 BOOT_MENU로 부팅한다.
++
+boot_ontap 메뉴
+
+. 부팅 메뉴에서 노드가 중지됩니다. "22/7"을 입력하고 숨겨진 옵션 "boot_after_controller_replacement"를 선택합니다. AFF A700 노드 1 디스크를 AFF A900 노드 1에 재할당하려면 프롬프트에서 노드 1의 실제 노드 이름을 입력합니다. 다음 예제를 참조하십시오.
++
+[listing]
+----
+LOADER-A> boot_ontap menu
+.
+.
+<output truncated>
+.
+All rights reserved.
+*******************************
+*                             *
+* Press Ctrl-C for Boot Menu. *
+*                             *
+*******************************
+.
+<output truncated>
+.
+Please choose one of the following:
+
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? 22/7
+
+(22/7)                          Print this secret List
+(25/6)                          Force boot with multiple filesystem disks missing.
+(25/7)                          Boot w/ disk labels forced to clean.
+(29/7)                          Bypass media errors.
+(44/4a)                         Zero disks if needed and create new flexible root volume.
+(44/7)                          Assign all disks, Initialize all disks as SPARE, write DDR labels
+.
+.
+<output truncated>
+.
+.
+(wipeconfig)                        Clean all configuration on boot device
+(boot_after_controller_replacement) Boot after controller upgrade
+(boot_after_mcc_transition)         Boot after MCC transition
+(9a)                                Unpartition all disks and remove their ownership information.
+(9b)                                Clean configuration and initialize node with partitioned disks.
+(9c)                                Clean configuration and initialize node with whole disks.
+(9d)                                Reboot the node.
+(9e)                                Return to main boot menu.
+
+
+
+The boot device has changed. System configuration information could be lost. Use option (6) to restore the system configuration, or option (4) to initialize all disks and setup a new system.
+Normal Boot is prohibited.
+
+Please choose one of the following:
+
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? boot_after_controller_replacement
+
+This will replace all flash-based configuration with the last backup to disks. Are you sure you want to continue?: yes
+
+.
+.
+<output truncated>
+.
+.
+Controller Replacement: Provide name of the node you would like to replace:<nodename of the node being replaced>
+Changing sysid of node node1 disks.
+Fetched sanown old_owner_sysid = 536940063 and calculated old sys id = 536940063
+Partner sysid = 4294967295, owner sysid = 536940063
+.
+.
+<output truncated>
+.
+.
+varfs_backup_restore: restore using /mroot/etc/varfs.tgz
+varfs_backup_restore: attempting to restore /var/kmip to the boot device
+varfs_backup_restore: failed to restore /var/kmip to the boot device
+varfs_backup_restore: attempting to restore env file to the boot device
+varfs_backup_restore: successfully restored env file to the boot device wrote key file "/tmp/rndc.key"
+varfs_backup_restore: timeout waiting for login
+varfs_backup_restore: Rebooting to load the new varfs
+Terminated
+<node reboots>
+
+System rebooting...
+
+.
+.
+Restoring env file from boot media...
+copy_env_file:scenario = head upgrade
+Successfully restored env file from boot media...
+Rebooting to load the restored env file...
+.
+System rebooting...
+.
+.
+.
+<output truncated>
+.
+.
+.
+.
+WARNING: System ID mismatch. This usually occurs when replacing a boot device or NVRAM cards!
+Override system ID? {y|n} y
+.
+.
+.
+.
+Login:
+----
++
+[NOTE]
+====
+위의 콘솔 출력 예에서 시스템이 ADP(고급 디스크 파티셔닝) 디스크를 사용하는 경우 ONTAP에서 파트너 노드 이름을 묻는 메시지를 표시합니다.
+
+위의 예에 표시된 시스템 ID는 ID의 예입니다. 업그레이드하는 노드의 실제 시스템 ID는 다릅니다.
+
+프롬프트에 노드 이름을 입력하고 로그인 프롬프트에서 노드 이름을 입력하는 사이에 노드는 여러 번 재부팅하여 환경 변수를 복원하고, 시스템의 카드의 펌웨어를 업데이트하고, 다른 ONTAP 업데이트를 수행합니다.
+
+====
+

@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual-app/stage_3_index.html 
+keywords: relocate, retire, node1, steps 
+summary: 2단계에서는 노드1 애그리게이트와 LIF를 노드 2에 재배치하고 노드1 정보를 기록한 다음 노드 1을 폐기합니다. 
+---
+= 3단계. 노드3을 설치하고 부팅합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+3단계에서는 노드 3을 설치 및 부팅하고, 노드 1에서 노드 3으로 클러스터 및 노드 관리 포트를 매핑하고, 노드3 설치를 확인한 다음 노드 2에서 노드 3으로 노드 1에 속하는 데이터 LIF 및 SAN LIF를 이동합니다. 또한 노드 2에서 노드 3으로 모든 애그리게이트를 재배치하고 노드 2가 소유한 데이터 LIF 및 SAN LIF를 노드 3으로 이동합니다.
+
+.단계
+. link:install_boot_node3.html["노드3을 설치하고 부팅합니다"]
+. link:set_fc_uta_uta2_config_node3.html["노드 3에 FC 또는 UTA/UTA2 구성을 설정합니다"]
+. link:map_ports_node1_node3.html["노드 1의 포트를 노드 3으로 매핑합니다"]
+. link:move_nas_lifs_node1_from_node2_node3_verify_san_lifs_node3.html["노드 1이 소유한 NAS 데이터 LIF를 노드 2에서 노드 3으로 이동하고 노드 3의 SAN LIF를 확인합니다"]
+. link:relocate_non_root_aggr_node2_node3.html["노드 2에서 노드 3으로 비루트 애그리게이트를 재배치합니다"]
+. link:move_nas_lifs_node2_node3.html["노드 2가 소유한 NAS 데이터 LIF를 노드 3으로 이동합니다"]
+

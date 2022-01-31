@@ -1,0 +1,111 @@
+---
+permalink: upgrade/upgrade-final-upgrade-steps-in-ontap-9-8.html 
+sidebar: sidebar 
+keywords: complete, procedure, upgrading, upgrade, moving, move, storage, delete, unused, port, lif, re-enable, failover, availability, service, processor, sp, autosupport, volume, encryption, fc, cna, perform final upgrade steps in ontap 9.8 
+summary: '스토리지를 이동하여 업그레이드 절차를 완료하려면 새 노드에서 사용되지 않는 포트 및 LIF를 삭제하고, 스토리지 페일오버 또는 고가용성을 다시 설정하고, 서비스 프로세서(SP\)를 구성하고, 새 라이센스를 설치하고, AutoSupport를 설정해야 합니다. 스토리지 또는 볼륨 암호화를 설정하고 FC 또는 CNA 포트를 구성해야 할 수도 있습니다.' 
+---
+= ONTAP 9.8에서 최종 업그레이드 단계를 수행합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+스토리지를 이동하여 업그레이드 절차를 완료하려면 새 노드에서 사용되지 않는 포트 및 LIF를 삭제하고, 스토리지 페일오버 또는 고가용성을 재설정하고, 서비스 프로세서(SP)를 구성하고, 새 라이센스를 설치하고, AutoSupport를 설정해야 합니다. 스토리지 또는 볼륨 암호화를 설정하고 FC 또는 CNA 포트를 구성해야 할 수도 있습니다.
+
+다음 단계는 ONTAP 9.8을 실행하는 시스템에 적용됩니다. ONTAP 9.7 이하를 실행하는 경우 의 절차를 사용해야 합니다 xref:upgrade-final-steps-ontap-9-7-or-earlier-move-storage.adoc[ONTAP 9.7 이전 버전에서 최종 업그레이드 단계 수행].
+
+.단계
+. 시스템에서 ONTAP 9.7 이하를 실행 중인 경우 * STOP * 을 사용합니다. 의 절차를 사용해야 합니다 xref:upgrade-final-steps-ontap-9-7-or-earlier-move-storage.adoc[ONTAP 9.7 이전 버전에서 최종 업그레이드 단계 수행].
+. 스토리지 시스템 프롬프트에서 LIF에 대한 정보를 표시합니다.
++
+네트워크 인터페이스 쇼
+
+. SAN 환경을 사용하는 경우 포트 세트에서 사용하지 않는 LIF를 삭제하여 제거할 수 있도록 합니다.
++
+.. 포트 세트 목록을 표시합니다.
++
+LUN show 포트셋
+
+.. 포트 세트에서 사용하지 않은 LIF를 제거합니다.
++
+LUN remove 포트셋
+
+
+
+. 사용되지 않는 각 LIF를 새 노드에서 제거합니다.
++
+네트워크 인터페이스 삭제
+
+. 필요에 따라 새 노드 쌍에서 스토리지 페일오버 또는 고가용성을 다시 설정합니다.
++
+[cols="1,2"]
+|===
+| 있는 경우... | 그러면... 
+
+
+ a| 
+2노드 클러스터
+ a| 
+High-enable high availability: 'cluster ha modify - configured true'
+
+
+
+ a| 
+2개 이상의 노드가 있는 클러스터
+ a| 
+스토리지 페일오버 다시 설정: 'storage failover modify -node_name -enabled true'
+
+|===
+. 필요에 따라 새 노드에서 SP를 구성합니다.
++
+'시스템 서비스 프로세서 네트워크 수정
+
+. 필요에 따라 새 노드에 새 라이센스 설치:
++
+'시스템 사용권 추가'
+
+. 새 노드에서 AutoSupport 설정:
++
+'시스템 노드 AutoSupport 수정
+
+. 각 새 노드에서 업그레이드 후 AutoSupport 메시지를 기술 지원 팀에 보냅니다.
++
+'system node AutoSupport invoke - node_name -type all -message "maINT=end node_name successfully 업그레이드된 플랫폼_old에서 플랫폼_new로"
+
+. 의 적절한 절차를 사용하여 스토리지 또는 볼륨 암호화 기능을 복원합니다 https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["CLI를 사용하여 암호화를 관리합니다"^] 콘텐츠.
++
+온보드 키 관리를 사용하는지 또는 외부 키 관리를 사용하는지 여부에 따라 다음 절차 중 하나를 사용하십시오.
+
++
+** "'온보드 키 관리 암호화 키 복원'"
+** "'외부 키 관리 암호화 키 복원'"
+
+
+. 새 노드에 FC 포트(온보드 또는 FC 어댑터), 온보드 CNA 포트 또는 CNA 카드가 있는 경우 스토리지 시스템 프롬프트에 다음 명령을 입력하여 FC 또는 CNA 포트를 구성합니다.
++
+'시스템 노드 하드웨어 unified-connect modify -node -name -adapter -name -mode{fc|CNA} -type {target|initiator}'
+
++
+link:https://docs.netapp.com/us-en/ontap/san-admin/index.html["CLI를 통한 SAN 관리"^]
+
++
+CNA 어댑터가 오프라인 상태인 경우에만 CNA 구성을 수정할 수 있습니다.
+
+. 필요한 경우 새 노드에서 스위치가 없는 클러스터를 설정합니다.
++
+https://library.netapp.com/ecm/ecm_download_file/ECMP1140536["Cisco 클러스터 스위치를 사용하여 2노드 스위치 클러스터로 마이그레이션"^]
+
++
+https://library.netapp.com/ecm/ecm_download_file/ECMP1140535["NetApp CN1610 클러스터 스위치를 사용하여 2노드 스위치 클러스터로 마이그레이션"^]
+
+. 필요에 따라 NetApp Support 사이트를 통해 원래 시스템의 서비스를 중지하고 시스템을 더 이상 운영되지 않으며 지원 데이터베이스에서 제거할 수 있음을 NetApp에 알립니다.
++
+.. 에 로그인합니다 https://mysupport.netapp.com/site/global/dashboard["NetApp 지원"^] 사이트.
+.. My Installed Systems * 링크를 클릭합니다.
+.. 설치된 시스템 페이지에서 양식에 이전 시스템의 일련 번호를 입력한 다음 * GO! * 를 클릭합니다
+.. 서비스 해제 양식 페이지에서 양식을 작성하고 * 제출 * 을 클릭합니다.
+
+
+
+
+업그레이드 절차가 완료되었습니다.

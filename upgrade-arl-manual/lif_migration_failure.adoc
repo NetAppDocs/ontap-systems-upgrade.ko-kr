@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/lif_migration_failure.html 
+keywords: lif, migration, failure, error, troubleshoot 
+summary: LIF 마이그레이션 실패 
+---
+= LIF 마이그레이션 실패
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+LIF를 마이그레이션한 후에는 2단계, 3단계 또는 5단계에서 마이그레이션한 후 온라인으로 전환되지 않을 수 있습니다.
+
+.단계
+. 포트 MTU 크기가 소스 노드의 크기와 같은지 확인합니다.
++
+예를 들어, 소스 노드에서 클러스터 포트 MTU 크기가 9000인 경우 대상 노드에서 9000이어야 합니다.
+
+. 포트의 물리적 상태가 "다운"인 경우 네트워크 케이블의 물리적 연결을 확인합니다.
+

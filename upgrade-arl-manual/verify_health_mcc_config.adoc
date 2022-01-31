@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/verify_health_mcc_config.html 
+keywords: health, mcc, metrocluster, configuration, configure 
+summary: MetroCluster 구성 상태를 점검하여 올바르게 작동하는지 확인하십시오. 
+---
+= MetroCluster 구성의 상태를 확인합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+MetroCluster 구성 상태를 점검하여 올바르게 작동하는지 확인해야 합니다.
+
+.단계
+. MetroCluster 구성 요소가 정상인지 확인합니다.
++
+'MetroCluster check run
+
++
+[listing]
+----
+cluster_A::> metrocluster check run
+
+Last Checked On: 10/1/2017 16:03:37
+
+Component           Result
+------------------- ---------
+nodes               ok
+lifs                ok
+config-replication  ok
+aggregates          ok
+4 entries were displayed.
+
+Command completed. Use the "metrocluster check show -instance" command or sub-commands in "metrocluster check" directory for detailed results.
+To check if the nodes are ready to do a switchover or switchback operation, run "metrocluster switchover -simulate" or "metrocluster switchback -simulate", respectively.
+----
+. 상태 경고가 없는지 확인합니다.
++
+'시스템 상태 경고 표시
+
+

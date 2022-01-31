@@ -1,0 +1,64 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto/guidelines_for_upgrading_controllers_with_arl.html 
+keywords: upgrade, controllers, guidelines, ARL, aggregate relocation, supported upgrades, two-node, cluster, troubleshoot 
+summary: ONTAP 9.5를 실행하는 컨트롤러 쌍을 ONTAP 9.7로 업그레이드하려면 원래 컨트롤러와 교체 컨트롤러 모두의 플랫폼 및 구성에 따라 다릅니다. 
+---
+= ARL을 사용한 컨트롤러 업그레이드 지침
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ARL(Aggregate Relocation)을 사용하여 ONTAP 9.5를 실행하는 컨트롤러 쌍을 ONTAP 9.7로 업그레이드할 수 있는지 여부를 이해하려면 플랫폼 및 원래 컨트롤러와 교체 컨트롤러 모두의 구성에 따라 다릅니다.
+
+
+
+== ARL에 대한 업그레이드가 지원됩니다
+
+ONTAP 9.5에 대한 이 ARL 절차를 사용하여 노드 쌍을 ONTAP 9.7로 업그레이드할 때 원본 및 교체 컨트롤러에서 ARL을 수행할 수 있는지 확인해야 합니다.
+
+정의된 모든 애그리게이트의 크기와 원래 시스템에서 지원하는 디스크 수를 확인해야 합니다. 그런 다음 지원되는 애그리게이트 크기와 디스크 수를 새 시스템에서 지원하는 애그리게이트 크기 및 디스크 수와 비교해야 합니다. 을 참조하십시오 link:other_references.html["참조"] 이 정보를 사용할 수 있는 _Hardware Universe_에 대한 링크. 새 시스템에서 지원하는 디스크 수와 애그리게이트 크기는 원래 시스템에서 지원하는 디스크 수와 같거나 그보다 커야 합니다.
+
+클러스터 혼합 규칙에서 원래 컨트롤러를 교체할 때 새 노드가 기존 노드와 클러스터의 일부가 될 수 있는지 확인해야 합니다. 클러스터 혼합 규칙에 대한 자세한 내용은 를 참조하십시오 link:other_references.html["참조"] Hardware Universe_에 대한 링크
+
+
+NOTE: AFF 시스템 업그레이드를 수행하기 전에 ONTAP를 릴리스 버전 9.5P1 이상으로 업그레이드해야 합니다. 성공적인 업그레이드를 위해서는 이러한 릴리즈 수준이 필요합니다.
+
+
+NOTE: 내부 드라이브(예: FAS2700 또는 AFF A250)를 지원하지만 내부 드라이브가 없는 시스템을 업그레이드하는 경우 을 참조하십시오 link:other_references.html["참조"] 및 _Aggregate Relocation 의 절차에 따라 사용 중인 ONTAP 버전에 맞는 컨트롤러 Hardware_content를 수동으로 업그레이드하십시오.
+
+ARL을 사용한 컨트롤러 업그레이드는 SnapLock Enterprise 및 SnapLock Compliance 볼륨으로 구성된 시스템에서 지원됩니다.
+
+
+
+== 스위치가 없는 2노드 클러스터
+
+스위치가 없는 2노드 클러스터에서 노드를 업그레이드할 경우 업그레이드를 수행하는 동안 스위치가 없는 클러스터에 노드를 그대로 둘 수 있습니다. 이러한 LUN을 스위치 클러스터로 변환할 필요는 없습니다.
+
+
+
+== ARL에 대한 업그레이드가 지원되지 않습니다
+
+다음 업그레이드는 수행할 수 없습니다.
+
+* 원래 컨트롤러에 연결된 디스크 쉘프를 지원하지 않는 컨트롤러 교체
++
+을 참조하십시오 link:other_references.html["참조"] 디스크 지원 정보를 위해 _Hardware Universe_에 연결하려면.
+
+* 내장 드라이브가 있는 엔트리 레벨 컨트롤러(예: FAS 2500).
++
+내부 드라이브를 사용하여 엔트리 레벨 컨트롤러를 업그레이드하려면 를 참조하십시오 link:other_references.html["참조"] 볼륨 또는 스토리지를 이동하여 _ 업그레이드 에 연결하고 _ 볼륨 _ 을(를) 이동하여 clustered Data ONTAP을 실행하는 노드 쌍 업그레이드 절차로 이동합니다.
+
+
+
+
+
+== 문제 해결
+
+컨트롤러를 업그레이드하는 동안 문제가 발생하면 을 참조하십시오 link:troubleshoot.html["문제 해결"] 자세한 내용 및 가능한 해결 방법은 절차 끝 부분의 섹션을 참조하십시오.
+
+발생한 문제에 대한 해결책을 찾을 수 없는 경우 기술 지원 부서에 문의하십시오.

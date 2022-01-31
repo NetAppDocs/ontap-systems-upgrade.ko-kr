@@ -1,0 +1,6 @@
+= 
+
+
+노드 4에 온보드 FC 포트, 온보드 UTA/UTA2(Unified Target Adapter) 포트 또는 UTA/UTA2 카드가 있는 경우, 나머지 절차를 완료하기 전에 설정을 구성해야 합니다.
+
+를 완료해야 할 수도 있습니다 <<Configure FC ports on node4>> 섹션, 을 참조하십시오 <<Check and configure UTA/UTA2 ports on node4>>또는 두 섹션을 모두 선택합니다.

@@ -1,0 +1,31 @@
+---
+permalink: upgrade/upgrade-convert-node-to-shelf.html 
+sidebar: sidebar 
+keywords: node, support, model, process, upgrading, upgrade, moving, move, convert, drive, shelf, attach, convert an original node to a drive shelf 
+summary: 원래 노드가 지원되는 모델 중 하나인 경우 스토리지를 이동하여 업그레이드하는 동안 노드를 드라이브 쉘프로 변환한 다음, 같은 클러스터의 새 노드에 연결할 수 있습니다. 
+---
+= 원래 노드를 드라이브 쉘프로 변환할 수 있습니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+원래 노드가 지원되는 모델 중 하나인 경우 스토리지를 이동하여 업그레이드하는 동안 노드를 드라이브 쉘프로 변환한 다음, 같은 클러스터의 새 노드에 연결할 수 있습니다.
+
+검토를 완료해야 합니다 link:upgrade-considerations.html["컨트롤러 하드웨어 업그레이드에 대한 고려 사항"] 노드를 드라이브 쉘프로 변환하는 방법에 대해 설명합니다. 구성에 대한 지침이 필요한 경우 기술 지원 부서에 문의해야 합니다.
+
+.단계
+. 변환하려는 노드의 컨트롤러 모듈을 적절한 IOM 모듈로 교체합니다.
++
+https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
+
+. 드라이브 쉘프 ID를 설정합니다.
++
+섀시를 포함한 각 드라이브 쉘프에 고유 ID가 필요합니다.
+
+. 필요에 따라 다른 드라이브 쉘프 ID를 재설정하십시오.
+. 새 노드에 연결된 드라이브 쉘프의 전원을 끈 다음 새 노드의 전원을 끕니다.
+. 변환된 드라이브 쉘프를 새 시스템의 SAS 포트에 연결하고, 아웃오브밴드 ACP 케이블을 사용하는 경우 새 노드의 ACP 포트에 연결합니다.
+. 변환된 드라이브 쉘프 및 새 노드에 연결된 다른 드라이브 쉘프의 전원을 켭니다.
+. 새 노드의 전원을 켠 다음 Ctrl+C를 눌러 각 노드의 부팅 프로세스를 중단함으로써 부팅 환경 프롬프트에 액세스합니다.
+

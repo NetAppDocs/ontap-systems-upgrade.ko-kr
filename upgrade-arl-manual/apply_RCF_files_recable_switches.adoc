@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/apply_RCF_files_recable_switches.html 
+keywords: rcf files, reference configuration, switches, nodes, recable, fc 
+summary: 새로운 노드를 수용하기 위해 적절한 RCF 파일을 적용하여 스위치를 재구성합니다. 
+---
+= RCF 파일을 적용하고 스위치를 재전송할 수 있습니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+새로운 노드를 수용하기 위해 스위치를 재구성하기 위해 적절한 RCF(Reference Configuration) 파일을 적용해야 합니다. RCF 파일을 적용한 후 스위치를 다시 사용할 수 있습니다.
+
+FC 스위치 포트 사용은 RCFs를 사용할 수 있도록 _fFabric-Attached MetroCluster 설치 및 Configuration_content에 설명된 사용량과 일치해야 합니다. 로 이동합니다 link:other_references.html["참조"] 를 눌러 _패브릭 연결 MetroCluster 설치 및 구성_내용에 연결합니다.
+
+.단계
+. 구성에 사용할 RCF 파일을 찾습니다.
++
+사용 중인 스위치 모델에 맞는 RCF 파일을 사용해야 합니다.
+
++
+link:http://mysupport.netapp.com/NOW/download/software/metrocluster_brocade/sanswitch/index.shtml["NetApp 다운로드: Brocade 스위치용 MetroCluster 구성 파일"]
+
++
+link:http://mysupport.netapp.com/NOW/download/software/metrocluster_cisco/sanswitch/index.shtml["NetApp 다운로드: Cisco 스위치용 MetroCluster 구성 파일"]
+
+. RCF 파일을 * 다운로드 * 페이지의 지침에 따라 적용하고 필요에 따라 ISL 설정을 조정합니다.
+. 스위치 구성이 저장되었는지 확인합니다.
+. 에서 만든 케이블링 레이아웃을 사용하여 FC-SAS 브리지를 FC 스위치에 연결합니다 link:determine_new_cabling_layout.html["새 케이블 연결 레이아웃을 확인합니다"].
+. 포트가 온라인 상태인지 확인합니다.
++
+** Brocade 스위치의 경우 'switchshow' 명령을 사용합니다.
+** Cisco 스위치의 경우 show 'interface brief' 명령어를 사용한다.
+
+
+. FC-VI 포트를 컨트롤러에서 스위치로 케이블로 연결합니다.
+. 기존 노드에서 FC-VI 포트가 온라인 상태인지 확인합니다.
++
+MetroCluster 상호 연결 어댑터가 표시됩니다
+
++
+MetroCluster 상호 연결 미러 쇼
+
+

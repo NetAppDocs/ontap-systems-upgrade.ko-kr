@@ -1,0 +1,21 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/stage_4_index.html 
+keywords: stage4, record, node2, information, retire 
+summary: 4단계에서는 노드2 정보를 기록한 다음 노드2를 폐기합니다. 
+---
+= 4단계. 노드2 정보를 기록하고 노드2를 폐기합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+4단계에서는 노드2 정보를 기록한 다음 노드2를 폐기합니다.
+
+.단계
+. link:record_node2_information.html["노드2 정보를 기록합니다"]
+. link:retire_node2.html["노드2를 폐기합니다"]
+

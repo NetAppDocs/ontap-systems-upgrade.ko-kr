@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/restore_key_manager_config_node2.html 
+keywords: restore key-manager, configuration, node1, nve, arl, volume, encryption 
+summary: 'NVE(NetApp Volume Encryption)를 사용하여 업그레이드된 시스템의 볼륨을 암호화하는 경우 암호화 구성을 새 노드에 동기화합니다.' 
+---
+= 노드 2에서 키 관리자 구성을 복원합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NVE(NetApp Volume Encryption)를 사용하여 업그레이드 중인 시스템의 볼륨을 암호화하는 경우 암호화 구성을 새 노드와 동기화해야 합니다. 노드 2에서 노드 1로 노드 1 애그리게이트에 대한 ARL이 완료되면 암호화된 볼륨이 오프라인 상태로 전환됩니다.
+
+다음 단계를 수행하여 암호화 구성을 새 노드에 동기화합니다.
+
+.단계
+. 클러스터 프롬프트에서 다음 명령을 사용하여 OKM의 암호화 구성을 동기화합니다.
++
+보안 키매니저 온보드 동기화
+
+. OKM의 클러스터 전체 암호를 입력합니다.
+

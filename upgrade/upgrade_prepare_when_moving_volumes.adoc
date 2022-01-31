@@ -1,0 +1,50 @@
+---
+permalink: upgrade/upgrade-prepare-when-moving-volumes.html 
+sidebar: sidebar 
+keywords: perform, preparation, upgrading, upgrade, controller, hardware, moving, move, volume, prepare for the upgrade when moving volumes 
+summary: 볼륨을 이동하여 컨트롤러 하드웨어를 업그레이드하기 전에 몇 가지 준비 단계를 수행해야 합니다. 
+---
+= 볼륨을 이동할 때 업그레이드를 준비합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+볼륨을 이동하여 컨트롤러 하드웨어를 업그레이드하기 전에 몇 가지 준비 단계를 수행해야 합니다.
+
+.단계
+. 원래 노드에 볼륨을 표시합니다.
++
+'볼륨 쇼'
+
++
+명령 출력을 사용하여 새 노드로 이동할 볼륨 목록을 준비할 수 있습니다.
+
+. 원래 노드의 라이센스 정보를 표시하고 기록합니다.
++
+'시스템 사용권 프로그램'
+
+. 원래 노드에서 스토리지 암호화를 사용하고 새 노드에 암호화가 활성화된 디스크가 있는 경우 원래 노드의 디스크가 올바르게 입력되었는지 확인합니다.
++
+.. SED(자체 암호화 디스크)에 대한 정보 표시:
++
+스토리지 암호화 디스크 표시
+
+.. 비제조 보안 ID(비 MSID) 키와 연결된 디스크가 있는 경우 MSID 키로 키를 다시 입력하다
++
+스토리지 암호화 디스크 수정
+
+
+
+. 현재 클러스터가 스위치가 없는 2노드 구성에 있는 경우, 원하는 스위치 유형을 사용하여 클러스터를 2노드 스위치가 있는 클러스터로 마이그레이션합니다.
++
+https://library.netapp.com/ecm/ecm_download_file/ECMP1140536["Cisco 클러스터 스위치를 사용하여 2노드 스위치 클러스터로 마이그레이션"^]
+
++
+https://library.netapp.com/ecm/ecm_download_file/ECMP1140535["NetApp CN1610 클러스터 스위치를 사용하여 2노드 스위치 클러스터로 마이그레이션"^]
+
+. 각 원본 노드에서 AutoSupport 메시지를 보내 기술 지원 팀에 업그레이드에 대해 알립니다.
++
+'System node AutoSupport invoke - node_name - type all - message "Upgrading node_name from platform_original to platform_new"
+
+

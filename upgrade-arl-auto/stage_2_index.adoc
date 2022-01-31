@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto/stage_2_index.html 
+keywords: Prepare nodes for upgrade, storage encryption, KMS, key management server, 
+summary: 1단계 사전 점검 중에 업그레이드를 위해 노드를 준비하고 일련의 사전 점검을 실행해야 합니다. 
+---
+= 2단계. 노드1을 재배치하거나 폐기합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+2단계에서는 노드1 애그리게이트와 LIF를 노드 2에 재배치하고 노드1 정보를 기록한 다음 노드 1을 폐기합니다. 이 프로세스는 대부분 자동화되어 있으며 사용자가 상태를 확인할 수 있도록 작업이 일시 중지됩니다. 작업을 수동으로 재개해야 합니다.
+
+.단계
+. link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치합니다"]
+. link:relocate_failed_or_vetoed_aggr.html["장애가 발생하거나 거부권을 행사한 Aggregate를 재배치합니다"]
+. link:retire_node1.html["노드1을 폐기합니다"]
+. link:prepare_for_netboot.html["netboot를 준비합니다"]
+

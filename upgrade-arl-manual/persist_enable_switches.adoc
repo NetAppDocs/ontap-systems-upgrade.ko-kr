@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/persist_enable_switches.html 
+keywords: enable, switches, fabric, persistent 
+summary: Fabric의 스위치를 영구적으로 사용할 수 있도록 Brocade, Cisco를 사용합니다 
+---
+= 스위치를 영구적으로 활성화합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Fabric에서 스위치를 영구적으로 활성화해야 합니다.
+
+스위치를 영구적으로 활성화합니다.
+
+* Brocade 스위치의 경우 'witchCfgPersistentenable' 명령을 사용합니다.
++
+[listing]
+----
+FC_switch_A_1:admin> switchCfgPersistentenable
+----
+* Cisco 스위치의 경우 no suspend 명령을 사용합니다.
++
+[listing]
+----
+vsan [vsna #]no suspend
+----
+

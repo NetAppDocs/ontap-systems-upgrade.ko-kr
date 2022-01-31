@@ -1,0 +1,35 @@
+= 
+
+
+. 'MetroCluster check run' 작업이 완료된 후 결과를 확인한다.
++
+MetroCluster 체크 쇼
+
++
+약 5분 후 다음 결과가 표시됩니다.
+
++
+[listing]
+----
+metrocluster_siteA::*> metrocluster check show
+Last Checked On: 4/7/2019 21:15:05
+Component            Result
+---------------      -------
+nodes                ok
+lifs                 ok
+config-replication   ok
+aggregates           warning
+clusters             ok
+connections          not-applicable
+volumes              ok
+7 entries were displayed.
+----
+. 실행 중인 MetroCluster 점검 작업의 상태를 점검한다.
++
+MetroCluster 운용사 show-job-id 38
+
+. 상태 경고가 없는지 확인합니다.
++
+'시스템 상태 경고 표시
+
+

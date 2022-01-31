@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto/stage_3_index.html 
+keywords: stage 3, install node3, non-SAN data LIFs, non-root aggregates 
+summary: 3단계에서는 노드 3을 설치하고 부팅합니다. 
+---
+= 3단계. 노드3을 설치하고 부팅합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+3단계에서는 노드 3을 설치 및 부팅하고, 노드 1에서 노드 3으로 클러스터 및 노드 관리 포트를 매핑하고, 노드3 설치를 확인합니다. SAN이 아닌 데이터 LIF와 노드 1에 속하는 루트 이외의 애그리게이트는 노드 2에서 노드 3으로 이동됩니다.
+
+.단계
+. link:install_boot_node3.html["노드3을 설치하고 부팅합니다"]
+. link:set_fc_or_uta_uta2_config_on_node3.html["노드 3에 FC 또는 UTA/UTA2 구성을 설정합니다"]
+. link:map_ports_node1_node3.html["노드 1의 포트를 노드 3으로 매핑합니다"]
+. link:join_quorum_node_has_different_ports_stage3.html["노드에 다른 네트워크 포트 세트가 있는 경우 쿼럼에 연결"]
+. link:verify_node3_installation.html["노드3 설치를 확인합니다"]
+. link:move_non_root_aggr_nas_lifs_node1_from_node2_to_node3.html["노드 1이 소유하는 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2에서 노드 3으로 이동합니다"]
+

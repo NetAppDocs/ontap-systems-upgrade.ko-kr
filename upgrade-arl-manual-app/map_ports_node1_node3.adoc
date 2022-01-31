@@ -1,0 +1,207 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual-app/map_ports_node1_node3.html 
+keywords: map, ports, node1, node3, cluster, home port, vlan ports, broadcast domain, connectivity 
+summary: 노드 1의 포트를 노드 3으로 매핑합니다 
+---
+= 노드 1의 포트를 노드 3으로 매핑합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+노드 1의 물리적 포트가 노드 3의 물리적 포트에 올바르게 매핑되는지 확인해야 합니다. 이렇게 하면 노드 3이 클러스터의 다른 노드 및 업그레이드 후 네트워크와 통신할 수 있습니다.
+
+_Hardware Universe_의 새 노드에 있는 포트에 대한 정보가 이미 있어야 합니다. (로 이동합니다 link:other_references.html["참조"] Hardware Universe_)에 연결합니다. 이 정보는 이 섹션의 뒷부분 및 에서 사용합니다 .
+
+노드 3의 소프트웨어 구성은 노드 3의 물리적 연결과 일치해야 하며, 업그레이드를 계속하기 전에 IP 연결을 복원해야 합니다.
+
+포트 설정은 노드 모델에 따라 다를 수 있습니다.
+
+.단계
+. [[1단계]] 설정이 스위치가 없는 2노드 클러스터인지 확인하려면 다음 단계를 수행하십시오.
++
+.. 권한 수준을 고급으로 설정합니다.
++
+세트 프리빌리지 고급
+
+.. 스위치가 없는 2노드 클러스터인지 확인합니다.
++
+'network options switchless-cluster show'
+
++
+예를 들면 다음과 같습니다.
+
++
+[listing]
+----
+ cluster::*> network options switchless-cluster show
+ Enable Switchless Cluster: false/true
+----
++
+이 명령의 값은 시스템의 물리적 상태와 일치해야 합니다.
+
+.. 관리 권한 레벨로 돌아갑니다.
++
+'Set-Privilege admin'입니다
+
+
+
+. [[step2]] 다음과 같이 변경합니다.
++
+.. 클러스터 브로드캐스트 도메인에 포함될 포트 수정:
++
+'network port modify -node <node_name> -port <port_name> - MTU 9000 - IPSpace Cluster'
+
++
+이 예제에서는 "node1"에 클러스터 포트 e1b를 추가합니다.
+
++
+[listing]
+----
+network port modify -node node1 -port e1b -ipspace Cluster -mtu 9000
+----
+.. 클러스터 LIF를 각 LIF에 대해 한 번씩 새 포트로 마이그레이션합니다.
++
+'network interface migrate-vserver Vserver_NAME-lif lif_name-source-node node1-destination-node node1-destination-port port_name'
+
++
+모든 클러스터 LIF가 마이그레이션되고 클러스터 통신이 설정되면 클러스터가 쿼럼에 들어가야 합니다.
+
+.. 클러스터 LIF의 홈 포트를 수정합니다.
++
+'network interface modify -vserver Cluster-lif <lif_name> – home-port <port_name>'
+
+.. 클러스터 브로드캐스트 도메인에서 이전 포트를 제거합니다.
++
+'network port broadcast-domain remove-ports-IPSpace Cluster-broadcast-domain Cluster-ports <node1:port>'
+
+.. 노드 1과 노드 3의 상태를 표시합니다.
++
+'cluster show-node <node1> - 필드 상태
+
+
+
+. [[man_map_1_step3]] 데이터 LIF를 호스팅하는 물리적 포트의 브로드캐스트 도메인 구성원을 수정합니다.
++
+.. 모든 포트의 도달 가능성 상태를 나열합니다.
++
+네트워크 포트 도달 가능성
+
+.. 각 포트에서 한 번에 하나씩 다음 명령을 실행하여 물리적 포트 및 VLAN 포트의 연결 기능을 복구합니다.
++
+복구 가능성 -노드 <node_name> -port <port_name>'입니다
+
++
+다음과 같은 경고가 예상됩니다. 검토 후 적절한 "y" 또는 "n"을 입력합니다.
+
++
+[listing]
+----
+WARNING: Repairing port "node_name:port" might cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
+----
+.. ONTAP가 복구를 완료할 수 있도록 마지막 포트에서 "성능 복구" 명령을 실행한 후 약 1분 정도 기다립니다.
+.. 클러스터의 모든 브로드캐스트 도메인 나열:
++
+방송-도메인 쇼
+
+.. 도달 가능성 복구가 수행되면 ONTAP는 포트를 올바른 브로드캐스트 도메인에 배치하려고 시도합니다. 그러나 포트의 도달 가능 여부를 확인할 수 없고 기존 브로드캐스트 도메인과 일치하지 않는 경우 ONTAP는 이러한 포트에 대한 새 브로드캐스트 도메인을 생성합니다. 필요에 따라 새로 생성된 브로드캐스트 도메인을 삭제할 수 있습니다. 모든 구성원 포트가 인터페이스 그룹의 구성원 포트가 될 수 있습니다. 브로드캐스트 도메인 삭제:
++
+'broadcast-domain delete-broadcast-domain <broadcast_domain>'을 선택합니다
+
+.. 인터페이스 그룹 구성을 검토하고 필요에 따라 구성원 포트를 추가 또는 삭제합니다.
++
+인터페이스 그룹 포트에 구성원 포트 추가:
+
++
+'ifgrp add-port-node <node_name> -ifgrp <ifgrp_port> -port <port_name>'
+
++
+인터페이스 그룹 포트에서 구성원 포트 제거:
+
++
+'ifgrp remove-port-node_node_name_-ifgrp ifgrp_port-port port port_name'
+
+.. 필요에 따라 VLAN 포트를 삭제하고 다시 생성합니다. VLAN 포트 삭제:
++
+'VLAN delete-node node_name-vlan-name vlan_port_'
+
++
+VLAN 포트 생성:
+
++
+'VLAN create-node node_name-vlan-namevlan_port
+
++
+
+NOTE: 업그레이드하는 시스템의 네트워킹 구성의 복잡성에 따라 모든 포트가 필요한 위치에 올바르게 배치될 때까지 하위 단계(a)를 (g)로 반복해야 할 수 있습니다.
+
+
+
+. [[4단계]] 시스템에 구성된 VLAN이 없으면 로 이동합니다 <<man_map_1_step5,5단계>>. 구성된 VLAN이 있으면 더 이상 존재하지 않거나 다른 브로드캐스트 도메인으로 이동된 포트에서 구성되었던 교체된 VLAN을 복원하십시오.
++
+.. 교체된 VLAN을 표시합니다.
++
+디세퍼드-VLAN 쇼
+
+.. 교체된 VLAN을 원하는 대상 포트로 복구합니다.
++
+dissplaced-vLANs restore-node <node_name> -port <port_name> -destination-port <destination_port>'입니다
+
+.. 교체된 모든 VLAN이 복원되었는지 확인합니다.
++
+디세퍼드-VLAN 쇼
+
+.. VLAN은 생성된 후 1분 정도 적절한 브로드캐스트 도메인에 자동으로 배치됩니다. 복구된 VLAN이 적절한 브로드캐스트 도메인에 배치되었는지 확인합니다.
++
+네트워크 포트 도달 가능성
+
+
+
+. [[man_map_1_step5]] ONTAP 9.8부터 ONTAP는 네트워크 포트 도달 가능성 복구 절차 중에 포트가 브로드캐스트 도메인 간에 이동하는 경우 LIF의 홈 포트를 자동으로 수정합니다. LIF의 홈 포트를 다른 노드로 이동하거나 할당되지 않은 경우 해당 LIF는 대체된 LIF로 표시됩니다. 홈 포트가 더 이상 존재하지 않거나 다른 노드로 재배치된 교체된 LIF의 홈 포트를 복구합니다.
++
+.. 홈 포트가 다른 노드로 이동했거나 더 이상 존재하지 않는 LIF 표시:
++
+디시퍼인터페이스 쇼
+
+.. 각 LIF의 홈 포트를 복원합니다.
++
+disspled-interface restore-vserver Vserver_name-lif-name LIF_name'입니다
+
+.. 모든 LIF 홈 포트가 복구되었는지 확인합니다.
++
+디시퍼인터페이스 쇼
+
+
+
++
+모든 포트가 올바르게 구성되어 올바른 브로드캐스트 도메인에 추가되면 'network port reachability show' 명령은 연결된 모든 포트에 대한 도달 가능성 상태를 "ok"로 보고하고 물리적 연결이 없는 포트에 대해 "no-reachability"로 상태를 보고해야 합니다. 이 두 포트가 아닌 다른 상태를 보고하는 포트가 있는 경우 에 설명된 대로 내 상태를 복구합니다 <<man_map_1_step3,3단계>>.
+
+. [[man_map_1_step6]] 모든 LIF가 올바른 브로드캐스트 도메인에 속한 포트에서 관리적으로 작동 중인지 확인합니다.
++
+.. 관리상 다운되는 LIF가 있는지 확인합니다.
++
+'network interface show -vserver Vserver_name-status-admin down'
+
+.. 운영 중단된 LIF가 있는지 확인하십시오.
++
+'network interface show -vserver Vserver_NAME-status-oper down'
+
+.. 다른 홈 포트를 가지도록 수정해야 하는 모든 LIF를 수정합니다.
++
+'network interface modify -vserver Vserver_name -lif LIF_name -home-port home_port'
+
++
+
+NOTE: iSCSI LIF의 경우 홈 포트를 수정하려면 LIF를 관리 방식으로 중지해야 합니다.
+
+.. 홈 포트가 아닌 LIF 되돌리기:
++
+'네트워크 인터페이스 복원 *'
+
+
+
+

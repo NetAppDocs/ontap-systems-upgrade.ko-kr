@@ -1,0 +1,22 @@
+= 
+
+
+.단계
+. NetApp Support 사이트에 액세스하여 시스템 netboot에 사용되는 파일을 다운로드합니다.
+. NetApp Support 사이트의 소프트웨어 다운로드 섹션에서 해당 ONTAP 소프트웨어를 다운로드하고 웹 액세스 가능한 디렉토리에 '<ONTAP_version>_image.tgz' 파일을 저장합니다.
+. 웹 액세스 가능 디렉토리로 변경하고 필요한 파일을 사용할 수 있는지 확인합니다.
++
+[cols="30,70"]
+|===
+| 대상... | 그러면... 
+
+
+| FAS/AFF8000 시리즈 시스템 | '<ONTAP_VERSION>_IMAGE.tgz' 파일의 압축을 대상 디렉토리에 풉니다. 'tar-zxvf<ONTAP_VERSION>_IMAGE.tgz' * 참고 *: Windows에서 컨텐츠를 추출하는 경우 7-Zip 또는 WinRAR을 사용하여 netboot 이미지를 추출합니다. 디렉토리 목록에는 커널 파일 'netboot/kernel'이 있는 netboot 폴더가 포함되어야 합니다 
+
+
+| 기타 모든 시스템 | 디렉토리 목록에는 '<ONTAP_VERSION>_IMAGE.tgz' 파일이 포함되어야 합니다. * 참고 *: "<ONTAP_VERSION>_IMAGE.tgz" 파일의 내용은 추출할 필요가 없습니다. 
+|===
++
+의 디렉토리에 있는 정보를 사용합니다 link:stage_3_install_boot_node3_overview.html["3단계"].
+
+

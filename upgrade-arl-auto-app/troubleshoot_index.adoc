@@ -1,0 +1,18 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app/troubleshoot_index.html 
+keywords: troubleshooting, node, aggregate, lif, migrate, failure 
+summary: 노드 쌍을 업그레이드하는 동안 장애가 발생할 수 있습니다. 
+---
+= 문제 해결
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+노드 쌍을 업그레이드하는 동안 장애가 발생할 수 있습니다. 노드가 충돌하거나 애그리게이트가 재배치되지 않거나 LIF가 마이그레이션되지 않을 수 있습니다. 장애 원인 및 해결 방법은 업그레이드 절차 중 장애가 발생한 시기에 따라 다릅니다.
+
+섹션의 절차의 각 단계를 설명하는 표를 참조하십시오 link:overview_of_the_arl_upgrade.html["ARL 업그레이드 개요"]. 발생할 수 있는 오류에 대한 정보는 절차의 단계별로 나열됩니다.

@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto/recreate_vlans_ifgrps_broadcast_domains_node3.html 
+keywords: node3, interface group, VLANs, broadcast domains, re-create 
+summary: 노드 3이 쿼럼에 있고 노드 2와 통신할 수 있는지 확인한 후 노드 3에서 노드 1의 VLAN, 인터페이스 그룹 및 브로드캐스트 도메인을 다시 만들어야 합니다. 
+---
+= 노드 3에서 VLAN, 인터페이스 그룹 및 브로드캐스트 도메인을 다시 생성합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+노드 3이 쿼럼에 있고 노드 2와 통신할 수 있는지 확인한 후 노드 3에서 노드 1의 VLAN, 인터페이스 그룹 및 브로드캐스트 도메인을 다시 만들어야 합니다. 노드3 포트도 새로 다시 생성된 브로드캐스트 도메인에 추가해야 합니다.
+
+VLAN, 인터페이스 그룹 및 브로드캐스트 도메인을 만들고 다시 만드는 방법에 대한 자세한 내용은 를 참조하십시오 link:other_references.html["참조"] 네트워크 관리 _ 에 대한 링크를 제공합니다.
+
+.단계
+. 에 기록된 노드 1 정보를 사용하여 노드 3에서 VLAN을 다시 생성합니다 link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치합니다"] 섹션:
++
+'network port vlan create-node <node_name>-vlan <vlan-names>'
+
+. 에 기록된 node1 정보를 사용하여 node3에 인터페이스 그룹을 다시 만듭니다 link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치합니다"] 섹션:
++
+'network port ifgrp create-node <node_name>-ifgrp <port_ifgrp_names>-Distr-func'
+
+. 에 기록된 node1 정보를 사용하여 node3에 브로드캐스트 도메인을 다시 만듭니다 link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치합니다"] 섹션:
++
+'network port broadcast-domain create-IPSpace Default-broadcast-domain <broadcast_domain_names> - MTU <mtu_size> - ports <node_name:port_name,node_name:port_name>'
+
+. 새로 다시 생성된 브로드캐스트 도메인에 노드3 포트를 추가합니다.
++
+'network port broadcast-domain add-ports-broadcast-domain <broadcast_domain_names> - ports <node_name:port_name,node_name:port_name>'
+
+

@@ -1,0 +1,102 @@
+---
+permalink: upgrade/upgrade-create-aggregate-move-volumes.html 
+sidebar: sidebar 
+keywords: create, aggregate, node, store, volume, original, node, identify, aggregate, individually, create an aggregate and moving volumes to the new nodes 
+summary: 각 새 노드에 하나 이상의 애그리게이트를 만들어 원래 노드에서 이동하려는 볼륨을 저장합니다. 각 볼륨의 애그리게이트를 파악하고 각 볼륨을 개별적으로 이동해야 합니다. 
+---
+= 애그리게이트를 생성하고 볼륨을 새 노드로 이동합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+각 새 노드에 하나 이상의 애그리게이트를 만들어 원래 노드에서 이동하려는 볼륨을 저장합니다. 각 볼륨의 애그리게이트를 파악하고 각 볼륨을 개별적으로 이동해야 합니다.
+
+볼륨을 이동하려면 먼저 데이터 보호 미러 관계를 초기화해야 합니다.
+
+https://docs.netapp.com/us-en/ontap/data-protection-disaster-recovery/index.html["필요한 데이터 보호 절차를 찾습니다"^].
+
+.단계
+. 각 새 노드에 하나 이상의 Aggregate를 생성합니다.
++
+'storage aggregate create-aggregate aggr_name -node new_node_name -diskcount integer'를 입력합니다
+
+. 볼륨을 이동할 원래 노드의 aggregate와 동일한 SVM에 새 애그리게이트를 추가합니다.
++
+'vserver add-aggregate'를 선택합니다
+
++
+새 Aggregate와 볼륨을 이동할 이전 Aggregate는 모두 동일한 SVM에 있어야 합니다.
+
+. 새 Aggregate가 이제 원래 노드의 Aggregate와 동일한 SVM에 할당되었는지 확인합니다.
++
+'vserver show-vservm_name'입니다
+
+. 원래 노드에서 새 노드로 이동할 볼륨의 정보를 표시합니다.
++
+'volume show -vserver svm_name -node original_node_name'
+
++
+나중에 참조할 수 있도록 명령 출력을 유지해야 합니다.
+
++
+다음 예에서는 "VS1" SVM 및 "Node0" 노드의 볼륨을 표시합니다.
+
++
+[listing]
+----
+cluster::> volume show -vserver vs1 -node node0
+Vserver   Volume       Aggregate    State      Type       Size  Available Used%
+--------- ------------ ------------ ---------- ---- ---------- ---------- -----
+vs1       clone        aggr1        online     RW         40MB    37.87MB    5%
+vs1       vol1         aggr1        online     RW         40MB    37.87MB    5%
+vs1       vs1root      aggr1        online     RW         20MB    18.88MB    5%
+3 entries were displayed.
+----
+. 특정 볼륨을 이동할 수 있는 애그리게이트 결정:
++
+'volume move target-aggr show -vserver svm_name -volume vol_name'
+
++
+다음 예에서는 "VS2" SVM에서 "user_max" 볼륨을 나열된 Aggregate로 이동할 수 있음을 보여 줍니다.
+
++
+[listing]
+----
+cluster::> volume move target-aggr show -vserver vs2 -volume user_max
+Aggregate Name   Available Size  Storage Type
+--------------   --------------  ------------
+aggr2            467.9GB         FCAL
+node12a_aggr3    10.34GB         FCAL
+node12a_aggr2    10.36GB         FCAL
+node12a_aggr1    10.36GB         FCAL
+node12a_aggr4    10.36GB         FCAL
+5 entries were displayed
+----
+. 이동할 각 볼륨에 대해 검증 검사를 실행하여 지정된 aggregate로 이동할 수 있는지 확인합니다.
++
+'volume move start -vserver svm_name -volume volume_name -destination -aggregate destination_aggregate_name -perform-validation-only true'
+
+. 볼륨을 한 번에 하나씩 이동합니다(고급 권한 레벨).
++
+'volume move start -vserver svm_name -volume vol_name -destination-aggregate destination_aggr_name -cutover-window integer
+
++
+노드 루트 볼륨(vol0)은 이동할 수 없습니다. SVM 루트 볼륨을 비롯한 다른 볼륨을 이동할 수 있습니다.
+
+. 볼륨이 성공적으로 이동되었는지 확인하기 위해 '볼륨 이동' 작업의 결과를 표시합니다.
++
+'volume move show -vserver svm_name -volume vol_name'
+
+. 볼륨 이동 작업이 여러 번 시도해도 최종 단계를 완료하지 못하면 이동을 강제 종료합니다.
++
+'volume move trigger-cutover-vserver svm_name-volume vol_name-force true'
+
++
+볼륨 이동 작업을 강제로 완료하면 이동 중인 볼륨에 대한 클라이언트 액세스가 중단될 수 있습니다.
+
+. 볼륨이 지정된 SVM으로 성공적으로 이동되었으며 올바른 애그리게이트에 있는지 확인합니다.
++
+'volume show-vserver svm_name'을 선택합니다
+
+

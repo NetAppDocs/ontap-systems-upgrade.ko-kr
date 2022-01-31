@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual-app/stage_6_index.html 
+keywords: stage 6, complete, upgrade, set up, setup, controller, storage encryption, netapp encryption, decommission, resume snapmirror 
+summary: 6단계 동안 새 노드가 올바르게 설정되었는지 확인합니다. 
+---
+= 6단계. 업그레이드를 완료합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+6단계에서는 새 노드가 올바르게 설정되었는지 확인합니다. 새 노드 중 하나에 통합 대상 어댑터가 있는 경우 포트 구성을 복구해야 하며 어댑터의 속성을 변경해야 할 수도 있습니다. 또한 새 노드가 암호화를 사용하는 경우 스토리지 암호화를 설정해야 합니다. 또한 이전 노드를 해제해야 합니다.
+
+. link:ensure_controllers_set_up_correctly.html["새 컨트롤러가 올바르게 설정되었는지 확인합니다"]
+. link:set_up_storage_encryption_new_controller.html["새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다"]
+. link:set_up_netapp_encryption_on_new_controller.html["새 컨트롤러 모듈에서 NetApp Encryption 설정"]
+. link:decommission_old_system.html["기존 시스템을 폐기합니다"]
+. link:resume_snapmirror_ops.html["SnapMirror 작업을 재개합니다"]
+

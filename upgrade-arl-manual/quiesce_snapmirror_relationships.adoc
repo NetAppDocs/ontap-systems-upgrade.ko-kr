@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/quiesce_snapmirror_relationships.html 
+keywords: quiesce, snapmirror, relationship, netboot, destination cluster 
+summary: 시스템을 부팅하기 전에 모든 SnapMirror 관계를 중지합니다. 
+---
+= SnapMirror 관계를 중지합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+시스템을 부팅하기 전에 모든 SnapMirror 관계가 중지되었는지 확인해야 합니다. SnapMirror 관계가 중지되면 재부팅 및 페일오버 시에도 계속 정지됩니다.
+
+.단계
+. 대상 클러스터에서 SnapMirror 관계 상태를 확인합니다.
++
+스냅미러 쇼
+
++
+
+NOTE: 상태가 "전송 중"인 경우 '스냅샷 미러 중단 - 목적지 - SVM <vserver name>' 전송을 중단해야 합니다
+
++
+SnapMirror 관계가 "전송 중" 상태가 아니면 중단이 실패합니다.
+
+. 클러스터 간의 모든 관계 중지:
++
+'스냅미러 정지-목적지-vserver<vserver-name>'
+
+

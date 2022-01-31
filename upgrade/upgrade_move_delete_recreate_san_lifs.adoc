@@ -1,0 +1,18 @@
+---
+permalink: upgrade/upgrade_move_delete_recreate_san_lifs.html 
+sidebar: sidebar 
+keywords: cluster, san, environment, delete, lif, re-create, move san lifs, create 
+summary: 클러스터 콘텐츠 및 클러스터 환경에 따라 SAN LIF를 이동, 삭제 또는 생성하거나 삭제된 SAN LIF를 다시 생성해야 합니다. 
+---
+= SAN LIFS를 이동, 삭제 또는 생성합니다
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+클러스터 콘텐츠 및 클러스터 환경에 따라 SAN LIF를 이동, 삭제 또는 생성하거나 삭제된 SAN LIF를 다시 생성해야 합니다.
+
+* link:upgrade_considerations_move_san_lifs.html["SAN LIFS 이동에 대한 고려 사항"]
+* link:upgrade-delete-san-lifs.html["원래 노드에서 더 이상 필요하지 않은 SAN LIF를 삭제합니다"]
+* link:upgrade_create_recreate_san_lifs.html["새로운 SAN LIF를 생성하거나 삭제된 SAN LIF를 다시 생성하십시오"]
+

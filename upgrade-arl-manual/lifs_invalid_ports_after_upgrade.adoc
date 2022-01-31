@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/lifs_invalid_ports_after_upgrade.html 
+keywords: lifs, invalid, ports, error, mismatch, troublshoot, metrocluster 
+summary: '업그레이드 후 MetroCluster 구성을 사용하는 경우 FC 논리 인터페이스(LIF)가 잘못된 포트에 남겨질 수 있습니다.' 
+---
+= 업그레이드 후 LIF가 잘못된 포트에 있습니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+업그레이드가 완료된 후 MetroCluster 구성이 있는 경우 FC 논리 인터페이스(LIF)가 잘못된 포트에 남아 있을 수 있습니다. LIF를 올바른 포트에 재할당하려면 재동기화 작업을 수행할 수 있습니다.
+
+.단계
+. 올바른 포트에 LIF를 재할당하려면 'MetroCluster vserver resync' 명령을 입력하십시오.
++
+'MetroCluster vserver resync -vserver <vserver_name> fcp -mc.headupgrade.test.vs.
+
+

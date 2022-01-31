@@ -1,0 +1,83 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html 
+keywords: relocating, non-root, aggregates, nas, data, lif, node1, node2, aff, a900, nvs, controller 
+summary: 노드 1을 AFF A900 컨트롤러 모듈 및 NVS로 교체하기 전에 루트가 아닌 애그리게이트 및 NAS 데이터 LIF를 노드 1에서 노드 2로 이동해야 합니다. 
+---
+= 노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+노드 1을 AFF A900 컨트롤러 모듈 및 NVS로 교체하려면 먼저 루트가 아닌 애그리게이트 및 NAS 데이터 LIF를 노드 1에서 노드 2로 이동한 다음, 나중에 AFF A900 시스템에서 실행되는 노드 1에서 노드 1의 리소스를 다시 복원해야 합니다. 이 프로세스는 대부분 자동화되어 있으며 사용자가 상태를 확인할 수 있도록 작업이 일시 중지됩니다.
+
+작업을 시작할 때 작업이 이미 일시 중지되어 있어야 합니다. 작업을 수동으로 다시 시작해야 합니다.
+
+원격 LIF는 업그레이드 절차 중에 SAN LUN의 트래픽을 처리합니다. 업그레이드 중에 클러스터 또는 서비스 상태를 위해 SAN LIF를 이동할 필요가 없습니다. 노드 1을 AFF A900으로 온라인 상태로 만든 후 LIF가 정상 작동하는지 확인해야 합니다.
+
+
+NOTE: Aggregate 및 LIF의 홈 소유자는 수정되지 않으며 현재 소유자만 수정됩니다.
+
+.단계
+. 애그리게이트 재배치 및 NAS 데이터 LIF 이동 작업 재개:
++
+시스템 컨트롤러 교체 재개
+
++
+루트 이외의 모든 애그리게이트 및 NAS 데이터 LIF는 노드 1에서 노드 2로 마이그레이션됩니다.
+
++
+이 작업을 일시 중지하여 모든 node1 비루트 애그리게이트 및 non-SAN 데이터 LIF가 노드 2로 마이그레이션되었는지 확인할 수 있습니다.
+
+. 애그리게이트 재배치 및 NAS 데이터 LIF 이동 작업의 상태를 확인합니다.
++
+'시스템 컨트롤러 교체 쇼 디테일
+
+. 작업이 여전히 일시 중지된 상태에서 루트가 아닌 모든 애그리게이트가 노드 2의 해당 상태에 대해 온라인 상태인지 확인합니다.
++
+'Storage aggregate show-node <node2> - state online-root false'
+
++
+다음 예제에서는 노드 2의 루트 이외의 애그리게이트가 온라인 상태인 것을 보여 줍니다.
+
++
+[listing]
+----
+cluster::> storage aggregate show -node node2 state online -root false
+
+Aggregate  Size     Available  Used%  State  #Vols  Nodes  RAID Status
+---------  -------  ---------  -----  ------ -----  ------ --------------
+aggr_1     744.9GB  744.8GB    0%     online     5  node2  raid_dp,normal
+aggr_2     825.0GB  825.0GB    0%     online     1  node2  raid_dp,normal
+2 entries were displayed.
+----
++
+노드 2에서 애그리게이트가 오프라인 상태가 되거나 외부 상태가 된 경우, 각 애그리게이트에 대해 노드 2의 다음 명령을 사용하여 온라인 상태로 전환합니다.
+
++
+'Storage aggregate online-aggregate <aggr_name>'
+
+. node2에서 다음 명령을 사용하고 해당 출력을 검사하여 node2에서 모든 볼륨이 온라인 상태인지 확인합니다.
++
+'volume show-node <node2> - state offline(볼륨 표시 노드 <node2> - 상태 오프라인)
+
++
+노드 2에 오프라인 볼륨이 있는 경우 각 볼륨에 대해 한 번씩 노드 2에서 다음 명령을 사용하여 온라인으로 전환합니다.
+
++
+'volume online-vserver <vserver_name> - volume <volume_name>'
+
++
+이 명령에 사용할 `<vserver_name>'은 이전 'volume show' 명령의 출력에서 확인할 수 있습니다.
+
+
+
+. [[5단계]] LIF가 하나라도 다운되면 각 LIF에 대해 다음 명령을 사용하여 LIF의 관리 상태를 '가동'으로 설정하십시오.
++
+'network interface modify -vserver vserver_name -lif LIF_name -home-node nodename -status -admin up'을 선택합니다
+
+

@@ -1,0 +1,9 @@
+= 
+
+
+.단계
+. link:relocate_non_root_aggr_node1_node2.html["노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치하는 것입니다"]
+. link:move_nas_lifs_node1_node2.html["노드 1이 소유한 NAS 데이터 LIF를 노드 2로 이동 중입니다"]
+. link:record_node1_information.html["노드1 정보를 기록합니다"]
+. link:retire_node1.html["노드1을 폐기합니다"]
+

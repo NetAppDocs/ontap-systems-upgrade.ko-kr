@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/stage_5_index.html 
+keywords: stage 5, install, boot, node3, node4, relocate, aggregates 
+summary: 5단계에서는 노드 4를 설치 및 부팅하고, 노드 2에서 노드 4로 클러스터 및 노드 관리 포트를 매핑한 다음 노드 4 설치를 확인합니다. 
+---
+= 5단계. 노드 4를 설치하고 부팅합니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+5단계에서는 노드 4를 설치 및 부팅하고, 노드 2에서 노드 4로 클러스터 및 노드 관리 포트를 매핑한 다음 노드 4 설치를 확인합니다. 또한 노드 2가 소유한 데이터 LIF 및 SAN LIF를 노드 3에서 노드 4로 이동하고 노드 2의 애그리게이트를 노드 3에서 노드 4로 재배치할 수 있습니다.
+
+.단계
+. link:install_boot_node4.html["노드 4를 설치하고 부팅합니다"]
+. link:set_fc_uta_uta2_config_node4.html["노드 4에 FC 또는 UTA/UTA2 구성을 설정합니다"]
+. link:map_ports_node2_node4.html["노드 2의 포트를 노드 4로 매핑합니다"]
+. link:verify_node4_installation.html["노드 4 설치를 확인합니다"]
+. link:move_nas_lifs_node2_from_node3_node4_verify_san_lifs_node4.html["노드 2가 소유한 NAS 데이터 LIF를 노드 3에서 노드 4로 이동하고 노드 4의 SAN LIF를 확인합니다"]
+. link:relocate_node2_non_root_aggr_node3_node4.html["노드 2의 루트 이외의 애그리게이트를 노드 3에서 노드 4로 이동합니다"]
+
