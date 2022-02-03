@@ -58,9 +58,40 @@ https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 +
 'cluster show-node <node1> - 필드 상태
 
+.. 클러스터 LIF가 포트 7700에서 수신 중인지 확인합니다.
++
+'::> 네트워크 연결 수신 표시 - vserver 클러스터'
+
++
+각 클러스터 LIF는 포트 7700에서 수신 대기 중이어야 합니다.
+
++
+클러스터 포트에서 수신 대기하는 포트 7700은 2노드 클러스터의 다음 예에 표시된 대로 예상되는 결과입니다.
+
++
+[listing]
+----
+Cluster::> network connections listening show -vserver Cluster
+Vserver Name     Interface Name:Local Port     Protocol/Service
+---------------- ----------------------------  -------------------
+Node: NodeA
+Cluster          NodeA_clus1:7700               TCP/ctlopcp
+Cluster          NodeA_clus2:7700               TCP/ctlopcp
+Node: NodeB
+Cluster          NodeB_clus1:7700               TCP/ctlopcp
+Cluster          NodeB_clus2:7700               TCP/ctlopcp
+4 entries were displayed.
+----
+.. 필요한 경우 포트 7700에서 청취하지 않는 각 클러스터 LIF에 대해 LIF의 관리 상태를 '소유'로 설정한 다음 '설정'으로 설정합니다.
++
+'::> net int modify -vserver Cluster-lif <cluster-lif> -status-admin down;net int modify -vserver Cluster-lif <cluster-lif> -status-admin up'
+
++
+하위 단계(g)를 반복하여 클러스터 LIF가 포트 7700에서 청취 중인지 확인합니다.
 
 
-. [[MAP_98_5]] 데이터 LIF를 호스팅하는 물리적 포트의 브로드캐스트 도메인 구성원을 수정합니다. ONTAP 9.7 이하 _ 을(를) 사용하여 네트워크 포트 매핑 에 나와 있는 것처럼 수동으로 이 작업을 수행할 수 있습니다. link:upgrade-map-network-ports-ontap-9-7-or-earlier.html#map_97_7["7단계"]. 권장되는 접근 방식은 다음 5단계, 하위 단계(a)에서 (g)까지 ONTAP 9.8에 도입된 향상된 네트워크 도달 가능성 스캔 및 수리 절차를 사용하는 것입니다.
+
+. [[MAP_9.8_5]] 데이터 LIF를 호스팅하는 물리적 포트의 브로드캐스트 도메인 구성원을 수정합니다. 에서와 같이 수동으로 이 작업을 수행할 수 있습니다 link:upgrade-map-network-ports-ontap-9-7-or-earlier.html#map_9.7_7["ONTAP 9.7 이전 버전인 7단계를 사용하여 네트워크 포트를 매핑합니다"]. 권장되는 접근 방식은 다음 5단계, 하위 단계(a)에서 (g)까지 ONTAP 9.8에 도입된 향상된 네트워크 도달 가능성 스캔 및 수리 절차를 사용하는 것입니다.
 +
 .. 모든 포트의 도달 가능성 상태를 나열합니다.
 +

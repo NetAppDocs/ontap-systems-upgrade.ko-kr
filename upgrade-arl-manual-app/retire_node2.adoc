@@ -64,6 +64,10 @@ Warning: Cluster HA has not been configured. Cluster HA must be configured on a 
 
 2 entries were displayed.
 ----
++
+
+NOTE: 여러 HA 쌍이 있는 클러스터에서 HA 쌍을 업그레이드하는 경우, Epsilon을 컨트롤러 업그레이드를 받지 않는 HA 쌍의 노드로 이동해야 합니다. 예를 들어, HA 쌍 구성 NodeA/NodeB 및 nodeC/noded를 사용하여 클러스터의 NodeA/NodeB를 업그레이드하는 경우 Epsilon을 노드 C로 이동하거나 NODED로 이동해야 합니다.
+
 . 노드 2가 epsilon을 포함하는 경우 epsilon을 노드 3으로 전송할 수 있도록 노드에 "false"로 표시합니다.
 +
 'cluster modify-node <node2>-epsilon FALSE

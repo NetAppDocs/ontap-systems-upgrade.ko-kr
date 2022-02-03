@@ -58,6 +58,37 @@ SAN 데이터 LIF는 오프라인 상태에서만 마이그레이션할 수 있�
 +
 'cluster show-node <node1> - 필드 상태
 
+.. 클러스터 LIF가 포트 7700에서 수신 중인지 확인합니다.
++
+'::> 네트워크 연결 수신 표시 - vserver 클러스터'
+
++
+각 클러스터 LIF는 포트 7700에서 수신 대기 중이어야 합니다.
+
++
+클러스터 포트에서 수신 대기하는 포트 7700은 2노드 클러스터의 다음 예에 표시된 대로 예상되는 결과입니다.
+
++
+[listing]
+----
+Cluster::> network connections listening show -vserver Cluster
+Vserver Name     Interface Name:Local Port     Protocol/Service
+---------------- ----------------------------  -------------------
+Node: NodeA
+Cluster          NodeA_clus1:7700               TCP/ctlopcp
+Cluster          NodeA_clus2:7700               TCP/ctlopcp
+Node: NodeB
+Cluster          NodeB_clus1:7700               TCP/ctlopcp
+Cluster          NodeB_clus2:7700               TCP/ctlopcp
+4 entries were displayed.
+----
+.. 필요한 경우 포트 7700에서 청취하지 않는 각 클러스터 LIF에 대해 LIF의 관리 상태를 '소유'로 설정한 다음 '설정'으로 설정합니다.
++
+'::> net int modify -vserver Cluster-lif <cluster-lif> -status-admin down;net int modify -vserver Cluster-lif <cluster-lif> -status-admin up'
+
++
+하위 단계(g)를 반복하여 클러스터 LIF가 포트 7700에서 청취 중인지 확인합니다.
+
 
 
 . VLAN 및 'ifgrp config'를 새 컨트롤러의 물리적 포트 레이아웃과 일치하도록 수정합니다.
