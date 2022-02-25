@@ -3537,9 +3537,6 @@
   <block id="8d7b68591c9cb3f00554e8b1dd0cc34a" category="list-text">ARL을 사용하여 업그레이드할 클러스터에서 실행 중인 버전보다 더 높은 ONTAP 버전을 실행 중인 새 컨트롤러로 중단 없이 단순한 컨트롤러 업그레이드를 수행할 수 있습니다. 기존 및 새 컨트롤러의 ONTAP 버전 조합은 ONTAP 소프트웨어 릴리즈 NDU Cadence 모델에 의해 결정됩니다. 예를 들어, ONTAP 9.8을 실행하는 컨트롤러가 있고 해당 컨트롤러에 대해 마지막으로 지원되는 버전인 경우, ONTAP 9.8 이후 버전의 ONTAP를 실행하는 새로운 컨트롤러로 업그레이드할 수 있습니다.</block>
   <block id="3220ae1a7e96353e5be6c31af0b5207a" category="paragraph">이 업그레이드 절차는 주로 교체할 컨트롤러 모델이 최신 ONTAP 버전을 지원하지 않고 새 컨트롤러가 이전 ONTAP 버전을 지원하지 않는 업그레이드 시나리오에 적용됩니다. * 이 절차를 사용하여 2개 이상의 노드가 있는 클러스터에서 컨트롤러 하드웨어를 업그레이드할 수 있습니다. 하지만 클러스터의 각 HA(고가용성) 쌍에 대해 이 절차를 별도로 수행해야 합니다. * 이 절차는 FAS 시스템, V-Series 시스템, AFF 시스템 및 FlexArray 가상화 소프트웨어가 설치된 시스템에 적용됩니다. ONTAP 9.5 이후에 출시된 FAS 시스템은 필요한 라이센스가 설치된 경우 스토리지 어레이에 연결할 수 있습니다. 스토리지 어레이 및 V-Series 모델에 대한 자세한 내용은 를 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> Hardware Universe_에 연결하고 V 시리즈 지원 매트릭스로 이동하십시오. * 이 절차는 4노드 NetApp MetroCluster 구성 이상을 실행하는 시스템에 적용됩니다. MetroCluster 구성 사이트는 물리적으로 서로 다른 두 위치에 있을 수 있으므로 HA Pair용 각 MetroCluster 사이트에서 컨트롤러 자동 업그레이드를 개별적으로 수행해야 합니다. * AFF A320 시스템에서 업그레이드하는 경우, 볼륨 이동을 사용하여 컨트롤러 하드웨어를 업그레이드하거나 기술 지원 부서에 문의할 수 있습니다. 을 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 볼륨 또는 스토리지 _ 을(를) 이동하여 _ 업그레이드 에 연결합니다.</block>
   <block id="685f08a5b99430f3e9a6b908131fd4c3" category="summary">교체된 컨트롤러 또는 새 컨트롤러의 HA 파트너가 NetApp Volume Encryption을 사용하는 경우</block>
-  <block id="1a59e73da663791d8cc1a4162cc79daa" category="cell">이 ONTAP 버전의 경우...</block>
-  <block id="127cae73d2b4d7758b4c0a0e3f49ba5f" category="cell">ONTAP 9.6 이상</block>
-  <block id="85b2cc925922ee961d8156414096bb8d" category="cell">ONTAP 9.5 이하</block>
   <block id="e147253c0010bdd5968cb9b4b9ddf7dc" category="cell">외부 키 관리자</block>
   <block id="1ccbd6f617ebfa1f7b6d1b6f16222909" category="summary">노드1 재배치 및 폐기</block>
   <block id="22e9bda17d40c1dbdb534fd455e19fcd" category="list-text"><block ref="22e9bda17d40c1dbdb534fd455e19fcd" category="inline-link-macro-rx"></block></block>
@@ -3732,7 +3729,6 @@
   <block id="8ba3dc8f2e507a70633697dc60de2269" category="list-text">네트워크 포트 show-node node_name-type physical</block>
   <block id="cbd335576ebae1caff82003d00697c97" category="list-text">시스템 노드 show-instance-node_name</block>
   <block id="fac031b53ff277f8625f50e090a47475" category="list-text">스토리지 애그리게이트 show-node_name 을 참조하십시오</block>
-  <block id="6b6f6c1a8bc1fede794cda92ed140953" category="list-text">보안 키 관리자 백업이 표시됩니다</block>
   <block id="001642cb897a8bebce3210207b7e81af" category="list-text">보안 키 관리자 외부 표시</block>
   <block id="6afea099b023b1bd5f51935ccb31ce0a" category="list-text">보안 키 관리자 외부 표시 상태</block>
   <block id="27c32000aa45c9243e8b444a27636832" category="list-text">내 상태 표시 - 세부 사항</block>
@@ -3792,8 +3788,6 @@
   <block id="a0597ee31ba19b58e7dea556d59b7025" category="paragraph">위의 예에 표시된 시스템 ID는 ID의 예입니다. 업그레이드하는 노드의 실제 시스템 ID는 다릅니다.</block>
   <block id="e3a878334fd2b918ae58df67169ebb51" category="paragraph">프롬프트에 노드 이름을 입력하고 로그인 프롬프트에서 노드 이름을 입력하는 사이에 노드는 여러 번 재부팅하여 환경 변수를 복원하고, 시스템의 카드의 펌웨어를 업데이트하고, 다른 ONTAP 업데이트를 수행합니다.</block>
   <block id="d8a5506f1c8c1c86158c9c0d1d4742fc" category="summary">교체된 컨트롤러 또는 새 컨트롤러의 HA 파트너가 NetApp Volume Encryption을 사용하는 경우, NVE를 위한 새 컨트롤러 모듈을 구성해야 합니다.</block>
-  <block id="3a1b2c38a4df46a98276dff5f167cf5a" category="cell">대상</block>
-  <block id="ca1ca50323446209228f3f72af231354" category="cell">'보안 키 관리자 외부 복원' 이 명령에는 OKM 암호가 필요합니다</block>
   <block id="7d658c9a89b8497c162f9111ae5111dc" category="list-text">사전 점검을 실행하여 작업을 수행할 수 있는지 확인합니다</block>
   <block id="8e490bd535c0b48fe8a594afea8a5f73" category="list-text">사전 검사에 실패한 경우 애그리게이트 소유권을 수정합니다</block>
   <block id="eab10223a55d1eb3906a74203c54c3b1" category="list-text">클러스터 기본 라이센스 키를 입력합니다</block>
@@ -4213,4 +4207,13 @@
   <block id="a969e82eb7fd10796b9caae7a1d3632d" category="admonition">여러 HA 쌍이 있는 클러스터에서 HA 쌍을 업그레이드하는 경우 epsilon을 컨트롤러 업그레이드가 없는 HA 쌍의 노드로 이동해야 합니다. 예를 들어 HA 쌍 구성 NodeA/NodeB 및 nodeC/noded를 사용하여 클러스터의 NodeA/NodeB를 업그레이드하는 경우 epsilon을 노드 C 또는 noded로 이동해야 합니다.</block>
   <block id="d86684c09dde7ea5d5d7306c6f674ea3" category="list-text">각 클러스터 LIF는 포트 7700에서 수신 대기 중이어야 합니다. 클러스터 LIF가 포트 7700에서 수신 중인지 확인합니다.</block>
   <block id="821f1cb96d20770eca957d1d83c78ef0" category="list-text">ONTAP 9.6P11, 9.7P8 이상 릴리즈를 사용하는 경우 특정 노드 장애가 발생할 때 연결, 활성화 및 가용성 모니터(clam) 테이크오버가 클러스터를 쿼럼으로 반환하도록 설정하는 것이 좋습니다. Kernel-service 명령을 사용하려면 고급 권한 수준 액세스가 필요합니다. 자세한 내용은 다음을 참조하십시오.<block ref="7c246f3223ef6280d0a553bd56956f52" category="inline-link-rx"></block>. ONTAP 9.8부터는 KCS-ENABLE-Takeover 매개변수가 기본적으로 활성화됩니다.</block>
+  <block id="3a96acfd6567b2f5ad01ec7a0444dccd" category="paragraph">'보안 키 관리자 외부 활성화</block>
+  <block id="5c19461e593ee940fbb033dbf031381b" category="paragraph">'Security key-manager external add-servers-key-servers key_management_server_ip_address'</block>
+  <block id="f448f5b6d3d32deaf11413ff5379c871" category="paragraph">'보안 키 관리자 외부 표시 상태</block>
+  <block id="3daea017ac1d8d1efd008f41d160df66" category="paragraph">'보안 키 관리자 키 생성</block>
+  <block id="f96600cb1895b85fbd0be51cf5acc0fa" category="paragraph">보안 키 관리자 온보드 구두백업</block>
+  <block id="49bfbad696a2529ef03d859ad9b3f40a" category="paragraph">보안 키매니저 외모</block>
+  <block id="1854c750c17094fc62d6ebafaa52bd86" category="paragraph">'Security key-manager external restore-node new_controller_name</block>
+  <block id="c497a6b930105164567b744840c21e94" category="paragraph">보안 키 관리자 온보드 쇼 백업</block>
+  <block id="32ba7af89b7557f6e3e6d80a922080ce" category="list-text">보안 키 관리자 온보드 show-backup</block>
 </blocks>

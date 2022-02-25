@@ -133,7 +133,7 @@ NOTE: FAS8080 또는 AFF8080 같이 노드당 클러스터 포트가 2개 이상
 ** 스토리지 배열 config show -switch <switch_name>
 ** system license show-owner <node_name>
 ** 스토리지 암호화 디스크가 표시됩니다
-** 보안 키 관리자 백업이 표시됩니다
+** 보안 키 관리자 온보드 show-backup
 ** 보안 키 관리자 외부 표시
 ** 보안 키 관리자 외부 표시 상태
 ** 내 상태 표시 - 세부 사항
