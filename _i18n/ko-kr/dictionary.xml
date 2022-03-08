@@ -1493,15 +1493,7 @@
   <block id="b0cf9590917d959debfd8231d8efa2c7" category="paragraph">* 참고: * 스토리지 가상 시스템(SVM) 재해 복구 업데이트는 할당된 일정에 따라 중단되지 않습니다.</block>
   <block id="f412483899b7e1853a07057a10434cd1" category="summary">새로운 노드를 수용하기 위해 적절한 RCF 파일을 적용하여 스위치를 재구성합니다.</block>
   <block id="d627b57cf15134483e5785196cf7030f" category="doc">RCF 파일을 적용하고 스위치를 재전송할 수 있습니다</block>
-  <block id="240180de393c4a94b035628cb25892f2" category="paragraph">새로운 노드를 수용하기 위해 스위치를 재구성하기 위해 적절한 RCF(Reference Configuration) 파일을 적용해야 합니다. RCF 파일을 적용한 후 스위치를 다시 사용할 수 있습니다.</block>
   <block id="b146e8621e721a92c4b9d852f016cd74" category="paragraph">FC 스위치 포트 사용은 RCFs를 사용할 수 있도록 _fFabric-Attached MetroCluster 설치 및 Configuration_content에 설명된 사용량과 일치해야 합니다. 로 이동합니다 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 를 눌러 _패브릭 연결 MetroCluster 설치 및 구성_내용에 연결합니다.</block>
-  <block id="6a82c384f85f037d7996beaa2d1d7d15" category="list-text">구성에 사용할 RCF 파일을 찾습니다.</block>
-  <block id="220db66641d211d0d3595a586d08eda4" category="paragraph">사용 중인 스위치 모델에 맞는 RCF 파일을 사용해야 합니다.</block>
-  <block id="5e99b4c17b283780f31b2094bd3e09d9" category="inline-link-macro">NetApp 다운로드: Brocade 스위치용 MetroCluster 구성 파일</block>
-  <block id="6b253b0e381bce06acae4fc0aba43a28" category="paragraph"><block ref="6b253b0e381bce06acae4fc0aba43a28" category="inline-link-macro-rx"></block></block>
-  <block id="dfee04d58b6ccde432611ade9976f650" category="inline-link-macro">NetApp 다운로드: Cisco 스위치용 MetroCluster 구성 파일</block>
-  <block id="b48e3bcf35f27a7eb3b971e14c962a74" category="paragraph"><block ref="b48e3bcf35f27a7eb3b971e14c962a74" category="inline-link-macro-rx"></block></block>
-  <block id="664250ffe3e2d310ccf75bacda9a568c" category="list-text">RCF 파일을 * 다운로드 * 페이지의 지침에 따라 적용하고 필요에 따라 ISL 설정을 조정합니다.</block>
   <block id="4799633d9eb6a31235d0102c0d2b1812" category="list-text">스위치 구성이 저장되었는지 확인합니다.</block>
   <block id="1dd8fdc75f0d1d8e00ce9ec094e07e48" category="list-text">에서 만든 케이블링 레이아웃을 사용하여 FC-SAS 브리지를 FC 스위치에 연결합니다 <block ref="1e3a603a58f58380bbf882725903f11b" category="inline-link-macro-rx"></block>.</block>
   <block id="31ff80cac58b75352ccd7cb184fd3f2f" category="list-text">포트가 온라인 상태인지 확인합니다.</block>
@@ -4216,4 +4208,13 @@
   <block id="1854c750c17094fc62d6ebafaa52bd86" category="paragraph">'Security key-manager external restore-node new_controller_name</block>
   <block id="c497a6b930105164567b744840c21e94" category="paragraph">보안 키 관리자 온보드 쇼 백업</block>
   <block id="32ba7af89b7557f6e3e6d80a922080ce" category="list-text">보안 키 관리자 온보드 show-backup</block>
+  <block id="d666aabcb0474ed724f0c2bbfd2378fc" category="paragraph">새 노드를 수용하기 위해 스위치를 재구성하려면 적절한 RCFs(Reference Configuration File)를 적용해야 합니다. RCF를 적용한 후 스위치를 다시 사용할 수 있습니다.</block>
+  <block id="61cecfa3ef719d9c2d42720a7467139d" category="inline-link">MetroCluster RCF 다운로드</block>
+  <block id="529fa8fad2e5f9e9ec2a18c99f9fc39e" category="list-text">로 이동합니다<block ref="0813f64c6803a33deb9dfac6dfb10541" category="inline-link-rx"></block> 페이지에서 스위치 구성에 대한 RCF를 선택합니다.</block>
+  <block id="2a7e4a94676516e8b47d9d81e8df4e81" category="paragraph">스위치 모델과 일치하는 RCF를 사용해야 합니다.</block>
+  <block id="52ce6e876ac27324725c74f98c46d204" category="list-text">스위치 모델과 일치하는 절차를 선택하고 설치 지침에 따라 FC 스위치 RCF를 설치합니다.</block>
+  <block id="aebc5d784c007f0e8cc41b6a373e879a" category="inline-link">Brocade FC 스위치 RCF를 설치합니다</block>
+  <block id="0283024582f18d79aeec623eb7ec67f9" category="list-text"><block ref="0283024582f18d79aeec623eb7ec67f9" category="inline-link-rx"></block></block>
+  <block id="a46316d3c1d9191fc02a8477780cbda6" category="inline-link">Cisco FC 스위치 RCF를 설치합니다</block>
+  <block id="e2dd418f8bec46f2839cbe69bcf70fb5" category="list-text"><block ref="e2dd418f8bec46f2839cbe69bcf70fb5" category="inline-link-rx"></block></block>
 </blocks>
