@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/troubleshoot_index.html 
 keywords: node, failure, upgrading, crash, relocate, solution 
-summary: 노드 쌍을 업그레이드하는 동안 장애가 발생할 수 있습니다. 
+summary: '"시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 발생할 수 있는 오류를 해결합니다.' 
 ---
 = 문제 해결
 :hardbreaks:

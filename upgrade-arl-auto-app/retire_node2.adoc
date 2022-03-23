@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/retire_node2.html 
 keywords: retire, node2 
-summary: 노드 2를 폐기하려면 노드 2를 올바르게 종료하고 랙 또는 섀시에서 제거해야 합니다. 
+summary: System controller replace 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 node2를 종료하고 랙 또는 섀시에서 분리합니다. 
 ---
 = 노드2를 폐기합니다
 :hardbreaks:

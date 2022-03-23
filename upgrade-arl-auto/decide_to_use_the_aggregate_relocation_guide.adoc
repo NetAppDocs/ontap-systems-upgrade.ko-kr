@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/decide_to_use_the_aggregate_relocation_guide.html 
 keywords: aggregate relocation, decide to use, upgrade, model, matrix, replacement, controller 
-summary: 이 문서에서는 HA 쌍의 스토리지 컨트롤러를 새로운 컨트롤러로 업그레이드하는 방법과 기존 데이터와 디스크를 모두 유지하는 방법에 대해 설명합니다. 
+summary: System controller replace 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 ARL을 사용할지 여부를 결정한다. 
 ---
 = 집계 재배치 절차를 사용할지 여부를 결정합니다
 :hardbreaks:
@@ -15,7 +15,7 @@ summary: 이 문서에서는 HA 쌍의 스토리지 컨트롤러를 새로운 �
 [role="lead"]
 이 문서에서는 HA 쌍의 스토리지 컨트롤러를 새로운 컨트롤러로 업그레이드하는 방법과 기존 데이터와 디스크를 모두 유지하는 방법에 대해 설명합니다. 이는 숙련된 관리자만 사용해야 하는 복잡한 절차입니다.
 
-다음과 같은 상황에서 이 콘텐츠를 사용해야 합니다.
+다음과 같은 상황에서 이 콘텐츠를 사용하십시오.
 
 * ONTAP 9.5, 9.6 또는 9.7을 실행 중인 NetApp 컨트롤러를 업그레이드하려는 경우 이 문서는 ONTAP 9.8로의 업그레이드에는 적용되지 않습니다.
 * 새 컨트롤러를 새 HA 쌍으로 클러스터에 추가하고 볼륨 이동을 사용하여 데이터를 마이그레이션하지 않으려는 경우
@@ -26,7 +26,7 @@ summary: 이 문서에서는 HA 쌍의 스토리지 컨트롤러를 새로운 �
 
 NOTE: 이 절차를 통해 NetApp 스토리지 암호화(NSE) 및 NetApp 볼륨 암호화(NVE)를 사용할 수 있습니다.
 
-다음 표에서는 컨트롤러 업그레이드에 지원되는 모델 매트릭스를 보여 줍니다.
+[[sys_commands_95_97_supported_systems]] 다음 표에서는 컨트롤러 업그레이드에 대해 지원되는 모델 매트릭스를 보여 줍니다.
 
 [cols="50,50"]
 |===

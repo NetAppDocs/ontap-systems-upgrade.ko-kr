@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/stage_5_index.html 
-keywords: install, boot, node4, node2, node-management 
-summary: 5단계에서는 노드 4를 설치 및 부팅하고 노드 2의 클러스터 및 노드 관리 포트를 노드 4로 매핑합니다. 
+keywords: install, boot, node4, node2, node-management, stage 5 
+summary: ONTAP 9.8 이상을 실행하는 컨트롤러의 시스템 컨트롤러 교체 명령을 사용한 ARL 업그레이드를 위한 5단계 프로세스 시퀀스. 
 ---
 = 5단계. 노드 4를 설치하고 부팅합니다
 :hardbreaks:
@@ -13,7 +13,7 @@ summary: 5단계에서는 노드 4를 설치 및 부팅하고 노드 2의 클러
 
 
 [role="lead"]
-5단계에서는 노드 4를 설치 및 부팅하고, 노드 2에서 노드 4로 클러스터 및 노드 관리 포트를 매핑한 다음 노드 4 설치를 확인합니다. 또한 노드 2가 소유한 NAS 데이터 LIF를 노드 3에서 노드 4로 이동하고 노드 2의 애그리게이트를 노드 3에서 노드 4로 재배치합니다.
+5단계에서는 노드 4를 설치 및 부팅하고 노드 2의 클러스터 및 노드 관리 포트가 노드 4에서 온라인 상태인지 확인한 다음 노드 4 설치를 확인합니다. 또한 노드 2가 소유한 NAS 데이터 LIF를 노드 3에서 노드 4로 이동하고 노드 2의 애그리게이트를 노드 3에서 노드 4로 재배치합니다.
 
 .단계
 . link:install_boot_node4.html["노드 4를 설치하고 부팅합니다"]

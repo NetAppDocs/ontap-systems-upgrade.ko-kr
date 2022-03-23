@@ -18,7 +18,13 @@
 | 콘텐츠 | 설명 
 
 
-| link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade/upgrade-decide-to-use-this-guide.html["볼륨 또는 스토리지를 이동하여 업그레이드"^] | 에서는 스토리지 또는 볼륨을 이동하여 클러스터의 컨트롤러 하드웨어를 빠르게 업그레이드하는 방법을 설명합니다. 지원되는 모델을 디스크 쉘프로 변환하는 방법도 설명합니다. 
+| link:https://docs.netapp.com/us-en/ontap/system-admin/index.html["CLI를 사용한 관리 개요"^] | ONTAP 시스템 관리 방법, CLI 인터페이스 사용 방법, 클러스터에 액세스하는 방법, 노드 관리 방법 등을 설명합니다. 
+
+
+| link:https://docs.netapp.com/us-en/ontap/software_setup/concept_decide_whether_to_use_ontap_cli.html["클러스터 설정에 System Manager를 사용할지, ONTAP CLI를 사용할지 결정합니다"^] | ONTAP 설정 및 구성 방법에 대해 설명합니다. 
+
+
+| link:https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["CLI를 통한 디스크 및 애그리게이트 관리"^] | 에서는 CLI를 사용하여 ONTAP 물리적 스토리지를 관리하는 방법에 대해 설명합니다. 이 장에서는 Aggregate를 생성, 확장 및 관리하는 방법, Flash Pool Aggregate를 사용하는 방법, 디스크 관리 방법 및 RAID 정책 관리 방법을 보여 줍니다. 
 
 
 | link:https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"^] | 패브릭 구성에서 MetroCluster 하드웨어 및 소프트웨어 구성 요소를 설치하고 구성하는 방법에 대해 설명합니다. 
@@ -27,10 +33,19 @@
 | link:https://docs.netapp.com/us-en/ontap-flexarray/install/index.html["FlexArray 가상화 설치 요구 사항 및 참조 자료"^] | FlexArray 가상화 시스템에 대한 케이블 연결 지침 및 기타 정보를 제공합니다. 
 
 
+| link:https://docs.netapp.com/us-en/ontap/high-availability/index.html["고가용성 관리"^] | 에서는 스토리지 페일오버 및 테이크오버/반환을 비롯하여 고가용성 클러스터 구성을 설치 및 관리하는 방법에 대해 설명합니다. 
+
+
+| link:https://docs.netapp.com/us-en/ontap/volumes/index.html["CLI를 통한 논리적 스토리지 관리"^] | 볼륨, FlexClone 볼륨, 파일 및 LUN을 사용하여 논리적 스토리지 리소스를 효율적으로 관리하는 방법에 대해 설명합니다. FlexCache 볼륨, 중복제거, 압축, Qtree, 할당량 
+
+
 | link:https://docs.netapp.com/us-en/ontap-metrocluster/disaster-recovery/index.html["MetroCluster 관리 및 재해 복구"^] | 계획된 유지보수 작업 또는 재해 발생 시 MetroCluster 전환 및 스위치백 작업을 수행하는 방법에 대해 설명합니다. 
 
 
 | link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/index.html["MetroCluster 업그레이드 및 확장"^] | MetroCluster 구성에서 컨트롤러 및 스토리지 모델을 업그레이드하고, MetroCluster FC에서 MetroCluster IP 구성으로 전환하고, 노드를 추가하여 MetroCluster 구성을 확장하는 절차를 제공합니다. 
+
+
+| link:https://docs.netapp.com/us-en/ontap/network-management/index.html["네트워크 관리"^] | 클러스터에서 물리적 및 가상 네트워크 포트(VLAN 및 인터페이스 그룹), LIF, 라우팅 및 호스트 해상도 서비스를 구성 및 관리하는 방법, 로드 밸런싱으로 네트워크 트래픽을 최적화하는 방법 및 SNMP를 사용하여 클러스터를 모니터링하는 방법에 대해 설명합니다. 
 
 
 | link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-900%2Fhome.html["ONTAP 9.0 명령: 수동 페이지 참조"^] | 지원되는 ONTAP 9.0 명령의 구문 및 사용법을 설명합니다. 
@@ -66,34 +81,19 @@
 | link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-cmpr-9101/home.html["ONTAP 9.10.1 명령: 수동 페이지 참조"^] | 지원되는 ONTAP 9.10.1 명령에 대한 구문 및 사용법을 설명합니다. 
 
 
-| link:https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["CLI를 통한 디스크 및 애그리게이트 관리"^] | 에서는 CLI를 사용하여 ONTAP 물리적 스토리지를 관리하는 방법에 대해 설명합니다. 이 장에서는 Aggregate를 생성, 확장 및 관리하는 방법, Flash Pool Aggregate를 사용하는 방법, 디스크 관리 방법 및 RAID 정책 관리 방법을 보여 줍니다. 
-
-
-| link:https://docs.netapp.com/us-en/ontap/high-availability/index.html["고가용성 관리"^] | 에서는 스토리지 페일오버 및 테이크오버/반환을 비롯하여 고가용성 클러스터 구성을 설치 및 관리하는 방법에 대해 설명합니다. 
-
-
-| link:https://docs.netapp.com/us-en/ontap/volumes/index.html["CLI를 통한 논리적 스토리지 관리"^] | 볼륨, FlexClone 볼륨, 파일 및 LUN, FlexCache 볼륨을 사용하여 논리적 스토리지 리소스를 효율적으로 관리하는 방법에 대해 설명합니다. 중복 제거, 압축, Qtree 및 할당량. 
-
-
-| link:https://docs.netapp.com/us-en/ontap/network-management/index.html["네트워크 관리"^] | 클러스터에서 물리적 및 가상 네트워크 포트(VLAN 및 인터페이스 그룹), LIF, 라우팅 및 호스트 해상도 서비스를 구성 및 관리하는 방법, 로드 밸런싱으로 네트워크 트래픽을 최적화하는 방법 및 SNMP를 사용하여 클러스터를 모니터링하는 방법에 대해 설명합니다. 
-
-
 | link:https://docs.netapp.com/us-en/ontap/san-admin/index.html["CLI를 통한 SAN 관리"^] | iSCSI 및 FC 프로토콜을 사용하여 LUN, igroup 및 대상을 구성하고 관리하는 방법과 NVMe/FC 프로토콜을 사용하여 네임스페이스 및 하위 시스템을 관리하는 방법에 대해 설명합니다. 
 
 
 | link:https://docs.netapp.com/us-en/ontap/san-config/index.html["SAN 구성 참조"^] | FC 및 iSCSI 토폴로지 및 배선 스키마에 대한 정보를 제공합니다. 
 
 
-| link:https://docs.netapp.com/us-en/ontap/software_setup/concept_decide_whether_to_use_ontap_cli.html["클러스터 설정에 System Manager를 사용할지, ONTAP CLI를 사용할지 결정합니다"^] | ONTAP 설정 및 구성 방법에 대해 설명합니다. 
-
-
-| link:https://docs.netapp.com/us-en/ontap/system-admin/index.html["CLI를 사용한 관리 개요"^] | ONTAP 시스템 관리 방법, CLI 인터페이스 사용 방법, 클러스터에 액세스하는 방법, 노드 관리 방법 등을 설명합니다. 
+| link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade/upgrade-decide-to-use-this-guide.html["볼륨 또는 스토리지를 이동하여 업그레이드"^] | 에서는 스토리지 또는 볼륨을 이동하여 클러스터의 컨트롤러 하드웨어를 빠르게 업그레이드하는 방법을 설명합니다. 지원되는 모델을 디스크 쉘프로 변환하는 방법도 설명합니다. 
 
 
 | link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP를 업그레이드합니다"^] | ONTAP 다운로드 및 업그레이드에 대한 지침이 포함되어 있습니다. 
 
 
-| link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html[""system controller replace" 명령을 사용하여 ONTAP A700을 AFF 9.10.1 RC2 이상을 실행하는 AFF A900으로 업그레이드합니다"^] | "system controller replace" 명령을 사용하여 AFF A700을 ONTAP 9.10.1 RC2 이상을 실행하는 AFF A900으로 중단 없이 업그레이드하는 데 필요한 애그리게이트 재배치 절차를 설명합니다. 
+| link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html[""system controller replace" 명령을 사용하여 AFF A700을 ONTAP 9.10.1 이상을 실행하는 AFF A900으로 업그레이드합니다"^] | "system controller replace" 명령을 사용하여 AFF A700을 ONTAP 9.10.1 이상을 실행하는 AFF A900으로 중단 없이 업그레이드하는 데 필요한 애그리게이트 재배치 절차를 설명합니다. 
 
 
 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/index.html[""시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 업그레이드합니다"^] | "system controller replace" 명령을 사용하여 ONTAP 9.8을 실행하는 컨트롤러를 중단 없이 업그레이드하는 데 필요한 애그리게이트 재배치 절차를 설명합니다. 

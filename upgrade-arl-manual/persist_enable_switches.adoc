@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/persist_enable_switches.html 
 keywords: enable, switches, fabric, persistent 
-summary: Fabric의 스위치를 영구적으로 사용할 수 있도록 Brocade, Cisco를 사용합니다 
+summary: ONTAP 9.7 이하를 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 Fabric에서 Brocade 및 Cisco 스위치를 지속적으로 활성화합니다. 
 ---
 = 스위치를 영구적으로 활성화합니다
 :hardbreaks:

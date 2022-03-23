@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-manual/check_mcc_config_errors.html 
-keywords: config advisor, mcc, metrocluster,configuration, configure, error, check 
-summary: Config Advisor를 사용하여 일반적인 구성 오류를 확인합니다. 
+keywords: config advisor, mcc, metrocluster, configuration, configure, error, check 
+summary: Config Advisor 9.7 이하를 실행하는 컨트롤러에서 수동 ARL 업그레이드 중에 일반적인 구성 오류가 있는지 확인하려면 ONTAP 도구를 사용하십시오. 
 ---
 = MetroCluster 구성 오류를 확인합니다
 :hardbreaks:

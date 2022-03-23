@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/prepare_nodes_for_upgrade.html 
 keywords: prepare, nodes, upgrade, controller, replacement, license 
-summary: 업그레이드할 노드를 준비해야 합니다. 
+summary: System controller replace 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 노드를 준비하고 일련의 사전 점검을 수행한다. 
 ---
 = 업그레이드할 노드를 준비합니다
 :hardbreaks:
@@ -106,27 +106,27 @@ Controller replacement operation has been paused for user intervention.
 다음 명령의 출력을 개별적으로 실행 및 저장해야 합니다.
 
 +
-** SVM 서비스 이름 - 서비스 DNS 표시
-** 네트워크 인터페이스 show-curr-node <nodename> - 역할 클러스터, 인터클러스터, 노드 관리, 클러스터 관리, 데이터
-** network port show-node <nodename> - 물리적 유형입니다
-** 서비스 프로세서 show-node * -instance
-** 네트워크 FCP 어댑터 show-node <node_name>
-** 네트워크 포트 ifgrp show를 참조하십시오
-** 네트워크 포트 VLAN이 표시됩니다
-** 시스템 노드 show-instance-node <nodename>
-** run-node <node_name> sysconfig
-** 스토리지 애그리게이트 show-node <nodename>
-** volume show -node <node_name>
-** 네트워크 인터페이스 페일오버 그룹이 표시됩니다
-** 스토리지 배열 config show -switch <switch_name>
-** system license show-owner <node_name>
-** 스토리지 암호화 디스크가 표시됩니다
+** 'vserver services name-service dns show'
+** 네트워크 인터페이스 show-curr-node nodename-role cluster, 인터클러스터, 노드 관리, 클러스터 관리, 데이터
+** 네트워크 포트 show-node nodename-type physical
+** 'Service-processor show-node * -instance'
+** 'network fcp adapter show-node node_name'
+** 'network port ifgrp show'
+** 네트워크 포트 VLAN 표시
+** 'system node show-instance-node nodename'
+** 'run-node <node_name> sysconfig'
+** 'Storage aggregate show-node nodename'
+** 'volume show-node node_name'입니다
+** 네트워크 인터페이스 페일오버 그룹들이 보여줌
+** 'Storage array config show-switch_name'을 선택합니다
+** 'system license show-owner node_name'입니다
+** 스토리지 암호화 디스크 표시
 
 
 
 
 
-NOTE: Onboard Key Manager를 사용하여 NetApp Volume Encryption을 사용 중인 경우, 키 관리자 암호를 준비하여 절차의 뒷부분에서 키 관리자 재동기화를 완료할 수 있도록 합니다.
+NOTE: Onboard Key Manager를 사용하여 NetApp Volume Encryption을 사용 중인 경우 키 관리자 암호를 준비하여 절차의 뒷부분에서 키 관리자 재동기화를 완료할 수 있도록 합니다.
 
 
 

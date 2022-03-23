@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/prepare_for_netboot.html 
 keywords: prepare, netboot, node3, node4, boot, ONTAP image, media device 
-summary: 물리적으로 노드를 랙에 설치한 후 노드를 netboot 해야 할 수도 있습니다. 
+summary: System controller replace 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 netboot node3 및 node4를 준비한다. 
 ---
 = netboot를 준비합니다
 :hardbreaks:

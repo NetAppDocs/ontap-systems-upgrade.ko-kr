@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/stage_3_index.html 
-keywords: installing, booting, node3, install, cluster 
-summary: 3단계에서는 노드 3을 설치하고 부팅합니다. 
+keywords: installing, booting, node3, install, cluster, stage 3 
+summary: 'ONTAP 9.8 이상을 실행 중인 컨트롤러의 "시스템 컨트롤러 교체" 명령을 사용한 ARL 업그레이드를 위한 3단계 프로세스 시퀀스.' 
 ---
 = 3단계. 노드3을 설치하고 부팅합니다
 :hardbreaks:

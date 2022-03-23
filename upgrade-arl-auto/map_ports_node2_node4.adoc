@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/map_ports_node2_node4.html 
 keywords: map, node2, ports, cluster, broadcast domains, physical ports 
-summary: 노드 2의 물리적 포트가 노드 4의 물리적 포트에 올바르게 매핑되는지 확인해야 합니다. 
+summary: '"시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 node2의 물리적 포트가 node4에 올바르게 매핑되는지 확인합니다.' 
 ---
 = 노드 2의 포트를 노드 4로 매핑합니다
 :hardbreaks:

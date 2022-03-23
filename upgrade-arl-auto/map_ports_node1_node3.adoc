@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/map_ports_node1_node3.html 
 keywords: map, port, node1, node3, settings, restore, cluster 
-summary: 노드 1의 물리적 포트가 노드 3의 물리적 포트에 올바르게 매핑되는지 확인합니다 
+summary: '"시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 node1의 물리적 포트가 node3에 올바르게 매핑되는지 확인합니다.' 
 ---
 = 노드 1의 포트를 노드 3으로 매핑합니다
 :hardbreaks:

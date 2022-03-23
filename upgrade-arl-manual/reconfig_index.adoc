@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/reconfig_index.html 
 keywords: reconfigure, fc, switch, layout, RCF, metrocluster 
-summary: 기존 시스템을 폐기합니다 
+summary: ONTAP 9.1 이상의 경우, ONTAP 9.7 이하를 실행하는 컨트롤러에서 수동 ARL 업그레이드 중에 포트 레이아웃을 재구성하고 최신 RCF를 적용하십시오. 
 ---
 = ONTAP 9.1 이상에 대해 FC 스위치 레이아웃을 재구성합니다
 :hardbreaks:

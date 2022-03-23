@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html 
 keywords: relocate, non-root, aggregates, nas, lif, node2, node3 
-summary: 노드 2를 노드 4로 교체하려면 먼저 노드 2가 소유한 비 루트 애그리게이트를 노드 3으로 재배치해야 합니다. 
+summary: 'ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 "시스템 컨트롤러 교체" 명령을 사용하여 node2의 비루트 애그리게이트를 노드 3으로 이동합니다.' 
 ---
 = 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 2에서 노드 3으로 재배치합니다
 :hardbreaks:

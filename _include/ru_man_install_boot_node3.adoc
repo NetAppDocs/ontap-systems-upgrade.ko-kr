@@ -1,9 +1,9 @@
 = 
 
 
-랙에 노드 3을 설치하고, 노드 1의 연결을 노드 3으로 전송하고, 노드 3을 부팅하고, ONTAP를 설치해야 합니다. 그런 다음 노드 1의 스페어 디스크, 루트 볼륨에 속한 디스크 및 이전에 노드 2로 재배치되지 않은 모든 비루트 애그리게이트를 재할당해야 합니다.
+랙에 노드 3을 설치하고, 노드 1의 연결을 노드 3으로 전송하고, 노드 3을 부팅하고, ONTAP를 설치해야 합니다. 또한 노드 1의 스페어 디스크, 루트 볼륨에 속한 디스크 및 이전에 노드 2로 재배치되지 않은 모든 비루트 애그리게이트를 재할당해야 합니다.
 
-노드 1에 설치된 ONTAP 9의 버전이 같지 않으면 노드 3을 netboot 해야 합니다. 노드3을 설치한 후 웹 서버에 저장된 ONTAP 9 이미지에서 부팅합니다. 그런 다음 부팅 미디어 장치에 올바른 파일을 다운로드하여 나중에 시스템을 부팅할 수 있습니다. 을 참조하십시오 link:prepare_for_netboot.html["netboot를 준비합니다"].
+노드 1에 설치된 ONTAP 9의 버전이 같지 않으면 netboot node3을 사용해야 합니다. 노드3을 설치한 후 웹 서버에 저장된 ONTAP 9 이미지에서 부팅합니다. 그런 다음 부팅 미디어 장치에 올바른 파일을 다운로드하여 나중에 시스템을 부팅할 수 있습니다. 을 참조하십시오 link:prepare_for_netboot.html["netboot를 준비합니다"].
 
 그러나 노드 1에 설치된 ONTAP 9의 이후 버전이 같거나 동일한 경우에는 노드 3을 netboot 할 필요가 없습니다.
 
@@ -203,7 +203,7 @@ NOTE: 관리 포트와 IP를 netboot 연결로 사용해야 합니다. 데이터
 | 기타 모든 시스템 | "netboot\http://<web_server_ip>/<path_to_webaccessible_directory>/<ontap_version>_image.tgz` 
 |===
 +
-"<path_to_the_web-Accessible_directory>"는 에서 "<ONTAP_version>_image.tgz"를 다운로드한 위치로 이어져야 합니다 link:prepare_for_netboot.html#man_netboot_Step1["1단계"] netboot_에 대한 준비 섹션에서
+"path_to_the_web-Accessible_directory"는 에서 "ONTAP_version_image.tgz"를 다운로드한 위치로 이어집니다 link:prepare_for_netboot.html#man_netboot_Step1["1단계"] netboot_에 대한 준비 섹션에서
 
 +
 
@@ -339,7 +339,7 @@ Disk ownership will be updated on all disks previously belonging to Filer with s
 Do you want to continue (y/n)?
 ----
 . [[man_install3_step31]] y를 입력합니다.
-. [[man_install3_step32] 외부 디스크가 있는 시스템에서 내부 및 외부 디스크를 지원하는 시스템(예: AFF A800 시스템)으로 업그레이드하는 경우 node1 애그리게이트를 root로 설정하여 node3이 node1의 루트 애그리게이트에서 부팅되도록 합니다.
+. [[man_install3_step32] 외부 디스크가 있는 시스템에서 내부 및 외부 디스크를 지원하는 시스템(예: AFF A800 시스템)으로 업그레이드하는 경우 node1 애그리게이트를 루트로 설정하여 node3이 node1의 루트 애그리게이트에서 부팅되는지 확인하십시오.
 +
 
 WARNING: * 경고 *: 표시된 정확한 순서대로 다음 하위 단계를 수행해야 합니다. 그렇지 않으면 운영 중단이나 데이터 손실이 발생할 수 있습니다.
@@ -407,7 +407,7 @@ NOTE: 이전 하위 단계를 수행하지 않으면 노드 3이 내부 루트 �
     Controller HA configuration: ha
 ----
 +
-시스템은 HA 쌍 또는 독립형 구성에 관계없이 PROM에 기록합니다. 독립 실행형 시스템 또는 HA 쌍 내의 모든 구성 요소에서 상태가 동일해야 합니다.
+시스템은 HA 쌍 또는 독립 실행형 구성에 관계없이 PROM(프로그래밍 가능한 ROM)으로 기록합니다. 독립 실행형 시스템 또는 HA 쌍 내의 모든 구성 요소에서 상태가 동일해야 합니다.
 
 +
 컨트롤러 및 섀시가 "ha"로 구성되지 않은 경우 다음 명령을 사용하여 구성을 수정하십시오.

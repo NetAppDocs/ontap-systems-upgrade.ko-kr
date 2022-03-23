@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto/join_quorum_node_has_different_ports_stage3.html 
-keywords: aggregate relocation, YYYYY 
-summary: 새 노드에 다른 네트워크 포트 집합이 있는 경우 노드가 쿼럼에 성공적으로 연결되었는지 확인해야 합니다. 
+keywords: aggregate, relocation, quorum, network, ports 
+summary: 3단계에서 시스템 컨트롤러 교체 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 새 노드가 쿼럼에 가입되는지 확인합니다. 
 ---
 = 노드에 다른 네트워크 포트 집합이 있는 경우 쿼럼을 연결합니다
 :hardbreaks:
@@ -13,7 +13,7 @@ summary: 새 노드에 다른 네트워크 포트 집합이 있는 경우 노드
 
 
 [role="lead"]
-새 컨트롤러가 있는 노드가 부팅되고 처음에는 자동으로 클러스터에 참여하려고 하지만, 새 노드에 다른 네트워크 포트 세트가 있는 경우 다음 단계를 수행하여 노드가 쿼럼에 성공적으로 참가하도록 해야 합니다.
+새 컨트롤러가 있는 노드가 부팅되고 처음에는 자동으로 클러스터에 참여하려고 하지만, 새 노드에 다른 네트워크 포트 세트가 있는 경우 다음 단계를 수행하여 노드가 쿼럼에 성공적으로 가입되었는지 확인해야 합니다.
 
 이 지침은 모든 관련 노드에 사용할 수 있습니다. Node3은 다음 샘플 전체에서 사용됩니다.
 

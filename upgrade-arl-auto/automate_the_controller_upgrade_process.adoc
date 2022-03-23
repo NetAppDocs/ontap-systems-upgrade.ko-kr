@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/automate_the_controller_upgrade_process.html 
 keywords: automate, controller, upgrade, nondisruptive 
-summary: 컨트롤러를 업그레이드하는 동안 컨트롤러는 새롭고 강력한 플랫폼을 실행하는 다른 컨트롤러로 교체됩니다 
+summary: 부분적으로 자동화된 ARL 절차를 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드합니다. 
 ---
 = 컨트롤러 업그레이드 프로세스를 자동화합니다
 :hardbreaks:

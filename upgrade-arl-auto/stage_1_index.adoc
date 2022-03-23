@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto/stage_1_index.html 
-keywords: Prepare nodes for upgrade, storage encryption, KMS, key management server, 
-summary: 1단계 사전 점검 중에 업그레이드를 위해 노드를 준비하고 일련의 사전 점검을 실행해야 합니다. 
+keywords: Prepare nodes for upgrade, storage encryption, KMS, key management server, stage 1 
+summary: 'ONTAP 9.5에서 9.7을 실행하는 컨트롤러의 "시스템 컨트롤러 교체" 명령을 사용한 ARL 업그레이드를 위한 1단계 프로세스 순서.' 
 ---
 = 1단계. 업그레이드를 준비합니다
 :hardbreaks:

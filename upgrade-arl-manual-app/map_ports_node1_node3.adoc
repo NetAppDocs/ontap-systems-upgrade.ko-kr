@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual-app/map_ports_node1_node3.html 
 keywords: map, ports, node1, node3, cluster, home port, vlan ports, broadcast domain, connectivity 
-summary: 노드 1의 포트를 노드 3으로 매핑합니다 
+summary: ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 노드 1의 물리적 포트가 노드 3에 올바르게 매핑되는지 확인합니다. 
 ---
 = 노드 1의 포트를 노드 3으로 매핑합니다
 :hardbreaks:
@@ -131,7 +131,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 ----
 WARNING: Repairing port "node_name:port" might cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
 ----
-.. ONTAP가 복구를 완료할 수 있도록 마지막 포트에서 "성능 복구" 명령을 실행한 후 약 1분 정도 기다립니다.
+.. ONTAP가 복구를 완료할 수 있도록 하려면 마지막 포트에서 "복구 가능성" 명령을 실행한 후 약 1분 정도 기다립니다.
 .. 클러스터의 모든 브로드캐스트 도메인 나열:
 +
 방송-도메인 쇼

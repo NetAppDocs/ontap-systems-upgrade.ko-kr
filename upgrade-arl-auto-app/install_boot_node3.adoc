@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/install_boot_node3.html 
 keywords: installing, booting, node3, ontap 
-summary: 랙에 노드 3을 설치하고, 노드 1의 연결을 노드 3으로 전송하고, 노드 3을 부팅하고, ONTAP를 설치해야 합니다. 
+summary: System controller replace 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 node3을 설치 및 부팅하고 ONTAP 소프트웨어를 설치합니다. 
 ---
 = 노드3을 설치하고 부팅합니다
 :hardbreaks:
@@ -142,7 +142,7 @@ NOTE: 다음 메시지는 무시하십시오: "이 절차는 HA 쌍의 무중단
 새로 설치된 소프트웨어를 사용하려면 노드를 재부팅해야 합니다. 지금 재부팅하시겠습니까? {y|n}'
 
 +
-부팅 장치가 다시 포맷되어 구성 데이터를 복원해야 하므로 컨트롤러 모듈이 재부팅되지만 부팅 메뉴에서 중지됩니다.
+부팅 장치가 다시 포맷되어 구성 데이터가 복원되어야 하므로 컨트롤러 모듈이 재부팅되지만 부팅 메뉴에서 중지됩니다.
 
 
 
@@ -217,7 +217,7 @@ MetroCluster 구성이 있는 경우 다음 명령을 사용하여 컨트롤러 
 
 
 
-. [[auto_install3_step21]] 부트 로더에서 'partner-sysid' 매개 변수를 설정해야 합니다. 노드 3의 경우 'partner-sysid'가 노드 2의 시스템이 되어야 합니다. 노드 3의 'partner-sysid'를 확인합니다.
+. [[auto_install3_step21]] 부트 로더에서 'partner-sysid' 매개 변수를 설정해야 합니다. 노드 3의 경우 'partner-sysid'가 노드 2의 syid여야 합니다. 노드 3의 'partner-sysid'를 확인합니다.
 +
 'printenv partner-sysid
 
@@ -252,7 +252,7 @@ MetroCluster 구성이 있는 경우 다음 명령을 사용하여 컨트롤러 
 새 컨트롤러 모듈을 설치하면 각 온보드 FC 포트에 연결된 WWPN 값이 변경됩니다.
 
 . [[step26]] 구성에서 스위치 기반 조닝을 사용하는 경우 새 WWPN 값이 적용되도록 조닝을 조정하십시오.
-. [[step27]] NSE(NetApp Storage Encryption)를 이 구성에서 사용 중인 경우 'setup.storageenv.storageencryption.support'명령을 'true'로 설정해야 하며, node1 구성이 로드된 후 부트 루프를 방지하려면 kmip.init.maxwait` 변수를 'off'로 설정해야 합니다.
+. [[step27]] NSE(NetApp Storage Encryption)를 이 구성에서 사용 중인 경우, 'setup.storageenv.storageencryption.support'명령을 'true'로 설정해야 하며, node1 구성이 로드된 후 부트 루프를 방지하려면 kmip.init.maxwait` 변수를 'off'로 설정해야 합니다.
 +
 에테네 부타그 storageencryption.support true
 

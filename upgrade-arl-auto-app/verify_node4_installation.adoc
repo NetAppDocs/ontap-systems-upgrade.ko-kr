@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/verify_node4_installation.html 
 keywords: verify, node4, installation, physical ports, node2, node, LIF, MetroCluster 
-summary: 노드 4 설치를 확인합니다 
+summary: System controller replace 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 node2의 물리적 포트가 node4에 올바르게 매핑되는지 확인하고 node4의 네트워크 구성을 복원하십시오. 
 ---
 = 노드 4 설치를 확인합니다
 :hardbreaks:
@@ -256,7 +256,7 @@ Warning: Repairing port "node2_node4: e0h" may cause it to move into a different
 네트워크 포트 브로드캐스트 도메인 추가 포트
 
 +
-연결할 수 없거나 예상치 못한 포트가 없는지 확인합니다. 다음 명령을 사용하여 모든 물리적 포트의 도달 가능성 상태를 확인하고 출력을 검사하여 상태가 '정상'인지 확인합니다.
+연결할 수 없거나 예상치 못한 포트가 없는지 확인합니다. 다음 명령을 사용하여 출력을 검사하여 상태가 '확인'인지 확인하여 모든 물리적 포트의 도달 가능성 상태를 확인합니다.
 
 +
 네트워크 포트 도달 가능성 세부 정보

@@ -1,8 +1,8 @@
 ---
 permalink: upgrade/upgrade-reset-default-configuration-node3-and-node4.html 
 sidebar: sidebar 
-keywords: ensure, configuration, information, boot, media, interfere, controller, upgrade, reset, node3, node4, node, default, setting, reset default configuration on the new nodes 
-summary: 부팅 미디어의 구성 정보가 컨트롤러 업그레이드를 방해하지 않도록 하려면 노드 3과 노드 4의 구성을 기본 구성 설정으로 재설정해야 합니다. 
+keywords: confirm, configuration, information, boot, media, interfere, controller, upgrade, reset, node3, node4, node, default, setting, reset default configuration on the new nodes 
+summary: 부팅 미디어의 구성 정보가 컨트롤러 업그레이드에 방해가 되지 않는지 확인하려면 노드 3과 노드 4의 구성을 기본 구성 설정으로 재설정해야 합니다. 
 ---
 = 새 노드에서 기본 구성을 재설정합니다
 :icons: font
@@ -10,7 +10,7 @@ summary: 부팅 미디어의 구성 정보가 컨트롤러 업그레이드를 �
 
 
 [role="lead"]
-부팅 미디어의 구성 정보가 컨트롤러 업그레이드를 방해하지 않도록 하려면 노드 3과 노드 4의 구성을 기본 구성 설정으로 재설정해야 합니다.
+부팅 미디어의 구성 정보가 컨트롤러 업그레이드를 방해하지 않는지 확인하려면 node3과 node4의 구성을 기본 구성 설정으로 재설정해야 합니다.
 
 노드 3과 노드 4에서 다음 단계를 수행해야 합니다. 각 노드에서 동시에 단계를 수행할 수 있습니다.
 

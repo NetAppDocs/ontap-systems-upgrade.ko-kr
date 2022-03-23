@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/relocate_failed_or_vetoed_aggr.html 
 keywords: relocate, aggregates, fail, veto 
-summary: Aggregate가 재배치되지 않거나 거부되면 Aggregate를 수동으로 재이동해야 합니다. 
+summary: '"시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 수동으로 재배치할 수 없거나 거부된 애그리게이트를 재배치합니다.' 
 ---
 = 장애가 발생하거나 거부권을 행사한 Aggregate를 재배치합니다
 :hardbreaks:

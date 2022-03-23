@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/move_nas_lifs_node1_node2.html 
 keywords: node1, node3, nas, lifs, cluster, san 
-summary: 2노드 클러스터가 있는 경우 노드 1이 소유한 NAS 데이터 LIF를 노드 2로 이동하거나, 클러스터에 노드가 2개 이상인 경우 3번째 노드로 이동합니다. 
+summary: 2노드 클러스터가 있는 경우 노드 1의 NAS 데이터 LIF를 노드 2로 이동하거나, 클러스터에 노드가 2개 이상인 경우 ONTAP 9.7 이하를 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 노드 1의 NAS 데이터 LIF를 노드 2로 이동합니다. 
 ---
 = 노드 1이 소유한 NAS 데이터 LIF를 노드 2로 이동합니다
 :hardbreaks:

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/verify_health_mcc_config.html 
 keywords: health, mcc, metrocluster, configuration, configure 
-summary: MetroCluster 구성 상태를 점검하여 올바르게 작동하는지 확인하십시오. 
+summary: ONTAP 9.7 이하를 실행하는 컨트롤러에서 수동 ARL 업그레이드 중에 MetroCluster 구성 상태를 확인하고 올바르게 작동하는지 확인하십시오. 
 ---
 = MetroCluster 구성의 상태를 확인합니다
 :hardbreaks:

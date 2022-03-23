@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/decommission_old_system.html 
 keywords: decommission, system, metrocluster 
-summary: 기존 시스템을 폐기합니다 
+summary: ONTAP 9.7 이하를 실행하는 컨트롤러에서 수동 ARL 업그레이드를 완료한 후 이전 시스템이 더 이상 작동하지 않음을 NetApp에 알려주십시오. 
 ---
 = 기존 시스템을 폐기합니다
 :hardbreaks:
@@ -27,7 +27,7 @@ summary: 기존 시스템을 폐기합니다
 ** 내 위치의 일련 번호입니다
 
 
-. Go! * 를 클릭합니다
+. Go! * 를 선택합니다
 +
 표에는 일련 번호를 포함한 클러스터 정보가 표시됩니다.
 

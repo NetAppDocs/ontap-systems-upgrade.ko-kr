@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/get_ip_address_of_external_kms_for_storage_encryption.html 
 keywords: ip, address, external, key, management, server, storage, encryption, upgrading, authentication 
-summary: 업그레이드 후 스토리지 암호화를 즉시 구성해야 합니다. 
+summary: '"시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 스토리지 암호화를 구성 및 관리하고 인증 키를 관리하고 SnapMirror 관계를 중지합니다.' 
 ---
 = 스토리지 암호화를 위한 외부 키 관리 서버의 IP 주소를 가져옵니다
 :hardbreaks:

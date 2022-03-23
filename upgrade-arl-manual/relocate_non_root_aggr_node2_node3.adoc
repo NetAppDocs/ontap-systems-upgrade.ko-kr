@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/relocate_non_root_aggr_node2_node3.html 
 keywords: node2, node3, node2, aggregates, autosupport 
-summary: 노드 2에 대한 AutoSupport 메시지를 보낸 다음 노드 2가 소유하는 루트 이외의 애그리게이트를 노드 3으로 재배치합니다. 
+summary: ONTAP 9.7 이하를 실행하는 컨트롤러에서 수동 ARL 업그레이드 중에 node2에 대한 AutoSupport 메시지를 보내고 node2의 비루트 애그리게이트를 노드 3으로 재배치합니다. 
 ---
 = 노드 2에서 노드 3으로 비루트 애그리게이트를 재배치합니다
 :hardbreaks:

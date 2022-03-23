@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual-app/required_tools_documentation.html 
 keywords: Tool, documentation, center, content, reference, worksheet 
-summary: 업그레이드 중에 필요한 도구 및 문서. 
+summary: ONTAP 9.8 이상을 실행하는 컨트롤러에서 수동 ARL 업그레이드를 수행하려면 특정 도구 및 설명서가 있어야 합니다. 
 ---
 = 필요한 도구 및 문서
 :hardbreaks:
@@ -15,7 +15,7 @@ summary: 업그레이드 중에 필요한 도구 및 문서.
 [role="lead"]
 새 하드웨어를 설치하려면 특정 도구가 있어야 하며 업그레이드 프로세스 중에 다른 문서를 참조해야 합니다. 또한 컨트롤러 업그레이드를 완료하는 데 필요한 정보를 기록해야 합니다. 정보를 기록하기 위한 워크시트가 제공됩니다.
 
-상향 평점을 수행하려면 다음 도구가 필요합니다.
+업그레이드를 수행하려면 다음 도구가 필요합니다.
 
 * 접지 줄
 * #2 십자 드라이버

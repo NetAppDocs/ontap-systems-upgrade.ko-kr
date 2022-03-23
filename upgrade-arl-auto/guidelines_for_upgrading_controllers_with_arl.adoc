@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/guidelines_for_upgrading_controllers_with_arl.html 
 keywords: upgrade, controllers, guidelines, ARL, aggregate relocation, supported upgrades, two-node, cluster, troubleshoot 
-summary: ONTAP 9.5를 실행하는 컨트롤러 쌍을 ONTAP 9.7로 업그레이드하려면 원래 컨트롤러와 교체 컨트롤러 모두의 플랫폼 및 구성에 따라 다릅니다. 
+summary: '"시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 수 있는지 파악합니다.' 
 ---
 = ARL을 사용한 컨트롤러 업그레이드 지침
 :hardbreaks:
@@ -63,4 +63,4 @@ ARL을 사용한 컨트롤러 업그레이드는 SnapLock Enterprise 및 SnapLoc
 
 컨트롤러를 업그레이드하는 동안 문제가 발생하면 을 참조하십시오 link:troubleshoot.html["문제 해결"] 자세한 내용 및 가능한 해결 방법은 절차 끝 부분의 섹션을 참조하십시오.
 
-발생한 문제에 대한 해결책을 찾을 수 없는 경우 기술 지원 부서에 문의하십시오.
+발생한 문제에 대한 해결책을 찾지 못한 경우 기술 지원 부서에 문의하십시오.

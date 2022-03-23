@@ -12,7 +12,7 @@ NOTE: NetApp 마케팅 자료에서는 "UTA2"라는 용어를 사용하여 CNA �
 * 하지만 스토리지 어레이가 있는 FlexArray 가상화 소프트웨어를 사용하는 V 시리즈 시스템 또는 시스템이 있고 노드 3에 온보드 FC 포트, 온보드 UTA/UTA 포트 또는 UTA/UTA2 카드가 없는 경우, _Install로 돌아가서 노드 3_를 다시 시작한 다음 에서 작업을 시작하십시오 link:install_boot_node3.html#step22["22단계"].
 
 
-.선택
+.선택 사항:
 * <<Configure FC ports on node3>>
 * <<Check and configure UTA/UTA2 ports on node3>>
 

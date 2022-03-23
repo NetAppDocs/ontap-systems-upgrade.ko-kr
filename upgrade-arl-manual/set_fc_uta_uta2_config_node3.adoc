@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/set_fc_uta_uta2_config_node3.html 
 keywords: configure, configuration, fc, uta, uta2, settings 
-summary: 업그레이드를 완료하기 전에 설정을 구성해야 합니다. 
+summary: ONTAP 9.7 이하를 실행하는 컨트롤러에서 수동 ARL 업그레이드 중에 노드 3 온보드 FC 포트, UTA/UTA2 포트 또는 UTA/UTA2 카드를 구성합니다. 
 ---
 = 노드 3에 FC 또는 UTA/UTA2 구성을 설정합니다
 :hardbreaks:
@@ -24,7 +24,7 @@ NOTE: NetApp 마케팅 자료에서는 "UTA2"라는 용어를 사용하여 CNA �
 * 하지만 스토리지 어레이가 있는 FlexArray 가상화 소프트웨어를 사용하는 V 시리즈 시스템 또는 시스템이 있고 노드 3에 온보드 FC 포트, 온보드 UTA/UTA 포트 또는 UTA/UTA2 카드가 없는 경우, _Install로 돌아가서 노드 3_를 다시 시작한 다음 에서 작업을 시작하십시오 link:install_boot_node3.html#step22["22단계"].
 
 
-.선택
+.선택 사항:
 * <<Configure FC ports on node3>>
 * <<Check and configure UTA/UTA2 ports on node3>>
 
@@ -187,7 +187,7 @@ NOTE: NetApp 마케팅 자료에서는 UTA2 용어를 사용하여 CNA 어댑터
  1b       fc       target     -        -          online
 6 entries were displayed.
 ----
-UTA/UTA2 포트를 네이티브 FC 모드 또는 UTA/UTA2 모드로 구성할 수 있습니다. FC 모드는 FC 이니시에이터 및 FC 타겟을 지원하며, UTA/UTA2 모드는 동일한 10GbE SFP+ 인터페이스를 공유하는 NIC 및 FCoE 트래픽을 동시에 허용할 수 있으며 FC 타겟을 지원합니다.
+UTA/UTA2 포트를 네이티브 FC 모드 또는 UTA/UTA2 모드로 구성할 수 있습니다. FC 모드는 FC 이니시에이터 및 FC 타겟을 지원하며, UTA/UTA2 모드는 동일한 10GbE SFP+ 인터페이스를 공유하는 NIC 및 FCoE 트래픽을 동시에 지원합니다.
 
 UTA/UTA2 포트는 어댑터 또는 컨트롤러에서 찾을 수 있으며 다음과 같은 구성을 가지고 있지만 노드 3의 UTA/UTA2 포트 구성을 확인하고 필요에 따라 변경해야 합니다.
 
@@ -196,7 +196,7 @@ UTA/UTA2 포트는 어댑터 또는 컨트롤러에서 찾을 수 있으며 다�
 * 새 컨트롤러의 온보드 UTA/UTA2 포트는 배송 전에 사용자가 요청하는 Personality를 사용하도록 구성되었습니다.
 +
 
-NOTE: * 주의 *: 시스템에 스토리지 디스크가 있는 경우 유지보수 모드로 들어가라는 지시가 없는 한 클러스터 프롬프트에서 이 섹션에 있는 명령을 입력합니다. V시리즈 시스템이 있거나 FlexArray 가상화 소프트웨어가 있고 스토리지 어레이에 연결되어 있는 경우, 유지보수 모드 프롬프트에서 이 섹션에 명령을 입력합니다. UTA/UTA2 포트를 구성하려면 유지보수 모드여야 합니다.
+NOTE: * 주의 *: 시스템에 스토리지 디스크가 있는 경우 유지보수 모드로 들어가라는 지시가 없는 한 클러스터 프롬프트에서 이 섹션에 있는 명령을 입력해야 합니다. V시리즈 시스템이 있거나 FlexArray 가상화 소프트웨어가 있고 스토리지 어레이에 연결되어 있는 경우, 유지보수 모드 프롬프트에서 이 섹션에 명령을 입력해야 합니다. UTA/UTA2 포트를 구성하려면 유지보수 모드여야 합니다.
 
 
 

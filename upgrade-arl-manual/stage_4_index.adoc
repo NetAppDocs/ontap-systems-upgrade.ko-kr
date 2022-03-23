@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-manual/stage_4_index.html 
-keywords: stage4, record, node2, information, retire 
-summary: 4단계에서는 노드2 정보를 기록한 다음 노드2를 폐기합니다. 
+keywords: stage 4, record, node2, information, retire 
+summary: ONTAP 9.7 이하를 실행하는 컨트롤러의 수동 ARL 업그레이드를 위한 4단계 프로세스 시퀀스. 
 ---
 = 4단계. 노드2 정보를 기록하고 노드2를 폐기합니다
 :hardbreaks:

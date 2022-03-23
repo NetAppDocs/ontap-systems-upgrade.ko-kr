@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/relocate_failed_or_vetoed_aggr.html 
 keywords: relocate, failed, vetoed, aggregates, relocation, operation 
-summary: Aggregate가 재배치되지 않거나 거부되면 Aggregate를 수동으로 재이동하거나 거부권 또는 대상 검사를 오버라이드해야 합니다. 
+summary: AFF A700에서 AFF A900으로 업그레이드하는 동안 장애가 발생하거나 거부된 애그리게이트를 재배치할 수 있습니다. 
 ---
 = 장애가 발생하거나 거부권을 행사한 Aggregate를 재배치합니다
 :hardbreaks:

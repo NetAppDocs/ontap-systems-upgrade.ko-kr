@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/send_custom_asup_message_prior_reconfig_switches.html 
 keywords: autosupport, reconfigure, send message, maintenance, netapp support 
-summary: 스위치를 다시 구성하기 전에 사용자 지정 AutoSupport 메시지를 보냅니다 
+summary: ONTAP 9.7 이하를 실행하는 컨트롤러에서 수동 ARL 업그레이드를 수행하는 동안 유지보수가 진행되고 있음을 NetApp 기술 지원에 알립니다. 
 ---
 = 스위치를 다시 구성하기 전에 사용자 지정 AutoSupport 메시지를 보냅니다
 :hardbreaks:

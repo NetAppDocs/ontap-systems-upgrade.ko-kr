@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual-app/lif_migration_failure.html 
 keywords: lif, migration, error, failure, troubleshoot 
-summary: LIF 마이그레이션 실패 
+summary: ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 2단계, 3단계 또는 5단계에서 마이그레이션한 후 LIF가 온라인 상태가 아닙니다. 
 ---
 = LIF 마이그레이션 실패
 :hardbreaks:

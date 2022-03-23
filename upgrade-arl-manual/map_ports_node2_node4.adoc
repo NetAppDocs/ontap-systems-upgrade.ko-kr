@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/map_ports_node2_node4.html 
 keywords: map, node2, node4, physical ports, cluster, network, connectivity 
-summary: 노드 2의 물리적 포트가 노드 4의 물리적 포트에 올바르게 매핑되는지 확인합니다. 
+summary: ONTAP 9.7 이하를 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 node2의 물리적 포트가 node4에 올바르게 매핑되는지 확인합니다. 
 ---
 = 노드 2의 포트를 노드 4로 매핑합니다
 :hardbreaks:

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/prepare_nodes_for_upgrade.html 
 keywords: preparing, nodes, upgrade 
-summary: ONTAP 명령줄에 다음 명령을 입력하여 컨트롤러 교체 프로세스를 시작합니다. 
+summary: '"system controller replace" 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 노드를 준비하고 일련의 사전 점검을 실행합니다.' 
 ---
 = 업그레이드할 노드를 준비합니다
 :hardbreaks:
@@ -120,23 +120,23 @@ NOTE: FAS8080 또는 AFF8080 같이 노드당 클러스터 포트가 2개 이상
 다음 명령의 출력을 개별적으로 실행 및 저장해야 합니다.
 
 +
-** SVM 서비스 이름 - 서비스 DNS 표시
-** 네트워크 인터페이스 show-curr-node nodename-role 클러스터, 인터클러스터, 노드 관리, 클러스터 관리, 데이터
-** 네트워크 포트 show-node node_name-type physical
-** 서비스 프로세서 show-node * -instance
-** 네트워크 FCP 어댑터 show-node <node_name>
-** 네트워크 포트 ifgrp show를 참조하십시오
-** 시스템 노드 show-instance-node_name
-** run-node <node_name> sysconfig
-** 스토리지 애그리게이트 show-node_name 을 참조하십시오
-** volume show -node <node_name>
-** 스토리지 배열 config show -switch <switch_name>
-** system license show-owner <node_name>
-** 스토리지 암호화 디스크가 표시됩니다
-** 보안 키 관리자 온보드 show-backup
-** 보안 키 관리자 외부 표시
-** 보안 키 관리자 외부 표시 상태
-** 내 상태 표시 - 세부 사항
+** 'vserver services name-service dns show'
+** 네트워크 인터페이스 show-curr-node nodename-role cluster, 인터클러스터, 노드 관리, 클러스터 관리, 데이터
+** 'network port show-node <node_name>-type physical
+** 'Service-processor show-node * -instance'
+** 'network fcp adapter show-node node_name'
+** 'network port ifgrp show'
+** 'system node show-instance-node_name'입니다
+** 'run-node <node_name> sysconfig'
+** 'Storage aggregate show-node_name'입니다
+** 'volume show-node node_name'입니다
+** 'Storage array config show-switch_name'을 선택합니다
+** 'system license show-owner node_name'입니다
+** 스토리지 암호화 디스크 표시
+** 보안 키 관리자 온보드 쇼 백업
+** 보안 키매니저 외모
+** '보안 키 관리자 외부 표시 상태
+** 내외공연
 
 
 

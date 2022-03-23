@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/troubleshoot_index.html 
 keywords: troubleshooting, node, aggregate, lif, migrate, failure 
-summary: 노드 쌍을 업그레이드할 때 발생할 수 있는 장애를 해결합니다. 
+summary: AFF A700에서 AFF A900으로 업그레이드하는 동안 발생할 수 있는 장애 문제를 해결합니다. 
 ---
 = 문제 해결
 :hardbreaks:

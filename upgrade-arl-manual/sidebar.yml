@@ -34,8 +34,6 @@ entries:
     url: "/upgrade-arl-manual/persist_enable_switches.html"
   - title: 전환, 복구, 스위치백을 확인합니다
     url: "/upgrade-arl-manual/verify_swtichover_healing_switchback.html"
-- title: 노드 쌍을 업그레이드합니다
-  url: "/upgrade-arl-manual/upgrade_node_pair.html"
 - title: 1단계. 업그레이드를 준비합니다
   entries:
   - title: 개요

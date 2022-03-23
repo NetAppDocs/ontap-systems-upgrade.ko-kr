@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/resume_snapmirror_operations.html 
 keywords: resuming, snapmirror, operations, transfer, relationship, updates, schedule, complete 
-summary: 업그레이드하기 전에 중지된 SnapMirror 전송을 다시 시작하고 SnapMirror 관계를 다시 시작할 수 있습니다. 
+summary: '"시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 SnapMirror 전송 및 관계를 재개합니다.' 
 ---
 = SnapMirror 작업을 재개합니다
 :hardbreaks:

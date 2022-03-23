@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto/verify_node3_installation.html 
-keywords: install, boot, node3, join quorum 
-summary: 노드 3을 설치하고 부팅한 후에는 올바르게 설치되었는지 확인해야 합니다. 
+keywords: install, boot, node3, join quorum, restore, key, manager 
+summary: 시스템 컨트롤러 교체 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 노드3이 쿼럼에 가입되어 노드1의 VLAN, 인터페이스 그룹, 브로드캐스트 도메인을 다시 생성하고 키 관리자 구성을 복원하는지 확인합니다. 
 ---
 = 노드3 설치를 확인합니다
 :hardbreaks:

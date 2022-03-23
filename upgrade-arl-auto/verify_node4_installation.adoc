@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto/verify_node4_installation.html 
-keywords: verify, node4, installation, MetroCluster 
-summary: 노드 4가 올바르게 설치되었는지 확인합니다. 
+keywords: verify, node4, installation, MetroCluster, restore, key, manager 
+summary: System controller replace 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 node4가 쿼럼에 가입되어 node1의 VLAN, 인터페이스 그룹, 브로드캐스트 도메인을 다시 생성하고 key-manager 구성을 복원하는지 확인합니다. 
 ---
 = 노드 4 설치를 확인합니다
 :hardbreaks:
@@ -13,7 +13,7 @@ summary: 노드 4가 올바르게 설치되었는지 확인합니다.
 
 
 [role="lead"]
-노드 4를 설치하고 부팅한 후에는 올바르게 설치되어 있고, 클러스터의 일부이며, 노드 3과 통신할 수 있는지 확인해야 합니다.
+노드 4를 설치하고 부팅한 후에는 올바르게 설치되어 있고, 클러스터에 포함되어 있으며, 노드 3과 통신할 수 있는지 확인해야 합니다.
 
 절차의 이 시점에서 노드 4가 쿼럼을 조인할 때 작업이 일시 중지됩니다.
 

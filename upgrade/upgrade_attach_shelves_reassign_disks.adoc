@@ -78,7 +78,7 @@ Disk ownership will be updated on all disks previously belonging to Filer with s
 Do you want to continue (y/n)? y
 ----
 . 계속하려면 y를 입력하십시오.
-. options 필드에서 node1의 루트 애그리게이트를 "root"로 설정하고 다른 애그리게이트는 온라인 상태인지 확인합니다.
+. options 필드에서 node1의 루트 애그리게이트가 "root"로 설정되어 있고 다른 애그리게이트가 온라인 상태인지 확인합니다.
 +
 '기정 상태'입니다
 

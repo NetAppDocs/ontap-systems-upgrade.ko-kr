@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/move_nas_lifs_node2_from_node3_node4_verify_san_lifs_node4.html 
 keywords: move, aggregates, nas, lif, node2, node3, node4 
-summary: 노드 3에서 노드 4로 노드 2의 애그리게이트를 재배치하려면 먼저 노드 3에 있는 노드 2가 소유한 NAS 데이터 LIF를 노드 3에서 노드 4로 이동하고 노드 4에 SAN LIF를 확인합니다. 
+summary: ONTAP 9.7 이하를 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 노드 3의 NAS 데이터 LIF를 노드 3에서 노드 4로 이동합니다. 
 ---
 = 노드 2가 소유한 NAS 데이터 LIF를 노드 3에서 노드 4로 이동하고 노드 4의 SAN LIF를 확인합니다
 :hardbreaks:

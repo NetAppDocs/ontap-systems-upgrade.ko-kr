@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/verify_upgrade_hardware.html 
 keywords: preparing, nodes, upgrade 
-summary: 업그레이드를 시작하기 전에 AFF A700 시스템을 AFF A900 시스템으로 업그레이드할 수 있는 올바른 하드웨어가 있는지 확인하십시오. 
+summary: 업그레이드를 시작하기 전에 AFF A700에서 AFF A900 업그레이드용으로 올바른 하드웨어가 있는지 확인하십시오. 
 ---
 = 업그레이드 하드웨어를 확인합니다
 :hardbreaks:
@@ -13,4 +13,4 @@ summary: 업그레이드를 시작하기 전에 AFF A700 시스템을 AFF A900 �
 
 
 [role="lead"]
-업그레이드를 시작하기 전에 AFF A700 시스템을 AFF A900 시스템으로 업그레이드할 수 있는 올바른 하드웨어가 있는지 확인해야 합니다. 업그레이드하는 각 HA 쌍에 대해 시스템 컨트롤러 모듈 2개와 NVS 모듈 2개가 있어야 합니다. 누락된 부품이 있는 경우 기술 지원 팀에 문의하거나 NetApp 세일즈 담당자에게 문의하십시오.
+업그레이드를 시작하기 전에 AFF A700 시스템을 AFF A900 시스템으로 업그레이드할 수 있는 올바른 하드웨어가 있는지 확인해야 합니다. 업그레이드하는 각 HA 쌍에 대해 시스템 컨트롤러 모듈 2개와 NVRAM 모듈 2개가 있어야 합니다. 누락된 부품이 있는 경우 기술 지원 팀에 문의하거나 NetApp 세일즈 담당자에게 문의하십시오.

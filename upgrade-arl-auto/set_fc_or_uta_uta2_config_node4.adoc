@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/set_fc_or_uta_uta2_config_node4.html 
 keywords: fc configuration, uta configuration, UTA2 configuration, configure FC ports, UTA/UTA2 card, node4, target, adapter, ports 
-summary: 노드 4에 온보드 FC 포트, UTA/UTA2 포트 또는 UTA/UTA2 카드가 있는 경우, 나머지 절차를 완료하기 전에 설정을 구성해야 합니다. 
+summary: '"시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 노드 4 온보드 FC 포트, UTA/UTA2 포트 또는 UTA/UTA2 카드를 구성하십시오.' 
 ---
 = 노드 4에 FC 또는 UTA/UTA2 구성을 설정합니다
 :hardbreaks:
@@ -121,7 +121,7 @@ boot_ontap 메뉴
 
 UTA/UTA2 포트에 알맞은 SFP+ 모듈이 있어야 합니다.
 
-UTA/UTA2 포트를 네이티브 FC 모드 또는 UTA/UTA2A 모드로 구성할 수 있습니다. FC 모드는 FC 이니시에이터 및 FC 타겟을 지원하며, UTA/UTA2 모드를 사용하면 동시 NIC 및 FCoE 트래픽이 동일한 10GbE SFP+ 인터페이스를 공유할 수 있으며 FC 타겟을 지원합니다.
+UTA/UTA2 포트를 네이티브 FC 모드 또는 UTA/UTA2A 모드로 구성할 수 있습니다. FC 모드는 FC 이니시에이터 및 FC 타겟을 지원하며, UTA/UTA2 모드를 사용하면 동시 NIC 및 FCoE 트래픽이 동일한 10GbE SFP+ 인터페이스를 공유하고 FC 타겟을 지원할 수 있습니다.
 
 
 NOTE: NetApp 마케팅 자료에서는 UTA2 용어를 사용하여 CNA 어댑터 및 포트를 참조할 수 있습니다. 그러나 CLI에서는 CNA라는 용어를 사용합니다.
@@ -211,7 +211,7 @@ f-a    0h       cna      target     -          -        online
 ''ucadmin modify -m fc|CNA-t initiator|target<adapter_name>'
 
 +
-** '-m'은 성격 모드, FC 또는 10GbE UTA입니다.
+** M은 성격 모드, FC 또는 10GbE UTA입니다.
 ** t는 FC4형, target 또는 initiator입니다.
 +
 

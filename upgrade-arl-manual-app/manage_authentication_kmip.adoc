@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual-app/manage_authentication_kmip.html 
 keywords: kmip, authentication, keys, fips 
-summary: KMIP 서버를 사용하여 인증 키를 관리합니다. 
+summary: ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 KMIP 서버를 사용하여 인증 키를 관리합니다. 
 ---
 = KMIP 서버를 사용하여 인증 관리
 :hardbreaks:

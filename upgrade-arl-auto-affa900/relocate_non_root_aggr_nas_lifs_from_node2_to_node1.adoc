@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/relocate_non_root_aggr_nas_lifs_from_node2_to_node1.html 
-keywords: relocate, non-root, aggregates, nas, lif, node2, node1. aff, a900, nvs, controller 
-summary: 노드 2를 AFF A900 컨트롤러 모듈 및 NVS로 교체하기 전에 노드 2가 소유한 비루트 애그리게이트를 노드 1로 재이동해야 합니다. 
+keywords: relocate, non-root, aggregates, nas, lif, node2, node1. aff, a900, NVRAM, controller 
+summary: AFF A700에서 AFF A900으로 업그레이드하는 동안 노드 2의 비루트 애그리게이트를 노드 1로 재배치합니다. 
 ---
 = 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 2에서 노드 1로 재배치합니다
 :hardbreaks:
@@ -13,7 +13,7 @@ summary: 노드 2를 AFF A900 컨트롤러 모듈 및 NVS로 교체하기 전에
 
 
 [role="lead"]
-노드 2를 AFF A900 컨트롤러 모듈 및 NVS로 교체하려면 먼저 노드 2가 소유한 비루트 애그리게이트를 노드 1로 재이동해야 합니다.
+노드 2를 AFF A900 컨트롤러 모듈 및 NVRAM 모듈로 교체하려면 먼저 노드 2가 소유한 비루트 애그리게이트를 노드 1로 재이동해야 합니다.
 
 이전 단계의 사후 검사가 완료되면 노드 2의 리소스 해제가 자동으로 시작됩니다. 루트가 아닌 애그리게이트 및 non-SAN 데이터 LIF는 노드 2에서 새로운 노드 1로 마이그레이션됩니다.
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/verify_swtichover_healing_switchback.html 
 keywords: verify,switchover, healing, switchback, negotiated, mcc, metrocluster 
-summary: 전환, 복구 및 스위치백 작업을 확인합니다. 
+summary: ONTAP 9.7 이하를 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 전환, 복구 및 스위치백 작업을 확인합니다. 
 ---
 = 전환, 복구, 스위치백을 확인합니다
 :hardbreaks:

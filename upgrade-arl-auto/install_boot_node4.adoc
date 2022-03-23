@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/install_boot_node4.html 
 keywords: install, boot, node4, install ONTAP 
-summary: 랙에 노드 4를 설치하고, 노드 2의 연결을 노드 4로 전송하고, 노드 4를 부팅하고, ONTAP를 설치해야 합니다. 
+summary: '"시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 node4를 설치 및 부팅하고 ONTAP 소프트웨어를 설치합니다.' 
 ---
 = 노드 4를 설치하고 부팅합니다
 :hardbreaks:
@@ -140,7 +140,7 @@ Do you want to restore the backup configuration now? {y|n}
 The node must be rebooted to start using the newly installed software. Do you want to reboot now? {y|n}
 ....
 +
-부팅 장치가 다시 포맷되어 구성 데이터를 복원해야 하므로 컨트롤러 모듈이 재부팅되지만 부팅 메뉴에서 중지됩니다.
+부팅 장치가 다시 포맷되어 구성 데이터가 복원되어야 하므로 컨트롤러 모듈이 재부팅되지만 부팅 메뉴에서 중지됩니다.
 
 
 

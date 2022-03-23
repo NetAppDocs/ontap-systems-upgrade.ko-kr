@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual-app/quiesce_snapmirror_relationships.html 
 keywords: quiesce, snapmirror, relationship, netboot, destination cluster 
-summary: 시스템을 부팅하기 전에 모든 SnapMirror 관계를 중지합니다. 
+summary: 시스템을 부팅하기 전에 ONTAP 9.8 이상을 실행하는 컨트롤러에서 수동 ARL 업그레이드 중에 모든 SnapMirror 관계를 중지합니다. 
 ---
 = SnapMirror 관계를 중지합니다
 :hardbreaks:

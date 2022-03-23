@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual-app/retire_node2.html 
 keywords: retire, node2, cluster, SAN, LIFs 
-summary: 노드 2를 폐기하려면 노드 2를 올바르게 종료하고 랙 또는 섀시에서 제거해야 합니다. 
+summary: ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 노드2를 올바르게 종료하고 랙 또는 섀시에서 분리합니다. 
 ---
 = 노드2를 폐기합니다
 :hardbreaks:
@@ -66,7 +66,7 @@ Warning: Cluster HA has not been configured. Cluster HA must be configured on a 
 ----
 +
 
-NOTE: 여러 HA 쌍이 있는 클러스터에서 HA 쌍을 업그레이드하는 경우 epsilon을 컨트롤러 업그레이드가 없는 HA 쌍의 노드로 이동해야 합니다. 예를 들어 HA 쌍 구성 NodeA/NodeB 및 nodeC/noded를 사용하여 클러스터의 NodeA/NodeB를 업그레이드하는 경우 epsilon을 노드 C 또는 noded로 이동해야 합니다.
+NOTE: 여러 HA 쌍이 있는 클러스터에서 HA 쌍을 업그레이드하는 경우, epsilon을 컨트롤러 업그레이드를 받지 않는 HA 쌍의 노드로 이동해야 합니다. 예를 들어 HA 쌍 구성 NodeA/NodeB 및 nodeC/noded를 사용하여 클러스터의 NodeA/NodeB를 업그레이드하는 경우 epsilon을 노드 C 또는 noded로 이동해야 합니다.
 
 . 노드 2가 epsilon을 포함하는 경우 epsilon을 노드 3으로 전송할 수 있도록 노드에 "false"로 표시합니다.
 +

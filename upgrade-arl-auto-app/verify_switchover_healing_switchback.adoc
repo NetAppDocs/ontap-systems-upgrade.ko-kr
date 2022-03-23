@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/verify_switchover_healing_switchback.html 
 keywords: verifying, switchover, healing, switchback, metrocluster, management, disaster, recovery, mcc 
-summary: MetroCluster 구성의 전환, 복구 및 스위치백 작업을 확인해야 합니다. 
+summary: '"시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 MetroCluster 구성 전환, 복구 및 스위치백 작업을 확인합니다.' 
 ---
 = 전환, 복구, 스위치백을 확인합니다
 :hardbreaks:

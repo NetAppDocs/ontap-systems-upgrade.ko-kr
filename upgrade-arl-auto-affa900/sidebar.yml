@@ -1,7 +1,7 @@
 ---
 section: upgrade-arl-auto-affa900
-title: '"system controller replace" 명령을 사용하여 ONTAP A700을 AFF 9.10.1 RC2 이상을 실행하는 AFF
-  A900으로 업그레이드합니다'
+title: '"system controller replace" 명령을 사용하여 AFF A700을 ONTAP 9.10.1 이상을 실행하는 AFF A900으로
+  업그레이드합니다'
 entries:
 - title: 개요
   url: "/upgrade-arl-auto-affa900/index.html"
@@ -15,8 +15,6 @@ entries:
   url: "/upgrade-arl-auto-affa900/guidelines_for_upgrading_controllers_with_arl.html"
 - title: ARL 업그레이드 개요
   url: "/upgrade-arl-auto-affa900/overview_of_the_arl_upgrade.html"
-- title: 노드 쌍을 업그레이드합니다
-  url: "/upgrade-arl-auto-affa900/upgrade_node_pair.html"
 - title: 1단계. 업그레이드를 준비합니다
   entries:
   - title: 업그레이드 하드웨어를 확인합니다
@@ -35,9 +33,9 @@ entries:
     url: "/upgrade-arl-auto-affa900/retire_node1.html"
   - title: netboot 노드1
     url: "/upgrade-arl-auto-affa900/netboot_node1.html"
-- title: 3단계. AFF A900 컨트롤러 모듈 및 NVS로 노드 1을 부팅합니다
+- title: 3단계. AFF A900 컨트롤러 모듈 및 NVRAM 모듈을 사용하여 노드 1을 부팅합니다
   entries:
-  - title: AFF A900 컨트롤러 모듈 및 NVS로 노드 1을 부팅합니다
+  - title: AFF A900 컨트롤러 모듈 및 NVRAM 모듈을 사용하여 노드 1을 부팅합니다
     url: "/upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html"
   - title: 노드1 설치를 확인합니다
     url: "/upgrade-arl-auto-affa900/verify_node1_installation.html"
@@ -51,15 +49,15 @@ entries:
     url: "/upgrade-arl-auto-affa900/relocate_non_root_aggr_nas_lifs_from_node2_to_node1.html"
   - title: 노드2를 폐기합니다
     url: "/upgrade-arl-auto-affa900/retire_node2.html"
-- title: 5단계. 노드 2에 AFF A900 NVS 및 컨트롤러 모듈을 설치합니다
+- title: 5단계. 노드 2에 AFF A900 NVRAM 모듈 및 컨트롤러 모듈을 설치합니다
   entries:
-  - title: 노드 2에 AFF A900 NVS 및 컨트롤러 모듈을 설치합니다
+  - title: 노드 2에 AFF A900 NVRAM 모듈 및 컨트롤러 모듈을 설치합니다
     url: "/upgrade-arl-auto-affa900/install_a900_nvs_and_controller_on_node2.html"
   - title: netboot 노드2
     url: "/upgrade-arl-auto-affa900/netboot_node2.html"
-- title: 6단계. AFF A900 컨트롤러 모듈 및 NVS로 노드 2를 부팅합니다
+- title: 6단계. AFF A900 컨트롤러 모듈 및 NVRAM 모듈을 사용하여 노드 2를 부팅합니다
   entries:
-  - title: AFF A900 컨트롤러 모듈 및 NVS로 노드 2를 부팅합니다
+  - title: AFF A900 컨트롤러 모듈 및 NVRAM 모듈을 사용하여 노드 2를 부팅합니다
     url: "/upgrade-arl-auto-affa900/boot_node2_with_a900_controller_and_nvs.html"
   - title: 노드2 설치를 확인합니다
     url: "/upgrade-arl-auto-affa900/verify_node2_installation.html"

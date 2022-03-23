@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/reboots_panics_or_power_cycles.html 
 keywords: reboots, panics, power, cycles, node, crash 
-summary: 시스템이 충돌될 수 있습니다. 재부팅, 패닉 또는 전원 껐다 켜십시오. 
+summary: '"시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 여러 단계에서 시스템이 충돌(재부팅, 패닉 또는 전원 사이클)될 수 있습니다.' 
 ---
 = 재부팅, 패닉 또는 전원 껐다 켜기
 :hardbreaks:

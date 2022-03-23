@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/prepare_for_netboot.html 
 keywords: preparing, netboot, ndac, ontap 
-summary: 절차의 나중에 노드 3과 노드 4를 물리적으로 랙에 설치한 후 해당 노드들을 netboot 해야 할 수도 있습니다. 
+summary: System controller replace 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 netboot node3 및 node4를 준비합니다. 
 ---
 = netboot를 준비합니다
 :hardbreaks:

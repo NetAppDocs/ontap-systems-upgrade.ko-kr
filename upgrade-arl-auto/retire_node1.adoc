@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/retire_node1.html 
 keywords: retire, node1 
-summary: 노드 1을 폐기하려면 노드 1을 올바르게 종료하고 랙 또는 섀시에서 제거해야 합니다. 
+summary: System controller replace 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 node2와 HA 쌍을 비활성화하고 node1을 종료한다. 
 ---
 = 노드1을 폐기합니다
 :hardbreaks:
@@ -13,7 +13,7 @@ summary: 노드 1을 폐기하려면 노드 1을 올바르게 종료하고 랙 �
 
 
 [role="lead"]
-노드 1을 폐기하려면 자동화된 작업을 다시 시작하여 노드 2와 HA 쌍을 비활성화하고 노드 1을 적절하게 종료합니다. 나중에 랙 또는 섀시에서 노드 1을 제거해야 합니다.
+노드 1을 폐기하려면 자동화된 작업을 다시 시작하여 노드 2와 HA 쌍을 비활성화하고 노드 1을 올바르게 종료합니다. 나중에 랙 또는 섀시에서 노드 1을 제거해야 합니다.
 
 .단계
 . 작업을 다시 시작합니다.

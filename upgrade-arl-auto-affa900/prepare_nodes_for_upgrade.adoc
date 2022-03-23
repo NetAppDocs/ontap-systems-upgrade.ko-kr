@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/prepare_nodes_for_upgrade.html 
 keywords: preparing, nodes, upgrade, stage 1, prechecks 
-summary: 1단계 사전 점검 중에 업그레이드를 위해 노드를 준비하고 일련의 사전 점검을 실행해야 합니다. 
+summary: AFF A700에서 AFF A900으로 업그레이드하는 동안 노드를 준비하고 일련의 사전 점검을 실행합니다. 
 ---
 = 업그레이드할 노드를 준비합니다
 :hardbreaks:
@@ -39,7 +39,7 @@ Attention: Do not try to clear the NVRAM contents. If there is a need to clear t
 
 Do you want to continue? {y|n}: y
 ....
-. 'y'를 선택하면 다음과 같은 출력이 표시됩니다.
+. y를 선택합니다. 다음과 같은 출력이 표시됩니다.
 +
 ....
 Controller replacement operation: Prechecks in progress.
@@ -84,7 +84,7 @@ Controller replacement operation has been paused for user intervention.
 | 클러스터 LIF 상태입니다 | 클러스터 LIF가 두 노드에 대해 작동 중인지 확인합니다. 클러스터 LIF가 작동 중지되면 작업이 실패합니다. 
 
 
-| ASUP 상태 점검 | ASUP 알림이 구성되지 않으면 작업이 실패합니다. 컨트롤러 교체 절차를 시작하기 전에 ASUP를 활성화해야 합니다. 
+| ASUP 상태 점검 | AutoSupport 알림이 구성되지 않은 경우 작업이 실패합니다. 컨트롤러 교체 절차를 시작하기 전에 AutoSupport를 활성화해야 합니다. 
 
 
 | CPU 사용률 검사 | 교체할 노드에 대해 CPU 활용률이 50%를 초과하는지 확인합니다. CPU 사용량이 상당한 시간 동안 50% 이상인 경우 작업이 실패합니다. 
@@ -95,7 +95,7 @@ Controller replacement operation has been paused for user intervention.
 
 | 노드 선호도 작업 확인 | 노드 선호도 작업이 실행 중인지 확인합니다. 노드 선호도 작업이 실행 중이면 검사에 실패합니다. 
 |===
-. 컨트롤러 교체 작업이 시작되고 사전 점검을 완료한 후 작업이 일시 중지되어 나중에 컨트롤러 업그레이드 프로세스에서 필요할 수 있는 출력 정보를 수집할 수 있습니다.
+. 컨트롤러 교체 작업이 시작되고 사전 점검을 완료한 후 작업이 일시 중지되므로 나중에 컨트롤러 업그레이드 프로세스에서 필요할 수 있는 출력 정보를 수집할 수 있습니다.
 . 시스템 콘솔에서 컨트롤러 교체 절차의 지침에 따라 아래 명령 세트를 실행합니다.
 +
 다음 명령의 출력을 개별적으로 실행 및 저장해야 합니다.
@@ -123,7 +123,7 @@ Controller replacement operation has been paused for user intervention.
 
 
 
-NOTE: 온보드 키 관리자(OKM)를 사용하여 NetApp 볼륨 암호화를 사용하는 경우 키 관리자 암호를 준비하여 절차의 뒷부분에서 키 관리자 재동기화를 완료할 수 있도록 합니다.
+NOTE: Onboard Key Manager를 사용하여 NetApp Volume Encryption을 사용하는 경우, 나중에 Key Manager 재동기화를 완료할 수 있도록 Key-Manager 암호를 준비해 두십시오.
 
 
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/move_non_root_aggr_nas_lifs_node1_from_node2_to_node3.html 
 keywords: aggregate relocation, lifs, node3, node1, node2, NAS 
-summary: 노드 3의 설치를 확인하고 노드 2에서 노드 3으로 애그리게이트를 재배치하려면 먼저 NAS 데이터 LIF를 이동해야 합니다. 
+summary: '"시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 노드 2의 NAS 데이터 LIF를 노드 2에서 노드 3으로 이동합니다.' 
 ---
 = 노드 1이 소유하는 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2에서 노드 3으로 이동합니다
 :hardbreaks:
@@ -13,7 +13,7 @@ summary: 노드 3의 설치를 확인하고 노드 2에서 노드 3으로 애그
 
 
 [role="lead"]
-노드 3의 설치를 확인하고 노드 2에서 노드 3으로 애그리게이트를 재배치하려면, 현재 노드 2에 있는 노드 1에 속하는 NAS 데이터 LIF를 노드 2에서 노드 3으로 이동해야 합니다. 또한 노드 3에 SAN LIF가 존재하는지 확인해야 합니다.
+노드 3의 설치를 확인하고 노드 2에서 노드 3으로 애그리게이트를 재배치하는 경우, 노드 2에 현재 있는 노드 1에 속하는 NAS 데이터 LIF를 노드 2에서 노드 3으로 이동해야 합니다. 또한 노드 3에 SAN LIF가 존재하는지 확인해야 합니다.
 
 원격 LIF는 업그레이드 절차 중에 SAN LUN의 트래픽을 처리합니다. 업그레이드 중에 클러스터 또는 서비스 상태를 위해 SAN LIF를 이동할 필요가 없습니다. SAN LIF는 새 포트에 매핑되지 않으면 이동하지 않습니다. 노드 3을 온라인으로 설정한 후 LIF가 정상 작동하는지 확인합니다.
 
@@ -123,7 +123,7 @@ vs1
 
 +
 
-NOTE: SAN LIF를 원래 포트와 동일한 링크 속도를 가진 포트로 이동해야 합니다.
+NOTE: SAN LIF가 원래 포트와 링크 속도가 동일한 포트로 이동했는지 확인해야 합니다.
 
 
 

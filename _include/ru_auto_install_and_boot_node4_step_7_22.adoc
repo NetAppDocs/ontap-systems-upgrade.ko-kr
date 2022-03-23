@@ -45,7 +45,7 @@ Do you want to restore the backup configuration now? {y|n}
 The node must be rebooted to start using the newly installed software. Do you want to reboot now? {y|n}
 ....
 +
-부팅 장치가 다시 포맷되어 구성 데이터를 복원해야 하므로 컨트롤러 모듈이 재부팅되지만 부팅 메뉴에서 중지됩니다.
+부팅 장치가 다시 포맷되어 구성 데이터가 복원되어야 하므로 컨트롤러 모듈이 재부팅되지만 부팅 메뉴에서 중지됩니다.
 
 
 

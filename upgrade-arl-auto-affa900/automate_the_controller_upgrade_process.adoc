@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/automate_the_controller_upgrade_process.html 
 keywords: automating, controller, upgrade, network, port, aff, a700, a900 
-summary: 자동 절차를 사용하여 AFF A700 컨트롤러를 AFF A900 컨트롤러로 교체합니다. 
+summary: 부분 자동화된 ARL 절차를 사용하여 AFF A700을 AFF A900으로 업그레이드합니다. 
 ---
 = 컨트롤러 업그레이드 프로세스를 자동화합니다
 :hardbreaks:
@@ -13,4 +13,4 @@ summary: 자동 절차를 사용하여 AFF A700 컨트롤러를 AFF A900 컨트�
 
 
 [role="lead"]
-이 컨트롤러를 업그레이드하는 동안 AFF A700 컨트롤러를 AFF A900 컨트롤러로 교체합니다. 이 내용은 자동 디스크 할당 및 네트워크 포트 도달 가능성 검사를 활용하여 컨트롤러 업그레이드 환경을 단순화하는 자동화된 절차를 위한 단계를 제공합니다.
+이 컨트롤러를 업그레이드하는 동안 AFF A700 컨트롤러를 AFF A900 컨트롤러로 교체합니다. 이 내용은 자동 디스크 할당 및 네트워크 포트 도달 가능성 검사를 사용하여 컨트롤러 업그레이드 환경을 단순화하는 자동화된 절차에 대한 단계를 제공합니다.

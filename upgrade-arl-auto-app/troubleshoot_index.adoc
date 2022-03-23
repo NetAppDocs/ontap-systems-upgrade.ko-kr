@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/troubleshoot_index.html 
-keywords: troubleshooting, node, aggregate, lif, migrate, failure 
-summary: 노드 쌍을 업그레이드하는 동안 장애가 발생할 수 있습니다. 
+keywords: troubleshooting, troubleshoot, node, aggregate, lif, migrate, failure 
+summary: 'ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 "시스템 컨트롤러 교체" 명령을 사용하여 발생할 수 있는 장애를 해결합니다.' 
 ---
 = 문제 해결
 :hardbreaks:

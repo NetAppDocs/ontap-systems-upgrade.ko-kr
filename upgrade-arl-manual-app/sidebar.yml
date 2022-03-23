@@ -14,8 +14,6 @@ entries:
   url: "/upgrade-arl-manual-app/required_tools_documentation.html"
 - title: '워크시트: 컨트롤러 업그레이드 전과 도중에 수집할 정보입니다'
   url: "/upgrade-arl-manual-app/worksheet_information_before_during_upgrade.html"
-- title: 노드 쌍을 업그레이드합니다
-  url: "/upgrade-arl-manual-app/upgrade_node_pair.html"
 - title: 1단계. 업그레이드를 준비합니다
   entries:
   - title: 개요

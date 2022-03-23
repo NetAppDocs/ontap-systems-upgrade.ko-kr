@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: /upgrade-arl-auto-affa900/move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html 
 keywords: moving, non-root, aggregates, nas, lif, node1, node2 
-summary: 노드 1의 네트워크 구성을 확인한 후 노드 2에서 노드 1로 애그리게이트를 재배치할 때는 노드 1의 LIF 소유권을 확인해야 합니다. 
+summary: AFF A700에서 AFF A900으로 업그레이드하는 동안 노드 2의 노드 1의 NAS 데이터 LIF가 노드 2에서 노드 1로 재배치되었는지 확인합니다. 
 ---
 = 노드 1이 소유하는 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2에서 업그레이드된 노드 1로 이동합니다
 :hardbreaks:

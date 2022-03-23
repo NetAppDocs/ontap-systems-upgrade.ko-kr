@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual-app/relocate_node2_non_root_aggr_node3_node4.html 
 keywords: relocate, non-root, aggregates, node3, node4 
-summary: 노드 2의 비루트 애그리게이트를 노드 3으로 재배치한 후 노드 3에서 노드 4로 재이동해야 합니다. 
+summary: ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 노드 2의 비루트 애그리게이트를 노드 3에서 노드 4로 재배치합니다. 
 ---
 = 노드 2의 비 루트 애그리게이트를 노드 3에서 노드 4로 재배치합니다
 :hardbreaks:

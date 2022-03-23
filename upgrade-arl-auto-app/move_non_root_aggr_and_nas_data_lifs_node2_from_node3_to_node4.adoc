@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/move_non_root_aggr_and_nas_data_lifs_node2_from_node3_to_node4.html 
 keywords: move, non-root, aggregates, nas, lif, node2, node3, node4 
-summary: 노드 4의 네트워크 구성을 확인한 후 노드 3에서 노드 4로 애그리게이트를 재배치합니다. 
+summary: '"system controller replace" 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 node3에 있는 node2의 NAS 데이터 LIF가 node3에서 node4로 재배치되는지 확인합니다.' 
 ---
 = 노드 2가 소유한 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 3에서 노드 4로 이동합니다
 :hardbreaks:

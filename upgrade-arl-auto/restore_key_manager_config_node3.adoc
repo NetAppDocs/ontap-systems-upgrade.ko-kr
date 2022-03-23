@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/restore_key_manager_config_node3.html 
 keywords: restore, key manager, configuration, node3, nve, netapp volume encryption, encryption 
-summary: 'NVE(NetApp Volume Encryption)가 업그레이드 중인 시스템의 볼륨을 암호화하려면 암호화 구성을 새 노드와 동기화해야 합니다.' 
+summary: '필요한 경우 "시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 node3에서 key-manager 구성을 복원하십시오.' 
 ---
 = 노드 3에서 키 관리자 구성을 복원합니다
 :hardbreaks:
