@@ -9,15 +9,15 @@
   <meta property="og:title" content="5단계. 노드 4를 설치하고 부팅합니다" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/stage_5_index.html" />
-	<meta property="og:description" content="5단계에서는 노드 4를 설치 및 부팅하고 노드 2의 클러스터 및 노드 관리 포트를 노드 4로 매핑합니다." />
+	<meta property="og:description" content="ONTAP 9.8 이상을 실행하는 컨트롤러의 시스템 컨트롤러 교체 명령을 사용한 ARL 업그레이드를 위한 5단계 프로세스 시퀀스." />
   <meta property="og:image" content="https://docs.netapp.com/ko-kr/ontap-systems-upgrade/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="5단계에서는 노드 4를 설치 및 부팅하고 노드 2의 클러스터 및 노드 관리 포트를 노드 4로 매핑합니다.">
-  <meta name="keywords" content=" install, boot, node4, node2, node-management"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="ONTAP 9.8 이상을 실행하는 컨트롤러의 시스템 컨트롤러 교체 명령을 사용한 ARL 업그레이드를 위한 5단계 프로세스 시퀀스.">
+  <meta name="keywords" content=" install, boot, node4, node2, node-management, stage 5"><!-- Icons -->
   <link rel="icon" href="/ko-kr/ontap-systems-upgrade/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -50,10 +50,10 @@
   
   <link rel="stylesheet" href="/ko-kr/ontap-systems-upgrade/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/ko-kr/ontap-systems-upgrade/css/tabbed-blocks.css" type="text/css">
-  <link rel="stylesheet" href='/ko-kr/ontap-systems-upgrade/css/product-family.css' type="text/css">
   <link rel='stylesheet' href='/ko-kr/ontap-systems-upgrade/css/na-feature.css' type='text/css'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-  <!-- Used to import Promise for IE. Required for SearchKit -->
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/ko-kr/ontap-systems-upgrade/js/na-search.js'></script><script src='/ko-kr/ontap-systems-upgrade/js/na-pagenav.js'></script><link rel='stylesheet' href='/ko-kr/ontap-systems-upgrade/css/prism.css' type='text/css'>
   <link rel='stylesheet' href='/ko-kr/ontap-systems-upgrade/css/prism-netapp.css' type='text/css'>
 
@@ -131,7 +131,6 @@
   }
   </script>
   <script src='/ko-kr/ontap-systems-upgrade/js/version-dropdown.js'></script>
-  <script src='/ko-kr/ontap-systems-upgrade/js/product-family.js'></script>
   <script src='/ko-kr/ontap-systems-upgrade/js/FileSaver.min.js'></script>
   <script src='/ko-kr/ontap-systems-upgrade/js/jszip-utils.min.js'></script>
   <script src='/ko-kr/ontap-systems-upgrade/js/jszip.min.js'></script>
@@ -144,6 +143,25 @@
       <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
       <div class="n-off-canvas-menu__content-wrap">
         <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div id="version-dropdown"></div>
+    <div class="page-nav-contribute"  >
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/issues/new?body=Page%3A%20[5단계. 노드 4를 설치하고 부팅합니다](https://docs.netapp.com/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/stage_5_index.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-systems-upgrade/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/blob/main/upgrade-arl-auto-app/stage_5_index.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-systems-upgrade/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/ontap-systems-upgrade/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">이 페이지의 내용</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
   <!-- Start top_hat -->
   <div class="n-top-hat">
     <div class="n-container">
@@ -602,15 +620,13 @@
         <li class="pdf-ux-container">
           <a target="_blank" 
             
-              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/_system_controller_replace__명령을_사용하여_ONTAP_A700을_AFF_9_10_1_RC2_이상을_실행하는_AFF_A900으로_업그레이드합니다.pdf" 
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/_system_controller_replace__명령을_사용하여_AFF_A700을_ONTAP_9_10_1_이상을_실행하는_AFF_A900으로_업그레이드합니다.pdf" 
             
           >
             <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            "system controller replace" 명령을 사용하여 ONTAP A700을 AFF 9.10.1 RC2 이상을 실행하는 AFF A900으로 업그레이드합니다
+            "system controller replace" 명령을 사용하여 AFF A700을 ONTAP 9.10.1 이상을 실행하는 AFF A900으로 업그레이드합니다
           </a>
           
-
-
 
 
 
@@ -687,11 +703,11 @@
         <li class="pdf-ux-container">
           <a target="_blank" 
             
-              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/3단계__AFF_A900_컨트롤러_모듈_및_NVS로_노드_1을_부팅합니다.pdf" 
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/3단계__AFF_A900_컨트롤러_모듈_및_NVRAM_모듈을_사용하여_노드_1을_부팅합니다.pdf" 
             
           >
             <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            3단계. AFF A900 컨트롤러 모듈 및 NVS로 노드 1을 부팅합니다
+            3단계. AFF A900 컨트롤러 모듈 및 NVRAM 모듈을 사용하여 노드 1을 부팅합니다
           </a>
           
 
@@ -743,11 +759,11 @@
         <li class="pdf-ux-container">
           <a target="_blank" 
             
-              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/5단계__노드_2에_AFF_A900_NVS_및_컨트롤러_모듈을_설치합니다.pdf" 
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/5단계__노드_2에_AFF_A900_NVRAM_모듈_및_컨트롤러_모듈을_설치합니다.pdf" 
             
           >
             <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            5단계. 노드 2에 AFF A900 NVS 및 컨트롤러 모듈을 설치합니다
+            5단계. 노드 2에 AFF A900 NVRAM 모듈 및 컨트롤러 모듈을 설치합니다
           </a>
           
 
@@ -769,11 +785,11 @@
         <li class="pdf-ux-container">
           <a target="_blank" 
             
-              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/6단계__AFF_A900_컨트롤러_모듈_및_NVS로_노드_2를_부팅합니다.pdf" 
+              href="/ko-kr/ontap-systems-upgrade/pdfs/sidebar/6단계__AFF_A900_컨트롤러_모듈_및_NVRAM_모듈을_사용하여_노드_2를_부팅합니다.pdf" 
             
           >
             <img src="/ko-kr/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            6단계. AFF A900 컨트롤러 모듈 및 NVS로 노드 2를 부팅합니다
+            6단계. AFF A900 컨트롤러 모듈 및 NVRAM 모듈을 사용하여 노드 2를 부팅합니다
           </a>
           
 
@@ -881,8 +897,6 @@
             "시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 업그레이드합니다
           </a>
           
-
-
 
 
 
@@ -1169,8 +1183,6 @@
 
 
 
-
-
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
@@ -1430,8 +1442,6 @@
             "system controller replace" 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러 하드웨어를 9.7로 업그레이드하십시오
           </a>
           
-
-
 
 
 
@@ -1750,8 +1760,6 @@
     
 
   
-
-
 
 
 
@@ -2150,7 +2158,7 @@
       <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl/index.html">
         개요
       </a></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> "system controller replace" 명령을 사용하여 ONTAP A700을 AFF 9.10.1 RC2 이상을 실행하는 AFF A900으로 업그레이드합니다</div>
+        <div class="na-navbar-padding"> "system controller replace" 명령을 사용하여 AFF A700을 ONTAP 9.10.1 이상을 실행하는 AFF A900으로 업그레이드합니다</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html">
         개요
@@ -2164,8 +2172,6 @@
         ARL이 있는 AFF A700에서 AFF A900으로 업그레이드하기 위한 지침
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/overview_of_the_arl_upgrade.html">
         ARL 업그레이드 개요
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/upgrade_node_pair.html">
-        노드 쌍을 업그레이드합니다
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 1단계. 업그레이드를 준비합니다</div>
       </a>
@@ -2187,10 +2193,10 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/netboot_node1.html">
         netboot 노드1
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> 3단계. AFF A900 컨트롤러 모듈 및 NVS로 노드 1을 부팅합니다</div>
+        <div class="na-navbar-padding"> 3단계. AFF A900 컨트롤러 모듈 및 NVRAM 모듈을 사용하여 노드 1을 부팅합니다</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html">
-        AFF A900 컨트롤러 모듈 및 NVS로 노드 1을 부팅합니다
+        AFF A900 컨트롤러 모듈 및 NVRAM 모듈을 사용하여 노드 1을 부팅합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/verify_node1_installation.html">
         노드1 설치를 확인합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/restore_key_manager_config_upgraded_node1.html">
@@ -2205,17 +2211,17 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/retire_node2.html">
         노드2를 폐기합니다
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> 5단계. 노드 2에 AFF A900 NVS 및 컨트롤러 모듈을 설치합니다</div>
+        <div class="na-navbar-padding"> 5단계. 노드 2에 AFF A900 NVRAM 모듈 및 컨트롤러 모듈을 설치합니다</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/install_a900_nvs_and_controller_on_node2.html">
-        노드 2에 AFF A900 NVS 및 컨트롤러 모듈을 설치합니다
+        노드 2에 AFF A900 NVRAM 모듈 및 컨트롤러 모듈을 설치합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/netboot_node2.html">
         netboot 노드2
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> 6단계. AFF A900 컨트롤러 모듈 및 NVS로 노드 2를 부팅합니다</div>
+        <div class="na-navbar-padding"> 6단계. AFF A900 컨트롤러 모듈 및 NVRAM 모듈을 사용하여 노드 2를 부팅합니다</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/boot_node2_with_a900_controller_and_nvs.html">
-        AFF A900 컨트롤러 모듈 및 NVS로 노드 2를 부팅합니다
+        AFF A900 컨트롤러 모듈 및 NVRAM 모듈을 사용하여 노드 2를 부팅합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/verify_node2_installation.html">
         노드2 설치를 확인합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-affa900/restore_key_manager_config_node2.html">
@@ -2271,8 +2277,6 @@
         전환, 복구, 스위치백을 확인합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/overview_of_the_arl_upgrade.html">
         ARL 업그레이드 개요
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/upgrade_node_pair.html">
-        노드 쌍을 업그레이드합니다
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 1단계. 업그레이드를 준비합니다</div>
       </a>
@@ -2379,8 +2383,6 @@
         필요한 도구 및 문서
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/worksheet_information_before_during_upgrade.html">
         워크시트: 컨트롤러 업그레이드 전과 도중에 수집할 정보입니다
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual-app/upgrade_node_pair.html">
-        노드 쌍을 업그레이드합니다
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 1단계. 업그레이드를 준비합니다</div>
       </a>
@@ -2507,8 +2509,6 @@
         전환, 복구, 스위치백을 확인합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/overview_of_the_arl_upgrade.html">
         ARL 업그레이드 개요
-      </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-auto/upgrade_node_pair.html">
-        노드 쌍을 업그레이드합니다
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 1단계. 업그레이드를 준비합니다</div>
       </a>
@@ -2640,9 +2640,7 @@
         스위치를 영구적으로 활성화합니다
       </a></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/verify_swtichover_healing_switchback.html">
         전환, 복구, 스위치백을 확인합니다
-      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/upgrade_node_pair.html">
-        노드 쌍을 업그레이드합니다
-      </a></li><li class="subfolders "><a href="#">
+      </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 1단계. 업그레이드를 준비합니다</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/stage_1_index.html">
@@ -2773,19 +2771,16 @@
     <div class="n-breadcrumb">
       <ul class="n-breadcrumb__list">
         <li class="n-breadcrumb__list-item">
-          <a href="https://www.netapp.com">홈</a>
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com">설명서</a>
-        </li>
+        
+
         
 
         <li class="n-breadcrumb__list-item">
           <a href="/ko-kr/ontap-systems-upgrade/">AFF&nbsp;and&nbsp;FAS&nbsp;Controller&nbsp;Upgrade</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          5단계. 노드 4를 설치하고 부팅합니다
-        </li>
+
       </ul>
     </div>
     <div style="clear: both"></div><!-- Main needs to have height -->
@@ -2814,23 +2809,11 @@
 <p class="page-details">
   
 
-<span>기여자
-  <a target="_blank" href="https://github.com/netapp-pcarriga">
-    <img  class="avatar avatar-small"
-          alt="netapp-pcarriga"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/77334475?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
-</span>
-
 
 </p>
 
-
 <div class="paragraph lead">
-<p>5단계에서는 노드 4를 설치 및 부팅하고, 노드 2에서 노드 4로 클러스터 및 노드 관리 포트를 매핑한 다음 노드 4 설치를 확인합니다. 또한 노드 2가 소유한 NAS 데이터 LIF를 노드 3에서 노드 4로 이동하고 노드 2의 애그리게이트를 노드 3에서 노드 4로 재배치합니다.</p>
+<p>5단계에서는 노드 4를 설치 및 부팅하고 노드 2의 클러스터 및 노드 관리 포트가 노드 4에서 온라인 상태인지 확인한 다음 노드 4 설치를 확인합니다. 또한 노드 2가 소유한 NAS 데이터 LIF를 노드 3에서 노드 4로 이동하고 노드 2의 애그리게이트를 노드 3에서 노드 4로 재배치합니다.</p>
 </div>
 <div class="olist arabic">
 <div class="title">단계</div>
@@ -2857,25 +2840,6 @@
     <!-- Page Container -->
   </div>
 
-  
-  <!-- Start Page Toolbar -->
-  <div class="page-nav-toolbar">
-    <div id="version-dropdown"></div>
-    <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/issues/new?body=Page%3A%20[5단계. 노드 4를 설치하고 부팅합니다](https://docs.netapp.com/ko-kr/ontap-systems-upgrade/upgrade-arl-auto-app/stage_5_index.html)" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-systems-upgrade/images/discuss-sm.svg" class="github-icon" />문서 변경 요청</a>
-      <a target="_blank" href="https://github.com/NetAppDocs/ontap-systems-upgrade/blob/main/upgrade-arl-auto-app/stage_5_index.adoc" class="page-nav-contribute-link" role="button"><img src="/ko-kr/ontap-systems-upgrade/images/edit-sm.svg" class="github-icon" />이 페이지 편집</a>
-      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ko-kr/ontap-systems-upgrade/images/article-sm.svg" class="github-icon" />기여하는 방법 자세히 알아보기</a>
-    </div>
-    <div class="page-nav-container">
-      <nav class="page-nav-fixed">
-        <div class="page-nav-title">이 페이지의 내용</div>
-        <div class="page-nav-links">
-          <ul class="page-nav-inner" id="page-menu"></ul>
-        </div>
-      </nav>
-    </div>
-  </div>
-  
   <div style="clear: both"></div><!-- Main needs to have height --></div>
 
         </main>
