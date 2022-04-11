@@ -8,6 +8,72 @@
 +
 네트워크 인터페이스 show-role data-curr-node node3은 -home false입니다
 
+. [[Worksheet_step2_node2]] 클러스터가 SAN LIF에 대해 구성되어 있으면 이 문서에 SAN LIF 및 기존 구성 정보를 기록합니다 link:worksheet_information_before_moving_san_lifs_node4.html["워크시트"] 나중에 사용할 수 있습니다.
++
+.. 노드 3의 SAN LIF를 나열하고 출력을 조사합니다.
++
+'network interface show-data-protocol fc *'
+
++
+시스템은 다음 예제와 유사한 출력을 반환합니다.
+
++
+[listing]
+----
+cluster1::> net int show -data-protocol fc*
+  (network interface show)
+             Logical     Status     Network            Current        Current Is
+Vserver      Interface   Admin/Oper Address/Mask       Node           Port    Home
+-----------  ----------  ---------- ------------------ -------------  ------- ----
+svm2_cluster1
+             lif_svm2_cluster1_340
+                         up/up      20:02:00:50:56:b0:39:99
+                                                       cluster1-01    1b      true
+             lif_svm2_cluster1_398
+                         up/up      20:03:00:50:56:b0:39:99
+                                                       cluster1-02    1a      true
+             lif_svm2_cluster1_691
+                         up/up      20:01:00:50:56:b0:39:99
+                                                       cluster1-01    1a      true
+             lif_svm2_cluster1_925
+                         up/up      20:04:00:50:56:b0:39:99
+                                                       cluster1-02    1b      true
+4 entries were displayed.
+----
+.. 기존 설정을 나열하고 출력을 검사합니다.
++
+FCP 어댑터 show-fields switch-port, fc-WWPN입니다
+
++
+시스템은 다음 예제와 유사한 출력을 반환합니다.
+
++
+[listing]
+----
+cluster1::> fcp adapter show -fields switch-port,fc-wwpn
+  (network fcp adapter show)
+node         adapter  fc-wwpn                  switch-port
+-----------  -------  -----------------------  -------------
+cluster1-01  0a       50:0a:09:82:9c:13:38:00  ACME Switch:0
+cluster1-01  0b       50:0a:09:82:9c:13:38:01  ACME Switch:1
+cluster1-01  0c       50:0a:09:82:9c:13:38:02  ACME Switch:2
+cluster1-01  0d       50:0a:09:82:9c:13:38:03  ACME Switch:3
+cluster1-01  0e       50:0a:09:82:9c:13:38:04  ACME Switch:4
+cluster1-01  0f       50:0a:09:82:9c:13:38:05  ACME Switch:5
+cluster1-01  1a       50:0a:09:82:9c:13:38:06  ACME Switch:6
+cluster1-01  1b       50:0a:09:82:9c:13:38:07  ACME Switch:7
+cluster1-02  0a       50:0a:09:82:9c:6c:36:00  ACME Switch:0
+cluster1-02  0b       50:0a:09:82:9c:6c:36:01  ACME Switch:1
+cluster1-02  0c       50:0a:09:82:9c:6c:36:02  ACME Switch:2
+cluster1-02  0d       50:0a:09:82:9c:6c:36:03  ACME Switch:3
+cluster1-02  0e       50:0a:09:82:9c:6c:36:04  ACME Switch:4
+cluster1-02  0f       50:0a:09:82:9c:6c:36:05  ACME Switch:5
+cluster1-02  1a       50:0a:09:82:9c:6c:36:06  ACME Switch:6
+cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
+16 entries were displayed
+----
+
+
 . 다음 작업 중 하나를 수행합니다.
 +
 [cols="35,65"]
@@ -15,10 +81,10 @@
 | 노드2의 경우 | 설명 
 
 
-| 인터페이스 그룹 또는 VLAN이 구성되어 있었습니다 | 로 이동합니다 <<man_lif_verify_4_Step3,3단계>>. 
+| 인터페이스 그룹 또는 VLAN이 구성되어 있었습니다 | 로 이동합니다 <<man_lif_verify_4_Step3,4단계>>. 
 
 
-| 인터페이스 그룹 또는 VLAN이 구성되지 않았습니다 | 3단계를 건너뛰고 로 이동합니다 <<man_lif_verify_4_Step4,4단계>>. 
+| 인터페이스 그룹 또는 VLAN이 구성되지 않았습니다 | 4단계를 건너뛰고 로 이동합니다 <<man_lif_verify_4_Step4,5단계>>. 
 |===
 . [[man_lif_verify_4_Step3] 다음 단계에 따라 원래 노드 3에서 노드 4로 노드 2에 있던 인터페이스 그룹 및 VLAN에 호스팅된 NAS 데이터 LIF를 모두 마이그레이션합니다.
 +
@@ -47,13 +113,13 @@
 | 클러스터가 구성된 경우... | 그러면... 
 
 
-| NAS | 완료 <<man_lif_verify_4_Step5,5단계>> 부터 까지 <<man_lif_verify_4_Step8,8단계>>, 9단계를 건너뛰고 완료합니다 <<man_lif_verify_4_Step10,10단계>> 부터 까지 <<man_lif_verify_4_Step13,13단계>>. 
+| NAS | 완료 <<man_lif_verify_4_Step5,6단계>> 부터 까지 <<man_lif_verify_4_Step8,9단계>>10단계를 건너뛰고 완료합니다 <<man_lif_verify_4_Step10,11단계>> 부터 까지 <<man_lif_verify_4_Step13,14단계>>. 
 
 
-| 산 | 5단계 - 8단계를 건너뛰고 완료합니다 <<man_lif_verify_4_Step9,9단계>> 부터 까지 <<man_lif_verify_4_Step13,13단계>>. 
+| 산 | 6단계부터 9단계까지 건너뛰고 완료합니다 <<man_lif_verify_4_Step9,10단계>> 부터 까지 <<man_lif_verify_4_Step13,14단계>>. 
 
 
-| NAS 및 SAN 모두 지원 | 완료 <<man_lif_verify_4_Step5,5단계>> 부터 까지 <<man_lif_verify_4_Step13,13단계>>. 
+| NAS 및 SAN 모두 지원 | 완료 <<man_lif_verify_4_Step5,6단계>> 부터 까지 <<man_lif_verify_4_Step13,14단계>>. 
 |===
 . [[man_lif_verify_4_Step5]] 플랫폼에서 동일하지 않은 데이터 포트가 있는 경우 다음 명령을 입력하여 브로드캐스트 도메인에 포트를 추가합니다.
 +
@@ -123,7 +189,7 @@ node4
 
 . [[man_lif_verify_4_Step10]] 다음 하위 단계를 완료하여 SAN LIF가 노드 4의 올바른 포트에 있는지 확인합니다.
 +
-.. 다음 명령을 입력합니다.
+.. 다음 명령을 입력하고 출력을 검사합니다.
 +
 네트워크 인터페이스 show-data-protocol iscsi | fcp-home-node node4
 
@@ -138,14 +204,53 @@ cluster::> network interface show -data-protocol iscsi|fcp -home-node node4
 Vserver     Interface  Admin/Oper Address/Mask       Node          Port    Home
 ----------- ---------- ---------- ------------------ ------------- ------- ----
 vs0
-            a0a          up/down  10.63.0.53/24      node3         a0a     true
-            data1        up/up    10.63.0.50/18      node3         e0c     true
-            rads1        up/up    10.63.0.51/18      node3         e1a     true
-            rads2        up/down  10.63.0.52/24      node3         e1b     true
+            a0a          up/down  10.63.0.53/24      node4         a0a     true
+            data1        up/up    10.63.0.50/18      node4         e0c     true
+            rads1        up/up    10.63.0.51/18      node4         e1a     true
+            rads2        up/down  10.63.0.52/24      node4         e1b     true
 vs1
-            lif1         up/up    172.17.176.120/24  node3         e0c     true
-            lif2         up/up    172.17.176.121/24  node3
+            lif1         up/up    172.17.176.120/24  node4         e0c     true
+            lif2         up/up    172.17.176.121/24  node4
 ----
+.. 새 "adapter" 및 "shwitch-port" 구성이 올바른지 확인하려면 의 워크시트에 기록한 새 구성 정보와 FCP adapter show 명령의 출력을 비교해야 합니다 <<worksheet_step2_node2,2단계>>.
++
+노드 4의 새로운 SAN LIF 구성을 나열합니다.
+
++
+FCP 어댑터 show-fields switch-port, fc-WWPN입니다
+
++
+시스템은 다음 예제와 유사한 출력을 반환합니다.
+
++
+[listing]
+----
+cluster1::> fcp adapter show -fields switch-port,fc-wwpn
+  (network fcp adapter show)
+node         adapter  fc-wwpn                  switch-port
+-----------  -------  -----------------------  -------------
+cluster1-01  0a       50:0a:09:82:9c:13:38:00  ACME Switch:0
+cluster1-01  0b       50:0a:09:82:9c:13:38:01  ACME Switch:1
+cluster1-01  0c       50:0a:09:82:9c:13:38:02  ACME Switch:2
+cluster1-01  0d       50:0a:09:82:9c:13:38:03  ACME Switch:3
+cluster1-01  0e       50:0a:09:82:9c:13:38:04  ACME Switch:4
+cluster1-01  0f       50:0a:09:82:9c:13:38:05  ACME Switch:5
+cluster1-01  1a       50:0a:09:82:9c:13:38:06  ACME Switch:6
+cluster1-01  1b       50:0a:09:82:9c:13:38:07  ACME Switch:7
+cluster1-02  0a       50:0a:09:82:9c:6c:36:00  ACME Switch:0
+cluster1-02  0b       50:0a:09:82:9c:6c:36:01  ACME Switch:1
+cluster1-02  0c       50:0a:09:82:9c:6c:36:02  ACME Switch:2
+cluster1-02  0d       50:0a:09:82:9c:6c:36:03  ACME Switch:3
+cluster1-02  0e       50:0a:09:82:9c:6c:36:04  ACME Switch:4
+cluster1-02  0f       50:0a:09:82:9c:6c:36:05  ACME Switch:5
+cluster1-02  1a       50:0a:09:82:9c:6c:36:06  ACME Switch:6
+cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
+16 entries were displayed
+----
++
+
+NOTE: 새 구성의 SAN LIF가 동일한 '스위치 포트'에 아직 연결된 어댑터에 있지 않으면 노드를 재부팅할 때 시스템이 중단될 수 있습니다.
+
 .. 노드 4에 SAN LIF 또는 SAN LIF 그룹이 노드 2에 없는 포트에 있는 경우 다음 명령 중 하나를 입력하여 해당 LIF를 노드 4의 적절한 포트로 이동합니다.
 +
 ... LIF 상태를 아래로 설정합니다.

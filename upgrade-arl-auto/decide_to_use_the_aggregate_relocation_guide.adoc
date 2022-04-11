@@ -49,7 +49,7 @@ NOTE: 컨트롤러 업그레이드 모델 조합이 위 표에 없는 경우 기
 
 AFF 9.7P2에서 ONTAP A700 시스템에 대한 ^1^ARL 자동 업그레이드가 지원됩니다.
 
-^2^ 내부 및 외부 디스크를 지원하는 AFF A800 또는 시스템으로 업데이트하는 경우 내부 NVMe 디스크의 루트 애그리게이트에 대한 특정 지침을 따라야 합니다. 을 참조하십시오 link:set_fc_or_uta_uta2_config_on_node3.html#step14["노드 3, 14단계에서 UTA/UTA2 포트를 확인하고 구성합니다"] 및 .
+^2^ 내부 및 외부 디스크를 지원하는 AFF A800 또는 시스템으로 업데이트하는 경우 내부 NVMe 디스크의 루트 애그리게이트에 대한 특정 지침을 따라야 합니다. 을 참조하십시오 link:set_fc_or_uta_uta2_config_on_node3.html#step14["노드 3, 14단계에서 UTA/UTA2 포트를 확인하고 구성합니다"] 및 link:set_fc_or_uta_uta2_config_node4.html#step14["노드 4, 14단계에서 UTA/UTA2 포트를 확인하고 구성합니다"].
 
 ^3^ARL AFF 9.7P5에서 AFF A300에서 ONTAP A800 시스템으로 자동 업그레이드가 지원됩니다.
 

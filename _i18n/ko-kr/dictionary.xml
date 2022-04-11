@@ -87,9 +87,7 @@
   <block id="2894d35f6fa87d4eee09a10919737e2f" category="cell"><block ref="2894d35f6fa87d4eee09a10919737e2f" category="inline-link-macro-rx"></block></block>
   <block id="d1d13e1cdd7f75473f7902868b6ba3d7" category="cell">FlexArray 가상화 시스템에 대한 케이블 연결 지침 및 기타 정보를 제공합니다.</block>
   <block id="07ae19817dfc58c8d1b72b612a233da3" category="inline-link-macro">MetroCluster 관리 및 재해 복구</block>
-  <block id="2e78b745dc7527d7e142f60838ac795c" category="cell"><block ref="2e78b745dc7527d7e142f60838ac795c" category="inline-link-macro-rx"></block></block>
   <block id="c750cfcf9c6045b6e0b4b0d6de2212f3" category="inline-link-macro">MetroCluster 업그레이드 및 확장</block>
-  <block id="61999f6fa7ffc8c1f676441d457e3d86" category="cell"><block ref="61999f6fa7ffc8c1f676441d457e3d86" category="inline-link-macro-rx"></block></block>
   <block id="595e15ec8af10c3d959522d0d1eab769" category="cell">MetroCluster 구성에서 컨트롤러 및 스토리지 모델을 업그레이드하고, MetroCluster FC에서 MetroCluster IP 구성으로 전환하고, 노드를 추가하여 MetroCluster 구성을 확장하는 절차를 제공합니다.</block>
   <block id="b42a2144e64bfdf4eecf966f7bb495c5" category="inline-link-macro">ONTAP 9.0 명령: 수동 페이지 참조</block>
   <block id="a4117daa2ff8204dba8b79ed1da09e5b" category="cell"><block ref="a4117daa2ff8204dba8b79ed1da09e5b" category="inline-link-macro-rx"></block></block>
@@ -204,7 +202,6 @@
   <block id="54c8107ec5763757535759e84fcccba4" category="inline-xref">9단계</block>
   <block id="b95982609bcaa66a9948629f87fe8589" category="inline-xref">10단계</block>
   <block id="b31b744fd8c5cbe34c282a8e3311866b" category="cell">완료 <block ref="3ef612fafd35c4ea98dad97a133c5f3f" category="inline-xref-macro-rx"></block> 및 <block ref="a3461a8cfeac3856b6bf21e7388f2534" category="inline-xref-macro-rx"></block> 다음 섹션으로 이동합니다. <block ref="610cb2d6e87c5e838ceef8f48f57b082" category="inline-link-macro-rx"></block>.</block>
-  <block id="435d35070ba8894d910a50e35db1d4e2" category="list-text">[[man_record_2_step9]]노드 2의 속성을 표시합니다.</block>
   <block id="5d34eef64c7b53994a7dde374d44b94b" category="paragraph">'system node show-instance-node node2'</block>
   <block id="1a02fe8fc6a186319dd3345573fc3717" category="inline-link-macro">노드 4를 설치하고 부팅합니다</block>
   <block id="bc110b3ccc057d2275d5e8ae87f525b0" category="list-text">[[Man_record_2_step10]] 섹션에 사용할 NVRAM 시스템 ID를 기록합니다 <block ref="f326c815b47f4f2909494bae5cd735d5" category="inline-link-macro-rx"></block>.</block>
@@ -467,10 +464,8 @@
   <block id="9482a7fa27802a7ab7e05f7ded4a42bd" category="paragraph">네트워크 인터페이스 show-role data-curr-node node3은 -home false입니다</block>
   <block id="aa0c21cc929471b59f51bf7561edb3b2" category="cell">노드2의 경우</block>
   <block id="4273a0997ee0d6df35945422d9f57ec6" category="cell">인터페이스 그룹 또는 VLAN이 구성되어 있었습니다</block>
-  <block id="f4f6617b632a0c1c2dc3fa9db1c234c1" category="cell">로 이동합니다 <block ref="81b5453f8cd7e29a23486e4650786cf5" category="inline-xref-macro-rx"></block>.</block>
   <block id="31a8cab14d1d7febef6f8053dcd9552d" category="cell">인터페이스 그룹 또는 VLAN이 구성되지 않았습니다</block>
   <block id="7882a4b556b6996eaf604413a9e602d9" category="inline-xref">4단계</block>
-  <block id="2a0ce78ac6ca1adeedbcfa1fd0a257cc" category="cell">3단계를 건너뛰고 로 이동합니다 <block ref="945e0dec7328bd39afca611c47b45c97" category="inline-xref-macro-rx"></block>.</block>
   <block id="dac6519e0e0abeb2d86af52963ff687b" category="list-text">[[man_lif_verify_4_Step3] 다음 단계에 따라 원래 노드 3에서 노드 4로 노드 2에 있던 인터페이스 그룹 및 VLAN에 호스팅된 NAS 데이터 LIF를 모두 마이그레이션합니다.</block>
   <block id="bea582814d8029e4e79ed1f1f67178fa" category="list-text">[[man_lif_verify_4_substa]] 인터페이스 그룹의 node2에 이미 속해 있는 node3에 호스팅된 모든 LIF를 노드 4의 포트로 마이그레이션: 각 LIF에 대해 다음 명령을 한 번 입력하여 동일한 네트워크에서 LIF를 호스팅할 수 있습니다.</block>
   <block id="d78b67076b08536aa74614da580aa8e7" category="paragraph">'network interface migrate -vserver &lt;vserver_name&gt; -lif &lt;lif_name&gt; -destination-node node4 –destination-port &lt;NetPort | ifgrp&gt;'</block>
@@ -485,11 +480,8 @@
   <block id="1ba9f89e7307ad05e44ad05bb958ca27" category="list-text">[[man_lif_verify_4_Step4]]다음 작업 중 하나를 수행합니다.</block>
   <block id="9b9179b830c575fb1e672a3bed56f248" category="cell">클러스터가 구성된 경우...</block>
   <block id="c07ee5debf5f3a3fef16c1ee5e8e4942" category="cell">NAS</block>
-  <block id="583ceb80a05614853a17d060bdc9978d" category="cell">완료 <block ref="24ba20dfe80c75ddf74b686c1f78edbe" category="inline-xref-macro-rx"></block> 부터 까지 <block ref="464cefb825ec041ae0f8085658a0717b" category="inline-xref-macro-rx"></block>, 9단계를 건너뛰고 완료합니다 <block ref="487182da65d4a8fd64dac32686f96826" category="inline-xref-macro-rx"></block> 부터 까지 <block ref="6d60445fd0a028ec8dafc7e8858e9dac" category="inline-xref-macro-rx"></block>.</block>
   <block id="62a0282d39568be094470486eaf70c4f" category="cell">산</block>
-  <block id="407fbf8918b07e23f7ad6bd07a5d9cd9" category="cell">5단계 - 8단계를 건너뛰고 완료합니다 <block ref="95473255aa630f367ac347162090735e" category="inline-xref-macro-rx"></block> 부터 까지 <block ref="6d60445fd0a028ec8dafc7e8858e9dac" category="inline-xref-macro-rx"></block>.</block>
   <block id="7f84238811a0744aed44244f31a3bd53" category="cell">NAS 및 SAN 모두 지원</block>
-  <block id="b7cf099ecc920b7356c7938e36ead518" category="cell">완료 <block ref="24ba20dfe80c75ddf74b686c1f78edbe" category="inline-xref-macro-rx"></block> 부터 까지 <block ref="6d60445fd0a028ec8dafc7e8858e9dac" category="inline-xref-macro-rx"></block>.</block>
   <block id="486afcecd3768de955874ac9b04d982d" category="list-text">[[man_lif_verify_4_Step5]] 플랫폼에서 동일하지 않은 데이터 포트가 있는 경우 다음 명령을 입력하여 브로드캐스트 도메인에 포트를 추가합니다.</block>
   <block id="0d0d30231651c6bea6f3a8ab9bef8b41" category="paragraph">'network port broadcast-domain add-ports-IPSpace &lt;IPspace_name&gt; - broadcast-domain mgmt ports &lt;node:port&gt;'</block>
   <block id="59770005b7a829dfa2de1246fe18d7ed" category="paragraph">다음 예에서는 노드 "6280-1"의 포트 "e0a"와 노드 "8060-1"의 포트 "e0i"를 IPspace에서 브로드캐스트 도메인 관리에 추가합니다. 기본값:</block>
@@ -934,7 +926,6 @@
   <block id="051d9c31ffa2621a5e49ba9e6d76c916" category="list-text">노드 3과 노드 4에서 ONTAP 버전을 확인합니다.</block>
   <block id="53e359796554176ecef5639c8ed3ed05" category="paragraph">노드 3 및 노드 4의 ONTAP 버전에 대한 정보는 배송 상자에 포함되어 있어야 합니다. ONTAP 버전은 노드가 부팅될 때 표시되며, 노드를 유지보수 모드로 부팅하고 명령을 실행할 수 있습니다.</block>
   <block id="7877022c956918624cc0373ff564cad4" category="paragraph">'내전'</block>
-  <block id="232ac82576b399b9dcdc3a264bb0c6ec" category="list-text">노드 1과 노드 2에 2개 또는 4개의 클러스터 LIF가 있는지 확인합니다.</block>
   <block id="a2d27af8ce0592e36b8a208c0cb93d3e" category="paragraph">네트워크 인터페이스 show-role cluster</block>
   <block id="97946b80ce2a390dfbe694abb89b8da6" category="paragraph">다음 예제와 같이 시스템에서 모든 클러스터 LIF를 표시합니다.</block>
   <block id="b6f048f47d754b1245e072cf13364151" category="list-text">노드 1 또는 노드 2에 2개 또는 4개의 클러스터 LIF가 있는 경우 다음 하위 단계를 완료하여 사용 가능한 모든 경로에서 두 클러스터 LIF를 모두 Ping할 수 있는지 확인합니다.</block>
@@ -1289,8 +1280,6 @@
   <block id="f329a7087048b2fb128acd99205356e2" category="paragraph">원격 LIF는 업그레이드 절차 중에 SAN LUN의 트래픽을 처리합니다. 업그레이드 중에 클러스터 또는 서비스 상태를 위해 SAN LIF를 이동할 필요가 없습니다. SAN LIF는 새 포트에 매핑되지 않으면 이동하지 않습니다. 노드 3을 온라인으로 설정한 후 LIF가 정상 작동하는지 확인합니다.</block>
   <block id="44bbe343e421273c157c5d1c833a433b" category="list-text">[[step1]] 노드 중 하나에 다음 명령을 입력하고 출력을 캡처하여 node2가 소유하지 않는 모든 NAS 데이터 LIF를 나열합니다.</block>
   <block id="690cd6839e2f529e9d1be34efa6f9791" category="paragraph">'network interface show-role data-curr-node &lt;node2&gt;-is-home false-home-node &lt;node3&gt;'</block>
-  <block id="05aa25da736018fa33e8cc8667b1e0f1" category="cell">로 이동합니다 <block ref="fa7afcf3541ce640333b443234c694da" category="inline-xref-macro-rx"></block>.</block>
-  <block id="09b00a0d82c468f9038424665ba3a692" category="cell">3단계를 건너뛰고 로 이동합니다 <block ref="a5ee73999909412ce73c7e745a3cb5c2" category="inline-xref-macro-rx"></block>.</block>
   <block id="8c5ada6be3ca66f32616fd020694ec45" category="list-text">[[man_lif_verify_3_step3]] 다음 하위 단계를 수행하여 노드 2에서 노드 3으로 노드 1에 원래 있던 인터페이스 그룹 및 VLAN에 호스팅된 NAS 데이터 LIF를 모두 마이그레이션합니다.</block>
   <block id="fd8bd88e1dcef54d04236465f2b87693" category="list-text">[[man_lif_verify_3_substa]] 인터페이스 그룹의 노드 1에 있던 노드 2에 호스팅된 데이터 LIF를 노드 3의 포트로 마이그레이션: 각 LIF에 대해 다음 명령을 한 번 입력하여 동일한 네트워크에서 LIF를 호스팅할 수 있습니다.</block>
   <block id="494973c7f1f28c90b456a3998b09b84a" category="paragraph">'network interface migrate -vserver &lt;vserver_name&gt; -lif &lt;LIF_name&gt; -destination-node &lt;node3&gt; – destination-port &lt;NetPort | ifgrp&gt;'</block>
@@ -1299,7 +1288,6 @@
   <block id="569a27e0dcf14d4091837fcac510315b" category="list-text">[[man_lif_verify_3_substeepc]] 이전에 VLAN 포트의 노드 1에 속해 있던 노드 2에 호스팅된 데이터 LIF를 노드 3의 포트로 마이그레이션: 각 LIF에 대해 다음 명령을 한 번 입력하여 동일한 네트워크에서 LIF를 호스팅할 수 있습니다.</block>
   <block id="acdda21dc8c7ea3a875f05cfa2d42fb8" category="list-text">에서 LIF의 홈 포트 및 홈 노드를 수정합니다 <block ref="0ba0c3832c194a002bde244af82cc6e8" category="inline-xref-macro-rx"></block> 각 LIF에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.</block>
   <block id="f0de8680ab31eb7304741a5d6c335bce" category="list-text">[[man_lif_verify_3_step4]] 다음 작업 중 하나를 수행합니다.</block>
-  <block id="a8737f289941aae34c7bdcaf30a6f49c" category="cell">완료 <block ref="5bf3f4cb83f848c38272cdda13b03424" category="inline-xref-macro-rx"></block> 및 <block ref="5afb3629d2897001a44bd62c86195932" category="inline-xref-macro-rx"></block>, 7단계를 건너뛰고 완료합니다 <block ref="6f2b0e2c7df1e7ce442716f4a9ac5045" category="inline-xref-macro-rx"></block> 부터 까지 <block ref="d664f7f06c19c1d6c4e1d7d9cba27620" category="inline-xref-macro-rx"></block>.</block>
   <block id="e7bc8e4a360dbc42e9759f708ed40f33" category="cell">업그레이드 시 노드의 모든 SAN LIF를 비활성화:'network interface modify -vserver &lt;vserver_name&gt; -lif &lt;LIF_name&gt; -home-node &lt;node_to_upgrade&gt; -home-port &lt;NetPort|ifgrp&gt; -status-admin down'</block>
   <block id="99025819fe651e3a15c4cafd9ba07587" category="list-text">[[man_lif_verify_3_step5]] 플랫폼에서 동일하지 않은 데이터 포트가 있는 경우 포트를 브로드캐스트 도메인에 추가합니다.</block>
   <block id="76b84f6ac9c180bd922bf1f7f126e4f3" category="list-text">[[man_lif_verify_3_step6]] 각 LIF에 대해 다음 명령을 한 번 입력하여 각 NAS 데이터 LIF를 노드 3으로 마이그레이션합니다.</block>
@@ -1375,7 +1363,6 @@
   <block id="9831ac08d1511b2493ac2b60bb2c8719" category="list-text">노드 3에 UTA/UTA2 구성을 설정합니다.</block>
   <block id="3f5c1bacca95dbafb20a5f179a1942a1" category="list-text">노드 1의 포트를 노드 3으로 매핑합니다.</block>
   <block id="0ecfaa523b3b44d06f14bc6b97a490f1" category="list-text">노드3 설치를 확인합니다.</block>
-  <block id="d6836a12958b1cab97098bd6a3acd9e1" category="list-text">노드 1이 소유한 비 SAN 데이터 LIF를 노드 2에서 노드 3으로 이동하고 노드 3의 SNA LIF를 확인합니다.</block>
   <block id="04bf2293479cb8cadbf0c59e985f585e" category="list-text">노드 2에서 노드 3으로 비루트 애그리게이트를 재배치합니다.</block>
   <block id="eb20f04ed8fd91952c34e1e4620e246e" category="list-text">노드 2가 소유한 non-SAN 데이터 LIF를 노드 3으로 이동합니다.</block>
   <block id="ff8f4c5aae9f0216fa1c088e4c636ab0" category="paragraph">3단계 종료 시 소유권 집계:</block>
@@ -1481,8 +1468,6 @@
   <block id="15395d832f02a01663100fa8cdcdbe72" category="list-text">스위치가 없는 2노드 클러스터인지 확인하려면 다음 단계를 수행하십시오.</block>
   <block id="0a33c5a38d244a756240abb6427cac6d" category="list-text">관리 권한 레벨로 돌아갑니다.</block>
   <block id="4a4552a72df2a500f815fd3a0166db9c" category="list-text">다음 단계를 수행하여 노드 4를 쿼럼에 넣습니다.</block>
-  <block id="3117fde9d13ce2738e8565c02388235e" category="inline-link-macro">노드 4 설치 및 부팅</block>
-  <block id="6a3f0aa15ae6d8d1023d18e294158b6d" category="list-text">부팅 노드4. 을 참조하십시오 <block ref="2f432fc28ce55bdf3f9384f7801ca745" category="inline-link-macro-rx"></block> 아직 부팅하지 않은 경우 노드를 부팅합니다.</block>
   <block id="e250afe1d6acb2cedbe5164cfe15e160" category="list-text">새 클러스터 포트가 클러스터 브로드캐스트 도메인에 있는지 확인합니다.</block>
   <block id="8a624db640009bfcd8e57f0c71e33d5a" category="paragraph">'network port show -node &lt;node&gt; -port &lt;port&gt; -fields broadcast-domain' 다음 예에서는 node4의 클러스터 도메인에 포트 "e0a"가 있음을 보여 줍니다.</block>
   <block id="3b95836e337e89d8b015f844a70e27c5" category="list-text">클러스터 포트가 Cluster broadcast-domain에 없는 경우 다음 명령을 사용하여 추가합니다.</block>
@@ -1998,7 +1983,6 @@
   <block id="fd37436f77e7bb0f803c1afad985d422" category="list-text">노드 1이 소유한 비루트 애그리게이트를 노드 2에서 노드 3으로 재배치합니다.</block>
   <block id="d58c33bf48643b15350ce1c80bb474d8" category="list-text">Node3는 노드 1 애그리게이트의 홈 소유자이며 현재 소유자입니다.</block>
   <block id="7bc7e56fe8ddd27289de0794179c5451" category="cell">4단계. 노드 2를 재배치하거나 폐기합니다</block>
-  <block id="91e22d907fccb4bca308f7b5eda21afe" category="list-text">노드 2가 소유한 non-SAN 데이터 LIF를 노드 3으로 이동합니다.</block>
   <block id="d517ee6c427837d3874a695e344df510" category="paragraph">4단계 종료 시 소유권 집계:</block>
   <block id="312d1c4e0e8f2ca55c86dd955ac42bff" category="list-text">Node3는 노드 1에 원래 속해 있는 애그리게이트의 홈 소유자 및 현재 소유자입니다.</block>
   <block id="6ccf9360cf25c371211dcaee52075b0c" category="list-text">노드 2는 노드 2 애그리게이트의 홈 소유자입니다.</block>
@@ -2477,9 +2461,6 @@
   <block id="3ba1b014c973048d41b40e37b1cfeb69" category="list-text">[[step25] 스토리지 배열의 어레이 LUN과 연결된 호스트 또는 볼륨 그룹에서 WWPN(Worldwide Port Name) 값을 수정합니다.</block>
   <block id="be6df649a349785ed8ec2a552e7c8903" category="list-text">[[step26]] 구성에서 스위치 기반 조닝을 사용하는 경우 새 WWPN 값이 적용되도록 조닝을 조정하십시오.</block>
   <block id="dc19b23ad13df9e69f052ca959f75ad8" category="list-text">[[step28]] 부트 메뉴의 부트 노드:</block>
-  <block id="d5a2736750f555e1b93002d11e192b77" category="inline-link-macro">노드 3, 15단계에서 UTA/UTA2 포트를 확인하고 구성합니다</block>
-  <block id="8105e4198590e4ba2b52ef420719d8f6" category="paragraph">FC 또는 UTA/UTA2 구성을 사용하지 않는 경우, 를 실행합니다 <block ref="197bcdf5306898ec17e6022b26568f43" category="inline-link-macro-rx"></block> 따라서 노드 3은 노드 1의 디스크를 인식할 수 있습니다.</block>
-  <block id="1e1bab3dc1010e23c8cb467fc3006ae4" category="list-text">[[auto9597_istall3_step29]] 스토리지 어레이에 연결된 FlexArray 가상화 소프트웨어가 있는 MetroCluster 구성, V 시리즈 시스템 및 시스템의 경우 로 이동하십시오 <block ref="197bcdf5306898ec17e6022b26568f43" category="inline-link-macro-rx"></block>.</block>
   <block id="dd019fbf939676387b29c50185dd26bb" category="paragraph">노드 1을 노드 3으로 교체하려면 먼저 노드 1에서 노드 2로 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 이동한 다음 노드 1의 리소스를 노드 3으로 이동해야 합니다.</block>
   <block id="231d6537090582d94372987139e9087b" category="paragraph">작업을 시작할 때 작업이 이미 일시 중지되어 있어야 합니다. 작업을 수동으로 다시 시작해야 합니다.</block>
   <block id="bcc15f05fe7b911a3de9d9528ece7fc7" category="list-text">애그리게이트 재배치 및 NAS 데이터 LIF 이동 작업 재개:</block>
@@ -2788,7 +2769,6 @@
   <block id="8cdba56188d6642a771d0c327a72af57" category="paragraph">볼륨 이동을 통한 업그레이드는 무중단으로 가능합니다.</block>
   <block id="56089842bd614396cfba7cdf9bb6601f" category="list-text">지원되는 모델의 노드를 디스크 쉘프로 변환한 다음, 새 노드에 연결할 계획입니다.</block>
   <block id="ec9ed7bffd77d0096865ed2f7cdcc6cb" category="inline-link">MetroCluster ® 업그레이드 및 확장</block>
-  <block id="b57acc6aae5b9384209bb66a6c83f8e9" category="paragraph">2노드 MetroCluster 구성을 업그레이드할 경우 의 절차를 사용해야 합니다<block ref="8f8223d27ded43641f85508576e6eb9a" category="inline-link-rx"></block> 콘텐츠.</block>
   <block id="ee50784c4307d33a05ee2e7ea5146e6b" category="inline-link-macro">ARL 컨트롤러 하드웨어 업그레이드</block>
   <block id="a96bbb56bf9f254d0e2034d1d7d6da26" category="paragraph">이 내용은 에 설명된 대로 ARL(Aggregate Relocation)을 사용하여 컨트롤러 하드웨어를 업그레이드하는 방법은 설명하지 않습니다 <block ref="f1bb1f12e9cbaac696243166fca7cc1f" category="inline-link-macro-rx"></block> 콘텐츠.</block>
   <block id="aff7a731f5229621d23c4c3e8021e92e" category="paragraph">개별 구성 요소를 교체하는 경우 해당 구성 요소의 현장 교체 장치(FRU) 전단지를 참조하십시오.</block>
@@ -3304,8 +3284,6 @@
   <block id="95b4c137787b29e51c74b71475d203dd" category="list-text">FC 포트를 구성합니다.</block>
   <block id="b9dd5a9a2b21507e0342ef620ec6824d" category="list-text">UTA/UTA2 포트를 확인하고 구성합니다.</block>
   <block id="e60e41c512cd3f2ad332e91763d4d2a5" category="list-text">노드3 네트워크 구성을 복원합니다.</block>
-  <block id="6b01c45aa39022f8fcfff3f90434c89c" category="list-text">비 SAN 데이터 LIF를 노드 1별로 노드 2에서 노드 3으로 이동합니다.</block>
-  <block id="6ab2fb4ca5571833687af9b24c03405b" category="list-text">노드 2가 소유한 non-SAN 데이터 LIF를 노드 3으로 재배치합니다.</block>
   <block id="1ed5ba60b18e0aad565c48c7e13368fc" category="list-text">노드4 네트워크 구성을 복원합니다</block>
   <block id="ca821390724c296a0ea0b07a911d5d46" category="list-text">새 컨트롤러 모듈에서 NetApp Volume Encryption 설정</block>
   <block id="01f95e082b71c8b8f530696c5c1e79f6" category="list-text">필요한 경우 NetApp SnapMirror 작업을 재개합니다.</block>
@@ -3464,8 +3442,6 @@
   <block id="27c32000aa45c9243e8b444a27636832" category="list-text">내 상태 표시 - 세부 사항</block>
   <block id="78d45d4102c6b7fa82c29a7ee6d3feac" category="paragraph">이 단계에서 노드 3이 충돌하면 HA 쌍이 이미 사용되지 않으므로 테이크오버 기능이 발생하지 않습니다.</block>
   <block id="9776e59ce7d904cfd8633f152b0e9840" category="paragraph">노드 3이 재부팅될 때까지 모든 애그리게이트에서 클라이언트 장애가 발생했습니다.</block>
-  <block id="61a70f63b15f41db325598863adb0177" category="inline-link-macro">노드 3 설치를 확인합니다</block>
-  <block id="9ddd1c356c6ec43f630dd03fa71725d5" category="list-text">노드 3에 온보드 FC 포트, 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드가 없는 경우 스토리지 디스크를 사용하여 시스템을 업그레이드하는 경우 로 건너뛸 수 있습니다 <block ref="d402045f7964b6e0cf4fcac8fa4d9846" category="inline-link-macro-rx"></block> 섹션을 참조하십시오.</block>
   <block id="be6b715addf3303698d174b13e915620" category="list-text">하지만 스토리지 어레이가 있는 FlexArray 가상화 소프트웨어를 사용하는 V 시리즈 시스템이나 시스템이 있고 노드 3에 온보드 FC 포트, 온보드 UTA/UTA 포트 또는 UTA/UTA2 카드가 없는 경우, _Install and boot node3_섹션으로 돌아가서 섹션을 다시 시작하십시오 <block ref="279060155dcadaa13689560d46e381cb" category="inline-link-macro-rx"></block>.</block>
   <block id="09a561f3362ed88514963066e3d7b720" category="list-text">노드 3에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우 섹션을 건너뛰십시오 <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block> 섹션으로 이동합니다 <block ref="35ed01fca1dde6c35ca197b89d2bbfc7" category="inline-link-macro-rx"></block>.</block>
   <block id="70d6bd3154ab38128a772f6268fea926" category="list-text">노드 3에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우 섹션을 건너뛰십시오 <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block> 그런 다음, _Install and boot node3_ 섹션으로 돌아가서 에서 다시 시작합니다 <block ref="279060155dcadaa13689560d46e381cb" category="inline-link-macro-rx"></block>.</block>
@@ -3751,7 +3727,6 @@
   <block id="bc8be72fdc9d6054f356bb2b7f80fd12" category="sidebar">NetApp 상호 운용성 매트릭스</block>
   <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">NetApp 커뮤니티</block>
   <block id="7502f8f780af629ea69a176b286f5472" category="sidebar">집계 재배치 컨텐츠의 사용 여부를 결정합니다</block>
-  <block id="ede813b2f7c6a203c236d7726f79da2c" category="sidebar">워크시트: 컨트롤러 업그레이드 전과 도중에 수집할 정보입니다</block>
   <block id="0df71f161bb7f6f4a1dd4c0ceefcb245" category="sidebar">4단계. 정보를 기록하고 노드2를 폐기합니다</block>
   <block id="79f3abfd76c996d707b348dbfb91c42b" category="sidebar">노드 4에 FC 또는 UTA/UTA2 구성을 설정합니다</block>
   <block id="d087c3faf4708dbb3c8dfcfefd9745e9" category="sidebar">"system controller replace" 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러 하드웨어를 9.7로 업그레이드하십시오</block>
@@ -4397,4 +4372,53 @@
   <block id="a1e942c10f3ef940af9560fa7f9b1bcf" category="sidebar">3단계. AFF A900 컨트롤러 모듈 및 NVRAM 모듈을 사용하여 노드 1을 부팅합니다</block>
   <block id="1eec8458b505239680f521752a8c01ec" category="sidebar">5단계. 노드 2에 AFF A900 NVRAM 모듈 및 컨트롤러 모듈을 설치합니다</block>
   <block id="994245d9c168d8ec5856e8519cf95566" category="sidebar">6단계. AFF A900 컨트롤러 모듈 및 NVRAM 모듈을 사용하여 노드 2를 부팅합니다</block>
+  <block id="46d710808513caa456c59b3efa90d166" category="list-text">노드 1과 노드 2에 2개 또는 4개의 클러스터 LIF가 있는지 확인합니다.</block>
+  <block id="cae5b224d557c99a0eebcc5cacc40bf4" category="inline-link-macro">노드 3, 15단계에서 UTA/UTA2 포트를 확인하고 구성합니다</block>
+  <block id="a298d19803fc12a7c7efaba3c5bf6f9c" category="paragraph">FC 또는 UTA/UTA2 구성을 사용하지 않는 경우, 를 실행합니다 <block ref="9a0e78facca94ea7347680acb603c7fe" category="inline-link-macro-rx"></block> 따라서 노드 3은 노드 1의 디스크를 인식할 수 있습니다.</block>
+  <block id="7fb38727f894ed52a58d4bcc31b06aaf" category="list-text">[[man_record_2_step9]] node2의 특성을 표시합니다.</block>
+  <block id="532b323cb941c2d695f99125c68410df" category="cell"><block ref="532b323cb941c2d695f99125c68410df" category="inline-link-macro-rx"></block></block>
+  <block id="b4fe4daa97eb40900235ae04f1cd5873" category="cell"><block ref="b4fe4daa97eb40900235ae04f1cd5873" category="inline-link-macro-rx"></block></block>
+  <block id="91b0db424a5fefe25b3d6fccaca1b289" category="inline-link-macro">워크시트</block>
+  <block id="7d059b3dc572790c32264682daa9e3a8" category="list-text">[[Worksheet_step2_node2]] 클러스터가 SAN LIF에 대해 구성되어 있으면 이 문서에 SAN LIF 및 기존 구성 정보를 기록합니다 <block ref="ed0401b9f31c3a01c0ae9e44a18d8569" category="inline-link-macro-rx"></block> 나중에 사용할 수 있습니다.</block>
+  <block id="13fe413dcdf6cd4af5dc15452c261c5d" category="list-text">노드 3의 SAN LIF를 나열하고 출력을 조사합니다.</block>
+  <block id="c81ec76e9b8604cac0a0b80f119ad7ca" category="paragraph">'network interface show-data-protocol fc *'</block>
+  <block id="fefd289d498d5d5326f83433241db103" category="list-text">기존 설정을 나열하고 출력을 검사합니다.</block>
+  <block id="2b8adeabb17e2a28fffec9935d24095e" category="paragraph">FCP 어댑터 show-fields switch-port, fc-WWPN입니다</block>
+  <block id="0570a87f66b52b8f17fb5de7ee7bc50e" category="cell">로 이동합니다 <block ref="1feafd371df4188baa75107ccc365ce6" category="inline-xref-macro-rx"></block>.</block>
+  <block id="a0c840707955fb428322cd9929f8594f" category="cell">4단계를 건너뛰고 로 이동합니다 <block ref="fed6d849a1c6887a0026c6afdf0be295" category="inline-xref-macro-rx"></block>.</block>
+  <block id="81822d00068323377a946aa7bf001d37" category="inline-xref">14단계</block>
+  <block id="203c350886e723f8907aa98829856dea" category="cell">완료 <block ref="9b6384c6e14a01b359b3ceca503dc7e8" category="inline-xref-macro-rx"></block> 부터 까지 <block ref="0384eb2d62c044428afa7420fa66b7f3" category="inline-xref-macro-rx"></block>10단계를 건너뛰고 완료합니다 <block ref="e8b56490494689060c7f97c7205b356e" category="inline-xref-macro-rx"></block> 부터 까지 <block ref="ec14a10fceb4bd2f9e1f7036303b7f20" category="inline-xref-macro-rx"></block>.</block>
+  <block id="d7e12627113c3a73f5a80bf4274e8846" category="cell">6단계부터 9단계까지 건너뛰고 완료합니다 <block ref="5ec476e5dfed929f240a4e732b5ca6eb" category="inline-xref-macro-rx"></block> 부터 까지 <block ref="ec14a10fceb4bd2f9e1f7036303b7f20" category="inline-xref-macro-rx"></block>.</block>
+  <block id="6944af912471eeed2e022cefd73bd566" category="cell">완료 <block ref="9b6384c6e14a01b359b3ceca503dc7e8" category="inline-xref-macro-rx"></block> 부터 까지 <block ref="ec14a10fceb4bd2f9e1f7036303b7f20" category="inline-xref-macro-rx"></block>.</block>
+  <block id="24fe95a95d6e3a63f99e4a3c5ef9f89a" category="list-text">새 "adapter" 및 "shwitch-port" 구성이 올바른지 확인하려면 의 워크시트에 기록한 새 구성 정보와 FCP adapter show 명령의 출력을 비교해야 합니다 <block ref="126eae74e75ac7b320d7d5918436b8fc" category="inline-xref-macro-rx"></block>.</block>
+  <block id="a9b96c57877203a59f39e6cc79d93f2c" category="paragraph">노드 4의 새로운 SAN LIF 구성을 나열합니다.</block>
+  <block id="b2d67401d96e568ee0cf85d65ef2b19b" category="admonition">새 구성의 SAN LIF가 동일한 '스위치 포트'에 아직 연결된 어댑터에 있지 않으면 노드를 재부팅할 때 시스템이 중단될 수 있습니다.</block>
+  <block id="82b42c933396be79780fabd5e97f3c55" category="list-text">새 및 '어댑터' 및 '스위치 포트' 구성이 올바른지 확인하려면 FCP adapter show 명령의 출력과 의 워크시트에 기록한 구성 정보를 비교합니다 <block ref="0cc92f396d72c25a12260a5b674f18bb" category="inline-xref-macro-rx"></block>.</block>
+  <block id="c60cff9ca9befe11cdfbe93fdcc641c4" category="paragraph">노드 3의 새로운 SAN LIF 구성을 나열합니다.</block>
+  <block id="51dffedbaa43215c9eb261627011dc71" category="list-text">[[Worksheet_step2]] SAN LIF에 클러스터가 구성되어 있으면 SAN LIF의 어댑터 및 '스위치 포트' 구성 정보를 여기에 기록합니다 <block ref="df642b24162f163cd69ded792f71f977" category="inline-link-macro-rx"></block> 나중에 사용할 수 있습니다.</block>
+  <block id="82bc4d9ae00b977a00f8b2b3183a9785" category="list-text">노드 2의 SAN LIF를 나열하고 출력을 검사합니다.</block>
+  <block id="018c22c5b30c017d8feb43ab61d41950" category="cell">로 이동합니다 <block ref="8695dd713093cfe118008b3f87c0754f" category="inline-xref-macro-rx"></block>.</block>
+  <block id="2b11e293cb7289a197df3561593aeffa" category="cell">4단계를 건너뛰고 로 이동합니다 <block ref="a890970ca155ddb2f966787cdb699906" category="inline-xref-macro-rx"></block>.</block>
+  <block id="584e8d9cc5ee8c735cfb3dd7222c5f97" category="cell">완료 <block ref="ad851a431673e6dae9d14b296383f37c" category="inline-xref-macro-rx"></block> 및 <block ref="1d64360fb04a1f29d7e0234ee858d9f1" category="inline-xref-macro-rx"></block>, 8단계를 건너뛰고 완료합니다 <block ref="9da2a3cb41411f3d8e4509b7d9f419c9" category="inline-xref-macro-rx"></block> 부터 까지 <block ref="268954e5efe55fe9bc0459f35479f2f6" category="inline-xref-macro-rx"></block>.</block>
+  <block id="b9c0ca8a434a5002becc00cfe521a241" category="paragraph">다음 워크시트를 사용하여 노드 3에서 노드 4로 SAN LIF를 이동한 후 올바른 구성이 있는지 확인하려면 각 LIF에 대한 "어댑터" 및 "스위치 포트" 정보를 기록해 두십시오.</block>
+  <block id="53148cc93c14512428f6220d831a49bc" category="paragraph">노드 3의 네트워크 인터페이스 show-data-protocol fc * 명령 출력 및 FCP 어댑터 show-fields switch-port, fc-WWPN 명령 출력의 LIF '어댑터' 정보를 기록합니다.</block>
+  <block id="4609868b369b1b30d3b39e9d3f09f22f" category="paragraph">노드 4로 마이그레이션을 완료한 후 노드 4의 LIF에 대한 LIF 어댑터 및 '스위치 포트' 정보를 기록하고 각 LIF가 동일한 '스위치 포트'에 연결되어 있는지 확인합니다.</block>
+  <block id="bbb747b1516b5225f1ec1c65887b39fc" category="cell">노드3</block>
+  <block id="9d976e7c6f1c5d3d7ceae80a4e6a8146" category="cell">노드4</block>
+  <block id="b3625fe2fca73900be4e5cc7287b2712" category="cell">"어댑터"</block>
+  <block id="ea345f47a717359f0fdba3d2e4713ef4" category="cell">마녀</block>
+  <block id="c05bee806c6f915cf5ff2806f39a07ed" category="paragraph">다음 워크시트를 사용하여 노드 2에서 노드 3으로 SAN LIF를 이동한 후 올바른 구성이 있는지 확인하려면 각 LIF에 대한 "어댑터" 및 "스위치 포트" 정보를 기록해 두십시오.</block>
+  <block id="9112b6be69a2001742ac0ee10829bee2" category="paragraph">노드 2의 네트워크 인터페이스 show-data-protocol fc * 명령 출력 및 FCP 어댑터 show-fields switch-port, fc-WWPN 명령 출력의 LIF '어댑터' 정보를 기록합니다.</block>
+  <block id="22b2fefa28a06ec3cc06d7ec099d5c74" category="paragraph">노드 3으로 마이그레이션을 완료한 후 노드 3의 LIF에 대한 LIF 어댑터 및 '스위치 포트' 정보를 기록하고 각 LIF가 동일한 '스위치 포트'에 연결되어 있는지 확인합니다.</block>
+  <block id="f5f366263dcc357e2720042f33286f8f" category="cell">노드2</block>
+  <block id="b343f23906663addd5a74e2a7ef1081c" category="paragraph">2노드 MetroCluster 구성을 업그레이드할 경우 의 절차를 사용해야 합니다<block ref="1c2430d337b01f5c69e59f26ce11e5ee" category="inline-link-rx"></block> 콘텐츠.</block>
+  <block id="79376a6dcb786ca7697c041779a511ed" category="list-text">노드 1이 소유한 비 SAN 데이터 LIF를 노드 2에서 노드 3으로 이동하고 노드 3의 SNA LIF를 확인합니다.</block>
+  <block id="9563ae143e5fe7208056b0b71e25b465" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 노드2 NAS 데이터 LIF 구성 정보를 기록합니다.</block>
+  <block id="f2c792d165cf5982bc257f272cf61213" category="doc">워크시트: NAS 데이터 LIF를 노드 4로 이동하기 전에 기록할 정보입니다</block>
+  <block id="3845d8de38880910997f948c4173a5ae" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 노드1 NAS 데이터 LIF 구성 정보를 기록합니다.</block>
+  <block id="3a9b491c3933919f7944d284e7bdf2a9" category="doc">워크시트: NAS 데이터 LIF를 노드 3으로 이동하기 전에 기록할 정보입니다</block>
+  <block id="1702aae1f318978efc37a136675dc355" category="list-text">노드 3에 온보드 FC 포트, 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드가 없는 경우 스토리지 디스크를 사용하여 시스템을 업그레이드하는 경우 로 건너뛸 수 있습니다 <block ref="35ed01fca1dde6c35ca197b89d2bbfc7" category="inline-link-macro-rx"></block> 섹션을 참조하십시오.</block>
+  <block id="97b4b76caf0d5b4cd013ca71056a29df" category="list-text">노드 2가 소유한 non-SAN 데이터 LIF를 노드 3으로 재배치합니다.</block>
+  <block id="79ba45215eeed9692f00f54cd98176eb" category="list-text">[[auto9597_istall3_step29]] 스토리지 어레이에 연결된 FlexArray 가상화 소프트웨어가 있는 MetroCluster 구성, V 시리즈 시스템 및 시스템의 경우 로 이동하십시오 <block ref="9a0e78facca94ea7347680acb603c7fe" category="inline-link-macro-rx"></block>.</block>
+  <block id="42b2cb9f9e1a3cf15145887e95d849a8" category="sidebar">워크시트: 컨트롤러 업그레이드 전과 도중에 수집할 정보입니다</block>
 </blocks>

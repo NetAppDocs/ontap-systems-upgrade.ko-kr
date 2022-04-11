@@ -28,7 +28,7 @@ NOTE: ONTAP 9.8에서는 자동 포트 배치 기능이 도입되어 하드웨�
 * 지원되는 모델의 노드를 디스크 쉘프로 변환한 다음, 새 노드에 연결할 계획입니다.
 
 
-2노드 MetroCluster 구성을 업그레이드할 경우 의 절차를 사용해야 합니다 https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/index.html["MetroCluster ® 업그레이드 및 확장"^] 콘텐츠.
+2노드 MetroCluster 구성을 업그레이드할 경우 의 절차를 사용해야 합니다 https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["MetroCluster ® 업그레이드 및 확장"^] 콘텐츠.
 
 이 내용은 에 설명된 대로 ARL(Aggregate Relocation)을 사용하여 컨트롤러 하드웨어를 업그레이드하는 방법은 설명하지 않습니다 link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl/index.html["ARL 컨트롤러 하드웨어 업그레이드"^] 콘텐츠.
 

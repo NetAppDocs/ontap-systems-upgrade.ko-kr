@@ -52,7 +52,7 @@ NOTE: 이 절차를 통해 NetApp 스토리지 암호화(NSE) 및 NetApp 볼륨 
 
 NOTE: 컨트롤러 업그레이드 모델 조합이 위 표에 없는 경우 기술 지원 부서에 문의하십시오.
 
-^1^ AFF A800 시스템에 필요한 추가 단계를 보려면 섹션에서 A800을 참조하는 단계로 이동하십시오 link:set_fc_or_uta_uta2_config_on_node3.html#step23["노드3, 23단계에서 UTA/UTA2 포트를 확인하고 구성합니다"], 또는 .
+^1^ AFF A800 시스템에 필요한 추가 단계를 보려면 섹션에서 A800을 참조하는 단계로 이동하십시오 link:set_fc_or_uta_uta2_config_on_node3.html#step23["노드3, 23단계에서 UTA/UTA2 포트를 확인하고 구성합니다"], 또는 link:set_fc_or_uta_uta2_config_node4.html#step23["노드 4, 23단계에서 UTA/UTA2 포트를 확인하고 구성합니다"].
 
 ^2^ARL AFF A320에서 AFF A400 시스템으로의 자동 업그레이드가 ONTAP 9.9.1에서 지원됩니다.
 

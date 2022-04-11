@@ -118,7 +118,7 @@ HA가 이미 비활성화되어 있기 때문에 노드 3이 노드 2 충돌 후
 
 .단계
 . 노드2를 위로 올립니다.
-. 를 완료하여 나머지 애그리게이트를 재배치합니다 link:relocate_non_root_aggr_node2_node3.html#step1["1단계"] 부터 까지  section_Relocate node2에서 node3_로 비루트 애그리게이트를 이동합니다.
+. 를 완료하여 나머지 애그리게이트를 재배치합니다 link:relocate_non_root_aggr_node2_node3.html#step1["1단계"] 부터 까지 link:relocate_non_root_aggr_node2_node3.html#step3["3단계"] section_Relocate node2에서 node3_로 비루트 애그리게이트를 이동합니다.
 . 노드 쌍 업그레이드 절차를 계속 진행합니다.
 
 
@@ -198,7 +198,7 @@ Node3는 노드 2의 일부 또는 전부를 노드 4로 재배치했습니다. 
 
 .단계
 . 노드3을 불러옵니다.
-. 반복하여 노드 2에 속한 나머지 애그리게이트를 재배치합니다 link:relocate_node2_non_root_aggr_node3_node4.html#Step1["1단계"] 부터 까지  section_Relocate node3에서 node4_로 node2의 비 루트 애그리게이트를 이동합니다.
+. 반복하여 노드 2에 속한 나머지 애그리게이트를 재배치합니다 link:relocate_node2_non_root_aggr_node3_node4.html#Step1["1단계"] 부터 까지 link:relocate_node2_non_root_aggr_node3_node4.html#step3["3단계"] section_Relocate node3에서 node4_로 node2의 비 루트 애그리게이트를 이동합니다.
 . 노드 쌍 업그레이드 절차를 계속 진행합니다.
 
 
@@ -212,6 +212,6 @@ Node3는 노드 2의 일부 또는 전부를 노드 4로 재배치했습니다. 
 
 .단계
 . 노드4를 위로 올립니다.
-. 를 다시 완료하여 노드 2에 속한 나머지 애그리게이트를 재배치합니다 link:relocate_node2_non_root_aggr_node3_node4.html#Step1["1단계"] 부터 까지  in_Relocate node3에서 node4_로 node2의 비루트 애그리게이트를 이동합니다.
+. 를 다시 완료하여 노드 2에 속한 나머지 애그리게이트를 재배치합니다 link:relocate_node2_non_root_aggr_node3_node4.html#Step1["1단계"] 부터 까지 link:relocate_node2_non_root_aggr_node3_node4.html#step3["3단계"] in_Relocate node3에서 node4_로 node2의 비루트 애그리게이트를 이동합니다.
 . 노드 쌍 업그레이드 절차를 계속 진행합니다.
 

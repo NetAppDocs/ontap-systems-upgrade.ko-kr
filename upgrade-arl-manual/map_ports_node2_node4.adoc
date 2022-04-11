@@ -100,7 +100,7 @@ cluster::>
 
 . 다음 단계를 수행하여 노드 4를 쿼럼에 넣습니다.
 +
-.. 부팅 노드4. 을 참조하십시오 link:install_boot_node4.html["노드 4 설치 및 부팅"] 아직 부팅하지 않은 경우 노드를 부팅합니다.
+.. 부팅 노드4. 을 참조하십시오 link:install_boot_node4.html["노드 4를 설치하고 부팅합니다"] 아직 부팅하지 않은 경우 노드를 부팅합니다.
 .. 새 클러스터 포트가 클러스터 브로드캐스트 도메인에 있는지 확인합니다.
 +
 'network port show -node <node> -port <port> -fields broadcast-domain' 다음 예에서는 node4의 클러스터 도메인에 포트 "e0a"가 있음을 보여 줍니다.

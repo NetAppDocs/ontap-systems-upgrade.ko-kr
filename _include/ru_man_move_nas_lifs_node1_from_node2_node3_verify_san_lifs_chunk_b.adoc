@@ -34,6 +34,45 @@ cluster::> net int show -data-protocol iscsi|fcp -home-node node3
               lif1        up/up       172.17.176.120/24   node3          e0c      true
               lif2        up/up       172.17.176.121/24   node3          e1a      true
 ----
+.. 새 및 '어댑터' 및 '스위치 포트' 구성이 올바른지 확인하려면 FCP adapter show 명령의 출력과 의 워크시트에 기록한 구성 정보를 비교합니다 <<worksheet_step2,2단계>>.
++
+노드 3의 새로운 SAN LIF 구성을 나열합니다.
+
++
+FCP 어댑터 show-fields switch-port, fc-WWPN입니다
+
++
+시스템은 다음 예제와 유사한 출력을 반환합니다.
+
++
+[listing]
+----
+cluster1::> fcp adapter show -fields switch-port,fc-wwpn
+  (network fcp adapter show)
+node        adapter fc-wwpn                 switch-port
+----------- ------- ----------------------- -------------
+cluster1-01 0a      50:0a:09:82:9c:13:38:00 ACME Switch:0
+cluster1-01 0b      50:0a:09:82:9c:13:38:01 ACME Switch:1
+cluster1-01 0c      50:0a:09:82:9c:13:38:02 ACME Switch:2
+cluster1-01 0d      50:0a:09:82:9c:13:38:03 ACME Switch:3
+cluster1-01 0e      50:0a:09:82:9c:13:38:04 ACME Switch:4
+cluster1-01 0f      50:0a:09:82:9c:13:38:05 ACME Switch:5
+cluster1-01 1a      50:0a:09:82:9c:13:38:06 ACME Switch:6
+cluster1-01 1b      50:0a:09:82:9c:13:38:07 ACME Switch:7
+cluster1-02 0a      50:0a:09:82:9c:6c:36:00 ACME Switch:0
+cluster1-02 0b      50:0a:09:82:9c:6c:36:01 ACME Switch:1
+cluster1-02 0c      50:0a:09:82:9c:6c:36:02 ACME Switch:2
+cluster1-02 0d      50:0a:09:82:9c:6c:36:03 ACME Switch:3
+cluster1-02 0e      50:0a:09:82:9c:6c:36:04 ACME Switch:4
+cluster1-02 0f      50:0a:09:82:9c:6c:36:05 ACME Switch:5
+cluster1-02 1a      50:0a:09:82:9c:6c:36:06 ACME Switch:6
+cluster1-02 1b      50:0a:09:82:9c:6c:36:07 ACME Switch:7
+16 entries were displayed
+----
++
+
+NOTE: 새 구성의 SAN LIF가 동일한 '스위치 포트'에 아직 연결된 어댑터에 있지 않으면 노드를 재부팅할 때 시스템이 중단될 수 있습니다.
+
 .. 노드 3에 노드 1에 없는 포트에 있거나 다른 포트에 매핑해야 하는 SAN LIF 그룹 또는 SAN LIF가 있는 경우 다음 하위 단계를 완료하여 노드 3의 적절한 포트로 LIF를 이동합니다.
 +
 ... LIF 상태를 "아래쪽"으로 설정합니다.
