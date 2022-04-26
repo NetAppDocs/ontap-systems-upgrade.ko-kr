@@ -6,6 +6,7 @@ summary: ARL 컨트롤러 업그레이드 절차 중 AFF A900 NVRAM 모듈 및 �
 ---
 = 노드 2에 AFF A900 NVRAM 모듈 및 컨트롤러 모듈을 설치합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

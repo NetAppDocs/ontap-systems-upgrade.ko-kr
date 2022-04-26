@@ -5,6 +5,7 @@ keywords: complete, upgrade, ontap, complete the upgrade
 summary: ONTAP 9.8 또는 ONTAP 9.7 이전 버전에서 업그레이드를 완료하십시오. 
 ---
 = 업그레이드를 완료합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

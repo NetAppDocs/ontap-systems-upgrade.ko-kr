@@ -6,6 +6,7 @@ summary: ONTAP 9.7 이하를 실행하는 컨트롤러의 수동 ARL 업그레�
 ---
 = 노드 2가 소유한 NAS 데이터 LIF를 노드 3에서 노드 4로 이동하고 노드 4의 SAN LIF를 확인합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

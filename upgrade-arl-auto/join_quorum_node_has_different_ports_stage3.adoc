@@ -6,6 +6,7 @@ summary: 3단계에서 시스템 컨트롤러 교체 명령을 사용하여 ONTA
 ---
 = 노드에 다른 네트워크 포트 집합이 있는 경우 쿼럼을 연결합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 시스템 컨트롤러 교체 명령을 사용하여 ONTAP 9.5를 실�
 ---
 = 노드3 설치를 확인합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

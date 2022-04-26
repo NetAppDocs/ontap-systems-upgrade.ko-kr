@@ -6,6 +6,7 @@ summary: '"system controller replace" 명령어를 이용하여 ONTAP 9.8 이상
 ---
 = 필요한 도구 및 문서
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

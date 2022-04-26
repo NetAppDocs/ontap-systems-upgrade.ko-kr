@@ -5,6 +5,7 @@ keywords:
 summary: 이 내용은 스토리지 또는 볼륨을 이동하여 클러스터에서 AFF 시스템 또는 FAS 시스템의 컨트롤러 하드웨어를 업그레이드하는 방법을 설명합니다. 
 ---
 = 볼륨이나 스토리지를 이동하여 업그레이드 여부를 결정합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

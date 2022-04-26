@@ -6,6 +6,7 @@ summary: 이 항목의 다른 참조 콘텐츠 및 웹 사이트에 연결할 �
 ---
 = 참조
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

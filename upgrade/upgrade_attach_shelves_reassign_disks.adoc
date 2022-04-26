@@ -5,6 +5,7 @@ keywords: reassign, disk, belong, node1, node2, node3, node4, node, attach, stor
 summary: 노드 1과 노드 2에 속한 디스크를 노드 3과 노드 4에 각각 재할당해야 합니다. 
 ---
 = 스토리지 쉘프를 연결하고 디스크 소유권을 다시 할당합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

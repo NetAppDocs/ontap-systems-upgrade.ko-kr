@@ -6,6 +6,7 @@ summary: AFF A700에서 AFF A900으로 업그레이드하는 동안 발생할 �
 ---
 = 절차의 여러 단계에서 발생할 수 있는 문제입니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

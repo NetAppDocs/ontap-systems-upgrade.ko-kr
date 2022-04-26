@@ -6,6 +6,7 @@ summary: ONTAP 9.8 이상을 실행하는 한 쌍의 컨트롤러에 대한 수�
 ---
 = ARL 업그레이드 워크플로
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

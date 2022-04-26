@@ -6,6 +6,7 @@ summary: ONTAP 9.7 이하를 실행하는 컨트롤러에서 수동 ARL 업그�
 ---
 = 새 컨트롤러가 올바르게 설정되었는지 확인합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

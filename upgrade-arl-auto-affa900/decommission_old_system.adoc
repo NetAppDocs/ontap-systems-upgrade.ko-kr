@@ -6,6 +6,7 @@ summary: AFF A900으로 업그레이드한 후 기존 시스템이 더 이상 �
 ---
 = 기존 시스템을 폐기합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

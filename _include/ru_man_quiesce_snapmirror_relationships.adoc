@@ -1,4 +1,5 @@
 = 
+:allow-uri-read: 
 
 
 시스템을 부팅하기 전에 모든 SnapMirror 관계가 중지되었는지 확인해야 합니다. SnapMirror 관계가 중지되면 재부팅 및 페일오버 시에도 계속 정지됩니다.

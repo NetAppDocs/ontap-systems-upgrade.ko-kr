@@ -6,6 +6,7 @@ summary: 수동 ARL 업그레이드 절차를 사용하여 ONTAP 9.8 이상을 �
 ---
 = 개요
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 필요한 경우 ONTAP 9.7 이하를 실행하는 컨트롤러에서 �
 ---
 = 새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

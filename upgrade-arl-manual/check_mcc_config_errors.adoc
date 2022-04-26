@@ -6,6 +6,7 @@ summary: Config Advisor 9.7 이하를 실행하는 컨트롤러에서 수동 ARL
 ---
 = MetroCluster 구성 오류를 확인합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

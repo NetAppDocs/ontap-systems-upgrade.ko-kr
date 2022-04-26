@@ -6,6 +6,7 @@ summary: '"시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.5를 �
 ---
 = 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 2에서 노드 3으로 재배치합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

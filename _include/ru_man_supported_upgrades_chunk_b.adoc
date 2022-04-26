@@ -1,4 +1,5 @@
 = 
+:allow-uri-read: 
 
 
 * ARL을 사용한 컨트롤러 업그레이드는 SnapLock 엔터프라이즈 및 SnapLock 규정 준수 볼륨으로 구성된 시스템에서 지원됩니다.

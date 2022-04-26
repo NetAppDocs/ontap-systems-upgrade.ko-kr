@@ -6,6 +6,7 @@ summary: '"시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.8 이�
 ---
 = 애그리게이트 재배치 실패
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

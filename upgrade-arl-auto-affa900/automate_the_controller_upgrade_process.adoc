@@ -6,6 +6,7 @@ summary: 부분 자동화된 ARL 절차를 사용하여 AFF A700을 AFF A900으�
 ---
 = 컨트롤러 업그레이드 프로세스를 자동화합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

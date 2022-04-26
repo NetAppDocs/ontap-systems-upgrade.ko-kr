@@ -6,6 +6,7 @@ summary: System controller replace 명령을 사용하여 ONTAP 9.8 이상을 �
 ---
 = ARL 업그레이드 개요
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 컨트롤러 모듈과 NVS를 스와핑하여 AFF A700의 컨트롤러 
 ---
 = 개요
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

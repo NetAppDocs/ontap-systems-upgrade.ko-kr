@@ -6,6 +6,7 @@ summary: '필요한 경우 "시스템 컨트롤러 교체" 명령을 사용하�
 ---
 = 새 컨트롤러 모듈에서 NetApp Volume Encryption 설정
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

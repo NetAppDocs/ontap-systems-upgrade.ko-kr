@@ -5,6 +5,7 @@ keywords: upgrade, nodes, moving, storage, port, original, new
 summary: 스토리지를 이동하여 업그레이드하는 동안 노드 3과 노드 4의 전원을 켜고 소프트웨어 이미지를 부팅하고 노드를 구성합니다. 
 ---
 = 새 노드를 설정합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

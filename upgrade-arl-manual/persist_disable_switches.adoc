@@ -6,6 +6,7 @@ summary: 패브릭에서 Brocade 및 Cisco 스위치를 비활성화하고 ONTAP
 ---
 = Persistly가 스위치를 비활성화합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

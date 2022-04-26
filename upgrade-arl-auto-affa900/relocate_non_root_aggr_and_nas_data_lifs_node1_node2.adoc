@@ -6,6 +6,7 @@ summary: 루트가 아닌 애그리게이트와 NAS 데이터 LIF를 노드 1에
 ---
 = 노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 'ONTAP 9.5를 실행하는 컨트롤러 하드웨어는 "system control
 ---
 = 개요
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

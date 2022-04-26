@@ -6,6 +6,7 @@ summary: System controller replace 명령을 사용하여 ONTAP 9.8 이상을 �
 ---
 = 노드3을 설치하고 부팅합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

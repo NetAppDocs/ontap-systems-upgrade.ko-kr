@@ -6,6 +6,7 @@ summary: 업그레이드를 시작하기 전에 AFF A700에서 AFF A900 업그�
 ---
 = 업그레이드 하드웨어를 확인합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

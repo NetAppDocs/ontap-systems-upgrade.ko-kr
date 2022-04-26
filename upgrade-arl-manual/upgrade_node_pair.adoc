@@ -6,6 +6,7 @@ summary: 원래 노드와 새 노드에서 작업을 수행하여 원래 노드�
 ---
 = 노드 쌍을 업그레이드합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

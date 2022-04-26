@@ -6,6 +6,7 @@ summary: AFF A700에서 AFF A900으로 업그레이드하려면 특정 도구 �
 ---
 = 필요한 도구 및 문서
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

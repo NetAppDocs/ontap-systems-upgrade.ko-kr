@@ -6,6 +6,7 @@ summary: ONTAP 9.7 이하를 실행하는 컨트롤러의 수동 ARL 업그레�
 ---
 = 노드 2의 비 루트 애그리게이트를 노드 3에서 노드 4로 재배치합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

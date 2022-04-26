@@ -6,6 +6,7 @@ summary: System controller replace 명령을 사용하여 ONTAP 9.8 이상을 �
 ---
 = netboot를 준비합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

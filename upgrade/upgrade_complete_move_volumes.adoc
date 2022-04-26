@@ -5,6 +5,7 @@ keywords: complete, procedure, upgrading, upgrade, move, moving, volume, configu
 summary: '볼륨을 이동하여 업그레이드 절차를 완료하려면 서비스 프로세서\(SP\)를 구성하고 새 라이센스를 설치한 다음 AutoSupport를 설정해야 합니다. 스토리지 또는 볼륨 암호화를 설정하고 FC 또는 NCA 포트를 구성해야 할 수도 있습니다.' 
 ---
 = 업그레이드를 완료합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

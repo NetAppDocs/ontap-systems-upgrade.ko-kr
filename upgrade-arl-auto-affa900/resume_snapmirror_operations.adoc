@@ -6,6 +6,7 @@ summary: AFF A700에서 AFF A900으로 업그레이드하는 동안 SnapMirror �
 ---
 = SnapMirror 작업을 재개합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

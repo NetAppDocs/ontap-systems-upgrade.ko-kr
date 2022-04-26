@@ -6,6 +6,7 @@ summary: HA 쌍이 설정되었는지 확인하고, AFF A700을 AFF A900으로 �
 ---
 = 새 컨트롤러가 올바르게 설정되었는지 확인합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

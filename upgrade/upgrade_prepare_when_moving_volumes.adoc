@@ -5,6 +5,7 @@ keywords: perform, preparation, upgrading, upgrade, controller, hardware, moving
 summary: 볼륨을 이동하여 컨트롤러 하드웨어를 업그레이드하기 전에 몇 가지 준비 단계를 수행해야 합니다. 
 ---
 = 볼륨을 이동할 때 업그레이드를 준비합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

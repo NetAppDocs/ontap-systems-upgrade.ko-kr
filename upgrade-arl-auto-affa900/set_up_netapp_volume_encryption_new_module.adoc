@@ -6,6 +6,7 @@ summary: '필요한 경우 AFF A700에서 AFF A900으로 업그레이드할 때 
 ---
 = 새 컨트롤러 모듈에서 NetApp Volume Encryption 설정
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -5,6 +5,7 @@ keywords:
 summary: 원래 노드를 종료 및 제거할 때 업그레이드에 대한 AutoSupport 메시지를 보내고, 사서함을 제거하고, 노드의 전원을 끄고, 섀시를 제거해야 합니다. 
 ---
 = 원래 노드를 종료합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

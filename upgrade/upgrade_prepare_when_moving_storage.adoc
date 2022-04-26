@@ -5,6 +5,7 @@ keywords: licenses
 summary: 스토리지를 이동하여 업그레이드하기 전에 원래 노드에서 라이센스 정보를 수집하고, 네트워크 구성을 계획하고, 시스템 ID를 기록하고, netboot에 필요한 파일을 준비해야 합니다. 
 ---
 = 스토리지를 이동할 때 업그레이드를 준비합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

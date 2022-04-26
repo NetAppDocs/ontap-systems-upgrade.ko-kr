@@ -6,6 +6,7 @@ summary: ARL 절차를 사용하여 AFF A700을 AFF A900으로 업그레이드�
 ---
 = 집계 재배치 절차를 사용할지 여부를 결정합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

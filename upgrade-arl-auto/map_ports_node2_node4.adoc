@@ -6,6 +6,7 @@ summary: '"시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.5를 �
 ---
 = 노드 2의 포트를 노드 4로 매핑합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

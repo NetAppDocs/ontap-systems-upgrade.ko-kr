@@ -6,6 +6,7 @@ summary: '필요한 경우 "시스템 컨트롤러 교체" 명령을 사용하�
 ---
 = 노드 4의 키 관리자 구성을 복원합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

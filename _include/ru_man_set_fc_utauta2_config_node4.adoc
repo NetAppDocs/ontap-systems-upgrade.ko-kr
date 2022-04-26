@@ -1,4 +1,5 @@
 = 
+:allow-uri-read: 
 
 
 노드 4에 온보드 FC 포트, 온보드 UTA/UTA2(Unified Target Adapter) 포트 또는 UTA/UTA2 카드가 있는 경우, 나머지 절차를 완료하기 전에 설정을 구성해야 합니다.

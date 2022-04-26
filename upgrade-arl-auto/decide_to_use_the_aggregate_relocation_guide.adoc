@@ -6,6 +6,7 @@ summary: System controller replace 명령을 사용하여 ONTAP 9.5를 실행하
 ---
 = 집계 재배치 절차를 사용할지 여부를 결정합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

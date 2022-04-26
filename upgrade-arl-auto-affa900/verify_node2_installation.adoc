@@ -6,6 +6,7 @@ summary: AFF A900 컨트롤러 모듈 및 NVRAM 모듈을 사용하여 노드2 �
 ---
 = 노드2 설치를 확인합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

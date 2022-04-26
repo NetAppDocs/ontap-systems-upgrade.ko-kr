@@ -6,6 +6,7 @@ summary: '"시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.8 이�
 ---
 = 전환, 복구, 스위치백을 확인합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

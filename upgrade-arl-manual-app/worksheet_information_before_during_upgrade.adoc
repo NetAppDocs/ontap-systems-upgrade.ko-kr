@@ -6,6 +6,7 @@ summary: ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레�
 ---
 = 워크시트: 컨트롤러 업그레이드 전과 도중에 수집할 정보입니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

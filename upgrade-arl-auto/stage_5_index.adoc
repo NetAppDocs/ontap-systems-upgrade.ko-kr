@@ -6,6 +6,7 @@ summary: 'ONTAP 9.5에서 9.7로 실행되는 컨트롤러의 "시스템 컨트�
 ---
 = 5단계. 노드 4를 설치하고 부팅합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

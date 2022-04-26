@@ -5,6 +5,7 @@ keywords: create, aggregate, node, store, volume, original, node, identify, aggr
 summary: 각 새 노드에 하나 이상의 애그리게이트를 만들어 원래 노드에서 이동하려는 볼륨을 저장합니다. 각 볼륨의 애그리게이트를 파악하고 각 볼륨을 개별적으로 이동해야 합니다. 
 ---
 = 애그리게이트를 생성하고 볼륨을 새 노드로 이동합니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

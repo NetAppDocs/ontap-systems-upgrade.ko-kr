@@ -6,6 +6,7 @@ summary: 'ONTAP 9.5에서 9.7로 실행되는 컨트롤러의 "시스템 컨트�
 ---
 = 6단계. 업그레이드를 완료합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

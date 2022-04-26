@@ -6,6 +6,7 @@ summary: 해당 AFF A900 node1 컨트롤러 모듈과 NVRAM 모듈을 교체한 
 ---
 = netboot 노드1
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

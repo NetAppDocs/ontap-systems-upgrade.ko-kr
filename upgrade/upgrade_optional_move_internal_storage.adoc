@@ -5,6 +5,7 @@ keywords: node, support, model, internal, sata, drive, ssd, moving, move, upgrad
 summary: 원래 노드가 지원되는 모델 중 하나인 경우, 스토리지를 이동하여 업그레이드하는 동안 내부 SATA 드라이브 또는 SSD를 새 노드에 연결된 드라이브 쉘프로 이동할 수 있습니다. 시스템을 드라이브 쉘프로 변환하여 새 노드에 연결할 수도 있습니다. 
 ---
 = 선택 사항: 내부 스토리지를 이동하거나 시스템을 드라이브 쉘프로 변환할 수 있습니다
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

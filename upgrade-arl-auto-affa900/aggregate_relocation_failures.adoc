@@ -6,6 +6,7 @@ summary: AFF A700에서 AFF A900으로 업그레이드하는 동안 발생할 �
 ---
 = 애그리게이트 재배치 실패
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

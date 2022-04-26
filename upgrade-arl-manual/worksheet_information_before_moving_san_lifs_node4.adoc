@@ -6,6 +6,7 @@ summary: ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레�
 ---
 = 워크시트: NAS 데이터 LIF를 노드 4로 이동하기 전에 기록할 정보입니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

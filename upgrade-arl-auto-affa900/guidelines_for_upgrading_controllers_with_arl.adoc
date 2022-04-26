@@ -6,6 +6,7 @@ summary: ARL을 사용하여 AFF A700을 AFF A900으로 업그레이드할 수 �
 ---
 = ARL이 있는 AFF A700에서 AFF A900으로 업그레이드하기 위한 지침
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

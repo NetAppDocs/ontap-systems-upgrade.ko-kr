@@ -6,6 +6,7 @@ summary: ONTAP 9.1 이상의 경우, ONTAP 9.7 이하를 실행하는 컨트롤�
 ---
 = ONTAP 9.1 이상에 대해 FC 스위치 레이아웃을 재구성합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

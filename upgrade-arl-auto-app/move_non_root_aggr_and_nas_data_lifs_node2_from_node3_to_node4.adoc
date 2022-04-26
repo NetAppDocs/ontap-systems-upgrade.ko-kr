@@ -6,6 +6,7 @@ summary: '"system controller replace" 명령을 사용하여 ONTAP 9.8 이상을
 ---
 = 노드 2가 소유한 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 3에서 노드 4로 이동합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

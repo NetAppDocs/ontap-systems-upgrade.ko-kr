@@ -6,6 +6,7 @@ summary: System controller replace 명령을 사용하여 ONTAP 9.5를 실행하
 ---
 = 절차의 여러 단계에서 발생할 수 있는 문제입니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

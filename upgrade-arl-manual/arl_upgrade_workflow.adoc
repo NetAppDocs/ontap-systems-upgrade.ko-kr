@@ -6,6 +6,7 @@ summary: ONTAP 9.7 이하를 실행하는 컨트롤러 쌍에 대한 수동 ARL 
 ---
 = ARL 업그레이드 워크플로
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

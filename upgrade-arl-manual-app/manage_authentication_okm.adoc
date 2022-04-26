@@ -6,6 +6,7 @@ summary: 온보드 키 관리자를 사용하여 ONTAP 9.8 이상을 실행하�
 ---
 = 온보드 키 관리자를 사용하여 인증을 관리합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

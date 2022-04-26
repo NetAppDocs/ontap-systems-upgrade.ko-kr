@@ -5,6 +5,7 @@ keywords: plan, upgrade, consideration, contact, technical, support, recommendat
 summary: 업그레이드를 계획하려면 일반적인 업그레이드 고려 사항을 숙지해야 합니다. 필요한 경우 기술 지원 팀에 문의하여 클러스터 구성과 관련된 권장사항과 지침을 확인하십시오. 
 ---
 = 컨트롤러 하드웨어 업그레이드에 대한 고려 사항
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

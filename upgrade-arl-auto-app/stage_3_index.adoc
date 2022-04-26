@@ -6,6 +6,7 @@ summary: 'ONTAP 9.8 이상을 실행 중인 컨트롤러의 "시스템 컨트롤
 ---
 = 3단계. 노드3을 설치하고 부팅합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

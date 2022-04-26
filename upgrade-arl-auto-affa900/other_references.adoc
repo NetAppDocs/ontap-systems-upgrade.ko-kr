@@ -6,6 +6,7 @@ summary: AFF A700에서 AFF A900으로 컨트롤러 업그레이드를 지원하
 ---
 = 참조
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

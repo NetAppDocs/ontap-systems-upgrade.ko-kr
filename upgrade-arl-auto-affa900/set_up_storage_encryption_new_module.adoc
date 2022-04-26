@@ -6,6 +6,7 @@ summary: 필요한 경우 AFF A700에서 AFF A900으로 업그레이드하는 �
 ---
 = 새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

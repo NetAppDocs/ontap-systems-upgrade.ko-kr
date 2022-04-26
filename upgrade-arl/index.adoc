@@ -6,6 +6,7 @@ summary: 애그리게이트 재배치를 사용하여 컨트롤러 하드웨어�
 ---
 = 애그리게이트 재배치를 사용하여 컨트롤러 하드웨어를 업그레이드합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

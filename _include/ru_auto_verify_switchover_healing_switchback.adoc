@@ -1,4 +1,5 @@
 = 
+:allow-uri-read: 
 
 
 MetroCluster 구성의 전환, 복구 및 스위치백 작업을 확인해야 합니다.

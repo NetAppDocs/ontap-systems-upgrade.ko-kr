@@ -6,6 +6,7 @@ summary: AFF A700에서 AFF A900으로 ARL 컨트롤러 업그레이드 절차�
 ---
 = ARL 업그레이드 개요
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

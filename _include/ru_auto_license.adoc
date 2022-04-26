@@ -1,4 +1,5 @@
 = 라이센스
+:allow-uri-read: 
 
 
 

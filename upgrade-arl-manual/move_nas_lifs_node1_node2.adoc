@@ -6,6 +6,7 @@ summary: 2노드 클러스터가 있는 경우 노드 1의 NAS 데이터 LIF를 
 ---
 = 노드 1이 소유한 NAS 데이터 LIF를 노드 2로 이동합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -5,6 +5,7 @@ keywords: aggregate, relocation, controller, hardware, aggregates, flexarray, me
 summary: 'ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어는 "system controller replace" 명령을 사용하여 비루트 애그리게이트의 소유권을 재배치하여 업그레이드할 수 있습니다.' 
 ---
 = 개요
+:allow-uri-read: 
 
 
 [role="lead lead"]

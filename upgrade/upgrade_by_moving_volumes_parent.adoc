@@ -5,6 +5,7 @@ keywords: upgrade by moving volumes
 summary: 볼륨을 이동하여 업그레이드할 경우 원래 노드를 준비하고 새 노드를 클러스터에 연결합니다. 볼륨을 새 노드로 이동하고 LIF를 구성한 다음 클러스터에서 원래 노드의 연결을 해제합니다. 볼륨을 이동하여 업그레이드하는 무중단 절차는 무중단 절차와 같습니다. 
 ---
 = 볼륨을 이동하여 컨트롤러 하드웨어 업그레이드
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -6,6 +6,7 @@ summary: RCF 파일을 설치하여 ONTAP 9.7 이하를 실행하는 컨트롤�
 ---
 = RCF 파일을 적용하고 스위치를 재전송할 수 있습니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

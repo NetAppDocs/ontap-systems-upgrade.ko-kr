@@ -5,6 +5,7 @@ keywords: Controller Hardware Upgrade Express Guide
 summary: 루트 볼륨에서 부팅 장치로 구성 정보를 복원해야 합니다. 
 ---
 = 루트 볼륨 구성을 복구합니다
+:allow-uri-read: 
 
 
 [role="lead"]

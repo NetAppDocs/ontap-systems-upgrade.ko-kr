@@ -6,6 +6,7 @@ summary: AFF A700에서 AFF A900으로 업그레이드 중 2단계, 3단계 또�
 ---
 = LIF 마이그레이션 실패
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

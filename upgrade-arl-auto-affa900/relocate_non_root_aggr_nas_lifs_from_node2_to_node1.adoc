@@ -6,6 +6,7 @@ summary: AFF A700에서 AFF A900으로 업그레이드하는 동안 노드 2의 
 ---
 = 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 2에서 노드 1로 재배치합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

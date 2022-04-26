@@ -6,6 +6,7 @@ summary: 'AFF A700을 AFF A900으로 업그레이드할 때 여러 단계에서 
 ---
 = 재부팅, 패닉 또는 전원 껐다 켜기
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

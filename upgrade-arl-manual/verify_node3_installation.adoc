@@ -6,6 +6,7 @@ summary: ONTAP 9.7 이하를 실행하는 컨트롤러의 수동 ARL 업그레�
 ---
 = 노드3 설치를 확인합니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
