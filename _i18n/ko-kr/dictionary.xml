@@ -4420,4 +4420,7 @@
   <block id="79ba45215eeed9692f00f54cd98176eb" category="list-text">[[auto9597_istall3_step29]] 스토리지 어레이에 연결된 FlexArray 가상화 소프트웨어가 있는 MetroCluster 구성, V 시리즈 시스템 및 시스템의 경우 로 이동하십시오 <block ref="9a0e78facca94ea7347680acb603c7fe" category="inline-link-macro-rx"></block>.</block>
   <block id="42b2cb9f9e1a3cf15145887e95d849a8" category="sidebar">워크시트: 컨트롤러 업그레이드 전과 도중에 수집할 정보입니다</block>
   <block id="17f9514d7bcdbd086bef311b63567524" category="admonition">업그레이드를 시작하기 전에 FAS8080, AFF8080 시스템과 같이 노드당 클러스터 포트가 2개 이상인 시스템이 있는 경우 클러스터 LIF를 노드당 두 개의 클러스터 포트로 마이그레이션하고 재구성해야 합니다. 노드당 둘 이상의 클러스터 포트로 컨트롤러 업그레이드를 수행하는 경우 업그레이드 후 새 컨트롤러에 클러스터 LIF가 누락될 수 있습니다.</block>
+  <block id="23ec9249d03285a513eaaf182a7bcd49" category="cell">AFF8080</block>
+  <block id="4c6ae5d985a0142843ba3f6f8875cf0b" category="cell">AFF A900^4^</block>
+  <block id="44b12a5fbf6c87a940ab615ec2102604" category="paragraph">^4^ ONATP 9.10.1부터 ARL 자동 업그레이드는 ONTAP 9.8 이상을 실행하는 AFF8080 시스템에서 9.10.1 이상을 실행하는 AFF A900 시스템으로 지원됩니다.</block>
 </blocks>
