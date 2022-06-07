@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html
 keywords: boot, NVRAM, controller, module, node1, aff, a700, a900 
 summary: AFF A900 컨트롤러 모듈 및 NVRAM 모듈을 사용하여 노드 1을 부팅합니다. 
 ---
-= AFF A900 컨트롤러 모듈 및 NVRAM 모듈을 사용하여 노드 1을 부팅합니다
+= AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈을 사용하여 노드 1을 부팅합니다
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: AFF A900 컨트롤러 모듈 및 NVRAM 모듈을 사용하여 노드 1�
 
 
 [role="lead"]
-AFF A900 컨트롤러 모듈과 NVRAM 모듈이 있는 노드 1을 이제 부팅할 준비가 되었습니다. 컨트롤러 모듈과 NVRAM 모듈을 교체하여 AFF A700에서 AFF A900으로 업그레이드하려면 콘솔 및 관리 연결만 이동합니다. 이 섹션에서는 AFF A900 컨트롤러 모듈 및 NVRAM 모듈을 사용하여 노드 1을 부팅하는 데 필요한 단계를 설명합니다.
+AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈을 사용하는 노드 1을 이제 부팅할 수 있습니다. 컨트롤러 및 NVRAM 모듈을 교체하여 AFF A700에서 AFF A900으로 또는 FAS9000에서 FAS9000으로 업그레이드하려면 콘솔 및 관리 연결만 필요합니다. 이 섹션에서는 AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈을 사용하여 노드 1을 부팅하는 데 필요한 단계를 제공합니다.
 
 .단계
 . NSE(NetApp Storage Encryption)를 이 구성에서 사용 중인 경우 'setup bootarg.storageencryption.support' 명령을 'true'로 설정해야 하며, node1 구성이 로드된 후 부트 루프를 방지하려면 kmip.init.maxwait` 변수를 'off'로 설정해야 합니다.
@@ -28,7 +28,7 @@ AFF A900 컨트롤러 모듈과 NVRAM 모듈이 있는 노드 1을 이제 부팅
 +
 boot_ontap 메뉴
 
-. 부팅 메뉴에서 노드가 중지됩니다. "22/7"을 입력하고 숨겨진 옵션 "boot_after_controller_replacement"를 선택합니다. AFF A700 노드 1 디스크를 AFF A900 노드 1에 재할당하려면 프롬프트에서 노드 1의 실제 노드 이름을 입력합니다. 다음 예제를 참조하십시오.
+. 부팅 메뉴에서 노드가 중지됩니다. "22/7"을 입력하고 숨겨진 옵션 "boot_after_controller_replacement"를 선택합니다. AFF A700에서 AFF A900으로 또는 FAS9000에서 FAS9500으로 노드1 디스크를 재할당하려면 프롬프트에 노드1의 실제 노드 이름을 입력합니다. 다음 예제를 참조하십시오.
 +
 [listing]
 ----

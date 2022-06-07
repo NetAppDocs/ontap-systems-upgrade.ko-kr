@@ -1,7 +1,6 @@
 ---
 section: upgrade-arl-auto-affa900
-title: '"system controller replace" 명령을 사용하여 AFF A700을 ONTAP 9.10.1 이상을 실행하는 AFF A900으로
-  업그레이드합니다'
+title: '"시스템 컨트롤러 교체" 명령을 사용하여 AFF A700을 AFF A900 또는 FAS9000으로 업그레이드합니다'
 entries:
 - title: 개요
   url: "/upgrade-arl-auto-affa900/index.html"
@@ -11,7 +10,7 @@ entries:
   url: "/upgrade-arl-auto-affa900/decide_to_use_the_aggregate_relocation_guide.html"
 - title: 필요한 도구 및 문서
   url: "/upgrade-arl-auto-affa900/required_tools_and_documentation.html"
-- title: ARL이 있는 AFF A700에서 AFF A900으로 업그레이드하기 위한 지침
+- title: 컨트롤러 업그레이드 지침
   url: "/upgrade-arl-auto-affa900/guidelines_for_upgrading_controllers_with_arl.html"
 - title: ARL 업그레이드 개요
   url: "/upgrade-arl-auto-affa900/overview_of_the_arl_upgrade.html"
@@ -23,7 +22,7 @@ entries:
     url: "/upgrade-arl-auto-affa900/prepare_nodes_for_upgrade.html"
   - title: 스토리지 암호화를 위한 외부 키 관리 서버의 IP 주소를 가져옵니다
     url: "/upgrade-arl-auto-affa900/get_ip_address_of_external_kms_for_storage_encryption.html"
-- title: 2단계. 리소스를 재배치하고 AFF A700 노드 1을 폐기합니다
+- title: 2단계. 리소스를 재배치하고 AFF A700 또는 FAS9000 노드 1을 폐기합니다
   entries:
   - title: 노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치합니다
     url: "/upgrade-arl-auto-affa900/relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html"
@@ -33,9 +32,9 @@ entries:
     url: "/upgrade-arl-auto-affa900/retire_node1.html"
   - title: netboot 노드1
     url: "/upgrade-arl-auto-affa900/netboot_node1.html"
-- title: 3단계. AFF A900 컨트롤러 모듈 및 NVRAM 모듈을 사용하여 노드 1을 부팅합니다
+- title: 3단계. AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈을 사용하여 노드 1을 부팅합니다
   entries:
-  - title: AFF A900 컨트롤러 모듈 및 NVRAM 모듈을 사용하여 노드 1을 부팅합니다
+  - title: AFF A900 컨트롤러 및 NVRAM 모듈을 사용하여 노드 1을 부팅합니다
     url: "/upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html"
   - title: 노드1 설치를 확인합니다
     url: "/upgrade-arl-auto-affa900/verify_node1_installation.html"
@@ -49,15 +48,15 @@ entries:
     url: "/upgrade-arl-auto-affa900/relocate_non_root_aggr_nas_lifs_from_node2_to_node1.html"
   - title: 노드2를 폐기합니다
     url: "/upgrade-arl-auto-affa900/retire_node2.html"
-- title: 5단계. 노드 2에 AFF A900 NVRAM 모듈 및 컨트롤러 모듈을 설치합니다
+- title: 5단계. 노드2에 AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다
   entries:
-  - title: 노드 2에 AFF A900 NVRAM 모듈 및 컨트롤러 모듈을 설치합니다
+  - title: 노드2에 AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다
     url: "/upgrade-arl-auto-affa900/install_a900_nvs_and_controller_on_node2.html"
   - title: netboot 노드2
     url: "/upgrade-arl-auto-affa900/netboot_node2.html"
-- title: 6단계. AFF A900 컨트롤러 모듈 및 NVRAM 모듈을 사용하여 노드 2를 부팅합니다
+- title: 6단계. AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈을 사용하여 노드2를 부팅합니다
   entries:
-  - title: AFF A900 컨트롤러 모듈 및 NVRAM 모듈을 사용하여 노드 2를 부팅합니다
+  - title: AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈을 사용하여 노드2를 부팅합니다
     url: "/upgrade-arl-auto-affa900/boot_node2_with_a900_controller_and_nvs.html"
   - title: 노드2 설치를 확인합니다
     url: "/upgrade-arl-auto-affa900/verify_node2_installation.html"

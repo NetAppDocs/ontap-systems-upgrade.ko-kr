@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-affa900/install_a900_nvs_and_controller_on_node2.htm
 keywords: install, NVRAM, aff, a900, node2, controller, module 
 summary: ARL 컨트롤러 업그레이드 절차 중 AFF A900 NVRAM 모듈 및 컨트롤러 모듈에 대한 설치 지침. 
 ---
-= 노드 2에 AFF A900 NVRAM 모듈 및 컨트롤러 모듈을 설치합니다
+= 노드2에 AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,15 +14,15 @@ summary: ARL 컨트롤러 업그레이드 절차 중 AFF A900 NVRAM 모듈 및 �
 
 
 [role="lead"]
-노드 2의 업그레이드를 위해 받은 AFF A900 NVRAM 모듈과 컨트롤러 모듈을 설치해야 합니다. 노드2는 시스템 뒷면에서 컨트롤러를 볼 때 섀시 오른쪽에 있는 컨트롤러 B입니다.
+노드 2에서 업그레이드하기 위해 받은 AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치해야 합니다. 노드2는 시스템 뒷면에서 컨트롤러를 볼 때 섀시 오른쪽에 있는 컨트롤러 B입니다.
 
 아직 접지되지 않은 경우 올바르게 접지하십시오.
 
 
 
-== AFF A900 NVRAM 모듈을 설치합니다
+== AFF A900 또는 FAS9500 NVRAM 모듈을 설치합니다
 
-노드 2의 슬롯 6에 AFF A900 NVRAM 모듈을 설치하려면 다음 절차를 따르십시오.
+노드2의 슬롯 6에 AFF A900 또는 FAS9500 NVRAM 모듈을 설치하려면 다음 절차를 따르십시오.
 
 .단계
 . NVRAM 모듈을 슬롯 6의 섀시 입구 가장자리에 맞춥니다.
@@ -31,9 +31,9 @@ summary: ARL 컨트롤러 업그레이드 절차 중 AFF A900 NVRAM 모듈 및 �
 
 
 
-== 노드 2에 AFF A900 컨트롤러 모듈을 설치합니다.
+== 노드2에 AFF A900 또는 FAS9500 컨트롤러 모듈을 설치합니다
 
-노드2에 AFF A900 컨트롤러 모듈을 설치하려면 다음 절차를 따르십시오.
+노드2에 AFF A900 또는 FAS9500 컨트롤러 모듈을 설치하려면 다음 절차를 따르십시오.
 
 .단계
 . 컨트롤러 모듈의 끝을 섀시의 베이 B에 맞춘 다음 컨트롤러 모듈을 반쯤 가볍게 밀어 시스템에 넣습니다.
