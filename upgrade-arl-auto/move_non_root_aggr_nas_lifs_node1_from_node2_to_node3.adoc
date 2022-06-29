@@ -76,7 +76,7 @@ Aggregate가 재배치되지 않거나 거부되면 Aggregate를 수동으로 �
 +
 .. 다음 명령을 입력하고 출력을 검사합니다.
 +
-'network interface show-data-protocol <iSCSI|FCP>-home-node <node3>'
+'network interface show-data-protocol_iscsi|fcp_-home-node_node3_'
 
 +
 시스템은 다음 예제와 유사한 출력을 반환합니다.
@@ -102,25 +102,25 @@ vs1
 +
 ... LIF 상태를 아래로 설정합니다.
 +
-'network interface modify -vserver <Vserver_NAME> -lif <LIF_name> -status -admin down'
+'network interface modify -vserver_Vserver_NAME_-lif_LIF_name_-status-admin down'
 
 ... 포트 세트에서 LIF를 제거합니다.
 +
-' remove-vserver <Vserver_NAME> - 포트셋 <포트셋_이름> - 포트-이름 <포트_이름>'
+' remove-vserver_Vserver_name_-포트셋_이름_-포트-이름_포트_이름_'
 
 ... 다음 명령 중 하나를 입력합니다.
 +
 **** 단일 LIF 이동:
 +
-'network interface modify -vserver <Vserver_NAME> -lif <LIF_name> -home-port <new_home_port>'
+'network interface modify -vserver_Vserver_NAME_-lif_LIF_name_-home-port_new_home_port_'
 
 **** 존재하지 않거나 잘못된 단일 포트에 있는 모든 LIF를 새 포트로 이동:
 +
-'network interface modify {-home-port <port_on_node1>-home-node <node1>-role data} - home-port <new_home_port_on_node3>'
+'network interface modify {-home-port_port_on_node1_-home-node_node1_-role data} - home-port_new_home_port_on_node3_'
 
 **** 포트 세트에 LIF를 다시 추가합니다.
 +
-'<Vserver_NAME> - 포트셋 <포트셋_이름> - 포트 이름 <포트_이름>'
+' add-vserver_Vserver_name_-포트셋_이름_-포트-이름_포트_이름_'
 
 +
 
@@ -132,15 +132,15 @@ NOTE: SAN LIF가 원래 포트와 링크 속도가 동일한 포트로 이동했
 
 .. 모든 LIF의 상태를 "Up"으로 수정하여 LIF가 노드에서 트래픽을 수락 및 전송할 수 있도록 합니다.
 +
-'network interface modify -home-port <port_name> -home-node <node3> -lif data-status admin up'
+'network interface modify -home-port_port_name_-home-node_node3_-lif data-status admin up'을 선택합니다
 
 .. 두 노드 중 하나에서 다음 명령을 입력하고 출력을 검사하여 LIF가 올바른 포트로 이동되었으며 LIF의 상태가 'Up'인지 확인합니다.
 +
-'network interface show-home-node <node3> - role data'
+'network interface show-home-node_node3_-role data
 
 .. LIF가 하나라도 다운되면 각 LIF에 대해 다음 명령을 한 번 입력하여 LIF의 관리 상태를 '가동'으로 설정하십시오.
 +
-'network interface modify -vserver <vserver_name> -lif <lif_name> -status -admin up'
+'network interface modify -vserver_vserver_name_-lif_lif_name_-status-admin up
 
 
 

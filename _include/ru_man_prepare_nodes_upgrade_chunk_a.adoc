@@ -152,7 +152,7 @@ node2          node1          true     Connected to node1
 
 . [[man_prepare_nodes_step9]] 노드 1과 노드 2가 현재 소유자인 집계(홈 소유자가 아님)를 소유하고 있지 않은지 확인합니다.
 +
-'Storage aggregate show -node <node_name> -is -home false -fields owner-name, homename, state'
+'Storage aggregate show -nodes_node_name_-is-home false-fields owner-name, home-name, state'
 
 +
 노드 1과 노드 2가 현재 소유자인 Aggregate(홈 소유자가 아님)를 소유하지 않으면 시스템이 다음 예와 유사한 메시지를 반환합니다.
@@ -195,11 +195,11 @@ aggr4         node1        node2        online
 +
 .. 파트너 노드가 현재 소유한 애그리게이트를 홈 소유자 노드로 반환:
 +
-'storage failover - ofnode <home_node_name>'에 대한 반환
+'Storage failover - ofnode_home_node_name_'에 대한 오류
 
 .. 노드 1과 노드 2가 현재 소유자인 애그리게이트를 소유하지 않고 홈 소유자가 아닌 경우:
 +
-'Storage aggregate show -nodes <node_name> -is-home false-fields owner-name, home-name, state'
+'Storage aggregate show -nodes_node_name_-is-home false-fields owner-name, home-name, state'
 
 +
 다음 예제는 노드가 Aggregate의 현재 소유자이자 홈 소유자인 경우 명령의 출력을 보여줍니다.
@@ -261,7 +261,7 @@ node2                 true    true
 
 . [[man_prepare_nodes_step15]] node1과 node2가 동일한 ONTAP 릴리즈를 실행하고 있는지 확인합니다.
 +
-'System node image show -node <node1,node2> - iscurrent true'
+'system node image show -node_node1, node2_-iscurrent true'
 
 +
 다음 예제는 명령의 출력을 보여 줍니다.
@@ -282,7 +282,7 @@ node2
 ....
 . 노드 1과 노드 2가 클러스터의 다른 노드에 속하는 데이터 LIF를 소유하고 있지 않은지 확인하고 출력에서 'Current Node' 및 'is Home' 열을 확인합니다.
 +
-'network interface show-role data-is-home false-curr-node <node_name>'를 선택합니다
+네트워크 인터페이스 show-role data-is-home false-curr-node_node_name_
 
 +
 다음 예제에서는 node1에 클러스터의 다른 노드가 소유하는 LIF가 없는 경우의 출력을 보여 줍니다.
@@ -317,7 +317,7 @@ vs0
 
 . 노드 1이나 노드 2에 장애가 발생한 디스크가 있는지 확인합니다.
 +
-'storage disk show-nodelist <node1, node2> - Broken'
+'storage disk show-nodelist_node1, node2_-Broken
 
 +
 디스크에 오류가 발생한 경우, _ Disk 의 지침에 따라 디스크를 제거하고 CLI _ 을(를) 사용하여 관리를 통합합니다. (을 참조하십시오 link:other_references.html["참조"] CLI_를 사용하여 _ 디스크 및 애그리게이트 관리에 연결하려면 _.)

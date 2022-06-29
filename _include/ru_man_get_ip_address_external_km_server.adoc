@@ -28,6 +28,6 @@
 . 새 인증 키 ID를 기록해 둡니다.
 . 새 인증 키를 사용하여 모든 자체 암호화 드라이브를 다시 입력하다
 +
-'Storage encryption disk modify -disk * -data-key-id <authentication_key_id>'
+'Storage encryption disk modify -disk * -data-key-id_authentication_key_id_'
 
 

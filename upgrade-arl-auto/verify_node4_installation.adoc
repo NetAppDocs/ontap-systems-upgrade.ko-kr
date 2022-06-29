@@ -52,19 +52,19 @@ VLAN, 인터페이스 그룹 및 브로드캐스트 도메인을 만들고 다�
 .단계
 . 에 기록된 노드 2 정보를 사용하여 노드 4에 VLAN을 다시 생성합니다 link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 2에서 노드 3으로 재배치합니다"] 섹션:
 +
-'network port vlan create-node <node4>-vlan <VLAN-names>'
+'network port vlan create-node_node4_-vlan_vlan-names_'
 
 . 에 기록된 node2 정보를 사용하여 node4에 인터페이스 그룹을 다시 만듭니다 link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 2에서 노드 3으로 재배치합니다"] 섹션:
 +
-'network port ifgrp create-node <node4>-ifgrp <port_ifgrp_names>-Distr-func'
+'network port ifgrp create-node_node4_-ifgrp_port_ifgrp_names_-Distr-func'
 
 . 에 기록된 node2 정보를 사용하여 node4에 브로드캐스트 도메인을 다시 만듭니다 link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 2에서 노드 3으로 재배치합니다"] 섹션:
 +
-'network port broadcast-domain create-IPSpace Default-broadcast-domain <broadcast_domain_names> - MTU <mtu_size> - ports <node_name:port_name,node_name:port_name>'
+'network port broadcast-domain create-IPSpace Default-broadcast-domain_broadcast_domain_names_-MTU_MTU_size_-ports_node_name:port_name,node_name:port_name_'
 
 . 새로 다시 생성된 브로드캐스트 도메인에 노드 4 포트를 추가합니다.
 +
-'network port broadcast-domain add-ports-broadcast-domain <broadcast_domain_names> - ports <node_name:port_name,node_name:port_name>'
+'network port broadcast-domain add-ports-broadcast-domain_broadcast_domain_names_-ports_node_name:port_name,node_name:port_name_'
 
 
 
@@ -72,7 +72,7 @@ VLAN, 인터페이스 그룹 및 브로드캐스트 도메인을 만들고 다�
 
 == 노드 4의 키 관리자 구성을 복원합니다
 
-NVE(NetApp Volume Encryption)를 사용하여 업그레이드 중인 시스템의 볼륨을 암호화하는 경우 암호화 구성을 새 노드와 동기화해야 합니다. 노드 2에서 노드 4로 노드 1 애그리게이트에 대한 ARL이 완료되면 암호화된 볼륨이 오프라인 상태로 전환됩니다.
+NVE(NetApp Volume Encryption)를 사용하여 업그레이드 중인 시스템의 볼륨을 암호화하는 경우 암호화 구성을 새 노드와 동기화해야 합니다. Key-Manager를 복원하지 않을 경우 ARL을 사용하여 노드 3에서 노드 4로 노드 2 애그리게이트를 재배치할 때 암호화된 볼륨은 오프라인 상태가 됩니다.
 
 .단계
 . Onboard Key Manager의 암호화 구성을 동기화하려면 클러스터 프롬프트에서 다음 명령을 실행합니다.
@@ -81,10 +81,10 @@ NVE(NetApp Volume Encryption)를 사용하여 업그레이드 중인 시스템�
 | 이 ONTAP 버전의 경우… | 이 명령 사용... 
 
 
-| ONTAP 9.6 또는 9.7 | 보안 키 관리자 온보드 동기화 
+| ONTAP 9.6 또는 9.7 | 보안 키매니저 온보드 동기화 
 
 
-| ONTAP 9.5 | 보안 키 관리자 설정 노드 <node_name> 
+| ONTAP 9.5 | 'Security key-manager setup-node_node_name_' 
 |===
 . Onboard Key Manager의 클러스터 전체 암호를 입력합니다.
 

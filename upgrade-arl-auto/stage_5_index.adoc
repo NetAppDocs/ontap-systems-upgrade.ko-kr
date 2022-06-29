@@ -22,6 +22,5 @@ summary: 'ONTAP 9.5에서 9.7로 실행되는 컨트롤러의 "시스템 컨트�
 . link:map_ports_node2_node4.html["노드 2의 포트를 노드 4로 매핑합니다"]
 . link:join_quorum_node_has_different_ports_stage5.html["노드에 다른 네트워크 포트 집합이 있는 경우 쿼럼을 연결합니다"]
 . link:verify_node4_installation.html["노드 4 설치를 확인합니다"]
-. link:restore_key-manager_config_node4.html["노드 4의 키 관리자 구성을 복원합니다"]
 . link:move_non_root_aggr_and_nas_data_lifs_node2_from_node3_to_node4.html["노드 2가 소유한 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 3에서 노드 4로 이동합니다"]
 

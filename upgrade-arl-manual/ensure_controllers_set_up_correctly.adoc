@@ -19,7 +19,7 @@ summary: ONTAP 9.7 이하를 실행하는 컨트롤러에서 수동 ARL 업그�
 .단계
 . 노드 중 하나에 다음 명령을 입력하여 스토리지 페일오버를 설정합니다.
 +
-'Storage failover modify -enabled true-node <node3>'
+'Storage failover modify -enabled true-node_node3_'
 
 . 스토리지 페일오버가 설정되었는지 확인합니다.
 +
@@ -66,27 +66,27 @@ node4          node3          true     Connected to node3
 
 . 노드 3이 노드 1의 애그리게이트를 소유하고 있고 노드 4가 노드 2의 애그리게이트를 소유하고 있는지 확인합니다.
 +
-'Storage aggregate show-owner-name <node3>''Storage aggregate show-owner-name <node4>'
+스토리지 집계 show-owner-name_node3_'스토리지 집계 show-owner-name_node4_'
 
 . 볼륨이 오프라인 상태인지 확인합니다.
 +
-'volume show-node <node3> - state offline''volume show-node <node4> - state offline'
+'volume show-node_node3_-state offline' volume show-node_node4_-state offline
 
 . 오프라인 상태인 볼륨이 있으면 에서 캡처한 오프라인 볼륨 목록과 비교합니다 link:prepare_nodes_for_upgrade.html#step19d["19단계(d)"] 에서 업그레이드할 노드를 준비하고 필요에 따라 각 볼륨에 대해 다음 명령을 한 번 입력하여 오프라인 볼륨을 온라인 상태로 전환합니다.
 +
-'volume online-vserver <vserver_name> - volume <volume_name>'
+'volume online-vserver_vserver_name_-volume_volume_name_'
 
 . 각 노드에 대해 다음 명령을 입력하여 새 노드에 대한 새 라이센스를 설치합니다.
 +
-'system license add-license-code <license_code, license_code, license_code...>'
+'system license add-license-code_license_code, license_code, license_code..._
 
 +
 license-code 매개변수는 28개의 대문자 알파벳 문자 키 목록을 허용합니다. 한 번에 하나의 라이센스를 추가하거나, 각 라이센스 키를 쉼표로 구분하여 한 번에 여러 라이센스를 추가할 수 있습니다.
 
-. NSE(NetApp Storage Encryption)를 구성에서 사용 중인 경우 'kmip.init.maxwait` 변수'를 사용하지 않고 'setup.storageenv.storageencryption.support'명령을 "true"로 설정합니다(의 경우) link:install_boot_node3.html#step16["16단계"] /_Install 및 boot node3_) 변수를 재설정해야 합니다. set diag;systemshell-node <node_name> -command sudo kenv -u -p kmip.init.maxwait`
+. NSE(NetApp Storage Encryption)를 구성에서 사용 중인 경우 'kmip.init.maxwait` 변수'를 사용하지 않고 'setup.storageenv.storageencryption.support'명령을 "true"로 설정합니다(의 경우) link:install_boot_node3.html#step16["16단계"] /_Install 및 boot node3_) 변수를 재설정하려면 set diag;systemshell-node_node_name_-command sudo kenv -u -p kmip.init.maxwait` 변수를 재설정해야 합니다
 . 원래 노드에서 이전 라이센스를 모두 제거하려면 다음 명령 중 하나를 입력합니다.
 +
-'System license clean-up-unused-expired''system license delete-serial-number <node_serial_number>-package <licensable_package>'를 입력합니다
+'System license clean-up-unused-expired''system license delete-serial-number_node_serial_number_-package_licensable_package_'
 
 +
 ** 만료된 라이센스를 모두 삭제하려면 다음을 입력합니다.
@@ -99,7 +99,7 @@ license-code 매개변수는 28개의 대문자 알파벳 문자 키 목록을 �
 
 ** 클러스터에서 특정 라이센스를 삭제하려면 노드에서 다음 명령을 입력합니다.
 +
-'system license delete-serial-number <node1_serial_number> - package * ''system license delete-serial-number <node2_serial_number> - package *'
+'system license delete-serial-number_node1_serial_number_-package * ''시스템 라이센스 삭제-serial-number_node2_serial_number_-package *'
 
 +
 다음 출력이 표시됩니다.
@@ -125,7 +125,7 @@ Do you want to continue? {y|n}: y
 
 . 두 노드에서 다음 명령을 수행하여 SP를 구성합니다.
 +
-'System service-processor network modify -node <node_name>'
+'System service-processor network modify -node_node_name_'
 
 +
 로 이동합니다 link:other_references.html["참조"] SP 및 _ONTAP 9 명령에 대한 자세한 내용은 시스템 관리 참조_에 링크하기 위해 '시스템 서비스 프로세서 네트워크 수정' 명령에 대한 자세한 내용은 수동 페이지 참조_를 참조하십시오.
@@ -138,7 +138,7 @@ Do you want to continue? {y|n}: y
 
 .. 다음 명령을 입력합니다.
 +
-'storage failover modify -node <node-name> -cifs-ndo-duration default | medium | low'
+'storage failover modify -node_node -name_-cifs-ndo-duration default | medium | low'
 
 +
 *** 시스템에서 작업 부하의 50% ~ 75%가 4KB 이하인 경우 '중간'을 입력합니다.

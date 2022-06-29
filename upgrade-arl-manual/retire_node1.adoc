@@ -50,11 +50,11 @@ node2                 true    true
 .. 스토리지 페일오버 해제:
 
 
-'Storage failover modify-node <node1> - enabled false'
+'storage failover modify -node_node1_ -enabled false'
 
 
 
-| 2개 이상의 노드가 있는 클러스터 | 스토리지 페일오버 해제:'스토리지 페일오버 수정 - 노드 <node1> 설정 false' 
+| 2개 이상의 노드가 있는 클러스터 | 스토리지 페일오버 해제:'스토리지 페일오버 수정 -node_node1_ -enabled false' 
 |===
 . 스토리지 페일오버가 비활성화되었는지 확인:
 +
@@ -82,7 +82,7 @@ node2                 true    true
 ----
 . 데이터 LIF 상태를 확인합니다.
 +
-'network interface show-role data-currr-node <node2> - home-node <node1>'
+'network interface show-role data-curr-node_node2_-home-node_node1_'
 
 +
 LIF가 다운되었는지 확인하려면 * Status Admin/Oper * 열을 확인하십시오. LIF가 다운된 경우 에 문의하십시오 link:troubleshoot.html["그을음 문제"] 섹션을 참조하십시오.
@@ -148,11 +148,11 @@ High Availability Configured: false
 ----
 . node1에 epsilon이 있으면 해당 노드가 node2로 전송될 수 있도록 노드에 epsilon 'false'를 표시합니다.
 +
-'cluster modify-node <node1>-epsilon FALSE
+'cluster modify -node_node1_-epsilon FALSE'
 
 . 노드 2에서 epsilon 'true'를 표시하여 epsilon을 노드 2로 전송:
 +
-'cluster modify-node <node2>-epsilon TRUE
+'cluster modify -node_node2_-epsilon TRUE
 
 . 노드 2에 대한 변경 사항이 발생했는지 확인합니다.
 +
@@ -190,7 +190,7 @@ High Availability Configured: false
 
 . node1 프롬프트에서 node1을 중단합니다.
 +
-'System node halt-node <node1>'
+'System node halt-node_node1_'
 
 +
 

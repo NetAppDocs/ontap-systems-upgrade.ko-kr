@@ -40,7 +40,7 @@ summary: '"시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.5를 �
 . 새 인증 키 ID를 기록해 둡니다.
 . 새 인증 키를 사용하여 모든 자체 암호화 드라이브를 다시 입력하다
 +
-'Storage encryption disk modify -disk * -data-key-id <authentication_key_id>'
+'Storage encryption disk modify -disk * -data-key-id_authentication_key_id_'
 
 
 
@@ -54,11 +54,11 @@ ONTAP 9.5 ~ 9.7에서는 KMIP(키 관리 상호 운용성 프로토콜) 서버�
 
 . 새 컨트롤러 추가:
 +
-'Security key-manager setup-node <new_controller_name>'
+'Security key-manager setup-node_new_controller_name_'
 
 . 키 관리자 추가:
 +
-'Security key-manager-add <key_management_server_ip_address>'를 선택합니다
+'Security key-manager-add_key_management_server_ip_address_'
 
 . 키 관리 서버가 구성되어 있고 클러스터의 모든 노드에서 사용할 수 있는지 확인합니다.
 +
@@ -66,7 +66,7 @@ ONTAP 9.5 ~ 9.7에서는 KMIP(키 관리 상호 운용성 프로토콜) 서버�
 
 . 연결된 모든 키 관리 서버에서 새 노드로 인증 키를 복원합니다.
 +
-'Security key-manager restore-node <new_controller_name>'입니다
+'Security key-manager restore-node_new_controller_name_'
 
 . 새 인증 키를 사용하여 모든 자체 암호화 디스크를 다시 입력하다
 +
@@ -120,7 +120,7 @@ OKM을 사용하여 암호화 키를 관리할 수 있습니다. OKM을 사용�
 +
 [NOTE]
 ====
-상태가 "전송 중"인 경우 '스냅샷 미러 중단 - 대상 - vserver <vserver_name>' 전송을 중단해야 합니다
+상태가 "전송 중"인 경우 '스냅샷 미러 중단-대상-vserver_vserver_name_'인 전송을 중단해야 합니다
 
 ====
 +
@@ -128,6 +128,6 @@ SnapMirror 관계가 "전송 중" 상태가 아니면 중단이 실패합니다.
 
 . 클러스터 간의 모든 관계 중지:
 +
-'sapmirror quiesce-destination-vserver <vserver_name>'
+'sapmirror quiesce-destination-vserver_vserver_name_'
 
 

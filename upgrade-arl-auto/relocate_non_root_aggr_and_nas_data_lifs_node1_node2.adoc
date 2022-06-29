@@ -40,7 +40,7 @@ NOTE: Aggregate 및 LIF의 홈 소유자는 수정되지 않으며 현재 소유
 
 . 작업이 여전히 일시 중지된 상태에서 루트가 아닌 모든 애그리게이트가 노드 2의 해당 상태에 대해 온라인 상태인지 확인합니다.
 +
-'Storage aggregate show-node <node2> - state online-root false'
+'storage aggregate show -node_node2_ -state online-root false'
 
 +
 다음 예제에서는 노드 2의 루트 이외의 애그리게이트가 온라인 상태인 것을 보여 줍니다.
@@ -60,20 +60,20 @@ aggr_2     825.0GB  825.0GB    0%     online     1  node2  raid_dp,normal
 노드 2에서 애그리게이트가 오프라인 상태가 되거나 외부 상태가 된 경우, 각 애그리게이트에 대해 노드 2의 다음 명령을 사용하여 온라인 상태로 전환합니다.
 
 +
-'Storage aggregate online-aggregate <aggr_name>'
+'Storage aggregate online-aggregate_agr_name_'
 
 . node2에서 다음 명령을 사용하고 해당 출력을 검사하여 node2에서 모든 볼륨이 온라인 상태인지 확인합니다.
 +
-'volume show-node <node2> - state offline(볼륨 표시 노드 <node2> - 상태 오프라인)
+'volume show-node_node2_-state offline
 
 +
 노드 2에 오프라인 볼륨이 있는 경우 각 볼륨에 대해 한 번씩 노드 2에서 다음 명령을 사용하여 온라인으로 전환합니다.
 
 +
-'volume online-vserver <vserver_name> - volume <volume_name>'
+'volume online-vserver_vserver_name_-volume_volume_name_'
 
 +
-이 명령에 사용할 `<vserver_name>'은 이전 'volume show' 명령의 출력에서 확인할 수 있습니다.
+이 명령에 사용할 `_vserver_name_'은 이전 'volume show' 명령의 출력에서 확인할 수 있습니다.
 
 
 
@@ -83,14 +83,14 @@ aggr_2     825.0GB  825.0GB    0%     online     1  node2  raid_dp,normal
 
 . LIF가 하나라도 다운되면 각 LIF에 대해 다음 명령을 한 번 입력하여 LIF의 관리 상태를 '가동'으로 설정하십시오.
 +
-'network interface modify -vserver <vserver_name> -lif <LIF_name> -home-node <nodename> -status-admin up'
+'network interface modify -vserver_vserver_name_-lif_LIF_name_-home-node_nodename_-status-admin up'
 
 . 인터페이스 그룹 또는 VLAN이 구성되어 있는 경우 다음 하위 단계를 완료합니다.
 +
 .. VLAN 및 인터페이스 그룹 정보를 아직 저장하지 않은 경우, 노드 3을 부팅한 후 노드 3에서 VLAN 및 인터페이스 그룹을 다시 생성할 수 있도록 VLAN 및 인터페이스 그룹 정보를 기록합니다.
 .. 인터페이스 그룹에서 VLAN을 제거합니다.
 +
-'network port vlan delete-node <nodename> -port <ifgrp> -vlan-id <VLAN_ID>'
+'network port vlan delete-node_nodename_-port_ifgrp_-vlan-id_vlan_ID_'
 
 +
 
@@ -98,7 +98,7 @@ NOTE: 수정 조치에 따라 vlan delete 명령에서 제안하는 오류를 �
 
 .. 다음 명령을 입력하고 해당 출력을 검사하여 노드에 구성된 인터페이스 그룹이 있는지 확인합니다.
 +
-'network port ifgrp show-node <nodename>-ifgrp <ifgrp_name>-instance'
+'network port ifgrp show -node_nodename_-ifgrp_ifgrp_name_-instance'
 
 +
 다음 예에서와 같이 노드에 대한 인터페이스 그룹 정보가 표시됩니다.
@@ -119,7 +119,7 @@ Distribution Function: ip
 ----
 .. 노드에 인터페이스 그룹이 구성되어 있는 경우 해당 그룹 및 그룹에 할당된 포트의 이름을 기록한 다음 각 포트에 대해 다음 명령을 한 번 입력하여 포트를 삭제합니다.
 +
-'network port ifgrp remove-port-node <nodename>-ifgrp <ifgrp_name>-port <NetPort>'
+'network port ifgrp remove-port-node_nodename_-ifgrp_ifgrp_name_-port_NetPort_'
 
 
 

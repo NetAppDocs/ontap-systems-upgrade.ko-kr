@@ -19,14 +19,14 @@ summary: '"system controller replace" 명령을 사용하여 ONTAP 9.8 이상을
 .단계
 . ONTAP 명령줄에 다음 명령을 입력하여 컨트롤러 교체 프로세스를 시작합니다.
 +
-'system controller replace start-nodes <node_names>'를 선택합니다
+'시스템 컨트롤러가 start-nodes_node_names_'를 대체합니다
 
 +
 [NOTE]
 ====
 ** ONTAP 9.10.1부터 자동 협상 전환(통계청) 기반 업그레이드 절차가 4노드 MetroCluster FC 구성의 기본값입니다. 4노드 MetroCluster FC 구성을 업그레이드하는 경우 시스템 컨트롤러 교체 시작 명령을 실행할 때 '-통계청' 파라미터를 '거짓'으로 설정하여 통계청 기반 절차를 시작하지 않도록 해야 합니다.
 +
-시스템 제어기가 시작노드 노드_이름 바꾸기 - 통계청 거짓
+'시스템 제어기가 start-nodes_node_names_-s통계청 FALSE'
 
 ** 'system controller replace start' 명령은 고급 권한 수준에서만 실행할 수 있습니다.
 +
@@ -122,17 +122,17 @@ NOTE: 업그레이드를 시작하기 전에 FAS8080, AFF8080 시스템과 같�
 
 +
 ** 'vserver services name-service dns show'
-** 네트워크 인터페이스 show-curr-node nodename-role cluster, 인터클러스터, 노드 관리, 클러스터 관리, 데이터
-** 'network port show-node <node_name>-type physical
+** 'network interface show-curr-node_nodename_-role_cluster, s인터클러스터, node-mgmt, cluster-mgmt, data_'
+** 'network port show-node_node_name_-type physical
 ** 'Service-processor show-node * -instance'
-** 'network fcp adapter show-node node_name'
+** 'network fcp adapter show-node_name _'
 ** 'network port ifgrp show'
-** 'system node show-instance-node_name'입니다
-** 'run-node <node_name> sysconfig'
-** 'Storage aggregate show-node_name'입니다
-** 'volume show-node node_name'입니다
-** 'Storage array config show-switch_name'을 선택합니다
-** 'system license show-owner node_name'입니다
+** 'system node show-instance-node_node_name_'
+** 'run-node_node_name_sysconfig'
+** 'Storage aggregate show -node_node_name _'
+** 'volume show-node_node_name_'
+** 'Storage array config show -switch_switch_name_'
+** 'system license show-owner_node_name_'
 ** 스토리지 암호화 디스크 표시
 ** 보안 키 관리자 온보드 쇼 백업
 ** 보안 키매니저 외모
@@ -154,11 +154,11 @@ NOTE: 온보드 키 관리자(OKM)를 사용하여 NetApp 볼륨 암호화를 �
 .단계
 . 파트너 노드가 현재 소유한 애그리게이트를 홈 소유자 노드로 반환:
 +
-'storage aggregate relocation start-node <source_node> - destination <destination-node> - aggregate-list *'
+'Storage aggregate Relocation start -node_source_node_-destination_destination-node_-aggregate-list *'
 
 . 노드 1과 노드 2가 현재 소유자인 애그리게이트를 소유하지 않고 홈 소유자가 아닌 경우:
 +
-'Storage aggregate show -nodes <node_name> -is-home false-fields owner-name, home-name, state'
+'Storage aggregate show -nodes_node_name_-is-home false-fields owner-name, home-name, state'
 
 +
 다음 예제는 노드가 Aggregate의 현재 소유자이자 홈 소유자인 경우 명령의 출력을 보여줍니다.
@@ -184,7 +184,7 @@ aggr4       node1      node1       online
 
 컨트롤러 교체 프로세스를 다시 시작해야 합니다.
 
-'system controller replace start-nodes <node_names>'를 선택합니다
+'시스템 컨트롤러가 start-nodes_node_names_'를 대체합니다
 
 
 

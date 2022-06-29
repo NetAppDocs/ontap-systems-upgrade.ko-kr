@@ -7,6 +7,6 @@
 .단계
 . 올바른 포트에 LIF를 재할당하려면 'MetroCluster vserver resync' 명령을 입력하십시오.
 +
-'MetroCluster vserver resync -vserver <vserver_name> fcp -mc.headupgrade.test.vs.
+MetroCluster vserver resync -vserver_vserver_name_fcp -mc.headupgrade.test.vs
 
 

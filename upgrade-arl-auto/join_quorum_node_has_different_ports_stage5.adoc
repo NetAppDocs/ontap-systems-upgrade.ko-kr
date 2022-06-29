@@ -48,11 +48,11 @@ network port modify -node node3 -port e1b -ipspace Cluster -mtu 9000
 ----
 . 다음 명령을 사용하여 클러스터 LIF를 각 LIF에 대해 한 번씩 새 포트로 마이그레이션합니다.
 +
-'network interface migrate-vserver cluster-lif <lif_name> - source-node node3 destination-node node3-destination-port <port_name>'
+'network interface migrate-vserver cluster-lif_lif_name_-source-node node3 destination-node node3-destination-port_port_name_'
 
 . 클러스터 LIF의 홈 포트를 다음과 같이 수정합니다.
 +
-'network interface modify -vserver Cluster-lif <lif_name> – home-port <port_name>'
+'network interface modify -vserver cluster -lif_lif_name_ – home-port_port_name_'
 
 . 클러스터 포트가 Cluster broadcast-domain에 없는 경우 다음 명령을 사용하여 추가합니다.
 +
@@ -74,7 +74,7 @@ network port modify -node node3 -port e1b -ipspace Cluster -mtu 9000
 
 .. 이 포트가 포함된 브로드캐스트 도메인을 표시합니다.
 +
-'network port broadcast-domain show-ports <node_name:port_name>'
+'network port broadcast-domain show-ports_node_name:port_name_'
 
 .. 브로드캐스트 도메인에서 포트 추가 또는 제거:
 +
@@ -82,7 +82,7 @@ network port modify -node node3 -port e1b -ipspace Cluster -mtu 9000
 
 .. LIF의 홈 포트 수정:
 +
-'network interface modify -vserver <vserver-name> -lif <lif_name> – home-port <port_name>'
+'network interface modify -vserver_vserver-name_-lif_lif_name_ – home-port_port_name_'
 
 +
 필요한 경우 인터클러스터 브로드캐스트 도메인을 조정하고 인터클러스터 LIF를 마이그레이션합니다. 데이터 LIF는 그대로 유지됩니다.

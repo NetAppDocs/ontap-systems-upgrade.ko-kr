@@ -23,6 +23,6 @@ summary: AFF A700에서 AFF A900으로 업그레이드하는 동안 SnapMirror �
 
 . SnapMirror 관계 재개:
 +
-'스냅미러 resume-destination – vserver <vserver_name>'
+'스냅미러 재개 - 목적지 - vserver_vserver_name_'
 
 

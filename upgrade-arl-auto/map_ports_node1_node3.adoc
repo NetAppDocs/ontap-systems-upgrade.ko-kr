@@ -100,7 +100,7 @@ cluster::>
 .. 노드3 부팅. 을 참조하십시오 link:install_boot_node3.html["노드3을 설치하고 부팅합니다"] 아직 부팅하지 않은 경우 노드를 부팅합니다.
 .. 새 클러스터 포트가 클러스터 브로드캐스트 도메인에 있는지 확인합니다.
 +
-'network port show-node <node>-port <port>-fields broadcast-domain'
+'network port show-node_node_-port_port_-fields broadcast-domain
 
 +
 다음 예에서는 노드 3의 클러스터 도메인에 포트 "e0a"가 있음을 보여 줍니다.
@@ -108,7 +108,7 @@ cluster::>
 +
 [listing]
 ----
- cluster::> network port show -node <node3> -port e0a -fields broadcast-domain
+ cluster::> network port show -node _node3_ -port e0a -fields broadcast-domain
 
  node       port broadcast-domain
  ---------- ---- ----------------
@@ -116,7 +116,7 @@ cluster::>
 ----
 .. 클러스터 포트가 Cluster broadcast-domain에 없는 경우 다음 명령을 사용하여 추가합니다.
 +
-'broadcast-domain add-ports-IPSpace Cluster-broadcast-domain Cluster-ports <node:port>'
+'broadcast-domain add-ports-IPSpace Cluster-broadcast-domain Cluster-ports_node:port_'
 
 +
 이 예제에서는 노드 3에 클러스터 포트 "e1b"를 추가합니다.
@@ -140,11 +140,11 @@ network port modify -node node4 -port e1b -ipspace Cluster -mtu 9000
 ----
 .. 클러스터 LIF를 각 LIF에 대해 한 번씩 새 포트로 마이그레이션합니다.
 +
-'network interface migrate-vserver cluster-lif <lif_name> - source-node <node3> - destination-node <node3> - destination-port <port_name>'
+'network interface migrate-vserver cluster-lif_lif_name_-source-node_node3_-destination-node_node3_-destination-port_port_name_'
 
 .. 클러스터 LIF의 홈 포트를 수정합니다.
 +
-'network interface modify -vserver Cluster-lif <lif_name> – home-port <port_name>'
+'network interface modify -vserver cluster -lif_lif_name_ – home-port_port_name_'
 
 .. 클러스터 브로드캐스트 도메인에서 이전 포트를 제거합니다.
 +
@@ -170,7 +170,7 @@ network port modify -node node4 -port e1b -ipspace Cluster -mtu 9000
 
 .. 이 포트가 포함된 브로드캐스트 도메인을 표시합니다.
 +
-'network port broadcast-domain show-ports <node_name:port_name>'
+'network port broadcast-domain show-ports_node_name:port_name_'
 
 .. 브로드캐스트 도메인에서 포트 추가 또는 제거:
 +
@@ -181,7 +181,7 @@ network port modify -node node4 -port e1b -ipspace Cluster -mtu 9000
 
 .. LIF의 홈 포트 수정:
 +
-'network interface modify -vserver vserver -lif <lif_name> – home-port <port_name>'
+'network interface modify -vserver vserver -lif_lif_name_ – home-port_port_name_'
 
 
 
@@ -195,7 +195,7 @@ network port modify -node node4 -port e1b -ipspace Cluster -mtu 9000
 
 .. 포트 삭제하기:
 +
-'network port delete-node <node_name> - port <port_name>'
+'network port delete-node_node_name_-port_port_name_
 
 .. 관리자 수준으로 돌아가기:
 +
@@ -205,7 +205,7 @@ network port modify -node node4 -port e1b -ipspace Cluster -mtu 9000
 
 . 모든 LIF 페일오버 그룹을 조정합니다.
 +
-'network interface modify-failover-group <failover_group> - failover-policy <failover_policy>'
+'network interface modify-failover-group_failover_group_-failover-policy_failover_policy_'
 
 +
 다음 명령은 페일오버 정책을 'broadcast-domain-wide'로 설정하고 노드 3의 LIF "data1"에 대한 페일오버 타겟으로 페일오버 그룹 "fg1"의 포트를 사용합니다.

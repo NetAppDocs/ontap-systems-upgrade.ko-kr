@@ -11,6 +11,6 @@
 
 . SnapMirror 관계 재개:
 +
-'스냅미러 resume-destination – vserver <vserver_name>'
+'스냅미러 재개 - 목적지 - vserver_vserver_name_'
 
 

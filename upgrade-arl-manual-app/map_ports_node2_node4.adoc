@@ -55,7 +55,7 @@ Enable Switchless Cluster:  false/true
 +
 .. 클러스터 브로드캐스트 도메인의 일부가 될 포트를 수정합니다.
 +
-'network port modify -node <node_name> -port <port_name> - MTU 9000 - IPSpace Cluster'
+'network port modify -node_node_name_-port_port_name_-mtu 9000-IPSpace Cluster'
 
 +
 이 예제에서는 "node2"에 클러스터 포트 "e1b"를 추가합니다.
@@ -65,18 +65,18 @@ Enable Switchless Cluster:  false/true
 
 .. 클러스터 LIF를 각 LIF에 대해 한 번씩 새 포트로 마이그레이션합니다.
 +
-'network interface migrate-vserver vserver_name -lif lif_name source-node node2-destination-node node2-destination-port port_name'을 참조하십시오
+'network interface migrate-vserver_vserver_name_-lif_lif_name_source-node node2-destination-node node2-destination-port_name_'
 
 +
 모든 클러스터 LIF가 마이그레이션되고 클러스터 통신이 설정되면 클러스터가 쿼럼에 들어가야 합니다.
 
 .. 클러스터 LIF의 홈 포트를 수정합니다.
 +
-'network interface modify -vserver Cluster-lif <lif_name> – home-port <port_name>'
+'network interface modify -vserver cluster -lif_lif_name_ – home-port_port_name_'
 
 .. '클러스터' 브로드캐스트 도메인에서 이전 포트를 제거합니다.
 +
-'네트워크 포트 브로드캐스트-도메인 제거-포트-IPSpace 클러스터-브로드캐스트-도메인 클러스터-포트 node2: 포트'
+'네트워크 포트 브로드캐스트-도메인 제거-포트-IPSpace 클러스터-브로드캐스트-도메인 클러스터-포트_노드2:포트_'
 
 .. node2/node4의 상태 표시:
 +
@@ -105,7 +105,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 ----
 .. 필요한 경우 포트 7700에서 청취하지 않는 각 클러스터 LIF에 대해 LIF의 관리 상태를 '소유'로 설정한 다음 '설정'으로 설정합니다.
 +
-'::> net int modify -vserver Cluster-lif <cluster-lif> -status-admin down;net int modify -vserver Cluster-lif <cluster-lif> -status-admin up'
+'::> net int modify -vserver cluster -lif_cluster -lif_ -status -admin down;net int modify -vserver Cluster-lif_cluster -lif_ -status -admin up'
 
 +
 하위 단계(f)를 반복하여 클러스터 LIF가 포트 7700에서 청취 중인지 확인합니다.
@@ -120,7 +120,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 
 .. 각 포트에서 한 번에 하나씩 다음 명령을 실행하여 물리적 포트 및 VLAN 포트의 연결 기능을 복구합니다.
 +
-복구 가능성 -노드 <node_name> -port <port_name>'입니다
+복구 가능성 -node_node_name_-port_port_name_
 
 +
 다음과 같은 경고가 예상됩니다. 필요에 따라 y 또는 n을 검토하고 입력합니다.
@@ -137,30 +137,30 @@ Warning: Repairing port "node_name:port" may cause it to move into a different b
 
 .. 도달 가능성 복구가 수행되면 ONTAP는 포트를 올바른 브로드캐스트 도메인에 배치하려고 시도합니다. 그러나 포트의 도달 가능 여부를 확인할 수 없고 기존 브로드캐스트 도메인과 일치하지 않는 경우 ONTAP는 이러한 포트에 대한 새 브로드캐스트 도메인을 생성합니다. 필요에 따라 새로 생성된 브로드캐스트 도메인을 삭제할 수 있습니다. 모든 구성원 포트가 인터페이스 그룹의 구성원 포트가 될 수 있습니다. 브로드캐스트 도메인 삭제:
 +
-'broadcast-domain delete-broadcast-domain <broadcast_domain>'을 선택합니다
+'broadcast-domain delete-broadcast-domain_broadcast_domain_'
 
 .. 인터페이스 그룹 구성을 검토하고 필요에 따라 구성원 포트를 추가 또는 삭제합니다.
 +
 인터페이스 그룹 포트에 구성원 포트 추가:
 
 +
-'ifgrp add-port-node_name-ifgrp ifgrp_port-port port port_name'
+'ifgrp add-port-node_name-ifgrp_ifgrp_port_-port_port_name_'
 
 +
 인터페이스 그룹 포트에서 구성원 포트 제거:
 
 +
-'ifgrp remove-port-node_name-ifgrp ifgrp_port-port port port_name'
+'ifgrp remove-port-node_name-ifgrp_ifgrp_port_-port_port_name_'
 
 .. 필요에 따라 VLAN 포트를 삭제하고 다시 생성합니다. VLAN 포트 삭제:
 +
-'VLAN delete-node <node_name>-vlan-name <VLAN_port>'
+'VLAN DELETE-NODE_NODE_NAME_-VLAN-NAME_VLAN_PORT_'
 
 +
 VLAN 포트 생성:
 
 +
-'VLAN create-node <node_name>-vlan-name <VLAN_port>'
+'VLAN create-node_node_name_-vlan-name_vlan_port_'
 
 
 
@@ -176,7 +176,7 @@ NOTE: 업그레이드하는 시스템의 네트워킹 구성의 복잡성에 따
 
 .. 교체된 VLAN을 원하는 대상 포트로 복구합니다.
 +
-dissplaced-vLANs restore-node <node_name> -port <port_name> -destination-port <destination_port>'입니다
+disspled-vLANs restore-node_name_-port_port_name_-destination-port_destination_port_'입니다
 
 .. 교체된 모든 VLAN이 복원되었는지 확인합니다.
 +
@@ -196,7 +196,7 @@ dissplaced-vLANs restore-node <node_name> -port <port_name> -destination-port <d
 
 .. 각 LIF의 홈 포트를 복원합니다.
 +
-dissplaced-interface restore-vserver <vserver_name>-lif-name <lif_name>'입니다
+dissplaced-interface restore-vserver_vserver_name_-lif-name_lif_name_'입니다
 
 .. 모든 LIF 홈 포트가 복구되었는지 확인합니다.
 +
@@ -211,15 +211,15 @@ dissplaced-interface restore-vserver <vserver_name>-lif-name <lif_name>'입니�
 +
 .. 관리상 다운되는 LIF가 있는지 확인합니다.
 +
-'network interface show -vserver <vserver_name> -status -admin down'
+'network interface show -vserver_vserver_name_-status-admin down'
 
 .. 운영 중단된 LIF가 있는지 확인하십시오.
 +
-'network interface show -vserver vserver_name -status-oper down'
+'network interface show -vserver_vserver_name_-status-oper down'
 
 .. 다른 홈 포트를 가지도록 수정해야 하는 모든 LIF를 수정합니다.
 +
-'network interface modify -vserver vserver_name -lif lif_name -home-port home_port'
+'network interface modify -vserver_vserver_name_-lif_lif_name_-home-port_home_port_'
 
 +
 

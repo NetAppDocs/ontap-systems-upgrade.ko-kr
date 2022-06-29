@@ -22,7 +22,7 @@ summary: AFF A700에서 AFF A900으로 업그레이드하는 동안 노드를 �
 세트 프리빌리지 고급
 
 +
-'system controller replace start-nodes <node_names>'를 선택합니다
+'시스템 컨트롤러가 start-nodes_node_names_'를 대체합니다
 
 +
 다음과 유사한 출력이 표시됩니다.
@@ -102,23 +102,23 @@ Controller replacement operation has been paused for user intervention.
 다음 명령의 출력을 개별적으로 실행 및 저장해야 합니다.
 
 +
-** SVM 서비스 이름 - 서비스 DNS 표시
-** 네트워크 인터페이스 show-curr-node nodename-role 클러스터, 인터클러스터, 노드 관리, 클러스터 관리, 데이터
-** 네트워크 포트 show-node node_name-type physical
-** 서비스 프로세서 show-node * -instance
-** 네트워크 FCP 어댑터 show-node <node_name>
-** 네트워크 포트 ifgrp show를 참조하십시오
-** 시스템 노드 show-instance-node_name
-** run-node <node_name> sysconfig
-** 스토리지 애그리게이트 show-node_name 을 참조하십시오
-** volume show -node <node_name>
-** 스토리지 배열 config show -switch <switch_name>
-** system license show-owner <node_name>
-** 스토리지 암호화 디스크가 표시됩니다
-** 보안 키 관리자 온보드 show-backup
-** 보안 키 관리자 외부 표시
-** 보안 키 관리자 외부 표시 상태
-** 내 상태 표시 - 세부 사항
+** 'vserver services name-service dns show'
+** 네트워크 인터페이스 show-curr-node_nodename_-role cluster, 인터클러스터, 노드 관리, 클러스터 관리, 데이터
+** 'network port show-node_node_name_-type physical
+** 'Service-processor show-node * -instance'
+** 'network fcp adapter show-node_name _'
+** 'network port ifgrp show'
+** 'system node show-instance-node_node_name_'
+** 'run-node_node_name_sysconfig'
+** 'Storage aggregate show -node_node_name _'
+** 'volume show-node_node_name_'
+** 'Storage array config show -switch_switch_name_'
+** 'system license show-owner_node_name_'
+** 스토리지 암호화 디스크 표시
+** 보안 키 관리자 온보드 쇼 백업
+** 보안 키매니저 외모
+** '보안 키 관리자 외부 표시 상태
+** 내외공연
 
 
 
@@ -135,11 +135,11 @@ NOTE: Onboard Key Manager를 사용하여 NetApp Volume Encryption을 사용하�
 .단계
 . 파트너 노드가 현재 소유한 애그리게이트를 홈 소유자 노드로 반환:
 +
-'storage aggregate relocation start-node <source_node> - destination <destination-node> - aggregate-list *'
+'Storage aggregate Relocation start -node_source_node_-destination_destination-node_-aggregate-list *'
 
 . 노드 1과 노드 2가 현재 소유자인 애그리게이트를 소유하지 않고 홈 소유자가 아닌 경우:
 +
-'Storage aggregate show -nodes <node_name> -is-home false-fields owner-name, home-name, state'
+'Storage aggregate show -nodes_node_name_-is-home false-fields owner-name, home-name, state'
 
 +
 다음 예제는 노드가 Aggregate의 현재 소유자이자 홈 소유자인 경우 명령의 출력을 보여줍니다.
@@ -165,7 +165,7 @@ aggr4       node1      node1       online
 
 컨트롤러 교체 프로세스를 다시 시작해야 합니다.
 
-'system controller replace start-nodes <node_names>'를 선택합니다
+'시스템 컨트롤러가 start-nodes_node_names_'를 대체합니다
 
 
 

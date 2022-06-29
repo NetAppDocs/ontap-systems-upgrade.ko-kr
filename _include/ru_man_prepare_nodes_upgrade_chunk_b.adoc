@@ -4,7 +4,7 @@
 
 . 두 노드의 모델, 시스템 ID 및 일련 번호를 기록합니다.
 +
-'system node show-node <node1, node2>-instance'
+'system node show -node_node1, node2_-instance'
 
 +
 
@@ -12,7 +12,7 @@ NOTE: 이 정보를 사용하여 디스크를 재할당하고 원래 노드의 �
 
 . 노드 1과 노드 2 모두에 다음 명령을 입력하고 쉘프, 각 쉘프의 디스크 수, 플래시 스토리지 세부 정보, 메모리, NVRAM 및 네트워크 카드 출력에 대한 정보를 기록합니다.
 +
-'run-node <node_name> sysconfig'
+'run-node_node_name_sysconfig'
 
 +
 
@@ -20,7 +20,7 @@ NOTE: 이 정보를 사용하여 노드3 또는 노드4로 전송할 부품 또�
 
 . 노드 1과 노드 2 모두에 대해 다음 명령을 입력하고 두 노드에서 온라인 상태인 애그리게이트를 기록합니다.
 +
-'Storage aggregate show-node <node_name> - state online'을 선택합니다
+'Storage aggregate show -node_name _ -state online'을 선택합니다
 
 +
 
@@ -28,7 +28,7 @@ NOTE: 이 정보와 다음 하위 단계의 정보를 사용하여 재배치 중
 
 . [[man_prepare_nodes_step19]] node1과 node2에서 다음 명령을 입력하고 두 노드에서 오프라인 상태인 볼륨을 기록합니다.
 +
-'volume show-node <node_name> - state offline
+'volume show-node_node_name_-state offline
 
 +
 
@@ -76,7 +76,7 @@ fg_6210_e0c         Default           node1:e0c, node1:e0d
 . 클러스터 전반 이외의 페일오버 그룹이 있을 경우 페일오버 그룹 이름과 페일오버 그룹에 속한 포트를 기록합니다.
 . 다음 명령을 입력하여 노드에 구성된 VLAN이 있는지 확인합니다.
 +
-'network port vlan show-node <node_name>'
+'network port vlan show-node_node_name_'
 
 +
 VLAN은 물리적 포트를 통해 구성됩니다. 물리적 포트가 변경될 경우 VLAN을 나중에 다시 생성해야 합니다.
@@ -109,7 +109,7 @@ node1   e1b-70    e1b     70      00:15:17:76:7b:69
 |===
 .. [[man_prepare_nodes_step23]] 노드 1과 노드 2가 SAN 또는 비 SAN 환경에 있는지 여부를 모르는 경우 다음 명령을 입력하고 해당 출력을 검사합니다.
 +
-'network interface show -vserver <vserver_name> -data-protocol iscsi | fcp'
+'network interface show -vserver_vserver_name_-data-protocol iscsi | fcp'
 
 +
 SVM에 대해 iSCSI와 FC를 구성하지 않을 경우 명령은 다음 예제와 유사한 메시지를 표시합니다.
@@ -191,7 +191,7 @@ node1         node1         in-quorum     true          operational
 |===
 .. [[man_prepare_nodes_step26]] 다음 명령을 입력하여 출력을 검사하여 SAN iSCSI 또는 FC 서비스가 활성화된 각 SVM에 대한 노드 1과 노드 2에 SAN LIF가 있는지 확인합니다.
 +
-'network interface show-data-protocol iscsi | fcp-home-node <node_name>'
+'network interface show-data-protocol iscsi|fcp-home-node_node_name_'
 
 +
 이 명령을 실행하면 노드 1과 노드 2의 SAN LIF 정보가 표시됩니다. 다음 예는 Status Admin/Oper 열의 상태를 UP/UP 으로 보여 줍니다. 이는 SAN iSCSI 및 FC 서비스가 활성화되었음을 나타냅니다.
@@ -317,7 +317,7 @@ SnapVault         site    SnapVault License     -
 
 .. 각 노드에서 다음 명령을 입력하여 원래 시스템에 AutoSupport가 활성화되어 있는지 확인하고 해당 출력을 확인합니다.
 +
-'System node AutoSupport show-node <node1, node2>'를 선택합니다
+'System node AutoSupport show -node_node1, node2_'
 
 +
 명령 출력에는 다음 예제와 같이 AutoSupport가 설정되어 있는지 여부가 표시됩니다.
@@ -373,7 +373,7 @@ NOTE: 이때 노드 2의 경우 AutoSupport 메시지를 NetApp에 보내지 마
 
 .. [[man_prepare_nodes_step36, 6단계]] 다음 명령을 입력하고 출력을 검사하여 AutoSupport 메시지가 전송되었는지 확인합니다.
 +
-'System node AutoSupport show-node <node1> - instance'
+'System node AutoSupport show -node_node1_-instance'
 
 +
 마지막 보낸 제목 필드와 마지막 보낸 시간 필드에는 마지막으로 보낸 메시지의 제목 및 메시지 보낸 시간이 포함됩니다.

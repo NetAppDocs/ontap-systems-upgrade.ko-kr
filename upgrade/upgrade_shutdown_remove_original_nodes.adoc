@@ -16,7 +16,7 @@ summary: 원래 노드를 종료 및 제거할 때 업그레이드에 대한 Aut
 .단계
 . node1과 node2에서 AutoSupport 메시지를 보내 업그레이드 기술 지원을 알립니다.
 +
-'system node AutoSupport invoke - node node_name - type all - message "MAINT=2h platform_original에서 platform_new로 node_name 업그레이드
+'system node AutoSupport invoke - node_node_name_ -type all -message "MAINT=2h Upgrading_node_name_from_platform_original_to_platform_new_"
 
 . 노드 1과 노드 2에서 고가용성 또는 스토리지 페일오버 해제:
 +
@@ -29,7 +29,7 @@ summary: 원래 노드를 종료 및 제거할 때 업그레이드에 대한 Aut
 2노드 클러스터
  a| 
 .. 클러스터 하 수정-구성 거짓
-.. 'storage failover modify -node_name -enabled false'
+.. 'storage failover modify -node_node_name _ -enabled false'
 
 
 
@@ -37,12 +37,12 @@ summary: 원래 노드를 종료 및 제거할 때 업그레이드에 대한 Aut
  a| 
 2개 이상의 노드가 있는 클러스터
  a| 
-'storage failover modify -node_name -enabled false'
+'storage failover modify -node_node_name _ -enabled false'
 
 |===
 . 노드 중단:
 +
-'system node halt-node node_name'입니다
+'System node halt-node_node_name_'
 
 +
 재부팅 프로세스 중에 '-ignore-quorum-warnings' 옵션을 사용하여 쿼럼 검사를 억제할 수 있습니다.

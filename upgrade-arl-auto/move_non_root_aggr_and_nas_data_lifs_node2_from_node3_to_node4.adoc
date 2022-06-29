@@ -69,7 +69,7 @@ Aggregate가 재배치되지 않거나 거부되면 Aggregate를 수동으로 �
 +
 .. 다음 명령을 입력하고 출력을 검사합니다.
 +
-'network interface show-data-protocol iscsi | fcp-home-node <node4>'
+'network interface show-data-protocol iscsi|fcp-home-node_node4_'
 
 +
 시스템은 다음 예제와 유사한 출력을 반환합니다.
@@ -94,25 +94,25 @@ vs1
 +
 ... 다음 명령을 입력하여 LIF 상태를 down으로 설정합니다.
 +
-'network interface modify -vserver <vserver_name> -lif <lif_name> -status -admin down'
+'network interface modify -vserver_vserver_name_-lif_lif_name_-status-admin down'
 
 ... 포트 세트에서 LIF를 제거합니다.
 +
-' remove-vserver <vserver_name> - 포트셋 <포트셋_이름> -포트-이름 <포트_이름>'
+' remove-vserver_vserver_name_-포트셋_포트셋_이름_-포트-이름_포트_이름_'
 
 ... 다음 명령 중 하나를 입력합니다.
 +
 **** 다음 명령을 입력하여 단일 LIF를 이동합니다.
 +
-'network interface modify -vserver <vserver_name> -lif <lif_name> -home-port <new_home_port>'
+'network interface modify -vserver_vserver_name_-lif_lif_name_-home-port_new_home_port_'
 
 **** 다음 명령을 입력하여 존재하지 않거나 잘못된 포트 한 개에 있는 모든 LIF를 새 포트로 이동합니다.
 +
-'network interface modify {-home-port <port_on_node1>-home-node <node1>-role data} - home-port <new_home_port_on_node3>'
+'network interface modify {-home-port_port_on_node1_-home-node_node1_-role data} - home-port_new_home_port_on_node3_'
 
 **** 포트 세트에 LIF를 다시 추가합니다.
 +
-'<add-vserver_name> - 포트셋 <포트셋_이름> -포트-이름 <포트_이름>'
+``add-vserver_vserver_name_-포트셋_포트셋_이름_-포트-이름_포트_이름_'
 
 +
 
@@ -124,7 +124,7 @@ NOTE: SAN LIF를 원래 포트와 링크 속도가 동일한 포트로 이동해
 
 .. LIF가 다음 명령을 입력하여 노드에서 트래픽을 허용하고 전송할 수 있도록 모든 LIF의 상태를 "Up"으로 수정합니다.
 +
-'network interface modify -home-port <port_name> -home-node <node4> -lif data-statusadmin up'을 선택합니다
+'network interface modify -home-port_port_name_-home-node_node4_-lif data-statusadmin up'을 선택합니다
 
 .. 다음 명령을 입력하고 출력을 검사하여 LIF가 올바른 포트로 이동되었으며, LIF가 두 노드 중 하나에 다음 명령을 입력하고 출력을 검사하여 'UP' 상태인지 확인하십시오.
 +
@@ -132,7 +132,7 @@ NOTE: SAN LIF를 원래 포트와 링크 속도가 동일한 포트로 이동해
 
 .. LIF가 하나라도 다운되면 각 LIF에 대해 다음 명령을 한 번 입력하여 LIF의 관리 상태를 Up으로 설정합니다.
 +
-'network interface modify -vserver <vserver_name> -lif <lif_name> -status -admin up'
+'network interface modify -vserver_vserver_name_-lif_lif_name_-status-admin up
 
 
 

@@ -21,6 +21,7 @@ entries:
 - title: ARL 업그레이드 개요
   url: "/upgrade-arl-auto/overview_of_the_arl_upgrade.html"
 - title: 1단계. 업그레이드를 준비합니다
+  pdf-filename: 1단계. 업그레이드 준비(ONTAP 9.5에서 9.7로 '시스템 컨트롤러 교체'로 업그레이드)
   entries:
   - title: 개요
     url: "/upgrade-arl-auto/stage_1_index.html"
@@ -29,6 +30,7 @@ entries:
   - title: 스토리지 암호화를 위한 외부 키 관리 서버의 IP 주소를 가져옵니다
     url: "/upgrade-arl-auto/get_ip_address_of_external_kms_for_storage_encryption.html"
 - title: 2단계. 노드1을 재배치하거나 폐기합니다
+  pdf-filename: 2단계. 노드1 재배치 및 폐기(ONTAP 9.5에서 9.7로 '시스템 컨트롤러 교체'로 업그레이드)
   entries:
   - title: 개요
     url: "/upgrade-arl-auto/stage_2_index.html"
@@ -41,6 +43,7 @@ entries:
   - title: netboot를 준비합니다
     url: "/upgrade-arl-auto/prepare_for_netboot.html"
 - title: 3단계. 노드3을 설치하고 부팅합니다
+  pdf-filename: 3단계. 노드3 설치 및 부팅(ONTAP 9.5에서 9.7로 '시스템 컨트롤러 교체'로 업그레이드)
   entries:
   - title: 개요
     url: "/upgrade-arl-auto/stage_3_index.html"
@@ -65,6 +68,7 @@ entries:
   - title: 노드2를 폐기합니다
     url: "/upgrade-arl-auto/retire_node2.html"
 - title: 5단계. 노드 4를 설치하고 부팅합니다
+  pdf-filename: 5단계. node4 설치 및 부팅(ONTAP 9.5에서 9.7로 '시스템 컨트롤러 교체'로 업그레이드)
   entries:
   - title: 개요
     url: "/upgrade-arl-auto/stage_5_index.html"
@@ -81,6 +85,7 @@ entries:
   - title: 노드 2가 소유한 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 3에서 노드 4로 이동합니다
     url: "/upgrade-arl-auto/move_non_root_aggr_and_nas_data_lifs_node2_from_node3_to_node4.html"
 - title: 6단계. 업그레이드를 완료합니다
+  pdf-filename: 6단계. 업그레이드 완료(ONTAP 9.5에서 9.7로 '시스템 컨트롤러 교체'로 업그레이드)
   entries:
   - title: 개요
     url: "/upgrade-arl-auto/stage_6_index.html"
@@ -95,6 +100,7 @@ entries:
   - title: SnapMirror 작업을 재개합니다
     url: "/upgrade-arl-auto/resume_snapmirror_operations.html"
 - title: 문제 해결
+  pdf-filename: 문제 해결(ONTAP 9.5에서 9.7로 '시스템 컨트롤러 교체'로 업그레이드)
   entries:
   - title: 개요
     url: "/upgrade-arl-auto/troubleshoot_index.html"

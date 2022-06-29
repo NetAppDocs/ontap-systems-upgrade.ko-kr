@@ -9,7 +9,7 @@
 
 . 키 관리자 추가:
 +
-'Security key-manager external add-servers-key-servers key_management_server_ip_address'
+'Security key-manager external add-servers-key-servers_key_management_server_ip_address_'
 
 . 키 관리 서버가 구성되어 있고 클러스터의 모든 노드에서 사용할 수 있는지 확인합니다.
 +
@@ -17,7 +17,7 @@
 
 . 연결된 모든 키 관리 서버에서 새 노드로 인증 키를 복원합니다.
 +
-'Security key-manager external restore-node new_controller_name
+'Security key-manager external restore-node_new_controller_name_
 
 . 새 인증 키를 사용하여 모든 자체 암호화 디스크를 다시 입력하다
 +

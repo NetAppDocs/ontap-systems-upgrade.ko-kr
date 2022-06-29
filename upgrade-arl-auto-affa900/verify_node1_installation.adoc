@@ -143,7 +143,7 @@ NOTE: AFF A700에서 AFF A900으로 또는 FAS9000에서 FAS9000으로 컨트롤
 
 . [[restore_node1_step4] 다음 명령을 사용하여 노드 1의 각 포트에 대한 내 상태를 다음 순서로 수행하여 "ok" 이외의 내 가능 상태로 복구합니다.
 +
-'network port reachability repair-node_name-port port port_name'
+'network port reachability repair-node_name_-port_port_name_'
 
 +
 --
@@ -200,7 +200,7 @@ Warning: Repairing port "node1:e11b" may cause it to move into a different broad
 
 .. LIF 홈 노드 및 홈 포트를 복원합니다.
 +
-disspled-interface restore-home-node-node_name-vserver vserver_name-lif-name LIF_name'입니다
+dissplaced-interface restore-home-node-node_node_name_-vserver_vserver_name_-lif-name_LIF_name _'입니다
 
 
 

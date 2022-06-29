@@ -22,7 +22,7 @@ Aggregate가 재배치되지 않거나 거부되면 Aggregate를 수동으로 �
 . EMS 로그를 확인하여 Aggregate의 재배치 실패 또는 거부가 발생한 이유를 확인합니다.
 . 장애가 발생하거나 거부되는 애그리게이트를 재배치합니다.
 +
-'storage aggregate relocation start-node <node1> - destination <node2>aggregate-list * -ndocontroller-upgrade true'
+'Storage aggregate Relocation start -node_node1_-destination_node2_aggregate-list * -ndocontroller-upgrade true'
 
 . 메시지가 나타나면 y를 입력합니다.
 . 다음 방법 중 하나를 사용하여 재배치를 수행할 수 있습니다.

@@ -25,7 +25,7 @@ summary: 노드 1에서 노드 2로 비루트 애그리게이트를 이동하고
 
 .. 다음 명령을 입력합니다.
 +
-'storage aggregate relocation start-node <node1> - destination <node2> - aggregate-list * -ndo-controller-upgrade true'
+'storage aggregate relocation start -node_node1_-destination_node2_-aggregate-list * -ndo-controller-upgrade true'
 
 .. 메시지가 나타나면 y를 입력합니다.
 +
@@ -39,7 +39,7 @@ summary: 노드 1에서 노드 2로 비루트 애그리게이트를 이동하고
 
 . node1에서 다음 명령을 입력하여 재배치 상태를 확인합니다.
 +
-'Storage aggregate relocation show-node <node1>'를 선택합니다
+'Storage aggregate relocation show -node_node1_'
 
 +
 이 출력은 재배치된 후 Aggregate에 대해 Done을 표시합니다.
@@ -61,7 +61,7 @@ NOTE: 노드 1이 소유한 모든 비루트 애그리게이트가 노드 2로 �
 | 거부권을 행사하는 모든 애그리게이트 중 하나에 장애가 발생하거나 거부되는 애그리게이트가 있습니다  a| 
 .. EMS 로그에서 수정 조치를 확인합니다.
 .. 수정 조치를 수행합니다.
-.. 장애가 발생하거나 거부된 Aggregate 재배치: 'Storage aggregate Relocation start-node <node1> - destination <node2> - aggregate-list * -ndo-controller-upgrade true
+.. 장애가 발생하거나 거부된 Aggregate 재배치: 'Storage aggregate Relocation start -node_node1_-destination_node2_-aggregate-list * -ndo-controller-upgrade true
 .. 메시지가 나타나면 y를 입력합니다.
 .. 관리자 수준으로 돌아가기: 'Set-Privilege admin' 필요한 경우 다음 방법 중 하나를 사용하여 재배치를 수행할 수 있습니다.
 +
@@ -76,7 +76,7 @@ NOTE: 노드 1이 소유한 모든 비루트 애그리게이트가 노드 2로 �
 |===
 . [[man_relocate_1_2_step4]]루트가 아닌 모든 애그리게이트가 온라인 상태이고 노드 2의 상태가 온라인인지 확인합니다.
 +
-'Storage aggregate show-node <node2> - state online-root false'
+'storage aggregate show -node_node2_ -state online-root false'
 
 +
 다음 예제에서는 노드 2의 루트 이외의 애그리게이트가 온라인 상태인 것을 보여 줍니다.
@@ -98,24 +98,24 @@ aggr_2     825.0GB 825.0GB      0% online       1 node2            raid_dp,
 노드 2에서 애그리게이트가 오프라인 상태가 되거나 외부 상태가 된 경우, 각 애그리게이트에 대해 노드 2의 다음 명령을 사용하여 온라인 상태로 전환합니다.
 
 +
-'Storage aggregate online-aggregate <aggr_name>'
+'Storage aggregate online-aggregate_agr_name_'
 
 . node2에서 다음 명령을 입력하고 해당 출력을 검사하여 node2에서 모든 볼륨이 온라인 상태인지 확인합니다.
 +
-'volume show-node <node2> - state offline(볼륨 표시 노드 <node2> - 상태 오프라인)
+'volume show-node_node2_-state offline
 
 +
 노드 2에 오프라인 볼륨이 있는 경우 각 볼륨에 대해 한 번씩 노드 2에서 다음 명령을 사용하여 온라인으로 전환합니다.
 
 +
-'volume online-vserver <vserver-name> - volume <volume-name>'
+'volume online-vserver_vserver-name_-volume_volume-name_'
 
 +
 이 명령에 사용할 vserver-name은 이전 'volume show' 명령의 출력에서 확인할 수 있습니다.
 
 . 노드 2에서 다음 명령을 입력합니다.
 +
-'Storage failover show-node <node2>'를 선택합니다
+'storage failover show -node_node2_'
 
 +
 출력에는 다음 메시지가 표시됩니다.
@@ -127,7 +127,7 @@ Node owns partner's aggregates as part of the nondisruptive controller upgrade p
 ----
 . 노드 1이 온라인인 루트 이외의 Aggregate를 소유하지 않는지 확인합니다.
 +
-스토리지 집계 show-owner-name <node1>-ha-policy SFO-state online
+스토리지 집계 show-owner-name_node1_-ha-policy SFO-state online
 
 +
 이미 노드 2로 재배치되었던 온라인 비 루트 애그리게이트는 출력에 표시되지 않아야 합니다.

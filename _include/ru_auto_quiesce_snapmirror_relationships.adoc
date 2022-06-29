@@ -16,7 +16,7 @@
 +
 [NOTE]
 ====
-상태가 "전송 중"인 경우 '스냅샷 미러 중단 - 대상 - vserver <vserver_name>' 전송을 중단해야 합니다
+상태가 "전송 중"인 경우 '스냅샷 미러 중단-대상-vserver_vserver_name_'인 전송을 중단해야 합니다
 
 ====
 +
@@ -24,6 +24,6 @@ SnapMirror 관계가 "전송 중" 상태가 아니면 중단이 실패합니다.
 
 . 클러스터 간의 모든 관계 중지:
 +
-'sapmirror quiesce-destination-vserver <vserver_name>'
+'sapmirror quiesce-destination-vserver_vserver_name_'
 
 

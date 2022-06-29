@@ -61,7 +61,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 ----
 . 필요한 경우 포트 7700에서 청취하지 않는 각 클러스터 LIF에 대해 LIF의 관리 상태를 '소유'로 설정한 다음 '설정'으로 설정합니다.
 +
-'::> net int modify -vserver Cluster-lif <cluster-lif> -status-admin down;net int modify -vserver Cluster-lif <cluster-lif> -status-admin up'
+'::> net int modify -vserver cluster -lif_cluster -lif_ -status -admin down;net int modify -vserver Cluster-lif_cluster -lif_ -status -admin up'
 
 +
 3단계를 반복하여 클러스터 LIF가 포트 7700에서 수신 대기 중인지 확인합니다.
@@ -178,7 +178,7 @@ node1_node3
 
 . [[auto_verify_3_step4]]노드 3의 각 포트에 대한 내 상태를 'ok' 이외의 다른 상태로 복구합니다. 먼저 물리적 포트에서 다음 명령을 실행한 다음 VLAN 포트에서 한 번에 하나씩 실행합니다.
 +
-'network port reachability repair-node_name-port port port_name'
+'network port reachability repair-node_name_-port_port_name_'
 
 +
 다음과 같은 출력이 표시됩니다.
@@ -209,22 +209,22 @@ Warning: Repairing port "node1_node3: e0h" may cause it to move into a different
 +
 .. 먼저 브로드캐스트 도메인 멤버쉽에서 인터페이스 그룹 구성원 포트여야 하는 물리적 포트를 제거해야 합니다. 이 작업은 다음 명령을 사용하여 수행할 수 있습니다.
 +
-'network port broadcast-domain remove-ports-broadcast-domain broadcast-domain_name-ports node_name:port_name'
+'network port broadcast-domain remove-ports-broadcast-domain_broadcast-domain_name_-ports_node_name:port_name_'
 
 .. 인터페이스 그룹에 구성원 포트를 추가합니다.
 +
-'network port ifgrp add-port-node_name-ifgrp ifgrp-port port_name'
+'network port ifgrp add-port-node_node_name_-ifgrp_ifgrp_-port_port_name_'
 
 .. 첫 번째 구성원 포트가 추가된 후 약 1분 후에 인터페이스 그룹이 브로드캐스트 도메인에 자동으로 추가됩니다.
 .. 인터페이스 그룹이 적절한 브로드캐스트 도메인에 추가되었는지 확인합니다.
 +
-'network port reachability show-node_name-port ifgrp
+'network port reachability show -node_node_name_-port_ifgrp_'
 
 +
 인터페이스 그룹의 도달 가능성 상태가 '정상'이 아닌 경우 해당 브로드캐스트 도메인에 할당합니다.
 
 +
-'network port broadcast-domain add-ports-broadcast-domain broadcast_domain_name-ports node:port'
+'network port broadcast-domain add-ports-broadcast-domain_broadcast_domain_name_-ports_node:port_'
 
 
 
@@ -236,13 +236,13 @@ Warning: Repairing port "node1_node3: e0h" may cause it to move into a different
 
 .. 클러스터 브로드캐스트 도메인의 도달 가능 상태가 '정상'이 아닌 경우 해당 포트에 대한 복구 기능을 제공합니다.
 +
-'network port reachability repair-node_name-port port port_name'
+'network port reachability repair-node_name_-port_port_name_'
 
 
 
 . [[7단계]] 다음 명령 중 하나를 사용하여 나머지 물리적 포트를 올바른 브로드캐스트 도메인으로 이동합니다.
 +
-'network port reachability repair-node_name-port port port_name'
+'network port reachability repair-node_name_-port_port_name_'
 
 +
 네트워크 포트 브로드캐스트 도메인 제거 포트
@@ -260,7 +260,7 @@ Warning: Repairing port "node1_node3: e0h" may cause it to move into a different
 +
 .. 교체된 VLAN 나열:
 +
-디세퍼드-VLAN 쇼
+'클러스터 컨트롤러 교체 네트워크가 교체되었습니다 - VLAN 표시'
 
 +
 다음과 같은 출력이 표시됩니다.
@@ -279,7 +279,7 @@ Node1       a0a       822, 823
 ----
 .. 이전 기본 포트에서 대체된 VLAN 복원:
 +
-디즈퍼스VLAN 복원
+'클러스터 컨트롤러 교체 네트워크 - VLAN 복원'
 
 +
 다음은 인터페이스 그룹 "a0a"에서 동일한 인터페이스 그룹으로 다시 교체된 VLAN을 복원하는 예입니다.
@@ -303,12 +303,12 @@ VLAN 복원이 성공하면 지정된 대상 포트에 교체된 VLAN이 생성�
 +
 새로 복원된 VLAN이 해당 브로드캐스트 도메인에 배치될 때까지 약 1분 정도 기다립니다.
 
-.. disspled-vLANs show 출력에 포함되지 않지만 다른 물리적 포트에 구성해야 하는 VLAN 포트에 대해 필요에 따라 새 VLAN 포트를 생성합니다.
+.. 클러스터 컨트롤러 교체 네트워크 교체된 VLAN에 표시되지 않지만 다른 물리적 포트에 구성해야 하는 VLAN 포트에 대해 필요에 따라 새 VLAN 포트를 생성합니다.
 
 
 . [[step9]] 모든 포트 수리가 완료된 후 빈 브로드캐스트 도메인을 삭제합니다.
 +
-'broadcast-domain delete-broadcast-domain broadcast_domain_name'
+'broadcast-domain delete-broadcast-domain_broadcast_domain_name_'
 
 . [[10단계]] 포트 도달 가능성 확인:
 +
@@ -333,7 +333,7 @@ VLAN 복원이 성공하면 지정된 대상 포트에 교체된 VLAN이 생성�
 
 .. LIF 홈 노드 및 홈 포트를 복원합니다.
 +
-disspled-interface restore-home-node-node_name-vserver vserver_name-lif-name LIF_name'입니다
+'클러스터 컨트롤러 교체 네트워크 대체된 인터페이스 restore-home-node-node_node_name_-vserver_vserver_name_-lif-name_LIF_name_'
 
 
 

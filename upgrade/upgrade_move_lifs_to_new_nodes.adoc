@@ -18,7 +18,7 @@ VAAI(VMware vStorage APIs for Array Integration)를 사용하면 복사 오프�
 .단계
 . 클러스터 LIF가 호스팅되는 노드에서 비 SAN 데이터 LIF의 홈 포트를 원래 노드에서 새 노드로 변경합니다.
 +
-'network interface modify -vserver <vserver_name> -lif <lif_name> -home-node <new_node_name> -home-port {<NetPort | ifgrp>}'
+'network interface modify -vserver_vserver_name_-lif_lif_name_-home-node_new_node_name_-home-port {<NetPort|ifgrp>}'
 
 . 다음 작업 중 하나를 수행합니다.
 +
@@ -30,14 +30,14 @@ VAAI(VMware vStorage APIs for Array Integration)를 사용하면 복사 오프�
  a| 
 특정 LIF
  a| 
-'network interface migrate -vserver <vserver_name> -lif <lif_name> -source-node <source_node_name> -destination-node <dest_node_name> -destination-port <dest_port_name>'
+'network interface migrate -vserver_vserver_name_-lif_lif_name_-source-node_source_node_name_-destination-node_dest_node_name_-destination-port_dest_port_name_'
 
 
 
  a| 
 SAN이 아닌 모든 데이터 LIF 및 클러스터 관리 LIF
  a| 
-'network interface migrate-all-node <node_name>'
+'network interface migrate-all-node_node_name_'
 
 |===
 +
@@ -61,11 +61,11 @@ cluster::> network interface migrate-all -node local
 +
 .. 클러스터 관리 LIF의 홈 노드를 새 노드 중 하나로 전환합니다.
 +
-'network interface modify -vserver <cluster_name> -lif cluster_mgmt -home-node <new_node_name> -home-port {<NetPort | ifgrp>}'
+'network interface modify -vserver_cluster_name_-lif cluster_mgmt -home-node_new_node_name_-home-port {<NetPort|ifgrp>}'
 
 .. 클러스터 관리 LIF를 새 노드 중 하나로 마이그레이션합니다.
 +
-'network interface migrate -vserver <vserver_name> -lif cluster -mgmt -destination -node <new_node_name> -destination-port {<NetPort | ifgrp>}'
+'network interface migrate-vserver_vserver_name_-lif cluster-mgmt-destination-node_new_node_name_-destination-port {<NetPort|ifgrp>}'
 
 
 

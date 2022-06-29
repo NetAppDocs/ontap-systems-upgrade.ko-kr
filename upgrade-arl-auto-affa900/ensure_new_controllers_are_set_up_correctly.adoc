@@ -55,25 +55,25 @@ node2	         node1            true	           Connected to node1
 
 . 애그리게이트가 해당 홈 노드에 의해 소유되는지 확인합니다.
 +
-스토리지 집계 show-owner-name node1
+'Storage aggregate show-owner-name_node1_'
 
 +
-'Storage aggregate show-owner-name <node2>'
+'Storage aggregate show-owner-name_node2_'
 
 . 볼륨이 오프라인 상태인지 확인합니다.
 +
-'볼륨 표시 노드 노드1 - 상태 오프라인'
+'volume show-node_node1_-state offline
 
 +
-'volume show-node <node2> - state offline(볼륨 표시 노드 <node2> - 상태 오프라인)
+'volume show-node_node2_-state offline
 
 . 오프라인 상태인 볼륨이 있으면 섹션에서 캡처한 오프라인 볼륨 목록과 비교합니다 link:prepare_nodes_for_upgrade.html["업그레이드할 노드를 준비합니다"]을 사용하여 각 볼륨에 대해 다음 명령을 사용하여 필요에 따라 오프라인 볼륨을 온라인으로 전환합니다.
 +
-'volume online-vserver <vserver_name> - volume <volume_name>'
+'volume online-vserver_vserver_name_-volume_volume_name_'
 
 . 각 노드에 대해 다음 명령을 사용하여 새 노드에 대한 새 라이센스를 설치합니다.
 +
-'system license add-license-code <license_code, license_code, license_code...>'
+'system license add-license-code_license_code, license_code, license_code..._
 
 +
 license-code 매개변수는 28개의 대문자 알파벳 문자 키 목록을 허용합니다. 한 번에 하나의 라이센스를 추가하거나 한 번에 여러 라이센스를 추가하여 각 라이센스 키를 쉼표로 분리할 수 있습니다.
@@ -83,7 +83,7 @@ license-code 매개변수는 28개의 대문자 알파벳 문자 키 목록을 �
 '시스템 라이센스 정리 - 미사용 - 만료됨'
 
 +
-'System license delete-serial-number <node_serial_number> - package <licensable_package>'
+'System license delete-serial-number_node_serial_number_-package_licensable_package_
 
 +
 --
@@ -97,7 +97,7 @@ license-code 매개변수는 28개의 대문자 알파벳 문자 키 목록을 �
 
 ** 노드에서 다음 명령을 사용하여 클러스터에서 특정 라이센스를 삭제합니다.
 +
-'system license delete-serial-number <node1_serial_number> - package * ''system license delete-serial-number <node2_serial_number> - package *'
+'system license delete-serial-number_node1_serial_number_-package * ''시스템 라이센스 삭제-serial-number_node2_serial_number_-package *'
 
 
 
@@ -124,11 +124,11 @@ Do you want to continue? {y|n}: y
 
 . NSE(NetApp Storage Encryption)를 구성에서 사용 중인 경우 'setenv bootarg.storageencryption.support'를 'kmip.init.maxwait` variable'off'로 설정하여 'true'로 설정하십시오(in_Boot node2와 AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈 _, link:boot_node2_with_a900_controller_and_nvs.html#boot_node2_step1["1단계"]), 변수를 재설정해야 합니다.
 +
-set diag;systemshell-node <node_name> -command sudo kenv -u -p kmip.init.maxwait`
+set diag;systemshell-node_node_name_-command sudo kenv -u -p kmip.init.maxwait`
 
 . 두 노드에서 다음 명령을 사용하여 SP를 구성합니다.
 +
-'System service-processor network modify -node <node_name>'
+'System service-processor network modify -node_node_name_'
 
 +
 을 참조하십시오 link:other_references.html["참조"] SP 및 _ONTAP 9 명령에 대한 자세한 내용은 시스템 관리 참조_에 대한 링크를 참조하십시오. 시스템 '서비스 프로세서 네트워크 수정' 명령에 대한 자세한 내용은 수동 페이지 참조_를 참조하십시오.
@@ -141,7 +141,7 @@ set diag;systemshell-node <node_name> -command sudo kenv -u -p kmip.init.maxwait
 
 .. 다음 명령을 입력합니다.
 +
-'storage failover modify -node <node_name> -cifs -ndo -duration default | medium | low'
+'storage failover modify -node_node_name_-cifs-ndo-duration_default|medium|low_'
 
 +
 *** 시스템에서 작업 부하의 50% ~ 75%가 4KB 이하인 경우 '중간'을 입력합니다.

@@ -35,7 +35,7 @@ summary: '필요한 경우 "시스템 컨트롤러 교체" 명령을 사용하�
 +
 .. 키 관리 서버를 추가합니다.
 +
-'Security key-manager-add <key_management_server_ip_address>'를 선택합니다
+'Security key-manager-add_key_management_server_ip_address_'
 
 .. 나열된 각 키 관리 서버에 대해 이전 단계를 반복합니다.
 +
@@ -54,7 +54,7 @@ summary: '필요한 경우 "시스템 컨트롤러 교체" 명령을 사용하�
 +
 .. 새 노드에서 키 관리 서버 설정 마법사를 시작합니다.
 +
-'Security key-manager setup-node <new_controller_name>'
+'Security key-manager setup-node_new_controller_name_'
 
 .. 마법사의 단계를 완료하여 키 관리 서버를 구성합니다.
 
@@ -78,7 +78,7 @@ summary: '필요한 경우 "시스템 컨트롤러 교체" 명령을 사용하�
 | ONTAP 9.6 또는 9.7 | 보안 키매니저 온보드 동기화 
 
 
-| ONTAP 9.5 | 'Security key-manager setup-node <node_name>' 
+| ONTAP 9.5 | 'Security key-manager setup-node_node_name_' 
 |===
 
 

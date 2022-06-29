@@ -183,7 +183,7 @@ node2_node4
 
 . [[auto_restore_4_Step4] 노드 4의 각 포트에 대한 연결 상태를 'ok' 이외의 다른 상태로 복구합니다. 먼저 물리적 포트에서 다음 명령을 실행한 다음 VLAN 포트에서 한 번에 하나씩 실행합니다.
 +
-'network port reachability repair-node_name-port port port_name'
+'network port reachability repair-node_name_-port_port_name_'
 
 +
 출력은 다음 예제와 같습니다.
@@ -215,22 +215,22 @@ Warning: Repairing port "node2_node4: e0h" may cause it to move into a different
 +
 .. 먼저 브로드캐스트 도메인 멤버쉽에서 인터페이스 그룹 구성원 포트여야 하는 물리적 포트를 제거해야 합니다. 이 작업은 다음 명령을 사용하여 수행할 수 있습니다.
 +
-'network port broadcast-domain remove-ports-broadcast-domain broadcast_domain_name-ports node_name:port_name'
+'network port broadcast-domain remove-ports-broadcast-domain_broadcast_domain_name_-ports_node_name:port_name_'
 
 .. 인터페이스 그룹에 구성원 포트를 추가합니다.
 +
-'network port ifgrp add-port-node_name-ifgrp ifgrp-port port_name'
+'network port ifgrp add-port-node_node_name_-ifgrp_ifgrp_-port_port_name_'
 
 .. 첫 번째 구성원 포트가 추가된 후 약 1분 후에 인터페이스 그룹이 브로드캐스트 도메인에 자동으로 추가됩니다.
 .. 인터페이스 그룹이 적절한 브로드캐스트 도메인에 추가되었는지 확인합니다.
 +
-'network port reachability show-node_name-port ifgrp
+'network port reachability show -node_node_name_-port_ifgrp_'
 
 +
 인터페이스 그룹의 도달 가능성 상태가 '정상'이 아닌 경우 해당 브로드캐스트 도메인에 할당합니다.
 
 +
-'network port broadcast-domain add-ports-broadcast-domain broadcast_domain_name-ports node:port'
+'network port broadcast-domain add-ports-broadcast-domain_broadcast_domain_name_-ports_node:port_'
 
 
 
@@ -242,13 +242,13 @@ Warning: Repairing port "node2_node4: e0h" may cause it to move into a different
 
 .. 클러스터 브로드캐스트 도메인의 도달 가능 상태가 '정상'이 아닌 경우 해당 포트에 대한 복구 기능을 제공합니다.
 +
-'network port reachability repair-node_name-port port port_name'
+'network port reachability repair-node_name_-port_port_name_'
 
 
 
 . 다음 명령 중 하나를 사용하여 나머지 물리적 포트를 올바른 브로드캐스트 도메인으로 이동합니다.
 +
-'network port reachability repair-node_name-port port port_name'
+'network port reachability repair-node_name_-port_port_name_'
 
 +
 네트워크 포트 브로드캐스트 도메인 제거 포트
@@ -310,7 +310,7 @@ VLAN 복원이 성공하면 지정된 대상 포트에 교체된 VLAN이 생성�
 
 . 모든 포트 수리가 완료된 후 비어 있는 브로드캐스트 도메인을 삭제합니다.
 +
-'broadcast-domain delete-broadcast-domain broadcast_domain_name'
+'broadcast-domain delete-broadcast-domain_broadcast_domain_name_'
 
 . 포트 도달 가능성 확인:
 +
@@ -335,7 +335,7 @@ VLAN 복원이 성공하면 지정된 대상 포트에 교체된 VLAN이 생성�
 
 .. LIF 홈 포트 복원:
 +
-disspled-interface restore-home-node-node_name-vserver vserver_name-lif-name LIF_name'입니다
+dissplaced-interface restore-home-node-node_node_name_-vserver_vserver_name_-lif-name_LIF_name _'입니다
 
 
 

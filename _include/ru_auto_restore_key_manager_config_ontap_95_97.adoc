@@ -9,10 +9,10 @@
 | 이 ONTAP 버전의 경우… | 이 명령 사용... 
 
 
-| ONTAP 9.6 또는 9.7 | 보안 키 관리자 온보드 동기화 
+| ONTAP 9.6 또는 9.7 | 보안 키매니저 온보드 동기화 
 
 
-| ONTAP 9.5 | 보안 키 관리자 설정 노드 <node_name> 
+| ONTAP 9.5 | 'Security key-manager setup-node_node_name_' 
 |===
 . Onboard Key Manager의 클러스터 전체 암호를 입력합니다.
 

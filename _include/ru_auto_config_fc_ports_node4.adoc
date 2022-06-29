@@ -43,11 +43,11 @@
 
 ** 타겟 포트를 프로그래밍하려면
 +
-'ucadmin modify -m fc -t target <adapter>'을 선택합니다
+'ucadmin modify -m fc-t target_adapter_'
 
 ** 이니시에이터 포트를 프로그래밍하려면:
 +
-'ucadmin modify -m fc -t initiator <adapter>'를 선택합니다
+'ucadmin modify -m fc -t initiator_adapter_'
 
 
 
@@ -55,7 +55,7 @@
 
 
 
-| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 필요에 따라 노드 4의 FC 포트를 수정합니다. 'ucadmin modify -m fc -t initiator -f <adapter_port_name>' -t'는 FC4 유형, 타겟 또는 이니시에이터입니다. * 참고 *: FC 포트는 이니시에이터로 프로그래밍해야 합니다. 
+| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 필요에 따라 노드 4의 FC 포트를 수정합니다. 'ucadmin modify -m fc -t initiator -f_adapter_port_name_' -t'는 FC4 유형, 타겟 또는 이니시에이터입니다. * 참고 *: FC 포트는 이니시에이터로 프로그래밍해야 합니다. 
 |===
 . 유지 관리 모드 종료:
 +

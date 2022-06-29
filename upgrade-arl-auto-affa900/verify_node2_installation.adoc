@@ -129,7 +129,7 @@ Node2
 
 . [[restore_node2_step4] 다음 명령을 사용하여 노드 2의 각 포트에 대해 다음 순서로 "ok" 이외의 도달 가능성 상태로 복구:
 +
-'network port reachability repair-node_name-port port port_name'
+'network port reachability repair-node_name_-port_port_name_'
 
 +
 --
@@ -186,7 +186,7 @@ Warning: Repairing port "node2:e9d" may cause it to move into a different broadc
 
 .. LIF 홈 노드 및 홈 포트를 복원합니다.
 +
-disspled-interface restore-home-node-node_name-vserver vserver_name-lif-name LIF_name'입니다
+dissplaced-interface restore-home-node-node_node_name_-vserver_vserver_name_-lif-name_LIF_name _'입니다
 
 
 

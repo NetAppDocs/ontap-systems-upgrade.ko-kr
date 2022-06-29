@@ -30,7 +30,7 @@ summary: '필요한 경우 "시스템 컨트롤러 교체" 명령을 사용하�
 +
 .. 키 관리 서버를 추가합니다.
 +
-'Security key-manager-add <key_management_server_ip_address>'를 선택합니다
+'Security key-manager-add_key_management_server_ip_address_'
 
 .. 나열된 각 키 관리 서버에 대해 이전 단계를 반복합니다. 최대 4개의 키 관리 서버를 연결할 수 있습니다.
 .. 키 관리 서버가 성공적으로 추가되었는지 확인합니다.
@@ -46,13 +46,13 @@ summary: '필요한 경우 "시스템 컨트롤러 교체" 명령을 사용하�
 +
 .. 새 노드에서 키 관리 서버 설정 마법사를 시작합니다.
 +
-'Security key-manager setup-node <new_controller_name>'
+'Security key-manager setup-node_new_controller_name_'
 
 .. 마법사의 단계를 완료하여 키 관리 서버를 구성합니다.
 
 
 . 연결된 모든 키 관리 서버에서 새 노드로 인증 키 복원:
 +
-'Security key-manager restore-node <new_controller_name>'입니다
+'Security key-manager restore-node_new_controller_name_'
 
 

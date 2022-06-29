@@ -138,14 +138,14 @@ Adapter  Mode     Type       Mode     Type     Status
 |===
 . [[man_check_3_step7] 어댑터가 이니시에이터 모드에 있고 UTA/UTA2 포트가 온라인 상태인 경우 UTA/UTA2 포트를 오프라인으로 전환합니다.
 +
-'스토리지 비활성화 어댑터 <adapter_name>'
+'STORAGE DISABLE ADAPTER_ADAPTER_NAME_'
 
 +
 유지 관리 모드에서는 대상 모드의 어댑터가 자동으로 오프라인 상태가 됩니다.
 
 . [[man_check_3_step8]] 현재 구성이 원하는 사용과는 일치하지 않으면 필요에 따라 구성을 변경하십시오.
 +
-''ucadmin modify -m fc|CNA-t initiator|target<adapter_name>'
+''ucadmin modify -m fc|CNA-t initiator|target_adapter_name_'
 
 +
 ** m은 성격 모드, 즉 fc, CNA.
@@ -235,10 +235,10 @@ Adapter  Mode     Type       Mode     Type       Status
 | 시스템이... | 그러면... 
 
 
-| 스토리지 디스크가 있습니다 | 'network fcp adapter modify -node <node_name> - adapter <adapter_name> - state up' 
+| 스토리지 디스크가 있습니다 | 'network fcp adapter modify -node_node_name_-adapter_adapter_name_-state up 
 
 
-| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 'fcp config <adapter_name> up' 
+| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 'fcp config_adapter_name_up 
 |===
 . [[man_check_3_step13]] 포트에 케이블을 연결합니다.
 . [[pep14]] 다음 작업 중 하나를 수행합니다.

@@ -70,15 +70,15 @@ boot_ONTAP maint를 선택합니다
 | 스토리지 디스크가 있습니다  a| 
 다음 명령 중 하나를 입력하여 필요에 따라 노드 3의 FC 포트를 수정합니다.
 
-** 대상 포트를 프로그래밍하려면 시스템 노드 하드웨어 unified-connect modify-type|-t target-adapter <port_name>'을 선택합니다
-** 이니시에이터 포트를 프로그래밍하려면 'system node hardware unified-connect modify -type|-t initiator-adapter <port_name>'을 사용합니다
+** 대상 포트를 프로그래밍하려면 시스템 노드 하드웨어 unified-connect modify-type|-t target-adapter_port_name_
+** 이니시에이터 포트를 프로그래밍하려면 '시스템 노드 하드웨어 unified-connect modify-type|-t initiator-adapter_port_name_'
 
 
 '-t'는 FC4 유형이며 타겟이나 이니시에이터입니다.
 
 
 
-| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 필요에 따라 다음 명령을 입력하여 노드 3의 FC 포트를 수정합니다. 'ucadmin modify -m fc -t initiator -f <adapter_port_name>' -t'는 FC4 유형, 타겟 또는 이니시에이터입니다. * 참고 *: FC 포트는 이니시에이터로 프로그래밍해야 합니다. 
+| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 필요에 따라 다음 명령을 입력하여 노드 3의 FC 포트를 수정합니다. 'ucadmin modify -m fc -t initiator -f_adapter_port_name_' -t'는 FC4 유형, 타겟 또는 이니시에이터입니다. * 참고 *: FC 포트는 이니시에이터로 프로그래밍해야 합니다. 
 |===
 . [[7단계]] 다음 작업 중 하나를 수행합니다.
 +

@@ -40,7 +40,7 @@ summary: 스토리지를 이동하여 업그레이드하기 전에 원래 노드
  a| 
 쉘프, 각 쉘프의 디스크 수, 플래시 스토리지 세부 정보, 메모리, NVRAM 및 네트워크 카드
  a| 
-'system node run-node <node_name> sysconfig'
+'system node run-node_node_name_sysconfig'
 
 
 
@@ -54,14 +54,14 @@ summary: 스토리지를 이동하여 업그레이드하기 전에 원래 노드
  a| 
 물리적 포트
  a| 
-'network port show-node <node_name>-type physical
+'network port show-node_node_name_-type physical
 
 
 
  a| 
 페일오버 그룹
  a| 
-'network interface failover-groups show-vserver <vserver_name>'을 참조하십시오
+'network interface failover-groups show -vserver_vserver_name _'
 
 클러스터 차원 이 아닌 페일오버 그룹의 이름과 포트를 기록합니다.
 
@@ -70,7 +70,7 @@ summary: 스토리지를 이동하여 업그레이드하기 전에 원래 노드
  a| 
 VLAN 구성
  a| 
-'network port vlan show-node <node_name>'
+'network port vlan show-node_node_name_'
 
 각 네트워크 포트 및 VLAN ID 페어링을 기록합니다.
 
@@ -79,7 +79,7 @@ VLAN 구성
  a| 
 인터페이스 그룹 구성
  a| 
-'network port ifgrp show-node <node_name>-instance'
+'network port ifgrp show -node_node_name_-instance'
 
 인터페이스 그룹 및 그룹에 할당된 포트의 이름을 기록합니다.
 

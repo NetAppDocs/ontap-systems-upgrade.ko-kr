@@ -46,6 +46,6 @@ https://library.netapp.com/ecm/ecm_download_file/ECMP1140535["NetApp CN1610 클�
 
 . 각 원본 노드에서 AutoSupport 메시지를 보내 기술 지원 팀에 업그레이드에 대해 알립니다.
 +
-'System node AutoSupport invoke - node_name - type all - message "Upgrading node_name from platform_original to platform_new"
+'system node AutoSupport invoke - node_node_name _ -type all -message "Upgrading node_name from_platform_original_to_platform_new_"
 
 

@@ -105,19 +105,19 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 +
 .. [[man_lif_verify_4_substa]] 인터페이스 그룹의 node2에 이미 속해 있는 node3에 호스팅된 모든 LIF를 노드 4의 포트로 마이그레이션: 각 LIF에 대해 다음 명령을 한 번 입력하여 동일한 네트워크에서 LIF를 호스팅할 수 있습니다.
 +
-'network interface migrate -vserver <vserver_name> -lif <lif_name> -destination-node node4 –destination-port <NetPort | ifgrp>'
+'network interface migrate-vserver_vserver_name_-lif_lif_name_-destination-node node4 – destination-port_NetPort|ifgrp_'
 
 .. 에서 LIF의 홈 포트 및 홈 노드를 수정합니다 <<man_lif_verify_4_substepa,하위 단계 A>> 각 LIF에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
 +
-'network interface modify -vserver <vserver_name> -lif <datalif_name> -home-node node4 home-port <NetPort | ifgrp>'
+'network interface modify -vserver_vserver_name_-lif_datalif_name_-home-node node4 home-port_NetPort|ifgrp_'
 
 .. [[man_lif_verify_4_substeepc]] 이전에 VLAN 포트의 node2에 속해 있던 node3에 호스팅된 모든 LIF를 노드 4의 포트로 마이그레이션합니다. 노드 4에서는 각 LIF에 대해 다음 명령을 한 번 입력하여 동일한 네트워크에 LIF를 호스팅할 수 있습니다.
 +
-'network interface migrate -vserver <vserver_name> -lif <datalif_name> -destination-node node4 –destination-port <NetPort | ifgrp>'
+'network interface migrate-vserver_vserver_name_-lif_datalif_name_-destination-node node4 – destination-port_NetPort|ifgrp_'
 
 .. 에서 LIF의 홈 포트 및 홈 노드를 수정합니다 <<man_lif_verify_4_substepc,하위 단계 c>> 각 LIF에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
 +
-'network interface modify -vserver <vserver_name> -lif <datalif_name> -home-node <node4>home-port <NetPort | ifgrp>'
+'network interface modify -vserver_vserver_name_-lif_datalif_name_-home-node_node4_home-port_NetPort|ifgrp_'
 
 
 
@@ -138,7 +138,7 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 |===
 . [[man_lif_verify_4_Step5]] 플랫폼에서 동일하지 않은 데이터 포트가 있는 경우 다음 명령을 입력하여 브로드캐스트 도메인에 포트를 추가합니다.
 +
-'network port broadcast-domain add-ports-IPSpace <IPspace_name> - broadcast-domain mgmt ports <node:port>'
+'network port broadcast-domain add-ports-IPSpace_IPspace_name_-broadcast-domain mgmt ports_node:port_'
 
 +
 다음 예에서는 노드 "6280-1"의 포트 "e0a"와 노드 "8060-1"의 포트 "e0i"를 IPspace에서 브로드캐스트 도메인 관리에 추가합니다. 기본값:
@@ -150,11 +150,11 @@ cluster::> network port broadcast-domain add-ports -ipspace Default  -broadcast-
 ----
 . 각 LIF에 대해 다음 명령을 한 번 입력하여 각 NAS 데이터 LIF를 노드 4로 마이그레이션합니다.
 +
-'network interface migrate-vserver <vserver-name> -lif <datalif-name> -destination-node <node4> -destination-port <NetPort | ifgrp> -home-node <node4>'
+'network interface migrate-vserver_vserver-name_-lif_datalif-name_-destination-node_node4_-destination-port_NetPort|ifgrp_-home-node_node4_'
 
 . 데이터 마이그레이션이 영구한지 확인:
 +
-'network interface modify -vserver <vserver_name> -lif <datalif_name> -home-port <NetPort | ifgrp>'
+'network interface modify -vserver_vserver_name_-lif_datalif_name_-home-port_NetPort|ifgrp_'
 
 . [[man_lif_verify_4_Step8]] 다음 명령어를 입력하여 모든 네트워크 포트를 나열하고 출력을 확인하여 모든 링크의 상태를 "up"으로 확인한다.
 +
@@ -194,7 +194,7 @@ node4
 
 .. 각 이전 네트워크 포트에 대해 다음 명령을 한 번 입력합니다.
 +
-'network port delete-node <node_name> - port <port_name>'
+'network port delete-node_node_name_-port_port_name_
 
 .. 다음 명령을 입력하여 admin 레벨로 돌아갑니다.
 +
@@ -270,25 +270,25 @@ NOTE: 새 구성의 SAN LIF가 동일한 '스위치 포트'에 아직 연결된 
 +
 ... LIF 상태를 아래로 설정합니다.
 +
-'network interface modify -vserver <vserver_name> -lif <lif_name> -status -admin down'
+'network interface modify -vserver_vserver_name_-lif_lif_name_-status-admin down'
 
 ... 포트 세트에서 LIF를 제거합니다.
 +
-' remove-vserver <vserver_name> - 포트셋 <포트셋_이름> -포트-이름 <포트_이름>'
+' remove-vserver_vserver_name_-포트셋_포트셋_이름_-포트-이름_포트_이름_'
 
 ... 다음 명령 중 하나를 입력합니다.
 +
 **** 단일 LIF 이동:
 +
-'network interface modify -lif <lif_name> - home-port <new_home_port>'
+'network interface modify -lif_lif_name_-home-port_new_home_port_'
 
 **** 존재하지 않거나 잘못된 단일 포트에 있는 모든 LIF를 새 포트로 이동:
 +
-'{-home-port <port_on_node2> -home-node <node2> -role data} -home-port <new_home_port_on_node4>' 네트워크 인터페이스 수정
+'network interface modify {-home-port_port_on_node2_-home-node_node2_-role data} - home-port_new_home_port_on_node4_'
 
 **** 포트 세트에 LIF를 다시 추가합니다.
 +
-'<add-vserver_name> - 포트셋 <포트셋_이름> -포트-이름 <포트_이름>'
+``add-vserver_vserver_name_-포트셋_포트셋_이름_-포트-이름_포트_이름_'
 
 
 
@@ -302,14 +302,14 @@ NOTE: SAN LIF를 원래 포트와 동일한 링크 속도를 가진 포트로 �
 
 . LIF가 다음 명령을 입력하여 노드에서 트래픽을 허용하고 전송할 수 있도록 모든 LIF의 상태를 "Up"으로 수정합니다.
 +
-'network interface modify -vserver <vserver_name> -home-port <port_name> -home-node <node4>lif <lif_name> -status-admin up'
+'network interface modify -vserver_vserver_name_-home-port_port_name_-home-node_node4_lif_lif_name_-status-admin up'
 
 . SAN LIF가 올바른 포트로 이동되었으며, 두 노드 중 하나에 다음 명령을 입력하고 출력을 검사하여 LIF 상태가 'UP'인지 확인하십시오.
 +
-'network interface show-home-node <node4> - role data'
+'network interface show-home-node_node4_-role data
 
 . [[man_lif_verify_4_Step13] LIF가 다운된 경우 각 LIF에 대해 다음 명령을 한 번 입력하여 LIF의 관리 상태를 'up'으로 설정하십시오.
 +
-'network interface modify -vserver <vserver_name> -lif <lif_name> -status -admin up'
+'network interface modify -vserver_vserver_name_-lif_lif_name_-status-admin up
 
 

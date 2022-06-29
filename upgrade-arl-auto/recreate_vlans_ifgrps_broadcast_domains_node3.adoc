@@ -21,18 +21,18 @@ VLAN, 인터페이스 그룹 및 브로드캐스트 도메인을 만들고 다�
 .단계
 . 에 기록된 노드 1 정보를 사용하여 노드 3에서 VLAN을 다시 생성합니다 link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치합니다"] 섹션:
 +
-'network port vlan create-node <node_name>-vlan <vlan-names>'
+'network port vlan create-node_node_name_-vlan_vlan-names_'
 
 . 에 기록된 node1 정보를 사용하여 node3에 인터페이스 그룹을 다시 만듭니다 link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치합니다"] 섹션:
 +
-'network port ifgrp create-node <node_name>-ifgrp <port_ifgrp_names>-Distr-func'
+'network port ifgrp create-node_node_name_-ifgrp_port_ifgrp_names_-Distr-func'
 
 . 에 기록된 node1 정보를 사용하여 node3에 브로드캐스트 도메인을 다시 만듭니다 link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치합니다"] 섹션:
 +
-'network port broadcast-domain create-IPSpace Default-broadcast-domain <broadcast_domain_names> - MTU <mtu_size> - ports <node_name:port_name,node_name:port_name>'
+'network port broadcast-domain create-IPSpace Default-broadcast-domain_broadcast_domain_names_-MTU_MTU_size_-ports_node_name:port_name,node_name:port_name_'
 
 . 새로 다시 생성된 브로드캐스트 도메인에 노드3 포트를 추가합니다.
 +
-'network port broadcast-domain add-ports-broadcast-domain <broadcast_domain_names> - ports <node_name:port_name,node_name:port_name>'
+'network port broadcast-domain add-ports-broadcast-domain_broadcast_domain_names_-ports_node_name:port_name,node_name:port_name_'
 
 

@@ -48,7 +48,7 @@ NOTE: 관리 포트와 IP를 netboot 연결로 사용해야 합니다. 업그레
 
 
 | 실행 중이 아닙니다  a| 
-부팅 환경 프롬프트에서 다음 명령을 사용하여 연결을 수동으로 구성합니다. 'ifconfig e0M -addr=filer_addr-mask=netmask-GW=gateway-dns=dns_addr domain=dns_domain''filer_addr'은 스토리지 시스템의 IP 주소입니다. 넷마스크는 스토리지 시스템의 네트워크 마스크입니다. 게이트웨이(gateway)는 스토리지 시스템의 관문입니다. dns_addr은 네트워크에 있는 이름 서버의 IP 주소입니다. 이 매개 변수는 선택 사항입니다. dns_domain은 DNS(Domain Name Service) 도메인 이름입니다. 이 매개 변수는 선택 사항입니다.
+부팅 환경 프롬프트에서 다음 명령을 사용하여 연결을 수동으로 구성합니다. 'ifconfig e0M -addr=_filer_addr_-mask=_netmask_-GW=_gateway_-dns=_dns_ addr_-domain=_dns_domain_''_filer_addr_'은 스토리지 시스템의 IP 주소입니다. 스토리지 시스템의 네트워크 마스크는 '_netmask_'입니다. '_gateway_'는 스토리지 시스템의 게이트웨이입니다. '_dns_addr_'은(는) 네트워크에 있는 이름 서버의 IP 주소입니다. 이 매개 변수는 선택 사항입니다. '_dns_domain_'은 DNS(Domain Name Service) 도메인 이름입니다. 이 매개 변수는 선택 사항입니다.
 
 
 NOTE: 인터페이스에 다른 매개 변수가 필요할 수 있습니다. 펌웨어 프롬프트에 "help ifconfig"를 입력하여 세부 정보를 확인합니다.
@@ -177,7 +177,7 @@ LOADER 프롬프트에서 node1이 중지됩니다.
 
 . 필요한 경우 노드 1의 날짜를 설정합니다.
 +
-'날짜 설정 < mm/dd/yyyy>'
+'날짜 설정_mm/dd/yyyy_'
 
 +
 
@@ -189,7 +189,7 @@ NOTE: node1에서 해당 UTC 날짜를 설정합니다.
 
 . 필요한 경우 node1의 시간을 설정합니다.
 +
-'세트 시간<hh:mm:ss>'
+'세트 시간_hh:mm:ss_'
 
 +
 
@@ -197,10 +197,10 @@ NOTE: node1에서 해당 UTC 시간을 설정합니다.
 
 . 노드 1의 파트너 시스템 ID 설정:
 +
-'setenv PARTNER-sysid <node2_sysid>'
+'setenv PARTNER-sysid_node2_sysid_'
 
 +
-node2의 노드 show-node node2 명령 출력에서 node2 시스템 ID를 확인할 수 있습니다.
+노드 2의 노드 show-node_node2_ 명령 출력에서 node2 시스템 ID를 확인할 수 있습니다.
 
 +
 .. 설정을 저장합니다.

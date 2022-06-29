@@ -10,7 +10,7 @@
 
 .. 다음 명령을 입력합니다.
 +
-'storage failover modify -node <node_name> -cifs -ndo -duration default | medium | low'
+'storage failover modify -node_node_name_-cifs-ndo-duration_default|medium|low_'
 
 +
 *** 시스템에서 작업 부하의 50% ~ 75%가 4KB 이하인 경우 '중간'을 입력합니다.

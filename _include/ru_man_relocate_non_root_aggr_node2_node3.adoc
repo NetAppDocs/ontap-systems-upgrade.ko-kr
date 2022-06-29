@@ -7,11 +7,11 @@
 .단계
 . [[1단계]] 노드 2에 대해 NetApp에 AutoSupport 메시지 보내기:
 +
-'System node AutoSupport invoke -node <node2> -type all -message "Upgrading <node2> from <platform_old> to <platform_new>"
+'system node AutoSupport invoke - node_node2_ - all-message "Upgrading_node2_from_platform_old_to_platform_new_"
 
 . AutoSupport 메시지가 전송되었는지 확인합니다.
 +
-'System node AutoSupport show-node <node2> -instance'
+'System node AutoSupport show -node_node2_-instance'
 
 +
 "마지막으로 보낸 제목:" 및 "마지막 보낸 시간:" 필드에는 마지막으로 보낸 메시지의 메시지 제목과 메시지를 보낸 시간이 포함됩니다.
@@ -24,11 +24,11 @@
 
 .. 노드 2가 소유한 애그리게이트 나열:
 +
-'Storage aggregate show-owner-name <node2>'
+'Storage aggregate show-owner-name_node2_'
 
 .. 애그리게이트 재배치 시작:
 +
-'storage aggregate relocation start-node <node2> - destination <node3> - aggregate-list * -ndo-controller-upgrade true'
+'storage aggregate relocation start -node_node2_-destination_node3_-aggregate-list * -ndo-controller-upgrade true'
 
 +
 
@@ -46,7 +46,7 @@ NOTE: 이 명령은 비루트 애그리게이트만 찾습니다.
 
 . 노드 2의 재배치 상태를 확인합니다.
 +
-'Storage aggregate relocation show-node <node2>'를 선택합니다
+'Storage aggregate relocation show -node_node2_'
 
 +
 재배치된 aggregate에 대해 출력에 "Done"이 표시됩니다.
@@ -74,7 +74,8 @@ NOTE: 다음 단계로 진행하기 전에 노드 2가 소유한 모든 애그�
 또한 EMS 로그를 확인하여 필요한 수정 조치를 확인할 수도 있습니다.
 
 +
-* 참고 *: '이벤트 로그 표시' 명령은 발생한 모든 오류를 나열합니다.
+
+NOTE: 'event log show' 명령은 발생한 모든 오류를 나열합니다.
 
 .. 수정 조치를 수행합니다.
 .. 권한 수준을 고급으로 설정합니다.
@@ -83,7 +84,7 @@ NOTE: 다음 단계로 진행하기 전에 노드 2가 소유한 모든 애그�
 
 .. 장애가 발생하거나 거부되는 애그리게이트를 재배치합니다.
 +
-'Storage aggregate relocation start-node <node2> - destination <node3> - aggregate-list * -ndo-controllerupgrade true'
+'Storage aggregate Relocation start -node_node2_-destination_node3_-aggregate-list * -ndo-controllerupgrade true
 
 .. 메시지가 나타나면 y를 입력합니다.
 .. 관리자 권한 레벨로 돌아갑니다.
@@ -109,27 +110,27 @@ NOTE: 다음 단계로 진행하기 전에 노드 2가 소유한 모든 애그�
 |===
 . [[man_relocate_2_3_step6]]루트가 아닌 모든 애그리게이트가 노드 3에서 온라인 상태인지 확인:
 +
-'Storage aggregate show-node <node3> - state offline-root false'
+'storage aggregate show -node_node3_ -state offline-root false'
 
 +
 애그리게이트가 오프라인 상태가 되거나 외부 애그리게이트로 전환된 경우, 각 애그리게이트에 대해 한 번씩 온라인 상태를 유지해야 합니다.
 
 +
-'Storage aggregate online-aggregate <aggr_name>'
+'Storage aggregate online-aggregate_agr_name_'
 
 . 노드 3에서 모든 볼륨이 온라인 상태인지 확인합니다.
 +
-'volume show-node <node3> - state offline(볼륨 표시 노드 <node3> - 상태 오프라인)
+'volume show-node_node3_-state offline
 
 +
 노드 3에서 오프라인 상태인 볼륨이 있는 경우 각 볼륨에 대해 한 번씩 온라인 상태로 전환해야 합니다.
 
 +
-'volume online-vserver <Vserver-NAME> - volume <volume-name>'
+'volume online-vserver_Vserver-name_-volume_volume-name_'
 
 . 노드 2가 루트가 아닌 온라인 애그리게이트를 소유하지 않는지 확인합니다.
 +
-스토리지 집계 show-owner-name <node2>-ha-policy SFO-state online
+스토리지 집계 show-owner-name_node2_-ha-policy SFO-state online
 
 +
 루트가 아닌 모든 온라인 애그리게이트가 이미 노드 3에 재배치되었기 때문에 명령 출력에 루트가 아닌 온라인 애그리게이트를 표시할 수 없습니다.

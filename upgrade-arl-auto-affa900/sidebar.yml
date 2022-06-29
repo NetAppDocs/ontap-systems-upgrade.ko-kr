@@ -15,6 +15,7 @@ entries:
 - title: ARL 업그레이드 개요
   url: "/upgrade-arl-auto-affa900/overview_of_the_arl_upgrade.html"
 - title: 1단계. 업그레이드를 준비합니다
+  pdf-filename: 1단계. 업그레이드 준비(AFF A900 또는 FAS9500으로 업그레이드)
   entries:
   - title: 업그레이드 하드웨어를 확인합니다
     url: "/upgrade-arl-auto-affa900/verify_upgrade_hardware.html"
@@ -77,6 +78,7 @@ entries:
   - title: SnapMirror 작업을 재개합니다
     url: "/upgrade-arl-auto-affa900/resume_snapmirror_operations.html"
 - title: 문제 해결
+  pdf-filename: 문제 해결(AFF A900 또는 FAS9500으로 업그레이드)
   entries:
   - title: 개요
     url: "/upgrade-arl-auto-affa900/troubleshoot_index.html"

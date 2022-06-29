@@ -9,7 +9,7 @@
 .단계
 . 원래 노드 각각에 대해 한 번씩 노드 쉘을 입력합니다.
 +
-'System node run-node <node_name>'입니다
+'system node run-node_node_name_'
 
 . 내부 드라이브를 표시합니다.
 +
