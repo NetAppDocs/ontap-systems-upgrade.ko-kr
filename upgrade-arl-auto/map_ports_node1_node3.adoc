@@ -243,7 +243,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 ----
 . 필요한 경우 포트 7700에서 청취하지 않는 각 클러스터 LIF에 대해 LIF의 관리 상태를 '소유'로 설정한 다음 '설정'으로 설정합니다.
 +
-'::> net int modify -vserver Cluster-lif <cluster-lif> -status-admin down;net int modify -vserver Cluster-lif <cluster-lif> -status-admin up'
+'::> net int modify -vserver cluster -lif_cluster -lif_ -status -admin down;net int modify -vserver Cluster-lif_cluster -lif_ -status -admin up'
 
 +
 11단계를 반복하여 클러스터 LIF가 포트 7700에서 수신 대기 중인지 확인합니다.

@@ -85,7 +85,7 @@ node2                 true    true
 'network interface show-role data-curr-node_node2_-home-node_node1_'
 
 +
-LIF가 다운되었는지 확인하려면 * Status Admin/Oper * 열을 확인하십시오. LIF가 다운된 경우 에 문의하십시오 link:troubleshoot.html["그을음 문제"] 섹션을 참조하십시오.
+LIF가 다운되었는지 확인하려면 * Status Admin/Oper * 열을 확인하십시오. LIF가 다운된 경우 에 문의하십시오 link:troubleshoot_index.html["그을음 문제"] 섹션을 참조하십시오.
 
 . 다음 작업 중 하나를 수행합니다.
 +

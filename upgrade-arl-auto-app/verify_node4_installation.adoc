@@ -61,7 +61,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 ----
 . 필요한 경우 포트 7700에서 청취하지 않는 각 클러스터 LIF에 대해 LIF의 관리 상태를 '소유'로 설정한 다음 '설정'으로 설정합니다.
 +
-'::> net int modify -vserver Cluster-lif <cluster-lif> -status-admin down;net int modify -vserver Cluster-lif <cluster-lif> -status-admin up'
+'::> net int modify -vserver cluster -lif_cluster -lif_ -status -admin down;net int modify -vserver Cluster-lif_cluster -lif_ -status -admin up'
 
 +
 3단계를 반복하여 클러스터 LIF가 포트 7700에서 수신 대기 중인지 확인합니다.
@@ -266,7 +266,7 @@ Warning: Repairing port "node2_node4: e0h" may cause it to move into a different
 +
 .. 교체된 VLAN 나열:
 +
-디세퍼드-VLAN 쇼
+'클러스터 컨트롤러 교체 네트워크가 교체되었습니다 - VLAN 표시'
 
 +
 다음과 같은 출력이 표시됩니다.
@@ -283,7 +283,7 @@ Node1       a0a           822, 823
 ....
 .. 이전 기본 포트에서 대체된 VLAN 복원:
 +
-디즈퍼스VLAN 복원
+'클러스터 컨트롤러 교체 네트워크 - VLAN 복원'
 
 +
 다음은 인터페이스 그룹 a0a에서 동일한 인터페이스 그룹으로 다시 교체된 VLAN을 복원하는 예입니다.
@@ -305,7 +305,7 @@ VLAN 복원이 성공하면 지정된 대상 포트에 교체된 VLAN이 생성�
 +
 새로 복원된 VLAN이 해당 브로드캐스트 도메인에 배치될 때까지 약 1분 정도 기다립니다.
 
-.. disspled-vLANs show 출력에 포함되지 않지만 다른 물리적 포트에 구성해야 하는 VLAN 포트에 대해 필요에 따라 새 VLAN 포트를 생성합니다.
+.. 클러스터 컨트롤러 교체 네트워크 교체된 VLAN에 표시되지 않지만 다른 물리적 포트에 구성해야 하는 VLAN 포트에 대해 필요에 따라 새 VLAN 포트를 생성합니다.
 
 
 . 모든 포트 수리가 완료된 후 비어 있는 브로드캐스트 도메인을 삭제합니다.

@@ -387,7 +387,6 @@
   <block id="231cf4c70d866b616c21baddaeed0696" category="section-title">문제 해결</block>
   <block id="197b89f0e243e9def8dc0d01e39c6fe0" category="paragraph">이 절차에는 문제 해결 방법이 포함되어 있습니다.</block>
   <block id="d60c463bb4096f3ed4bd1618626dfe10" category="inline-link-macro">문제 해결</block>
-  <block id="bc11cb73d84dd1ca35d5b999ca9afb54" category="paragraph">컨트롤러를 업그레이드하는 동안 문제가 발생하면 을 참조하십시오 <block ref="5b03d19ea0e9e656b77e7538c0164f96" category="inline-link-macro-rx"></block> 자세한 내용 및 가능한 해결 방법은 절차 끝 부분의 섹션을 참조하십시오.</block>
   <block id="9759ad3dfabdb9631ec5fba47d71c313" category="doc">전환, 복구, 스위치백을 확인합니다</block>
   <block id="a1bf01274d938e19b1e43eb57fc3c557" category="paragraph">MetroCluster 구성의 전환, 복구 및 스위치백 작업을 확인해야 합니다.</block>
   <block id="bba101d4874014cacb5b1fc7fbe7165c" category="paragraph">을 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> MetroCluster 관리 및 Disaster Recovery_content에 연결하고 협상된 전환, 복구 및 스위치백에 대한 절차를 따릅니다.</block>
@@ -976,7 +975,6 @@
   <block id="2adf18e995507a97d0d1e8af8c85e4f0" category="paragraph">다음 예는 노드에 대해 스토리지 페일오버가 비활성화되었을 때 'storage failover show' 명령의 출력을 보여줍니다.</block>
   <block id="c4b530495164ce1eeaab4b08e9534859" category="list-text">데이터 LIF 상태를 확인합니다.</block>
   <block id="5fbed693cb6b31f11a703890fc87d45f" category="inline-link-macro">그을음 문제</block>
-  <block id="1337205e844f111a9850e68ab7fe85fb" category="paragraph">LIF가 다운되었는지 확인하려면 * Status Admin/Oper * 열을 확인하십시오. LIF가 다운된 경우 에 문의하십시오 <block ref="f37de8559f00b8ef58b12c6857d24513" category="inline-link-macro-rx"></block> 섹션을 참조하십시오.</block>
   <block id="8405f8a611485472bfa1ab420a9a9a02" category="cell">로 이동합니다 <block ref="caeb7d58e7293f2d87a762ba5d4df397" category="inline-xref-macro-rx"></block>.</block>
   <block id="a4749d514e1548558e90fda0a15746ff" category="cell">로 이동합니다 <block ref="242f372e62d4ec9b0208b2bd3cc69817" category="inline-xref-macro-rx"></block>.</block>
   <block id="9cd28d632d37554bc6b8bc94ae2073e5" category="list-text">[[man_Retire_1_step6]]두 노드 중 하나에서 고급 권한 수준에 액세스합니다.</block>
@@ -1277,7 +1275,6 @@
   <block id="68e6b44b3a749a5a92b3130b283a8d5c" category="paragraph">이 작업은 각 MetroCluster 사이트에서 수행해야 합니다.</block>
   <block id="2582e010e97c2f1b4ef7a684672e4598" category="list-text">클러스터에 로그인합니다.</block>
   <block id="ee4b431a595989bb32df666099e34bf8" category="list-text">유지 관리의 시작을 나타내는 AutoSupport 메시지를 호출합니다.</block>
-  <block id="000be743e2bbedc544736fd887cacf7b" category="paragraph">'System node AutoSupport invoke-node * -type all-message MAINT=&lt;maintenance-window-in-hours&gt;'</block>
   <block id="8b8313711f50dddf1be23555c3e398af" category="paragraph">유지보수 윈도우 값은 유지보수 윈도우 길이를 최대 72시간으로 지정합니다. 시간이 경과하기 전에 유지 관리가 완료된 경우 유지 보수 기간이 종료되었음을 나타내는 AutoSupport 메시지를 호출할 수 있습니다.</block>
   <block id="538f577c4284d097aef57681a2acf728" category="paragraph">'System node AutoSupport invoke-node * -type all-message maINT=end'</block>
   <block id="047c004f2f53364ce170133f533be47f" category="list-text">파트너 사이트에서 이 단계를 반복합니다.</block>
@@ -2339,7 +2336,6 @@
   <block id="244220515525d7bbce7364431256c704" category="admonition">업그레이드하는 시스템의 네트워킹 구성의 복잡성에 따라 필요한 경우 모든 포트가 올바르게 배치될 때까지 5단계, (a)에서 (g)까지의 하위 단계를 반복해야 할 수 있습니다.</block>
   <block id="b27e1f5014645cf6a835fb2e11524da4" category="list-text">시스템에 구성된 VLAN이 없는 경우 로 이동합니다 <block ref="44c817ee9110592f40577b67e8940aff" category="inline-xref-macro-rx"></block>. 구성된 VLAN이 있으면 더 이상 존재하지 않거나 다른 브로드캐스트 도메인으로 이동된 포트에서 구성되었던 교체된 VLAN을 복원하십시오.</block>
   <block id="ea655de7a1937b3e3b33b8a800b7cb49" category="list-text">교체된 VLAN을 표시합니다.</block>
-  <block id="81a71f7b68d86411acd35a0832051632" category="paragraph">디세퍼드-VLAN 쇼</block>
   <block id="472aa5d8ae9d1d5726cc523100b48335" category="list-text">교체된 VLAN을 원하는 대상 포트로 복구합니다.</block>
   <block id="0bb998238231c13a494cdbd3689c6d25" category="list-text">교체된 모든 VLAN이 복원되었는지 확인합니다.</block>
   <block id="47520b16706f00daa0983c140c0ad715" category="list-text">VLAN은 생성된 후 1분 정도 적절한 브로드캐스트 도메인에 자동으로 배치됩니다. 복구된 VLAN이 적절한 브로드캐스트 도메인에 배치되었는지 확인합니다.</block>
@@ -3010,12 +3006,10 @@
   <block id="cb91f704c28ecf5de2f29274ef6bf62e" category="list-text">교체된 VLAN 나열:</block>
   <block id="551f04031696758c1c256f1c90e57b39" category="paragraph">다음과 같은 출력이 표시됩니다.</block>
   <block id="a806d4909353769619f495a130cabdbd" category="list-text">이전 기본 포트에서 대체된 VLAN 복원:</block>
-  <block id="7e13cce614ffd7f318255684f22d3da9" category="paragraph">디즈퍼스VLAN 복원</block>
   <block id="e08a0549a69b4bf0d4b807833ac0b586" category="paragraph">다음은 인터페이스 그룹 a0a에서 동일한 인터페이스 그룹으로 다시 교체된 VLAN을 복원하는 예입니다.</block>
   <block id="5382f5bbbe74b198aaaf36efb0dd9ef3" category="paragraph">다음은 포트 "e0e"에서 "e0h"로 교체된 VLAN을 복원하는 예입니다.</block>
   <block id="2a31dfadfe9a33da55e9d278be8596a4" category="paragraph">VLAN 복원이 성공하면 지정된 대상 포트에 교체된 VLAN이 생성됩니다. 대상 포트가 인터페이스 그룹의 구성원이거나 대상 포트가 다운된 경우 VLAN 복원이 실패합니다.</block>
   <block id="aad2ee0340b449143fc7eaa87d78ba8b" category="paragraph">새로 복원된 VLAN이 해당 브로드캐스트 도메인에 배치될 때까지 약 1분 정도 기다립니다.</block>
-  <block id="3dd496dea37dae38c9dc7eb802d64409" category="list-text">disspled-vLANs show 출력에 포함되지 않지만 다른 물리적 포트에 구성해야 하는 VLAN 포트에 대해 필요에 따라 새 VLAN 포트를 생성합니다.</block>
   <block id="9ba5961a2332be610ae3121c25c32aeb" category="list-text">모든 포트 수리가 완료된 후 비어 있는 브로드캐스트 도메인을 삭제합니다.</block>
   <block id="6fbbdf7318a95fb2400613497f103b75" category="list-text">포트 도달 가능성 확인:</block>
   <block id="e3d6faf783eff413421d5abeaf1dad48" category="paragraph">모든 포트가 올바르게 구성되어 정확한 브로드캐스트 도메인에 추가되면 네트워크 포트 도달 가능성 표시 명령은 연결된 모든 포트에 대한 도달 가능성 상태를 '확인'으로 보고하고 물리적 연결이 없는 포트에 대해서는 상태를 '사용 불가'로 보고해야 합니다. 이러한 두 포트가 아닌 다른 상태를 보고하는 포트가 있는 경우 의 지침에 따라 연결 가능성 복구를 수행하고 브로드캐스트 도메인에서 포트를 추가 또는 제거합니다 <block ref="4f595e600f8320b4ad2d574fa1a9fe37" category="inline-xref-macro-rx"></block>.</block>
@@ -3185,7 +3179,6 @@
   <block id="8ffd93ea6386b629720c74b50bc25c2e" category="list-text">node1에서 다음 명령을 사용하고 해당 출력을 검사하여 node1에서 모든 볼륨이 온라인 상태인지 확인합니다.</block>
   <block id="30c92ab6acc222d81011f6b7ee804f3f" category="paragraph">'볼륨 표시 노드 노드1 - 상태 오프라인'</block>
   <block id="85e5ea53a85c7a28840f38eea6491b3c" category="paragraph">노드 1에 오프라인 상태인 볼륨이 있는 경우 각 볼륨에 대해 한 번씩 노드 1에서 다음 명령을 사용하여 온라인으로 전환합니다.</block>
-  <block id="a3b6690b513bd53e12723fa3f48d8134" category="paragraph">이 명령에 사용할 vserver-name은 이전 'volume show' 명령의 출력에서 확인할 수 있습니다.</block>
   <block id="8977859bd55d40dd07f2cd92a82b410d" category="list-text">LIF가 올바른 포트로 이동되었으며 'Up' 상태인지 확인합니다. LIF가 하나라도 다운되면 각 LIF에 대해 다음 명령을 한 번 입력하여 LIF의 관리 상태를 Up으로 설정합니다.</block>
   <block id="6e13fc9d1e75c160461788f1b750083d" category="list-text">다음 명령을 사용하여 출력을 검사하여 노드 2에 남아 있는 데이터 LIF가 없는지 확인합니다.</block>
   <block id="701fa495284f4a753f53b83d9db59d99" category="paragraph">노드 2의 네트워크 구성을 확인하고 노드 1에서 노드 2로 애그리게이트를 재배치하는 경우, 노드 1에 현재 있는 노드 2에 속하는 NAS 데이터 LIF가 노드 1에서 노드 2로 재배치되어 있는지 확인해야 합니다. 또한 노드 2에 SAN LIF가 존재하는지 확인해야 합니다.</block>
@@ -3338,7 +3331,6 @@
   <block id="0df71f161bb7f6f4a1dd4c0ceefcb245" category="sidebar">4단계. 정보를 기록하고 노드2를 폐기합니다</block>
   <block id="79f3abfd76c996d707b348dbfb91c42b" category="sidebar">노드 4에 FC 또는 UTA/UTA2 구성을 설정합니다</block>
   <block id="d087c3faf4708dbb3c8dfcfefd9745e9" category="sidebar">"system controller replace" 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러 하드웨어를 9.7로 업그레이드하십시오</block>
-  <block id="a0f8aeff2834e59d628ba56c42b411bc" category="sidebar">4단계. 노드 재배치 및 폐기</block>
   <block id="ea61e2c2ff507048203824add1eb7c21" category="sidebar">고려 사항</block>
   <block id="2bfb87bbde1d2f1a85359c4188897f44" category="sidebar">방법을 선택합니다</block>
   <block id="78ab525858e669cbe2bbf5be70ac71b8" category="sidebar">스토리지를 이동하여 업그레이드</block>
@@ -3371,7 +3363,6 @@
   <block id="b8dabd137df5202c83400e4fde74838d" category="paragraph">'::&gt; 네트워크 연결 수신 표시 - vserver 클러스터'</block>
   <block id="9c26c389cd17f0bf0da92eb4d2187822" category="paragraph">클러스터 포트에서 수신 대기하는 포트 7700은 2노드 클러스터의 다음 예에 표시된 대로 예상되는 결과입니다.</block>
   <block id="17a934761f44517e9bcc906e1eb8bfe9" category="list-text">필요한 경우 포트 7700에서 청취하지 않는 각 클러스터 LIF에 대해 LIF의 관리 상태를 '소유'로 설정한 다음 '설정'으로 설정합니다.</block>
-  <block id="4839ad4e20e071cacb55dad56989809b" category="paragraph">'::&gt; net int modify -vserver Cluster-lif &lt;cluster-lif&gt; -status-admin down;net int modify -vserver Cluster-lif &lt;cluster-lif&gt; -status-admin up'</block>
   <block id="8f6f15e3cd3793ad38c3214c75a0a348" category="paragraph">11단계를 반복하여 클러스터 LIF가 포트 7700에서 수신 대기 중인지 확인합니다.</block>
   <block id="d1a7512eb8f4b6dc2ebea16def830204" category="paragraph">11단계를 반복하여 클러스터 LIF가 포트 7700에서 수신 대기 중인지 확인합니다.</block>
   <block id="ceb1502357ca7edd7dc13458f9f78895" category="paragraph">하위 단계(g)를 반복하여 클러스터 LIF가 포트 7700에서 청취 중인지 확인합니다.</block>
@@ -4113,7 +4104,6 @@
   <block id="e031a855de8a6709ad76ee26da7e1409" category="paragraph">'network interface modify -vserver_vserver_name_-lif_lif_name_ – home-port_port_name_'</block>
   <block id="b81db1e95a382ce3628dd1e8a693ba94" category="paragraph">'network interface modify-failover-group_failover_group_-failover-policy_failover_policy_'</block>
   <block id="91b0b9d75ab5100fdef2cc4b9abcbf78" category="paragraph">'network interface migrate-vserver_Vserver_NAME_-lif_lif_name_-source-node_node1_-destination-node_node1_-destination-port_port_name_'</block>
-  <block id="7026ec6e9e64d0cd954f925dea928b75" category="paragraph">'VLAN create-node_node_name_-vlan-name_vlan_port_'</block>
   <block id="bd804b237ebb8835d7e3b85da5d2132b" category="paragraph">disspled-interface restore-vserver_Vserver_name_-lif-name_LIF_name_'입니다</block>
   <block id="aad098d45c08b648ea491886918a7403" category="paragraph">'network interface show -vserver_Vserver_name_-status-admin down'</block>
   <block id="0c50d3945bcacd6caf3b39ff87c93171" category="paragraph">'network interface show -vserver_Vserver_NAME_-status-oper down'</block>
@@ -4354,7 +4344,6 @@
   <block id="7f88c1930a909f734d7a128aa7ac5c0d" category="paragraph">NVE(NetApp Volume Encryption)를 사용하여 업그레이드 중인 시스템의 볼륨을 암호화하는 경우 암호화 구성을 새 노드와 동기화해야 합니다. Key-Manager를 복원하지 않을 경우 ARL을 사용하여 노드 3에서 노드 4로 노드 2 애그리게이트를 재배치할 때 암호화된 볼륨은 오프라인 상태가 됩니다.</block>
   <block id="11f09c937d4460ab0e473a33da9b1ab8" category="paragraph">네트워크 인터페이스 show-curr-node_node2_-role data</block>
   <block id="5dad8f32e66b8ee8eadc502efd8b13f1" category="paragraph">'network port ifgrp show -node_node2_-ifgrp_ifgrp_name_-instance'</block>
-  <block id="977f3dd1a310456c777f225b9b32f0ba" category="paragraph">'aggr offline_root_aggr_on_node4_'</block>
   <block id="9b7d57d0483912f37373984d2377cd38" category="paragraph">'network interface modify -vserver_vserver_name_-lif_LIF_name_-home-node_nodename_-status-admin up'</block>
   <block id="be169d5dec3b5782fc54ffe06db0f01d" category="paragraph">'network interface show-data-protocol_iscsi|fcp_-home-node_node3_'</block>
   <block id="de16a1a2e971f09625e82410defe17a1" category="paragraph">'network interface modify -vserver_Vserver_NAME_-lif_LIF_name_-status-admin down'</block>
@@ -4451,4 +4440,10 @@
   <block id="c7f6c7edba62aeb0070664af2982188f" category="sidebar">5단계. node4 설치 및 부팅(ONTAP 9.8 이상에서 '시스템 컨트롤러 교체'로 업그레이드)</block>
   <block id="a7bb4f4bc15b3845dcbe4dd85398882a" category="sidebar">6단계. 업그레이드 완료(ONTAP 9.8 이상에서 '시스템 컨트롤러 교체'로 업그레이드)</block>
   <block id="ad783963276a8d71cfdce2a0884ea6fe" category="sidebar">문제 해결(ONTAP 9.8 이상에서 '시스템 컨트롤러 교체'로 업그레이드)</block>
+  <block id="8ec9dcb34f09496bfb877249e8b20474" category="paragraph">컨트롤러를 업그레이드하는 동안 문제가 발생하면 을 참조하십시오 <block ref="8b711d7eff849b62a32d0b2d66f85a6c" category="inline-link-macro-rx"></block> 자세한 내용 및 가능한 해결 방법은 절차 끝 부분의 섹션을 참조하십시오.</block>
+  <block id="06f03bd659c1d709e9f3635dd299f179" category="paragraph">LIF가 다운되었는지 확인하려면 * Status Admin/Oper * 열을 확인하십시오. LIF가 다운된 경우 에 문의하십시오 <block ref="ee9e7ed4648f930256981fc705ceec06" category="inline-link-macro-rx"></block> 섹션을 참조하십시오.</block>
+  <block id="9513edce58e5f4ee5ec2d01f6e5957ea" category="paragraph">'System node AutoSupport invoke-node * -type all-message MAINT=_maintenance -window-in-hours _'</block>
+  <block id="8ae18c4ca2d925d74bcd4990d28f04f0" category="paragraph">이 명령에 사용할 `_vserver-name_'은 이전 'volume show' 명령의 출력에서 확인할 수 있습니다.</block>
+  <block id="deb8c459cd0f080a7a777d2ba3e57215" category="sidebar">4단계. 노드2 재배치 및 폐기(ONTAP 9.8 이상에서 '시스템 컨트롤러 교체'로 업그레이드)</block>
+  <block id="d0a53cd31cb7e1982b0b4b4350530c07" category="sidebar">4단계. 노드2 재배치 및 폐기(ONTAP 9.5에서 9.7로 '시스템 컨트롤러 교체'로 업그레이드)</block>
 </blocks>

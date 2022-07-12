@@ -58,7 +58,7 @@ aggr_2	      825.0GB	    825.0GB	 0%	 online	  1	 node1	  raid_dp  normal
 'volume online-vserver_vserver-name_-volume_volume-name_'
 
 +
-이 명령에 사용할 vserver-name은 이전 'volume show' 명령의 출력에서 확인할 수 있습니다.
+이 명령에 사용할 `_vserver-name_'은 이전 'volume show' 명령의 출력에서 확인할 수 있습니다.
 
 . LIF가 올바른 포트로 이동되었으며 'Up' 상태인지 확인합니다. LIF가 하나라도 다운되면 각 LIF에 대해 다음 명령을 한 번 입력하여 LIF의 관리 상태를 Up으로 설정합니다.
 +
