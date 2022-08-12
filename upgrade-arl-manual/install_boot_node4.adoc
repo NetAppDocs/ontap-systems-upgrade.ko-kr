@@ -201,13 +201,13 @@ NOTE: 관리 포트와 IP 주소를 netboot 연결로 사용해야 합니다. �
 | 대상... | 그러면... 
 
 
-| FAS/AFF8000 시리즈 시스템 | "netboot\http://<web_server_ip/path_to_webaccessible_directory>/netboot/kernel` 
+| FAS/AFF8000 시리즈 시스템 | "netboot\http://web_server_ip/path_to_webaccessible_directory/netboot/kernel` 
 
 
-| 기타 모든 시스템 | "netboot\http://<web_server_ip/path_to_webaccessible_directory/ontap_version>_image.tgz` 
+| 기타 모든 시스템 | "netboot\http://web_server_ip/path_to_webaccessible_directory/ontap_version_image.tgz` 
 |===
 +
-"<path_to_the_web-Accessible_directory>"는 에서 "<ONTAP_version>_image.tgz"를 다운로드한 위치로 이어져야 합니다 link:prepare_for_netboot.html#man_netboot_Step1["1단계"] netboot_에 대한 준비 섹션에서
+"path_to_the_web-Accessible_directory"는 에서 "ONTAP_version_image.tgz"를 다운로드한 위치로 이어져야 합니다 link:prepare_for_netboot.html#man_netboot_Step1["1단계"] netboot_에 대한 준비 섹션에서
 
 +
 
@@ -228,7 +228,7 @@ NOTE: 부팅을 중단하지 마십시오.
 
 . [[man_install4_step23]] 절차를 계속하라는 메시지가 나타나면 y 를 입력하고 패키지를 입력하라는 메시지가 나타나면 URL을 입력합니다.
 +
-'\http://<web_server_ip/path_to_web-accessible_directory/ontap_version>_image.tgz`
+'\http://web_server_ip/path_to_web-accessible_directory/ontap_version_image.tgz`
 
 . 다음 하위 단계를 완료합니다.
 +

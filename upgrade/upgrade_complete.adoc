@@ -2,7 +2,7 @@
 permalink: upgrade/upgrade-complete.html 
 sidebar: sidebar 
 keywords: complete, upgrade, ontap, complete the upgrade 
-summary: ONTAP 9.8 또는 ONTAP 9.7 이전 버전에서 업그레이드를 완료하십시오. 
+summary: ONTAP 9.8 이상 또는 ONTAP 9.7 이전 버전에서 업그레이드를 완료하십시오. 
 ---
 = 업그레이드를 완료합니다
 :allow-uri-read: 
@@ -11,12 +11,12 @@ summary: ONTAP 9.8 또는 ONTAP 9.7 이전 버전에서 업그레이드를 완�
 
 
 [role="lead"]
-ONTAP 9.8 또는 ONTAP 9.7 이전 버전에서 업그레이드를 완료하십시오.
+ONTAP 9.8 이상 또는 ONTAP 9.7 이전 버전에서 업그레이드를 완료하십시오.
 
 사용 중인 ONTAP 버전에 대한 절차를 사용해야 합니다.
 
 image::../upgrade/media/workflow_completing_upgrade_98_or_97x.png[업그레이드를 완료합니다]
 
-* ONTAP 9.8에서 업그레이드를 완료하려면 로 이동하십시오 xref:upgrade-complete-ontap-9-8.adoc[ONTAP 9.8에서 업그레이드를 완료하십시오].
-* ONTAP 9.7 이전 버전에서 업그레이드를 완료하려면 로 이동하십시오 xref:upgrade-complete-ontap-9-7-or-earlier.adoc[ONTAP 9.7 이전 버전에서 업그레이드를 완료하십시오].
+* xref:upgrade-complete-ontap-9-8.adoc[ONTAP 9.8 이상에서 업그레이드를 완료합니다]
+* xref:upgrade-complete-ontap-9-7-or-earlier.adoc[ONTAP 9.7 이전 버전에서 업그레이드를 완료하십시오]
 

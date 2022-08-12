@@ -128,7 +128,7 @@ NOTE: SAN LIF를 원래 포트와 링크 속도가 동일한 포트로 이동해
 
 .. 다음 명령을 입력하고 출력을 검사하여 LIF가 올바른 포트로 이동되었으며, LIF가 두 노드 중 하나에 다음 명령을 입력하고 출력을 검사하여 'UP' 상태인지 확인하십시오.
 +
-'network interface show-home-node <node4> - role data'
+네트워크 인터페이스 show-home-node node4-role data
 
 .. LIF가 하나라도 다운되면 각 LIF에 대해 다음 명령을 한 번 입력하여 LIF의 관리 상태를 Up으로 설정합니다.
 +

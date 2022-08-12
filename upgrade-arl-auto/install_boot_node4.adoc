@@ -104,13 +104,13 @@ NOTE: 관리 포트와 IP를 netboot 연결로 사용해야 합니다. 업그레
 | 대상... | 그러면... 
 
 
-| FAS/AFF8000 시리즈 시스템 | "netboot\http://<web_server_ip/path_to_web-accessible_directory>/netboot/kernel` 
+| FAS/AFF8000 시리즈 시스템 | "netboot\http://web_server_ip/path_to_web-accessible_directory/netboot/kernel` 
 
 
-| 기타 모든 시스템 | "netboot\http://<web_server_ip/path_to_web-accessible_directory>/<ontap_version>_image.tgz` 
+| 기타 모든 시스템 | "netboot\http://web_server_ip/path_to_web-accessible_directory/ontap_version_image.tgz` 
 |===
 +
-"<path_to_the_web-Accessible_directory>"는 섹션 1의 "<ONTAP_version>_image.tgz"를 다운로드한 위치로 이어져야 합니다 link:prepare_for_netboot.html["netboot를 준비합니다"].
+"path_to_the_web-Accessible_directory"는 섹션 1단계의 "ONTAP_version_image.tgz"를 다운로드한 위치로 이어져야 합니다 link:prepare_for_netboot.html["netboot를 준비합니다"].
 
 +
 
@@ -126,7 +126,7 @@ NOTE: 다음 메시지는 무시하십시오. "HA 쌍의 무중단 업그레이�
 
 . 절차를 계속하라는 메시지가 나타나면 "y"를 입력하고 패키지를 입력하라는 메시지가 나타나면 URL을 입력합니다.
 +
-'\http://<web_server_ip/path_to_web-accessible_directory>/<ontap_version>_image.tgz`
+'\http://web_server_ip/path_to_web-accessible_directory/ontap_version_image.tgz`
 
 . 컨트롤러 모듈을 재부팅하려면 다음 하위 단계를 완료하십시오.
 +

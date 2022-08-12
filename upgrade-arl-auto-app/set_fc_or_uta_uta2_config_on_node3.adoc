@@ -302,6 +302,8 @@ Adapter  Mode       Type        Mode     Type        Status
 
 . [[auto9597_check_node3_step15]]노드 3에서 부팅 메뉴로 이동하여 22/7을 사용하여 숨겨진 옵션인 boot_after_controller_replacement를 선택합니다. 다음 예에 따라 프롬프트에 node1을 입력하여 node3에 노드 1의 디스크를 재할당합니다.
 +
+.콘솔 출력 예를 확장합니다
+====
 ....
 LOADER-A> boot_ontap menu
 .
@@ -397,12 +399,13 @@ Override system ID? {y|n} y
 .
 Login:
 ....
+====
 +
 
 NOTE: 위의 콘솔 출력 예에서 시스템이 ADP(고급 디스크 파티셔닝) 디스크를 사용하는 경우 ONTAP에서 파트너 노드 이름을 묻는 메시지를 표시합니다.
 
 . 시스템이 "디스크를 찾을 수 없음" 메시지와 함께 재부팅 루프에 들어갈 경우 시스템이 FC 또는 UTA/UTA2 포트를 타겟 모드로 다시 설정했기 때문에 디스크를 볼 수 없음을 나타냅니다. 이 문제를 해결하려면 을 계속 진행합니다 <<auto_check3_step17,17단계>> 를 선택합니다 <<auto_check3_step22,22단계>>또는 섹션으로 이동합니다 link:verify_node3_installation.html["노드3 설치를 확인합니다"].
-. [[auto_check3_step17]]자동 부팅 중에 'loader>' 프롬프트에서 노드를 중지하려면 'Ctrl-C'를 누릅니다.
+. [[auto_check3_step17]]로더의 프롬프트에서 노드를 중지하려면 자동 부팅 중에 'Ctrl-C'를 누릅니다.
 . [[step18]] 로더 프롬프트에서 유지보수 모드로 전환합니다.
 +
 boot_ONTAP maint를 선택합니다

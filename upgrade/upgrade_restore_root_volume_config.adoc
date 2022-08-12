@@ -6,10 +6,15 @@ summary: 루트 볼륨에서 부팅 장치로 구성 정보를 복원해야 합�
 ---
 = 루트 볼륨 구성을 복구합니다
 :allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
 
 
 [role="lead"]
 루트 볼륨에서 부팅 장치로 구성 정보를 복원해야 합니다.
+
+
+NOTE: FAS8300, AFF A400 또는 FAS8700과 같은 고가용성(HA) 상호 연결 포트로 포트 "e0a" 및 "e0b"를 사용하는 시스템으로 데이터 이동 없이 컨트롤러 업그레이드를 수행하는 경우 이 있는지 확인하십시오 xref:upgrade-prepare-when-moving-storage.html#assign_lifs[관리 또는 인터클러스터 LIF를 재할당했습니다] 업그레이드 절차를 시작하기 전에 원래 시스템의 포트 "e0a" 및 "e0b"에 구성되어 있습니다.
 
 다음 단계로 진행하기 전에 노드 3과 노드 4에서 다음 단계를 수행하여 한 노드에서 각 단계를 완료한 다음 다른 노드에서 다른 단계를 완료해야 합니다.
 
@@ -50,3 +55,5 @@ Override system id? {y|n} [n] y
 시동 시퀀스가 정상적으로 진행됩니다.
 
 
+
+컨트롤러 업그레이드에 실패하고 'rlib_port_IPSpace_assign' 오류 메시지가 표시되면 업그레이드를 되돌리고 교체 시스템에서 HA 포트로 사용되는 원래 시스템의 네트워크 포트에서 LIF를 삭제해야 합니다. 자세한 내용은 을 참조하십시오 link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/PANIC_%3A_rlib_port_ipspace_assign%3A_port_e0a_could_not_be_moved_to_HA_ipspace["이 KB 문서를 참조하십시오"^].

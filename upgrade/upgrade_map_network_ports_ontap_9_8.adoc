@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: enable, node3, node4, node, communicate, cluster, network, upgrade, physical, port, correct, configure, setting, data, map network ports using ontap 9.8 
 summary: 업그레이드 후 노드 3과 노드 4가 클러스터의 상호 및 네트워크와 통신할 수 있도록 하려면 물리적 포트가 클러스터, 데이터 등과 같은 사용 목적에 맞게 올바르게 구성되었는지 확인해야 합니다. 
 ---
-= ONTAP 9.8을 사용하여 네트워크 포트를 매핑합니다
+= ONTAP 9.8 이상을 사용하여 네트워크 포트를 매핑합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,7 +13,7 @@ summary: 업그레이드 후 노드 3과 노드 4가 클러스터의 상호 및 
 [role="lead"]
 업그레이드 후 노드 3과 노드 4가 클러스터의 상호 및 네트워크와 통신하도록 하려면 물리적 포트가 클러스터, 데이터 등과 같은 사용 목적에 맞게 올바르게 구성되었는지 확인해야 합니다.
 
-다음 단계는 ONTAP 9.8을 실행하는 시스템에 적용됩니다. ONTAP 9.7 이하를 실행하는 경우 의 절차를 사용해야 합니다 xref:upgrade-map-network-ports-ontap-9-7-or-earlier.adoc[ONTAP 9.7 이하를 사용하여 네트워크 포트를 매핑합니다].
+다음 단계는 ONTAP 9.8 이상을 실행하는 시스템에 적용됩니다. ONTAP 9.7 이하를 실행하는 경우 의 절차를 사용해야 합니다 xref:upgrade-map-network-ports-ontap-9-7-or-earlier.adoc[ONTAP 9.7 이하를 사용하여 네트워크 포트를 매핑합니다].
 
 노드 3과 노드 4에서 이러한 단계를 수행해야 합니다.
 
@@ -206,4 +206,4 @@ NOTE: iSCSI LIF의 경우 홈 포트를 수정하려면 LIF를 관리 방식으�
 
 
 
-물리적 포트 매핑을 완료했습니다. 업그레이드를 완료하려면 로 이동합니다 xref:upgrade-final-upgrade-steps-in-ontap-9-8.adoc[ONTAP 9.8에서 최종 업그레이드 단계를 수행합니다].
+물리적 포트 매핑을 완료했습니다. 업그레이드를 완료하려면 로 이동합니다 xref:upgrade-final-upgrade-steps-in-ontap-9-8.adoc[ONTAP 9.8 이상에서 최종 업그레이드 단계를 수행합니다].

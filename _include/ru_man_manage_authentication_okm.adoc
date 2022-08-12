@@ -11,7 +11,7 @@
 
 . 새 인증 키를 사용하여 모든 자체 암호화 디스크를 다시 입력하다
 +
-'storage encryption disk modify -disk * [-data-key-id nonMSID AK>]'를 선택합니다
+'Storage encryption disk modify -disk * [-data-key-id nonMSID AK]'
 
 . FIPS(Federal Information Processing Standard)를 사용하는 경우 새 인증 키를 사용하여 모든 자체 암호화 디스크를 다시 입력하다
 +

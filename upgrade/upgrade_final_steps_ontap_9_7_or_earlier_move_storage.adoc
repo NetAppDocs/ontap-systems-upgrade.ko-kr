@@ -13,10 +13,10 @@ summary: '스토리지를 이동하여 업그레이드 절차를 완료하려면
 [role="lead"]
 스토리지를 이동하여 업그레이드 절차를 완료하려면 새 노드에서 사용되지 않는 포트 및 LIF를 삭제하고, 스토리지 페일오버 또는 고가용성을 재설정하고, 서비스 프로세서(SP)를 구성하고, 새 라이센스를 설치하고, AutoSupport를 설정해야 합니다. 스토리지 또는 볼륨 암호화를 설정하고 FC 또는 CNA 포트를 구성해야 할 수도 있습니다.
 
-다음 단계는 ONTAP 9.7 이하를 실행하는 시스템에 적용됩니다. ONTAP 9.8을 실행하는 경우 의 절차를 사용해야 합니다 xref:upgrade-final-upgrade-steps-in-ontap-9-8.adoc[ONTAP 9.8에서 마지막 업그레이드 단계를 수행합니다].
+다음 단계는 ONTAP 9.7 이하를 실행하는 시스템에 적용됩니다. ONTAP 9.8 이상을 실행하는 경우 의 절차를 사용해야 합니다 xref:upgrade-final-upgrade-steps-in-ontap-9-8.adoc[ONTAP 9.8 이상에서 최종 업그레이드 단계를 수행합니다].
 
 .단계
-. 시스템에서 ONTAP 9.8, * STOP * 을 실행하는 경우 의 절차를 사용해야 합니다 xref:upgrade-final-upgrade-steps-in-ontap-9-8.adoc[ONTAP 9.8에서 최종 업그레이드 단계를 수행합니다].
+. 시스템에서 ONTAP 9.8 이상을 실행하는 경우 * STOP * 을 사용합니다. 의 절차를 사용해야 합니다 xref:upgrade-final-upgrade-steps-in-ontap-9-8.adoc[ONTAP 9.8 이상에서 최종 업그레이드 단계를 수행합니다].
 . 스토리지 시스템 프롬프트에서 LIF에 대한 정보를 표시합니다.
 +
 네트워크 인터페이스 쇼

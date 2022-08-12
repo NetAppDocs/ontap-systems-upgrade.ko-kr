@@ -122,7 +122,7 @@ Do you want to continue? {y|n}: y
 +
 출력을 에서 캡처한 출력과 비교할 수 있습니다 link:prepare_nodes_for_upgrade.html["업그레이드할 노드를 준비합니다"] 섹션을 참조하십시오.
 
-. NSE(NetApp Storage Encryption)를 구성에서 사용 중인 경우 'setenv bootarg.storageencryption.support'를 'kmip.init.maxwait` variable'off'로 설정하여 'true'로 설정하십시오(in_Boot node2와 AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈 _, link:boot_node2_with_a900_controller_and_nvs.html#boot_node2_step1["1단계"]), 변수를 재설정해야 합니다.
+. NSE(NetApp Storage Encryption)를 구성에서 사용 중인 경우 'setenv bootarg.storageencryption.support'를 'kmip.init.maxwait` variable'off'로 설정하여 'true'로 설정하십시오(in_Boot node2와 AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈 _, link:boot_node2_with_a900_controller_and_nvs.html#A900_boot_node2["1단계"]), 변수를 재설정해야 합니다.
 +
 set diag;systemshell-node_node_name_-command sudo kenv -u -p kmip.init.maxwait`
 
