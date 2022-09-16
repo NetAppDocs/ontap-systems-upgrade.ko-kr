@@ -50,7 +50,7 @@ summary: 2노드 클러스터가 있는 경우 노드 1의 데이터 LIF를 노�
 +
 'network interface migrate-vserver_Vserver_NAME_-lif_LIF_name_-destination-node_node2_ – destination-port_NetPort|ifgrp_'
 
-.. 에서 LIF 및 VLAN의 홈 포트와 홈 노드를 수정합니다 <<substepa,하위 단계 A>> 각 LIF에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
+.. 에서 LIF 및 VLAN의 홈 포트와 홈 노드를 수정합니다 ,하위 단계 A 각 LIF에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
 +
 'network interface modify -vserver_Vserver_NAME_-lif_LIF_name_-home-node_node2_-home-port_NetPort|ifgrp_'
 
@@ -63,7 +63,7 @@ summary: 2노드 클러스터가 있는 경우 노드 1의 데이터 LIF를 노�
 | 클러스터가 구성된 경우... | 그러면... 
 
 
-| NAS | 완료 <<man_lif_1_2_step5,5단계>> 부터 까지 <<man_lif_1_2_step8,8단계>>. 
+| NAS | 완료 ,5단계 부터 까지 ,8단계. 
 
 
 | 산 | 업그레이드 시 노드의 모든 SAN LIF를 사용하지 않도록 설정합니다. 'network interface modify -vserver_Vserver-name_-lif_LIF_name_-home-node_to_upgrade_-home-port_NetPort | ifgrp_-status-admin down' 
@@ -80,7 +80,7 @@ summary: 2노드 클러스터가 있는 경우 노드 1의 데이터 LIF를 노�
 +
 'network interface modify -vserver_Vserver-NAME_-lif_LIF_name_-home-node_node2_-home-port_port_name_'
 
-. [[man_lif_1_2_step8]] LIF가 포트를 홈 또는 현재 포트로 사용하고 있는지 확인합니다. 포트가 홈 또는 현재 포트가 아닌 경우 로 이동합니다 <<man_lif_1_2_step9,9단계>>:
+. [[man_lif_1_2_step8]] LIF가 포트를 홈 또는 현재 포트로 사용하고 있는지 확인합니다. 포트가 홈 또는 현재 포트가 아닌 경우 로 이동합니다 ,9단계:
 +
 'network interface show-home-node_node2_-home-port_port_name_'
 

@@ -125,7 +125,7 @@ VLAN 쇼
 | 에 기록된 NVRAM 시스템 ID 번호입니다 link:prepare_nodes_for_upgrade.html["업그레이드할 노드를 준비합니다"] | 로 이동합니다 link:retire_node2.html["노드2를 폐기합니다"]. 
 
 
-| 에 NVRAM 시스템 ID 번호를 기록하지 않았습니다 link:prepare_nodes_for_upgrade.html["업그레이드할 노드를 준비합니다"] | 완료 <<man_record_2_step9,9단계>> 및 <<man_record_2_step10,10단계>> 다음 섹션으로 이동합니다. link:retire_node2.html["노드2를 폐기합니다"]. 
+| 에 NVRAM 시스템 ID 번호를 기록하지 않았습니다 link:prepare_nodes_for_upgrade.html["업그레이드할 노드를 준비합니다"] | 완료 ,9단계 및 ,10단계 다음 섹션으로 이동합니다. link:retire_node2.html["노드2를 폐기합니다"]. 
 |===
 . [[man_record_2_step9]] node2의 특성을 표시합니다.
 +

@@ -117,8 +117,8 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 
 
 
-. 필요한 경우 의 명령을 사용하여 인터클러스터 브로드캐스트 도메인을 조정하고 인터클러스터 LIF를 마이그레이션합니다 <<map_97_7,7단계>>.
-. 다른 브로드캐스트 도메인을 조정하고 필요한 경우 의 명령을 사용하여 데이터 LIF를 마이그레이션합니다 <<map_97_7,7단계>>.
+. 필요한 경우 의 명령을 사용하여 인터클러스터 브로드캐스트 도메인을 조정하고 인터클러스터 LIF를 마이그레이션합니다 ,7단계.
+. 다른 브로드캐스트 도메인을 조정하고 필요한 경우 의 명령을 사용하여 데이터 LIF를 마이그레이션합니다 ,7단계.
 . 모든 LIF 페일오버 그룹을 조정합니다.
 +
 'network interface modify-failover-group_failover_group_-failover-policy_failover_policy_'

@@ -16,15 +16,15 @@ summary: ONTAP 9.8 이상을 실행하는 컨트롤러에서 수동 ARL 업그�
 [role="lead"]
 노드 4에 온보드 FC 포트, 온보드 UTA/UTA2(Unified Target Adapter) 포트 또는 UTA/UTA2 카드가 있는 경우, 나머지 절차를 완료하기 전에 설정을 구성해야 합니다.
 
-완료해야 할 수도 있습니다 <<Configure FC ports on node4>>, <<Check and configure UTA/UTA2 ports on node4>>또는 두 섹션을 모두 선택합니다.
+완료해야 할 수도 있습니다  FC ports on node4,  and configure UTA/UTA2 ports on node4또는 두 섹션을 모두 선택합니다.
 
 노드 4에 온보드 FC 포트, 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드가 없는 경우 스토리지 디스크를 사용하여 시스템을 업그레이드하는 경우 로 건너뛸 수 있습니다 link:map_ports_node2_node4.html["노드 2의 포트를 노드 4로 매핑합니다"].
 
 하지만 V 시리즈 시스템이 있거나 FlexArray 가상화 소프트웨어가 있고 스토리지 어레이에 연결되어 있는 경우, 노드 4에 온보드 FC 포트, 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드가 없는 경우, _Install and boot node4_ 섹션으로 돌아가서 에서 다시 시작해야 합니다 link:install_boot_node4.html#Step9["9단계"]. 노드 4에 충분한 랙 공간이 있는지 확인합니다. 노드 4가 노드 2와 다른 섀시에 있는 경우 노드 4를 노드 3과 같은 위치에 배치할 수 있습니다. 노드 2와 노드 4가 동일한 섀시에 있는 경우 노드 4는 이미 해당 랙 위치에 있습니다.
 
 .선택
-* <<Configure FC ports on node4>>
-* <<Check and configure UTA/UTA2 ports on node4>>
+*  FC ports on node4
+*  and configure UTA/UTA2 ports on node4
 
 
 
@@ -35,7 +35,7 @@ summary: ONTAP 9.8 이상을 실행하는 컨트롤러에서 수동 ARL 업그�
 
 섹션에 저장한 노드 2의 FC 포트 설정 값이 있어야 합니다 link:prepare_nodes_for_upgrade.html["업그레이드할 노드를 준비합니다"].
 
-시스템에 FC 구성이 없는 경우 이 섹션을 건너뛸 수 있습니다. 시스템에 온보드 UTA/UTA2 포트 또는 UTA/UTA2 어댑터가 있는 경우, 에서 포트를 구성합니다 <<Check and configure UTA/UTA2 ports on node4>>.
+시스템에 FC 구성이 없는 경우 이 섹션을 건너뛸 수 있습니다. 시스템에 온보드 UTA/UTA2 포트 또는 UTA/UTA2 어댑터가 있는 경우, 에서 포트를 구성합니다  and configure UTA/UTA2 ports on node4.
 
 * 중요 *: 시스템에 스토리지 디스크가 있는 경우 이 섹션의 명령을 클러스터 프롬프트에 입력해야 합니다. V-Series 시스템이나 FlexArray 가상화 소프트웨어가 설치된 시스템이 스토리지 어레이에 연결되어 있는 경우, 유지보수 모드의 이 섹션에 명령을 입력하십시오.
 
@@ -47,10 +47,10 @@ summary: ONTAP 9.8 이상을 실행하는 컨트롤러에서 수동 ARL 업그�
 | 업그레이드 중인 시스템의 경우... | 그러면... 
 
 
-| 스토리지 디스크가 있습니다 | 로 이동합니다 <<man_config_4_Step5,5단계>>. 
+| 스토리지 디스크가 있습니다 | 로 이동합니다 ,5단계. 
 
 
-| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 로 이동합니다 <<man_config_4_Step2,2단계>>. 
+| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 로 이동합니다 ,2단계. 
 |===
 . [[man_config_4_Step2]] 유지보수 모드 액세스:
 +
@@ -117,10 +117,10 @@ boot_ONTAP maint를 선택합니다
 | 새 노드의 기본 FC 설정이... | 그러면... 
 
 
-| 원래 노드에서 캡처한 노드와 동일합니다 | 로 이동합니다 <<man_config_4_Step11,11단계>>. 
+| 원래 노드에서 캡처한 노드와 동일합니다 | 로 이동합니다 ,11단계. 
 
 
-| 원래 노드에서 캡처한 노드와 다릅니다 | 로 이동합니다 <<man_config_4_Step8,8단계>>. 
+| 원래 노드에서 캡처한 노드와 다릅니다 | 로 이동합니다 ,8단계. 
 |===
 . [[man_config_4_Step8]]유지 관리 모드 종료:
 +
@@ -147,14 +147,14 @@ boot_ONTAP maint를 선택합니다
 
 
 | 스토리지 디스크가 있습니다  a| 
-** 로 이동합니다 <<Check and configure UTA/UTA2 ports on node4>> 노드 4에 UTA/UTA2A 카드 또는 UTA/UTA2 온보드 포트가 있는 경우
+** 로 이동합니다  and configure UTA/UTA2 ports on node4 노드 4에 UTA/UTA2A 카드 또는 UTA/UTA2 온보드 포트가 있는 경우
 ** 섹션을 건너뛰고 로 이동합니다 link:map_ports_node2_node4.html["노드 2의 포트를 노드 4로 매핑합니다"] 노드 4에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우
 
 
 
 
 | V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다  a| 
-** 로 이동합니다 <<Check and configure UTA/UTA2 ports on node4>> 노드 4에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 있는 경우
+** 로 이동합니다  and configure UTA/UTA2 ports on node4 노드 4에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 있는 경우
 ** node4에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우 section_Check 및 UTA/UTA2 포트를 구성하고, node4에서 UTA/UTA2 포트 또는 UTA/UTA2 온보드 포트를 사용하지 않도록 설정한 다음, 에서 섹션을 다시 시작하십시오 link:install_boot_node4.html#Step9["9단계"].
 
 
@@ -229,10 +229,10 @@ f-a    0h       cna      target     -          -        online
 | CNA 포트... | 그러면... 
 
 
-| 원하는 개성을 표현하지 마십시오 | 로 이동합니다 <<man_check_4_Step5,5단계>>. 
+| 원하는 개성을 표현하지 마십시오 | 로 이동합니다 ,5단계. 
 
 
-| 원하는 개성을 갖고 싶어하세요 | 단계 5에서 단계 12까지 건너뛰고 로 이동합니다 <<man_check_4_Step13,13단계>>. 
+| 원하는 개성을 갖고 싶어하세요 | 단계 5에서 단계 12까지 건너뛰고 로 이동합니다 ,13단계. 
 |===
 . [[man_check_4_Step5]]다음 작업 중 하나를 수행합니다.
 +
@@ -244,7 +244,7 @@ f-a    0h       cna      target     -          -        online
 | 디스크 스토리지를 보유하고 있으며 Data ONTAP 8.3을 실행 중입니다 | 노드4를 부팅하고 유지보수 모드:boot_ONTAP maint를 입력합니다 
 
 
-| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 로 이동합니다 <<man_check_4_Step6,6단계>>. 이미 유지 관리 모드에 있어야 합니다. 
+| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 로 이동합니다 ,6단계. 이미 유지 관리 모드에 있어야 합니다. 
 |===
 . [[man_check_4_Step6]] 다음 작업 중 하나를 수행합니다.
 +
@@ -253,10 +253,10 @@ f-a    0h       cna      target     -          -        online
 | 구성 중인 경우... | 그러면... 
 
 
-| UTA/UTA2A 카드의 포트 | 로 이동합니다 <<man_check_4_Step7,7단계>>. 
+| UTA/UTA2A 카드의 포트 | 로 이동합니다 ,7단계. 
 
 
-| 온보드 UTA/UTA2 포트 | 7단계를 건너뛰고 로 이동합니다 <<man_check_4_Step8,8단계>>. 
+| 온보드 UTA/UTA2 포트 | 7단계를 건너뛰고 로 이동합니다 ,8단계. 
 |===
 . [[man_check_4_Step7] 어댑터가 이니시에이터 모드에 있고 UTA/UTA2 포트가 온라인 상태인 경우 UTA/UTA2 포트를 오프라인으로 전환합니다.
 +

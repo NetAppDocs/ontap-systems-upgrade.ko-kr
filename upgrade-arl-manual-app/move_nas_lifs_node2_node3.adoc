@@ -49,10 +49,10 @@ cluster::> network interface show -data-protocol nfs|cifs -home-node node2
 | 노드2의 경우 | 그러면... 
 
 
-| 인터페이스 그룹 또는 VLAN이 구성되어 있습니다 | 로 이동합니다 <<man_move_lif_2_3_step3,3단계>>. 
+| 인터페이스 그룹 또는 VLAN이 구성되어 있습니다 | 로 이동합니다 ,3단계. 
 
 
-| 인터페이스 그룹 또는 VLAN이 구성되어 있지 않습니다 | 3단계를 건너뛰고 로 이동합니다 <<man_move_lif_2_3_step4,4단계>>. 
+| 인터페이스 그룹 또는 VLAN이 구성되어 있지 않습니다 | 3단계를 건너뛰고 로 이동합니다 ,4단계. 
 |===
 . [[man_move_lif_2_3_step3]]노드 2의 인터페이스 그룹 및 VLAN에 호스팅된 NAS 데이터 LIF를 마이그레이션하려면 다음 단계를 수행하십시오.
 +
@@ -60,7 +60,7 @@ cluster::> network interface show -data-protocol nfs|cifs -home-node node2
 +
 'network interface migrate-vserver_Vserver_NAME_-lif_LIF_name_-destination-node_node3_ – destination-port_NetPort|ifgrp_'
 
-.. 에서 LIF의 홈 포트 및 홈 노드를 수정합니다 <<man_move_lif_2_3_substepa,하위 단계 A>> 각 노드에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
+.. 에서 LIF의 홈 포트 및 홈 노드를 수정합니다 ,하위 단계 A 각 노드에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
 +
 'network interface modify -vserver_Vserver_NAME_-lif_LIF_name_-home-node_node3_-homport_NetPort|ifgrp_'
 
@@ -68,7 +68,7 @@ cluster::> network interface show -data-protocol nfs|cifs -home-node node2
 +
 'network interface migrate-vserver_Vserver_NAME_-lif_LIF_name_-destination-node_node3_ – destination-port_NetPort|ifgrp_'
 
-.. 에서 LIF의 홈 포트 및 홈 노드를 수정합니다 <<man_move_lif_2_3_substepc,하위 단계 c>> 각 LIF에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
+.. 에서 LIF의 홈 포트 및 홈 노드를 수정합니다 ,하위 단계 c 각 LIF에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
 +
 'network interface modify -vserver_Vserver_NAME_-lif_LIF_name_-home-node_node3_-homport_NetPort|ifgrp_'
 
@@ -81,13 +81,13 @@ cluster::> network interface show -data-protocol nfs|cifs -home-node node2
 | 클러스터가 구성된 경우... | 그러면... 
 
 
-| NAS | 완료 <<man_move_lif_2_3_step5,5단계>> 부터 까지 <<man_move_lif_2_3_step8,8단계>>. 
+| NAS | 완료 ,5단계 부터 까지 ,8단계. 
 
 
-| 산 | 5단계 - 8단계를 건너 뛴 다음 완료합니다 <<man_move_lif_2_3_step9,9단계>>. 
+| 산 | 5단계 - 8단계를 건너 뛴 다음 완료합니다 ,9단계. 
 
 
-| NAS 및 SAN 모두 지원 | 완료 <<man_move_lif_2_3_step5,5단계>> 부터 까지 <<man_move_lif_2_3_step9,9단계>>. 
+| NAS 및 SAN 모두 지원 | 완료 ,5단계 부터 까지 ,9단계. 
 |===
 . [[man_move_lif_2_3_step5]] 플랫폼에서 동일하지 않은 데이터 포트가 있는 경우 브로드캐스트 도메인에 포트를 추가합니다.
 +

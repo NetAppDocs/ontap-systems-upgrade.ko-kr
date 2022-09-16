@@ -82,10 +82,10 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 | 노드 1인 경우 | 그러면... 
 
 
-| 인터페이스 그룹 또는 VLAN이 구성되어 있었습니다 | 로 이동합니다 <<man_lif_verify_3_step3,4단계>>. 
+| 인터페이스 그룹 또는 VLAN이 구성되어 있었습니다 | 로 이동합니다 ,4단계. 
 
 
-| 인터페이스 그룹 또는 VLAN이 구성되지 않았습니다 | 4단계를 건너뛰고 로 이동합니다 <<man_lif_verify_3_step4,5단계>>. 
+| 인터페이스 그룹 또는 VLAN이 구성되지 않았습니다 | 4단계를 건너뛰고 로 이동합니다 ,5단계. 
 |===
 . [[man_lif_verify_3_step3]] 다음 하위 단계를 수행하여 노드 2에서 노드 3으로 노드 1에 원래 있던 인터페이스 그룹 및 VLAN에 호스팅된 NAS 데이터 LIF를 모두 마이그레이션합니다.
 +
@@ -93,7 +93,7 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 +
 'network interface migrate-vserver_vserver_name_-lif_LIF_name_-destination-node_node3_ – destination-port_NetPort|ifgrp_'
 
-.. 에서 LIF의 홈 포트 및 홈 노드를 수정합니다 <<man_lif_verify_3_substepa,하위 단계 A>> 각 LIF에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
+.. 에서 LIF의 홈 포트 및 홈 노드를 수정합니다 ,하위 단계 A 각 LIF에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
 +
 'network interface modify -vserver_vserver_name_-lif_LIF_name_-home-node_node3_-home-port_NetPort|ifgrp_'
 
@@ -101,7 +101,7 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 +
 'network interface migrate-vserver_vserver_name_-lif_LIF_name_-destination-node_node3_ – destination-port_NetPort|ifgrp_'
 
-.. 에서 LIF의 홈 포트 및 홈 노드를 수정합니다 <<man_lif_verify_3_substepc,하위 단계 c>> 각 LIF에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
+.. 에서 LIF의 홈 포트 및 홈 노드를 수정합니다 ,하위 단계 c 각 LIF에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
 +
 'network interface modify -vserver_vserver_name_-lif_LIF_name_-home-node_node3_-home-port_NetPort|ifgrp_'
 
@@ -114,7 +114,7 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 | 클러스터가 구성된 경우... | 그러면... 
 
 
-| NAS | 완료 <<man_lif_verify_3_step5,6단계>> 및 <<man_lif_verify_3_step6,7단계>>, 8단계를 건너뛰고 완료합니다 <<man_lif_verify_3_step8,9단계>> 부터 까지 <<man_lif_verify_3_step11,12단계>>. 
+| NAS | 완료 ,6단계 및 ,7단계, 8단계를 건너뛰고 완료합니다 ,9단계 부터 까지 ,12단계. 
 
 
 | 산 | 업그레이드 시 노드의 모든 SAN LIF를 사용하지 않도록 설정합니다. 'network interface modify -vserver_vserver_name_-lif_LIF_name_-home-node_to_upgrade_-home-port_NetPort | ifgrp_-status-admin down' 

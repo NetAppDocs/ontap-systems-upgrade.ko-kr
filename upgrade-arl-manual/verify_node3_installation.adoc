@@ -32,7 +32,7 @@ summary: ONTAP 9.7 이하를 실행하는 컨트롤러의 수동 ARL 업그레�
 | 클러스터가... | 그러면... 
 
 
-| SAN 환경에 구축되고 있습니다 | 완료 <<step4,4단계>> 섹션으로 이동합니다 link:move_nas_lifs_node1_from_node2_node3_verify_san_lifs_node3.html["노드 1이 소유한 NAS 데이터 LIF를 노드 2에서 노드 3으로 이동하고 노드 3의 SAN LIF를 검증합니다"]. 
+| SAN 환경에 구축되고 있습니다 | 완료 ,4단계 섹션으로 이동합니다 link:move_nas_lifs_node1_from_node2_node3_verify_san_lifs_node3.html["노드 1이 소유한 NAS 데이터 LIF를 노드 2에서 노드 3으로 이동하고 노드 3의 SAN LIF를 검증합니다"]. 
 
 
 | SAN 환경에서는 | 4단계를 건너뛰고 로 이동합니다 link:move_nas_lifs_node1_from_node2_node3_verify_san_lifs_node3.html["노드 1이 소유한 NAS 데이터 LIF를 노드 2에서 노드 3으로 이동하고 노드 3의 SAN LIF를 검증합니다"]. 

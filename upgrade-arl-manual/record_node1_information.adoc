@@ -88,7 +88,7 @@ summary: ONTAP 9.7 이하를 실행하는 컨트롤러의 수동 ARL 업그레�
 
 NOTE: 시스템에 인터클러스터 LIF가 없을 수 있습니다.
 
-. 의 명령 출력에서 정보를 캡처합니다 <<man_record_node1_step3,3단계>> 섹션을 참조하십시오 link:map_ports_node1_node3.html["노드 1의 포트를 노드 3으로 매핑합니다"].
+. 의 명령 출력에서 정보를 캡처합니다 ,3단계 섹션을 참조하십시오 link:map_ports_node1_node3.html["노드 1의 포트를 노드 3으로 매핑합니다"].
 +
 새 컨트롤러 포트를 이전 컨트롤러 포트에 매핑하려면 출력 정보가 필요합니다.
 
@@ -173,7 +173,7 @@ NOTE: 시스템에 인터클러스터 LIF가 없을 수 있습니다.
 | 섹션에서 NVRAM 시스템 ID 번호를 기록했습니다 link:prepare_nodes_for_upgrade.html["업그레이드를 위해 노드를 준비합니다"]. | 다음 섹션으로 이동합니다. link:retire_node1.html["노드1을 폐기합니다"]. 
 
 
-| 섹션에 NVRAM 시스템 ID 번호를 기록하지 않았습니다 link:prepare_nodes_for_upgrade.html["업그레이드를 위해 노드를 준비합니다"] | 완료 <<man_record_node1_step11,11단계>> 및 <<man_record_node1_step12,12단계>> 그런 다음 를 계속 진행합니다 link:retire_node1.html["노드1을 폐기합니다"]. 
+| 섹션에 NVRAM 시스템 ID 번호를 기록하지 않았습니다 link:prepare_nodes_for_upgrade.html["업그레이드를 위해 노드를 준비합니다"] | 완료 ,11단계 및 ,12단계 그런 다음 를 계속 진행합니다 link:retire_node1.html["노드1을 폐기합니다"]. 
 |===
 . [[man_record_node1_step11]] 두 컨트롤러 중 하나에서 다음 명령을 입력합니다.
 +

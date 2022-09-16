@@ -107,10 +107,10 @@ Adapter  Mode     Type       Mode     Type     Status
 | UTA/UTA2 포트... | 그러면... 
 
 
-| 원하는 개성을 표현하지 마십시오 | 로 이동합니다 <<man_check_3_step5,5단계>>. 
+| 원하는 개성을 표현하지 마십시오 | 로 이동합니다 ,5단계. 
 
 
-| 원하는 개성을 갖고 싶어하세요 | 단계 5에서 단계 12까지 건너뛰고 로 이동합니다 <<man_check_3_step13,13단계>>. 
+| 원하는 개성을 갖고 싶어하세요 | 단계 5에서 단계 12까지 건너뛰고 로 이동합니다 ,13단계. 
 |===
 . [[man_check_3_step5]]다음 작업 중 하나를 수행합니다.
 +
@@ -122,7 +122,7 @@ Adapter  Mode     Type       Mode     Type     Status
 | Clustered Data ONTAP 8.3을 실행 중인 스토리지 디스크가 있습니다 | 노드3를 부팅하고 유지보수 모드:boot_ONTAP maint를 입력합니다 
 
 
-| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 로 이동합니다 <<man_check_3_step6,6단계>>. 이미 유지보수 모드여야 합니다. 
+| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 로 이동합니다 ,6단계. 이미 유지보수 모드여야 합니다. 
 |===
 . [[man_check_3_step6]] 다음 작업 중 하나를 수행합니다.
 +
@@ -131,10 +131,10 @@ Adapter  Mode     Type       Mode     Type     Status
 | 구성 중인 경우... | 그러면... 
 
 
-| UTA/UTA2 카드 포트 | 로 이동합니다 <<man_check_3_step7,7단계>>. 
+| UTA/UTA2 카드 포트 | 로 이동합니다 ,7단계. 
 
 
-| 온보드 UTA/UTA2 포트 | 7단계를 건너뛰고 로 이동합니다 <<man_check_3_step8,8단계>>. 
+| 온보드 UTA/UTA2 포트 | 7단계를 건너뛰고 로 이동합니다 ,8단계. 
 |===
 . [[man_check_3_step7] 어댑터가 이니시에이터 모드에 있고 UTA/UTA2 포트가 온라인 상태인 경우 UTA/UTA2 포트를 오프라인으로 전환합니다.
 +

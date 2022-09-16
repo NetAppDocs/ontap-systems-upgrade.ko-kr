@@ -16,7 +16,7 @@ summary: ONTAP 9.7 이하를 실행하는 컨트롤러에서 수동 ARL 업그�
 [role="lead"]
 노드 3에 온보드 FC 포트, 온보드 UTA/UTA2(Unified Target Adapter) 포트 또는 UTA/UTA2 카드가 있는 경우, 나머지 절차를 완료하기 전에 설정을 구성해야 합니다.
 
-완료해야 할 수도 있습니다 <<Configure FC ports on node3>>, 또는 <<Check and configure UTA/UTA2 ports on node3>>또는 두 섹션을 모두 선택합니다.
+완료해야 할 수도 있습니다  FC ports on node3, 또는  and configure UTA/UTA2 ports on node3또는 두 섹션을 모두 선택합니다.
 
 
 NOTE: NetApp 마케팅 자료에서는 "UTA2"라는 용어를 사용하여 CNA 어댑터 및 포트를 참조할 수 있습니다. 그러나 CLI에서는 "CNA"라는 용어를 사용합니다.
@@ -26,8 +26,8 @@ NOTE: NetApp 마케팅 자료에서는 "UTA2"라는 용어를 사용하여 CNA �
 
 
 .선택 사항:
-* <<Configure FC ports on node3>>
-* <<Check and configure UTA/UTA2 ports on node3>>
+*  FC ports on node3
+*  and configure UTA/UTA2 ports on node3
 
 
 
@@ -38,7 +38,7 @@ NOTE: NetApp 마케팅 자료에서는 "UTA2"라는 용어를 사용하여 CNA �
 
 에 저장한 노드 1의 FC 포트 설정 값이 있어야 합니다 link:prepare_nodes_for_upgrade.html["업그레이드할 노드를 준비합니다"].
 
-시스템에 FC 구성이 없는 경우 이 섹션을 건너뛸 수 있습니다. 시스템에 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드가 있는 경우, 에서 포트를 구성합니다 <<Check and configure UTA/UTA2 ports on node3>>.
+시스템에 FC 구성이 없는 경우 이 섹션을 건너뛸 수 있습니다. 시스템에 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드가 있는 경우, 에서 포트를 구성합니다  and configure UTA/UTA2 ports on node3.
 
 
 NOTE: * 중요 *: 시스템에 스토리지 디스크가 있는 경우 이 섹션의 명령을 클러스터 프롬프트에 입력합니다. V-Series 시스템이 있거나 FlexArray 가상화 소프트웨어가 있고 스토리지 어레이에 연결되어 있는 경우, 유지보수 모드에서 이 섹션의 명령을 입력하십시오.
@@ -51,10 +51,10 @@ NOTE: * 중요 *: 시스템에 스토리지 디스크가 있는 경우 이 섹�
 | 업그레이드 중인 시스템의 경우... | 그러면... 
 
 
-| 스토리지 디스크가 있습니다 | 로 이동합니다 <<man_config_3_step5,5단계>> 
+| 스토리지 디스크가 있습니다 | 로 이동합니다 ,5단계 
 
 
-| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 로 이동합니다 <<man_config_3_step2,2단계>> 
+| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 로 이동합니다 ,2단계 
 |===
 . [[man_config_3_step2]] 노드 3을 부팅하고 유지보수 모드에 액세스합니다.
 +
@@ -83,10 +83,10 @@ boot_ONTAP maint를 선택합니다
 | 새 노드의 기본 FC 설정이... | 그러면... 
 
 
-| 노드 1에서 캡처한 것과 동일합니다 | 로 이동합니다 <<man_config_3_step11,11단계>>. 
+| 노드 1에서 캡처한 것과 동일합니다 | 로 이동합니다 ,11단계. 
 
 
-| 노드 1에서 캡처한 것과 다릅니다 | 로 이동합니다 <<man_config_3_step6,6단계>>. 
+| 노드 1에서 캡처한 것과 다릅니다 | 로 이동합니다 ,6단계. 
 |===
 . [[man_config_3_step6]] 다음 작업 중 하나를 수행합니다.
 +
@@ -145,15 +145,15 @@ boot_ONTAP maint를 선택합니다
 
 
 | 스토리지 디스크가 있습니다  a| 
-** 노드 3에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 있는 경우 로 이동하십시오 <<Check and configure UTA/UTA2 ports on node3>>.
-** 노드 3에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우 건너뛰십시오 <<Check and configure UTA/UTA2 ports on node3>> 로 이동합니다 link:map_ports_node1_node3.html["노드 1의 포트를 노드 3으로 매핑합니다"].
+** 노드 3에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 있는 경우 로 이동하십시오  and configure UTA/UTA2 ports on node3.
+** 노드 3에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우 건너뛰십시오  and configure UTA/UTA2 ports on node3 로 이동합니다 link:map_ports_node1_node3.html["노드 1의 포트를 노드 3으로 매핑합니다"].
 
 
 
 
 | V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다  a| 
-** 노드 3에 카드 또는 온보드 포트가 있는 경우 로 이동합니다 <<Check and configure UTA/UTA2 ports on node3>>.
-** 노드 3에 카드 또는 온보드 포트가 없는 경우 건너뛰십시오 <<Check and configure UTA/UTA2 ports on node3>>그런 다음, _Install로 돌아가서 node3_을 부팅하고 에서 다시 시작합니다 link:install_boot_node3.html#step7["7단계"].
+** 노드 3에 카드 또는 온보드 포트가 있는 경우 로 이동합니다  and configure UTA/UTA2 ports on node3.
+** 노드 3에 카드 또는 온보드 포트가 없는 경우 건너뛰십시오  and configure UTA/UTA2 ports on node3그런 다음, _Install로 돌아가서 node3_을 부팅하고 에서 다시 시작합니다 link:install_boot_node3.html#step7["7단계"].
 
 
 |===
@@ -264,10 +264,10 @@ Adapter  Mode     Type       Mode     Type     Status
 | UTA/UTA2 포트... | 그러면... 
 
 
-| 원하는 개성을 표현하지 마십시오 | 로 이동합니다 <<man_check_3_step5,5단계>>. 
+| 원하는 개성을 표현하지 마십시오 | 로 이동합니다 ,5단계. 
 
 
-| 원하는 개성을 갖고 싶어하세요 | 단계 5에서 단계 12까지 건너뛰고 로 이동합니다 <<man_check_3_step13,13단계>>. 
+| 원하는 개성을 갖고 싶어하세요 | 단계 5에서 단계 12까지 건너뛰고 로 이동합니다 ,13단계. 
 |===
 . [[man_check_3_step5]]다음 작업 중 하나를 수행합니다.
 +
@@ -279,7 +279,7 @@ Adapter  Mode     Type       Mode     Type     Status
 | Clustered Data ONTAP 8.3을 실행 중인 스토리지 디스크가 있습니다 | 노드3를 부팅하고 유지보수 모드:boot_ONTAP maint를 입력합니다 
 
 
-| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 로 이동합니다 <<man_check_3_step6,6단계>>. 이미 유지보수 모드여야 합니다. 
+| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 로 이동합니다 ,6단계. 이미 유지보수 모드여야 합니다. 
 |===
 . [[man_check_3_step6]] 다음 작업 중 하나를 수행합니다.
 +
@@ -288,10 +288,10 @@ Adapter  Mode     Type       Mode     Type     Status
 | 구성 중인 경우... | 그러면... 
 
 
-| UTA/UTA2 카드 포트 | 로 이동합니다 <<man_check_3_step7,7단계>>. 
+| UTA/UTA2 카드 포트 | 로 이동합니다 ,7단계. 
 
 
-| 온보드 UTA/UTA2 포트 | 7단계를 건너뛰고 로 이동합니다 <<man_check_3_step8,8단계>>. 
+| 온보드 UTA/UTA2 포트 | 7단계를 건너뛰고 로 이동합니다 ,8단계. 
 |===
 . [[man_check_3_step7] 어댑터가 이니시에이터 모드에 있고 UTA/UTA2 포트가 온라인 상태인 경우 UTA/UTA2 포트를 오프라인으로 전환합니다.
 +

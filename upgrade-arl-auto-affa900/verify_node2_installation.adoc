@@ -72,7 +72,7 @@ To complete the Network Reachability task, the ONTAP network configuration must 
 
 NOTE: 이 절차에서 section_re-creating vLANs, ifgrp, broadcast domain_이 node2_의 _Restore 네트워크 구성 으로 변경되었습니다.
 
-. 컨트롤러 교체가 일시 중지 상태인 경우 로 진행합니다 <<Restore network configuration on node2>>.
+. 컨트롤러 교체가 일시 중지 상태인 경우 로 진행합니다  network configuration on node2.
 
 
 
@@ -168,7 +168,7 @@ Warning: Repairing port "node2:e9d" may cause it to move into a different broadc
 네트워크 포트 도달 가능성
 
 +
-모든 포트가 올바르게 구성되어 정확한 브로드캐스트 도메인에 추가되면 네트워크 포트 도달 가능성 표시 명령은 연결된 모든 포트에 대한 도달 가능성 상태를 '확인'으로 보고하고 물리적 연결이 없는 포트에 대해서는 상태를 '사용 불가'로 보고해야 합니다. 이 두 포트가 아닌 다른 상태를 보고하는 포트가 있는 경우 의 지침에 따라 연결 가능성 복구를 수행하고 브로드캐스트 도메인에서 포트를 추가 또는 제거합니다 <<restore_node2_step4,4단계>>.
+모든 포트가 올바르게 구성되어 정확한 브로드캐스트 도메인에 추가되면 네트워크 포트 도달 가능성 표시 명령은 연결된 모든 포트에 대한 도달 가능성 상태를 '확인'으로 보고하고 물리적 연결이 없는 포트에 대해서는 상태를 '사용 불가'로 보고해야 합니다. 이 두 포트가 아닌 다른 상태를 보고하는 포트가 있는 경우 의 지침에 따라 연결 가능성 복구를 수행하고 브로드캐스트 도메인에서 포트를 추가 또는 제거합니다 ,4단계.
 
 . 모든 포트가 브로드캐스트 도메인에 배치되었는지 확인합니다.
 +

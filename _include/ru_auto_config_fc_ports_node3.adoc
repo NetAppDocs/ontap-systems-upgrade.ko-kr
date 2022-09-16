@@ -10,7 +10,7 @@
 
 섹션에 저장한 노드 1의 FC 포트 설정 값이 있어야 합니다 link:prepare_nodes_for_upgrade.html["업그레이드할 노드를 준비합니다"].
 
-시스템에 FC 구성이 없는 경우 이 섹션을 건너뛸 수 있습니다. 시스템에 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드가 있는 경우, 에서 포트를 구성합니다 <<Check and configure UTA/UTA2 ports on node3>>.
+시스템에 FC 구성이 없는 경우 이 섹션을 건너뛸 수 있습니다. 시스템에 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드가 있는 경우, 에서 포트를 구성합니다  and configure UTA/UTA2 ports on node3.
 
 * 중요 *: 시스템에 스토리지 디스크가 있는 경우 이 섹션의 명령을 클러스터 프롬프트에 입력합니다. 'V-Series 시스템'이 있거나 FlexArray 가상화 소프트웨어가 설치되어 있고 스토리지 어레이에 연결되어 있는 경우, 유지보수 모드에서 이 섹션의 명령을 입력하십시오.
 

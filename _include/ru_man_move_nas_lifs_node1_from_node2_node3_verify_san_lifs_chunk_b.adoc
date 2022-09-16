@@ -35,7 +35,7 @@ cluster::> net int show -data-protocol iscsi|fcp -home-node node3
               lif1        up/up       172.17.176.120/24   node3          e0c      true
               lif2        up/up       172.17.176.121/24   node3          e1a      true
 ----
-.. 새 및 '어댑터' 및 '스위치 포트' 구성이 올바른지 확인하려면 FCP adapter show 명령의 출력과 의 워크시트에 기록한 구성 정보를 비교합니다 <<worksheet_step2,2단계>>.
+.. 새 및 '어댑터' 및 '스위치 포트' 구성이 올바른지 확인하려면 FCP adapter show 명령의 출력과 의 워크시트에 기록한 구성 정보를 비교합니다 ,2단계.
 +
 노드 3의 새로운 SAN LIF 구성을 나열합니다.
 

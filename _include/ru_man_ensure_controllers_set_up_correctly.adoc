@@ -35,7 +35,7 @@ node4          node3          true     Connected to node3
 | 2노드 클러스터 | "cluster ha modify -configured true"라는 두 노드 중 하나에 다음 명령을 입력하여 클러스터 고가용성을 사용하도록 설정합니다 
 
 
-| 2개 이상의 노드가 있는 클러스터 | 로 이동합니다 <<man_ensure_setup_Step4,4단계>>. 
+| 2개 이상의 노드가 있는 클러스터 | 로 이동합니다 ,4단계. 
 |===
 . [[man_sify_setup_Step4]] 다음 명령을 입력하고 출력을 검사하여 node3과 node4가 동일한 클러스터에 속해 있는지 확인합니다.
 +
