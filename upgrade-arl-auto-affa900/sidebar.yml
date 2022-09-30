@@ -35,7 +35,7 @@ entries:
     url: "/upgrade-arl-auto-affa900/netboot_node1.html"
 - title: 3단계. AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈을 사용하여 노드 1을 부팅합니다
   entries:
-  - title: AFF A900 컨트롤러 및 NVRAM 모듈을 사용하여 노드 1을 부팅합니다
+  - title: AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈을 사용하여 노드 1을 부팅합니다
     url: "/upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html"
   - title: 노드1 설치를 확인합니다
     url: "/upgrade-arl-auto-affa900/verify_node1_installation.html"
