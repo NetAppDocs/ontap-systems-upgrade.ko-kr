@@ -234,15 +234,11 @@
   <block id="d01decedde31fd5fc9aee34a816e3a84" category="paragraph">'system node AutoSupport invoke - node_name - type all-message 'node_name successfully 업그레이드된 플랫폼_old에서 플랫폼_new로 노드_name이 업그레이드되었습니다.</block>
   <block id="12ab5d791aa13f19bff0271520c8fa20" category="list-text">새 노드에 FC 포트(온보드 또는 FC 어댑터), 온보드 CNA 포트 또는 CNA 카드가 있는 경우, FC 또는 CNA 포트를 구성하고 스토리지 시스템 프롬프트에서 다음 명령을 입력합니다.</block>
   <block id="533d1f26c154725c9c91afdd1b89aaa4" category="list-text">설치된 시스템 * 페이지에서 양식에 이전 시스템의 일련 번호를 입력한 다음 * GO! * 를 클릭합니다</block>
-  <block id="f78094c2959388f67bc989ba1cae66f1" category="summary">원래 노드가 지원되는 모델 중 하나인 경우 스토리지를 이동하여 업그레이드하는 동안 노드의 내부 SATA 드라이브 또는 SSD를 동일한 클러스터의 새 노드에 연결된 드라이브 쉘프로 이동할 수 있습니다. SAS 드라이브를 새 노드에 연결된 드라이브 쉘프로 전송할 수 없습니다.</block>
   <block id="5445f44c8361f04d7db7417496478290" category="doc">원래 노드에서 내부 드라이브를 이동합니다</block>
-  <block id="2bfab688f89dc9f9721b34f9cf812b87" category="paragraph">원래 노드가 지원되는 모델 중 하나인 경우 스토리지를 이동하여 업그레이드하는 동안 노드의 내부 SATA 드라이브 또는 SSD를 동일한 클러스터의 새 노드에 연결된 드라이브 쉘프로 이동할 수 있습니다. SAS 드라이브를 새 노드에 연결된 드라이브 쉘프로 전송할 수 없습니다.</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="list-title">시작하기 전에</block>
   <block id="605eb2ff368b7d55e14901ea718fa36c" category="list-text">검토를 완료해야 합니다 <block ref="3548781d8fe3c65e8421c7698ed973f9" category="inline-link-macro-rx"></block> 내부 드라이브 이동 정보.</block>
   <block id="bfa39e83f3483c34263e33d3e5ad162c" category="paragraph">구성에 대한 지침이 필요한 경우 기술 지원 부서에 문의하십시오.</block>
-  <block id="48b8c1b9a7f4340b2c4a53567867ba1c" category="list-text">원래 노드의 SATA 또는 SSD 드라이브 캐리어는 새 드라이브 쉘프와 호환되어야 합니다.</block>
   <block id="84dc193ac12ec0c17e52a119451eb5ee" category="list-text">호환되는 드라이브 쉘프가 이미 새 노드에 연결되어 있어야 합니다.</block>
-  <block id="5936d4e5bf9684df84f3298fd69c5ff7" category="list-text">드라이브 쉘프에는 원래 노드의 SATA 또는 SSD 드라이브 캐리어를 수용할 수 있는 충분한 여유 베이가 있어야 합니다.</block>
   <block id="14118424a52e5faf27de83ea1ae0b462" category="list-text">시스템 전면에서 베젤을 조심스럽게 분리합니다.</block>
   <block id="1009ece53b201ef044edbb499bcabdd6" category="list-text">[[move_int_drive_2]] 드라이브 캐리어 왼쪽에 있는 분리 단추를 누릅니다.</block>
   <block id="addb5ded0310559ea0a26d75615eeff4" category="paragraph">캐리어의 캠 핸들이 부분적으로 열리고 캐리어가 중앙판에서 해제됩니다.</block>
@@ -407,11 +403,9 @@
   <block id="7a67102068269b1046a62f34688d751f" category="paragraph">다음 단계를 수행하여 ONTAP 9.8 이상에서 업그레이드를 완료할 수 있습니다.</block>
   <block id="910c99c10b2b8f326ca77c1b3e34eb83" category="list-text"><block ref="910c99c10b2b8f326ca77c1b3e34eb83" category="inline-link-macro-rx"></block></block>
   <block id="479694184a7596b8d654b4519a939fb4" category="list-text"><block ref="479694184a7596b8d654b4519a939fb4" category="inline-link-macro-rx"></block></block>
-  <block id="1c83ee60998c00cf537e241e2bd00614" category="summary">원래 노드가 지원되는 모델 중 하나인 경우, 스토리지를 이동하여 업그레이드하는 동안 내부 SATA 드라이브 또는 SSD를 새 노드에 연결된 드라이브 쉘프로 이동할 수 있습니다. 시스템을 드라이브 쉘프로 변환하여 새 노드에 연결할 수도 있습니다.</block>
   <block id="dd49867a2bdd430ef0f1501edf2afc71" category="paragraph">동일한 클러스터 내에서만 드라이브 또는 드라이브 쉘프를 이동할 수 있습니다.</block>
   <block id="6ef697f11922be2e4de0971f7d70997f" category="list-title">선택</block>
   <block id="8aeeee2821310e6e14e76fc1d344c892" category="list-text"><block ref="8aeeee2821310e6e14e76fc1d344c892" category="inline-link-macro-rx"></block></block>
-  <block id="f7ccfa056b989c8b002a462176655b42" category="paragraph">원래 노드가 지원되는 모델 중 하나인 경우 스토리지를 이동하여 업그레이드하는 동안 노드의 내부 SATA 드라이브 또는 SSD를 동일한 클러스터의 새 노드에 연결된 드라이브 쉘프로 이동할 수 있습니다. SAS 드라이브를 새 노드에 연결된 드라이브 쉘프로 전송할 수 없습니다.</block>
   <block id="32bdc1101e093c57bf74fbd9789794c2" category="inline-link-macro">원래 노드를 드라이브 쉘프로 변환할 수 있습니다</block>
   <block id="f27c828441c4bcde6d66323e36803847" category="list-text"><block ref="f27c828441c4bcde6d66323e36803847" category="inline-link-macro-rx"></block></block>
   <block id="3fae42f30ee83a6721eb3d8ce8dc8e9e" category="paragraph">원래 노드가 지원되는 모델 중 하나인 경우 스토리지를 이동하여 업그레이드하는 동안 노드를 드라이브 쉘프로 변환한 다음, 같은 클러스터의 새 노드에 연결할 수 있습니다.</block>
@@ -767,15 +761,9 @@
   <block id="bb445430e4b0638bdd79f943cd99a597" category="paragraph">'System service-processor network modify -node_node_name_'</block>
   <block id="d95867deadfe690e40f42068d6b59df8" category="inline-link-macro">참조</block>
   <block id="3d39e72120bdfa8b32eb4183896ece25" category="paragraph">로 이동합니다 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> SP 및 _ONTAP 9 명령에 대한 자세한 내용은 시스템 관리 참조_에 링크하기 위해 '시스템 서비스 프로세서 네트워크 수정' 명령에 대한 자세한 내용은 수동 페이지 참조_를 참조하십시오.</block>
-  <block id="c3e44bb7c41d54ab04ed9048fc5b39f1" category="list-text">새 노드 중 하나에 대해 다음 작업을 수행합니다.</block>
-  <block id="8bd516232448307a629aa2ad8fe64430" category="list-text">다음 명령을 입력하여 고급 권한 수준을 입력합니다.</block>
   <block id="6dcd1ebf4390170868ab9bcdfd967581" category="list-text">다음 명령을 입력합니다.</block>
-  <block id="55042a11401b6f78df5bb2c76e00d80a" category="paragraph">'storage failover modify -node_node -name_-cifs-ndo-duration default | medium | low'</block>
-  <block id="ee16bb116206ed27e74abc4888edf806" category="list-text">시스템에서 작업 부하의 50% ~ 75%가 4KB 이하인 경우 '중간'을 입력합니다.</block>
-  <block id="93b838bedea5b323f56d1fb4aec030fe" category="list-text">시스템의 작업 부하가 75%에서 100%로 4KB 이하인 경우 'low'를 입력합니다.</block>
   <block id="7b6a4090ff6553e6b643348d522b6560" category="list-text">다음 명령을 입력하여 admin 레벨로 돌아갑니다.</block>
   <block id="d260c71f1d73fe6dce24fae82cd28aca" category="paragraph">'Set-Privilege admin'입니다</block>
-  <block id="3adabad83ef7117848b8695e18369de7" category="list-text">시스템을 재부팅하여 변경 사항이 적용되었는지 확인합니다.</block>
   <block id="52eb8cb5708af7396828abc72517413d" category="list-text">새 노드에서 스위치가 없는 클러스터를 설정하려면 로 이동하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> _Network Support 사이트_에 연결하고 스위치가 없는 2노드 클러스터_로 전환 의 지침을 따르십시오.</block>
   <block id="27af4227ca8acc558df96e2723ec9b37" category="inline-link-macro">새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다</block>
   <block id="ac616410952c35e808a3c7ce4ea5b4a7" category="inline-link-macro">기존 시스템을 폐기합니다</block>
@@ -3086,11 +3074,6 @@
   <block id="3b1dc35737c41d4b6fd987e950141db7" category="paragraph">상태가 "전송 중"인 경우 '스냅샷 미러 중단-대상-vserver_vserver_name_'인 전송을 중단해야 합니다</block>
   <block id="4240e52a9ba444973cab2a23381467d2" category="paragraph">SnapMirror 관계가 "전송 중" 상태가 아니면 중단이 실패합니다.</block>
   <block id="4458fb708b087ea4450933923cc3e839" category="paragraph">'sapmirror quiesce-destination-vserver_vserver_name_'</block>
-  <block id="102261de999f6bca12acc79b316dfb42" category="list-text">고급 권한 수준 입력:</block>
-  <block id="76171f8eb9bf6bbe52c1453ffa4a156f" category="paragraph">'storage failover modify -node_node_name_-cifs-ndo-duration_default|medium|low_'</block>
-  <block id="bdaf872fbb56ca73fe6e9dd9a980aba6" category="list-text">시스템에서 작업 부하의 50% ~ 75%가 4KB 이하인 경우 '중간'을 입력합니다.</block>
-  <block id="c347ef9cd4bc7e044fc3d1aa22c41ed4" category="list-text">시스템의 작업 부하가 75%에서 100%까지 4KB 이하인 경우 "low"를 입력합니다.</block>
-  <block id="0fbda10a905dbd102127a7a65daf7abd" category="list-text">변경 사항이 적용되도록 시스템을 재부팅합니다.</block>
   <block id="01e6682dee79033af96ab718c5ec6c11" category="list-text">새 노드에서 스위치가 없는 클러스터를 설정하려면 을 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> _NetApp Support 사이트_에 연결하고 스위치가 없는 2노드 클러스터로 전환 _ 의 지침을 따르십시오.</block>
   <block id="a1e79be82a0d3f4b4c3568d0f3e32af4" category="paragraph">노드 3과 노드 4에서 스토리지 암호화가 설정된 경우 섹션을 완료합니다 <block ref="18c90c300c0b71334b8b427eaf4f38a3" category="inline-link-macro-rx"></block>. 그렇지 않으면 섹션을 완료합니다 <block ref="6e48b929ca0767f00c15eeb6d7e78755" category="inline-link-macro-rx"></block>.</block>
   <block id="17e387f327c3866b0d0ae33451a79635" category="paragraph">"path_to_the_web-Accessible_directory"는 섹션 1단계의 "ONTAP_version_image.tgz"를 다운로드한 위치로 이어져야 합니다 <block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block>.</block>
@@ -3684,7 +3667,6 @@
   <block id="51e89318188a5b34821d1b5e345bf2ac" category="summary">ONTAP 9.8 이상을 실행하는 한 쌍의 컨트롤러에 대한 수동 ARL 업그레이드 절차가 어떻게 작동하는지 이해합니다.</block>
   <block id="d8c00530740b99a040c7fce14b2d9416" category="paragraph">ARL을 사용하여 노드를 업그레이드하기 전에 절차가 어떻게 작동하는지 이해해야 합니다. 이 문서에서는 여러 단계로 절차를 세분화하여 설명합니다.</block>
   <block id="ad7dc11f39fb32e1f4ba6e7e9644fdd2" category="summary">수동 ARL 업그레이드 절차를 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 업그레이드하고 비 루트 애그리게이트의 소유권을 재배치할 수 있습니다.</block>
-  <block id="e2a7cf2eab50dd41c99197aeb0c7dba3" category="cell">9.8 이하</block>
   <block id="b36eedb3dc2096d3226039d46eaf45f8" category="list-text">이 절차는 MetroCluster 구성이 아닌 것 외에도 ONTAP 9.8 이상을 실행하는 패브릭 MetroCluster 4노드 및 8노드 구성에 적용됩니다.</block>
   <block id="ca49ea726cf177756380ffbec6a54a54" category="list-text">ONTAP 9.7 이하를 실행하는 MetroCluster 구성의 경우 로 이동하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> ONTAP 9.7 또는 이전 버전을 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드하기 위해 Aggregate Relocation을 사용하여 _ 에 연결하려면 _ 을(를) 사용하십시오.</block>
   <block id="5f57a66b3e1d6733761d27be10e87b12" category="list-text">MetroCluster IP 구성 및 Fabric MetroCluster 구성에 대한 추가 업그레이드 옵션은 으로 이동하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> MetroCluster 업그레이드 및 Expansion_content에 대한 링크</block>
@@ -4449,7 +4431,6 @@
   <block id="118c7af95c723f6e6838692c3038dd9f" category="sidebar">1단계. 업그레이드 준비(AFF A900 또는 FAS9500으로 업그레이드)</block>
   <block id="cec0ad56d161fd372b8f511ac2258e91" category="sidebar">2단계. 리소스를 재배치하고 AFF A700 또는 FAS9000 노드 1을 폐기합니다</block>
   <block id="3e7ed5dc4e5c354a7d48cc37baefc4ad" category="sidebar">3단계. AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈을 사용하여 노드 1을 부팅합니다</block>
-  <block id="f8963d11fe6453d2060dd15fbe008dd0" category="sidebar">AFF A900 컨트롤러 및 NVRAM 모듈을 사용하여 노드 1을 부팅합니다</block>
   <block id="7f34c3c52d70c0425b1f8f450d9011fa" category="sidebar">4단계. 노드 2에서 리소스를 재배치하고 노드 2를 폐기합니다</block>
   <block id="1ed45ea6838f5dd96a4433ce598c8050" category="sidebar">5단계. 노드2에 AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다</block>
   <block id="6c86470db96f676f214aa83001c5a57f" category="sidebar">노드2에 AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다</block>
@@ -4468,4 +4449,9 @@
   <block id="e908e6e2b5df3efafd19fa616b538a72" category="list-text">내부 스토리지가 있는 시스템의 경우 시스템을 드라이브 쉘프로 변환한 후 동일한 클러스터의 새 노드에 연결할 수 있습니다. FAS2520 컨트롤러는 드라이브 쉘프로 변환할 수 없습니다.</block>
   <block id="e9ddbc0542fbe11aae2eccf01c4e4a89" category="paragraph">FAS255x 시스템을 드라이브 쉘프로 변환하는 작업은 스토리지를 이동하여 업그레이드하는 워크플로우에서 선택적 작업입니다.</block>
   <block id="aa5eafaf3f0b641d5e680da72815213b" category="paragraph">다음은 내부 스토리지가 있는 시스템 목록입니다. FAS2520, FAS2552, FAS2554, FAS2620, FAS2650, FAS2720, FAS2750, AFF A200, AFF A220, AFF A700s, AFF A800, AFF A250</block>
+  <block id="4e54dc85c62992992a1dbefa82b638aa" category="summary">원래 노드가 지원되는 모델 중 하나인 경우 스토리지를 이동하여 업그레이드하는 동안 노드의 내부 SATA 드라이브, SSD 또는 SAS 드라이브를 동일한 클러스터의 새 노드에 연결된 드라이브 쉘프로 이동할 수 있습니다.</block>
+  <block id="fb4b0cb9efc21f6a0b33d6eb082f6db1" category="list-text">원래 노드의 SATA, SSD 또는 SAS 드라이브 캐리어는 새 드라이브 쉘프와 호환되어야 합니다.</block>
+  <block id="3b95007d4159237fc8935f46a265e025" category="list-text">드라이브 쉘프에는 원래 노드의 SATA, SSD 또는 SAS 드라이브 캐리어를 수용할 수 있는 충분한 여유 베이가 있어야 합니다.</block>
+  <block id="1b8d5202659e9a9176d67fd289952994" category="summary">원래 노드가 지원되는 모델 중 하나인 경우, 스토리지를 이동하여 업그레이드 중에 내부 SATA 드라이브, SSD 또는 SAS 드라이브를 새 노드에 연결된 드라이브 쉘프로 이동할 수 있습니다. 시스템을 드라이브 쉘프로 변환하여 새 노드에 연결할 수도 있습니다.</block>
+  <block id="f9327226ba1739cf1ffb9d6b89ba96b7" category="paragraph">원래 노드가 지원되는 모델 중 하나인 경우 스토리지를 이동하여 업그레이드하는 동안 노드의 내부 SATA 드라이브, SSD 또는 SAS 드라이브를 동일한 클러스터의 새 노드에 연결된 드라이브 쉘프로 이동할 수 있습니다.</block>
 </blocks>
