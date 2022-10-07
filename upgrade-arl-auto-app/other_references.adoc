@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/other_references.html 
 keywords: other references, documentation, hardware universe, content, documentation center, information 
-summary: '"system controller replace" 명령어를 이용하여 ONTAP 9.8 이상을 실행하는 Controller 업그레이드를 지원하는 데 필요한 참조 컨텐츠 및 웹사이트입니다.' 
+summary: '을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러 업그레이드를 지원하는 데 필요한 참조 콘텐츠 및 웹 사이트입니다 `system controller replace` 명령.' 
 ---
 = 참조
 :hardbreaks:

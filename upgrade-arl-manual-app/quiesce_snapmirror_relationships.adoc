@@ -19,17 +19,18 @@ summary: 시스템을 부팅하기 전에 ONTAP 9.8 이상을 실행하는 컨�
 .단계
 . 대상 클러스터에서 SnapMirror 관계 상태를 확인합니다.
 +
-스냅미러 쇼
+`snapmirror show`
 
 +
 
-NOTE: 상태가 "전송 중"인 경우 '스냅샷 미러 중단-대상-vserver_vserver name_'인 전송을 중단해야 합니다
+NOTE: 상태가 인 경우 `Transferring`다음과 같은 전송을 중단해야 합니다.
+`snapmirror abort -destination-vserver _vserver name_`
 
 +
-SnapMirror 관계가 "전송 중" 상태가 아니면 중단이 실패합니다.
+SnapMirror 관계가 에 없는 경우 중단이 실패합니다 `Transferring` 상태.
 
 . 클러스터 간의 모든 관계 중지:
 +
-'sapmirror quiesce-destination-vserver_vserver-name_'
+`snapmirror quiesce -destination-vserver _vserver-name_`
 
 

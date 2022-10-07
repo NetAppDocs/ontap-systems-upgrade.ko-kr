@@ -18,7 +18,7 @@ VAAI(VMware vStorage APIs for Array Integration)를 사용하면 복사 오프�
 .단계
 . 클러스터 LIF가 호스팅되는 노드에서 비 SAN 데이터 LIF의 홈 포트를 원래 노드에서 새 노드로 변경합니다.
 +
-'network interface modify -vserver_vserver_name_-lif_lif_name_-home-node_new_node_name_-home-port {<NetPort|ifgrp>}'
+`network interface modify -vserver _vserver_name_ -lif _lif_name_ -home-node _new_node_name_ -home-port {<netport|ifgrp>}`
 
 . 다음 작업 중 하나를 수행합니다.
 +
@@ -30,14 +30,14 @@ VAAI(VMware vStorage APIs for Array Integration)를 사용하면 복사 오프�
  a| 
 특정 LIF
  a| 
-'network interface migrate -vserver_vserver_name_-lif_lif_name_-source-node_source_node_name_-destination-node_dest_node_name_-destination-port_dest_port_name_'
+`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -source-node _source_node_name_ -destination-node _dest_node_name_ -destination-port _dest_port_name_`
 
 
 
  a| 
 SAN이 아닌 모든 데이터 LIF 및 클러스터 관리 LIF
  a| 
-'network interface migrate-all-node_node_name_'
+`network interface migrate-all -node _node_name_`
 
 |===
 +
@@ -56,16 +56,16 @@ cluster::> network interface migrate -vserver vs0 -lif datalif1 -destination-nod
 ----
 cluster::> network interface migrate-all -node local
 ----
-. 클러스터 관리 LIF의 홈 노드가 원래 노드 중 하나인 'network interface show-lif cluster_mgmt-fields home-node' 중 하나에 있는지 확인합니다
+. 클러스터 관리 LIF의 홈 노드가 원본 노드 중 하나에 있는지 확인합니다. `network interface show -lif cluster_mgmt -fields home-node`
 . 클러스터 관리 LIF의 홈 노드가 원래 노드 중 하나에 있는 경우 다음 단계를 완료하십시오.
 +
 .. 클러스터 관리 LIF의 홈 노드를 새 노드 중 하나로 전환합니다.
 +
-'network interface modify -vserver_cluster_name_-lif cluster_mgmt -home-node_new_node_name_-home-port {<NetPort|ifgrp>}'
+`network interface modify -vserver _cluster_name_ -lif cluster_mgmt -home-node _new_node_name_ -home-port {<netport|ifgrp>}`
 
 .. 클러스터 관리 LIF를 새 노드 중 하나로 마이그레이션합니다.
 +
-'network interface migrate-vserver_vserver_name_-lif cluster-mgmt-destination-node_new_node_name_-destination-port {<NetPort|ifgrp>}'
+`network interface migrate -vserver _vserver_name_ -lif cluster-mgmt -destination-node _new_node_name_ -destination-port {<netport|ifgrp>}`
 
 
 

@@ -7,7 +7,7 @@
 .단계
 . 클러스터의 노드 수 확인:
 +
-'클러스터 쇼'
+`cluster show`
 
 +
 다음 예에서와 같이 시스템이 클러스터의 노드를 표시합니다.
@@ -33,23 +33,24 @@ node2                 true    true
 .. 두 노드 중 하나에 다음 명령을 입력하여 클러스터 고가용성을 사용하지 않도록 설정합니다.
 
 
-클러스터 하 수정-구성 거짓
+`cluster ha modify -configured false`
 
 .. 스토리지 페일오버 해제:
 
 
-'storage failover modify -node_node1_ -enabled false'
+`storage failover modify -node _node1_ -enabled false`
 
 
 
-| 2개 이상의 노드가 있는 클러스터 | 스토리지 페일오버 해제:'스토리지 페일오버 수정 -node_node1_ -enabled false' 
+| 2개 이상의 노드가 있는 클러스터 | 스토리지 페일오버 해제:
+`storage failover modify -node _node1_ -enabled false` 
 |===
 . 스토리지 페일오버가 비활성화되었는지 확인:
 +
-'스토리지 페일오버 쇼'
+`storage failover show`
 
 +
-다음 예는 노드에 대해 스토리지 페일오버가 비활성화되었을 때 'storage failover show' 명령의 출력을 보여줍니다.
+다음 예제는 의 출력을 보여 줍니다 `storage failover show` 노드에 대해 스토리지 페일오버가 해제된 경우의 명령:
 
 +
 [listing]
@@ -70,7 +71,7 @@ node2                 true    true
 ----
 . 데이터 LIF 상태를 확인합니다.
 +
-'network interface show-role data-curr-node_node2_-home-node_node1_'
+`network interface show -role data -curr-node _node2_ -home-node _node1_`
 
 +
 LIF가 다운되었는지 확인하려면 * Status Admin/Oper * 열을 확인하십시오. LIF가 다운된 경우 에 문의하십시오 link:troubleshoot_index.html["그을음 문제"] 섹션을 참조하십시오.
@@ -89,11 +90,11 @@ LIF가 다운되었는지 확인하려면 * Status Admin/Oper * 열을 확인하
 |===
 . [[man_Retire_1_step6]]두 노드 중 하나에서 고급 권한 수준에 액세스합니다.
 +
-세트 프리빌리지 고급
+`set -privilege advanced`
 
 . [[7단계]] 클러스터 HA가 비활성화되었는지 확인:
 +
-군산쇼
+`cluster ha show`
 
 +
 다음과 같은 메시지가 표시됩니다.
@@ -108,7 +109,7 @@ High Availability Configured: false
 
 . [[man_Retire_1_step8]] 노드 1에 현재 epsilon 이 있는지 확인:
 +
-'클러스터 쇼'
+`cluster show`
 
 +
 노드의 수가 짝수인 클러스터에서 타이 가능성이 있기 때문에 노드 하나에 epsilon이라는 추가 분수 투표 중량이 있습니다. 을 참조하십시오 link:other_references.html["참조"] 자세한 내용은 _시스템 관리 참조_에 대한 링크를 참조하십시오.
@@ -134,17 +135,17 @@ High Availability Configured: false
  node1                true    true         true
  node2                true    true         false
 ----
-. node1에 epsilon이 있으면 해당 노드가 node2로 전송될 수 있도록 노드에 epsilon 'false'를 표시합니다.
+. 노드 1에 epsilon가 있으면 epsilon을 표시합니다 `false` 노드 2로 전송할 수 있도록 노드에서 다음을 수행합니다.
 +
-'cluster modify -node_node1_-epsilon FALSE'
+`cluster modify -node _node1_ -epsilon false`
 
-. 노드 2에서 epsilon 'true'를 표시하여 epsilon을 노드 2로 전송:
+. epsilon을 표시하여 epsilon을 노드 2로 전송합니다 `true` 노드 2의 경우:
 +
-'cluster modify -node_node2_-epsilon TRUE
+`cluster modify -node _node2_ -epsilon true`
 
 . 노드 2에 대한 변경 사항이 발생했는지 확인합니다.
 +
-'클러스터 쇼'
+`cluster show`
 
 +
 [listing]
@@ -160,7 +161,7 @@ High Availability Configured: false
 
 . 스위치가 없는 2노드 클러스터인지 확인합니다.
 +
-'network options switchless-cluster show'
+`network options switchless-cluster show`
 
 +
 [listing]
@@ -174,17 +175,17 @@ High Availability Configured: false
 
 . 관리자 수준으로 돌아가기:
 +
-'Set-Privilege admin'입니다
+`set -privilege admin`
 
 . node1 프롬프트에서 node1을 중단합니다.
 +
-'System node halt-node_node1_'
+`system node halt -node _node1_`
 
 +
 
 WARNING: *주의*: 노드1이 노드2와 동일한 섀시에 있는 경우 전원 스위치를 사용하거나 전원 케이블을 당겨 섀시의 전원을 끄지 마십시오. 이렇게 하면 데이터를 제공하는 노드 2가 중단되며
 
-. 시스템을 중지할지 묻는 메시지가 표시되면 y를 입력합니다.
+. 시스템을 중지할지 묻는 메시지가 표시되면 를 입력합니다 `y`.
 +
 부팅 환경 프롬프트에서 노드가 중지됩니다.
 

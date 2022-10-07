@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/stage_2_index.html 
 keywords: Prepare nodes for upgrade, storage encryption, KMS, key management server, stage 2 
-summary: 'ONTAP 9.5에서 9.7을 실행하는 컨트롤러의 "시스템 컨트롤러 교체" 명령을 사용한 ARL 업그레이드를 위한 2단계 프로세스 시퀀스.' 
+summary: '를 사용하여 ARL 업그레이드를 위한 2단계 프로세스 시퀀스 `system controller replace` ONTAP 9.5 - 9.7을 실행하는 컨트롤러의 명령' 
 ---
 = 2단계. 노드1을 재배치하거나 폐기합니다
 :hardbreaks:

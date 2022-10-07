@@ -21,7 +21,7 @@ summary: ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레�
 .단계
 . [[step1]] 노드 중 하나에 다음 명령을 입력하고 출력을 캡처하여 node2가 소유한 모든 NAS 데이터 LIF를 나열합니다.
 +
-'network interface show-data-protocol nfs|cifs-home-node_node2_'
+`network interface show -data-protocol nfs|cifs -home-node _node2_`
 
 +
 다음 예제에서는 node2의 명령 출력을 보여 줍니다.
@@ -58,19 +58,19 @@ cluster::> network interface show -data-protocol nfs|cifs -home-node node2
 +
 .. [[man_move_lif_2_3_substeepa]] 노드 2의 인터페이스 그룹에 호스팅된 데이터 LIF를 노드 3의 포트로 마이그레이션: 각 LIF에 대해 다음 명령을 한 번 입력하여 동일한 네트워크에서 LIF를 호스팅할 수 있습니다.
 +
-'network interface migrate-vserver_Vserver_NAME_-lif_LIF_name_-destination-node_node3_ – destination-port_NetPort|ifgrp_'
+`network interface migrate -vserver _Vserver_name_ -lif _LIF_name_ -destination-node _node3_ –destination-port _netport|ifgrp_`
 
 .. 에서 LIF의 홈 포트 및 홈 노드를 수정합니다 ,하위 단계 A 각 노드에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
 +
-'network interface modify -vserver_Vserver_NAME_-lif_LIF_name_-home-node_node3_-homport_NetPort|ifgrp_'
+`network interface modify -vserver _Vserver_name_ -lif _LIF_name_ -home-node _node3_ -homeport _netport|ifgrp_`
 
 .. [[man_move_lif_2_3_substeepc]] 노드 2의 VLAN에 호스팅된 모든 LIF를 노드 3의 포트로 마이그레이션 합니다. 노드 3에서는 각 LIF에 대해 다음 명령을 한 번 입력하여 VLAN과 동일한 네트워크에서 LIF를 호스팅할 수 있습니다.
 +
-'network interface migrate-vserver_Vserver_NAME_-lif_LIF_name_-destination-node_node3_ – destination-port_NetPort|ifgrp_'
+`network interface migrate -vserver _Vserver_name_ -lif _LIF_name_ -destination-node _node3_ –destination-port _netport|ifgrp_`
 
 .. 에서 LIF의 홈 포트 및 홈 노드를 수정합니다 ,하위 단계 c 각 LIF에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
 +
-'network interface modify -vserver_Vserver_NAME_-lif_LIF_name_-home-node_node3_-homport_NetPort|ifgrp_'
+`network interface modify -vserver _Vserver_name_ -lif _LIF_name_ -home-node _node3_ -homeport _netport|ifgrp_`
 
 
 
@@ -91,7 +91,7 @@ cluster::> network interface show -data-protocol nfs|cifs -home-node node2
 |===
 . [[man_move_lif_2_3_step5]] 플랫폼에서 동일하지 않은 데이터 포트가 있는 경우 브로드캐스트 도메인에 포트를 추가합니다.
 +
-'network port broadcast-domain add-ports-IPSpace_IPspace_name_-broadcast-domain mgmt-ports_node:port_'
+`network port broadcast-domain add-ports -ipspace _IPspace_name_ -broadcast-domain mgmt -ports _node:port_`
 
 +
 다음 예에서는 노드 "6280-1"의 포트 "e0a"와 노드 "8060-1"의 포트 "e0i"를 IPspace "Default"의 브로드캐스트 도메인 "mgmt"에 추가합니다.
@@ -104,25 +104,25 @@ cluster::> network port broadcast-domain add-ports -ipspace Default
 ----
 . [[step6]]각 LIF에 대해 다음 명령을 한 번 입력하여 각 NAS 데이터 LIF를 노드 3으로 마이그레이션합니다.
 +
-'network interface migrate-vserver_Vserver_NAME_-lif_LIF_name_-destination-node_node3_-destination-port_NetPort|ifgrp_'
+`network interface migrate -vserver _Vserver_name_ -lif _LIF_name_ -destination-node _node3_ -destination-port _netport|ifgrp_`
 
 . [[step7]] 두 노드 중 하나에 다음 명령을 입력하고 출력을 검사하여 NAS LIF가 올바른 포트로 이동되었으며 LIF의 상태가 UP인지 확인하십시오.
 +
-'network interface show-curr-node_node3_-data-protocol cifs | nfs'
+`network interface show -curr-node _node3_ -data-protocol cifs|nfs`
 
 . [[man_move_lif_2_3_step8]]LIF가 다운된 경우, 각 LIF에 대해 다음 명령을 한 번 입력하여 LIF의 관리 상태를 "UP"으로 설정하십시오.
 +
-'network interface modify -vserver_Vserver_NAME_-lif_LIF_name_-status-admin up
+`network interface modify -vserver _Vserver_name_ -lif _LIF_name_ -status-admin up`
 
 . [[man_move_lif_2_3_step9]] 인터페이스 그룹 또는 VLAN이 구성된 경우 다음 하위 단계를 완료합니다.
 +
 .. 인터페이스 그룹에서 VLAN을 제거합니다.
 +
-'network port vlan delete-node_node_name_-port_ifgrp_-vlan-id_vlan_ID_'
+`network port vlan delete -node _node_name_ -port _ifgrp_ -vlan-id _VLAN_ID_`
 
 .. 다음 명령을 입력하고 출력을 검사하여 노드에 구성된 인터페이스 그룹이 있는지 확인합니다.
 +
-'network port ifgrp show -node_node_name_-ifgrp_ifgrp_name_-instance'
+`network port ifgrp show -node _node_name_ -ifgrp _ifgrp_name_ -instance`
 
 +
 다음 예에서와 같이 노드에 대한 인터페이스 그룹 정보가 표시됩니다.
@@ -143,7 +143,7 @@ Distribution Function: ip
 ----
 .. 노드에 인터페이스 그룹이 구성되어 있는 경우 인터페이스 그룹 이름과 그룹에 할당된 포트를 기록한 다음 각 포트에 대해 다음 명령을 한 번 입력하여 포트를 삭제합니다.
 +
-'network port ifgrp remove-port-node_node_name_-ifgrp_ifgrp_name_-port_port_name_'
+`network port ifgrp remove-port -node _node_name_ -ifgrp _ifgrp_name_ -port _port_name_`
 
 
 

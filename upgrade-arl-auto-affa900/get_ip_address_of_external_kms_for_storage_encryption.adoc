@@ -19,28 +19,28 @@ summary: 스토리지 암호화를 구성 및 관리하고 인증 키를 관리�
 .단계
 . 키 관리 서버와 통신하는 데 필요한 클라이언트 및 서버 SSL(Secure Sockets Layer) 인증서를 설치합니다.
 +
-보안 인증서 설치
+`security certificate install`
 
 . 각 노드에서 다음 명령을 사용하여 모든 노드에서 스토리지 암호화 구성:
 +
-'보안 키 관리자 외부 활성화
+`security key-manager external enable`
 
 . 각 키 관리 서버의 IP 주소를 추가합니다.
 +
-'Security key-manager external add-servers-key-servers_key_management_server_ip_address_'
+`security key-manager external add-servers -key-servers _key_management_server_ip_address_`
 
 . 클러스터의 모든 노드에서 동일한 키 관리 서버가 구성 및 사용 가능한지 확인합니다.
 +
-'보안 키 관리자 외부 표시 상태
+`security key-manager external show-status`
 
 . 새 클러스터 전체 인증 키를 생성합니다.
 +
-'보안 키 관리자 키 생성
+`security key-manager key create`
 
 . 새 인증 키 ID를 기록해 둡니다.
 . 새 인증 키를 사용하여 모든 자체 암호화 드라이브를 다시 입력하다
 +
-'Storage encryption disk modify -disk * -data-key-id_authentication_key_id_'
+`storage encryption disk modify -disk * -data-key-id _authentication_key_id_`
 
 
 
@@ -53,27 +53,27 @@ ONTAP 9.10.1부터 KMIP(Key Management Interoperability Protocol) 서버를 사�
 .단계
 . 새 컨트롤러 추가:
 +
-'보안 키 관리자 외부 활성화
+`security key-manager external enable`
 
 . 키 관리자 추가:
 +
-'Security key-manager external add-servers-key-servers_key_management_server_ip_address_'
+`security key-manager external add-servers -key-servers _key_management_server_ip_address_`
 
 . 키 관리 서버가 구성되어 있고 클러스터의 모든 노드에서 사용할 수 있는지 확인합니다.
 +
-'보안 키 관리자 외부 표시 상태
+`security key-manager external show-status`
 
 . 연결된 모든 키 관리 서버에서 새 노드로 인증 키를 복원합니다.
 +
-'Security key-manager external restore-node_new_controller_name_
+`security key-manager external restore -node _new_controller_name_`
 
 . 새 인증 키를 사용하여 모든 자체 암호화 디스크를 다시 입력하다
 +
-'Storage encryption disk modify -disk * [-data-key-id nonMSID AK]'
+`storage encryption disk modify -disk * [-data-key-id nonMSID AK]`
 
 . FIPS(Federal Information Processing Standard)를 사용하는 경우 새 인증 키를 사용하여 모든 자체 암호화 디스크를 다시 입력하다
 +
-'Storage encryption disk modify -disk * [-FIPS-key-id nonMSID AK]'
+`storage encryption disk modify -disk * [-fips-key-id nonMSID AK]`
 
 
 
@@ -87,7 +87,7 @@ OKM을 사용하여 암호화 키를 관리할 수 있습니다. OKM을 사용�
 . 암호를 안전한 위치에 저장합니다.
 . 복구를 위해 백업을 생성합니다. 다음 명령을 실행하고 출력을 저장합니다.
 +
-보안 키 관리자 온보드 쇼 백업
+`security key-manager onboard show-backup`
 
 
 
@@ -100,12 +100,13 @@ OKM을 사용하여 암호화 키를 관리할 수 있습니다. OKM을 사용�
 .단계
 . 대상 클러스터에서 SnapMirror 관계 상태를 확인합니다.
 +
-스냅미러 쇼
+`snapmirror show`
 
 +
 [NOTE]
 ====
-상태가 "전송 중"인 경우 '스냅샷 미러 중단-대상-vserver_vserver_name_'인 전송을 중단해야 합니다
+상태가 "전송 중"인 경우 이러한 전송을 중단해야 합니다.
+`snapmirror abort -destination-vserver _vserver_name_`
 
 ====
 +
@@ -113,6 +114,6 @@ SnapMirror 관계가 "전송 중" 상태가 아니면 중단이 실패합니다.
 
 . 클러스터 간의 모든 관계 중지:
 +
-'sapmirror quiesce-destination-vserver_vserver_name_'
+`snapmirror quiesce -destination-vserver _vserver_name_`
 
 

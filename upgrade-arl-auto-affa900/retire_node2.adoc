@@ -19,7 +19,7 @@ summary: AFF A700에서 AFF A900으로 업그레이드하는 동안 노드 2를 
 .단계
 . 작업을 다시 시작합니다.
 +
-시스템 컨트롤러 교체 재개
+`system controller replace resume`
 
 +
 노드가 자동으로 중단됩니다.

@@ -22,10 +22,10 @@
 | 업그레이드 중인 시스템의 경우... | 그러면... 
 
 
-| 스토리지 디스크가 있습니다 | '시스템 노드 하드웨어 통합 접속 쇼 
+| 스토리지 디스크가 있습니다 | `system node hardware unified-connect show` 
 
 
-| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 'ucadmin 쇼' 
+| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | `ucadmin show` 
 |===
 +
 시스템에 있는 모든 FC 및 통합 네트워크 어댑터에 대한 정보가 표시됩니다.
@@ -43,28 +43,31 @@
 
 ** 타겟 포트를 프로그래밍하려면
 +
-'ucadmin modify -m fc-t target_adapter_'
+`ucadmin modify -m fc -t target _adapter_`
 
 ** 이니시에이터 포트를 프로그래밍하려면:
 +
-'ucadmin modify -m fc -t initiator_adapter_'
+`ucadmin modify -m fc -t initiator _adapter_`
 
 
 
-'-t'는 FC4 유형이며 타겟이나 이니시에이터입니다.
+`-t` FC4 유형: 타겟 또는 이니시에이터입니다.
 
 
 
-| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 필요에 따라 노드 4의 FC 포트를 수정합니다. 'ucadmin modify -m fc -t initiator -f_adapter_port_name_' -t'는 FC4 유형, 타겟 또는 이니시에이터입니다. * 참고 *: FC 포트는 이니시에이터로 프로그래밍해야 합니다. 
+| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 필요에 따라 노드 4의 FC 포트를 수정합니다.
+`ucadmin modify -m fc -t initiator -f _adapter_port_name_`
+
+`-t` FC4 유형, 타겟 또는 이니시에이터입니다. * 참고 *: FC 포트는 이니시에이터로 프로그래밍해야 합니다. 
 |===
 . 유지 관리 모드 종료:
 +
-"중지"
+`halt`
 
 . 로더 프롬프트에서 시스템을 부팅합니다.
 +
-boot_ontap 메뉴
+`boot_ontap menu`
 
 . 명령을 입력한 후 부팅 환경 프롬프트에서 시스템이 중지될 때까지 기다리십시오.
-. 유지보수 모드의 부팅 메뉴에서 옵션 '5'를 선택합니다.
+. 옵션을 선택합니다 `5` 를 참조하십시오.
 

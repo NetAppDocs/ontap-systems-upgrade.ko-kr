@@ -21,16 +21,16 @@ summary: 필요한 경우 ONTAP 9.8 이상을 실행하는 컨트롤러의 수�
 .단계
 . 키 관리 서버를 계속 사용할 수 있는지, 해당 상태 및 인증 키 정보를 확인합니다.
 +
-보안 키 관리자 표시 상태
+`security key-manager show -status`
 
 +
-보안 키 관리자 쿼리
+`security key-manager query`
 
 . 이전 단계에 나열된 키 관리 서버를 새 컨트롤러의 키 관리 서버 목록에 추가합니다.
 +
 .. 키 관리 서버를 추가합니다.
 +
-'Security key-manager-add_key_management_server_ip_address_'
+`security key-manager -add _key_management_server_ip_address_`
 
 .. 나열된 각 키 관리 서버에 대해 이전 단계를 반복합니다.
 +
@@ -38,7 +38,7 @@ summary: 필요한 경우 ONTAP 9.8 이상을 실행하는 컨트롤러의 수�
 
 .. 키 관리 서버가 성공적으로 추가되었는지 확인합니다.
 +
-보안 키매니저 쇼
+`security key-manager show`
 
 
 
@@ -49,13 +49,13 @@ summary: 필요한 경우 ONTAP 9.8 이상을 실행하는 컨트롤러의 수�
 +
 .. 새 노드에서 키 관리 서버 설정 마법사를 시작합니다.
 +
-'Security key-manager setup-node_new_controller_name_'
+`security key-manager setup -node _new_controller_name_`
 
 .. 마법사의 단계를 완료하여 키 관리 서버를 구성합니다.
 
 
 . 연결된 모든 키 관리 서버에서 새 노드로 인증 키 복원:
 +
-'Security key-manager restore-node_new_controller_name_'
+`security key-manager restore -node _new_controller_name_`
 
 

@@ -19,7 +19,7 @@
 .단계
 . 다음 명령을 입력하여 애그리게이트 목록을 가져옵니다.
 +
-'Storage aggregate show -nodes_node4_-is-home true'
+`storage aggregate show -nodes _node4_ -is-home true`
 
 +
 올바르게 재배치되지 않은 애그리게이트를 확인하려면 섹션에서 가져온 노드 1의 홈 소유자가 있는 애그리게이트 목록을 참조하십시오 link:prepare_nodes_for_upgrade.html["업그레이드할 노드를 준비합니다"] 그런 다음 위의 명령의 출력과 비교합니다.
@@ -27,17 +27,17 @@
 . 1단계의 출력과 섹션에서 node1에 대해 캡처한 출력을 비교합니다 link:prepare_nodes_for_upgrade.html["업그레이드할 노드를 준비합니다"] 그리고 올바르게 재배치되지 않은 모든 애그리게이트를 확인할 수 있습니다.
 . [[auto_aggr_relocate_fail_Step3] 노드 4에 남아 있는 애그리게이트를 재배치합니다.
 +
-'storage aggregate relocation start -node_node4_-aggr_aggr_node_1_-destination_node3_'
+`storage aggregate relocation start -node _node4_ -aggr _aggr_node_1_ -destination _node3_`
 
 +
-이 재배치 중에는 '-ndo-controller-upgrade' 매개 변수를 사용하지 마십시오.
+를 사용하지 마십시오 `-ndo-controller-upgrade` 이 재배치 중 매개 변수입니다.
 
 . 노드 3이 이제 애그리게이트의 홈 소유자가 되는지 확인합니다.
 +
-'STORAGE AGGREGATE SHOUTGATE_aggr1, aggr2, aggr3... - FACTORS HOME-NAME'
+`storage aggregate show -aggregate _aggr1,aggr2,aggr3..._ -fields home-name`
 
 +
-'_aggr1, aggr2, aggr3...''은 노드 1을 원래 홈 소유자로 가지고 있는 집계 목록입니다.
+`_aggr1,aggr2,aggr3..._` 노드 1을 원래 홈 소유자로 사용한 Aggregate 목록입니다.
 
 +
 노드 3이 홈 소유자로 없는 애그리게이트는 에서 동일한 재배치 명령을 사용하여 노드 3으로 재배치할 수 있습니다 ,3단계.

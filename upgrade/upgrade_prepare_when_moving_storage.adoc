@@ -16,17 +16,17 @@ summary: 스토리지를 이동하여 업그레이드하기 전에 원래 노드
 .단계
 . 원래 노드, 노드 1 및 노드 2의 라이센스 정보를 표시하고 기록합니다.
 +
-'시스템 사용권 프로그램'
+`system license show`
 
 . 노드 1/노드 2 HA 쌍에서 스토리지 암호화를 사용하고 새 노드에 암호화가 활성화된 디스크가 있는 경우 원래 노드의 디스크가 올바르게 입력되었는지 확인하십시오.
 +
 .. SED(자체 암호화 디스크)에 대한 정보 표시
 +
-스토리지 암호화 디스크 표시
+`storage encryption disk show`
 
 .. 비제조 보안 ID(비 MSID) 키와 연결된 디스크가 있는 경우 MSID 키로 키를 다시 입력하다
 +
-스토리지 암호화 디스크 수정
+`storage encryption disk modify`
 
 
 
@@ -40,28 +40,28 @@ summary: 스토리지를 이동하여 업그레이드하기 전에 원래 노드
  a| 
 쉘프, 각 쉘프의 디스크 수, 플래시 스토리지 세부 정보, 메모리, NVRAM 및 네트워크 카드
  a| 
-'system node run-node_node_name_sysconfig'
+`system node run -node _node_name_ sysconfig`
 
 
 
  a| 
 클러스터 네트워크 및 노드 관리 LIF
  a| 
-네트워크 인터페이스 show-role cluster, node-mgmt
+`network interface show -role cluster,node-mgmt`
 
 
 
  a| 
 물리적 포트
  a| 
-'network port show-node_node_name_-type physical
+`network port show -node _node_name_ -type physical`
 
 
 
  a| 
 페일오버 그룹
  a| 
-'network interface failover-groups show -vserver_vserver_name _'
+`network interface failover-groups show -vserver _vserver_name_`
 
 클러스터 차원 이 아닌 페일오버 그룹의 이름과 포트를 기록합니다.
 
@@ -70,7 +70,7 @@ summary: 스토리지를 이동하여 업그레이드하기 전에 원래 노드
  a| 
 VLAN 구성
  a| 
-'network port vlan show-node_node_name_'
+`network port vlan show -node _node_name_`
 
 각 네트워크 포트 및 VLAN ID 페어링을 기록합니다.
 
@@ -79,7 +79,7 @@ VLAN 구성
  a| 
 인터페이스 그룹 구성
  a| 
-'network port ifgrp show -node_node_name_-instance'
+`network port ifgrp show -node _node_name_ -instance`
 
 인터페이스 그룹 및 그룹에 할당된 포트의 이름을 기록합니다.
 
@@ -88,14 +88,14 @@ VLAN 구성
  a| 
 브로드캐스트 도메인
  a| 
-네트워크 포트 브로드캐스트 도메인 쇼
+`network port broadcast-domain show`
 
 
 
  a| 
 IPspace 정보
  a| 
-네트워크 IPspace 쇼
+`network ipspace show`
 
 |===
 . 업그레이드할 각 새 노드의 기본 클러스터 포트, 데이터 포트 및 노드 관리 포트에 대한 정보를 얻습니다. https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
@@ -109,14 +109,14 @@ WARNING: 교체 시스템에서 포트 "e0a" 및 "e0b"를 HA 인터커넥트 포
 .. 교체 시스템에서 포트 "e0a" 및 "e0b"를 HA 포트로 사용하는지 확인합니다. https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 .. 필요한 경우 원래 시스템의 포트 "e0a" 및 "e0b"에 구성된 관리 또는 인터클러스터 LIF를 식별합니다.
 +
-네트워크 인터페이스 show-home-port_port_name _
+`network interface show -home-port _port_name_`
 
 .. 필요한 경우 영향을 받는 관리 또는 인터클러스터 LIF만 교체 시스템의 HA 포트로 사용되지 않는 네트워크 포트에 다시 할당합니다.
 +
-'network interface modify -vserver_vserver_name_-lif_LIF_name_-home-port_new_port_name_'
+`network interface modify -vserver _vserver_name_ -lif _LIF_name_ -home-port _new_port_name_`
 
 +
-'network interface revert-vserver_vserver_name_-lif_LIF_name_'
+`network interface revert -vserver _vserver_name_ -lif _LIF_name_`
 
 +
 다음 예에서는 네트워크 포트 "e0a" 및 "e0b"에 대한 관리 및 인터클러스터 LIF가 네트워크 포트 "E1A" 및 "e1b"에 다시 할당됩니다. 노드는 시스템에 따라 다르기 때문에 서로 다른 네트워크 포트를 사용할 수도 있습니다.
@@ -133,7 +133,7 @@ image::../upgrade/media/reassign_lifs.PNG[교체 시스템의 네트워크 포�
 
 +
 .. 에 액세스합니다 https://mysupport.netapp.com/site/["NetApp Support 사이트"^] 시스템의 Netboot 수행에 사용되는 파일을 다운로드합니다.
-.. NetApp Support 사이트의 소프트웨어 다운로드 섹션에서 해당 ONTAP 소프트웨어를 다운로드하고 웹 액세스 가능한 디렉토리에 '<ONTAP_version>_image.tgz' 파일을 저장합니다.
+.. NetApp Support 사이트의 소프트웨어 다운로드 섹션에서 해당 ONTAP 소프트웨어를 다운로드하고 를 저장합니다 `<ontap_version>_image.tgz` 웹 액세스 가능 디렉터리에 있는 파일입니다.
 .. 웹 액세스 가능 디렉토리로 변경하고 필요한 파일을 사용할 수 있는지 확인합니다.
 
 
@@ -146,11 +146,13 @@ image::../upgrade/media/reassign_lifs.PNG[교체 시스템의 네트워크 포�
  a| 
 * FAS2200, FAS2500, FAS3200, FAS6200, FAS/AFF8000 시리즈 시스템 *
  a| 
-'<ONTAP_VERSION>_IMAGE.tgz' 파일의 내용을 타겟 디렉토리 'tar-zxvf<ONTAP_VERSION>_IMAGE.tgz'에 추출합니다
+의 내용을 추출합니다 `<ontap_version>_image.tgz` 대상 디렉토리로 파일:
+`tar -zxvf <ontap_version>_image.tgz`
 
 * 참고: * Windows에서 컨텐트를 추출하는 경우 7-Zip 또는 WinRAR을 사용하여 netboot 이미지를 추출합니다.
 
-디렉토리 목록에는 커널 파일 'netboot/kernel'이 있는 netboot 폴더가 포함되어야 합니다
+디렉토리 목록에는 커널 파일이 있는 netboot 폴더가 포함되어야 합니다.
+`netboot/kernel`
 
 
 
@@ -159,10 +161,10 @@ image::../upgrade/media/reassign_lifs.PNG[교체 시스템의 네트워크 포�
  a| 
 디렉토리 목록에는 다음 파일이 포함되어야 합니다.
 
-'<ONTAP_VERSION>_IMAGE.tgz'
+`<ontap_version>_image.tgz`
 
 
-NOTE: '<ONTAP_VERSION>_IMAGE.tgz' 파일의 내용은 추출할 필요가 없습니다.
+NOTE: 의 내용을 추출할 필요는 없습니다 `<ontap_version>_image.tgz` 파일.
 
 |===
 

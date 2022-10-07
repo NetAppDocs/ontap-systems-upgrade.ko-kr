@@ -15,7 +15,7 @@ FC에 UTA/UTA2(Unified Target Adapter) 포트를 사용하려면 먼저 포트 �
 
 NOTE: NetApp 마케팅 자료에서는 UTA2 용어를 사용하여 CNA 어댑터 및 포트를 참조할 수 있습니다. 그러나 CLI에서는 CNA라는 용어를 사용합니다.
 
-'ucadmin show' 명령을 사용하여 현재 포트 구성을 확인할 수 있습니다.
+를 사용할 수 있습니다 `ucadmin show` 현재 포트 구성을 확인하는 명령:
 
 [listing]
 ----
@@ -52,10 +52,10 @@ NOTE: * 주의 *: 시스템에 스토리지 디스크가 있는 경우 유지보
 | 시스템이... | 그러면... 
 
 
-| 스토리지 디스크가 있습니다 | '시스템 노드 하드웨어 통합 접속 쇼 
+| 스토리지 디스크가 있습니다 | `system node hardware unified-connect show` 
 
 
-| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 'ucadmin 쇼' 
+| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | `ucadmin show` 
 |===
 +
 다음 예와 유사한 출력이 표시됩니다.
@@ -99,7 +99,7 @@ Adapter  Mode     Type       Mode     Type     Status
 +
 올바른 SFP+ 모듈을 얻으려면 NetApp 담당자에게 문의하십시오.
 
-. [[step3]'시스템 노드 하드웨어 unified-connect show' 또는 'ucadmin show' 명령의 출력을 확인하여 UTA/UTA2 포트가 원하는 특성을 갖고 있는지 여부를 결정합니다.
+. [[step3]]의 출력을 검사합니다 `system node hardware unified-connect show` 또는 `ucadmin show` UTA/UTA2 포트가 원하는 특성을 가지고 있는지 여부를 확인하는 명령입니다.
 . [[4단계]] 다음 작업 중 하나를 수행합니다.
 +
 [cols="35,65"]
@@ -119,7 +119,8 @@ Adapter  Mode     Type       Mode     Type     Status
 | 시스템이... | 그러면... 
 
 
-| Clustered Data ONTAP 8.3을 실행 중인 스토리지 디스크가 있습니다 | 노드3를 부팅하고 유지보수 모드:boot_ONTAP maint를 입력합니다 
+| Clustered Data ONTAP 8.3을 실행 중인 스토리지 디스크가 있습니다 | 노드 3을 부팅하고 유지보수 모드로 전환합니다.
+`boot_ontap maint` 
 
 
 | V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 로 이동합니다 ,6단계. 이미 유지보수 모드여야 합니다. 
@@ -138,18 +139,18 @@ Adapter  Mode     Type       Mode     Type     Status
 |===
 . [[man_check_3_step7] 어댑터가 이니시에이터 모드에 있고 UTA/UTA2 포트가 온라인 상태인 경우 UTA/UTA2 포트를 오프라인으로 전환합니다.
 +
-'STORAGE DISABLE ADAPTER_ADAPTER_NAME_'
+`storage disable adapter _adapter_name_`
 
 +
 유지 관리 모드에서는 대상 모드의 어댑터가 자동으로 오프라인 상태가 됩니다.
 
 . [[man_check_3_step8]] 현재 구성이 원하는 사용과는 일치하지 않으면 필요에 따라 구성을 변경하십시오.
 +
-''ucadmin modify -m fc|CNA-t initiator|target_adapter_name_'
+`ucadmin modify -m fc|cna -t initiator|target _adapter_name_`
 
 +
-** m은 성격 모드, 즉 fc, CNA.
-** t는 FC4형, target 또는 initiator입니다.
+** `-m` 성격 모드, `fc` 또는 `cna`.
+** `-t` FC4형, `target` 또는 `initiator`.
 +
 
 NOTE: 테이프 드라이브, FlexArray 가상화 시스템 및 MetroCluster 구성에 FC Initiator를 사용해야 합니다. SAN 클라이언트에 FC 타겟을 사용해야 합니다.
@@ -158,7 +159,7 @@ NOTE: 테이프 드라이브, FlexArray 가상화 시스템 및 MetroCluster 구
 
 . 설정을 확인합니다.
 +
-'ucadmin 쇼'
+`ucadmin show`
 
 . 설정을 확인합니다.
 +
@@ -170,20 +171,21 @@ NOTE: 테이프 드라이브, FlexArray 가상화 시스템 및 MetroCluster 구
 | 스토리지 디스크가 있습니다  a| 
 .. 시스템을 중지합니다.
 +
-"중지"
+`halt`
 
 +
 부팅 환경 프롬프트에서 시스템이 중지됩니다.
 
 .. 다음 명령을 입력합니다.
 +
-부트 ONTAP
+`boot_ontap`
 
 
 
 
 
-| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 유지보수 모드로 재부팅합니다. 'boot_netapp maint 
+| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 유지보수 모드로 재부팅:
+`boot_netapp maint` 
 |===
 . [[step11]] 설정을 확인합니다.
 +
@@ -192,13 +194,13 @@ NOTE: 테이프 드라이브, FlexArray 가상화 시스템 및 MetroCluster 구
 | 시스템이... | 그러면... 
 
 
-| 스토리지 디스크가 있습니다 | '시스템 노드 하드웨어 통합 접속 쇼 
+| 스토리지 디스크가 있습니다 | `system node hardware unified-connect show` 
 
 
-| V-Series 또는 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 'ucadmin 쇼' 
+| V-Series 또는 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | `ucadmin show` 
 |===
 +
-다음 예제의 출력은 어댑터 "1b"의 FC4 유형이 "이니시에이터"로 변경되고 어댑터 "2a"와 "2b"의 모드가 "CNA"로 변경된다는 것을 보여줍니다.
+다음 예제의 출력은 어댑터 "1b"의 FC4 유형이 로 변경된다는 것을 보여줍니다 `initiator` 어댑터 "2a"와 "2b"의 모드가 로 변경됩니다 `cna`:
 
 +
 [listing]
@@ -235,10 +237,10 @@ Adapter  Mode     Type       Mode     Type       Status
 | 시스템이... | 그러면... 
 
 
-| 스토리지 디스크가 있습니다 | 'network fcp adapter modify -node_node_name_-adapter_adapter_name_-state up 
+| 스토리지 디스크가 있습니다 | `network fcp adapter modify -node _node_name_ -adapter _adapter_name_ -state up` 
 
 
-| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 'fcp config_adapter_name_up 
+| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | `fcp config _adapter_name_ up` 
 |===
 . [[man_check_3_step13]] 포트에 케이블을 연결합니다.
 . [[pep14]] 다음 작업 중 하나를 수행합니다.

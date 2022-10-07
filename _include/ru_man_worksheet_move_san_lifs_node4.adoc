@@ -2,18 +2,18 @@
 :allow-uri-read: 
 
 
-다음 워크시트를 사용하여 노드 3에서 노드 4로 SAN LIF를 이동한 후 올바른 구성이 있는지 확인하려면 각 LIF에 대한 "어댑터" 및 "스위치 포트" 정보를 기록해 두십시오.
+SAN LIF를 노드 3에서 노드 4로 이동한 후 구성이 올바른지 확인하려면 다음 워크시트를 사용하여 를 기록하면 됩니다 `adapter` 및 `switch-port` 각 LIF에 대한 정보입니다.
 
-노드 3의 네트워크 인터페이스 show-data-protocol fc * 명령 출력 및 FCP 어댑터 show-fields switch-port, fc-WWPN 명령 출력의 LIF '어댑터' 정보를 기록합니다.
+LIF를 기록합니다 `adapter` 의 정보 `network interface show -data-protocol fc*` 명령 출력 및 을 참조하십시오 `switch-port` 의 정보 `fcp adapter show -fields switch-port,fc-wwpn` 노드 3의 명령 출력입니다.
 
-노드 4로 마이그레이션을 완료한 후 노드 4의 LIF에 대한 LIF 어댑터 및 '스위치 포트' 정보를 기록하고 각 LIF가 동일한 '스위치 포트'에 연결되어 있는지 확인합니다.
+노드 4로의 마이그레이션을 완료한 후 LIF를 기록합니다 `adapter` 및 `switch-port` 노드 4의 LIF에 대한 정보를 확인하고 각 LIF가 계속 동일한 에 연결되어 있는지 확인합니다 `switch-port`.
 
 [cols="6*"]
 |===
 3+| 노드3 3+| 노드4 
 
 
-| LIF | "어댑터" | 마녀 | LIF | "어댑터" | 마녀 
+| LIF | `adapter` | `switch-port` | LIF | `adapter` | `switch-port` 
 
 
 |  |  |  |  |  |  

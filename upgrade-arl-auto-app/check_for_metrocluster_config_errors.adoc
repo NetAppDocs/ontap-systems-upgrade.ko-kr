@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/check_for_metrocluster_config_errors.html 
 keywords: metrocluster, configuration, errors, config, advisor, netapp, support, site 
-summary: 'Config Advisor 툴을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 "시스템 컨트롤러 교체" 명령을 사용하여 일반적인 구성 오류를 확인하십시오.' 
+summary: '을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 Config Advisor 도구를 사용하여 일반적인 구성 오류를 확인하십시오 `system controller replace` 명령.' 
 ---
 = MetroCluster 구성 오류를 확인합니다
 :hardbreaks:

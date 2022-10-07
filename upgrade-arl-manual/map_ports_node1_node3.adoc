@@ -83,11 +83,11 @@ _Hardware Universe_의 새 노드에 있는 포트에 대한 정보가 이미 �
 +
 .. 권한 수준을 고급으로 설정합니다.
 +
-클러스터: 세권한 진전
+`cluster::> set -privilege advanced`
 
 .. 스위치가 없는 2노드 클러스터인지 확인합니다.
 +
-'network options switchless-cluster show'
+`network options switchless-cluster show`
 
 +
 [listing]
@@ -112,7 +112,7 @@ _Hardware Universe_의 새 노드에 있는 포트에 대한 정보가 이미 �
 .. 노드3 부팅. 을 참조하십시오 link:install_boot_node3.html["노드3을 설치하고 부팅합니다"] 아직 부팅하지 않은 경우 노드를 부팅합니다.
 .. 새 클러스터 포트가 클러스터 브로드캐스트 도메인에 있는지 확인합니다.
 +
-'network port show-node_node-name_-port_port-name_-fields broadcast-domain'
+`network port show -node _node-name_ -port _port-name_ -fields broadcast-domain`
 
 +
 다음 예에서는 노드 3의 "클러스터" 도메인에 포트 "e0a"가 있음을 보여 줍니다.
@@ -128,7 +128,7 @@ _Hardware Universe_의 새 노드에 있는 포트에 대한 정보가 이미 �
 ----
 .. 클러스터 브로드캐스트 도메인에 올바른 포트를 추가합니다.
 +
-'network port modify -node_node -name_-port_port -name_-IPSpace Cluster-MTU 9000'
+`network port modify -node _node-name_ -port _port-name_ -ipspace Cluster -mtu 9000`
 
 +
 이 예제에서는 노드 3에 클러스터 포트 "e1b"를 추가합니다.
@@ -151,23 +151,23 @@ command failed: This operation is not permitted on a Vserver that is configured 
 원격 사이트의 해당 동기화 소스 SVM에서 다음 명령을 입력하여 동기화 대상 LIF를 적절한 포트에 재할당합니다.
 
 +
-'MetroCluster vserver resync -vserver_Vserver-NAME_'
+`metrocluster vserver resync -vserver _Vserver-name_`
 
 .. 클러스터 LIF를 각 LIF에 대해 한 번씩 새 포트로 마이그레이션합니다.
 +
-'network interface migrate-vserver cluster-lif_LIF-name_-source-node_node3_-destination-node_node3_-destination-port_port-name_'
+`network interface migrate -vserver Cluster -lif _LIF-name_ -source-node _node3_ -destination-node _node3_ -destination-port _port-name_`
 
 .. 클러스터 LIF의 홈 포트를 수정합니다.
 +
-'network interface modify -vserver Cluster-lif_LIF-name_ – home-port_port-name_'
+`network interface modify -vserver Cluster -lif _LIF-name_ –home-port _port-name_`
 
 .. 클러스터 포트가 Cluster broadcast-domain에 없는 경우 다음을 추가합니다.
 +
-'네트워크 포트 브로드캐스트-도메인 추가-포트-IPSpace 클러스터-브로드캐스트-도메인 클러스터-포트_노드:포트_'
+`network port broadcast-domain add-ports -ipspace Cluster -broadcast-domain Cluster -ports _node:port_`
 
 .. 클러스터 브로드캐스트 도메인에서 이전 포트를 제거합니다.
 +
-네트워크 포트 브로드캐스트 도메인 제거 포트
+`network port broadcast-domain remove-ports`
 
 +
 다음 예제에서는 노드 3에서 포트 "e0d"를 제거합니다.
@@ -179,7 +179,7 @@ network port broadcast-domain remove-ports -ipspace Cluster -broadcast-domain Cl
 ----
 .. 노드 3이 쿼럼에 다시 연결되었는지 확인합니다.
 +
-'cluster show-node_node3_ - 필드 상태
+`cluster show -node _node3_ -fields health`
 
 
 
@@ -187,22 +187,22 @@ network port broadcast-domain remove-ports -ipspace Cluster -broadcast-domain Cl
 +
 .. LIF의 홈 포트를 표시합니다.
 +
-네트워크 인터페이스 show-fields_home-node, home-port _
+`network interface show -fields _home-node,home-port_`
 
 .. 이 포트가 포함된 브로드캐스트 도메인을 표시합니다.
 +
-'network port broadcast-domain show-ports_node_name:port_name_'
+`network port broadcast-domain show -ports _node_name:port_name_`
 
 .. 브로드캐스트 도메인에서 포트 추가 또는 제거:
 +
-네트워크 포트 브로드캐스트 도메인 추가 포트
+`network port broadcast-domain add-ports`
 
 +
-네트워크 포트 브로드캐스트 도메인 제거 포트
+`network port broadcast-domain remove-ports`
 
 .. LIF의 홈 포트 수정:
 +
-'network interface modify -vserver_Vserver-NAME_-lif_LIF-name_ – home-port_port-name_'
+`network interface modify -vserver _Vserver-name_ -lif _LIF-name_ –home-port _port-name_`
 
 
 
@@ -212,21 +212,21 @@ network port broadcast-domain remove-ports -ipspace Cluster -broadcast-domain Cl
 +
 .. 다음 두 노드 중 하나에서 고급 권한 수준에 액세스합니다.
 +
-세트 프리빌리지 고급
+`set -privilege advanced`
 
 .. 포트를 삭제합니다.
 +
-'network port delete-node_node-name_-port_port-name_
+`network port delete -node _node-name_ -port _port-name_`
 
 .. 관리자 수준으로 돌아가기:
 +
-'Set-Privilege admin'입니다
+`set -privilege admin`
 
 
 
 . [[9단계]] 모든 LIF 페일오버 그룹을 조정합니다.
 +
-'network interface modify-failover-group_failover-group_-failover-policy_failover-policy_'
+`network interface modify -failover-group _failover-group_ -failover-policy _failover-policy_`
 
 +
 다음 예에서는 페일오버 정책을 "broadcast-domain-wide"로 설정하고 "fg1" 페일오버 그룹의 포트를 "node3"의 LIF "data1"의 페일오버 타겟으로 사용합니다.
@@ -241,11 +241,11 @@ network interface modify -vserver node3 -lif data1 failover-policy broadcast-dom
 
 . 노드 3의 변경 사항을 확인합니다.
 +
-네트워크 포트 show-node node3
+`network port show -node node3`
 
 . 각 클러스터 LIF는 포트 7700에서 수신 대기 중이어야 합니다. 클러스터 LIF가 포트 7700에서 수신 중인지 확인합니다.
 +
-'::> 네트워크 연결 수신 표시 - vserver 클러스터'
+`::> network connections listening show -vserver Cluster`
 
 +
 클러스터 포트에서 수신 대기하는 포트 7700은 2노드 클러스터의 다음 예에 표시된 대로 예상되는 결과입니다.
@@ -264,9 +264,9 @@ Cluster          NodeB_clus1:7700               TCP/ctlopcp
 Cluster          NodeB_clus2:7700               TCP/ctlopcp
 4 entries were displayed.
 ----
-. 필요한 경우 포트 7700에서 청취하지 않는 각 클러스터 LIF에 대해 LIF의 관리 상태를 '소유'로 설정한 다음 '설정'으로 설정합니다.
+. 필요한 경우 포트 7700에서 청취하지 않는 각 클러스터 LIF에 대해 LIF의 관리 상태를 로 설정합니다 `down` 그리고 나서 `up`:
 +
-'::> net int modify -vserver cluster -lif_cluster -lif_ -status -admin down;net int modify -vserver Cluster-lif_cluster -lif_ -status -admin up'
+`::> net int modify -vserver Cluster -lif _cluster-lif_ -status-admin down; net int modify -vserver Cluster -lif _cluster-lif_ -status-admin up`
 
 +
 11단계를 반복하여 클러스터 LIF가 포트 7700에서 수신 대기 중인지 확인합니다.

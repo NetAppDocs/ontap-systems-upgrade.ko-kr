@@ -18,13 +18,13 @@ Fabric에서 스위치를 영구적으로 활성화해야 합니다.
 
 스위치를 영구적으로 활성화합니다.
 
-* Brocade 스위치의 경우 'witchCfgPersistentenable' 명령을 사용합니다.
+* Brocade 스위치의 경우 를 사용합니다 `switchCfgPersistentenable` 명령.
 +
 [listing]
 ----
 FC_switch_A_1:admin> switchCfgPersistentenable
 ----
-* Cisco 스위치의 경우 no suspend 명령을 사용합니다.
+* Cisco 스위치의 경우 를 사용합니다 `no suspend` 명령.
 +
 [listing]
 ----

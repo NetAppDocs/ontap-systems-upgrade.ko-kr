@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/troubleshoot_index.html 
 keywords: troubleshooting, troubleshoot, node, aggregate, lif, migrate, failure 
-summary: 'ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 "시스템 컨트롤러 교체" 명령을 사용하여 발생할 수 있는 장애를 해결합니다.' 
+summary: 'ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 를 사용하여 발생할 수 있는 장애를 해결합니다 `system controller replace` 명령.' 
 ---
 = 문제 해결
 :hardbreaks:

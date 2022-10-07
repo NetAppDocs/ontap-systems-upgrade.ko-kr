@@ -19,23 +19,23 @@ summary: '스토리지를 이동하여 업그레이드 절차를 완료하려면
 . 시스템에서 ONTAP 9.7 이하를 실행 중인 경우 * STOP * 을 사용합니다. 의 절차를 사용해야 합니다 xref:upgrade-final-steps-ontap-9-7-or-earlier-move-storage.adoc[ONTAP 9.7 이전 버전에서 최종 업그레이드 단계 수행].
 . 스토리지 시스템 프롬프트에서 LIF에 대한 정보를 표시합니다.
 +
-네트워크 인터페이스 쇼
+`network interface show`
 
 . SAN 환경을 사용하는 경우 포트 세트에서 사용하지 않는 LIF를 삭제하여 제거할 수 있도록 합니다.
 +
 .. 포트 세트 목록을 표시합니다.
 +
-LUN show 포트셋
+`lun portset show`
 
 .. 포트 세트에서 사용하지 않은 LIF를 제거합니다.
 +
-LUN remove 포트셋
+`lun portset remove`
 
 
 
 . 사용되지 않는 각 LIF를 새 노드에서 제거합니다.
 +
-네트워크 인터페이스 삭제
+`network interface delete`
 
 . 필요에 따라 새 노드 쌍에서 스토리지 페일오버 또는 고가용성을 다시 설정합니다.
 +
@@ -47,31 +47,31 @@ LUN remove 포트셋
  a| 
 2노드 클러스터
  a| 
-High-enable high availability: 'cluster ha modify - configured true'
+고가용성 재활성화: `cluster ha modify -configured true`
 
 
 
  a| 
 2개 이상의 노드가 있는 클러스터
  a| 
-스토리지 페일오버 다시 설정: 'storage failover modify -node_name -enabled true'
+스토리지 페일오버 다시 설정: `storage failover modify -node node_name -enabled true`
 
 |===
 . 필요에 따라 새 노드에서 SP를 구성합니다.
 +
-'시스템 서비스 프로세서 네트워크 수정
+`system service-processor network modify`
 
 . 필요에 따라 새 노드에 새 라이센스 설치:
 +
-'시스템 사용권 추가'
+`system license add`
 
 . 새 노드에서 AutoSupport 설정:
 +
-'시스템 노드 AutoSupport 수정
+`system node autosupport modify`
 
 . 각 새 노드에서 업그레이드 후 AutoSupport 메시지를 기술 지원 팀에 보냅니다.
 +
-'system node AutoSupport invoke - node_name -type all -message "maINT=end node_name successfully 업그레이드된 플랫폼_old에서 플랫폼_new로"
+`system node autosupport invoke -node node_name -type all -message "MAINT=END node_name successfully upgraded from platform_old to platform_new"`
 
 . 의 적절한 절차를 사용하여 스토리지 또는 볼륨 암호화 기능을 복원합니다 https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["CLI를 사용하여 암호화를 관리합니다"^] 콘텐츠.
 +
@@ -84,7 +84,7 @@ High-enable high availability: 'cluster ha modify - configured true'
 
 . 새 노드에 FC 포트(온보드 또는 FC 어댑터), 온보드 CNA 포트 또는 CNA 카드가 있는 경우 스토리지 시스템 프롬프트에 다음 명령을 입력하여 FC 또는 CNA 포트를 구성합니다.
 +
-'시스템 노드 하드웨어 unified-connect modify -node -name -adapter -name -mode{fc|CNA} -type {target|initiator}'
+`system node hardware unified-connect modify -node node-name -adapter adapter-name -mode {fc|cna} -type {target|initiator}`
 
 +
 link:https://docs.netapp.com/us-en/ontap/san-admin/index.html["CLI를 통한 SAN 관리"^]

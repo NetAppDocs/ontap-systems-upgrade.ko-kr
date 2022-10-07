@@ -15,19 +15,19 @@ summary: '볼륨을 이동하여 업그레이드 절차를 완료하려면 서�
 
 . 필요에 따라 새 노드에서 SP를 구성합니다.
 +
-'시스템 서비스 프로세서 네트워크 수정
+`system service-processor network modify`
 
 . 필요에 따라 새 노드에 새 라이센스 설치:
 +
-'시스템 사용권 추가'
+`system license add`
 
 . 새 노드에서 AutoSupport 설정:
 +
-'시스템 노드 AutoSupport 수정
+`system node autosupport modify`
 
 . 각 새 노드에서 업그레이드 후 AutoSupport 메시지를 기술 지원 팀에 보냅니다.
 +
-'system node AutoSupport invoke - node_name - type all-message 'node_name successfully 업그레이드된 플랫폼_old에서 플랫폼_new로 노드_name이 업그레이드되었습니다.
+`system node autosupport invoke -node node_name -type all -message "node_name successfully upgraded from platform_old to platform_new"`
 
 . 의 적절한 절차를 사용하여 스토리지 또는 볼륨 암호화 기능을 복원합니다https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["CLI를 사용하여 암호화를 관리합니다"^] 콘텐츠.
 +
@@ -40,7 +40,7 @@ summary: '볼륨을 이동하여 업그레이드 절차를 완료하려면 서�
 
 . 새 노드에 FC 포트(온보드 또는 FC 어댑터), 온보드 CNA 포트 또는 CNA 카드가 있는 경우, FC 또는 CNA 포트를 구성하고 스토리지 시스템 프롬프트에서 다음 명령을 입력합니다.
 +
-'시스템 노드 하드웨어 unified-connect modify -node -name -adapter -name -mode{fc|CNA} -type {target|initiator}'
+`system node hardware unified-connect modify -node node-name -adapter adapter-name -mode {fc|cna} -type {target|initiator}`
 
 +
 link:https://docs.netapp.com/us-en/ontap/san-admin/index.html["CLI를 통한 SAN 관리"^]

@@ -8,7 +8,7 @@
 . 노드 2의 사후 검사를 수행한 후 노드 2 클러스터에 대한 스토리지 페일오버 및 클러스터 HA 쌍이 설정됩니다. 작업이 완료되면 두 노드가 완료된 것으로 표시되고 시스템에서 일부 정리 작업을 수행합니다.
 . 스토리지 페일오버가 설정되었는지 확인합니다.
 +
-'스토리지 페일오버 쇼'
+`storage failover show`
 
 +
 다음 예에서는 스토리지 페일오버가 설정된 경우의 명령 출력을 보여 줍니다.
@@ -24,70 +24,70 @@ node4    node3    true       Connected to node3
 ....
 . 다음 명령을 사용하여 출력을 검사하여 node3과 node4가 같은 클러스터에 속해 있는지 확인합니다.
 +
-'클러스터 쇼'
+`cluster show`
 
 . 다음 명령을 사용하여 출력을 검사하여 node3과 node4가 서로의 스토리지에 액세스할 수 있는지 확인합니다.
 +
-'Storage failover show - fields local-missing-disks, partner-missing-disks'
+`storage failover show -fields local-missing-disks, partner-missing-disks`
 
 . 다음 명령을 사용하여 노드 3과 노드 4에서 클러스터의 다른 노드가 소유한 데이터 LIF를 확인하고 출력을 확인합니다.
 +
-네트워크 인터페이스 쇼
+`network interface show`
 
 +
 노드 3이나 노드 4에서 클러스터의 다른 노드가 소유한 데이터 LIF가 홈 소유자에게 있는 경우 데이터 LIF를 다음과 같이 되돌립니다.
 
 +
-네트워크 인터페이스 복원
+`network interface revert`
 
 . 노드 3이 노드 1의 애그리게이트를 소유하고 있고 노드 4가 노드 2의 애그리게이트를 소유하고 있는지 확인합니다.
 +
-'Storage aggregate show-owner-name_node3_'
+`storage aggregate show -owner-name _node3_`
 
 +
-'Storage aggregate show-owner-name_node4_'
+`storage aggregate show -owner-name _node4_`
 
 . 볼륨이 오프라인 상태인지 확인합니다.
 +
-'volume show-node_node3_-state offline
+`volume show -node _node3_ -state offline`
 
 +
-'volume show-node_node4_-state offline
+`volume show -node _node4_ -state offline`
 
 . 오프라인 상태인 볼륨이 있으면 섹션에서 캡처한 오프라인 볼륨 목록과 비교합니다 link:prepare_nodes_for_upgrade.html["업그레이드할 노드를 준비합니다"]을 사용하여 각 볼륨에 대해 다음 명령을 사용하여 필요에 따라 오프라인 볼륨을 온라인으로 전환합니다.
 +
-'volume online-vserver_vserver_name_-volume_volume_name_'
+`volume online -vserver _vserver_name_ -volume _volume_name_`
 
 . 각 노드에 대해 다음 명령을 사용하여 새 노드에 대한 새 라이센스를 설치합니다.
 +
-'system license add-license-code_license_code, license_code…_'
+`system license add -license-code _license_code,license_code,license_code…_`
 
 +
 license-code 매개변수는 28개의 대문자 알파벳 문자 키 목록을 허용합니다. 한 번에 하나의 라이센스를 추가하거나 한 번에 여러 라이센스를 추가하여 각 라이센스 키를 쉼표로 분리할 수 있습니다.
 
 . 다음 명령 중 하나를 사용하여 원래 노드에서 이전 라이센스를 모두 제거합니다.
 +
-'시스템 라이센스 정리 - 미사용 - 만료됨'
+`system license clean-up -unused -expired`
 
 +
-'System license delete-serial-number_node_serial_number_-package_licensable_package_
+`system license delete -serial-number _node_serial_number_ -package _licensable_package_`
 
 +
 --
 ** 만료된 모든 라이센스 삭제:
 +
-'시스템 사용권 정리 - 만료됨'
+`system license clean-up -expired`
 
 ** 사용하지 않는 모든 라이센스 삭제:
 +
-'시스템 라이센스 정리 - 미사용
+`system license clean-up -unused`
 
 ** 노드에서 다음 명령을 사용하여 클러스터에서 특정 라이센스를 삭제합니다.
 +
-'system license delete-serial-number_node1_serial_number_-package *
+`system license delete -serial-number _node1_serial_number_ -package *`
 
 +
-'system license delete-serial-number_node2_serial_number_-package *
+`system license delete -serial-number _node2_serial_number_ -package *`
 
 
 
@@ -102,17 +102,17 @@ Warning: The following licenses will be removed:
 Do you want to continue? {y|n}: y
 ....
 +
-모든 패키지를 제거하려면 y를 입력하십시오.
+를 입력합니다 `y` 모든 패키지를 제거합니다.
 
 . 다음 명령을 사용하여 출력을 검사하여 라이센스가 올바르게 설치되었는지 확인합니다.
 +
-'시스템 사용권 프로그램'
+`system license show`
 
 +
 출력을 섹션에서 캡처한 출력과 비교할 수 있습니다 link:prepare_nodes_for_upgrade.html["업그레이드할 노드를 준비합니다"].
 
-. NSE(NetApp Storage Encryption)를 구성에서 사용 중인 경우, '_kmip.init.maxwait_` variable'을 off로 설정하여 'setup bootarg.storageencryption.support' 명령을 true로 설정하십시오(인치) link:install_boot_node4.html#step27["노드 4, 27단계를 설치 및 부팅합니다"]), 변수를 재설정해야 합니다.
+. NSE(NetApp 스토리지 암호화)를 구성에서 사용 중인 경우 를 설정합니다 `setenv bootarg.storageencryption.support` 명령을 사용하여 로 이동합니다 `true` 를 사용하여 `_kmip.init.maxwait_` 변수 `off` (인치 link:install_boot_node4.html#step27["노드 4, 27단계를 설치 및 부팅합니다"]), 변수를 재설정해야 합니다.
 +
-set diag;systemshell-node_node_name_-command sudo kenv -u -p kmip.init.maxwait`
+`set diag; systemshell -node _node_name_ -command sudo kenv -u -p kmip.init.maxwait`
 
 

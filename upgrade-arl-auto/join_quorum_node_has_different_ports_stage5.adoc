@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/join_quorum_node_has_different_ports_stage5.html 
 keywords: quorum, cluster, network ports, node, broadcast domain 
-summary: 5단계 동안 시스템 컨트롤러 교체 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 새 노드가 쿼럼에 가입되는지 확인합니다. 
+summary: '5단계 동안 을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 업그레이드할 때 새 노드가 쿼럼에 가입되는지 확인합니다 `system controller replace` 명령.' 
 ---
 = 노드에 다른 네트워크 포트 집합이 있는 경우 쿼럼을 연결합니다
 :hardbreaks:
@@ -21,7 +21,7 @@ summary: 5단계 동안 시스템 컨트롤러 교체 명령을 사용하여 ONT
 .단계
 . 다음 명령을 입력하고 출력을 확인하여 새 클러스터 포트가 클러스터 브로드캐스트 도메인에 있는지 확인합니다.
 +
-네트워크 포트 show-node-port port-fields broadcast-domain
+`network port show -node node -port port -fields broadcast-domain`
 
 +
 다음 예에서는 노드 3의 클러스터 도메인에 포트 "E1A"가 있음을 보여 줍니다.
@@ -36,7 +36,7 @@ node3   e1a   Cluster
 ----
 . 다음 명령을 입력하고 출력을 확인하여 클러스터 브로드캐스트 도메인에 올바른 포트를 추가합니다.
 +
-네트워크 포트 수정-노드-포트-IPSpace 클러스터-MTU 9000
+`network port modify -node -port -ipspace Cluster -mtu 9000`
 
 +
 이 예제에서는 노드 3에 클러스터 포트 "e1b"를 추가합니다.
@@ -48,41 +48,41 @@ network port modify -node node3 -port e1b -ipspace Cluster -mtu 9000
 ----
 . 다음 명령을 사용하여 클러스터 LIF를 각 LIF에 대해 한 번씩 새 포트로 마이그레이션합니다.
 +
-'network interface migrate-vserver cluster-lif_lif_name_-source-node node3 destination-node node3-destination-port_port_name_'
+`network interface migrate -vserver Cluster -lif _lif_name_ -source-node node3 destination-node node3 -destination-port _port_name_`
 
 . 클러스터 LIF의 홈 포트를 다음과 같이 수정합니다.
 +
-'network interface modify -vserver cluster -lif_lif_name_ – home-port_port_name_'
+`network interface modify -vserver Cluster -lif _lif_name_ –home-port _port_name_`
 
 . 클러스터 포트가 Cluster broadcast-domain에 없는 경우 다음 명령을 사용하여 추가합니다.
 +
-네트워크 포트 브로드캐스트 도메인 추가 포트 - IPSpace 클러스터 - 브로드캐스트 도메인 클러스터 포트 노드: 포트
+`network port broadcast-domain add-ports -ipspace Cluster -broadcastdomain Cluster ports node:port`
 
 . 클러스터 브로드캐스트 도메인에서 이전 포트를 제거합니다. 모든 관련 노드에 를 사용할 수 있습니다. 다음 명령을 실행하면 노드 3에서 포트 "e0d"가 제거됩니다.
 +
-'네트워크 포트 브로드캐스트-도메인 제거-포트 네트워크 포트 브로드캐스트-도메인 제거-포트 IPSpace 클러스터-브로드캐스트-도메인 클러스터-포트 노드3:e0d'
+`network port broadcast-domain remove-ports network port broadcast-domain remove-ports ipspace Cluster -broadcast-domain Cluster ‑ports node3:e0d`
 
 . 노드가 다음과 같이 쿼럼에 다시 연결되었는지 확인합니다.
 +
-클러스터 show-node node3-fields 상태
+`cluster show -node node3 -fields health`
 
 . 클러스터 LIF 및 노드 관리/클러스터 관리 LIF를 호스팅하는 브로드캐스트 도메인을 조정하십시오. 각 브로드캐스트 도메인에 올바른 포트가 포함되어 있는지 확인합니다. LIF가 호스팅 중이거나 LIF의 홈 역할을 하는 브로드캐스트 도메인 간에 포트를 이동할 수 없으므로 다음과 같이 LIF를 마이그레이션 및 수정해야 할 수 있습니다.
 +
 .. LIF의 홈 포트를 표시합니다.
 +
-네트워크 인터페이스 보기 필드, 홈 노드, 홈 포트
+`network interface show -fields home-node,home-port`
 
 .. 이 포트가 포함된 브로드캐스트 도메인을 표시합니다.
 +
-'network port broadcast-domain show-ports_node_name:port_name_'
+`network port broadcast-domain show -ports _node_name:port_name_`
 
 .. 브로드캐스트 도메인에서 포트 추가 또는 제거:
 +
-네트워크 포트 브로드캐스트 도메인 추가 포트 네트워크 포트 브로드캐스트 도메인 제거 포트
+`network port broadcast-domain add-ports network port broadcast-domain remove-port`
 
 .. LIF의 홈 포트 수정:
 +
-'network interface modify -vserver_vserver-name_-lif_lif_name_ – home-port_port_name_'
+`network interface modify -vserver _vserver-name_ -lif _lif_name_ –home-port _port_name_`
 
 +
 필요한 경우 인터클러스터 브로드캐스트 도메인을 조정하고 인터클러스터 LIF를 마이그레이션합니다. 데이터 LIF는 그대로 유지됩니다.

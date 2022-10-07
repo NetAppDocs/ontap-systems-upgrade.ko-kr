@@ -104,7 +104,7 @@ cluster::>
 .. 부팅 노드4. 을 참조하십시오 link:install_boot_node4.html["노드 4를 설치하고 부팅합니다"] 아직 부팅하지 않은 경우 노드를 부팅합니다.
 .. 새 클러스터 포트가 클러스터 브로드캐스트 도메인에 있는지 확인합니다.
 +
-'network port show-node_node_-port_port_-fields broadcast-domain' 다음 예에서는 노드 4의 클러스터 도메인에 포트 "e0a"가 있음을 보여 줍니다.
+`network port show -node _node_ -port _port_ -fields broadcast-domain`다음 예에서는 노드 4의 클러스터 도메인에 포트 "e0a"가 있음을 보여 줍니다.
 
 +
 [listing]
@@ -117,17 +117,17 @@ node4      e1a  Cluster
 ----
 .. 클러스터 포트가 Cluster broadcast-domain에 없는 경우 다음 명령을 사용하여 추가합니다.
 +
-'broadcast-domain add-ports-IPSpace Cluster-broadcast-domain Cluster-ports_node:port_'
+`broadcast-domain add-ports -ipspace Cluster -broadcast-domain Cluster -ports _node:port_`
 
 .. 클러스터 브로드캐스트 도메인에 올바른 포트를 추가합니다.
 +
-네트워크 포트 수정-노드-포트-IPSpace 클러스터-MTU 9000
+`network port modify -node -port -ipspace Cluster -mtu 9000`
 
 +
 이 예제에서는 노드 4에 클러스터 포트 "e1b"를 추가합니다.
 
 +
-네트워크 포트 수정 노드 노드4포트 e1b-IPSpace 클러스터-MTU 9000
+`network port modify -node node4 -port e1b -ipspace Cluster -mtu 9000`
 
 +
 
@@ -142,26 +142,27 @@ command failed: This operation is not permitted on a Vserver that is configured 
 원격 사이트의 해당 동기화 소스 SVM에서 다음 명령을 입력하여 동기화 대상 LIF를 적절한 포트에 재할당합니다.
 
 +
-'MetroCluster vserver resync -vserver_vserver_name_'
+`metrocluster vserver resync -vserver _vserver_name_`
 
 .. 클러스터 LIF를 각 LIF에 대해 한 번씩 새 포트로 마이그레이션합니다.
 +
-'network interface migrate-vserver cluster-lif_lif_name_-source-node node4-destination-node node4-destination-port_name_'
+`network interface migrate -vserver Cluster -lif _lif_name_ -source-node node4 - destination-node node4 -destination-port _port_name_`
 
 .. 클러스터 LIF의 홈 포트를 수정합니다.
 +
-'network interface modify -vserver cluster -lif_lif_name_ – home-port_port_name_'
+`network interface modify -vserver Cluster -lif _lif_name_ –home-port _port_name_`
 
 .. 클러스터 브로드캐스트 도메인에서 이전 포트를 제거합니다.
 +
-네트워크 포트 브로드캐스트 도메인 제거 포트
+`network port broadcast-domain remove-ports`
 
 +
-이 명령을 실행하면 노드 4의 '네트워크 포트 브로드캐스트-도메인 제거-포트-IPSpace 클러스터-브로드캐스트-도메인 클러스터-포트 노드4:e0d'에서 포트 "e0d"가 제거됩니다
+이 명령을 실행하면 노드 4에서 포트 "e0d"가 제거됩니다.
+`network port broadcast-domain remove-ports -ipspace Cluster -broadcast-domain Cluster ‑ports node4:e0d`
 
 .. 노드 4가 쿼럼에 다시 연결되었는지 확인합니다.
 +
-클러스터 show-node node4-fields 상태
+`cluster show -node node4 -fields health`
 
 
 
@@ -169,22 +170,22 @@ command failed: This operation is not permitted on a Vserver that is configured 
 +
 .. LIF의 홈 포트를 표시합니다.
 +
-네트워크 인터페이스 보기 필드, 홈 노드, 홈 포트
+`network interface show -fields home-node,home-port`
 
 .. 이 포트가 포함된 브로드캐스트 도메인을 표시합니다.
 +
-'network port broadcast-domain show-ports_node_name:port_name_'
+`network port broadcast-domain show -ports _node_name:port_name_`
 
 .. 브로드캐스트 도메인에서 포트 추가 또는 제거:
 +
-네트워크 포트 브로드캐스트 도메인 추가 포트
+`network port broadcast-domain add-ports`
 
 +
-네트워크 포트 브로드캐스트 도메인 제거 포트
+`network port broadcast-domain remove-ports`
 
 .. LIF의 홈 포트 수정:
 +
-'network interface modify -vserver_vserver_name_-lif_lif_name_ – home-port_port_name_'
+`network interface modify -vserver _vserver_name_ -lif _lif_name_ –home-port _port_name_`
 
 
 
@@ -194,35 +195,36 @@ command failed: This operation is not permitted on a Vserver that is configured 
 +
 .. 다음 두 노드 중 하나에서 고급 권한 수준에 액세스합니다.
 +
-세트 프리빌리지 고급
+`set -privilege advanced`
 
 .. 포트 삭제하기:
 +
-'network port delete-node_node_name_-port_port_name_
+`network port delete -node _node_name_ -port _port_name_`
 
 .. 관리자 수준으로 돌아가기:
 +
-'Set-Privilege admin'입니다
+`set -privilege admin`
 
 
 
-. 모든 LIF 페일오버 그룹 'network interface modify -failover -group_failover_group_-failover -policy_failover_policy_'을 조정합니다
+. 모든 LIF 페일오버 그룹을 조정합니다.
+`network interface modify -failover-group _failover_group_ -failover-policy _failover_policy_`
 +
-다음 명령을 실행하면 페일오버 정책이 브로드캐스트 도메인 전체에 대해 설정되고 페일오버 그룹 fg1의 포트가 노드 4의 LIF data1의 페일오버 타겟으로 사용됩니다.
+다음 명령을 실행하면 페일오버 정책이 로 설정됩니다 `broadcast-domain-wide` 페일오버 그룹의 포트를 사용합니다 `fg1` LIF의 페일오버 타겟으로 `data1` 켜짐 `node4`:
 
 +
-'network interface modify -vserver node4-lif data1 failover-policy broadcast-domain-wide-failover-group fg1'을 참조하십시오
+`network interface modify -vserver node4 -lif data1 failover-policy broadcast-domain-wide -failover-group fg1`
 
 +
 자세한 내용은 을 참조하십시오 link:other_references.html["참조"] 네트워크 관리_ 또는 _ONTAP 9 명령(수동 페이지 참조_)에 연결하려면 _LIF_에서 페일오버 설정 구성 으로 이동하십시오.
 
 . 노드 4의 변경 사항을 확인합니다.
 +
-네트워크 포트 show-node node4
+`network port show -node node4`
 
 . 각 클러스터 LIF는 포트 7700에서 수신 대기 중이어야 합니다. 클러스터 LIF가 포트 7700에서 수신 중인지 확인합니다.
 +
-'::> 네트워크 연결 수신 표시 - vserver 클러스터'
+`::> network connections listening show -vserver Cluster`
 
 +
 클러스터 포트에서 수신 대기하는 포트 7700은 2노드 클러스터의 다음 예에 표시된 대로 예상되는 결과입니다.
@@ -241,9 +243,9 @@ Cluster          NodeB_clus1:7700               TCP/ctlopcp
 Cluster          NodeB_clus2:7700               TCP/ctlopcp
 4 entries were displayed.
 ----
-. 필요한 경우 포트 7700에서 청취하지 않는 각 클러스터 LIF에 대해 LIF의 관리 상태를 '소유'로 설정한 다음 '설정'으로 설정합니다.
+. 필요한 경우 포트 7700에서 청취하지 않는 각 클러스터 LIF에 대해 LIF의 관리 상태를 로 설정합니다 `down` 그리고 나서 `up`:
 +
-'::> net int modify -vserver cluster -lif_cluster -lif_ -status -admin down;net int modify -vserver Cluster-lif_cluster -lif_ -status -admin up'
+`::> net int modify -vserver Cluster -lif _cluster-lif_ -status-admin down; net int modify -vserver Cluster -lif _cluster-lif_ -status-admin up`
 
 +
 11단계를 반복하여 클러스터 LIF가 포트 7700에서 수신 대기 중인지 확인합니다.

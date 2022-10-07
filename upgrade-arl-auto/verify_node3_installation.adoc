@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/verify_node3_installation.html 
 keywords: install, boot, node3, join quorum, restore, key, manager 
-summary: 시스템 컨트롤러 교체 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 노드3이 쿼럼에 가입되어 노드1의 VLAN, 인터페이스 그룹, 브로드캐스트 도메인을 다시 생성하고 키 관리자 구성을 복원하는지 확인합니다. 
+summary: '을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 업그레이드할 때 node3이 쿼럼에 가입되어 있고 node1의 VLAN, 인터페이스 그룹 및 브로드캐스트 도메인을 다시 만들고 키 관리자 구성을 복원하는지 확인합니다 `system controller replace` 명령.' 
 ---
 = 노드3 설치를 확인합니다
 :hardbreaks:
@@ -21,15 +21,15 @@ summary: 시스템 컨트롤러 교체 명령을 사용하여 ONTAP 9.5를 실�
 .단계
 . 노드 3이 쿼럼에 연결되었는지 확인합니다.
 +
-클러스터 show-node node3-fields 상태
+`cluster show -node node3 -fields health`
 
 . 노드 3이 노드 2와 동일한 클러스터의 일부이고 정상 상태인지 확인합니다.
 +
-'클러스터 쇼'
+`cluster show`
 
 . 작업 상태를 확인하고 노드 3의 구성 정보가 노드 1과 동일한지 확인합니다.
 +
-'시스템 컨트롤러 교체 쇼 디테일
+`system controller replace show-details`
 
 +
 노드 3의 구성이 다른 경우 나중에 시스템 중단이 발생할 수 있습니다.
@@ -48,19 +48,19 @@ VLAN, 인터페이스 그룹 및 브로드캐스트 도메인을 만들고 다�
 .단계
 . 에 기록된 노드 1 정보를 사용하여 노드 3에서 VLAN을 다시 생성합니다 link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치합니다"] 섹션:
 +
-'network port vlan create-node_node_name_-vlan_vlan-names_'
+`network port vlan create -node _node_name_ -vlan _vlan-names_`
 
 . 에 기록된 node1 정보를 사용하여 node3에 인터페이스 그룹을 다시 만듭니다 link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치합니다"] 섹션:
 +
-'network port ifgrp create-node_node_name_-ifgrp_port_ifgrp_names_-Distr-func'
+`network port ifgrp create -node _node_name_ -ifgrp _port_ifgrp_names_-distr-func`
 
 . 에 기록된 node1 정보를 사용하여 node3에 브로드캐스트 도메인을 다시 만듭니다 link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치합니다"] 섹션:
 +
-'network port broadcast-domain create-IPSpace Default-broadcast-domain_broadcast_domain_names_-MTU_MTU_size_-ports_node_name:port_name,node_name:port_name_'
+`network port broadcast-domain create -ipspace Default -broadcast-domain _broadcast_domain_names_ -mtu _mtu_size_ -ports _node_name:port_name,node_name:port_name_`
 
 . 새로 다시 생성된 브로드캐스트 도메인에 노드3 포트를 추가합니다.
 +
-'network port broadcast-domain add-ports-broadcast-domain_broadcast_domain_names_-ports_node_name:port_name,node_name:port_name_'
+`network port broadcast-domain add-ports -broadcast-domain _broadcast_domain_names_ -ports _node_name:port_name,node_name:port_name_`
 
 
 
@@ -77,10 +77,10 @@ NVE(NetApp Volume Encryption)를 사용하여 업그레이드 중인 시스템�
 | 이 ONTAP 버전의 경우… | 이 명령 사용... 
 
 
-| ONTAP 9.6 또는 9.7 | 보안 키매니저 온보드 동기화 
+| ONTAP 9.6 또는 9.7 | `security key-manager onboard sync` 
 
 
-| ONTAP 9.5 | 'Security key-manager setup-node_node_name_' 
+| ONTAP 9.5 | `security key-manager setup -node _node_name_` 
 |===
 . Onboard Key Manager의 클러스터 전체 암호를 입력합니다.
 

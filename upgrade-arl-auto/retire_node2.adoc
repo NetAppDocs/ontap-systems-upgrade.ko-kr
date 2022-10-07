@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/retire_node2.html 
 keywords: retire, node2 
-summary: System controller replace 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 node2를 종료하고 랙 또는 섀시에서 분리합니다. 
+summary: '을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 업그레이드할 때 node2를 종료하고 랙 또는 섀시에서 분리합니다 `system controller replace` 명령.' 
 ---
 = 노드2를 폐기합니다
 :hardbreaks:
@@ -19,7 +19,7 @@ summary: System controller replace 명령을 사용하여 ONTAP 9.5를 실행하
 .단계
 . 작업을 다시 시작합니다.
 +
-시스템 컨트롤러 교체 재개
+`system controller replace resume`
 
 +
 노드가 자동으로 중단됩니다.

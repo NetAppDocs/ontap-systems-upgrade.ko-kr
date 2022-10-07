@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/verify_health_of_metrocluster_config.html 
 keywords: verifying, health, metrocluster, configuration, fabric, mcc 
-summary: '"system controller replace" 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 MetroCluster 구성 상태를 확인하고 올바르게 작동하는지 확인하십시오.' 
+summary: 'ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 를 사용하여 MetroCluster 구성 및 올바른 작동 상태를 확인하십시오 `system controller replace` 명령.' 
 ---
 = MetroCluster 구성의 상태를 확인합니다
 :hardbreaks:
@@ -19,7 +19,7 @@ Fabric MetroCluster 구성에서 업그레이드를 시작하기 전에 MetroClu
 .단계
 . MetroCluster 구성 요소가 정상인지 확인합니다.
 +
-'MetroCluster check run
+`metrocluster check run`
 
 +
 ....
@@ -28,9 +28,9 @@ metrocluster_siteA::*> metrocluster check run
 +
 작업은 백그라운드에서 실행됩니다.
 
-. 'MetroCluster check run' 작업이 완료된 후 결과를 확인한다.
+. 를 누릅니다 `metrocluster check run` 작업이 완료되면 결과를 확인합니다.
 +
-MetroCluster 체크 쇼
+`metrocluster check show`
 
 +
 약 5분 후 다음 결과가 표시됩니다.
@@ -53,10 +53,10 @@ volumes              ok
 ----
 . 실행 중인 MetroCluster 점검 작업의 상태를 점검한다.
 +
-MetroCluster 운용사 show-job-id 38
+`metrocluster operation history show -job-id 38`
 
 . 상태 경고가 없는지 확인합니다.
 +
-'시스템 상태 경고 표시
+`system health alert show`
 
 

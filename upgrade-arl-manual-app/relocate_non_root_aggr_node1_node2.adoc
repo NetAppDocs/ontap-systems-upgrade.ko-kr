@@ -21,28 +21,28 @@ summary: 노드 1에서 노드 2로 비루트 애그리게이트를 이동하고
 +
 .. 권한 수준을 고급으로 설정합니다.
 +
-세트 프리빌리지 고급
+`set -privilege advanced`
 
 .. 다음 명령을 입력합니다.
 +
-'storage aggregate relocation start -node_node1_-destination_node2_-aggregate-list * -ndo-controller-upgrade true'
+`storage aggregate relocation start -node _node1_ -destination _node2_ -aggregate-list * -ndo-controller-upgrade true`
 
-.. 메시지가 나타나면 y를 입력합니다.
+.. 메시지가 표시되면 를 입력합니다 `y`.
 +
 재배치가 백그라운드에서 수행됩니다. Aggregate를 재배치하는 데 몇 초에서 몇 분 정도 걸릴 수 있습니다. 여기에는 클라이언트 중단 및 무중단 부분 이 모두 포함됩니다. 명령을 실행해도 오프라인 또는 제한된 애그리게이트는 재배치되지 않습니다.
 
 .. 다음 명령을 입력하여 admin 레벨로 돌아갑니다.
 +
-'Set-Privilege admin'입니다
+`set -privilege admin`
 
 
 
 . node1에서 다음 명령을 입력하여 재배치 상태를 확인합니다.
 +
-'Storage aggregate relocation show -node_node1_'
+`storage aggregate relocation show -node _node1_`
 
 +
-이 출력은 재배치된 후 Aggregate에 대해 Done을 표시합니다.
+출력이 표시됩니다 `Done` 재배치된 골재인 경우
 
 +
 
@@ -61,12 +61,16 @@ NOTE: 노드 1이 소유한 모든 비루트 애그리게이트가 노드 2로 �
 | 거부권을 행사하는 모든 애그리게이트 중 하나에 장애가 발생하거나 거부되는 애그리게이트가 있습니다  a| 
 .. EMS 로그에서 수정 조치를 확인합니다.
 .. 수정 조치를 수행합니다.
-.. 장애가 발생하거나 거부된 Aggregate 재배치: 'Storage aggregate Relocation start -node_node1_-destination_node2_-aggregate-list * -ndo-controller-upgrade true
-.. 메시지가 나타나면 y를 입력합니다.
-.. 관리자 수준으로 돌아가기: 'Set-Privilege admin' 필요한 경우 다음 방법 중 하나를 사용하여 재배치를 수행할 수 있습니다.
+.. 장애가 발생하거나 거부되는 애그리게이트를 재배치합니다.
+`storage aggregate relocation start -node _node1_ - destination _node2_ -aggregate-list * -ndo-controller-upgrade true`
+.. 메시지가 표시되면 를 입력합니다 `y`.
+.. 관리자 수준으로 돌아가기:
+`set -privilege admin`필요한 경우 다음 방법 중 하나를 사용하여 재배치를 수행할 수 있습니다.
 +
-*** 거부권 확인 무시: 스토리지 집계 재배치 시작-재정의-실제 -ndo-controller-upgrade
-*** 스토리지 애그리게이트 재배치 start-override-destination-checks true-ndo-controller-upgrade'라는 타겟 검사를 재정의합니다
+*** 거부권 검사 무시:
+`storage aggregate relocation start -override-vetoes true -ndo-controller-upgrade`
+*** 대상 검사 무시:
+`storage aggregate relocation start -override-destination-checks true -ndo-controller-upgrade`
 
 
 
@@ -76,7 +80,7 @@ NOTE: 노드 1이 소유한 모든 비루트 애그리게이트가 노드 2로 �
 |===
 . [[man_relocate_1_2_step4]]루트가 아닌 모든 애그리게이트가 온라인 상태이고 노드 2의 상태가 온라인인지 확인합니다.
 +
-'storage aggregate show -node_node2_ -state online-root false'
+`storage aggregate show -node _node2_ -state online -root false`
 
 +
 다음 예제에서는 노드 2의 루트 이외의 애그리게이트가 온라인 상태인 것을 보여 줍니다.
@@ -98,24 +102,24 @@ aggr_2     825.0GB 825.0GB      0% online       1 node2            raid_dp,
 노드 2에서 애그리게이트가 오프라인 상태가 되거나 외부 상태가 된 경우, 각 애그리게이트에 대해 노드 2의 다음 명령을 사용하여 온라인 상태로 전환합니다.
 
 +
-'Storage aggregate online-aggregate_agr_name_'
+`storage aggregate online -aggregate _aggr_name_`
 
 . node2에서 다음 명령을 입력하고 해당 출력을 검사하여 node2에서 모든 볼륨이 온라인 상태인지 확인합니다.
 +
-'volume show-node_node2_-state offline
+`volume show -node _node2_ -state offline`
 
 +
 노드 2에 오프라인 볼륨이 있는 경우 각 볼륨에 대해 한 번씩 노드 2에서 다음 명령을 사용하여 온라인으로 전환합니다.
 
 +
-'volume online-vserver_vserver-name_-volume_volume-name_'
+`volume online -vserver _vserver-name_ -volume _volume-name_`
 
 +
-이 명령에 사용할 vserver-name은 이전 'volume show' 명령의 출력에서 확인할 수 있습니다.
+를 클릭합니다 `vserver-name` 이 명령과 함께 사용하려면 이전 의 출력에서 찾을 수 있습니다 `volume show` 명령.
 
 . 노드 2에서 다음 명령을 입력합니다.
 +
-'storage failover show -node_node2_'
+`storage failover show -node _node2_`
 
 +
 출력에는 다음 메시지가 표시됩니다.
@@ -127,7 +131,7 @@ Node owns partner's aggregates as part of the nondisruptive controller upgrade p
 ----
 . 노드 1이 온라인인 루트 이외의 Aggregate를 소유하지 않는지 확인합니다.
 +
-스토리지 집계 show-owner-name_node1_-ha-policy SFO-state online
+`storage aggregate show -owner-name _node1_ -ha-policy sfo -state online`
 
 +
 이미 노드 2로 재배치되었던 온라인 비 루트 애그리게이트는 출력에 표시되지 않아야 합니다.

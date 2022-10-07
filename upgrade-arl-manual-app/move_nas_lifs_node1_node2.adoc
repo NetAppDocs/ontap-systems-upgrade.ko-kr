@@ -21,7 +21,7 @@ summary: 2노드 클러스터가 있는 경우 노드 1의 데이터 LIF를 노�
 .단계
 . 다음 명령을 입력하고 출력을 캡처하여 노드 1에서 호스팅되는 모든 NAS 데이터 LIF를 나열합니다.
 +
-'network interface show-data-protocol nfs|cifs-curr-node_node1_'
+`network interface show -data-protocol nfs|cifs -curr-node _node1_`
 
 +
 [listing]
@@ -42,17 +42,17 @@ summary: 2노드 클러스터가 있는 경우 노드 1의 데이터 LIF를 노�
 ----
 . [[step2]]노드 1과 노드 2에 있는 모든 LIF의 자동 되돌리기 설정을 수정합니다.
 +
-'network interface modify -vserver_Vserver_NAME_-lif_LIF_name_-auto-revert false'
+`network interface modify -vserver _Vserver_name_ -lif _LIF_name_ -auto-revert false`
 
 . [[step3]]노드 1의 인터페이스 그룹 및 VLAN에 호스팅된 NAS 데이터 LIF를 마이그레이션하려면 다음 단계를 수행하십시오.
 +
 .. [[subepa]] 노드 1의 인터페이스 그룹 및 VLAN에 호스팅된 LIF를 노드 2의 포트로 마이그레이션합니다. 노드 2의 포트는 각 LIF에 대해 다음 명령을 입력하여 인터페이스 그룹의 LIF와 동일한 네트워크에 LIF를 호스팅할 수 있습니다.
 +
-'network interface migrate-vserver_Vserver_NAME_-lif_LIF_name_-destination-node_node2_ – destination-port_NetPort|ifgrp_'
+`network interface migrate -vserver _Vserver_name_ -lif _LIF_name_ -destination-node _node2_ –destination-port _netport|ifgrp_`
 
 .. 에서 LIF 및 VLAN의 홈 포트와 홈 노드를 수정합니다 ,하위 단계 A 각 LIF에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
 +
-'network interface modify -vserver_Vserver_NAME_-lif_LIF_name_-home-node_node2_-home-port_NetPort|ifgrp_'
+`network interface modify -vserver _Vserver_name_ -lif _LIF_name_ -home-node _node2_ - home-port _netport|ifgrp_`
 
 
 
@@ -66,44 +66,46 @@ summary: 2노드 클러스터가 있는 경우 노드 1의 데이터 LIF를 노�
 | NAS | 완료 ,5단계 부터 까지 ,8단계. 
 
 
-| 산 | 업그레이드 시 노드의 모든 SAN LIF를 사용하지 않도록 설정합니다. 'network interface modify -vserver_Vserver-name_-lif_LIF_name_-home-node_to_upgrade_-home-port_NetPort | ifgrp_-status-admin down' 
+| 산 | 업그레이드를 위해 노드의 모든 SAN LIF를 해제합니다.
+`network interface modify -vserver _Vserver-name_ -lif _LIF_name_ -home-node _node_to_upgrade_ -home-port _netport|ifgrp_ -status-admin down` 
 |===
 . [[man_lif_1_2_step5]] 각 데이터 LIF에 대해 다음 명령을 입력하여 노드 1에서 노드 2로 NAS 데이터 LIF를 마이그레이션합니다.
 +
-'network interface migrate-vserver_Vserver-name_-lif_LIF_name_-destination-node_node2_-destination-port_data_port_'
+`network interface migrate -vserver _Vserver-name_ -lif _LIF_name_ -destination-node _node2_ -destination-port _data_port_`
 
 . [[step6]] 다음 명령을 입력하고 출력을 검사하여 LIF가 올바른 포트로 이동되었으며 LIF의 상태가 UP인지 확인하고, 두 노드 중 하나에 다음 명령을 입력하고 출력을 검사하여 확인합니다.
 +
-'network interface show-curr-node_node2_-data-protocol nfs|cifs'
+`network interface show -curr-node _node2_ -data-protocol nfs|cifs`
 
 . [[step7]]마이그레이션된 LIF의 홈 노드를 수정합니다.
 +
-'network interface modify -vserver_Vserver-NAME_-lif_LIF_name_-home-node_node2_-home-port_port_name_'
+`network interface modify -vserver _Vserver-name_ -lif _LIF_name_ -home-node _node2_ -home-port _port_name_`
 
 . [[man_lif_1_2_step8]] LIF가 포트를 홈 또는 현재 포트로 사용하고 있는지 확인합니다. 포트가 홈 또는 현재 포트가 아닌 경우 로 이동합니다 ,9단계:
 +
-'network interface show-home-node_node2_-home-port_port_name_'
+`network interface show -home-node _node2_ -home-port _port_name_`
 
 +
-'network interface show -curr-node_node_name_-curr-port_port_name_'
+`network interface show -curr-node _node_name_ -curr-port _port_name_`
 
 . [[man_lif_1_2_step9]] LIF가 포트를 홈 포트 또는 현재 포트로 사용하고 있는 경우, LIF를 수정하여 다른 포트를 사용하도록 합니다.
 +
-'network interface migrate-vserver_Vserver-name_-lif_LIF_name_-destination –node_node_name_-destination-port_port_name_'
+`network interface migrate -vserver _Vserver-name_ -lif _LIF_name_ -destination–node _node_name_ -destination-port _port_name_`
 
 +
-'network interface modify -vserver_Vserver-NAME_-lif_LIF_name_-home –node_node_name_-home-port_port_name_'
+`network interface modify -vserver _Vserver-name_ -lif _LIF_name_ -home–node _node_name_ -home-port _port_name_`
 
 . [[10단계]] LIF가 하나라도 다운되면 각 LIF에 대해 다음 명령을 한 번 입력하여 LIF의 관리 상태를 "작동"으로 설정하십시오.
 +
-'network interface modify -vserver_Vserver-name_-lif_LIF_name_-home-node_nodename_-status-admin up'을 선택합니다
+`network interface modify -vserver _Vserver-name_ -lif _LIF_name_ -home-node _nodename_ -status-admin up`
 
 +
 
-NOTE: MetroCluster 구성의 경우, 대상 SVM(스토리지 가상 머신)의 LIF를 호스팅하는 포트와 연결되어 있으므로 포트의 브로드캐스트 도메인을 변경하지 못할 수 있습니다. 타겟 LIF를 적절한 포트에 재할당하려면 원격 사이트의 해당 소스 SVM에서 'MetroCluster vserver resync -vserver_Vserver_NAME_' 명령을 입력합니다
+NOTE: MetroCluster 구성의 경우, 대상 SVM(스토리지 가상 머신)의 LIF를 호스팅하는 포트와 연결되어 있으므로 포트의 브로드캐스트 도메인을 변경하지 못할 수 있습니다. 원격 사이트의 해당 소스 SVM에서 다음 명령을 입력하여 대상 LIF를 적절한 포트에 재할당합니다.
+`metrocluster vserver resync -vserver _Vserver_name_`
 
 . [[step11]] 다음 명령을 입력하고 해당 출력을 확인하여 노드 1에 남아 있는 데이터 LIF가 없는지 확인합니다.
 +
-네트워크 인터페이스 show-curr-node_node1_-role data
+`network interface show -curr-node _node1_ -role data`
 
 

@@ -7,10 +7,10 @@
 .단계
 . 대상에서 SnapMirror 상태를 확인합니다.
 +
-스냅미러 쇼
+`snapmirror show`
 
 . SnapMirror 관계 재개:
 +
-'스냅미러 재개 - 목적지 - vserver_vserver_name_'
+`snapmirror resume -destination–vserver _vserver_name_`
 
 

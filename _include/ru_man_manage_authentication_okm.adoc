@@ -7,14 +7,14 @@
 .단계
 . 클러스터의 모든 노드에서 키 관리 서버를 사용할 수 있는지 확인합니다.
 +
-보안 키 관리자 키 쇼
+`security key-manager key show`
 
 . 새 인증 키를 사용하여 모든 자체 암호화 디스크를 다시 입력하다
 +
-'Storage encryption disk modify -disk * [-data-key-id nonMSID AK]'
+`storage encryption disk modify -disk * [-data-key-id nonMSID AK>]`
 
 . FIPS(Federal Information Processing Standard)를 사용하는 경우 새 인증 키를 사용하여 모든 자체 암호화 디스크를 다시 입력하다
 +
-'Storage encryption disk * modify-disk * [-FIPS-key-id nonMSID AK]'
+`storage encryption disk* modify -disk * [-fips-key-id nonMSID AK]`
 
 

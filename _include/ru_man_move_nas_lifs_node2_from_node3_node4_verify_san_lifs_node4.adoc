@@ -7,13 +7,13 @@
 .단계
 . 노드 3에서 소유하지 않은 모든 NAS 데이터 LIF를 표시하려면 두 노드 중 하나에 다음 명령을 입력하고 출력을 캡처합니다.
 +
-네트워크 인터페이스 show-role data-curr-node node3은 -home false입니다
+`network interface show -role data -curr-node node3 -is-home false`
 
 . [[Worksheet_step2_node2]] 클러스터가 SAN LIF에 대해 구성되어 있으면 이 문서에 SAN LIF 및 기존 구성 정보를 기록합니다 link:worksheet_information_before_moving_san_lifs_node4.html["워크시트"] 나중에 사용할 수 있습니다.
 +
 .. 노드 3의 SAN LIF를 나열하고 출력을 조사합니다.
 +
-'network interface show-data-protocol fc *'
+`network interface show -data-protocol fc*`
 
 +
 시스템은 다음 예제와 유사한 출력을 반환합니다.
@@ -43,7 +43,7 @@ svm2_cluster1
 ----
 .. 기존 설정을 나열하고 출력을 검사합니다.
 +
-FCP 어댑터 show-fields switch-port, fc-WWPN입니다
+`fcp adapter show -fields switch-port,fc-wwpn`
 
 +
 시스템은 다음 예제와 유사한 출력을 반환합니다.
@@ -91,19 +91,19 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 +
 .. [[man_lif_verify_4_substa]] 인터페이스 그룹의 node2에 이미 속해 있는 node3에 호스팅된 모든 LIF를 노드 4의 포트로 마이그레이션: 각 LIF에 대해 다음 명령을 한 번 입력하여 동일한 네트워크에서 LIF를 호스팅할 수 있습니다.
 +
-'network interface migrate-vserver_vserver_name_-lif_lif_name_-destination-node node4 – destination-port_NetPort|ifgrp_'
+`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node node4 –destination-port _netport|ifgrp_`
 
 .. 에서 LIF의 홈 포트 및 홈 노드를 수정합니다 ,하위 단계 A 각 LIF에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
 +
-'network interface modify -vserver_vserver_name_-lif_datalif_name_-home-node node4 home-port_NetPort|ifgrp_'
+`network interface modify -vserver _vserver_name_ -lif _datalif_name_ -home-node node4 home-port _netport|ifgrp_`
 
 .. [[man_lif_verify_4_substeepc]] 이전에 VLAN 포트의 node2에 속해 있던 node3에 호스팅된 모든 LIF를 노드 4의 포트로 마이그레이션합니다. 노드 4에서는 각 LIF에 대해 다음 명령을 한 번 입력하여 동일한 네트워크에 LIF를 호스팅할 수 있습니다.
 +
-'network interface migrate-vserver_vserver_name_-lif_datalif_name_-destination-node node4 – destination-port_NetPort|ifgrp_'
+`network interface migrate -vserver _vserver_name_ -lif _datalif_name_ -destination-node node4 –destination-port _netport|ifgrp_`
 
 .. 에서 LIF의 홈 포트 및 홈 노드를 수정합니다 ,하위 단계 c 각 LIF에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
 +
-'network interface modify -vserver_vserver_name_-lif_datalif_name_-home-node_node4_home-port_NetPort|ifgrp_'
+`network interface modify -vserver _vserver_name_ -lif _datalif_name_ -home-node _node4_ home-port _netport|ifgrp_`
 
 
 
@@ -124,7 +124,7 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 |===
 . [[man_lif_verify_4_Step5]] 플랫폼에서 동일하지 않은 데이터 포트가 있는 경우 다음 명령을 입력하여 브로드캐스트 도메인에 포트를 추가합니다.
 +
-'network port broadcast-domain add-ports-IPSpace_IPspace_name_-broadcast-domain mgmt ports_node:port_'
+`network port broadcast-domain add-ports -ipspace _IPspace_name_ -broadcast-domain mgmt ports _node:port_`
 
 +
 다음 예에서는 노드 "6280-1"의 포트 "e0a"와 노드 "8060-1"의 포트 "e0i"를 IPspace에서 브로드캐스트 도메인 관리에 추가합니다. 기본값:
@@ -136,18 +136,18 @@ cluster::> network port broadcast-domain add-ports -ipspace Default  -broadcast-
 ----
 . 각 LIF에 대해 다음 명령을 한 번 입력하여 각 NAS 데이터 LIF를 노드 4로 마이그레이션합니다.
 +
-'network interface migrate-vserver_vserver-name_-lif_datalif-name_-destination-node_node4_-destination-port_NetPort|ifgrp_-home-node_node4_'
+`network interface migrate -vserver _vserver-name_ -lif _datalif-name_ -destination-node _node4_ -destination-port _netport|ifgrp_ -home-node _node4_`
 
 . 데이터 마이그레이션이 영구한지 확인:
 +
-'network interface modify -vserver_vserver_name_-lif_datalif_name_-home-port_NetPort|ifgrp_'
+`network interface modify -vserver _vserver_name_ -lif _datalif_name_ -home-port _netport|ifgrp_`
 
-. [[man_lif_verify_4_Step8]] 다음 명령어를 입력하여 모든 네트워크 포트를 나열하고 출력을 확인하여 모든 링크의 상태를 "up"으로 확인한다.
+. [[man_lif_verify_4_Step8]]로 모든 링크의 상태를 확인합니다 `up` 다음 명령을 입력하여 모든 네트워크 포트를 나열하고 해당 출력을 확인합니다.
 +
-네트워크 포트 쇼
+`network port show`
 
 +
-다음 예에서는 일부 LIF가 작동 중지되어 있는 'network port show' 명령의 출력을 보여 줍니다.
+다음 예제는 의 출력을 보여 줍니다 `network port show` 명령을 실행하면 일부 LIF가 작동 중지되며 다른 LIF는 작동 중지되기도 합니다.
 
 +
 [listing]
@@ -172,19 +172,19 @@ node4
        e1b       Cluster      Cluster          up       9000  auto/10000
 12 entries were displayed.
 ----
-. [[man_lif_verify_4_Step9] 'network port show' 명령의 출력에 새 노드에서 사용할 수 없고 이전 노드에 있는 네트워크 포트가 표시되면 다음 하위 단계를 완료하여 이전 네트워크 포트를 삭제합니다.
+. [[man_lif_verify_4_Step9]]의 출력이 인 경우 `network port show` 명령 새 노드에서 사용할 수 없고 이전 노드에 있는 네트워크 포트를 표시합니다. 다음 하위 단계를 완료하여 이전 네트워크 포트를 삭제합니다.
 +
 .. 다음 명령을 입력하여 고급 권한 수준을 입력합니다.
 +
-세트 프리빌리지 고급
+`set -privilege advanced`
 
 .. 각 이전 네트워크 포트에 대해 다음 명령을 한 번 입력합니다.
 +
-'network port delete-node_node_name_-port_port_name_
+`network port delete -node _node_name_ -port _port_name_`
 
 .. 다음 명령을 입력하여 admin 레벨로 돌아갑니다.
 +
-'Set-Privilege admin'입니다
+`set -privilege admin`
 
 
 
@@ -192,7 +192,7 @@ node4
 +
 .. 다음 명령을 입력하고 출력을 검사합니다.
 +
-네트워크 인터페이스 show-data-protocol iscsi | fcp-home-node node4
+`network interface show -data-protocol iscsi|fcp -home-node node4`
 
 +
 시스템은 다음 예제와 유사한 출력을 반환합니다.
@@ -213,12 +213,12 @@ vs1
             lif1         up/up    172.17.176.120/24  node4         e0c     true
             lif2         up/up    172.17.176.121/24  node4
 ----
-.. 새 "adapter" 및 "shwitch-port" 구성이 올바른지 확인하려면 의 워크시트에 기록한 새 구성 정보와 FCP adapter show 명령의 출력을 비교해야 합니다 ,2단계.
+.. 새 가 맞는지 확인합니다 `adapter` 및 `switch-port` 의 출력을 비교하여 구성이 올바른지 확인합니다 `fcp adapter show` 의 워크시트에 기록한 새 구성 정보를 사용하여 명령을 실행합니다 ,2단계.
 +
 노드 4의 새로운 SAN LIF 구성을 나열합니다.
 
 +
-FCP 어댑터 show-fields switch-port, fc-WWPN입니다
+`fcp adapter show -fields switch-port,fc-wwpn`
 
 +
 시스템은 다음 예제와 유사한 출력을 반환합니다.
@@ -250,31 +250,31 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 ----
 +
 
-NOTE: 새 구성의 SAN LIF가 동일한 '스위치 포트'에 아직 연결된 어댑터에 있지 않으면 노드를 재부팅할 때 시스템이 중단될 수 있습니다.
+NOTE: 새 구성의 SAN LIF가 아직 연결된 어댑터에 없는 경우 `switch-port`노드를 재부팅할 때 시스템이 중단될 수 있습니다.
 
 .. 노드 4에 SAN LIF 또는 SAN LIF 그룹이 노드 2에 없는 포트에 있는 경우 다음 명령 중 하나를 입력하여 해당 LIF를 노드 4의 적절한 포트로 이동합니다.
 +
 ... LIF 상태를 아래로 설정합니다.
 +
-'network interface modify -vserver_vserver_name_-lif_lif_name_-status-admin down'
+`network interface modify -vserver _vserver_name_ -lif _lif_name_ -status-admin down`
 
 ... 포트 세트에서 LIF를 제거합니다.
 +
-' remove-vserver_vserver_name_-포트셋_포트셋_이름_-포트-이름_포트_이름_'
+`portset remove -vserver _vserver_name_ -portset _portset_name_ -port-name _port_name_`
 
 ... 다음 명령 중 하나를 입력합니다.
 +
 **** 단일 LIF 이동:
 +
-'network interface modify -lif_lif_name_-home-port_new_home_port_'
+`network interface modify -lif _lif_name_ -home-port _new_home_port_`
 
 **** 존재하지 않거나 잘못된 단일 포트에 있는 모든 LIF를 새 포트로 이동:
 +
-'network interface modify {-home-port_port_on_node2_-home-node_node2_-role data} - home-port_new_home_port_on_node4_'
+`network interface modify {-home-port _port_on_node2_ -home-node _node2_ -role data} -home-port _new_home_port_on_node4_`
 
 **** 포트 세트에 LIF를 다시 추가합니다.
 +
-``add-vserver_vserver_name_-포트셋_포트셋_이름_-포트-이름_포트_이름_'
+`portset add -vserver _vserver_name_ -portset _portset_name_ -port-name _port_name_`
 
 
 
@@ -286,16 +286,16 @@ NOTE: 새 구성의 SAN LIF가 동일한 '스위치 포트'에 아직 연결된 
 
 NOTE: SAN LIF를 원래 포트와 동일한 링크 속도를 가진 포트로 이동해야 합니다.
 
-. LIF가 다음 명령을 입력하여 노드에서 트래픽을 허용하고 전송할 수 있도록 모든 LIF의 상태를 "Up"으로 수정합니다.
+. 모든 LIF의 상태를 로 수정합니다 `up` 따라서 LIF는 다음 명령을 입력하여 노드에서 트래픽을 허용하고 전송할 수 있습니다.
 +
-'network interface modify -vserver_vserver_name_-home-port_port_name_-home-node_node4_lif_lif_name_-status-admin up'
+`network interface modify -vserver _vserver_name_ -home-port _port_name_ -home-node _node4_ lif _lif_name_ -status-admin up`
 
-. SAN LIF가 올바른 포트로 이동되었으며, 두 노드 중 하나에 다음 명령을 입력하고 출력을 검사하여 LIF 상태가 'UP'인지 확인하십시오.
+. SAN LIF가 올바른 포트로 이동되었으며 LIF의 상태가 인지 확인합니다 `up` 두 노드 중 하나에서 다음 명령을 입력하고 출력을 검사하여,
 +
-'network interface show-home-node_node4_-role data
+`network interface show -home-node _node4_ -role data`
 
-. [[man_lif_verify_4_Step13] LIF가 다운된 경우 각 LIF에 대해 다음 명령을 한 번 입력하여 LIF의 관리 상태를 'up'으로 설정하십시오.
+. [[man_lif_verify_4_Step13] LIF가 다운된 경우 LIF의 관리 상태를 로 설정합니다 `up` 다음 명령을 각 LIF에 대해 한 번 입력합니다.
 +
-'network interface modify -vserver_vserver_name_-lif_lif_name_-status-admin up
+`network interface modify -vserver _vserver_name_ -lif _lif_name_ -status-admin up`
 
 

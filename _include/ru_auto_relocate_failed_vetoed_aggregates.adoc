@@ -10,9 +10,9 @@ Aggregate가 재배치되지 않거나 거부되면 Aggregate를 수동으로 �
 . EMS(이벤트 관리 시스템) 로그를 확인하여 Aggregate의 재배치 실패 또는 거부가 발생한 이유를 확인합니다.
 . 장애가 발생하거나 거부되는 애그리게이트를 재배치합니다.
 +
-'storage aggregate relocation start -node_node1_-destination_node2_-aggregate-list_aggr_name_-ndo-controller-upgrade TRUE'
+`storage aggregate relocation start -node _node1_ -destination _node2_ -aggregate-list _aggr_name_ -ndo-controller-upgrade true`
 
-. 메시지가 나타나면 y를 입력합니다.
+. 메시지가 표시되면 를 입력합니다 `y`.
 . 다음 방법 중 하나를 사용하여 재배치를 수행할 수 있습니다.
 
 
@@ -21,8 +21,10 @@ Aggregate가 재배치되지 않거나 거부되면 Aggregate를 수동으로 �
 | 옵션을 선택합니다 | 설명 
 
 
-| 거부권 확인 무시 | 'storage aggregate relocation start -node node1 -destination node2 -aggregate -list_aggr_list_ -ndo -controller -upgrade true-override-vetoes true' 명령을 사용합니다 
+| 거부권 확인 무시 | 다음 명령을 사용합니다.
+`storage aggregate relocation start -node node1 -destination node2 -aggregate-list _aggr_list_ -ndo-controller-upgrade true -override-vetoes true` 
 
 
-| 대상 확인을 재정의하는 중입니다 | 'storage aggregate relocation start -node node1 -destination node2 -aggregate -list_aggr_list_ -ndo -controller -upgrade true -override -override -destination -checks true' 명령을 사용합니다 
+| 대상 확인을 재정의하는 중입니다 | 다음 명령을 사용합니다.
+`storage aggregate relocation start -node node1 -destination node2 -aggregate-list _aggr_list_ -ndo-controller-upgrade true -override-vetoes true -override-destination-checks true` 
 |===

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/guidelines_for_upgrading_controllers_with_arl.html 
 keywords: guidelines, upgrading, controllers, ARL 
-summary: System controller replace 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 수 있는지 파악 
+summary: '을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 수 있는지 이해합니다 `system controller replace` 명령.' 
 ---
 = ARL을 사용한 컨트롤러 업그레이드 지침
 :hardbreaks:

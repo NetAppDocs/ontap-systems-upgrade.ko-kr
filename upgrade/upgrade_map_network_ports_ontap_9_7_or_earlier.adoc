@@ -30,38 +30,38 @@ https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 . 다음과 같이 변경합니다.
 +
 .. 아직 부팅하지 않은 경우 노드 3과 노드 4를 클러스터 프롬프트로 부팅합니다.
-.. '클러스터' 브로드캐스트 도메인에 올바른 포트를 추가합니다.
+.. 에 올바른 포트를 추가합니다 `Cluster` 브로드캐스트 도메인:
 +
-'network port modify -node_node_name_-port_port_name_-mtu 9000-IPSpace Cluster'
+`network port modify -node _node_name_ -port _port_name_ -mtu 9000 -ipspace Cluster`
 
 +
-이 예에서는 ""node1""에 클러스터 포트 e1b를 추가합니다.
+이 예제에서는 을 추가합니다 `Cluster` ""node1""의 포트 e1b:
 
 +
-네트워크 포트 수정 노드 노드1-포트 e1b-IPSpace 클러스터-MTU 9000
+`network port modify -node node1 -port e1b -ipspace Cluster -mtu 9000`
 
 .. LIF를 각 LIF에 대해 한 번씩 새 포트로 마이그레이션합니다.
 +
-'network interface migrate-vserver_vserver_name_-lif_lif_name_-source-node node1-destination-node node1-destination-port_name_'
+`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -source-node node1 -destination-node node1 -destination-port _port_name_`
 
 +
 SAN 데이터 LIF는 오프라인 상태에서만 마이그레이션할 수 있습니다.
 
 .. 클러스터 LIF의 홈 포트를 수정합니다.
 +
-'network interface modify -vserver cluster -lif_lif_name_ – home-port_port_name_'
+`network interface modify -vserver Cluster -lif _lif_name_ –home-port _port_name_`
 
 .. 클러스터 브로드캐스트 도메인에서 이전 포트를 제거합니다.
 +
-'네트워크 포트 브로드캐스트-도메인 제거-포트-IPSpace 클러스터-브로드캐스트-도메인 클러스터-포트_노드1:포트_'
+`network port broadcast-domain remove-ports -ipspace Cluster -broadcast-domain Cluster -ports _node1:port_`
 
 .. 노드 3과 노드 4의 상태를 표시합니다.
 +
-'cluster show-node_node1_ - 필드 상태
+`cluster show -node _node1_ -fields health`
 
 .. 각 클러스터 LIF는 포트 7700에서 수신 대기 중이어야 합니다. 클러스터 LIF가 포트 7700에서 수신 중인지 확인합니다.
 +
-'::> 네트워크 연결 수신 표시 - vserver 클러스터'
+`::> network connections listening show -vserver Cluster`
 
 +
 클러스터 포트에서 수신 대기하는 포트 7700은 2노드 클러스터의 다음 예에 표시된 대로 예상되는 결과입니다.
@@ -80,40 +80,40 @@ Cluster          NodeB_clus1:7700               TCP/ctlopcp
 Cluster          NodeB_clus2:7700               TCP/ctlopcp
 4 entries were displayed.
 ----
-.. 필요한 경우 포트 7700에서 청취하지 않는 각 클러스터 LIF에 대해 LIF의 관리 상태를 '소유'로 설정한 다음 '설정'으로 설정합니다.
+.. 필요한 경우 포트 7700에서 청취하지 않는 각 클러스터 LIF에 대해 LIF의 관리 상태를 로 설정합니다 `down` 그리고 나서 `up`:
 +
-'::> net int modify -vserver cluster -lif_cluster -lif_ -status -admin down;net int modify -vserver Cluster-lif_cluster -lif_ -status -admin up'
+`::> net int modify -vserver Cluster -lif _cluster-lif_ -status-admin down; net int modify -vserver Cluster -lif _cluster-lif_ -status-admin up`
 
 +
 하위 단계(g)를 반복하여 클러스터 LIF가 포트 7700에서 청취 중인지 확인합니다.
 
 
 
-. VLAN 및 'ifgrp config'를 새 컨트롤러의 물리적 포트 레이아웃과 일치하도록 수정합니다.
+. VLAN 및 을 수정합니다 `ifgrp config` 새로운 컨트롤러의 물리적 포트 레이아웃과 일치시킵니다.
 . 노드 3과 노드 4에 더 이상 존재하지 않는 노드1과 노드2 포트(고급 권한 수준)를 삭제합니다.
 +
-'network port delete-node_node1_-port_port_name_'
+`network port delete -node _node1_ -port _port_name_`
 
 . [[MAP_97_7]] 노드 관리 브로드캐스트 도메인을 조정하고 필요한 경우 노드 관리 및 클러스터 관리 LIF를 마이그레이션합니다.
 +
 .. LIF의 홈 포트를 표시합니다.
 +
-네트워크 인터페이스 보기 필드, 홈 노드, 홈 포트
+`network interface show -fields home-node,home-port`
 
 .. 포트가 포함된 브로드캐스트 도메인을 표시합니다.
 +
-'network port broadcast-domain show-ports_node_name:port_name_'
+`network port broadcast-domain show -ports _node_name:port_name_`
 
 .. 필요에 따라 브로드캐스트 도메인에서 포트를 추가하거나 제거합니다.
 +
-네트워크 포트 브로드캐스트 도메인 추가 포트
+`network port broadcast-domain add-ports`
 
 +
-네트워크 포트 브로드캐스트 도메인 제거 포트
+`network port broadcast-domain remove-ports`
 
 .. 필요한 경우 LIF의 홈 포트를 수정합니다.
 +
-'network interface modify -vserver_vserver_name_-lif_lif_name_ – home-port_port_name_'
+`network interface modify -vserver _vserver_name_ -lif _lif_name_ –home-port _port_name_`
 
 
 
@@ -121,17 +121,17 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 . 다른 브로드캐스트 도메인을 조정하고 필요한 경우 의 명령을 사용하여 데이터 LIF를 마이그레이션합니다 ,7단계.
 . 모든 LIF 페일오버 그룹을 조정합니다.
 +
-'network interface modify-failover-group_failover_group_-failover-policy_failover_policy_'
+`network interface modify -failover-group _failover_group_ -failover-policy _failover_policy_`
 
 +
 다음 명령은 페일오버 정책을 브로드캐스트 도메인 전체에 설정하고 페일오버 그룹 "fg1"의 포트를 "노드 1"의 LIF "data1"의 페일오버 타겟으로 사용합니다.
 
 +
-'network interface modify -vserver node1-lif data1-failover-policy broadcast-domain-wide-failover-group fg1'을 참조하십시오
+`network interface modify -vserver node1 -lif data1 -failover-policy broadcast-domain-wide -failover-group fg1`
 
 . 노드 3과 노드 4의 네트워크 포트 속성을 표시합니다.
 +
-네트워크 포트 show-node node1
+`network port show -node node1`
 
 
 

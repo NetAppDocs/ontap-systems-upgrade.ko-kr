@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/reboots_panics_or_power_cycles.html 
 keywords: reboots, panics, power, cycles, node, crash 
-summary: '"시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 다른 단계에서 시스템이 충돌하거나 재부팅, 패닉 또는 전원 사이클을 거치는 경우가 있습니다.' 
+summary: '을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 여러 단계에서 시스템이 충돌합니다(재부팅, 패닉 또는 전원 사이클 통과) `system controller replace` 명령.' 
 ---
 = 재부팅, 패닉 또는 전원 껐다 켜기
 :hardbreaks:
@@ -47,10 +47,11 @@ summary: '"시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.5를 �
 
 재배치된 애그리게이트의 소유권은 홈 소유자가 변경되지 않았기 때문에 이전된 비루트 애그리게이트의 소유권과 동일합니다.
 
-노드 1이 '반환 대기 중' 상태로 전환되면 노드 2에서 노드 1이 아닌 모든 애그리게이트를 되돌려 줍니다.
+노드 1이 에 들어갈 때 `waiting for giveback` 노드 2에서는 노드 1이 아닌 모든 애그리게이트를 제공합니다.
 
 .단계
-. 노드 1을 부팅한 후 노드 1의 모든 비루트 애그리게이트가 노드 1로 다시 이동했습니다. 노드 1에서 노드 2로 애그리게이트를 수동으로 재구성해야 합니다. 'storage aggregate relocation start-node node1-destination node2-aggregate-list * -ndocontroller-upgrade true'입니다
+. 노드 1을 부팅한 후 노드 1의 모든 비루트 애그리게이트가 노드 1로 다시 이동했습니다. 노드 1에서 노드 2로 애그리게이트를 수동으로 재구성해야 합니다.
+`storage aggregate relocation start -node node1 -destination node2 -aggregate -list * -ndocontroller-upgrade true`
 . 노드 쌍 업그레이드 절차를 계속 진행합니다.
 
 

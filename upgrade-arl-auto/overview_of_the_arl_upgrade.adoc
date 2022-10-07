@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/overview_of_the_arl_upgrade.html 
 keywords: aggregate relocation, upgrade, process, overview, stages 
-summary: System controller replace 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드하는 절차를 이해한다. 
+summary: '을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드하는 절차를 이해합니다 `system controller replace` 명령이 작동합니다.' 
 ---
 = ARL 업그레이드 개요
 :hardbreaks:

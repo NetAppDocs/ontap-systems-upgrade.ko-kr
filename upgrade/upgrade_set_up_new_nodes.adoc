@@ -13,7 +13,7 @@ summary: 스토리지를 이동하여 업그레이드하는 동안 노드 3과 �
 [role="lead"]
 스토리지를 이동하여 업그레이드하는 동안 노드 3과 노드 4의 전원을 켜고 소프트웨어 이미지를 부팅하고 노드를 구성합니다. 원래 노드와 새 노드 간의 물리적 포트 레이아웃은 다를 수 있습니다. 원래 노드와 대체 노드 간의 포트 매핑은 포트와 연결의 적절한 레이아웃을 식별하기 위해 수행해야 합니다.
 
-새 노드에서 실행되는 ONTAP 버전이 원래 노드의 버전과 다른 경우 NetApp Support 사이트에서 웹 액세스 가능한 디렉토리로 올바른 '<ONTAP_version>_image.tgz' 파일을 다운로드해야 합니다(_prepare for the upgrade when moring storage _, link:upgrade-prepare-when-moving-storage.html#prepare_move_store_5["5단계"])를 클릭합니다. 시스템의 Netboot를 수행하려면 "<ONTAP_VERSION>_IMAGE.tgz" 파일이 필요합니다.
+새 노드에서 실행 중인 ONTAP 버전이 원래 노드의 버전과 다른 경우 올바른 버전을 다운로드해야 합니다 `<ontap_version>_image.tgz` NetApp Support 사이트에서 웹 액세스 가능 디렉토리로 파일 이동(_스토리지 이동 시 업그레이드 준비 _ 참조, link:upgrade-prepare-when-moving-storage.html#prepare_move_store_5["5단계"])를 클릭합니다. 에 가 필요합니다 `<ontap_version>_image.tgz` 시스템의 넷부팅을 수행하는 파일입니다.
 
 .단계
 . 노드 3의 전원을 켠 다음 콘솔 터미널에서 Ctrl-C를 즉시 눌러 로더 프롬프트에 액세스합니다.
@@ -34,7 +34,7 @@ LOADER 프롬프트에서 node4를 그대로 둡니다. 이 절차로 돌아가 
 
 . LOADER 프롬프트에서 다음 명령을 입력합니다.
 +
-세트 기본값
+`set-defaults`
 
 . 로더 프롬프트에서 관리 LIF의 netboot 연결을 구성합니다.
 +
@@ -43,10 +43,12 @@ LOADER 프롬프트에서 node4를 그대로 둡니다. 이 절차로 돌아가 
 | IP 주소 지정이... | 그러면... 
 
 
-| DHCP를 선택합니다 | 자동 연결 'ifconfig e0M-auto'를 설정한다 
+| DHCP를 선택합니다 | 자동 연결을 구성합니다.
+`ifconfig e0M -auto` 
 
 
-| 정적 | 수동 연결 'ifconfig e0M-addr=ip_addr-mask=netmask-GW=gateway'를 구성합니다 
+| 정적 | 수동 연결을 구성합니다.
+`ifconfig e0M -addr=ip_addr -mask=netmask -gw=gateway` 
 |===
 . LOADER 프롬프트에서 node3에서 netboot를 수행합니다.
 +
@@ -55,13 +57,14 @@ LOADER 프롬프트에서 node4를 그대로 둡니다. 이 절차로 돌아가 
 | 대상... | 그러면... 
 
 
-| FAS2200, FAS2500, FAS3200, FAS6200, FAS/AFF8000 시리즈 시스템 | "netboot\http://web_server_ip/path_to_webaccessible_directory/netboot/kernel` 
+| FAS2200, FAS2500, FAS3200, FAS6200, FAS/AFF8000 시리즈 시스템 | `netboot \http://web_server_ip/path_to_webaccessible_directory/netboot/kernel` 
 
 
-| 기타 모든 시스템 | "netboot\http://web_server_ip/path_to_webaccessible_directory/ontap_version_image.tgz` 
+| 기타 모든 시스템 | `netboot \http://web_server_ip/path_to_webaccessible_directory/ontap_version_image.tgz` 
 |===
 +
-"path_to_the_web-Accessible_directory"는 다운로드된 ONTAP_version_image.tgz 파일의 위치입니다.
+를 클릭합니다 `path_to_the_web-accessible_directory` 은(는) 다운로드한 의 위치입니다
+`<ontap_version>_image.tgz` 파일.
 
 +
 
@@ -69,22 +72,22 @@ NOTE: 새 컨트롤러를 netboot에 연결할 수 없으면 기술 지원 부�
 
 . 부팅 메뉴에서 옵션 * (7) 새 소프트웨어를 먼저 설치 * 를 선택하여 새 소프트웨어 이미지를 다운로드하여 부팅 장치에 설치합니다.
 +
-"이 절차는 HA 쌍에서 무중단 업그레이드를 지원하지 않습니다."라는 메시지는 무시하십시오. 무중단 소프트웨어 업그레이드에는 적용되며 컨트롤러 업그레이드에는 적용되지 않습니다.
+다음 메시지는 무시하십시오. `"This procedure is not supported for NonDisruptive Upgrade on an HA pair"`. 무중단 소프트웨어 업그레이드에는 적용되며 컨트롤러 업그레이드에는 적용되지 않습니다.
 
 . 절차를 계속하라는 메시지가 나타나면 y 를 입력하고 패키지를 입력하라는 메시지가 나타나면 이미지 파일의 URL을 입력합니다.
 +
-(/http://web_server_ip/path_to_web-accessible_directory/ontap_version_image.tgz`)
+`/http://web_server_ip/path_to_web-accessible_directory/<ontap_version>_image.tgz`
 
 +
 해당하는 경우 사용자 이름/암호를 입력하거나 Enter 키를 눌러 계속합니다.
 
-. 다음과 유사한 프롬프트가 표시되면 "n"을 입력하여 백업 복구를 건너뜁니다.
+. 를 입력합니다 `n` 다음과 유사한 프롬프트가 표시될 때 백업 복구를 건너뛰려면 다음을 수행합니다.
 +
 [listing]
 ----
 `Do you want to restore the backup configuration now? {y|n}`
 ----
-. 다음과 유사한 프롬프트가 나타나면 y를 입력하여 재부팅합니다.
+. 를 입력하여 재부팅합니다 `y` 다음과 유사한 메시지가 표시되는 경우:
 +
 [listing]
 ----
@@ -96,7 +99,7 @@ NOTE: 새 컨트롤러를 netboot에 연결할 수 없으면 기술 지원 부�
 +
 link:https://docs.netapp.com/us-en/ontap/san-admin/index.html["CLI를 통한 SAN 관리"^]
 
-. 명령 출력에 "ha"가 표시되는지 확인해야 합니다.
+. 명령 출력에 이 표시되는지 확인해야 합니다 `ha`:
 +
 [listing]
 ----
@@ -108,11 +111,11 @@ link:https://docs.netapp.com/us-en/ontap/san-admin/index.html["CLI를 통한 SAN
 시스템은 HA 쌍 또는 독립형 구성에 관계없이 PROM에 기록합니다. 독립 실행형 시스템 또는 HA 쌍 내의 모든 구성 요소에서 상태가 동일해야 합니다
 
 +
-ha-config modify controller ha 명령은 컨트롤러 설정에 대해 ha를 구성합니다. ha-config modify chassis ha 명령은 섀시 설정에 대해 ha를 구성합니다.
+를 클릭합니다 `ha-config modify controller ha` 명령이 구성됩니다 `ha` 컨트롤러 설정에 대한 . 를 클릭합니다 `ha-config modify chassis ha` 명령이 구성됩니다 `ha` 섀시 설정을 확인합니다.
 
 . 유지 관리 모드 종료:
 +
-"중지"
+`halt`
 
 +
 LOADER 프롬프트에서 시스템이 중지됩니다

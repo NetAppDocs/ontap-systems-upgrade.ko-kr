@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/issues_in_multiple_stages_of_procedure.html 
 keywords: issues, arise, multiple, stages, procedure 
-summary: System controller replace 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 발생할 수 있는 문제에 대한 정보 
+summary: '을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 발생할 수 있는 문제에 대한 정보 `system controller replace` 명령.' 
 ---
 = 절차의 여러 단계에서 발생할 수 있는 문제입니다
 :hardbreaks:
@@ -20,11 +20,11 @@ summary: System controller replace 명령을 사용하여 ONTAP 9.5를 실행하
 
 == 예기치 않은 "storage failover show" 명령 출력입니다
 
-이 과정에서 모든 데이터 애그리게이트를 호스팅하는 노드에 패닉이 발생하거나 노드가 실수로 재부팅되는 경우 재부팅, 패닉 또는 전원 껐다 켜기 전과 후에 'storage failover show' 명령에 대한 예기치 않은 결과가 나타날 수 있습니다.
+이 절차를 진행하는 동안 모든 데이터 애그리게이트를 호스팅하는 노드에서 장애가 발생했거나 실수로 재부팅된 경우 에 대한 예기치 않은 출력이 표시될 수 있습니다 `storage failover show` 재부팅, 패닉 또는 전원 껐다 켜기 전과 후에 명령을 실행합니다.
 
-2단계, 3단계, 4단계 또는 5단계의 'Storage failover show' 명령에서 예기치 않은 출력이 표시될 수 있습니다.
+에서 예기치 않은 출력이 표시될 수 있습니다 `storage failover show` 2단계, 3단계, 4단계 또는 5단계의 명령.
 
-다음 예에서는 모든 데이터 애그리게이트를 호스팅하는 노드에서 재부팅 또는 패닉이 발생하지 않는 경우 'Storage failover show' 명령의 예상 출력을 보여 줍니다.
+다음 예는 의 예상 출력을 보여줍니다 `storage failover show` 명령 모든 데이터 애그리게이트를 호스팅하는 노드에 재부팅 또는 패닉이 발생하지 않는 경우:
 
 ....
 cluster::> storage failover show
@@ -35,7 +35,7 @@ Node     Partner   Possible  State Description
 node1    node2     false     Unknown
 node2    node1     false     Node owns partner aggregates as part of the non-disruptive head upgrade procedure. Takeover is not possible: Storage failover is disabled.
 ....
-다음 예는 재부팅 또는 패닉 후 'storage failover show' 명령의 출력을 보여줍니다.
+다음 예제는 의 출력을 보여 줍니다 `storage failover show` 재부팅 또는 패닉 후 명령:
 
 ....
 cluster::> storage failover show

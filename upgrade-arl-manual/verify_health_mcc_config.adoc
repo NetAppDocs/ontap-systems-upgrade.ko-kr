@@ -19,7 +19,7 @@ MetroCluster 구성 상태를 점검하여 올바르게 작동하는지 확인�
 .단계
 . MetroCluster 구성 요소가 정상인지 확인합니다.
 +
-'MetroCluster check run
+`metrocluster check run`
 
 +
 [listing]
@@ -41,6 +41,6 @@ To check if the nodes are ready to do a switchover or switchback operation, run 
 ----
 . 상태 경고가 없는지 확인합니다.
 +
-'시스템 상태 경고 표시
+`system health alert show`
 
 

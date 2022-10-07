@@ -11,16 +11,16 @@
 .단계
 . 다음 명령을 입력하고 출력을 검사합니다.
 +
-스토리지 골재 재배치 쇼
+`storage aggregate relocation show`
 
 +
-'storage aggregate relocation show' 명령은 성공적으로 재배치된 애그리게이트와 그렇지 않은 애그리게이트가 장애 원인과 함께 표시됩니다.
+를 클릭합니다 `storage aggregate relocation show` 명령을 실행하면 성공적으로 재배치된 애그리게이트와 재배치되지 않은 애그리게이트가 장애 원인과 함께 표시됩니다.
 
 . 콘솔에 EMS 메시지가 있는지 확인합니다.
 . 다음 작업 중 하나를 수행합니다.
 +
-** Storage aggregate relocation show 명령의 출력 및 EMS 메시지의 출력 결과에 따라 적절한 수정 조치를 취합니다.
-** 'Storage aggregate relocation start' 명령의 'override-vetoes' 옵션 또는 'override-destination-checks' 옵션을 사용하여 애그리게이트나 애그리게이트를 강제로 재배치할 수 있습니다.
+** 의 출력에 따라 적절한 수정 조치를 수행합니다 `storage aggregate relocation show` 명령어와 EMS 메시지 출력
+** 를 사용하여 Aggregate 또는 Aggregate를 강제로 재배치할 수 있습니다 `override-vetoes` 옵션 또는 을 선택합니다 `override-destination-checks` 의 옵션 `storage aggregate relocation start` 명령.
 
 
 

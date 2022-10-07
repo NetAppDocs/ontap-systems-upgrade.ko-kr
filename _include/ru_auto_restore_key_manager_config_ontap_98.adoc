@@ -7,7 +7,7 @@
 .단계
 . 클러스터 프롬프트에서 다음 명령을 사용하여 Onboard Key Manager(OKM)의 암호화 구성을 동기화합니다.
 +
-보안 키매니저 온보드 동기화
+`security key-manager onboard sync`
 
 . OKM의 클러스터 전체 암호를 입력합니다.
 

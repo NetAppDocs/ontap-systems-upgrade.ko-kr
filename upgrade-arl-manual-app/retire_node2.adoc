@@ -31,11 +31,11 @@ summary: ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레�
 |===
 . [[man_Retire_2_Step2]] 두 노드 중 하나에 다음 명령을 입력하여 고급 권한 수준에 액세스합니다.
 +
-세트 프리빌리지 고급
+`set -privilege advanced`
 
 . 다음 명령을 입력하고 출력을 확인하여 클러스터 HA가 비활성화되었는지 확인합니다.
 +
-군산쇼
+`cluster ha show`
 
 +
 다음과 같은 메시지가 표시됩니다.
@@ -47,7 +47,7 @@ High Availability Configured: false
 ----
 . 다음 명령을 입력하고 출력을 검사하여 노드 2에 현재 epsilon이 있는지 확인합니다.
 +
-'클러스터 쇼'
+`cluster show`
 
 +
 다음 예에서는 node2에 epsilon 이 있음을 보여 줍니다.
@@ -69,17 +69,17 @@ Warning: Cluster HA has not been configured. Cluster HA must be configured on a 
 
 NOTE: 여러 HA 쌍이 있는 클러스터에서 HA 쌍을 업그레이드하는 경우, epsilon을 컨트롤러 업그레이드를 받지 않는 HA 쌍의 노드로 이동해야 합니다. 예를 들어 HA 쌍 구성 NodeA/NodeB 및 nodeC/noded를 사용하여 클러스터의 NodeA/NodeB를 업그레이드하는 경우 epsilon을 노드 C 또는 noded로 이동해야 합니다.
 
-. 노드 2가 epsilon을 포함하는 경우 epsilon을 노드 3으로 전송할 수 있도록 노드에 "false"로 표시합니다.
+. 노드 2에 epsilon가 있으면 epsilon을 로 표시합니다 `false` 노드 3으로 전송할 수 있도록 노드에서 다음을 수행합니다.
 +
-'cluster modify -node_node2_-epsilon FALSE'
+`cluster modify -node _node2_ -epsilon false`
 
-. 노드 3에서 epsilon 'true'를 표시하여 epsilon을 노드 3으로 전송:
+. epsilon을 표시하여 epsilon을 node3으로 전송합니다 `true` 노드3:
 +
-'cluster modify -node_node3_-epsilon TRUE
+`cluster modify -node _node3_ -epsilon true`
 
 . 스위치가 없는 2노드 클러스터인지 확인합니다.
 +
-'network options switchless-cluster show'
+`network options switchless-cluster show`
 
 +
 [listing]
@@ -92,7 +92,7 @@ Enable Switchless Cluster: false/true
 
 . 스위치가 없는 2노드 클러스터인지 확인합니다.
 +
-'network options switchless-cluster show'
+`network options switchless-cluster show`
 
 +
 [listing]
@@ -105,8 +105,9 @@ Enable Switchless Cluster: false/true
 
 . [[man_Retire_2_Step9]] 관리자 수준으로 돌아가기:
 +
-'Set-Privilege admin'입니다
+`set -privilege admin`
 
-. 두 컨트롤러 중 하나에 'system node halt-node_node2_' 명령을 입력하여 노드 2를 중단합니다
+. 두 컨트롤러 중 하나에서 다음 명령을 입력하여 노드 2를 중단합니다.
+`system node halt -node _node2_`
 . 노드 2가 완전히 종료된 후 섀시 또는 랙에서 분리합니다. 업그레이드가 완료된 후 노드 2를 사용 중단할 수 있습니다. 을 참조하십시오 link:decommission_old_system.html["기존 시스템을 폐기합니다"].
 

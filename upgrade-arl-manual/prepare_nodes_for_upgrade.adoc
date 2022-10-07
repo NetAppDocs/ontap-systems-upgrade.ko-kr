@@ -57,11 +57,11 @@ WARNING: * 주의 * NVRAM 내용을 지우지 마십시오. NVRAM의 내용을 �
 노드 3 및 노드 4의 ONTAP 버전에 대한 정보는 배송 상자에 포함되어 있어야 합니다. ONTAP 버전은 노드가 부팅될 때 표시되며, 노드를 유지보수 모드로 부팅하고 명령을 실행할 수 있습니다.
 
 +
-'내전'
+`version`
 
 . 노드 1과 노드 2에 2개 또는 4개의 클러스터 LIF가 있는지 확인합니다.
 +
-네트워크 인터페이스 show-role cluster
+`network interface show -role cluster`
 
 +
 다음 예제와 같이 시스템에서 모든 클러스터 LIF를 표시합니다.
@@ -83,7 +83,7 @@ node2
 +
 .. 고급 권한 수준 입력:
 +
-세트 프리빌리지 고급
+`set -privilege advanced`
 
 +
 다음과 같은 메시지가 표시됩니다.
@@ -93,10 +93,10 @@ node2
 Warning: These advanced commands are potentially dangerous; use them only when directed to do so by NetApp personnel.
 Do you wish to continue? (y or n):
 ....
-.. y를 입력합니다.
+.. 를 입력합니다 `y`.
 .. 노드를 ping하고 연결을 테스트합니다.
 +
-'cluster ping-cluster-node node_name'입니다
+`cluster ping-cluster -node node_name`
 
 +
 다음 예와 유사한 메시지가 표시됩니다.
@@ -127,13 +127,13 @@ RPC status:
 
 .. 관리 레벨 권한으로 돌아가기:
 +
-'Set-Privilege admin'입니다
+`set -privilege admin`
 
 
 
 . 노드 1과 노드 2가 HA 쌍 내에 있는지 확인하고 노드가 서로 연결되어 있으며 테이크오버가 가능한지 확인합니다.
 +
-'스토리지 페일오버 쇼'
+`storage failover show`
 
 +
 다음 예는 노드가 서로 연결되고 테이크오버가 가능한 경우의 출력을 보여 줍니다.
@@ -160,11 +160,11 @@ node1          node2          true     Connected to node2, Partial giveback
 node2          node1          true     Connected to node1
 ....
 +
-어느 한 노드가 부분 반환 모드에 있는 경우 'storage failover 반환' 명령을 사용하여 반환 작업을 수행한 다음 'storage failover show -반환' 명령을 사용하여 반환 명령을 통해 반환 대상 애그리게이트가 아직 반환되지 않도록 하십시오. 명령에 대한 자세한 내용은 를 참조하십시오 link:other_references.html["참조"] 고가용성 관리 _ 에 대한 링크
+두 노드 중 하나가 부분 반환인 경우 를 사용합니다 `storage failover giveback` 명령을 사용하여 반환 작업을 수행한 다음 를 사용합니다 `storage failover show-giveback` 명령을 사용하여 애그리게이트에 대해 다시 제공되지 않도록 하십시오. 명령에 대한 자세한 내용은 를 참조하십시오 link:other_references.html["참조"] 고가용성 관리 _ 에 대한 링크
 
 . [[man_prepare_nodes_step9]] 노드 1과 노드 2가 현재 소유자인 집계(홈 소유자가 아님)를 소유하고 있지 않은지 확인합니다.
 +
-'Storage aggregate show -nodes_node_name_-is-home false-fields owner-name, home-name, state'
+`storage aggregate show -nodes _node_name_ -is-home false -fields owner-name, home-name, state`
 
 +
 노드 1과 노드 2가 현재 소유자인 Aggregate(홈 소유자가 아님)를 소유하지 않으면 시스템이 다음 예와 유사한 메시지를 반환합니다.
@@ -207,11 +207,11 @@ aggr4         node1        node2        online
 +
 .. 파트너 노드가 현재 소유한 애그리게이트를 홈 소유자 노드로 반환:
 +
-'Storage failover - ofnode_home_node_name_'에 대한 오류
+`storage failover giveback -ofnode _home_node_name_`
 
 .. 노드 1과 노드 2가 현재 소유자인 애그리게이트를 소유하지 않고 홈 소유자가 아닌 경우:
 +
-'Storage aggregate show -nodes_node_name_-is-home false-fields owner-name, home-name, state'
+`storage aggregate show -nodes _node_name_ -is-home false -fields owner-name, home-name, state`
 
 +
 다음 예제는 노드가 Aggregate의 현재 소유자이자 홈 소유자인 경우 명령의 출력을 보여줍니다.
@@ -234,7 +234,7 @@ aggr4         node1        node1        online
 
 . [[man_prepare_nodes_step12]] node1과 node2가 서로의 스토리지를 액세스할 수 있는지 확인하고 누락된 디스크가 없는지 확인합니다.
 +
-'Storage failover show - fields local-missing-disks, partner-missing-disks'
+`storage failover show -fields local-missing-disks,partner-missing-disks`
 
 +
 다음 예에서는 디스크가 없는 경우의 출력을 보여 줍니다.
@@ -253,7 +253,7 @@ node2    None                None
 
 . 노드 1과 노드 2가 정상 상태이며 클러스터에 참여할 자격이 있는지 확인합니다.
 +
-'클러스터 쇼'
+`cluster show`
 
 +
 다음 예는 두 노드가 모두 정상이고 정상일 때의 출력을 보여줍니다.
@@ -269,11 +269,11 @@ node2                 true    true
 ....
 . 권한 수준을 고급으로 설정합니다.
 +
-세트 프리빌리지 고급
+`set -privilege advanced`
 
 . [[man_prepare_nodes_step15]] node1과 node2가 동일한 ONTAP 릴리즈를 실행하고 있는지 확인합니다.
 +
-'system node image show -node_node1, node2_-iscurrent true'
+`system node image show -node _node1,node2_ -iscurrent true`
 
 +
 다음 예제는 명령의 출력을 보여 줍니다.
@@ -292,9 +292,9 @@ node2
 
 2 entries were displayed.
 ....
-. 노드 1과 노드 2가 클러스터의 다른 노드에 속하는 데이터 LIF를 소유하고 있지 않은지 확인하고 출력에서 'Current Node' 및 'is Home' 열을 확인합니다.
+. 노드 1과 노드 2가 클러스터의 다른 노드에 속한 데이터 LIF를 소유하고 있지 않은지 확인한 다음 를 확인합니다 `Current Node` 및 `Is Home` 출력의 열:
 +
-네트워크 인터페이스 show-role data-is-home false-curr-node_node_name_
+`network interface show -role data -is-home false -curr-node _node_name_`
 
 +
 다음 예제에서는 node1에 클러스터의 다른 노드가 소유하는 LIF가 없는 경우의 출력을 보여 줍니다.
@@ -322,14 +322,14 @@ vs0
 ....
 . 의 출력인 경우 ,15단계 에서는 노드 1이나 노드 2가 클러스터의 다른 노드에서 소유하는 데이터 LIF를 노드 1이나 노드 2에서 다른 데이터 LIF로 마이그레이션합니다.
 +
-'네트워크 인터페이스 되돌리기 - vserver * -lif *'
+`network interface revert -vserver * -lif *`
 
 +
-네트워크 인터페이스 되돌리기 명령에 대한 자세한 내용은 을 참조하십시오 link:other_references.html["참조"] _ONTAP 9 명령에 연결하려면 수동 페이지 참조 _.
+에 대한 자세한 내용은 를 참조하십시오 `network interface revert` 명령, 을 참조하십시오 link:other_references.html["참조"] _ONTAP 9 명령에 연결하려면 수동 페이지 참조 _.
 
 . 노드 1이나 노드 2에 장애가 발생한 디스크가 있는지 확인합니다.
 +
-'storage disk show-nodelist_node1, node2_-Broken
+`storage disk show -nodelist _node1,node2_ -broken`
 
 +
 디스크에 오류가 발생한 경우, _ Disk 의 지침에 따라 디스크를 제거하고 CLI _ 을(를) 사용하여 관리를 통합합니다. (을 참조하십시오 link:other_references.html["참조"] CLI_를 사용하여 _ 디스크 및 애그리게이트 관리에 연결하려면 _.)
@@ -341,7 +341,7 @@ vs0
 
 . 두 노드의 모델, 시스템 ID 및 일련 번호를 기록합니다.
 +
-'system node show -node_node1, node2_-instance'
+`system node show -node _node1,node2_ -instance`
 
 +
 
@@ -349,7 +349,7 @@ NOTE: 이 정보를 사용하여 디스크를 재할당하고 원래 노드의 �
 
 . 노드 1과 노드 2 모두에 다음 명령을 입력하고 쉘프, 각 쉘프의 디스크 수, 플래시 스토리지 세부 정보, 메모리, NVRAM 및 네트워크 카드 출력에 대한 정보를 기록합니다.
 +
-'run-node_node_name_sysconfig'
+`run -node _node_name_ sysconfig`
 
 +
 
@@ -357,7 +357,7 @@ NOTE: 이 정보를 사용하여 노드3 또는 노드4로 전송할 부품 또�
 
 . 노드 1과 노드 2 모두에 대해 다음 명령을 입력하고 두 노드에서 온라인 상태인 애그리게이트를 기록합니다.
 +
-'Storage aggregate show -node_name _ -state online'을 선택합니다
+`storage aggregate show -node _node_name_ -state online`
 
 +
 
@@ -365,7 +365,7 @@ NOTE: 이 정보와 다음 하위 단계의 정보를 사용하여 재배치 중
 
 . [[man_prepare_nodes_step19]] node1과 node2에서 다음 명령을 입력하고 두 노드에서 오프라인 상태인 볼륨을 기록합니다.
 +
-'volume show-node_node_name_-state offline
+`volume show -node _node_name_ -state offline`
 
 +
 
@@ -374,10 +374,10 @@ NOTE: 업그레이드 후에 명령을 다시 실행하고 이 단계의 출력�
 +
 .. 노드 1이나 노드 2에 인터페이스 그룹 또는 VLAN이 구성되어 있는지 확인하려면 다음 명령을 입력합니다.
 +
-'network port ifgrp show'
+`network port ifgrp show`
 
 +
-네트워크 포트 VLAN 표시
+`network port vlan show`
 
 +
 인터페이스 그룹 또는 VLAN이 노드 1이나 노드 2에 구성되어 있는지 확인하십시오. 다음 단계와 나중에 이 절차에 해당 정보가 필요합니다.
@@ -385,9 +385,9 @@ NOTE: 업그레이드 후에 명령을 다시 실행하고 이 단계의 출력�
 .. 노드 1과 노드 2 모두에서 다음 하위 단계를 완료하여 절차의 뒷부분에서 물리적 포트를 올바르게 매핑할 수 있는지 확인합니다.
 
 
-. 다음 명령을 입력하여 'clusterwide' 이외의 노드에 페일오버 그룹이 있는지 확인합니다.
+. 다음 명령을 입력하여 이외의 노드에 페일오버 그룹이 있는지 확인합니다 `clusterwide`:
 +
-네트워크 인터페이스 페일오버 그룹들이 보여줌
+`network interface failover-groups show`
 
 +
 페일오버 그룹은 시스템에 있는 네트워크 포트 세트입니다. 컨트롤러 하드웨어를 업그레이드하면 물리적 포트의 위치가 변경될 수 있으므로 업그레이드 중에 페일오버 그룹을 실수로 변경할 수 있습니다.
@@ -410,10 +410,10 @@ fg_6210_e0c         Default           node1:e0c, node1:e0d
 
 2 entries were displayed.
 ....
-. 클러스터 전반 이외의 페일오버 그룹이 있을 경우 페일오버 그룹 이름과 페일오버 그룹에 속한 포트를 기록합니다.
+. 이외의 페일오버 그룹이 있는 경우 `clusterwide`에서 페일오버 그룹 이름과 페일오버 그룹에 속한 포트를 기록합니다.
 . 다음 명령을 입력하여 노드에 구성된 VLAN이 있는지 확인합니다.
 +
-'network port vlan show-node_node_name_'
+`network port vlan show -node _node_name_`
 
 +
 VLAN은 물리적 포트를 통해 구성됩니다. 물리적 포트가 변경될 경우 VLAN을 나중에 다시 생성해야 합니다.
@@ -446,7 +446,7 @@ node1   e1b-70    e1b     70      00:15:17:76:7b:69
 |===
 .. [[man_prepare_nodes_step23]] 노드 1과 노드 2가 SAN 또는 비 SAN 환경에 있는지 여부를 모르는 경우 다음 명령을 입력하고 해당 출력을 검사합니다.
 +
-'network interface show -vserver_vserver_name_-data-protocol iscsi | fcp'
+`network interface show -vserver _vserver_name_ -data-protocol iscsi|fcp`
 
 +
 SVM에 대해 iSCSI와 FC를 구성하지 않을 경우 명령은 다음 예제와 유사한 메시지를 표시합니다.
@@ -457,7 +457,7 @@ cluster::> network interface show -vserver Vserver8970 -data-protocol iscsi|fcp
 There are no entries matching your query.
 ....
 +
-'-data-protocol nfs|cifs' 매개 변수와 함께 'network interface show' 명령을 사용하여 노드가 NAS 환경에 있는지 확인할 수 있습니다.
+를 사용하여 노드가 NAS 환경에 있는지 확인할 수 있습니다 `network interface show` 명령과 함께 `-data-protocol nfs|cifs` 매개 변수.
 
 +
 SVM에 iSCSI 또는 FC를 구성한 경우 명령에 다음 예와 유사한 메시지가 표시됩니다.
@@ -476,7 +476,7 @@ vs1      vs1_lif1   up/down    172.17.176.20/24   node1    0d      true
 
 . 고급 권한 수준 입력:
 +
-세트 프리빌리지 고급
+`set -privilege advanced`
 
 +
 다음과 같은 메시지가 표시됩니다.
@@ -486,10 +486,10 @@ vs1      vs1_lif1   up/down    172.17.176.20/24   node1    0d      true
 Warning: These advanced commands are potentially dangerous; use them only when directed to do so by NetApp personnel.
 Do you wish to continue? (y or n):
 ....
-. y를 입력합니다.
+. 를 입력합니다 `y`.
 . 각 노드에 대해 한 번씩 커널에서 클러스터 서비스 상태를 확인합니다.
 +
-클러스터 커널 서비스 쇼
+`cluster kernel-service show`
 
 +
 다음 예와 유사한 메시지가 표시됩니다.
@@ -511,7 +511,7 @@ node1         node1         in-quorum     true          operational
 
 . 관리 권한 수준으로 돌아가기:
 +
-'Set-Privilege admin'입니다
+`set -privilege admin`
 
 +
 .. 다음 작업 중 하나를 수행합니다.
@@ -528,7 +528,7 @@ node1         node1         in-quorum     true          operational
 |===
 .. [[man_prepare_nodes_step26]] 다음 명령을 입력하여 출력을 검사하여 SAN iSCSI 또는 FC 서비스가 활성화된 각 SVM에 대한 노드 1과 노드 2에 SAN LIF가 있는지 확인합니다.
 +
-'network interface show-data-protocol iscsi|fcp-home-node_node_name_'
+`network interface show -data-protocol iscsi|fcp -home-node _node_name_`
 
 +
 이 명령을 실행하면 노드 1과 노드 2의 SAN LIF 정보가 표시됩니다. 다음 예는 Status Admin/Oper 열의 상태를 UP/UP 으로 보여 줍니다. 이는 SAN iSCSI 및 FC 서비스가 활성화되었음을 나타냅니다.
@@ -554,11 +554,11 @@ c_vs_iscsi_fcp data1   up/up      20:0d:00:a0:98:19:9f:b0  node2     0c      tru
 또는 다음 명령을 입력하여 더 자세한 LIF 정보를 볼 수 있습니다.
 
 +
-네트워크 인터페이스 show-instance-data-protocol iscsi | fcp
+`network interface show -instance -data-protocol iscsi|fcp`
 
 .. 다음 명령을 입력하고 시스템의 출력을 기록하여 원래 노드에 있는 FC 포트의 기본 구성을 캡처합니다.
 +
-'ucadmin 쇼'
+`ucadmin show`
 
 +
 명령은 다음 예에 표시된 대로 클러스터에 있는 모든 FC 포트에 대한 정보를 표시합니다.
@@ -585,7 +585,7 @@ node2   0d      fc      initiator -       -         online
 
 .. V 시리즈 시스템이나 FlexArray 가상화 소프트웨어를 사용하여 시스템을 업그레이드하는 경우 다음 명령을 입력하고 출력을 기록하여 원래 노드의 토폴로지에 대한 정보를 캡처합니다.
 +
-'스토리지 배열 구성 표시-스위치'
+`storage array config show -switch`
 
 +
 다음 예에서와 같이 토폴로지 정보가 표시됩니다.
@@ -613,12 +613,12 @@ node2 0   50  I_1818FAStT_1
 
 . 원래 노드 중 하나에 다음 명령을 입력하고 출력을 기록합니다.
 +
-'Service-processor show-node * -instance'
+`service-processor show -node * -instance`
 
 +
 두 노드의 SP에 대한 자세한 정보가 표시됩니다.
 
-. SP 상태가 온라인인지 확인합니다.
+. SP 상태가 인지 확인합니다 `online`.
 . SP 네트워크가 구성되었는지 확인합니다.
 . SP에 대한 IP 주소 및 기타 정보를 기록합니다.
 +
@@ -627,7 +627,7 @@ node2 0   50  I_1818FAStT_1
 +
 .. [[man_prepare_nodes_step30]] 새 노드가 원래 노드와 라이센스가 부여된 기능을 동일하게 사용하려면 다음 명령을 입력하여 원래 시스템에서 클러스터 라이센스를 확인합니다.
 +
-'System license show-owner *'
+`system license show -owner *`
 
 +
 다음 예에서는 cluster1에 대한 사이트 라이센스를 보여 줍니다.
@@ -654,7 +654,7 @@ SnapVault         site    SnapVault License     -
 
 .. 각 노드에서 다음 명령을 입력하여 원래 시스템에 AutoSupport가 활성화되어 있는지 확인하고 해당 출력을 확인합니다.
 +
-'System node AutoSupport show -node_node1, node2_'
+`system node autosupport show -node _node1,node2_`
 
 +
 명령 출력에는 다음 예제와 같이 AutoSupport가 설정되어 있는지 여부가 표시됩니다.
@@ -695,14 +695,14 @@ node2            enable    Postmaster    -                 mailhost
 |===
 .. [[man_prepare_nodes_step34]] 원본 노드 모두에 다음 명령을 입력하고 출력을 검사하여 AutoSupport가 올바른 메일 호스트 세부 정보와 수신자 이메일 ID로 구성되었는지 확인합니다.
 +
-'System node AutoSupport show-node_name-instance
+`system node autosupport show -node node_name -instance`
 
 +
 AutoSupport에 대한 자세한 내용은 을 참조하십시오 link:other_references.html["참조"] _시스템 관리 참조_ 및 _ONTAP 9 명령에 연결하려면 수동 페이지 참조 _.
 
 .. [[man_prepare_nodes_step35, 35단계]]다음 명령을 입력하여 node1에 대한 AutoSupport 메시지를 NetApp에 보냅니다.
 +
-'system node AutoSupport invoke-node node1 - type all-message "Upgrading node1을 platform_old에서 platform_new로 업그레이드 중"
+`system node autosupport invoke -node node1 -type all -message "Upgrading node1 from platform_old to platform_new"`
 
 +
 
@@ -710,10 +710,10 @@ NOTE: 이때 노드 2의 경우 AutoSupport 메시지를 NetApp에 보내지 마
 
 .. [[man_prepare_nodes_step36, 6단계]] 다음 명령을 입력하고 출력을 검사하여 AutoSupport 메시지가 전송되었는지 확인합니다.
 +
-'System node AutoSupport show -node_node1_-instance'
+`system node autosupport show -node _node1_ -instance`
 
 +
-마지막 보낸 제목 필드와 마지막 보낸 시간 필드에는 마지막으로 보낸 메시지의 제목 및 메시지 보낸 시간이 포함됩니다.
+필드 `Last Subject Sent:` 및 `Last Time Sent:` 마지막으로 보낸 메시지의 메시지 제목과 메시지를 보낸 시간을 포함합니다.
 
 
 

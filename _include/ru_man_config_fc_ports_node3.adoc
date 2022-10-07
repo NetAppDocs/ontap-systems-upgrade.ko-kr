@@ -30,7 +30,7 @@ NOTE: * 중요 *: 시스템에 스토리지 디스크가 있는 경우 이 섹�
 |===
 . [[man_config_3_step2]] 노드 3을 부팅하고 유지보수 모드에 액세스합니다.
 +
-boot_ONTAP maint를 선택합니다
+`boot_ontap maint`
 
 . [[step3]] 다음 작업 중 하나를 수행합니다.
 +
@@ -39,10 +39,12 @@ boot_ONTAP maint를 선택합니다
 | 업그레이드 중인 시스템의 경우... | 그러면... 
 
 
-| 스토리지 디스크가 있습니다 | 'system node hardware unified-connect show' 명령어를 입력한다 
+| 스토리지 디스크가 있습니다 | 다음 명령을 입력합니다.
+`system node hardware unified-connect show` 
 
 
-| V-시리즈 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다. | 다음 명령 'ucadmin show'를 입력합니다 
+| V-시리즈 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다. | 다음 명령을 입력합니다
+`ucadmin show` 
 |===
 +
 시스템에 있는 모든 FC 및 통합 네트워크 어댑터에 대한 정보가 표시됩니다.
@@ -70,15 +72,20 @@ boot_ONTAP maint를 선택합니다
 | 스토리지 디스크가 있습니다  a| 
 다음 명령 중 하나를 입력하여 필요에 따라 노드 3의 FC 포트를 수정합니다.
 
-** 대상 포트를 프로그래밍하려면 시스템 노드 하드웨어 unified-connect modify-type|-t target-adapter_port_name_
-** 이니시에이터 포트를 프로그래밍하려면 '시스템 노드 하드웨어 unified-connect modify-type|-t initiator-adapter_port_name_'
+** 타겟 포트를 프로그래밍하려면
+`system node hardware unified-connect modify -type | -t target -adapter _port_name_`
+** 이니시에이터 포트를 프로그래밍하려면:
+`system node hardware unified-connect modify -type | -t initiator -adapter _port_name_`
 
 
-'-t'는 FC4 유형이며 타겟이나 이니시에이터입니다.
+`-t` FC4 유형: 타겟 또는 이니시에이터입니다.
 
 
 
-| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 필요에 따라 다음 명령을 입력하여 노드 3의 FC 포트를 수정합니다. 'ucadmin modify -m fc -t initiator -f_adapter_port_name_' -t'는 FC4 유형, 타겟 또는 이니시에이터입니다. * 참고 *: FC 포트는 이니시에이터로 프로그래밍해야 합니다. 
+| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 다음 명령을 입력하여 필요에 따라 노드 3의 FC 포트를 수정합니다.
+`ucadmin modify -m fc -t initiator -f _adapter_port_name_`
+
+`-t` FC4 유형, 타겟 또는 이니시에이터입니다. * 참고 *: FC 포트는 이니시에이터로 프로그래밍해야 합니다. 
 |===
 . [[7단계]] 다음 작업 중 하나를 수행합니다.
 +
@@ -87,14 +94,16 @@ boot_ONTAP maint를 선택합니다
 | 업그레이드 중인 시스템의 경우... | 그러면... 
 
 
-| 스토리지 디스크가 있습니다 | 'system node hardware unified-connect show' 명령을 입력하고 출력을 확인하여 새로운 설정을 확인한다 
+| 스토리지 디스크가 있습니다 | 다음 명령을 입력하고 출력을 확인하여 새 설정을 확인합니다.
+`system node hardware unified-connect show` 
 
 
-| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 다음 명령을 입력하고 출력을 확인하여 새 설정을 확인합니다. 'ucadmin show' 
+| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 다음 명령을 입력하고 출력을 확인하여 새 설정을 확인합니다.
+`ucadmin show` 
 |===
 . [[step8]] 다음 명령을 입력하여 유지보수 모드를 종료합니다.
 +
-"중지"
+`halt`
 
 . [[step9]] 명령을 입력한 후 부팅 환경 프롬프트에서 시스템이 중지될 때까지 기다립니다.
 . [[10단계]] 다음 작업 중 하나를 수행합니다.
@@ -104,10 +113,12 @@ boot_ONTAP maint를 선택합니다
 | 업그레이드 중인 시스템의 경우... | 그러면... 
 
 
-| V-Series 시스템이거나 clustered Data ONTAP 8.3을 실행하는 FlexArray 가상화 소프트웨어가 있습니다 | 부팅 환경 프롬프트에서 node3를 부팅하고 "boot_ONTAP maint" 액세스 유지보수를 수행합니다 
+| V-Series 시스템이거나 clustered Data ONTAP 8.3을 실행하는 FlexArray 가상화 소프트웨어가 있습니다 | 부팅 환경 프롬프트에서 node3를 부팅하고 액세스 유지 관리를 수행합니다.
+`boot_ontap maint` 
 
 
-| V-Series 시스템이 아니거나 FlexArray 가상화 소프트웨어가 없습니다 | 부팅 환경 프롬프트에서 node3를 부팅합니다. boot_ontap 
+| V-Series 시스템이 아니거나 FlexArray 가상화 소프트웨어가 없습니다 | 부팅 환경 프롬프트에서 노드 3을 부팅합니다.
+`boot_ontap` 
 |===
 . [[man_config_3_step11]] 다음 작업 중 하나를 수행합니다.
 +

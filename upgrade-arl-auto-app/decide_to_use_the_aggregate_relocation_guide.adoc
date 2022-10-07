@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/decide_to_use_the_aggregate_relocation_guide.html 
 keywords: deciding, aggregate, relocation, content, storage, controllers, administrators, ontap, ha, high, availability 
-summary: System controller replace 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드하기 위해 ARL을 사용할지 여부를 결정합니다. 
+summary: 'ARL을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할지 여부를 로 결정합니다 `system controller replace` 명령.' 
 ---
 = 집계 재배치 절차를 사용할지 여부를 결정합니다
 :hardbreaks:

@@ -29,7 +29,7 @@
 |===
 . [[man_config_4_Step2]] 유지보수 모드 액세스:
 +
-boot_ONTAP maint를 선택합니다
+`boot_ontap maint`
 
 . 다음 작업 중 하나를 수행합니다.
 +
@@ -38,10 +38,10 @@ boot_ONTAP maint를 선택합니다
 | 업그레이드 중인 시스템의 경우... | 그러면... 
 
 
-| 스토리지 디스크가 있습니다 | '시스템 노드 하드웨어 통합 접속 쇼 
+| 스토리지 디스크가 있습니다 | `system node hardware unified-connect show` 
 
 
-| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 'ucadmin 쇼' 
+| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | `ucadmin show` 
 |===
 +
 시스템에 있는 모든 FC 및 통합 네트워크 어댑터에 대한 정보가 표시됩니다.
@@ -60,18 +60,21 @@ boot_ONTAP maint를 선택합니다
 ** 타겟 포트를 프로그래밍하려면
 
 
-'시스템 노드 hardware unified-connect modify-type|-t target-adapter_port_name_'
+`system node hardware unified-connect modify -type | -t target -adapter _port_name_`
 
 ** 이니시에이터 포트를 프로그래밍하려면:
 
 
-'System node unified-connect modify type|-t initiator-adapter_port_name_'
+`system node unified-connect modify type | -t initiator -adapter _port_name_`
 
-'-TYPE'은 FC4 타입, 타겟, 이니시에이터 중 하나.
+`-type` FC4 유형, 타겟 또는 이니시에이터입니다.
 
 
 
-| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 필요에 따라 노드 4의 FC 포트를 수정합니다. 'ucadmin modify -m fc -t initiator -f_adapter_port_name_' -t'는 FC4 유형, 타겟 또는 이니시에이터입니다. * 참고 *: FC 포트는 이니시에이터로 프로그래밍해야 합니다. 
+| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 필요에 따라 노드 4의 FC 포트를 수정합니다.
+`ucadmin modify -m fc -t initiator -f _adapter_port_name_`
+
+`-t` FC4 유형, 타겟 또는 이니시에이터입니다. * 참고 *: FC 포트는 이니시에이터로 프로그래밍해야 합니다. 
 |===
 . 다음 작업 중 하나를 수행합니다.
 +
@@ -80,10 +83,12 @@ boot_ONTAP maint를 선택합니다
 | 업그레이드 중인 시스템의 경우... | 그러면... 
 
 
-| 스토리지 디스크가 있습니다 | 'system node unified-connect show' 명령을 입력하고 출력을 확인하여 새로운 설정을 확인한다 
+| 스토리지 디스크가 있습니다 | 다음 명령을 입력하고 출력을 확인하여 새 설정을 확인합니다.
+`system node unified-connect show` 
 
 
-| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 다음 명령을 입력하고 출력을 확인하여 새 설정을 확인합니다. 'ucadmin show' 
+| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 다음 명령을 입력하고 출력을 확인하여 새 설정을 확인합니다.
+`ucadmin show` 
 |===
 . 다음 작업 중 하나를 수행합니다.
 +
@@ -99,7 +104,7 @@ boot_ONTAP maint를 선택합니다
 |===
 . [[man_config_4_Step8]]유지 관리 모드 종료:
 +
-"중지"
+`halt`
 
 . 명령을 입력한 후 부팅 환경 프롬프트에서 시스템이 중지될 때까지 기다리십시오.
 . 다음 작업 중 하나를 수행합니다.
@@ -109,10 +114,12 @@ boot_ONTAP maint를 선택합니다
 | 업그레이드 중인 시스템의 경우... | 그러면... 
 
 
-| V-Series 시스템이거나 Data ONTAP 8.3.0 이상을 실행하는 FlexArray 가상화 소프트웨어가 있습니다 | 부팅 환경 프롬프트에서 boot_ONTAP maint 명령을 입력하여 유지보수 모드에 액세스합니다 
+| V-Series 시스템이거나 Data ONTAP 8.3.0 이상을 실행하는 FlexArray 가상화 소프트웨어가 있습니다 | 부팅 환경 프롬프트에서 다음 명령을 입력하여 유지 관리 모드에 액세스합니다.
+`boot_ontap maint` 
 
 
-| V-Series 시스템이 아니며 FlexArray 가상화 소프트웨어가 없습니다 | 부팅 환경 프롬프트에서 boot_ontap 명령을 입력하여 node4를 부팅합니다 
+| V-Series 시스템이 아니며 FlexArray 가상화 소프트웨어가 없습니다 | 부팅 환경 프롬프트에 다음 명령을 입력하여 노드 4를 부팅합니다.
+`boot_ontap` 
 |===
 . [[man_config_4_step11]]다음 작업 중 하나를 수행합니다.
 +

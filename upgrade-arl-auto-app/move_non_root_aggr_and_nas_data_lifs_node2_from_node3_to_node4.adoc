@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/move_non_root_aggr_and_nas_data_lifs_node2_from_node3_to_node4.html 
 keywords: move, non-root, aggregates, nas, lif, node2, node3, node4 
-summary: '"system controller replace" 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 node3에 있는 node2의 NAS 데이터 LIF가 node3에서 node4로 재배치되는지 확인합니다.' 
+summary: '를 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 노드 3에 있는 노드 2의 NAS 데이터 LIF가 노드 3에서 노드 4로 재배치되는지 확인합니다 `system controller replace` 명령.' 
 ---
 = 노드 2가 소유한 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 3에서 노드 4로 이동합니다
 :hardbreaks:
@@ -21,7 +21,7 @@ summary: '"system controller replace" 명령을 사용하여 ONTAP 9.8 이상을
 .단계
 . 재배치 작업 재개:
 +
-시스템 컨트롤러 교체 재개
+`system controller replace resume`
 
 +
 시스템은 다음 작업을 수행합니다.
@@ -39,7 +39,7 @@ summary: '"system controller replace" 명령을 사용하여 ONTAP 9.8 이상을
 
 . 재배치 작업 재개:
 +
-시스템 컨트롤러 교체 재개
+`system controller replace resume`
 
 +
 시스템에서 다음 검사를 수행합니다.
@@ -54,24 +54,24 @@ summary: '"system controller replace" 명령을 사용하여 ONTAP 9.8 이상을
 
 . 애그리게이트 재배치 및 NAS 데이터 LIF 이동 작업의 상태를 확인합니다.
 +
-'시스템 컨트롤러 교체 쇼 디테일
+`system controller replace show-details`
 
 +
-컨트롤러 교체 절차가 일시 중지된 경우 오류를 확인 및 수정한 다음 다시 'RESSUME'를 발행하여 작업을 계속합니다.
+컨트롤러 교체 절차가 일시 중지된 경우 오류를 확인하고 수정한 다음 문제를 해결하십시오 `resume` 를 눌러 작업을 계속합니다.
 
 . 필요한 경우 교체된 LIF를 복원하여 되돌리십시오. 교체된 LIF 나열:
 +
-'클러스터 컨트롤러 교체 네트워크 교체된 인터페이스 표시'
+`cluster controller-replacement network displaced-interface show`
 
 +
 LIF가 대체된 경우 홈 노드를 노드 4로 복구합니다.
 
 +
-클러스터 컨트롤러 교체 네트워크 대체 인터페이스 복원-홈 노드
+`cluster controller-replacement network displaced-interface restore-home-node`
 
 . 작업을 재개하여 시스템에서 필요한 사후 검사를 수행하도록 합니다.
 +
-시스템 컨트롤러 교체 재개
+`system controller replace resume`
 
 +
 시스템은 다음과 같은 사후 검사를 수행합니다.

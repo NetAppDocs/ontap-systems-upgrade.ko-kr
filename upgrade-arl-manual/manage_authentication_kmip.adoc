@@ -19,26 +19,26 @@ ONTAP 9.5 이상에서는 키 관리 상호 운용성 프로토콜(KMIP) 서버�
 .단계
 . 새 컨트롤러 추가:
 +
-'Security key-manager setup-node_new_controller_name_'
+`security key-manager setup -node _new_controller_name_`
 
 . 키 관리자 추가:
 +
-'Security key-manager-add_key_management_server_ip_address_'
+`security key-manager -add _key_management_server_ip_address_`
 
 . 키 관리 서버가 구성되어 있고 클러스터의 모든 노드에서 사용할 수 있는지 확인합니다.
 +
-보안 키 관리자 표시 상태
+`security key-manager show -status`
 
 . 연결된 모든 키 관리 서버에서 새 노드로 인증 키를 복원합니다.
 +
-'Security key-manager restore-node_new_controller_name_'
+`security key-manager restore -node _new_controller_name_`
 
 . 새 인증 키를 사용하여 모든 자체 암호화 디스크를 다시 입력하다
 +
-'Storage encryption disk modify -disk * [-data-key-id nonMSID AK]'
+`storage encryption disk modify -disk * [-data-key-id nonMSID AK]`
 
 . FIPS(Federal Information Processing Standard)를 사용하는 경우 새 인증 키를 사용하여 모든 자체 암호화 디스크를 다시 입력하다
 +
-'Storage encryption disk * modify-disk * [-FIPS-key-id nonMSID AK]'
+`storage encryption disk* modify -disk * [-fips-key-id nonMSID AK]`
 
 

@@ -17,9 +17,9 @@ summary: 부팅 미디어의 구성 정보가 컨트롤러 업그레이드에 �
 
 . 노드를 부팅 메뉴로 부팅합니다.
 +
-boot_ontap 메뉴
+`boot_ontap menu`
 
-. 부팅 메뉴 프롬프트에 "wpeconfig"를 입력한 다음 Enter 키를 누릅니다.
+. 부팅 메뉴 프롬프트에서 를 입력합니다 `wipeconfig` Enter 키를 누릅니다.
 +
 다음 화면은 부팅 메뉴 프롬프트를 표시합니다
 
@@ -39,7 +39,7 @@ Please choose one of the following:
     (9) Configure Advanced Drive Partitioning.
     Selection (1-9)?  wipeconfig
 ----
-. 다음과 유사한 프롬프트가 나타나면 "예"를 입력합니다.
+. 를 입력합니다 `yes` 다음과 유사한 메시지가 표시되는 경우:
 +
 [listing]
 ----
@@ -49,7 +49,7 @@ Are you sure you want to continue?: yes
 Rebooting to finish wipeconfig request.
 ----
 +
-시스템이 'wipeconfig' 절차를 시작하고 재부팅합니다. 절차가 완료되면 시스템이 부팅 메뉴로 돌아갑니다.
+시스템에서 를 시작합니다 `wipeconfig` 절차를 수행한 후 재부팅합니다. 절차가 완료되면 시스템이 부팅 메뉴로 돌아갑니다.
 
 . 부팅 메뉴에서 8을 입력하여 노드를 재부팅한 다음, * Ctrl-C * 를 눌러 로더 프롬프트에서 노드를 중지합니다.
 

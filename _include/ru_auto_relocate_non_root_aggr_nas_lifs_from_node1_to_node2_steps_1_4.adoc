@@ -8,7 +8,7 @@ NOTE: Aggregate 및 LIF의 홈 소유자는 수정되지 않으며 현재 소유
 .단계
 . 애그리게이트 재배치 및 NAS 데이터 LIF 이동 작업 재개:
 +
-시스템 컨트롤러 교체 재개
+`system controller replace resume`
 
 +
 루트 이외의 모든 애그리게이트 및 NAS 데이터 LIF는 노드 1에서 노드 2로 마이그레이션됩니다.
@@ -18,11 +18,11 @@ NOTE: Aggregate 및 LIF의 홈 소유자는 수정되지 않으며 현재 소유
 
 . 애그리게이트 재배치 및 NAS 데이터 LIF 이동 작업의 상태를 확인합니다.
 +
-'시스템 컨트롤러 교체 쇼 디테일
+`system controller replace show-details`
 
 . 작업이 여전히 일시 중지된 상태에서 루트가 아닌 모든 애그리게이트가 노드 2의 해당 상태에 대해 온라인 상태인지 확인합니다.
 +
-'storage aggregate show -node_node2_ -state online-root false'
+`storage aggregate show -node _node2_ -state online -root false`
 
 +
 다음 예제에서는 노드 2의 루트 이외의 애그리게이트가 온라인 상태인 것을 보여 줍니다.
@@ -42,19 +42,19 @@ aggr_2     825.0GB  825.0GB    0%     online     1  node2  raid_dp,normal
 노드 2에서 애그리게이트가 오프라인 상태가 되거나 외부 상태가 된 경우, 각 애그리게이트에 대해 노드 2의 다음 명령을 사용하여 온라인 상태로 전환합니다.
 
 +
-'Storage aggregate online-aggregate_agr_name_'
+`storage aggregate online -aggregate _aggr_name_`
 
 . node2에서 다음 명령을 사용하고 해당 출력을 검사하여 node2에서 모든 볼륨이 온라인 상태인지 확인합니다.
 +
-'volume show-node_node2_-state offline
+`volume show -node _node2_ -state offline`
 
 +
 노드 2에 오프라인 볼륨이 있는 경우 각 볼륨에 대해 한 번씩 노드 2에서 다음 명령을 사용하여 온라인으로 전환합니다.
 
 +
-'volume online-vserver_vserver_name_-volume_volume_name_'
+`volume online -vserver _vserver_name_ -volume _volume_name_`
 
 +
-이 명령에 사용할 `_vserver_name_'은 이전 'volume show' 명령의 출력에서 확인할 수 있습니다.
+를 클릭합니다 `_vserver_name_` 이 명령과 함께 사용하려면 이전 의 출력에서 찾을 수 있습니다 `volume show` 명령.
 
 

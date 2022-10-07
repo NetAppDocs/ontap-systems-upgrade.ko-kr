@@ -19,7 +19,7 @@ summary: ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레�
 .단계
 . 노드 2에서 클러스터 네트워크, 노드 관리, 인터클러스터 및 클러스터 관리 포트를 찾습니다.
 +
-네트워크 인터페이스 show-curr-node_node_name_-role cluster, 인터클러스터, notemgmt, 클러스터 관리
+`network interface show -curr-node _node_name_ -role cluster,intercluster,nodemgmt,cluster-mgmt`
 
 +
 다음 예제와 같이 시스템에서 클러스터의 해당 노드 및 기타 노드에 대한 LIF를 표시합니다.
@@ -49,10 +49,10 @@ NOTE: 시스템에 인터클러스터 LIF가 없을 수 있습니다. 클러스�
 
 . 노드 2의 물리적 포트 확인:
 +
-'network port show-node_node_name_-type physical'+
+`network port show -node _node_name_ -type physical` 를 누릅니다
 
 +
-'_node_name_'은(는) 마이그레이션되는 노드입니다.
+`_node_name_` 는 마이그레이션 중인 노드입니다.
 
 +
 다음 예제와 같이 시스템이 노드 2의 물리적 포트를 표시합니다.
@@ -79,7 +79,7 @@ node2
 
 . 노드 2의 FC 포트를 확인합니다.
 +
-네트워크 FCP 어댑터가 표시됩니다
+`network fcp adapter show`
 
 +
 다음 예에서와 같이 노드 2의 FC 포트가 표시됩니다.
@@ -107,10 +107,10 @@ node2
 
 . 앞서 하지 않은 경우 노드 2에 구성된 인터페이스 그룹 또는 VLAN이 있는지 확인합니다.
 +
-ifgrp show를 사용합니다
+`ifgrp show`
 
 +
-VLAN 쇼
+`vlan show`
 
 +
 섹션의 정보를 사용합니다 link:map_ports_node2_node4.html["노드 2의 포트를 노드 4로 매핑합니다"].
@@ -129,7 +129,7 @@ VLAN 쇼
 |===
 . [[man_record_2_step9]] node2의 특성을 표시합니다.
 +
-'system node show-instance-node node2'
+`system node show -instance -node node2`
 
 +
 [listing]

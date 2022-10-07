@@ -18,27 +18,27 @@ summary: ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레�
 .단계
 . 키 관리 서버와 통신하는 데 필요한 클라이언트 및 서버 SSL(Secure Sockets Layer) 인증서를 설치합니다.
 +
-보안 인증서 설치
+`security certificate install`
 
 . 각 노드에서 다음 명령을 사용하여 모든 노드에서 스토리지 암호화 구성:
 +
-보안 키 관리자 설정
+`security key-manager setup`
 
 . 각 키 관리 서버의 IP 주소를 추가합니다.
 +
-보안 키 관리자 추가
+`security key-manager add`
 
 . 클러스터의 모든 노드에서 동일한 키 관리 서버가 구성 및 사용 가능한지 확인합니다.
 +
-보안 키 관리자 표시 상태
+`security key-manager show -status`
 
 . 새 클러스터 전체 인증 키를 생성합니다.
 +
-보안 키 관리자 만들기 키
+`security key-manager create-key`
 
 . 새 인증 키 ID를 기록해 둡니다.
 . 새 인증 키를 사용하여 모든 자체 암호화 드라이브를 다시 입력하다
 +
-'Storage encryption disk modify -disk * -data-key-id_authentication_key_id_'
+`storage encryption disk modify -disk * -data-key-id _authentication_key_id_`
 
 

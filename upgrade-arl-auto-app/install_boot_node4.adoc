@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/install_boot_node4.html 
 keywords: install, boot, node4, install ONTAP 
-summary: System controller replace 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 node4를 설치 및 부팅하고 ONTAP 소프트웨어를 설치합니다. 
+summary: '을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 node4를 설치 및 부팅하고 ONTAP 소프트웨어를 설치합니다 `system controller replace` 명령.' 
 ---
 = 노드 4를 설치하고 부팅합니다
 :hardbreaks:
@@ -51,7 +51,7 @@ NOTE: 대부분의 플랫폼 모델에 고유한 상호 연결 카드 모델이 
 
 
 
-. 노드 4의 전원을 켠 다음 콘솔 터미널에서 Ctrl-C를 눌러 부팅 프로세스를 중단한 다음 부팅 환경 프롬프트에 액세스합니다.
+. 노드 4의 전원을 켠 다음 키를 눌러 부팅 프로세스를 중단합니다 `Ctrl-C` 콘솔 터미널에서 부팅 환경 프롬프트에 액세스합니다.
 +
 
 NOTE: 노드 4를 부팅할 때 다음과 같은 경고 메시지가 나타날 수 있습니다.
@@ -92,10 +92,14 @@ NOTE: 관리 포트와 IP를 netboot 연결로 사용해야 합니다. 업그레
 | DHCP(Dynamic Host Configuration Protocol)가 다음과 같은 경우 | 그러면... 
 
 
-| 실행 중입니다 | 부팅 환경 프롬프트에서 'ifconfig e0M-auto'를 사용하여 연결을 자동으로 구성합니다 
+| 실행 중입니다 | 부팅 환경 프롬프트에서 다음 명령을 사용하여 연결을 자동으로 구성합니다.
+`ifconfig e0M -auto` 
 
 
-| 실행 중이 아닙니다 | 부팅 환경 프롬프트에 다음 명령을 입력하여 연결을 수동으로 구성합니다. 'ifconfig e0M -addr=_filer_addr_-mask=_netmask_-GW=_gateway_-dns=_dns_ addr_-domain=_dns_domain_''_filer_addr_'은 스토리지 시스템의 IP 주소입니다. 스토리지 시스템의 네트워크 마스크는 '_netmask_'입니다. '_gateway_'는 스토리지 시스템의 게이트웨이입니다. '_dns_addr_'은(는) 네트워크에 있는 이름 서버의 IP 주소입니다. 이 매개 변수는 선택 사항입니다. '_DNS_DOMAIN_'은(는) DNS 도메인 이름입니다. 이 매개 변수는 선택 사항입니다. * 참고 *: 인터페이스에 다른 매개 변수가 필요할 수 있습니다. 펌웨어 프롬프트에 "help ifconfig"를 입력하여 세부 정보를 확인합니다. 
+| 실행 중이 아닙니다 | 부팅 환경 프롬프트에 다음 명령을 입력하여 연결을 수동으로 구성합니다.
+`ifconfig e0M -addr=_filer_addr_ -mask=_netmask_ -gw=_gateway_ -dns=_dns_addr_ -domain=_dns_domain_`
+
+ `_filer_addr_` 스토리지 시스템의 IP 주소입니다. `_netmask_` 스토리지 시스템의 네트워크 마스크입니다. `_gateway_` 는 스토리지 시스템의 게이트웨이입니다. `_dns_addr_` 네트워크에 있는 이름 서버의 IP 주소입니다. 이 매개 변수는 선택 사항입니다. `_dns_domain_` DNS 도메인 이름입니다. 이 매개 변수는 선택 사항입니다. * 참고 *: 인터페이스에 다른 매개 변수가 필요할 수 있습니다. 를 입력합니다 `help ifconfig` 펌웨어 프롬프트에서 세부 정보를 확인합니다. 
 |===
 . 노드 4에서 netboot 수행:
 +
@@ -104,38 +108,38 @@ NOTE: 관리 포트와 IP를 netboot 연결로 사용해야 합니다. 업그레
 | 대상... | 그러면... 
 
 
-| FAS/AFF8000 시리즈 시스템 | "netboot\http://web_server_ip/path_to_web-accessible_directory/netboot/kernel` 
+| FAS/AFF8000 시리즈 시스템 | `netboot \http://<web_server_ip/path_to_web-accessible_directory>/netboot/kernel` 
 
 
-| 기타 모든 시스템 | "netboot\http://web_server_ip/path_to_web-accessible_directory/ontap_version_image.tgz` 
+| 기타 모든 시스템 | `netboot \http://<web_server_ip/path_to_web-accessible_directory>/<ontap_version>_image.tgz` 
 |===
 +
-"path_to_the_web-Accessible_directory"는 섹션 1단계의 "ONTAP_version_image.tgz"를 다운로드한 위치로 이어져야 합니다 link:prepare_for_netboot.html["netboot를 준비합니다"].
+를 클릭합니다 `<path_to_the_web-accessible_directory>` 에서 다운로드한 위치로 이동합니다 `<ontap_version>_image.tgz` 를 참조하십시오 link:prepare_for_netboot.html["netboot를 준비합니다"].
 
 +
 
 NOTE: 부팅을 중단하지 마십시오.
 
-. 부팅 메뉴에서 '(7) Install new software first(새 소프트웨어를 먼저 설치)' 옵션을 선택합니다.
+. 부팅 메뉴에서 옵션을 선택합니다 `(7) Install new software first`.
 +
 이 메뉴 옵션은 새 ONTAP 이미지를 다운로드하여 부팅 장치에 설치합니다.
 
 +
 
-NOTE: 다음 메시지는 무시하십시오. "HA 쌍의 무중단 업그레이드를 위해 이 절차가 지원되지 않습니다." 이 메모는 ONTAP의 무중단 업그레이드와 컨트롤러 업그레이드에 적용되지 않습니다. 항상 netboot를 사용하여 새 노드를 원하는 이미지로 업데이트합니다. 다른 방법을 사용하여 새 컨트롤러에 이미지를 설치할 경우 잘못된 이미지가 설치될 수 있습니다. 이 문제는 모든 ONTAP 릴리스에 적용됩니다.
+NOTE: 다음 메시지는 무시하십시오. `This procedure is not supported for Non-Disruptive Upgrade on an HA pair`참고 사항은 ONTAP의 무중단 업그레이드에는 적용되고 컨트롤러 업그레이드에는 적용되지 않습니다. 항상 netboot를 사용하여 새 노드를 원하는 이미지로 업데이트합니다. 다른 방법을 사용하여 새 컨트롤러에 이미지를 설치할 경우 잘못된 이미지가 설치될 수 있습니다. 이 문제는 모든 ONTAP 릴리스에 적용됩니다.
 
-. 절차를 계속하라는 메시지가 나타나면 "y"를 입력하고 패키지를 입력하라는 메시지가 나타나면 URL을 입력합니다.
+. 절차를 계속하라는 메시지가 나타나면 를 입력합니다 `y`, 패키지를 입력하라는 메시지가 나타나면 URL을 입력합니다.
 +
-'\http://web_server_ip/path_to_web-accessible_directory/ontap_version_image.tgz`
+`\http://<web_server_ip/path_to_web-accessible_directory>/<ontap_version>_image.tgz`
 
 . 컨트롤러 모듈을 재부팅하려면 다음 하위 단계를 완료하십시오.
 +
-.. 다음 프롬프트가 표시되면 "n"을 입력하여 백업 복구를 건너뜁니다.
+.. 를 입력합니다 `n` 다음 프롬프트가 표시될 때 백업 복구를 건너뛰려면 다음을 수행합니다.
 +
 ....
 Do you want to restore the backup configuration now? {y|n}
 ....
-.. 다음 프롬프트가 표시되면 y를 입력하여 재부팅합니다.
+.. 를 입력하여 재부팅합니다 `y` 다음과 같은 메시지가 표시될 때:
 +
 ....
 The node must be rebooted to start using the newly installed software. Do you want to reboot now? {y|n}
@@ -145,13 +149,13 @@ The node must be rebooted to start using the newly installed software. Do you wa
 
 
 
-. 부팅 메뉴에서 유지보수 모드 5를 선택하고 부팅을 계속하라는 메시지가 표시되면 y를 입력합니다.
+. 유지보수 모드를 선택합니다 `5` 를 눌러 부팅 메뉴에서 으로 이동합니다 `y` 부팅 계속 메시지가 표시되면
 . 컨트롤러 및 섀시가 HA로 구성되었는지 확인:
 +
-하구성 쇼
+`ha-config show`
 
 +
-다음 예제는 "ha-config show" 명령의 출력을 보여줍니다.
+다음 예제는 의 출력을 보여 줍니다 `ha-config show` 명령:
 
 +
 ....
@@ -164,61 +168,61 @@ NOTE: HA 쌍 또는 독립 실행형 구성에 관계없이 PROM에서 시스템
 
 . 컨트롤러 및 섀시가 HA로 구성되지 않은 경우 다음 명령을 사용하여 구성을 수정하십시오.
 +
-ha-config controller ha
+`ha-config modify controller ha`
 
 +
-하구성 수정 섀시 하
+`ha-config modify chassis ha`
 
 +
 MetroCluster 구성이 있는 경우 다음 명령을 사용하여 컨트롤러 및 섀시를 수정합니다.
 
 +
-하구성 수정 컨트롤러 MCC
+`ha-config modify controller mcc`
 
 +
-하구성 수정 새시 MCC
+`ha-config modify chassis mcc`
 
 . 유지보수 모드 종료:
 +
-"중지"
+`halt`
 
 +
 부팅 환경 프롬프트에서 Ctrl+C를 눌러 자동 부팅을 중단시킵니다.
 
 . [[auto_install4_step15]] 노드 3에서 시스템 날짜, 시간 및 시간대를 확인합니다.
 +
-다
+`date`
 
 . 노드 4의 부팅 환경 프롬프트에서 다음 명령을 사용하여 날짜를 확인합니다.
 +
-날짜
+`show date`
 
 . 필요한 경우 노드 4의 날짜를 설정합니다.
 +
-'날짜 설정_mm/dd/yyyy_'
+`set date _mm/dd/yyyy_`
 
 . 노드 4의 부팅 환경 프롬프트에서 다음 명령을 사용하여 시간을 확인합니다.
 +
-'시간'입니다
+`show time`
 
 . 필요한 경우 node4의 시간을 설정합니다.
 +
-'세트 시간_hh:mm:ss_'
+`set time _hh:mm:ss_`
 
 . 필요한 경우 노드 4에서 파트너 시스템 ID를 설정합니다.
 +
-'setenv PARTNER-sysid_node2_sysid_'
+`setenv partner-sysid _node2_sysid_`
 
 +
 .. 설정을 저장합니다.
 +
-'사베에프'
+`saveenv`
 
 
 
-. [[auto_install4_step21]] 부트 로더에서 'partner-sysid' 매개 변수를 설정해야 합니다. 노드 4의 경우 'partner-sysid'가 노드 3의 syid여야 합니다. 노드 3의 'partner-sysid'를 확인합니다.
+. [[auto_install4_step21]]을 선택합니다 `partner-sysid` 매개 변수를 설정해야 합니다. 노드 4의 경우 `partner-sysid` 노드 3의 것이어야 합니다. 를 확인합니다 `partner-sysid` 노드 3의 경우:
 +
-'printenv partner-sysid
+`printenv partner-sysid`
 
 . [[step22]] 다음 작업 중 하나를 수행합니다.
 +
@@ -253,16 +257,16 @@ MetroCluster 구성이 있는 경우 다음 명령을 사용하여 컨트롤러 
 새 컨트롤러 모듈을 설치하면 각 온보드 FC 포트에 연결된 WWPN 값이 변경됩니다.
 
 . 구성에서 스위치 기반 조닝을 사용하는 경우 새 WWPN 값이 반영되도록 조닝을 조정하십시오.
-. [[step27]] NSE(NetApp Storage Encryption)를 이 구성에서 사용 중인 경우, 'setup.storageenv.storageencryption.support'명령을 'true'로 설정해야 하며, node2 구성이 로드된 후 부트 루프를 방지하려면 kmip.init.maxwait` 변수를 'off'로 설정해야 합니다.
+. [[step27]] NSE(NetApp 스토리지 암호화)를 이 구성에서 사용 중인 경우, 를 참조하십시오 `setenv bootarg.storageencryption.support` 명령을 로 설정해야 합니다 `true`, 및 `kmip.init.maxwait` 변수를 로 설정해야 합니다 `off` node2 구성이 로드된 후 부팅 루프를 방지하려면 다음을 수행합니다.
 +
-에테네 부타그 storageencryption.support true
+`setenv bootarg.storageencryption.support true`
 
 +
-'셋프 kmip.init.maxwait off'
+`setenv kmip.init.maxwait off`
 
 . 부팅 메뉴로 노드 부팅:
 +
-boot_ontap 메뉴
+`boot_ontap menu`
 
 +
 FC 또는 UTA/UTA2 구성을 사용하지 않는 경우, 를 실행합니다 link:set_fc_or_uta_uta2_config_node4.html#auto_check_node4_step15["노드 4, 15단계에서 UTA/UTA2 포트를 확인하고 구성합니다"] 따라서 노드 4는 노드 2의 디스크를 인식할 수 있습니다.

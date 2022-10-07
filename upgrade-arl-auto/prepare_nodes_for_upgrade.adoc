@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/prepare_nodes_for_upgrade.html 
 keywords: prepare, nodes, upgrade, controller, replacement, license 
-summary: System controller replace 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 노드를 준비하고 일련의 사전 점검을 수행한다. 
+summary: '를 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 노드를 준비하고 일련의 사전 점검을 실행합니다 `system controller replace` 명령.' 
 ---
 = 업그레이드할 노드를 준비합니다
 :hardbreaks:
@@ -19,11 +19,12 @@ summary: System controller replace 명령을 사용하여 ONTAP 9.5를 실행하
 .단계
 . ONTAP 명령줄에 다음 명령을 입력하여 컨트롤러 교체 프로세스를 시작합니다.
 +
-'시스템 컨트롤러가 start-nodes_node_names_'를 대체합니다
+`system controller replace start -nodes _node_names_`
 
 +
 
-NOTE: 이 명령은 'Set-Privilege advanced'라는 고급 권한 수준에서만 실행할 수 있습니다
+NOTE: 이 명령은 고급 권한 수준에서만 실행할 수 있습니다.
+`set -privilege advanced`
 
 +
 다음과 같은 출력이 표시됩니다.
@@ -42,7 +43,7 @@ Attention: Do not try to clear the NVRAM contents. If there is a need to clear t
 
 Do you want to continue? {y|n}: y
 ....
-. 'y'를 누르면 다음과 같은 출력이 표시됩니다.
+. 를 누릅니다 `y`, 다음과 같은 출력이 표시됩니다.
 +
 ....
 Controller replacement operation: Prechecks in progress.
@@ -107,21 +108,21 @@ Controller replacement operation has been paused for user intervention.
 다음 명령의 출력을 개별적으로 실행 및 저장해야 합니다.
 
 +
-** 'vserver services name-service dns show'
-** 네트워크 인터페이스 show-curr-node_nodename_-role cluster, 인터클러스터, 노드 관리, 클러스터 관리, 데이터
-** 'network port show-node_nodename_-type physical
-** 'Service-processor show-node * -instance'
-** 'network fcp adapter show-node_name _'
-** 'network port ifgrp show'
-** 네트워크 포트 VLAN 표시
-** 'system node show-instance-node_nodename_'
-** 'run-node_node_name_sysconfig'
-** 'Storage aggregate show -node_nodename_'
-** 'volume show-node_node_name_'
-** 네트워크 인터페이스 페일오버 그룹들이 보여줌
-** 'Storage array config show -switch_switch_name_'
-** 'system license show-owner_node_name_'
-** 스토리지 암호화 디스크 표시
+** `vserver services name-service dns show`
+** `network interface show -curr-node _nodename_ -role cluster,intercluster,node-mgmt,clustermgmt, data`
+** `network port show -node _nodename_ -type physical`
+** `service-processor show -node * -instance`
+** `network fcp adapter show -node _node_name_`
+** `network port ifgrp show`
+** `network port vlan show`
+** `system node show -instance -node _nodename_`
+** `run -node _node_name_ sysconfig`
+** `storage aggregate show -node _nodename_`
+** `volume show -node _node_name_`
+** `network interface failover-groups show`
+** `storage array config show -switch _switch_name_`
+** `system license show -owner _node_name_`
+** `storage encryption disk show`
 
 
 
@@ -138,11 +139,11 @@ NOTE: Onboard Key Manager를 사용하여 NetApp Volume Encryption을 사용 중
 .단계
 . 파트너 노드가 현재 소유한 애그리게이트를 홈 소유자 노드로 반환:
 +
-'Storage aggregate Relocation start -node_source_node_-destination_destination-node_-aggregate-list *'
+`storage aggregate relocation start -node _source_node_ -destination _destination-node_ -aggregate-list *`
 
 . 노드 1과 노드 2가 현재 소유자인 애그리게이트를 소유하지 않고 홈 소유자가 아닌 경우:
 +
-'Storage aggregate show -nodes_node_name_-is-home false-fields owner-name, home-name, state'
+`storage aggregate show -nodes _node_name_ -is-home false -fields owner-name, home-name, state`
 
 +
 다음 예제는 노드가 Aggregate의 현재 소유자이자 홈 소유자인 경우 명령의 출력을 보여줍니다.
@@ -168,7 +169,7 @@ aggr4       node1      node1       online
 
 컨트롤러 교체 프로세스를 다시 시작해야 합니다.
 
-'시스템 컨트롤러가 start-nodes_node_names_'를 대체합니다
+`system controller replace start -nodes _node_names_`
 
 
 

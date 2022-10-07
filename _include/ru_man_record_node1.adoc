@@ -7,7 +7,7 @@
 .단계
 . [[step1]] 다음 명령을 입력하고 출력을 캡처합니다.
 +
-네트워크 라우트 쇼
+`network route show`
 
 +
 다음 예와 유사한 출력이 표시됩니다.
@@ -26,7 +26,7 @@
 ----
 . 다음 명령을 입력하고 출력을 캡처합니다.
 +
-'vserver services name-service dns show'
+`vserver services name-service dns show`
 
 +
 다음 예와 유사한 출력이 표시됩니다.
@@ -49,7 +49,7 @@
 ----
 . [[man_record_node1_step3]] 두 컨트롤러 중 하나에서 다음 명령을 입력하여 노드 1의 클러스터 네트워크 및 노드 관리 포트를 찾습니다.
 +
-네트워크 인터페이스 show-curr-node_node1_-role cluster, 인터클러스터, 노드 관리, 클러스터 관리
+`network interface show -curr-node _node1_ -role cluster,intercluster,node-mgmt,cluster-mgmt`
 
 +
 다음 예제와 같이 시스템에서 클러스터의 노드에 대한 클러스터, 인터클러스터, 노드 관리 및 클러스터 관리 LIF를 표시합니다.
@@ -82,7 +82,7 @@ NOTE: 시스템에 인터클러스터 LIF가 없을 수 있습니다.
 
 . 노드 1에서 다음 명령을 입력합니다.
 +
-네트워크 포트 show-node_node1_-type physical
+`network port show -node _node1_ -type physical`
 
 +
 다음 예에서와 같이 시스템의 노드에 물리적 포트가 표시됩니다.
@@ -115,7 +115,7 @@ NOTE: 시스템에 인터클러스터 LIF가 없을 수 있습니다.
 
 . 노드 1에서 다음 명령을 입력합니다.
 +
-'network fcp adapter show-node_node1_'
+`network fcp adapter show -node _node1_`
 
 +
 다음 예에 표시된 대로 노드의 FC 포트가 표시됩니다.
@@ -143,10 +143,10 @@ NOTE: 시스템에 인터클러스터 LIF가 없을 수 있습니다.
 
 . 앞서 구성하지 않은 경우 다음 명령을 입력하여 노드 1에 인터페이스 그룹 또는 VLAN이 구성되어 있는지 확인하십시오.
 +
-'network port ifgrp show'
+`network port ifgrp show`
 
 +
-네트워크 포트 VLAN 표시
+`network port vlan show`
 
 +
 섹션의 정보를 사용합니다 link:map_ports_node1_node3.html["노드 1의 포트를 노드 3으로 매핑합니다"].
@@ -165,7 +165,7 @@ NOTE: 시스템에 인터클러스터 LIF가 없을 수 있습니다.
 |===
 . [[man_record_node1_step11]] 두 컨트롤러 중 하나에서 다음 명령을 입력합니다.
 +
-'system node show-instance-node_node1_'
+`system node show -instance -node _node1_`
 
 +
 다음 예제와 같이 시스템이 node1에 대한 정보를 표시합니다.

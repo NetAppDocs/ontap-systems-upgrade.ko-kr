@@ -11,12 +11,13 @@
 .단계
 . 대상 클러스터에서 SnapMirror 관계 상태를 확인합니다.
 +
-스냅미러 쇼
+`snapmirror show`
 
 +
 [NOTE]
 ====
-상태가 "전송 중"인 경우 '스냅샷 미러 중단-대상-vserver_vserver_name_'인 전송을 중단해야 합니다
+상태가 "전송 중"인 경우 이러한 전송을 중단해야 합니다.
+`snapmirror abort -destination-vserver _vserver_name_`
 
 ====
 +
@@ -24,6 +25,6 @@ SnapMirror 관계가 "전송 중" 상태가 아니면 중단이 실패합니다.
 
 . 클러스터 간의 모든 관계 중지:
 +
-'sapmirror quiesce-destination-vserver_vserver_name_'
+`snapmirror quiesce -destination-vserver _vserver_name_`
 
 

@@ -33,16 +33,16 @@ FC 스위치 포트 사용은 RCFs를 사용할 수 있도록 _fFabric-Attached 
 . 에서 만든 케이블링 레이아웃을 사용하여 FC-SAS 브리지를 FC 스위치에 연결합니다 link:determine_new_cabling_layout.html["새 케이블 연결 레이아웃을 확인합니다"].
 . 포트가 온라인 상태인지 확인합니다.
 +
-** Brocade 스위치의 경우 'switchshow' 명령을 사용합니다.
-** Cisco 스위치의 경우 show 'interface brief' 명령어를 사용한다.
+** Brocade 스위치의 경우 를 사용합니다 `switchshow` 명령.
+** Cisco 스위치의 경우 show를 사용합니다 `interface brief` 명령.
 
 
 . FC-VI 포트를 컨트롤러에서 스위치로 케이블로 연결합니다.
 . 기존 노드에서 FC-VI 포트가 온라인 상태인지 확인합니다.
 +
-MetroCluster 상호 연결 어댑터가 표시됩니다
+`metrocluster interconnect adapter show`
 
 +
-MetroCluster 상호 연결 미러 쇼
+`metrocluster interconnect mirror show`
 
 

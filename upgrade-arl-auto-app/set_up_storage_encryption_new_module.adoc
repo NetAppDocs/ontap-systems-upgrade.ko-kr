@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/set_up_storage_encryption_new_module.html 
 keywords: set up storage, encryption, controller, module, node 
-summary: '필요한 경우 "시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 스토리지 암호화를 구성하고, SSL 인증서를 설치하고, 키 관리 서버를 설정하십시오.' 
+summary: '필요한 경우 를 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 스토리지 암호화를 구성하고, SSL 인증서를 설치하고, 키 관리 서버를 설정합니다 `system controller replace` 명령.' 
 ---
 = 새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다
 :hardbreaks:
@@ -21,21 +21,21 @@ summary: '필요한 경우 "시스템 컨트롤러 교체" 명령을 사용하�
 .단계
 . 키 관리 서버를 계속 사용할 수 있는지, 해당 상태 및 인증 키 정보를 확인합니다.
 +
-'보안 키 관리자 외부 표시 상태
+`security key-manager external show-status`
 
 +
-보안 키 관리자 온보드 쇼 백업
+`security key-manager onboard show-backup`
 
 . 이전 단계에 나열된 키 관리 서버를 새 컨트롤러의 키 관리 서버 목록에 추가합니다.
 +
 .. 키 관리 서버를 추가합니다.
 +
-'Security key-manager external add-servers-key-servers_key_management_server_ip_address_'
+`security key-manager external add-servers -key-servers _key_management_server_ip_address_`
 
 .. 나열된 각 키 관리 서버에 대해 이전 단계를 반복합니다. 최대 4개의 키 관리 서버를 연결할 수 있습니다.
 .. 키 관리 서버가 성공적으로 추가되었는지 확인합니다.
 +
-보안 키매니저 외모
+`security key-manager external show`
 
 
 
@@ -46,13 +46,13 @@ summary: '필요한 경우 "시스템 컨트롤러 교체" 명령을 사용하�
 +
 .. 새 노드에서 키 관리 서버 설정 마법사를 시작합니다.
 +
-'보안 키 관리자 외부 활성화
+`security key-manager external enable`
 
 .. 마법사의 단계를 완료하여 키 관리 서버를 구성합니다.
 
 
 . 연결된 모든 키 관리 서버에서 새 노드로 인증 키 복원:
 +
-'Security key-manager external restore-node_new_controller_name_
+`security key-manager external restore -node _new_controller_name_`
 
 
