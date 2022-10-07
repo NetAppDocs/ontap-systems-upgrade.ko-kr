@@ -26,7 +26,7 @@ entries:
     url: "/upgrade/upgrade-set-up-new-nodes.html"
   - title: 선택 사항 - 내부 스토리지를 이동하거나 드라이브 쉘프로 변환할 수 있습니다
     entries:
-    - title: 선택
+    - title: 개요
       url: "/upgrade/upgrade-optional-move-internal-storage.html"
     - title: 내부 드라이브를 이동합니다
       url: "/upgrade/upgrade-move-internal-drives.html"
@@ -40,23 +40,22 @@ entries:
     entries:
     - title: 개요
       url: "/upgrade/upgrade-complete.html"
+    - title: ONTAP 9.8 이상에서 완료되었습니다
       entries:
-      - title: ONTAP 9.8에서 완성
-        entries:
-        - title: 개요
-          url: "/upgrade/upgrade-complete-ontap-9-8.html"
-        - title: ONTAP 9.8을 사용하여 네트워크 포트를 매핑합니다
-          url: "/upgrade/upgrade-map-network-ports-ontap-9-8.html"
-        - title: ONTAP 9.8에서 마지막 단계를 수행합니다
-          url: "/upgrade/upgrade-final-upgrade-steps-in-ontap-9-8.html"
-      - title: ONTAP 9.7 이하에서 완료
-        entries:
-        - title: 개요
-          url: "/upgrade/upgrade-complete-ontap-9-7-or-earlier.html"
-        - title: ONTAP 9.7 이하를 사용하여 네트워크 포트를 매핑합니다
-          url: "/upgrade/upgrade-map-network-ports-ontap-9-7-or-earlier.html"
-        - title: ONTAP 9.7 이전 버전에서 최종 단계를 수행합니다
-          url: "/upgrade/upgrade-final-steps-ontap-9-7-or-earlier-move-storage.html"
+      - title: 개요
+        url: "/upgrade/upgrade-complete-ontap-9-8.html"
+      - title: ONTAP 9.8을 사용하여 네트워크 포트를 매핑합니다
+        url: "/upgrade/upgrade-map-network-ports-ontap-9-8.html"
+      - title: ONTAP 9.8에서 마지막 단계를 수행합니다
+        url: "/upgrade/upgrade-final-upgrade-steps-in-ontap-9-8.html"
+    - title: ONTAP 9.7 이하에서 완료
+      entries:
+      - title: 개요
+        url: "/upgrade/upgrade-complete-ontap-9-7-or-earlier.html"
+      - title: ONTAP 9.7 이하를 사용하여 네트워크 포트를 매핑합니다
+        url: "/upgrade/upgrade-map-network-ports-ontap-9-7-or-earlier.html"
+      - title: ONTAP 9.7 이전 버전에서 최종 단계를 수행합니다
+        url: "/upgrade/upgrade-final-steps-ontap-9-7-or-earlier-move-storage.html"
 - title: 볼륨을 이동하여 업그레이드
   entries:
   - title: 워크플로우

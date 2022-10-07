@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cluster, san, environment, delete, lif, re-create, move san lifs, create 
 summary: 클러스터 콘텐츠 및 클러스터 환경에 따라 SAN LIF를 이동, 삭제 또는 생성하거나 삭제된 SAN LIF를 다시 생성해야 합니다. 
 ---
-= SAN LIFS를 이동, 삭제 또는 생성합니다
+= 개요
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

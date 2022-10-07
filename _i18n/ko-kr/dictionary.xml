@@ -4390,7 +4390,6 @@
   <block id="fb96a6f2421e21a53ee4078e03bf0b62" category="sidebar">노드를 드라이브 쉘프로 변환할 수 있습니다</block>
   <block id="68274bddbfd931594dff2906c4d537d8" category="sidebar">루트 볼륨 구성을 복원합니다</block>
   <block id="e2328b54876f0cd6379d9fcbc5572e87" category="sidebar">업그레이드를 완료합니다</block>
-  <block id="d4533ef157c2c7f83b5bc5d9b0283026" category="sidebar">ONTAP 9.8에서 완성</block>
   <block id="88b8cfb0eb0372af5622adb072f8536f" category="sidebar">ONTAP 9.8을 사용하여 네트워크 포트를 매핑합니다</block>
   <block id="7686c34f0400921210a5e039c6743309" category="sidebar">ONTAP 9.8에서 마지막 단계를 수행합니다</block>
   <block id="26000c062eace835ce5a8e9b4f5d553a" category="sidebar">ONTAP 9.7 이하에서 완료</block>
@@ -4452,6 +4451,9 @@
   <block id="4e54dc85c62992992a1dbefa82b638aa" category="summary">원래 노드가 지원되는 모델 중 하나인 경우 스토리지를 이동하여 업그레이드하는 동안 노드의 내부 SATA 드라이브, SSD 또는 SAS 드라이브를 동일한 클러스터의 새 노드에 연결된 드라이브 쉘프로 이동할 수 있습니다.</block>
   <block id="fb4b0cb9efc21f6a0b33d6eb082f6db1" category="list-text">원래 노드의 SATA, SSD 또는 SAS 드라이브 캐리어는 새 드라이브 쉘프와 호환되어야 합니다.</block>
   <block id="3b95007d4159237fc8935f46a265e025" category="list-text">드라이브 쉘프에는 원래 노드의 SATA, SSD 또는 SAS 드라이브 캐리어를 수용할 수 있는 충분한 여유 베이가 있어야 합니다.</block>
-  <block id="1b8d5202659e9a9176d67fd289952994" category="summary">원래 노드가 지원되는 모델 중 하나인 경우, 스토리지를 이동하여 업그레이드 중에 내부 SATA 드라이브, SSD 또는 SAS 드라이브를 새 노드에 연결된 드라이브 쉘프로 이동할 수 있습니다. 시스템을 드라이브 쉘프로 변환하여 새 노드에 연결할 수도 있습니다.</block>
   <block id="f9327226ba1739cf1ffb9d6b89ba96b7" category="paragraph">원래 노드가 지원되는 모델 중 하나인 경우 스토리지를 이동하여 업그레이드하는 동안 노드의 내부 SATA 드라이브, SSD 또는 SAS 드라이브를 동일한 클러스터의 새 노드에 연결된 드라이브 쉘프로 이동할 수 있습니다.</block>
+  <block id="efedd93f47ad7262715836d27d7741ae" category="paragraph">볼륨을 이동하여 컨트롤러 하드웨어를 업그레이드할 경우 원래 노드를 준비하고 새 노드를 클러스터에 연결합니다. 볼륨을 새 노드로 이동하고 LIF를 구성한 다음 클러스터에서 원래 노드의 연결을 해제합니다. 볼륨을 이동하여 업그레이드하는 무중단 절차는 무중단 절차와 같습니다.</block>
+  <block id="e992617332e56bffc7c73bb184146d40" category="summary">원래 노드가 지원되는 모델 중 하나인 경우, 스토리지 이동을 통해 업그레이드 프로세스 중에 내부 SATA 드라이브, SSD 또는 SAS 드라이브를 새 노드에 연결된 드라이브 쉘프로 이동할 수 있습니다. 시스템을 드라이브 쉘프로 변환하여 새 노드에 연결할 수도 있습니다.</block>
+  <block id="0d19f6d9c6616aec6c0d6fa998fcdc06" category="paragraph">스토리지를 이동하여 컨트롤러 하드웨어를 업그레이드할 경우 원래 노드를 준비하고 새 노드를 설정합니다. 일부 플랫폼 모델은 내부 스토리지를 새 노드로 전송하는 기능을 지원합니다. 디스크를 재할당하고 루트 볼륨 구성을 새 노드에 복원하고 네트워크 포트를 구성합니다. 스토리지 이동을 통한 업그레이드는 운영 중단 절차입니다.</block>
+  <block id="22e05b02f02d6d6148cff29e1b86d6eb" category="sidebar">ONTAP 9.8 이상에서 완료되었습니다</block>
 </blocks>
