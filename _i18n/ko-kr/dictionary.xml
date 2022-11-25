@@ -2185,7 +2185,6 @@
   <block id="c9ee572a8e71e6ba4e03747ac09a21a8" category="list-text">FC 유형 구성을 사용하는 AFF A400 또는 FAS8300 의 경우 임시 클러스터 포트를 제공하려면 4포트 10GbE 네트워크 인터페이스 카드(부품 번호 X1147A)를 추가해야 합니다.</block>
   <block id="652f24bc7c2d2709481afa47ee0f81bf" category="list-text">임시 클러스터 포트를 사용하여 컨트롤러 업그레이드를 완료한 후에는 FAS8300 시스템의 e3a 및 e3b, AFF A400 시스템의 100GbE 포트, e0c 및 e0d, 100GbE 포트로 클러스터 LIF를 중단 없이 마이그레이션할 수 있습니다.</block>
   <block id="e9dc6fafb0f1f8ce64537ec567468d16" category="paragraph">^3^ FAS8020, FAS8040, AFF8020, AFF8040 시스템을 위 표에 나와 있는 타겟 교체 컨트롤러로 업그레이드하는 경우, 교체 컨트롤러가 이전 컨트롤러와 동일한 ONTAP 버전을 실행해야 합니다. FAS8020, FAS8040, AFF8020 및 AFF8040 시스템은 ONTAP 9.8 이후 버전의 ONTAP를 지원하지 않습니다.</block>
-  <block id="58639a55064ac1eb8afcb76dee256457" category="paragraph">^4^ 컨트롤러 업그레이드에 대해 지원되는 ONTAP 버전을 확인합니다.</block>
   <block id="a45da96d0bf6575970f2d27af22be28a" category="cell">시스템</block>
   <block id="73ab298c8e00d66d28156892903a39ce" category="cell">AFF A320</block>
   <block id="d85bd4eac4ae2ba50be5c03b292af8f8" category="cell">9.9.1 이상</block>
@@ -2195,7 +2194,6 @@
   <block id="23ec9249d03285a513eaaf182a7bcd49" category="cell">AFF8080</block>
   <block id="728152178b0535e4c7e93f53223fbfff" category="cell">9.8P10 이상 패치</block>
   <block id="edbeb952c4054f67ce1836afbda00903" category="cell">FAS8060</block>
-  <block id="eb30343e3b73c36d3224c319d83cc2e6" category="cell">9.10.1P3 이상</block>
   <block id="8ed24dd5fb292ecefe76fe92a5fc3988" category="cell">FAS8080</block>
   <block id="e2060bf680bf4facfccf3befec69ef04" category="cell">9.8P12 이상 패치</block>
   <block id="3d241889b517139955243b1b9ae6111a" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 를 사용하여 발생할 수 있는 장애를 해결합니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
@@ -4468,4 +4466,11 @@
   <block id="48839137eaf0562b138582edd90137cb" category="sidebar">5단계. 노드 4 설치 및 부팅(ONTAP 9.8 이상에서 수동 업그레이드)</block>
   <block id="dae43a2f9b6862b045e06fc8e8a1f0fa" category="sidebar">6단계. 업그레이드 완료(ONTAP 9.8 이상에서 수동 업그레이드)</block>
   <block id="5c57d2af87e466b26b2b4fc39ddb3528" category="sidebar">문제 해결(ONTAP 9.8 이상에서 수동 업그레이드)</block>
+  <block id="e48a139c95341faecb199d5908a54e2e" category="paragraph">^4^ 다음 표에서는 이러한 컨트롤러 업그레이드 조합에 대해 지원되는 최소 및 이후 ONTAP 버전을 보여 줍니다.</block>
+  <block id="b8e707d2be1c734648eb91b029352369" category="cell">9.10.1 ~ 9.12.1</block>
+  <block id="4f0b48e1f65ca4ae15a6720f28d58824" category="cell">9.10.1P3 ~ 9.12.1</block>
+  <block id="04d01679d16bbccad3f9da82789a187b" category="paragraph">위 표에 표시된 업그레이드 조합의 경우:</block>
+  <block id="1c328c36316a518e9532ed77177daa6c" category="list-text">기존 및 교체 컨트롤러에서 동일한 ONTAP 버전을 사용할 필요는 없습니다. ONTAP 소프트웨어 업그레이드는 컨트롤러 업그레이드로 수행됩니다.</block>
+  <block id="da74cb1ad73d862a786d9f20938d9c7a" category="list-text">업그레이드할 때 지원되는 ONTAP 버전 및 패치 레벨로 교체 컨트롤러를 설치해야 합니다.</block>
+  <block id="dee716592bbae6fdba2b32d2854360ba" category="list-text">절차를 시작하고 첫 번째 노드를 업그레이드한 후에는 컨트롤러 업그레이드를 취소하거나 다시 취소할 수 없습니다.</block>
 </blocks>
