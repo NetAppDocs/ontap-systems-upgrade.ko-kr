@@ -310,6 +310,7 @@ Adapter  Mode       Type        Mode     Type        Status
 . [[auto9597_check_node3_step15]]노드 3에서 부팅 메뉴로 이동하여 22/7을 사용하여 숨겨진 옵션을 선택합니다 `boot_after_controller_replacement`. 다음 예에 따라 프롬프트에 node1을 입력하여 node3에 노드 1의 디스크를 재할당합니다.
 +
 .콘솔 출력 예를 확장합니다
+[%collapsible]
 ====
 [listing]
 ----

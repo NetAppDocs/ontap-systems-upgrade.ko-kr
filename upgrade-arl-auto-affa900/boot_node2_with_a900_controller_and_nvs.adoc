@@ -54,6 +54,7 @@ If(경우 `[localhost:disk.encryptNoSupport:ALERT]: Detected FIPS-certified encr
 
 +
 .콘솔 출력 예를 확장합니다
+[%collapsible]
 ====
 [listing]
 ----

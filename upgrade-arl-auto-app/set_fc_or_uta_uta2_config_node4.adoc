@@ -295,6 +295,7 @@ A800으로 업그레이드할 경우 으로 이동하십시오 ,23단계
 . [[auto_check_4_step15]]노드 4에서 부팅 메뉴로 이동하여 22/7을 사용하여 숨겨진 옵션을 선택합니다 `boot_after_controller_replacement`. 다음 예제와 같이 프롬프트에서 node2를 입력하여 node4에 노드 2의 디스크를 재할당합니다.
 +
 .콘솔 출력 예를 확장합니다
+[%collapsible]
 ====
 [listing]
 ----

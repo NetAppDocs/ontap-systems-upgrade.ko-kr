@@ -3504,7 +3504,6 @@
   <block id="c6e52defde912721ad3ec5315c5d9664" category="cell">문자 및 숫자 I/O 캠 래치</block>
   <block id="0e50691d6ac3e9df529fa546f2486bd7" category="cell">I/O 래치가 완전히 잠금 해제되었습니다</block>
   <block id="1f15728c77802915b0186fe3b48a5405" category="section-title">노드1에 AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다</block>
-  <block id="44188a216db4c50ab80d8d6376079f11" category="paragraph">노드 1에서 업그레이드하기 위해 받은 AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치해야 합니다.</block>
   <block id="32820fb65b578170b0fc242eb57ba80e" category="list-text">코어 덤프 장치를 AFF A700 NVRAM 모듈에서 AFF A900 NVRAM 모듈로 이동하지 마십시오.</block>
   <block id="d0106eeb656b11c6a07a8e45dcf1b214" category="list-text">FAS9000 NVRAM 모듈에 설치된 All-Flash 캐시 모듈을 FAS9500 NVRAM 모듈로 이동합니다.</block>
   <block id="c7fecf95820e09d00c74bf86805bc991" category="section-title">AFF A900 또는 FAS9500 NVRAM 모듈을 설치합니다</block>
@@ -3572,7 +3571,6 @@
   <block id="d72e37445f435123c47c01a1bd03271c" category="paragraph">을 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 이 업그레이드에 필요한 참조 문서 및 참조 사이트 목록에 액세스합니다.</block>
   <block id="8a0b39942bdb20d83fc11a2c0940f45d" category="summary">ARL 컨트롤러 업그레이드 절차 중 AFF A900 NVRAM 모듈 및 컨트롤러 모듈에 대한 설치 지침.</block>
   <block id="dbc99796dd5482cbc7660b57b686c30f" category="doc">노드2에 AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다</block>
-  <block id="cf7bed4e96113c76fe71493d087876b9" category="paragraph">노드 2에서 업그레이드하기 위해 받은 AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치해야 합니다. 노드2는 시스템 뒷면에서 컨트롤러를 볼 때 섀시 오른쪽에 있는 컨트롤러 B입니다.</block>
   <block id="446e34a339be0fda54aae2fe862c868f" category="paragraph">노드2의 슬롯 6에 AFF A900 또는 FAS9500 NVRAM 모듈을 설치하려면 다음 절차를 따르십시오.</block>
   <block id="b5e3968706cd8f4fee9d9a918b1b867f" category="section-title">노드2에 AFF A900 또는 FAS9500 컨트롤러 모듈을 설치합니다</block>
   <block id="43d062a38b70447bd532892c53e0817c" category="paragraph">노드2에 AFF A900 또는 FAS9500 컨트롤러 모듈을 설치하려면 다음 절차를 따르십시오.</block>
@@ -4473,4 +4471,8 @@
   <block id="1c328c36316a518e9532ed77177daa6c" category="list-text">기존 및 교체 컨트롤러에서 동일한 ONTAP 버전을 사용할 필요는 없습니다. ONTAP 소프트웨어 업그레이드는 컨트롤러 업그레이드로 수행됩니다.</block>
   <block id="da74cb1ad73d862a786d9f20938d9c7a" category="list-text">업그레이드할 때 지원되는 ONTAP 버전 및 패치 레벨로 교체 컨트롤러를 설치해야 합니다.</block>
   <block id="dee716592bbae6fdba2b32d2854360ba" category="list-text">절차를 시작하고 첫 번째 노드를 업그레이드한 후에는 컨트롤러 업그레이드를 취소하거나 다시 취소할 수 없습니다.</block>
+  <block id="37ef3103c62f7c4c537260066ec1fcad" category="paragraph">노드 2에서 업그레이드하기 위해 받은 AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다. 노드2는 시스템 뒷면에서 컨트롤러를 볼 때 섀시 오른쪽에 있는 컨트롤러 B입니다.</block>
+  <block id="d9e40d62315bfc8bad4f1329f7f9b867" category="paragraph">설치를 수행할 때 다음 사항에 주의해야 합니다.</block>
+  <block id="342f3ca2519e4e92f56675a89236fce6" category="list-text">슬롯 6-1과 6-2의 빈 필러 모듈을 모두 이전 NVRAM 모듈에서 새 NVRAM 모듈로 이동합니다.</block>
+  <block id="97bcf885640a80425f98f36e28630da4" category="paragraph">노드 1에서 업그레이드하기 위해 받은 AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다.</block>
 </blocks>
