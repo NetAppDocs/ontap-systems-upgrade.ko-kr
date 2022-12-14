@@ -26,6 +26,7 @@ NOTE: USB 부팅 옵션을 사용하여 netboot를 수행할 수도 있습니다
 * 시스템에 필요한 시스템 파일과 올바른 버전의 ONTAP를 _NetApp Support 사이트_에서 다운로드하십시오. 을 참조하십시오 link:other_references.html["참조"] 를 눌러 _NetApp Support 사이트_에 연결합니다.
 
 
+.이 작업에 대해
 원래 컨트롤러에 설치된 것과 동일한 버전의 ONTAP 9가 없는 경우 새 컨트롤러를 netboot 해야 합니다. 각각의 새 컨트롤러를 설치한 후 웹 서버에 저장된 ONTAP 9 이미지에서 시스템을 부팅합니다. 그런 다음 부팅 미디어 장치에 올바른 파일을 다운로드하여 나중에 시스템을 부팅할 수 있습니다.
 
 .단계
@@ -103,7 +104,7 @@ Selection (1-11)?
 . 절차를 계속하라는 메시지가 나타나면 를 입력합니다 `y`, 패키지를 입력하라는 메시지가 나타나면 URL을 입력합니다.
 `\http://<web_server_ip/path_to_web-accessible_directory>/<ontap_version>_image.tgz`
 +
-를 클릭합니다 `<path_to_the_web-accessible_directory>` 에서 다운로드한 위치로 이동합니다 `<ontap_version>_image.tgz` 인치 ,2단계.
+를 클릭합니다 `<path_to_the_web-accessible_directory>` 에서 다운로드한 위치로 이동합니다 `<ontap_version>_image.tgz` 인치 <<netboot_node2_step2,2단계>>.
 
 . 컨트롤러 모듈을 재부팅하려면 다음 하위 단계를 완료하십시오.
 +

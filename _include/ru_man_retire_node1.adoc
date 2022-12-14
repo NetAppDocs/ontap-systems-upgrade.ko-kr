@@ -83,10 +83,10 @@ LIF가 다운되었는지 확인하려면 * Status Admin/Oper * 열을 확인하
 | 클러스터가... | 그러면... 
 
 
-| 2노드 클러스터 | 로 이동합니다 ,6단계. 
+| 2노드 클러스터 | 로 이동합니다 <<man_retire_1_step6,6단계>>. 
 
 
-| 2개 이상의 노드가 있는 클러스터 | 로 이동합니다 ,8단계. 
+| 2개 이상의 노드가 있는 클러스터 | 로 이동합니다 <<man_retire_1_step8,8단계>>. 
 |===
 . [[man_Retire_1_step6]]두 노드 중 하나에서 고급 권한 수준에 액세스합니다.
 +
@@ -105,7 +105,7 @@ LIF가 다운되었는지 확인하려면 * Status Admin/Oper * 열을 확인하
 High Availability Configured: false
 ----
 +
-클러스터 HA가 비활성화되지 않았으면 반복합니다 ,2단계.
+클러스터 HA가 비활성화되지 않았으면 반복합니다 <<man_retire_1_step2,2단계>>.
 
 . [[man_Retire_1_step8]] 노드 1에 현재 epsilon 이 있는지 확인:
 +

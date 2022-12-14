@@ -41,7 +41,7 @@ AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈을 사용하는 노드 2�
 If(경우 `[localhost:disk.encryptNoSupport:ALERT]: Detected FIPS-certified encrypting drive` 그리고, 또는, `[localhost:diskown.errorDuringIO:error]: error 3 (disk failed) on disk` 오류가 발생하면 다음 단계를 수행하십시오.
 
 .. LOADER 프롬프트에서 노드를 중단합니다.
-.. 에서 설명한 스토리지 암호화 boots를 확인하고 재설정합니다 ,1단계.
+.. 에서 설명한 스토리지 암호화 boots를 확인하고 재설정합니다 <<A900_boot_node2,1단계>>.
 .. 로더 프롬프트에서 다음을 부팅합니다.
 +
 `boot_ontap`

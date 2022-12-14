@@ -16,4 +16,5 @@ summary: ONTAP 9.7 이하를 실행하는 컨트롤러의 수동 ARL 업그레�
 [role="lead"]
 MetroCluster 구성의 전환, 복구 및 스위치백 작업을 확인해야 합니다.
 
+.단계
 을 참조하십시오 link:other_references.html["참조"] MetroCluster 관리 및 Disaster Recovery_content에 연결하고 협상된 전환, 복구 및 스위치백에 대한 절차를 따릅니다.

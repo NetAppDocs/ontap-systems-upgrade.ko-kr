@@ -36,7 +36,7 @@ node4          node3          true     Connected to node3
 `cluster ha modify -configured true` 
 
 
-| 2개 이상의 노드가 있는 클러스터 | 로 이동합니다 ,4단계. 
+| 2개 이상의 노드가 있는 클러스터 | 로 이동합니다 <<man_ensure_setup_Step4,4단계>>. 
 |===
 . [[man_sify_setup_Step4]] 다음 명령을 입력하고 출력을 검사하여 node3과 node4가 동일한 클러스터에 속해 있는지 확인합니다.
 +
@@ -127,4 +127,5 @@ Do you want to continue? {y|n}: y
 . 새 노드에서 스위치가 없는 클러스터를 설정하려면 로 이동하십시오 link:other_references.html["참조"] _Network Support 사이트_에 연결하고 스위치가 없는 2노드 클러스터_로 전환 의 지침을 따르십시오.
 
 
+.작업을 마친 후
 노드 3과 노드 4에서 스토리지 암호화가 설정된 경우 의 단계를 완료합니다 link:set_up_storage_encryption_new_controller.html["새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다"]. 그렇지 않으면 의 단계를 완료합니다 link:decommission_old_system.html["기존 시스템을 폐기합니다"].

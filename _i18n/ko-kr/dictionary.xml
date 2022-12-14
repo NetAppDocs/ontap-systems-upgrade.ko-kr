@@ -4475,4 +4475,7 @@
   <block id="d9e40d62315bfc8bad4f1329f7f9b867" category="paragraph">설치를 수행할 때 다음 사항에 주의해야 합니다.</block>
   <block id="342f3ca2519e4e92f56675a89236fce6" category="list-text">슬롯 6-1과 6-2의 빈 필러 모듈을 모두 이전 NVRAM 모듈에서 새 NVRAM 모듈로 이동합니다.</block>
   <block id="97bcf885640a80425f98f36e28630da4" category="paragraph">노드 1에서 업그레이드하기 위해 받은 AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다.</block>
+  <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">이 작업에 대해</block>
+  <block id="3468b73fe010ca505a63fcddaa4f3601" category="paragraph-title">이 정보에 사용된 용어</block>
+  <block id="5d022d26a75a4e30fae6648d5bcdd9e5" category="paragraph-title">MetroCluster FC 구성의 경우</block>
 </blocks>

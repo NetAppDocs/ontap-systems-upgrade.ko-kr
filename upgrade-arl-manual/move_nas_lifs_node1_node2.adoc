@@ -16,6 +16,7 @@ summary: 2노드 클러스터가 있는 경우 노드 1의 NAS 데이터 LIF를 
 [role="lead"]
 노드 1을 노드 3으로 교체하려면 먼저 노드 1이 소유한 NAS 데이터 LIF를 노드 2가 있는 경우 노드 2로 이동하거나, 클러스터에 노드가 2개 이상인 경우 노드 1을 노드 2로 이동해야 합니다. 사용하는 방법은 클러스터가 NAS에 대해 구성되었는지 SAN에 대해 구성되었는지 여부에 따라 다릅니다.
 
+.이 작업에 대해
 원격 LIF는 업그레이드 절차 중에 SAN LUN의 트래픽을 처리합니다. 업그레이드 중에 클러스터 또는 서비스 상태를 위해 SAN LIF를 이동할 필요가 없습니다. 노드 3을 온라인으로 설정한 후 LIF가 정상 작동하는지 확인해야 합니다.
 
 .단계
@@ -50,10 +51,10 @@ summary: 2노드 클러스터가 있는 경우 노드 1의 NAS 데이터 LIF를 
 | 노드 1인 경우 | 그러면... 
 
 
-| VLAN의 인터페이스 그룹이 구성되어 있습니다 | 로 이동합니다 ,3단계. 
+| VLAN의 인터페이스 그룹이 구성되어 있습니다 | 로 이동합니다 <<man_move_lif_1_2_step3,3단계>>. 
 
 
-| 인터페이스 그룹 또는 VLAN이 구성되어 있지 않습니다 | 3단계를 건너뛰고 로 이동합니다 ,4단계. 
+| 인터페이스 그룹 또는 VLAN이 구성되어 있지 않습니다 | 3단계를 건너뛰고 로 이동합니다 <<man_move_lif_1_2_step4,4단계>>. 
 |===
 +
 를 사용합니다 `network port vlan show` 명령을 사용하여 VLAN에 연결된 네트워크 포트에 대한 정보를 표시하고 를 사용합니다 `network port ifgrp show` 포트 인터페이스 그룹에 대한 정보를 표시하는 명령입니다.
@@ -64,7 +65,7 @@ summary: 2노드 클러스터가 있는 경우 노드 1의 NAS 데이터 LIF를 
 +
 `network interface migrate -vserver _Vserver_name_ -lif _LIF_name_ -destination-node _node2_ –destination-port _netport|ifgrp_`
 
-.. 에서 LIF 및 VLAN의 홈 포트와 홈 노드를 수정합니다 ,하위 단계 A 각 LIF에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
+.. 에서 LIF 및 VLAN의 홈 포트와 홈 노드를 수정합니다 <<man_move_lif_1_2_substepa,하위 단계 A>> 각 LIF에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
 +
 `network interface modify -vserver _Vserver_name_ -lif _LIF_name_ -home-node _node2_ - home-port _netport|ifgrp_`
 
@@ -77,7 +78,7 @@ summary: 2노드 클러스터가 있는 경우 노드 1의 NAS 데이터 LIF를 
 | 클러스터가 구성된 경우... | 그러면... 
 
 
-| NAS | 완료 ,5단계 부터 까지 ,8단계. 
+| NAS | 완료 <<man_move_lif_1_2_step5,5단계>> 부터 까지 <<man_move_lif_1_2_step8,8단계>>. 
 
 
 | 산 | 업그레이드를 위해 노드의 모든 SAN LIF를 해제합니다.
@@ -95,7 +96,7 @@ summary: 2노드 클러스터가 있는 경우 노드 1의 NAS 데이터 LIF를 
 +
 `network interface modify -vserver _Vserver-name_ -lif _LIF_name_ -home-node _node2_ -home-port _port_name_`
 
-. [[man_move_lif_1_2_step8]] LIF가 포트를 홈 또는 현재 포트로 사용하고 있는지 확인합니다. 포트가 홈 또는 현재 포트가 아닌 경우 로 이동합니다 ,9단계:
+. [[man_move_lif_1_2_step8]] LIF가 포트를 홈 또는 현재 포트로 사용하고 있는지 확인합니다. 포트가 홈 또는 현재 포트가 아닌 경우 로 이동합니다 <<man_move_lif_1_2_step9,9단계>>:
 +
 `network interface show -home-node _node2_ -home-port _port_name_`
 

@@ -16,6 +16,7 @@ summary: RCF 파일을 설치하여 ONTAP 9.7 이하를 실행하는 컨트롤�
 [role="lead"]
 새 노드를 수용하기 위해 스위치를 재구성하려면 적절한 RCFs(Reference Configuration File)를 적용해야 합니다. RCF를 적용한 후 스위치를 다시 사용할 수 있습니다.
 
+.시작하기 전에
 FC 스위치 포트 사용은 RCFs를 사용할 수 있도록 _fFabric-Attached MetroCluster 설치 및 Configuration_content에 설명된 사용량과 일치해야 합니다. 로 이동합니다 link:other_references.html["참조"] 를 눌러 _패브릭 연결 MetroCluster 설치 및 구성_내용에 연결합니다.
 
 .단계

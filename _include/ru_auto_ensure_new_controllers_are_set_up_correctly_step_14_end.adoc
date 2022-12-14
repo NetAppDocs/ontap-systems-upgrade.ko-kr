@@ -5,4 +5,5 @@
 . 새 노드에서 스위치가 없는 클러스터를 설정하려면 을 참조하십시오 link:other_references.html["참조"] _NetApp Support 사이트_에 연결하고 스위치가 없는 2노드 클러스터로 전환 _ 의 지침을 따르십시오.
 
 
+.작업을 마친 후
 노드 3과 노드 4에서 스토리지 암호화가 설정된 경우 섹션을 완료합니다 link:set_up_storage_encryption_new_module.html["새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다"]. 그렇지 않으면 섹션을 완료합니다 link:decommission_old_system.html["기존 시스템을 폐기합니다"].

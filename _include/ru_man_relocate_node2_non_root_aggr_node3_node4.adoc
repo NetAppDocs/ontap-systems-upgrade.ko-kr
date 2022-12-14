@@ -20,7 +20,7 @@
 `storage aggregate relocation start -node _node3_ -destination _node4_ -aggregate-list _aggr_name1, aggr_name2..._ -ndo-controller-upgrade true`
 
 +
-Aggregate 목록은 에서 얻은 노드 4가 소유한 Aggregate 목록입니다 ,1단계.
+Aggregate 목록은 에서 얻은 노드 4가 소유한 Aggregate 목록입니다 <<man_relocate_3_4_Step1,1단계>>.
 
 .. 메시지가 표시되면 를 입력합니다 `y`.
 +
@@ -50,7 +50,7 @@ NOTE: 다음 단계로 진행하기 전에 노드 2 애그리게이트를 노드
 | 재배치 대상... | 그러면... 
 
 
-| 모든 애그리게이트가 성공했습니다 | 로 이동합니다 ,5단계. 
+| 모든 애그리게이트가 성공했습니다 | 로 이동합니다 <<man_relocate_3_4_Step5,5단계>>. 
 
 
 | 모든 애그리게이트가 실패했거나 거부권을 행사한 경우  a| 
@@ -94,7 +94,7 @@ NOTE: 다음 단계로 진행하기 전에 노드 2 애그리게이트를 노드
 `storage aggregate show -node _node4_ -state offline -root false`
 
 +
-에서 명령의 출력에 노드 2 애그리게이트가 나열되어 있습니다 ,1단계.
+에서 명령의 출력에 노드 2 애그리게이트가 나열되어 있습니다 <<man_relocate_3_4_Step1,1단계>>.
 
 . Aggregate가 오프라인 상태가 되거나 외부 상태가 된 경우 각 Aggregate에 대해 다음 명령을 사용하여 온라인 상태로 전환합니다.
 +

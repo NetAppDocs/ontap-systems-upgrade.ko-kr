@@ -23,6 +23,7 @@ summary: ARL 컨트롤러 업그레이드 절차 중 AFF A900 NVRAM 모듈 및 �
 * FAS9000 NVRAM 모듈에 설치된 All-Flash 캐시 모듈을 FAS9500 NVRAM 모듈로 이동합니다.
 
 
+.시작하기 전에
 아직 접지되지 않은 경우 올바르게 접지하십시오.
 
 

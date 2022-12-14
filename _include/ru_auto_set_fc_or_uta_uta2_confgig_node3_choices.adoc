@@ -3,6 +3,6 @@
 
 
 .선택
-*  FC ports on node3
-*  and configure UTA/UTA2 ports on node3
+* <<노드 3에서 FC 포트를 구성합니다>>
+* <<노드 3의 UTA/UTA2 포트를 확인하고 구성합니다>>
 

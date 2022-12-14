@@ -13,6 +13,7 @@ summary: '스토리지를 이동하여 업그레이드 절차를 완료하려면
 [role="lead"]
 스토리지를 이동하여 업그레이드 절차를 완료하려면 새 노드에서 사용되지 않는 포트 및 LIF를 삭제하고, 스토리지 페일오버 또는 고가용성을 재설정하고, 서비스 프로세서(SP)를 구성하고, 새 라이센스를 설치하고, AutoSupport를 설정해야 합니다. 스토리지 또는 볼륨 암호화를 설정하고 FC 또는 CNA 포트를 구성해야 할 수도 있습니다.
 
+.시작하기 전에
 다음 단계는 ONTAP 9.8 이상을 실행하는 시스템에 적용됩니다. ONTAP 9.7 이하를 실행하는 경우 의 절차를 사용해야 합니다 xref:upgrade-final-steps-ontap-9-7-or-earlier-move-storage.adoc[ONTAP 9.7 이전 버전에서 최종 업그레이드 단계 수행].
 
 .단계
@@ -109,4 +110,5 @@ https://library.netapp.com/ecm/ecm_download_file/ECMP1140535["NetApp CN1610 클�
 
 
 
+.작업을 마친 후
 업그레이드 절차가 완료되었습니다.

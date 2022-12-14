@@ -16,8 +16,10 @@ summary: ONTAP 9.7 이하를 실행하는 컨트롤러의 수동 ARL 업그레�
 [role="lead"]
 새 컨트롤러 모듈과 새 디스크 쉘프의 케이블을 기존 FC 스위치에 케이블로 연결해야 합니다.
 
+.이 작업에 대해
 이 작업은 각 MetroCluster 사이트에서 수행해야 합니다.
 
+.단계
 8노드 MetroCluster 구성의 포트 사용을 사용하여 _fFabric-Attached MetroCluster 설치 및 구성_내용을 사용하여 스위치 유형의 케이블 연결 레이아웃을 결정합니다. FC 스위치 포트 사용은 RCFs(Reference Configuration Files)를 사용할 수 있도록 콘텐츠에 설명된 사용량과 일치해야 합니다.
 
 로 이동합니다 link:other_references.html["참조"] 를 눌러 _패브릭 연결 MetroCluster 설치 및 구성_내용에 연결합니다.

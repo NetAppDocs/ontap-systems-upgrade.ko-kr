@@ -16,6 +16,7 @@ summary: ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레�
 [role="lead"]
 노드 2에서 노드 3으로 애그리게이트를 재배치한 후에는 노드 2가 소유한 NAS 데이터 LIF를 노드 3으로 이동해야 합니다.
 
+.이 작업에 대해
 원격 LIF는 업그레이드 절차 중에 SAN LUN의 트래픽을 처리합니다. 업그레이드 중에 클러스터 또는 서비스 상태를 위해 SAN LIF를 이동할 필요가 없습니다. SAN LIF는 새 포트에 매핑되지 않으면 이동하지 않습니다. 노드 3에서 노드 4로 LIF를 이동하고 노드 4를 온라인 상태로 설정한 후 LIF가 정상 작동하는지 확인해야 합니다.
 
 .단계
@@ -49,10 +50,10 @@ cluster::> network interface show -data-protocol nfs|cifs -home-node node2
 | 노드2의 경우 | 그러면... 
 
 
-| 인터페이스 그룹 또는 VLAN이 구성되어 있습니다 | 로 이동합니다 ,3단계. 
+| 인터페이스 그룹 또는 VLAN이 구성되어 있습니다 | 로 이동합니다 <<man_move_lif_2_3_step3,3단계>>. 
 
 
-| 인터페이스 그룹 또는 VLAN이 구성되어 있지 않습니다 | 3단계를 건너뛰고 로 이동합니다 ,4단계. 
+| 인터페이스 그룹 또는 VLAN이 구성되어 있지 않습니다 | 3단계를 건너뛰고 로 이동합니다 <<man_move_lif_2_3_step4,4단계>>. 
 |===
 . [[man_move_lif_2_3_step3]]노드 2의 인터페이스 그룹 및 VLAN에 호스팅된 NAS 데이터 LIF를 마이그레이션하려면 다음 단계를 수행하십시오.
 +
@@ -60,7 +61,7 @@ cluster::> network interface show -data-protocol nfs|cifs -home-node node2
 +
 `network interface migrate -vserver _Vserver_name_ -lif _LIF_name_ -destination-node _node3_ –destination-port _netport|ifgrp_`
 
-.. 에서 LIF의 홈 포트 및 홈 노드를 수정합니다 ,하위 단계 A 각 노드에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
+.. 에서 LIF의 홈 포트 및 홈 노드를 수정합니다 <<man_move_lif_2_3_substepa,하위 단계 A>> 각 노드에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
 +
 `network interface modify -vserver _Vserver_name_ -lif _LIF_name_ -home-node _node3_ -homeport _netport|ifgrp_`
 
@@ -68,7 +69,7 @@ cluster::> network interface show -data-protocol nfs|cifs -home-node node2
 +
 `network interface migrate -vserver _Vserver_name_ -lif _LIF_name_ -destination-node _node3_ –destination-port _netport|ifgrp_`
 
-.. 에서 LIF의 홈 포트 및 홈 노드를 수정합니다 ,하위 단계 c 각 LIF에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
+.. 에서 LIF의 홈 포트 및 홈 노드를 수정합니다 <<man_move_lif_2_3_substepc,하위 단계 c>> 각 LIF에 대해 다음 명령을 입력하여 현재 LIF를 호스팅하는 포트 및 노드에 대해 다음을 수행합니다.
 +
 `network interface modify -vserver _Vserver_name_ -lif _LIF_name_ -home-node _node3_ -homeport _netport|ifgrp_`
 
@@ -81,13 +82,13 @@ cluster::> network interface show -data-protocol nfs|cifs -home-node node2
 | 클러스터가 구성된 경우... | 그러면... 
 
 
-| NAS | 완료 ,5단계 부터 까지 ,8단계. 
+| NAS | 완료 <<man_move_lif_2_3_step5,5단계>> 부터 까지 <<man_move_lif_2_3_step8,8단계>>. 
 
 
-| 산 | 5단계 - 8단계를 건너 뛴 다음 완료합니다 ,9단계. 
+| 산 | 5단계 - 8단계를 건너 뛴 다음 완료합니다 <<man_move_lif_2_3_step9,9단계>>. 
 
 
-| NAS 및 SAN 모두 지원 | 완료 ,5단계 부터 까지 ,9단계. 
+| NAS 및 SAN 모두 지원 | 완료 <<man_move_lif_2_3_step5,5단계>> 부터 까지 <<man_move_lif_2_3_step9,9단계>>. 
 |===
 . [[man_move_lif_2_3_step5]] 플랫폼에서 동일하지 않은 데이터 포트가 있는 경우 브로드캐스트 도메인에 포트를 추가합니다.
 +
