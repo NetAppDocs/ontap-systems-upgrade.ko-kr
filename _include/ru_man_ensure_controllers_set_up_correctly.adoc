@@ -74,8 +74,10 @@ node4          node3          true     Connected to node3
 +
 license-code 매개변수는 28개의 대문자 알파벳 문자 키 목록을 허용합니다. 한 번에 하나의 라이센스를 추가하거나, 각 라이센스 키를 쉼표로 구분하여 한 번에 여러 라이센스를 추가할 수 있습니다.
 
-. NSE(NetApp 스토리지 암호화)를 구성에서 사용 중인 경우 를 설정합니다 `setenv bootarg.storageencryption.support` 명령을 사용하여 "true"로 설정합니다 `kmip.init.maxwait` 변수 "OFF"(인치 link:install_boot_node3.html#step16["16단계"] of_Install 및 boot node3_) 변수를 재설정해야 합니다.
+. 자체 암호화 드라이브를 구성에서 사용 중이며 를 설정한 경우 `kmip.init.maxwait` 변수 대상 `off` (예: 에서 link:install_boot_node3.html#step16["16단계"] of_Install 및 boot node3_) 변수를 설정 해제해야 합니다.
++
 `set diag; systemshell -node _node_name_ -command sudo kenv -u -p kmip.init.maxwait`
+
 . 원래 노드에서 이전 라이센스를 모두 제거하려면 다음 명령 중 하나를 입력합니다.
 +
 `system license clean-up -unused -expired`

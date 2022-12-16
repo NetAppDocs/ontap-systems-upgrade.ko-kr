@@ -154,13 +154,39 @@ MetroCluster 구성이 있는 경우 다음 명령을 사용하여 컨트롤러 
 새 컨트롤러 모듈을 설치하면 각 온보드 FC 포트에 연결된 WWPN 값이 변경됩니다.
 
 . [[step26]] 구성에서 스위치 기반 조닝을 사용하는 경우 새 WWPN 값이 적용되도록 조닝을 조정하십시오.
-. [[step27]] NSE(NetApp 스토리지 암호화)를 이 구성에서 사용 중인 경우, 를 참조하십시오 `setenv bootarg.storageencryption.support` 명령을 로 설정해야 합니다 `true`, 및 `kmip.init.maxwait` 변수를 로 설정해야 합니다 `off` node1 구성이 로드된 후 부팅 루프를 방지하려면 다음을 수행합니다.
+. [[step27]] 를 설정합니다 `bootarg.storageencryption.support` 및 `kmip.init.maxwait` node1 구성이 로드된 후 부트 루프를 방지하기 위한 변수입니다.
 +
-`setenv bootarg.storageencryption.support true`
+절차의 앞부분에서 아직 수행하지 않은 경우 기술 자료 문서를 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/How_to_tell_I_have_FIPS_drives_installed["FIPS 드라이브가 설치되어 있는지 확인하는 방법"^] 사용 중인 자체 암호화 드라이브의 유형을 확인합니다.
 
 +
-`setenv kmip.init.maxwait off`
+[cols="35,65"]
+|===
+| 다음 드라이브를 사용 중인 경우… | 그러면... 
 
+
+| NSE(NetApp Storage Encryption) 드라이브는 FIPS 140-2 레벨 2 자체 암호화 요구사항을 준수합니다  a| 
+** `setenv bootarg.storageencryption.support *true*`
+** `setenv kmip.init.maxwait off`
+
+
+
+
+| NetApp 비 FIPS SED  a| 
+** `setenv bootarg.storageencryption.support *false*`
+** `setenv kmip.init.maxwait off`
+
+
+|===
++
+[NOTE]
+====
+** 동일한 노드 또는 HA 쌍에서 다른 유형의 드라이브와 FIPS 드라이브를 혼합할 수 없습니다.
+** 동일한 노드 또는 HA 쌍에서 SED를 비암호화 드라이브와 혼합할 수 있습니다.
+** 를 설정한 후 정전이 발생하는 경우 `kmip.init.maxwait` 변수 대상 `off`, 잠재적인 데이터 손실을 방지하려면 기술 지원 부서에 문의하십시오.
+** HA 쌍에서 컨트롤러 업그레이드가 완료되면 즉시 를 설정 해제해야 합니다 `kmip.init.maxwait` 변수. 을 참조하십시오 link:ensure_new_controllers_are_set_up_correctly.html["새 컨트롤러가 올바르게 설정되었는지 확인합니다"].
+
+
+====
 . [[step28]] 부트 메뉴의 부트 노드:
 +
 `boot_ontap menu`

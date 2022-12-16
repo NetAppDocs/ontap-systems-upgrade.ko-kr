@@ -156,13 +156,39 @@ WARNING: * 경고: 지연을 무시하지 마십시오. 배터리를 충전하�
 +
 `set-defaults`
 
-. 이 구성에서 FDE를 사용하는 경우, 를 참조하십시오 `setenv bootarg.storageencryption.support` 변수를 로 설정해야 합니다 `true`, 및 `kmip.init.maxwait` 변수를 로 설정해야 합니다 `off` node2 구성이 로드된 후 부팅 루프를 방지하려면 다음을 수행합니다.
+. 를 설정합니다 `bootarg.storageencryption.support` 및 `kmip.init.maxwait` node2 구성이 로드된 후 부트 루프를 방지하기 위한 변수입니다.
 +
-`setenv bootarg.storageencryption.support true`
+절차의 앞부분에서 아직 수행하지 않은 경우 기술 자료 문서를 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/How_to_tell_I_have_FIPS_drives_installed["FIPS 드라이브가 설치되어 있는지 확인하는 방법"^] 사용 중인 자체 암호화 드라이브의 유형을 확인합니다.
 
 +
-`setenv kmip.init.maxwait off`
+[cols="35,65"]
+|===
+| 다음 드라이브를 사용 중인 경우… | 그러면... 
 
+
+| NSE(NetApp Storage Encryption) 드라이브는 FIPS 140-2 레벨 2 자체 암호화 요구사항을 준수합니다  a| 
+** `setenv bootarg.storageencryption.support *true*`
+** `setenv kmip.init.maxwait off`
+
+
+
+
+| NetApp 비 FIPS SED  a| 
+** `setenv bootarg.storageencryption.support *false*`
+** `setenv kmip.init.maxwait off`
+
+
+|===
++
+[NOTE]
+====
+** 동일한 노드 또는 HA 쌍에서 다른 유형의 드라이브와 FIPS 드라이브를 혼합할 수 없습니다.
+** 동일한 노드 또는 HA 쌍에서 SED를 비암호화 드라이브와 혼합할 수 있습니다.
+** 를 설정한 후 정전이 발생하는 경우 `kmip.init.maxwait` 변수 대상 `off`, 잠재적인 데이터 손실을 방지하려면 기술 지원 부서에 문의하십시오.
+** HA 쌍에서 컨트롤러 업그레이드가 완료되면 즉시 를 설정 해제해야 합니다 `kmip.init.maxwait` 변수. 을 참조하십시오 link:ensure_controllers_set_up_correctly.html["새 컨트롤러가 올바르게 설정되었는지 확인합니다"].
+
+
+====
 . 노드 4에 설치된 ONTAP 버전이 노드 2에 설치된 ONTAP 9 버전과 동일하거나 더 높은 버전인 경우 다음 명령을 입력합니다.
 +
 `boot_ontap menu`
@@ -283,6 +309,10 @@ DISK         OWNER                       POOL   SERIAL NUMBER   HOME
 ......
 ----
 . 섹션 앞부분의 노드 3에 재배치되지 않은 노드 2의 스페어, 루트에 속한 디스크 및 루트 이외의 애그리게이트를 재할당합니다 link:relocate_non_root_aggr_node2_node3.html["노드 2에서 노드 3으로 비루트 애그리게이트를 재배치합니다"]:
++
+
+NOTE: 시스템에서 공유 디스크, 하이브리드 애그리게이트 또는 둘 다 있는 경우 올바른 를 사용해야 합니다 `disk reassign` 다음 표에서 명령을 입력합니다.
+
 +
 [cols="35,65"]
 |===

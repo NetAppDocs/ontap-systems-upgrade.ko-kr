@@ -19,7 +19,7 @@ summary: 해당 AFF A900 node1 컨트롤러 모듈과 NVRAM 모듈을 교체한 
 AFF A900 또는 FAS9500 컨트롤러 모듈의 부팅 미디어에 설치된 ONTAP 버전은 섀시에 설치되어 있고 전원이 켜져 있지 않으면 확인할 수 없습니다. AFF A900 또는 FAS9500 부팅 미디어의 ONTAP 버전은 업그레이드할 AFF A700 또는 FAS9000 시스템에서 실행되는 ONTAP 버전과 동일해야 하며 기본 및 백업 부팅 이미지가 일치해야 합니다. netboot에 이어 를 수행하여 이미지를 구성할 수 있습니다 `wipeconfig` 명령을 입력합니다. 이전에 컨트롤러 모듈을 다른 클러스터에서 사용한 경우, 를 참조하십시오 `wipeconfig` 명령은 부팅 미디어의 나머지 구성을 지웁니다.
 
 
-NOTE: USB 부팅 옵션을 사용하여 netboot를 수행할 수도 있습니다. 를 참조하십시오 link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_use_the_boot_recovery_LOADER_command_for_installing_ONTAP_for_initial_setup_of_a_system["NetApp KB 문서: 시스템을 초기 설정하기 위해 ONTAP를 설치하는 데 boot_recovery Loader 명령을 사용하는 방법"^].
+NOTE: USB 부팅 옵션을 사용하여 netboot를 수행할 수도 있습니다. 기술 자료 문서를 참조하십시오 link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_use_the_boot_recovery_LOADER_command_for_installing_ONTAP_for_initial_setup_of_a_system["시스템의 초기 설정을 위해 ONTAP를 설치하는 데 boot_recovery Loader 명령을 사용하는 방법"^].
 
 .시작하기 전에
 * 시스템에서 HTTP 서버에 액세스할 수 있는지 확인합니다.
