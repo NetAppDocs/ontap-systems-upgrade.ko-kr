@@ -1091,7 +1091,6 @@
   <block id="638610cc5c3557800c38be4545f5cf40" category="paragraph"><block ref="82702d4f2de9a9473e069c5df3b3dca4" prefix="" category="inline-code"></block></block>
   <block id="26284a568c7e38bb6355694c41ff5f8d" category="paragraph">디스크에 오류가 발생한 경우, _ Disk 의 지침에 따라 디스크를 제거하고 CLI _ 을(를) 사용하여 관리를 통합합니다. (을 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> CLI_를 사용하여 _ 디스크 및 애그리게이트 관리에 연결하려면 _.)</block>
   <block id="897a592bf71f640f9c341f736bc9ee4e" category="list-text">다음 하위 단계를 완료하고 각 명령의 출력을 기록하여 node1 및 node2에 대한 정보를 수집합니다.</block>
-  <block id="930e54e1be27588126529911ee1a66bb" category="paragraph">+참고: 이 정보는 나중에 절차에서 사용합니다.</block>
   <block id="86bd7b7efad49e1892e19e0073d55fb5" category="list-text">두 노드의 모델, 시스템 ID 및 일련 번호를 기록합니다.</block>
   <block id="32f6df046e4deff82e2d7aa91a76c76e" category="paragraph"><block ref="6bc782222fc7bc038f7fa69c982334fb" prefix="" category="inline-code"></block></block>
   <block id="dfb5c700fcc3e30efac3db32160fbcf2" category="admonition">이 정보를 사용하여 디스크를 재할당하고 원래 노드의 서비스를 해제할 수 있습니다.</block>
@@ -3240,7 +3239,6 @@
   <block id="5d0e6c628fa55718654de0f71041a32a" category="summary">컨트롤러 모듈과 NVS를 스와핑하여 AFF A700의 컨트롤러 하드웨어를 AFF A900으로 업그레이드할 수 있습니다.</block>
   <block id="1c962f08f92ca556b5f958f512421f7b" category="cell">AFF A700에서 AFF A900으로</block>
   <block id="a8785e7ad1cb0d71507bbcb99df9c1f7" category="cell">AFF A700 시스템을 A700 섀시를 유지하는 AFF A900 시스템으로 변환합니다</block>
-  <block id="e1b003e7f655a9b7177c226f66898500" category="cell">9.10.1 P3 이상</block>
   <block id="3029eeb5ee6e861b02eb2a1ffd3d3b8e" category="cell">FAS9000에 FAS9000을 FAS9000으로</block>
   <block id="92edbfe3ededa1bb85b931ec295f360d" category="cell">FAS9000 시스템을 FAS9500 시스템으로 변환하여 FAS9000 섀시를 유지합니다.</block>
   <block id="a5ce3ab443f38c92fc244c3533db25fd" category="paragraph">컨트롤러와 NVRAM 모듈을 교체하여 고가용성(HA) 쌍에서 컨트롤러 하드웨어를 중단 없이 업그레이드할 수 있습니다. 먼저, 루트가 아닌 애그리게이트를 이전 컨트롤러 노드 간에 마이그레이션합니다. 설치 후 비루트 애그리게이트를 이전 컨트롤러 노드에서 교체 컨트롤러 노드로 마이그레이션합니다. 업그레이드 절차 중에 업그레이드 중인 노드에서 호스팅되는 데이터에 액세스할 수 있습니다.</block>
@@ -4497,4 +4495,6 @@
   <block id="9d5ce6c4c82bf9a0ff455a50cadc1ab6" category="list-text">자체 암호화 드라이브를 구성에서 사용 중이며 를 설정한 경우<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 변수 대상<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> (예: AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈을 사용하는 IN_BOOT node2의 경우 _, <block ref="30eda0c27e5ac7524ed5f5f264f13489" category="inline-link-macro-rx"></block>), 변수를 설정 해제해야 합니다.</block>
   <block id="21b9417932c23289b6932c3a0ac2517f" category="list-text">[[boot_node2_step1]] 를 설정합니다<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 및<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> node2 구성이 로드된 후 부트 루프를 방지하기 위한 변수입니다.</block>
   <block id="083a0c049526537d6b95a268054814fb" category="list-text">시스템에 하이브리드 애그리게이트가 있습니다.</block>
+  <block id="5c8ce8c10b94248d147cb23bb490fd9d" category="cell">사용<block ref="0cdc21b7c964923f382c6248332e0a1d" prefix=" " category="inline-code"></block> 명령</block>
+  <block id="6e1f6dfb0fcbfac6c4067f6818568970" category="cell">9.11.1P6 또는 9.10.1P10(2023년 2월 예정)</block>
 </blocks>
