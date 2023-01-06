@@ -21,7 +21,7 @@ summary: 컨트롤러 모듈과 NVS를 스와핑하여 AFF A700의 컨트롤러 
 | 방법 | ONTAP 버전입니다 | 지원되는 시스템 | 설명 
 
 
-| 사용 `system contlroller replace` 명령 | 9.11.1P6 또는 9.10.1P10(2023년 2월 예정) | AFF A700에서 AFF A900으로 | AFF A700 시스템을 A700 섀시를 유지하는 AFF A900 시스템으로 변환합니다 
+| 사용 `system controller replace` 명령 | 9.11.1P6 또는 9.10.1P10(2023년 2월 예정) | AFF A700에서 AFF A900으로 | AFF A700 시스템을 A700 섀시를 유지하는 AFF A900 시스템으로 변환합니다 
 
 
 | 사용 `system controller replace` 명령 | 9.11.1P6 또는 9.10.1P10(2023년 2월 예정) | FAS9000에 FAS9000을 FAS9000으로 | FAS9000 시스템을 FAS9500 시스템으로 변환하여 FAS9000 섀시를 유지합니다. 

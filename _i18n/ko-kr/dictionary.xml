@@ -3257,8 +3257,6 @@
   <block id="2a2d4d28b7b0848fbdd189061adaff52" category="paragraph">이 문서에서는 AFF A700 HA 쌍의 스토리지 컨트롤러를 새로운 AFF A900 컨트롤러 또는 컨트롤러와 함께 FAS9000 HA 쌍의 컨트롤러를 새로운 FAS9500 컨트롤러와 업그레이드하는 방법을 기존의 모든 데이터 및 디스크를 유지하는 방법에 대해 설명합니다. 이는 숙련된 관리자만 사용해야 하는 복잡한 절차입니다.</block>
   <block id="c08f0b6d71108219929095cbd90d111d" category="paragraph">다음과 같은 상황에서 이 절차를 사용하십시오.</block>
   <block id="3d58d6338cfd5f06b224201846bd6759" category="list-text">NetApp 세일즈 담당자에게 AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈 및 업그레이드에 필요한 부품이 제공되었는지 확인했습니다.</block>
-  <block id="58fd942a7ba8a430b491bba397e88d17" category="list-text">AFF A900 컨트롤러에서 ONTAP 9.10.1 이상을 실행하고 있습니다.</block>
-  <block id="7addcb2495004d218f3791cfcb74d41e" category="list-text">FAS9500 컨트롤러에서 ONTAP 9.10.1P3 이상을 실행하고 있습니다.</block>
   <block id="eb51502469d00e14522e17bfff4124ad" category="list-text">새 컨트롤러를 새 HA 쌍으로 클러스터에 추가하고 볼륨 이동을 사용하여 데이터를 마이그레이션하지 않으려는 경우</block>
   <block id="a3bad37bbfc8cbb39ebdfc42ccfa6bec" category="list-text">ONTAP 관리에 대한 경험이 있으며 진단 권한 모드에서 작업할 때 발생할 수 있는 위험에 대해 잘 알 수 있습니다.</block>
   <block id="9cc6fc2f026195efe30da793b04e5bd0" category="paragraph">다음과 같은 상황에서는 이 절차를 사용하지 마십시오.</block>
@@ -3364,11 +3362,7 @@
   <block id="b2ffa415b9a2c5b47e0d86b6b79dd5a3" category="paragraph">NVE(NetApp Volume Encryption)를 사용하여 업그레이드 중인 시스템의 볼륨을 암호화하는 경우 암호화 구성을 새 노드와 동기화해야 합니다. Key-Manager를 복원하지 않을 경우 ARL을 사용하여 노드 2 애그리게이트를 업그레이드된 노드 1에서 업그레이드된 노드 2로 재배치할 때 암호화된 볼륨이 오프라인 상태로 전환됩니다.</block>
   <block id="fa5b7598ff79398479188d836810f48d" category="summary">AFF A700에서 AFF A900으로 컨트롤러 업그레이드를 지원하는 데 필요한 참조 콘텐츠 및 웹 사이트입니다.</block>
   <block id="de9f7d5e1d4c04a6ec4f1097d1a1a241" category="summary">ARL을 사용하여 AFF A700을 AFF A900으로 업그레이드할 수 있는지 이해합니다.</block>
-  <block id="3d34e56cf21c4a138ab823660c2b5555" category="paragraph">ARL을 사용하여 다음 시스템 구성에서 컨트롤러 쌍을 업그레이드합니다.</block>
-  <block id="2a0a9f74d7fd41063ed18276c24550d5" category="list-text">AFF A700 컨트롤러 쌍을 ONTAP 9.10.1 이상을 실행하는 AFF A900 시스템으로 업그레이드합니다</block>
-  <block id="546138e0b7501a286c581953c65b874d" category="list-text">ONTAP 9.10.1P3 이상을 실행하는 FAS9500 시스템으로 FAS9000 컨트롤러 한 쌍을 업그레이드합니다</block>
   <block id="8c3db477300524bd7d8bcf2bba005da2" category="paragraph">ARL과 NVRAM 모듈을 사용하여 AFF A700에서 AFF A900으로 또는 FAS9000에서 FAS9500으로 컨트롤러를 업그레이드할 수 있습니다. 새 섀시를 포함하여 전체 시스템으로 새로운 AFF A900 또는 FAS9500 시스템을 받은 경우 을 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> "system controller replace" 명령을 사용하여 ONTAP 9.8 이상_content를 실행하는 컨트롤러 하드웨어를 업그레이드하려면 _ 명령을 사용하십시오.</block>
-  <block id="89270eb0a4789198b9486a5396fb9846" category="admonition">이 절차는 ONTAP 9.10.1 이상을 실행하는 AFF A700에서 AFF A900으로 업그레이드 및 9.10.1P3 이상을 실행하는 FAS9500 업그레이드용 FAS9000에 엄격히 적용됩니다. 다른 시스템 조합 간에 업그레이드를 수행하려면 이 절차를 사용하지 마십시오.</block>
   <block id="253fd57a6c2965ca518ebbfc6bf1e7cc" category="paragraph">컨트롤러를 업그레이드하는 동안 문제가 발생하면 을 참조하십시오 <block ref="8b711d7eff849b62a32d0b2d66f85a6c" category="inline-link-macro-rx"></block> 자세한 내용 및 가능한 해결 방법은 절차 끝 부분의 섹션을 참조하십시오.</block>
   <block id="b8083dfb29da686812e3bafb3a73f823" category="summary">AFF A700에서 AFF A900으로 업그레이드하는 동안 노드 2를 종료하고 랙 또는 섀시에서 분리합니다.</block>
   <block id="b2d1e6982a7161543252f06b3304ae95" category="summary">업그레이드를 시작하기 전에 AFF A700에서 AFF A900 업그레이드용으로 올바른 하드웨어가 있는지 확인하십시오.</block>
@@ -4495,6 +4489,10 @@
   <block id="9d5ce6c4c82bf9a0ff455a50cadc1ab6" category="list-text">자체 암호화 드라이브를 구성에서 사용 중이며 를 설정한 경우<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 변수 대상<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> (예: AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈을 사용하는 IN_BOOT node2의 경우 _, <block ref="30eda0c27e5ac7524ed5f5f264f13489" category="inline-link-macro-rx"></block>), 변수를 설정 해제해야 합니다.</block>
   <block id="21b9417932c23289b6932c3a0ac2517f" category="list-text">[[boot_node2_step1]] 를 설정합니다<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 및<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> node2 구성이 로드된 후 부트 루프를 방지하기 위한 변수입니다.</block>
   <block id="083a0c049526537d6b95a268054814fb" category="list-text">시스템에 하이브리드 애그리게이트가 있습니다.</block>
-  <block id="5c8ce8c10b94248d147cb23bb490fd9d" category="cell">사용<block ref="0cdc21b7c964923f382c6248332e0a1d" prefix=" " category="inline-code"></block> 명령</block>
   <block id="6e1f6dfb0fcbfac6c4067f6818568970" category="cell">9.11.1P6 또는 9.10.1P10(2023년 2월 예정)</block>
+  <block id="53f4933654122c2732aaf29d750ecb9c" category="list-text">ONTAP 9.11.1P6 또는 9.10.1P10(2023년 2월 예정)을 실행하고 있습니다.</block>
+  <block id="34fe5db3348c8cff3877298c8c064752" category="paragraph">ARL을 사용하여 다음 시스템 구성에서 ONTAP 9.11.1P6 또는 9.10.1P10(2023년 2월 대상)을 실행하는 컨트롤러 쌍을 업그레이드합니다.</block>
+  <block id="b99f39b13055b86a7e0146684c21e326" category="list-text">AFF A700 컨트롤러를 AFF A900 시스템으로</block>
+  <block id="9733b2ec9e26adc1936d94dc2a3bb0dd" category="list-text">FAS9500 시스템에 FAS9000 컨트롤러</block>
+  <block id="6425a395e3062e0f480ffee2bc19d2f7" category="admonition">이 절차는 AFF A700에서 AFF A900으로 또는 FAS9500 업그레이드에서 ONTAP 9.11.1P6 또는 9.10.1P10(2023년 2월 예정)을 실행하는 FAS9000에 엄격히 적용됩니다. 다른 시스템 조합 간에 업그레이드를 수행하려면 이 절차를 사용하지 마십시오.</block>
 </blocks>
