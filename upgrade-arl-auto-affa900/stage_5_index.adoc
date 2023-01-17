@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/stage_5_index.html 
+keywords: upgrade, preparing, preparation, prepare, overview, stage 1 
+summary: '를 사용하여 ARL 업그레이드를 위한 1단계 프로세스 시퀀스 `system controller replace` ONTAP 9.8 이상을 실행하는 컨트롤러의 명령입니다.' 
+---
+= 5단계. 노드2에 AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+5단계에서는 업그레이드된 노드 2에 대해 받은 새 NVRAM 및 컨트롤러 모듈을 설치한 다음 netboot 노드 2를 설치합니다.
+
+.단계
+. link:install_a900_nvs_and_controller_on_node2.html["노드2에 AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다"]
+. link:netboot_node2.html["netboot 노드2"]
+

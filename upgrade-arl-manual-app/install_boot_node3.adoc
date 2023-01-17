@@ -21,9 +21,13 @@ summary: ONTAP 9.8 이상을 실행하는 컨트롤러에서 수동 ARL 업그�
 
 그러나 노드 1에 설치된 ONTAP 9의 이후 버전이 같거나 동일한 경우에는 노드 3을 netboot 할 필요가 없습니다.
 
+[IMPORTANT]
+====
+스토리지 어레이에 연결된 V-Series 시스템이나 스토리지 어레이에 연결된 FlexArray 가상화 소프트웨어를 사용하여 시스템을 업그레이드하려면 시스템을 완료해야 합니다 <<man_install3_step1,1단계>> 부터 까지 <<man_install3_step5,5단계>>에서 이 섹션을 그대로 둡니다 <<man_install3_step6,6단계>> 및 의 지침을 따릅니다 link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["노드 3에서 FC 포트를 구성합니다"] 및 link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3["노드 3의 UTA/UTA2 포트를 확인하고 구성합니다"] 필요에 따라 유지보수 모드에서 명령을 입력합니다. 그런 다음 이 섹션으로 돌아가서 을(를) 다시 시작해야 합니다 <<man_install3_step7,7단계>>.
 
-NOTE: * 중요 *: 스토리지 어레이에 연결된 V-Series 시스템이나 스토리지 어레이에 연결된 FlexArray 가상화 소프트웨어를 사용하여 시스템을 업그레이드하는 경우 시스템을 완료해야 합니다 <<man_install3_step1,1단계>> 부터 까지 <<man_install3_step5,5단계>>에서 이 섹션을 그대로 둡니다 <<man_install3_step6,6단계>> 및 의 지침을 따릅니다 link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["노드 3에서 FC 포트를 구성합니다"] 및 link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3["노드 3의 UTA/UTA2 포트를 확인하고 구성합니다"] 필요에 따라 유지보수 모드에서 명령을 입력합니다. 그런 다음 이 섹션으로 돌아가서 을(를) 다시 시작해야 합니다 <<man_install3_step7,7단계>>. 그러나 스토리지 디스크가 있는 시스템을 업그레이드하는 경우 이 전체 섹션을 완료한 다음 로 이동하십시오 link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["노드 3에서 FC 포트를 구성합니다"] 및 link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3["노드 3의 UTA/UTA2 포트를 확인하고 구성합니다"], 클러스터 프롬프트에서 명령 입력
+그러나 스토리지 디스크가 있는 시스템을 업그레이드하는 경우 이 전체 섹션을 완료한 다음 로 이동하십시오 link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["노드 3에서 FC 포트를 구성합니다"] 및 link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3["노드 3의 UTA/UTA2 포트를 확인하고 구성합니다"], 클러스터 프롬프트에서 명령 입력
 
+====
 .단계
 . [[man_install3_step1]] 노드 3의 랙 공간이 있는지 확인합니다.
 +
@@ -100,7 +104,8 @@ NOTE: * 주의 *: 지연을 무시하지 마십시오. 배터리를 충전하지
 .. 이 섹션으로 돌아가 나머지 단계를 완료합니다 <<man_install3_step7,7단계>>.
 
 
-* 중요 *: ONTAP 가상화 소프트웨어를 사용하여 V-Series 또는 시스템에서 FlexArray를 부팅하기 전에 FC 온보드 포트, CNA 온보드 포트 및 CNA 카드를 재구성해야 합니다.
+
+IMPORTANT: FlexArray 가상화 소프트웨어를 사용하여 V-Series 또는 시스템에서 ONTAP를 부팅하기 전에 FC 온보드 포트, CNA 온보드 포트 및 CNA 카드를 재구성해야 합니다.
 
 |===
 . [[man_install3_step7]] 새 노드의 FC 이니시에이터 포트를 스위치 영역에 추가합니다.
@@ -148,7 +153,8 @@ NOTE: * 주의 *: 지연을 무시하지 마십시오. 배터리를 충전하지
 두 컨트롤러가 동일한 섀시에 있는 경우 전원이 이미 켜져 있어야 합니다.
 
 +
-* 참고 *: 부팅 환경 프롬프트에 node4를 그대로 둡니다. 에서 node4로 돌아갑니다 link:install_boot_node4.html["노드 4를 설치하고 부팅합니다"].
+
+NOTE: 부팅 환경 프롬프트에 node4를 그대로 두면 의 node4로 돌아갑니다 link:install_boot_node4.html["노드 4를 설치하고 부팅합니다"].
 
 .. 에 경고 메시지가 표시되는 경우 <<man_install3_step4,4단계>>의 지침을 따릅니다 <<man_install3_step5,5단계>>
 .. 콘솔 케이블을 노드 4에서 노드 3으로 다시 전환합니다.
@@ -229,14 +235,19 @@ NOTE: 관리 포트와 IP를 netboot 연결로 사용해야 합니다. 데이터
 `ifconfig e0M -auto` 
 
 
-| 실행 중이 아닙니다 | 부팅 환경 프롬프트에 다음 명령을 입력하여 연결을 수동으로 구성합니다.
+| 실행 중이 아닙니다  a| 
+부팅 환경 프롬프트에 다음 명령을 입력하여 연결을 수동으로 구성합니다.
 `ifconfig e0M -addr=_filer_addr_ -mask=_netmask_ -gw=_gateway_ -dns=_dns_addr_ -domain=_dns_domain_`
 
-`_filer_addr_` 스토리지 시스템의 IP 주소입니다.
-`_netmask_` 스토리지 시스템의 네트워크 마스크입니다.
-`_gateway_` 는 스토리지 시스템의 게이트웨이입니다.
-`_dns_addr_` 네트워크에 있는 이름 서버의 IP 주소입니다.
-`_dns_domain_` DNS(Domain Name Service) 도메인 이름입니다. 이 선택적 매개 변수를 사용하는 경우 netboot 서버 URL에 정규화된 도메인 이름이 필요하지 않습니다. 서버의 호스트 이름만 있으면 됩니다. * 참고 *: 인터페이스에 다른 매개 변수가 필요할 수 있습니다. 를 입력합니다 `help ifconfig` 펌웨어 프롬프트에서 세부 정보를 확인합니다. 
+`_filer_addr_` 스토리지 시스템의 IP 주소입니다(필수).
+`_netmask_` 스토리지 시스템의 네트워크 마스크입니다(필수).
+`_gateway_` 는 스토리지 시스템의 게이트웨이입니다(필수).
+`_dns_addr_` 네트워크에 있는 이름 서버의 IP 주소입니다(선택 사항).
+`_dns_domain_` DNS(Domain Name Service) 도메인 이름입니다. 이 선택적 매개 변수를 사용하는 경우 netboot 서버 URL에 정규화된 도메인 이름이 필요하지 않습니다. 서버의 호스트 이름만 있으면 됩니다.
+
+
+NOTE: 인터페이스에 다른 매개 변수가 필요할 수 있습니다. 를 입력합니다 `help ifconfig` 펌웨어 프롬프트에서 세부 정보를 확인합니다.
+
 |===
 . [[man_install3_step21]] 노드 3에서 netboot 수행:
 +
@@ -262,20 +273,17 @@ NOTE: 부팅을 중단하지 마십시오.
 이 메뉴 옵션은 새 ONTAP 이미지를 다운로드하여 부팅 장치에 설치합니다.
 
 +
-
-NOTE: 다음 메시지는 무시하십시오.
+다음 메시지는 무시하십시오.
 
 +
-[listing]
-----
-This procedure is not supported for Non-Disruptive Upgrade on an HA pair.
-----
+`This procedure is not supported for Non-Disruptive Upgrade on an HA pair`
+
 +
 참고 사항은 ONTAP의 무중단 업그레이드에는 적용되고 컨트롤러 업그레이드에는 적용되지 않습니다.
 
 +
 
-NOTE: 항상 netboot를 사용하여 새 노드를 원하는 이미지로 업데이트합니다. 다른 방법을 사용하여 새 컨트롤러에 이미지를 설치할 경우 잘못된 이미지가 설치될 수 있습니다. 이 문제는 모든 ONTAP 릴리스에 적용됩니다.
+NOTE: 항상 netboot를 사용하여 새 노드를 원하는 이미지로 업데이트합니다. 다른 방법을 사용하여 새 컨트롤러에 이미지를 설치할 경우 잘못된 이미지가 설치될 수 있습니다. 이 문제는 모든 ONTAP 릴리스에 적용됩니다. 옵션과 결합된 netboot 절차 `(7) Install new software` 부팅 미디어를 지우고 두 이미지 파티션 모두에 동일한 ONTAP 버전 ONTAP를 배치합니다.
 
 . [[man_install3_step23]] 절차를 계속하라는 메시지가 나타나면 를 입력합니다 `y`, 패키지를 입력하라는 메시지가 나타나면 다음 URL을 입력합니다.
 +

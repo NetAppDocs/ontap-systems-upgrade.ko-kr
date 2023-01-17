@@ -1,10 +1,6 @@
-= Onboard Key Manager를 사용하여 스토리지 암호화를 관리합니다
+= 
 :allow-uri-read: 
 
-
-
-
-== Onboard Key Manager를 사용하여 스토리지 암호화를 관리합니다
 
 OKM을 사용하여 암호화 키를 관리할 수 있습니다. OKM을 사용하려면 업그레이드를 시작하기 전에 암호문과 백업 자료를 기록해야 합니다.
 

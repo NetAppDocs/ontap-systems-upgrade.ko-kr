@@ -95,7 +95,7 @@ VLAN, 인터페이스 그룹 및 브로드캐스트 도메인을 만들고 다�
 
 . 클러스터의 브로드캐스트 도메인을 나열합니다.
 +
-`broadcast-domain show`
+`network port broadcast-domain show`
 
 . 노드 2의 모든 포트에 대한 네트워크 포트 도달 가능 여부 나열:
 +

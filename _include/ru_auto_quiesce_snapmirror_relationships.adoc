@@ -25,6 +25,6 @@ SnapMirror 관계가 "전송 중" 상태가 아니면 중단이 실패합니다.
 
 . 클러스터 간의 모든 관계 중지:
 +
-`snapmirror quiesce -destination-vserver _vserver_name_`
+`snapmirror quiesce -destination-vserver *`
 
 

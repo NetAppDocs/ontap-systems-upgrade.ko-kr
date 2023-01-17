@@ -4,6 +4,8 @@
 
 NetApp Support 사이트에서 제공되는 Active IQ Config Advisor 툴을 사용하여 일반적인 구성 오류를 확인할 수 있습니다.
 
+MetroCluster 구성이 없는 경우 이 섹션을 건너뛸 수 있습니다.
+
 .이 작업에 대해
 Active IQ Config Advisor는 구성 검증 및 상태 점검 툴입니다. 데이터 수집 및 시스템 분석을 위해 보안 사이트 및 비보안 사이트에 배포할 수 있습니다.
 

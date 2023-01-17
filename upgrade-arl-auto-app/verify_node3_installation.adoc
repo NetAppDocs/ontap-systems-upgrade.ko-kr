@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/verify_node3_installation.html 
 keywords: verifying, verify, node, install, installation 
-summary: '를 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 node1의 물리적 포트가 노드 3에 올바르게 매핑되고 노드 3의 네트워크 구성을 복원하는지 확인합니다 `system controller replace` 명령.' 
+summary: '를 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 node1 물리적 포트가 노드 3에 올바르게 매핑되고 노드 3의 네트워크 구성을 복원하는지 확인합니다 `system controller replace` 명령.' 
 ---
 = 노드3 설치를 확인합니다
 :hardbreaks:
@@ -138,7 +138,7 @@ VLAN, 인터페이스 그룹 및 브로드캐스트 도메인을 만들고 다�
 
 . [[step2]] 클러스터의 브로드캐스트 도메인을 나열합니다.
 +
-`broadcast-domain show`
+`network port broadcast-domain show`
 
 . [[step3]]노드 3의 모든 포트에 대한 네트워크 포트 도달 가능 여부 나열:
 +
@@ -310,7 +310,7 @@ VLAN 복원이 성공하면 지정된 대상 포트에 교체된 VLAN이 생성�
 
 . [[step9]] 모든 포트 수리가 완료된 후 빈 브로드캐스트 도메인을 삭제합니다.
 +
-`broadcast-domain delete -broadcast-domain _broadcast_domain_name_`
+`network port broadcast-domain delete -broadcast-domain _broadcast_domain_name_`
 
 . [[10단계]] 포트 도달 가능성 확인:
 +

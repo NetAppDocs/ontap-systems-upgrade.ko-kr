@@ -17,14 +17,18 @@ entries:
 - title: 1단계. 업그레이드를 준비합니다
   pdf-filename: 1단계. 업그레이드 준비(AFF A900 또는 FAS9500으로 업그레이드)
   entries:
+  - title: 개요
+    url: "/upgrade-arl-auto-affa900/stage_1_index.html"
   - title: 업그레이드 하드웨어를 확인합니다
     url: "/upgrade-arl-auto-affa900/verify_upgrade_hardware.html"
   - title: 업그레이드할 노드를 준비합니다
     url: "/upgrade-arl-auto-affa900/prepare_nodes_for_upgrade.html"
-  - title: 스토리지 암호화를 위한 외부 키 관리 서버의 IP 주소를 가져옵니다
-    url: "/upgrade-arl-auto-affa900/get_ip_address_of_external_kms_for_storage_encryption.html"
+  - title: Onboard Key Manager를 사용하여 스토리지 암호화를 관리합니다
+    url: "/upgrade-arl-auto-affa900/manage_storage_encryption_using_okm.html"
 - title: 2단계. 리소스를 재배치하고 AFF A700 또는 FAS9000 노드 1을 폐기합니다
   entries:
+  - title: 개요
+    url: "/upgrade-arl-auto-affa900/stage_2_index.html"
   - title: 노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치합니다
     url: "/upgrade-arl-auto-affa900/relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html"
   - title: 장애가 발생하거나 거부권을 행사한 Aggregate를 재배치합니다
@@ -35,6 +39,8 @@ entries:
     url: "/upgrade-arl-auto-affa900/netboot_node1.html"
 - title: 3단계. AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈을 사용하여 노드 1을 부팅합니다
   entries:
+  - title: 개요
+    url: "/upgrade-arl-auto-affa900/stage_3_index.html"
   - title: AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈을 사용하여 노드 1을 부팅합니다
     url: "/upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html"
   - title: 노드1 설치를 확인합니다
@@ -45,18 +51,24 @@ entries:
     url: "/upgrade-arl-auto-affa900/move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html"
 - title: 4단계. 노드 2에서 리소스를 재배치하고 노드 2를 폐기합니다
   entries:
+  - title: 개요
+    url: "/upgrade-arl-auto-affa900/stage_4_index.html"
   - title: 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 2에서 노드 1로 재배치합니다
     url: "/upgrade-arl-auto-affa900/relocate_non_root_aggr_nas_lifs_from_node2_to_node1.html"
   - title: 노드2를 폐기합니다
     url: "/upgrade-arl-auto-affa900/retire_node2.html"
 - title: 5단계. 노드2에 AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다
   entries:
+  - title: 개요
+    url: "/upgrade-arl-auto-affa900/stage_5_index.html"
   - title: 노드2에 AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다
     url: "/upgrade-arl-auto-affa900/install_a900_nvs_and_controller_on_node2.html"
   - title: netboot 노드2
     url: "/upgrade-arl-auto-affa900/netboot_node2.html"
 - title: 6단계. AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈을 사용하여 노드2를 부팅합니다
   entries:
+  - title: 개요
+    url: "/upgrade-arl-auto-affa900/stage_6_index.html"
   - title: AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈을 사용하여 노드2를 부팅합니다
     url: "/upgrade-arl-auto-affa900/boot_node2_with_a900_controller_and_nvs.html"
   - title: 노드2 설치를 확인합니다
@@ -67,11 +79,15 @@ entries:
     url: "/upgrade-arl-auto-affa900/move_non_root_aggr_and_nas_data_lifs_back_to_node2.html"
 - title: 7단계. 업그레이드를 완료합니다
   entries:
+  - title: 개요
+    url: "/upgrade-arl-auto-affa900/stage_7_index.html"
+  - title: 스토리지 암호화를 위한 외부 키 관리 서버의 IP 주소를 가져옵니다
+    url: "/upgrade-arl-auto-affa900/get_ip_address_of_external_kms_for_storage_encryption.html"
   - title: 새 컨트롤러가 올바르게 설정되었는지 확인합니다
     url: "/upgrade-arl-auto-affa900/ensure_new_controllers_are_set_up_correctly.html"
   - title: 새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다
     url: "/upgrade-arl-auto-affa900/set_up_storage_encryption_new_module.html"
-  - title: 새 컨트롤러 모듈에서 NetApp Volume Encryption 설정
+  - title: 새 컨트롤러 모듈에 NetApp 볼륨 또는 애그리게이트 암호화를 설정합니다
     url: "/upgrade-arl-auto-affa900/set_up_netapp_volume_encryption_new_module.html"
   - title: 기존 시스템을 폐기합니다
     url: "/upgrade-arl-auto-affa900/decommission_old_system.html"

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto/recreate_vlans_ifgrps_broadcast_domains_node3.html 
 keywords: node3, interface group, VLANs, broadcast domains, re-create 
-summary: '을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 업그레이드할 때 node3에서 node1의 VLAN, 인터페이스 그룹 및 브로드캐스트 도메인을 다시 만듭니다 `system controller replace` 명령.' 
+summary: '을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 업그레이드할 때 node3에서 node1 VLAN, 인터페이스 그룹 및 브로드캐스트 도메인을 다시 만듭니다 `system controller replace` 명령.' 
 ---
 = 노드 3에서 VLAN, 인터페이스 그룹 및 브로드캐스트 도메인을 다시 생성합니다
 :hardbreaks:

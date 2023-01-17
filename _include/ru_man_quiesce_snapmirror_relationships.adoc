@@ -19,6 +19,6 @@ SnapMirror 관계가 에 없는 경우 중단이 실패합니다 `Transferring` 
 
 . 클러스터 간의 모든 관계 중지:
 +
-`snapmirror quiesce -destination-vserver _vserver-name_`
+`snapmirror quiesce -destination-vserver *`
 
 

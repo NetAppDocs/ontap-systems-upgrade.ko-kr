@@ -27,8 +27,8 @@ entries:
     url: "/upgrade-arl-auto/stage_1_index.html"
   - title: 업그레이드할 노드를 준비합니다
     url: "/upgrade-arl-auto/prepare_nodes_for_upgrade.html"
-  - title: 스토리지 암호화를 위한 외부 키 관리 서버의 IP 주소를 가져옵니다
-    url: "/upgrade-arl-auto/get_ip_address_of_external_kms_for_storage_encryption.html"
+  - title: Onboard Key Manager를 사용하여 스토리지 암호화를 관리합니다
+    url: "/upgrade-arl-auto/manage_storage_encryption_using_okm.html"
 - title: 2단계. 노드1을 재배치하거나 폐기합니다
   pdf-filename: 2단계. 노드1 재배치 및 폐기(ONTAP 9.5에서 9.7로 '시스템 컨트롤러 교체'로 업그레이드)
   entries:
@@ -90,11 +90,13 @@ entries:
   entries:
   - title: 개요
     url: "/upgrade-arl-auto/stage_6_index.html"
+  - title: 스토리지 암호화를 위한 외부 키 관리 서버의 IP 주소를 가져옵니다
+    url: "/upgrade-arl-auto/get_ip_address_of_external_kms_for_storage_encryption.html"
   - title: 새 컨트롤러가 올바르게 설정되었는지 확인합니다
     url: "/upgrade-arl-auto/ensure_new_controllers_are_set_up_correctly.html"
   - title: 새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다
     url: "/upgrade-arl-auto/set_up_storage_encryption_new_module.html"
-  - title: 새 컨트롤러 모듈에서 NetApp Volume Encryption 설정
+  - title: 새 컨트롤러 모듈에 NetApp 볼륨 또는 애그리게이트 암호화를 설정합니다
     url: "/upgrade-arl-auto/set_up_netapp_volume_encryption_new_module.html"
   - title: 기존 시스템을 폐기합니다
     url: "/upgrade-arl-auto/decommission_old_system.html"

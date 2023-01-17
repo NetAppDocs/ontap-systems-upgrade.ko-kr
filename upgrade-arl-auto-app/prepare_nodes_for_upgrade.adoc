@@ -118,31 +118,32 @@ NOTE: 업그레이드를 시작하기 전에 FAS8080, AFF8080 시스템과 같�
 
 . 시스템 콘솔에서 컨트롤러 교체 절차의 지침에 따라 아래 명령 세트를 실행합니다.
 +
-다음 명령의 출력을 개별적으로 실행 및 저장해야 합니다.
+각 노드에 연결된 시리얼 포트에서 다음 명령의 출력을 개별적으로 실행 및 저장합니다.
 
 +
 ** `vserver services name-service dns show`
-** `network interface show -curr-node _nodename_ -role _cluster,intercluster,node-mgmt,cluster-mgmt,data_`
-** `network port show -node _node_name_ -type physical`
-** `service-processor show -node * -instance`
-** `network fcp adapter show -node _node_name_`
+** `network interface show -curr-node _local_ -role _cluster,intercluster,node-mgmt,cluster-mgmt,data_`
+** `network port show -node _local_ -type physical`
+** `service-processor show -local -instance`
+** `network fcp adapter show -node _local_`
 ** `network port ifgrp show`
-** `system node show -instance -node _node_name_`
-** `run -node _node_name_ sysconfig`
-** `storage aggregate show -node _node_name_`
-** `volume show -node _node_name_`
+** `system node show -instance -node _local_`
+** `run -node _local_ sysconfig`
+** `storage aggregate show -node _local_`
+** `volume show -node _local_`
 ** `storage array config show -switch _switch_name_`
-** `system license show -owner _node_name_`
+** `system license show -owner _local_`
 ** `storage encryption disk show`
 ** `security key-manager onboard show-backup`
 ** `security key-manager external show`
 ** `security key-manager external show-status`
-** `reachability show -detail`
+** `network port reachability show -detail`
 
 
-+
 
-NOTE: 온보드 키 관리자(OKM)를 사용하여 NetApp 볼륨 암호화를 사용하는 경우 키 관리자 암호를 준비하여 절차의 뒷부분에서 키 관리자 재동기화를 완료할 수 있도록 합니다.
+
+
+NOTE: OKM(Onboard Key Manager)을 사용하는 NVE(NetApp Volume Encryption) 또는 NAE(NetApp Aggregate Encryption)가 사용 중인 경우 키 관리자 암호를 준비하여 절차의 후반부에서 키 관리자를 다시 동기화하는 작업을 완료하십시오.
 
 . 시스템에서 자체 암호화 드라이브를 사용하는 경우 기술 자료 문서를 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/How_to_tell_I_have_FIPS_drives_installed["FIPS 드라이브가 설치되어 있는지 확인하는 방법"^] 업그레이드하는 HA 쌍에서 사용 중인 자체 암호화 드라이브의 유형을 확인합니다. ONTAP 소프트웨어는 두 가지 유형의 자체 암호화 드라이브를 지원합니다.
 +

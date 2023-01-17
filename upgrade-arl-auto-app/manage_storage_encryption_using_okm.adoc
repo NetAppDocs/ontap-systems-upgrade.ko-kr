@@ -1,0 +1,52 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app/manage_storage_encryption_using_okm.html 
+keywords: ip, address, external, key, management, server, storage, encryption, upgrading, authentication 
+summary: '을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 스토리지 암호화를 구성 및 관리하고 인증 키를 관리하고 SnapMirror 관계를 중지합니다 `system controller replace` 명령.' 
+---
+= Onboard Key Manager를 사용하여 스토리지 암호화를 관리합니다
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+OKM을 사용하여 암호화 키를 관리할 수 있습니다. OKM을 사용하려면 업그레이드를 시작하기 전에 암호문과 백업 자료를 기록해야 합니다.
+
+.단계
+. 암호를 안전한 위치에 저장합니다.
+. 복구를 위해 백업을 생성합니다. 다음 명령을 실행하고 출력을 저장합니다.
++
+`security key-manager onboard show-backup`
+
+
+
+
+
+== SnapMirror 관계 중지(선택 사항)
+
+절차를 계속하기 전에 모든 SnapMirror 관계가 중지되었는지 확인해야 합니다. SnapMirror 관계가 중지되면 재부팅 및 페일오버 시에도 계속 정지됩니다.
+
+.단계
+. 대상 클러스터에서 SnapMirror 관계 상태를 확인합니다.
++
+`snapmirror show`
+
++
+[NOTE]
+====
+상태가 "전송 중"인 경우 이러한 전송을 중단해야 합니다.
+`snapmirror abort -destination-vserver _vserver_name_`
+
+====
++
+SnapMirror 관계가 "전송 중" 상태가 아니면 중단이 실패합니다.
+
+. 클러스터 간의 모든 관계 중지:
++
+`snapmirror quiesce -destination-vserver *`
+
+

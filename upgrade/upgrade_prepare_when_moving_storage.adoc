@@ -129,7 +129,7 @@ image::../upgrade/media/reassign_lifs.PNG[교체 시스템의 네트워크 포�
 --
 . [[prepare_move_store_5]] netboot 수행에 사용되는 파일을 다운로드 및 준비합니다.
 +
-새 노드를 설치한 후 새 노드가 원래 노드와 동일한 버전의 ONTAP를 실행 중인지 확인하기 위해 netboot를 수행해야 할 수 있습니다. netboot라는 용어는 원격 서버에 저장된 ONTAP 이미지에서 부팅됨을 의미합니다. netboot를 준비할 때 시스템이 액세스할 수 있는 웹 서버에 ONTAP 9 부트 이미지 사본을 넣어야 합니다.
+새 노드를 설치한 후 새 노드가 원래 노드와 같은 버전의 ONTAP를 실행 중인지 netboot에 확인해야 할 수 있습니다. netboot라는 용어는 원격 서버에 저장된 ONTAP 이미지에서 부팅됨을 의미합니다. netboot를 준비할 때 시스템이 액세스할 수 있는 웹 서버에 ONTAP 9 부트 이미지 사본을 넣어야 합니다.
 
 +
 .. 에 액세스합니다 https://mysupport.netapp.com/site/["NetApp Support 사이트"^] 시스템의 Netboot 수행에 사용되는 파일을 다운로드합니다.

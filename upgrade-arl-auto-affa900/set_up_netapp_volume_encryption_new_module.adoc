@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/set_up_netapp_volume_encryption_new_module.html 
 keywords: set up, netapp volume encryption, controller, module, nve, node 
-summary: '필요한 경우 AFF A700에서 AFF A900으로 업그레이드할 때 NVE를 위한 새 컨트롤러 모듈을 구성하십시오."' 
+summary: '필요한 경우 AFF A700에서 AFF A900으로 업그레이드할 때 NVE 또는 NAE에 대한 새 컨트롤러 모듈을 구성하십시오."' 
 ---
-= 새 컨트롤러 모듈에서 NetApp Volume Encryption 설정
+= 새 컨트롤러 모듈에 NetApp 볼륨 또는 애그리게이트 암호화를 설정합니다
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,10 +14,28 @@ summary: '필요한 경우 AFF A700에서 AFF A900으로 업그레이드할 때 
 
 
 [role="lead"]
-새 컨트롤러의 교체된 컨트롤러 또는 고가용성(HA) 파트너가 NetApp Volume Encryption(NVE)을 사용하는 경우, NVE를 위한 새 컨트롤러 모듈을 구성해야 합니다.
+새 컨트롤러의 교체된 컨트롤러 또는 고가용성(HA) 파트너가 NetApp Volume Encryption(NVE) 또는 NetApp Aggregate Encryption(NAE)을 사용하는 경우, NVE 또는 NAE에 새 컨트롤러 모듈을 구성해야 합니다.
 
 .이 작업에 대해
 이 절차에는 새 컨트롤러 모듈에서 수행되는 단계가 포함됩니다. 올바른 노드에 명령을 입력해야 합니다.
+
+[role="tabbed-block"]
+====
+.Onboard Key Manager(온보드 키 관리자
+--
+* Onboard Key Manager * 를 사용하여 NVE 또는 NAE를 구성합니다
+
+.단계
+. 연결된 모든 키 관리 서버에서 새 노드로 인증 키 복원:
++
+`security key-manager onboard sync`
+
+
+
+--
+.외부 키 관리
+--
+* External Key Management * 를 사용하여 NVE 또는 NAE 구성
 
 .단계
 . 키 관리 서버를 계속 사용할 수 있는지, 해당 상태 및 인증 키 정보를 확인합니다.
@@ -51,18 +69,15 @@ summary: '필요한 경우 AFF A700에서 AFF A900으로 업그레이드할 때 
 
 . 연결된 모든 키 관리 서버에서 새 노드로 인증 키 복원:
 +
-[cols="30,70"]
-|===
-| 대상... | 이 명령 사용... 
+`security key-manager external restore`
+
++
+이 명령을 실행하면 OKM 암호가 필요합니다
 
 
-| 외부 키 관리(EKM) | `security key-manager external restore`이 명령을 실행하면 OKM 암호가 필요합니다 
 
-
-| Onboard Key Manager(온보드 키 관리자 | `security key-manager onboard sync` 
-|===
-
-
+--
+====
 .작업을 마친 후
 인증 키를 사용할 수 없거나 EKM 서버에 연결할 수 없어 볼륨이 오프라인 상태가 되었는지 확인합니다. 를 사용하여 해당 볼륨을 다시 온라인 상태로 전환합니다 `volume online` 명령.
 

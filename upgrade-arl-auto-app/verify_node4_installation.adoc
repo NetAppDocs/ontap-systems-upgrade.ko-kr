@@ -144,7 +144,7 @@ VLAN, 인터페이스 그룹 및 브로드캐스트 도메인을 만들고 다�
 
 . 클러스터의 브로드캐스트 도메인을 나열합니다.
 +
-`broadcast-domain show`
+`network port broadcast-domain show`
 
 . 노드 4의 모든 포트에 대한 네트워크 포트 도달 가능 여부 나열:
 +
@@ -312,7 +312,7 @@ VLAN 복원이 성공하면 지정된 대상 포트에 교체된 VLAN이 생성�
 
 . 모든 포트 수리가 완료된 후 비어 있는 브로드캐스트 도메인을 삭제합니다.
 +
-`broadcast-domain delete -broadcast-domain _broadcast_domain_name_`
+`network port broadcast-domain delete -broadcast-domain _broadcast_domain_name_`
 
 . 포트 도달 가능성 확인:
 +
