@@ -14,15 +14,31 @@ summary: '필요한 경우 를 사용하여 ONTAP 9.8 이상을 실행하는 컨
 
 
 [role="lead"]
-NetApp Aggregate Encryption(NAE) 또는 NetApp Volume Encryption(NVE)을 사용하여 업그레이드 중인 시스템의 볼륨을 암호화하는 경우 암호화 구성을 새 노드와 동기화해야 합니다. Key-Manager를 복원하지 않을 경우 ARL을 사용하여 노드 3에서 노드 4로 노드 2 애그리게이트를 재배치할 때 암호화된 볼륨은 오프라인 상태가 됩니다.
+NVE(NetApp Volume Encryption) 및 NAE(NetApp Aggregate Encryption)를 사용하여 업그레이드 중인 시스템의 볼륨을 암호화하는 경우 암호화 구성을 새 노드와 동기화해야 합니다. Key-Manager를 동기화하지 않는 경우 ARL을 사용하여 node3에서 node4로 노드 2 애그리게이트를 재배치할 때, 노드 4에 암호화된 볼륨과 애그리게이트를 온라인 상태로 전환하는 데 필요한 암호화 키가 없으므로 장애가 발생할 수 있습니다.
 
 .이 작업에 대해
 다음 단계를 수행하여 암호화 구성을 새 노드에 동기화합니다.
 
 .단계
-. 클러스터 프롬프트에서 다음 명령을 사용하여 Onboard Key Manager(OKM)의 암호화 구성을 동기화합니다.
+. 노드 4에서 다음 명령을 실행합니다.
 +
 `security key-manager onboard sync`
 
-. OKM의 클러스터 전체 암호를 입력합니다.
+. 데이터 애그리게이트를 재배치하기 전에 노드 4에서 SVM-KEK 키가 "true"로 복원되는지 확인합니다.
++
+[listing]
+----
+::> security key-manager key query -node node4 -fields restored -key-type SVM-KEK
+----
++
+.예
+[listing]
+----
+::> security key-manager key query -node node4 -fields restored -key-type SVM-KEK
+
+node     vserver   key-server   key-id                                  restored
+-------- --------- -----------  --------------------------------------- --------
+node4    svm1      ""           00000000000000000200000000000a008a81976 true
+                                2190178f9350e071fbb90f00000000000000000
+----
 

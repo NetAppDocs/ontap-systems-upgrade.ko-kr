@@ -436,10 +436,52 @@ Login:
 ====
 . [[auto_check3_step22]] 로더 프롬프트에서 다음 항목을 부팅합니다.
 +
-`boot_ontap`
+`boot_ontap menu`
 
 +
 이제 부팅 시 노드에서 이전에 할당되었으며 예상대로 부팅할 수 있는 모든 디스크를 감지할 수 있습니다.
+
++
+교체 중인 클러스터 노드에서 루트 볼륨 암호화를 사용하면 ONTAP 소프트웨어가 디스크에서 볼륨 정보를 읽을 수 없습니다. 루트 볼륨에 대한 키를 복구합니다.
+
++
+.. 특수 부팅 메뉴로 돌아갑니다.
+`LOADER> boot_ontap menu`
++
+[listing]
+----
+Please choose one of the following:
+(1) Normal Boot.
+(2) Boot without /etc/rc.
+(3) Change password.
+(4) Clean configuration and initialize all disks.
+(5) Maintenance mode boot.
+(6) Update flash from backup config.
+(7) Install new software first.
+(8) Reboot node.
+(9) Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+
+Selection (1-11)? 10
+----
+.. Onboard Key Manager 복구 비밀 설정 * 을 선택합니다
+.. 를 입력합니다 `y` 다음 프롬프트에서 다음을 수행합니다.
++
+`This option must be used only in disaster recovery procedures. Are you sure? (y or n): y`
+
+.. 프롬프트에서 키 관리자 암호를 입력합니다.
+.. 메시지가 표시되면 백업 데이터를 입력합니다.
++
+
+NOTE: 에서 암호 및 백업 데이터를 가져야만 합니다 link:prepare_nodes_for_upgrade.html["업그레이드할 노드를 준비합니다"] 섹션을 참조하십시오.
+
+.. 시스템이 특수 부팅 메뉴로 다시 부팅된 후 옵션 * (1) Normal Boot * 를 실행합니다
++
+
+NOTE: 이 단계에서 오류가 발생할 수 있습니다. 오류가 발생하면 의 하위 단계를 반복합니다 <<auto_check3_step22,22단계>> 시스템이 정상적으로 부팅될 때까지 기다립니다.
+
+
 
 . [[auto_check3_step23] 외부 디스크가 있는 시스템에서 내부 및 외부 디스크를 지원하는 시스템(예: AFF A800 시스템)으로 업그레이드하는 경우 node1 애그리게이트를 루트 애그리게이트로 설정하여 node3이 node1의 루트 애그리게이트에서 부팅되는지 확인하십시오. 루트 애그리게이트를 설정하려면 부팅 메뉴로 이동하여 옵션을 선택합니다 `5` 를 눌러 유지보수 모드로 전환합니다.
 +

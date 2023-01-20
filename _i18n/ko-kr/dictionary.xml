@@ -2545,8 +2545,6 @@
   <block id="44d5329782b4f4acb8947c6cc4601de1" category="list-text">노드 1이 중지되었는지 확인합니다.</block>
   <block id="312ce282bc7d7bc7d34249cfcaff7db6" category="summary">필요한 경우 를 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 노드 4의 키 관리자 구성을 복원합니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="594ac9e04c14065852f0e508c7b91ccb" category="paragraph">다음 단계를 수행하여 암호화 구성을 새 노드에 동기화합니다.</block>
-  <block id="52956fc9d114e587edb1afd76eb4b706" category="list-text">클러스터 프롬프트에서 다음 명령을 사용하여 Onboard Key Manager(OKM)의 암호화 구성을 동기화합니다.</block>
-  <block id="9fe909e2cd822e396eda1b615c821ed1" category="list-text">OKM의 클러스터 전체 암호를 입력합니다.</block>
   <block id="53cd5409b5ec64b4f5341cb93a822fab" category="summary">필요한 경우 를 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 노드 3의 Key-Manager 구성을 복원합니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="bc8355e3ba73925a2f4cf661fa66be6a" category="summary">을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 노드 4 온보드 FC 포트, UTA/UTA2 포트 또는 UTA/UTA2 카드를 구성하십시오<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="85f1449ea514e1be4b11527eb6fbce31" category="paragraph">를 완료해야 할 수도 있습니다 <block ref="b22a2e603d310a795a7b59d2bdda39ee" category="inline-xref-macro-rx"></block> 섹션, 을 참조하십시오 <block ref="5752cac0a470e06ffceef40fba1931c1" category="inline-xref-macro-rx"></block>또는 두 섹션을 모두 선택합니다.</block>
@@ -2584,7 +2582,6 @@
   <block id="5f885c9d1f15ecb39fddf4635d1d4928" category="paragraph">외부 디스크를 지원하는 시스템에서 외부 디스크도 지원하는 시스템으로 업그레이드하는 경우 로 이동합니다 <block ref="1abe7aef97cf6f4670adea7171f10403" category="inline-xref-macro-rx"></block>.</block>
   <block id="e254aab1a193523733c079cf1e13cacb" category="paragraph">외부 디스크를 사용하는 시스템에서 AFF A800 시스템과 같은 내부 디스크와 외부 디스크를 모두 지원하는 시스템으로 업그레이드하는 경우 로 이동하십시오 <block ref="1917bbf2d6d289423b4a495f5ba4fcca" category="inline-xref-macro-rx"></block>.</block>
   <block id="c591963f8f7b043803a41f69e9ac20a6" category="list-text">[[auto_check_4_step22]] 로더 프롬프트에서 부팅:</block>
-  <block id="a615e77be7318a1511c3e98bbe302ca7" category="list-text">[[auto_check_4_step23] 외부 디스크가 있는 시스템에서 내부 및 외부 디스크를 지원하는 시스템(예: AFF A800 시스템)으로 업그레이드하는 경우 node2 애그리게이트를 루트 애그리게이트로 설정하여 node4가 node2의 루트 애그리게이트에서 부팅되도록 하십시오. 루트 애그리게이트를 설정하려면 부팅 메뉴로 이동하여 옵션을 선택합니다<block ref="e4da3b7fbbce2345d7772b0674a318d5" prefix=" " category="inline-code"></block> 를 눌러 유지보수 모드로 전환합니다.</block>
   <block id="cf43f30b70f96333f3d873e68b6170ad" category="list-text">노드 2 애그리게이트의 상태를 확인합니다.</block>
   <block id="cb891bf7e336200833c9e240c76a0cc6" category="list-text">노드 4의 루트 애그리게이트가 오프라인 상태이고 노드 2에서 가져온 디스크의 루트 애그리게이트가 온라인 상태이고 루트:</block>
   <block id="6bab8b4510fec23b1120be927a0bfea7" category="admonition">이전 하위 단계를 수행하지 않으면 노드 4가 내부 루트 애그리게이트에서 부팅되거나 시스템에서 새 클러스터 구성이 있다고 가정하거나 클러스터 구성을 확인하라는 메시지가 표시될 수 있습니다.</block>
@@ -4446,7 +4443,6 @@
   <block id="4716a557a98944472ebf4f49b8aadb3a" category="paragraph">7단계에서는 새 노드가 올바르게 설정되었는지 확인하고, 새 노드가 암호화를 사용하도록 설정된 경우 스토리지 암호화 또는 NetApp 볼륨 암호화를 구성하고 설정합니다. 또한 이전 노드의 사용을 중지하고 SnapMirror 작업을 다시 시작해야 합니다.</block>
   <block id="ed4c694f0027e2bf59537b7fa3096ed7" category="list-text"><block ref="ed4c694f0027e2bf59537b7fa3096ed7" category="inline-link-macro-rx"></block></block>
   <block id="64dc6def82eca9c49c8fc6cf38327fd0" category="summary">필요한 경우 AFF A700에서 AFF A900으로 업그레이드할 때 NVE 또는 NAE에 대한 새 컨트롤러 모듈을 구성하십시오."</block>
-  <block id="5caf15e5920cdc2dfc54f0b5927b0e8e" category="paragraph">NetApp Aggregate Encryption(NAE) 또는 NetApp Volume Encryption(NVE)을 사용하여 업그레이드 중인 시스템의 볼륨을 암호화하는 경우 암호화 구성을 새 노드와 동기화해야 합니다. Key-Manager를 복원하지 않을 경우 ARL을 사용하여 노드 2 애그리게이트를 업그레이드된 노드 1에서 업그레이드된 노드 2로 재배치할 때 암호화된 볼륨이 오프라인 상태로 전환됩니다.</block>
   <block id="bd7ff3b41e18f2676d912826d206a900" category="list-text"><block ref="bd7ff3b41e18f2676d912826d206a900" category="inline-link-macro-rx"></block></block>
   <block id="9de185adfdd7642791839ee7a21f58be" category="list-text"><block ref="9de185adfdd7642791839ee7a21f58be" category="inline-link-macro-rx"></block></block>
   <block id="e0e34319efe30ed6573987c64ee73a17" category="paragraph">6단계에서는 업그레이드된 컨트롤러 및 NVRAM 모듈을 사용하여 노드 2를 부팅하고 업그레이드된 노드 2 설치를 확인합니다. NVE(NetApp Volume Encryption)를 사용하는 경우 키 관리자 구성을 복원합니다. 또한 노드 1에서 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 1에서 업그레이드된 노드 2로 재배치하고 노드 2에 SAN LIF가 있는지 확인합니다.</block>
@@ -4454,7 +4450,6 @@
   <block id="1c8b8aeeae02461a9fadc4ceb618fbec" category="list-text"><block ref="1c8b8aeeae02461a9fadc4ceb618fbec" category="inline-link-macro-rx"></block></block>
   <block id="bf403b3f6213aa1d485dc29ba4deebc3" category="list-text"><block ref="bf403b3f6213aa1d485dc29ba4deebc3" category="inline-link-macro-rx"></block></block>
   <block id="0d500821bdc96d479f52180017fd421c" category="list-text"><block ref="0d500821bdc96d479f52180017fd421c" category="inline-link-macro-rx"></block></block>
-  <block id="3bc33b1cc2855fb878dece7cecc39de1" category="paragraph">NetApp Aggregate Encryption(NAE) 또는 NetApp Volume Encryption(NVE)을 사용하여 업그레이드 중인 시스템의 볼륨을 암호화하는 경우 암호화 구성을 새 노드와 동기화해야 합니다. Key-Manager를 복원하지 않을 경우 ARL을 사용하여 노드 1을 노드 2에서 업그레이드된 노드 1로 재배치할 때 암호화된 볼륨이 오프라인 상태로 전환됩니다.</block>
   <block id="52d44ddeddf5fcbcf47ca759910fa913" category="paragraph">1단계에서는 AFF A700에서 AFF A900으로 또는 FAS9000에서 FAS9000으로 업그레이드할 FAS9000에 대한 올바른 하드웨어가 있는지 확인하고, 사전 점검을 실행하고, 필요한 경우 애그리게이트 소유권을 수정합니다. OKM을 사용하여 스토리지 암호화를 관리하는 경우 특정 정보를 기록하고 SnapMirror 관계를 중지하도록 선택할 수 있습니다.</block>
   <block id="c164197fcb353dad04f1e8beb0243f33" category="list-text"><block ref="c164197fcb353dad04f1e8beb0243f33" category="inline-link-macro-rx"></block></block>
   <block id="68a11090e57970066317536eb452ff2d" category="inline-link-macro">Onboard Key Manager를 사용하여 스토리지 암호화를 관리합니다</block>
@@ -4468,4 +4463,29 @@
   <block id="92b03f1ecf66a6ee3c76ebd05afbddda" category="list-text">노드 2의 로더 프롬프트에서 를 확인합니다<block ref="d18fd3db938a26ebbd3f74de41f0b73f" prefix=" " category="inline-code"></block> 노드 2의 경우:</block>
   <block id="ab59755d5a1df870944890a24affe31a" category="paragraph">볼륨을 이동하여 업그레이드하면 원래 노드가 제거되기 전에 새 노드가 클러스터에 연결됩니다. 절차 중에 클러스터의 컨트롤러 수가 지원되는 최대 클러스터 크기를 초과하지 않는지 확인합니다.</block>
   <block id="bd7f71fd091a70c3f0b23cb5a356e64c" category="paragraph">새 노드를 설치한 후 새 노드가 원래 노드와 같은 버전의 ONTAP를 실행 중인지 netboot에 확인해야 할 수 있습니다. netboot라는 용어는 원격 서버에 저장된 ONTAP 이미지에서 부팅됨을 의미합니다. netboot를 준비할 때 시스템이 액세스할 수 있는 웹 서버에 ONTAP 9 부트 이미지 사본을 넣어야 합니다.</block>
+  <block id="7ab8dfe9c5b72e3472374677882c9caf" category="paragraph">교체 중인 클러스터 노드에서 루트 볼륨 암호화를 사용하면 ONTAP 소프트웨어가 디스크에서 볼륨 정보를 읽을 수 없습니다. 루트 볼륨에 대한 키를 복구합니다.</block>
+  <block id="973101ddb988b90ce601f6442c898594" category="list-text">특수 부팅 메뉴로 돌아갑니다.<block ref="16c75f7ad51c79b1cf539c94cd168367" prefix=" " category="inline-code"></block></block>
+  <block id="17c034fb2d21ea55cdb8a8e69c62f069" category="list-text">Onboard Key Manager 복구 비밀 설정 * 을 선택합니다</block>
+  <block id="a6b415fe2d6a649b63be379924ad9e5d" category="list-text">를 입력합니다<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> 다음 프롬프트에서 다음을 수행합니다.</block>
+  <block id="c2a77e29b8de9e8562b6fd93a28903df" category="paragraph"><block ref="4a405d8099ad49f7b92a6093775ada1b" prefix="" category="inline-code"></block></block>
+  <block id="99a40bbc477cdc17f6e88d32032fbee2" category="list-text">프롬프트에서 키 관리자 암호를 입력합니다.</block>
+  <block id="97da9a68ce886c4978d84008bc3d4e8b" category="list-text">메시지가 표시되면 백업 데이터를 입력합니다.</block>
+  <block id="71e3a0c9ae3930c06f28eb84647c689b" category="admonition">에서 암호 및 백업 데이터를 가져야만 합니다 <block ref="cd8ad1809865824065fe011b80800cd6" category="inline-link-macro-rx"></block> 섹션을 참조하십시오.</block>
+  <block id="df032103f8364ffe0942ab84f5f27f22" category="list-text">시스템이 특수 부팅 메뉴로 다시 부팅된 후 옵션 * (1) Normal Boot * 를 실행합니다</block>
+  <block id="1997ee79006c38a9f666947dd57857f2" category="admonition">이 단계에서 오류가 발생할 수 있습니다. 오류가 발생하면 의 하위 단계를 반복합니다 <block ref="8dac798a0974640f6cae187a1dbe2d57" category="inline-xref-macro-rx"></block> 시스템이 정상적으로 부팅될 때까지 기다립니다.</block>
+  <block id="5daba08f0febc7be0229c918d3deaa4d" category="admonition">이 단계에서 오류가 발생할 수 있습니다. 오류가 발생하면 의 하위 단계를 반복합니다 <block ref="1abe7aef97cf6f4670adea7171f10403" category="inline-xref-macro-rx"></block> 시스템이 정상적으로 부팅될 때까지 기다립니다.</block>
+  <block id="37bcf5964cba22a5e1026e3bfd999926" category="list-text">노드 3에서 다음 명령을 실행합니다.</block>
+  <block id="9b4b091bf0690393965fb7724be0006b" category="list-text">데이터 애그리게이트를 재배치하기 전에 노드 3에서 SVM-KEK 키가 "true"로 복원되었는지 확인합니다.</block>
+  <block id="0a52730597fb4ffa01fc117d9e71e3a9" category="listing-title">예</block>
+  <block id="13c13d2352f379924e4032f92cccb33a" category="paragraph">NVE(NetApp Volume Encryption) 및 NAE(NetApp Aggregate Encryption)를 사용하여 업그레이드 중인 시스템의 볼륨을 암호화하는 경우 암호화 구성을 새 노드와 동기화해야 합니다. Key-Manager를 동기화하지 않는 경우 ARL을 사용하여 node3에서 node4로 노드 2 애그리게이트를 재배치할 때, 노드 4에 암호화된 볼륨과 애그리게이트를 온라인 상태로 전환하는 데 필요한 암호화 키가 없으므로 장애가 발생할 수 있습니다.</block>
+  <block id="06faea2c1bf225d7dca01142c99c8244" category="list-text">노드 4에서 다음 명령을 실행합니다.</block>
+  <block id="e6c7a255c2aa3d1c9e8528fdbea53a6b" category="list-text">데이터 애그리게이트를 재배치하기 전에 노드 4에서 SVM-KEK 키가 "true"로 복원되는지 확인합니다.</block>
+  <block id="1b55e7f4887b8fb67aed1cfe14be88a6" category="list-text">[[auto_check_4_step23] 외부 디스크가 있는 시스템에서 내부 및 외부 디스크를 지원하는 시스템(예: AFF A800 시스템)으로 업그레이드하는 경우 node2 애그리게이트를 루트 애그리게이트로 설정하여 node4가 node2의 루트 애그리게이트에서 부팅되도록 하십시오. 루트 애그리게이트를 설정하려면 부팅 메뉴로 이동하여 옵션을 선택합니다<block ref="e4da3b7fbbce2345d7772b0674a318d5" prefix=" " category="inline-code"></block> 를 눌러 유지보수 모드로 전환합니다.</block>
+  <block id="364217334ff62898c99ab53d1c399fd0" category="paragraph">NVE(NetApp Volume Encryption) 및 NAE(NetApp Aggregate Encryption)를 사용하여 업그레이드 중인 시스템의 볼륨을 암호화하는 경우 암호화 구성을 새 노드와 동기화해야 합니다. Key-Manager를 동기화하지 않는 경우 ARL을 사용하여 node2에서 node3으로 노드 1을 재배치할 때 노드 3에 암호화된 볼륨과 애그리게이트를 온라인 상태로 전환하는 데 필요한 암호화 키가 없으므로 장애가 발생할 수 있습니다.</block>
+  <block id="367030bfa78ce5edbeac0c34dadc8486" category="paragraph">NetApp Aggregate Encryption(NAE) 또는 NetApp Volume Encryption(NVE)을 사용하여 업그레이드 중인 시스템의 볼륨을 암호화하는 경우 암호화 구성을 새 노드와 동기화해야 합니다. Key-Manager를 다시 동기화하지 않는 경우 ARL을 사용하여 node1을 node2에서 업그레이드된 node1로 재배치할 때, node1에 암호화된 볼륨과 온라인 애그리게이트를 가져오는 데 필요한 암호화 키가 없으므로 장애가 발생할 수 있습니다.</block>
+  <block id="d78fca99557049bfe942bd572aec4d13" category="list-text">노드 1에서 다음 명령을 실행합니다.</block>
+  <block id="722a50b23f118fce431bda63821ff8b6" category="list-text">데이터 애그리게이트를 재배치하기 전에 SVM-KEK 키가 노드 1에서 "true"로 복원되는지 확인합니다.</block>
+  <block id="5db260fa0b5fbfacb2534214a3285812" category="paragraph">NetApp Aggregate Encryption(NAE) 또는 NetApp Volume Encryption(NVE)을 사용하여 업그레이드 중인 시스템의 볼륨을 암호화하는 경우 암호화 구성을 새 노드와 동기화해야 합니다. Key-Manager를 다시 동기화하지 않는 경우 ARL을 사용하여 node2 애그리게이트를 업그레이드된 node1에서 업그레이드된 node2로 재배치할 때, node2에 암호화된 볼륨 및 애그리게이트를 온라인으로 전환하는 데 필요한 암호화 키가 없으므로 장애가 발생할 수 있습니다.</block>
+  <block id="593e2ad3d429d61bda399cdc2971b3d5" category="list-text">노드 2에서 다음 명령을 실행합니다.</block>
+  <block id="2c44030cea2ae320e19712bb71a7d594" category="list-text">데이터 애그리게이트를 재배치하기 전에 SVM-KEK 키가 노드 2에서 "true"로 복원되는지 확인합니다.</block>
 </blocks>
