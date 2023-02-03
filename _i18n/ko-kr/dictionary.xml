@@ -4277,12 +4277,8 @@
   <block id="9d5ce6c4c82bf9a0ff455a50cadc1ab6" category="list-text">자체 암호화 드라이브를 구성에서 사용 중이며 를 설정한 경우<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 변수 대상<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> (예: AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈을 사용하는 IN_BOOT node2의 경우 _, <block ref="30eda0c27e5ac7524ed5f5f264f13489" category="inline-link-macro-rx"></block>), 변수를 설정 해제해야 합니다.</block>
   <block id="21b9417932c23289b6932c3a0ac2517f" category="list-text">[[boot_node2_step1]] 를 설정합니다<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 및<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> node2 구성이 로드된 후 부트 루프를 방지하기 위한 변수입니다.</block>
   <block id="083a0c049526537d6b95a268054814fb" category="list-text">시스템에 하이브리드 애그리게이트가 있습니다.</block>
-  <block id="6e1f6dfb0fcbfac6c4067f6818568970" category="cell">9.11.1P6 또는 9.10.1P10(2023년 2월 예정)</block>
-  <block id="53f4933654122c2732aaf29d750ecb9c" category="list-text">ONTAP 9.11.1P6 또는 9.10.1P10(2023년 2월 예정)을 실행하고 있습니다.</block>
-  <block id="34fe5db3348c8cff3877298c8c064752" category="paragraph">ARL을 사용하여 다음 시스템 구성에서 ONTAP 9.11.1P6 또는 9.10.1P10(2023년 2월 대상)을 실행하는 컨트롤러 쌍을 업그레이드합니다.</block>
   <block id="b99f39b13055b86a7e0146684c21e326" category="list-text">AFF A700 컨트롤러를 AFF A900 시스템으로</block>
   <block id="9733b2ec9e26adc1936d94dc2a3bb0dd" category="list-text">FAS9500 시스템에 FAS9000 컨트롤러</block>
-  <block id="6425a395e3062e0f480ffee2bc19d2f7" category="admonition">이 절차는 AFF A700에서 AFF A900으로 또는 FAS9500 업그레이드에서 ONTAP 9.11.1P6 또는 9.10.1P10(2023년 2월 예정)을 실행하는 FAS9000에 엄격히 적용됩니다. 다른 시스템 조합 간에 업그레이드를 수행하려면 이 절차를 사용하지 마십시오.</block>
   <block id="a2b13d30d388148b28bbb1a43f3d2d52" category="paragraph">의 내용을 추출합니다<block ref="f466b354adfc3ad817d7c11c037c8797" prefix=" " category="inline-code"></block> 대상 디렉토리로 파일:</block>
   <block id="a9a690b194b002aca2d632eee1a1a1f2" category="paragraph"><block ref="1dfb54a15c6859407fd4c2e52579269b" prefix="" category="inline-code"></block></block>
   <block id="2483e54ca623f46ca2ae8747a545115d" category="admonition">Windows에서 내용을 추출하는 경우 7-Zip 또는 WinRAR을 사용하여 netboot 이미지를 추출합니다.</block>
@@ -4488,4 +4484,8 @@
   <block id="5db260fa0b5fbfacb2534214a3285812" category="paragraph">NetApp Aggregate Encryption(NAE) 또는 NetApp Volume Encryption(NVE)을 사용하여 업그레이드 중인 시스템의 볼륨을 암호화하는 경우 암호화 구성을 새 노드와 동기화해야 합니다. Key-Manager를 다시 동기화하지 않는 경우 ARL을 사용하여 node2 애그리게이트를 업그레이드된 node1에서 업그레이드된 node2로 재배치할 때, node2에 암호화된 볼륨 및 애그리게이트를 온라인으로 전환하는 데 필요한 암호화 키가 없으므로 장애가 발생할 수 있습니다.</block>
   <block id="593e2ad3d429d61bda399cdc2971b3d5" category="list-text">노드 2에서 다음 명령을 실행합니다.</block>
   <block id="2c44030cea2ae320e19712bb71a7d594" category="list-text">데이터 애그리게이트를 재배치하기 전에 SVM-KEK 키가 노드 2에서 "true"로 복원되는지 확인합니다.</block>
+  <block id="4cbf24460087ed8ef9a50719247b86e9" category="paragraph">ARL을 사용하여 ONTAP 9.10.1P10, 9.11.1P6 또는 다음 시스템 구성에서 이후 릴리스를 실행하는 컨트롤러 쌍을 업그레이드합니다.</block>
+  <block id="582b7c7a6d50cab8d1a4af4c6741e5a6" category="admonition">이 절차는 AFF A700에서 AFF A900으로 또는 ONTAP 9.10.1P10, 9.11.1P6 또는 이후 릴리스를 실행하는 FAS9500 업그레이드용 FAS9000에 엄격히 적용됩니다. 다른 시스템 조합 간에 업그레이드를 수행하려면 이 절차를 사용하지 마십시오.</block>
+  <block id="c440ffbf92eaebdac0e849314781e4be" category="cell">9.10.1P10, 9.11.1P6 또는 이후 릴리스</block>
+  <block id="9088ce39ce36bb44cd73f98337e0bfbc" category="list-text">ONTAP 9.10.1P10, 9.11.1P6 또는 이후 릴리스를 실행 중입니다.</block>
 </blocks>
