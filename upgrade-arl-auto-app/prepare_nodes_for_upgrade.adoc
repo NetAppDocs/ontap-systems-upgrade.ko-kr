@@ -140,8 +140,7 @@ NOTE: 업그레이드를 시작하기 전에 FAS8080, AFF8080 시스템과 같�
 ** `network port reachability show -detail`
 
 
-
-
++
 
 NOTE: OKM(Onboard Key Manager)을 사용하는 NVE(NetApp Volume Encryption) 또는 NAE(NetApp Aggregate Encryption)가 사용 중인 경우 키 관리자 암호를 준비하여 절차의 후반부에서 키 관리자를 다시 동기화하는 작업을 완료하십시오.
 
@@ -154,9 +153,9 @@ NOTE: OKM(Onboard Key Manager)을 사용하는 NVE(NetApp Volume Encryption) 또
 
 [NOTE]
 ====
-** 동일한 노드 또는 HA 쌍에서 다른 유형의 드라이브와 FIPS 드라이브를 혼합할 수 없습니다.
-** 동일한 노드 또는 HA 쌍에서 SED를 비암호화 드라이브와 혼합할 수 있습니다.
+동일한 노드 또는 HA 쌍에서 다른 유형의 드라이브와 FIPS 드라이브를 혼합할 수 없습니다.
 
+동일한 노드 또는 HA 쌍에서 SED를 비암호화 드라이브와 혼합할 수 있습니다.
 
 ====
 https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryption-concept.html#supported-self-encrypting-drive-types["지원되는 자체 암호화 드라이브에 대해 자세히 알아보십시오"^].

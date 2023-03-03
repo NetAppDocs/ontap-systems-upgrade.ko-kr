@@ -111,7 +111,7 @@ Do you want to continue? {y|n}: y
 +
 출력을 섹션에서 캡처한 출력과 비교할 수 있습니다 link:prepare_nodes_for_upgrade.html["업그레이드할 노드를 준비합니다"].
 
-. 자체 암호화 드라이브를 구성에서 사용 중이며 를 설정한 경우 `kmip.init.maxwait` 변수 대상 `off` (예: 에서 link:install_boot_node4.html#step27["노드 4, 27단계를 설치 및 부팅합니다"]), 변수를 설정 해제해야 합니다.
+. [[unset_maxwait_system_commands]] 구성에 자체 암호화 드라이브가 사용되고 있고 를 설정한 경우 `kmip.init.maxwait` 변수 대상 `off` (예: 에서 link:install_boot_node4.html#step27["노드 4, 27단계를 설치 및 부팅합니다"]), 변수를 설정 해제해야 합니다.
 +
 `set diag; systemshell -node _node_name_ -command sudo kenv -u -p kmip.init.maxwait`
 

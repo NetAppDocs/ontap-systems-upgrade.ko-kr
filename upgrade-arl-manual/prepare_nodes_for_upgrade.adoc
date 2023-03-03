@@ -728,9 +728,9 @@ NOTE: 이때 노드 2의 경우 AutoSupport 메시지를 NetApp에 보내지 마
 
 [NOTE]
 ====
-** 동일한 노드 또는 HA 쌍에서 다른 유형의 드라이브와 FIPS 드라이브를 혼합할 수 없습니다.
-** 동일한 노드 또는 HA 쌍에서 SED를 비암호화 드라이브와 혼합할 수 있습니다.
+동일한 노드 또는 HA 쌍에서 다른 유형의 드라이브와 FIPS 드라이브를 혼합할 수 없습니다.
 
+동일한 노드 또는 HA 쌍에서 SED를 비암호화 드라이브와 혼합할 수 있습니다.
 
 ====
 https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryption-concept.html#supported-self-encrypting-drive-types["지원되는 자체 암호화 드라이브에 대해 자세히 알아보십시오"^].
