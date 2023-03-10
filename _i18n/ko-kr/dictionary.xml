@@ -4490,4 +4490,5 @@
   <block id="976c8c5d2aa0a879266bc997cec248ad" category="inline-link-macro">새 컨트롤러가 올바르게 설정되었는지 확인하고 11단계를 수행합니다</block>
   <block id="a6b5dd0182841750a8833ae708a7b2f5" category="admonition">* HA 쌍에서 컨트롤러 업그레이드가 완료되면 즉시 의 설정을 해제해야 합니다<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 변수. 을 참조하십시오 <block ref="70709a8592d9d71b5cffa2529c50ab50" category="inline-link-macro-rx"></block>. 그렇지 않으면 정전 발생 시 데이터가 손실될 수 있습니다.*</block>
   <block id="d5252796ebf0e69c5d3078a9ac59bb72" category="list-text">[[unset_maxwait_manual]] 구성에 자체 암호화 드라이브가 사용되고 있고 를 설정한 경우<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 변수 대상<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> (예: 에서 <block ref="c34adc28d35ee24325c874eba95a8786" category="inline-link-macro-rx"></block> of_Install 및 boot node3_) 변수를 설정 해제해야 합니다.</block>
+  <block id="ff8e7d9040b97e4276e06db695236077" category="list-text">node2의 Loader&gt; 프롬프트에서 기본 환경 변수를 설정합니다.</block>
 </blocks>
