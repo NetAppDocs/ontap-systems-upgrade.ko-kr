@@ -2025,12 +2025,10 @@
   <block id="1d32dacc20fe1feb077659fd0bebdc03" category="list-text">시스템에서 HTTP 서버에 액세스할 수 있는지 확인합니다.</block>
   <block id="3f8c328bf258e454068314be8aac5d75" category="list-text">을 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 를 방문하여 귀하의 플랫폼에 필요한 시스템 파일과 올바른 버전의 ONTAP를 다운로드하십시오.</block>
   <block id="48ab14af4b0090253431ed38e4cc2440" category="paragraph">원래 컨트롤러에 설치된 것과 동일한 버전의 ONTAP 9가 없는 경우 새 컨트롤러를 netboot 해야 합니다. 각각의 새 컨트롤러를 설치한 후 웹 서버에 저장된 ONTAP 9 이미지에서 시스템을 부팅합니다. 그런 다음 부팅 미디어 장치에 올바른 파일을 다운로드하여 나중에 시스템을 부팅할 수 있습니다.</block>
-  <block id="3dd228d301de455327861edf46a3a6c7" category="paragraph">하지만 원래 컨트롤러에 설치된 것과 동일한 버전의 ONTAP 9가 설치된 경우 컨트롤러를 netboot 하지 않아도 됩니다. 이 경우 이 섹션을 건너뛰고 로 진행할 수 있습니다 <block ref="2bff11e37a7944fe4126fc6d0031317c" category="inline-link-macro-rx"></block>.</block>
   <block id="021eb7b60dabf41949ccbeca660311c4" category="list-text">[[man_netboot_Step1]]NetApp Support 사이트에 액세스하여 시스템 넷부팅을 수행하는 데 사용되는 파일을 다운로드합니다.</block>
   <block id="103ec41a89beb368e3357fad5f451a92" category="list-text">NetApp Support 사이트의 소프트웨어 다운로드 섹션에서 해당 ONTAP 소프트웨어를 다운로드하고 를 저장합니다<block ref="f466b354adfc3ad817d7c11c037c8797" prefix=" " category="inline-code"></block> 웹 액세스 가능 디렉터리에 있는 파일입니다.</block>
   <block id="5b1b8c3f072422a936e63f0d977e41e0" category="list-text">웹 액세스 가능 디렉토리로 변경하고 필요한 파일을 사용할 수 있는지 확인합니다.</block>
   <block id="843ab277685630f82095416c5b9ae5a1" category="inline-link-macro">3단계</block>
-  <block id="7704ef8efcd46a7ed3c60b0b5522a4f5" category="paragraph">의 디렉토리에 있는 정보를 사용합니다 <block ref="f7260a7bcbdd09edcf840aac6c5a4af7" category="inline-link-macro-rx"></block>.</block>
   <block id="5392067398aba96b96eb467b43962fc8" category="summary">ONTAP 9.7 이하를 실행하는 컨트롤러에서 수동 ARL 업그레이드 중에 MetroCluster 구성 상태를 확인하고 올바르게 작동하는지 확인하십시오.</block>
   <block id="3c27ee7df2005d2721c952492a878a6c" category="paragraph">MetroCluster 구성 상태를 점검하여 올바르게 작동하는지 확인해야 합니다.</block>
   <block id="ce1ec3b6f165be8cdde0654c531487e5" category="list-text">MetroCluster 구성 요소가 정상인지 확인합니다.</block>
@@ -2681,7 +2679,6 @@
   <block id="eb3cf479c5f4d8026ff2061e0c748373" category="cell">다음 명령을 사용합니다.<block ref="d6fadbaedfb698d24409db0a8a2054df" prefix=" " category="inline-code"></block></block>
   <block id="d86fa9c7d1b3bca68c0a69f81f14a78e" category="summary">를 사용하여 ARL 업그레이드를 위한 2단계 프로세스 시퀀스<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> ONTAP 9.8 이상을 실행하는 컨트롤러의 명령입니다.</block>
   <block id="22e9bda17d40c1dbdb534fd455e19fcd" category="list-text"><block ref="22e9bda17d40c1dbdb534fd455e19fcd" category="inline-link-macro-rx"></block></block>
-  <block id="650a4c1ea41a0f666ee188ff323d26b9" category="list-text"><block ref="650a4c1ea41a0f666ee188ff323d26b9" category="inline-link-macro-rx"></block></block>
   <block id="330937217378a90989c78312814a4d5c" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러를 로 업그레이드할 때 2단계, 3단계 또는 5단계에서 마이그레이션한 후 LIF가 온라인 상태가 아닙니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="0be497933ebed90434432b1367f6ac50" category="list-text">포트의 물리적 상태가 인 경우 네트워크 케이블의 물리적 연결을 확인합니다<block ref="74e8333ad11685ff3bdae589c8f6e34d" prefix=" " category="inline-code"></block>.</block>
   <block id="37b10337aa44c11a05aa4efa324640ba" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 를 사용하여 SnapMirror 전송 및 관계를 다시 시작하십시오<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
@@ -2752,7 +2749,6 @@
   <block id="f48d321f9a6be0abe9b9d0094dc62a63" category="summary">를 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 netboot node3 및 node4를 준비합니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="8e79407ae69e201e60bebb326433371d" category="paragraph">절차의 나중에 노드 3과 노드 4를 물리적으로 랙에 설치한 후 해당 노드들을 netboot 해야 할 수도 있습니다. "netboot"는 원격 서버에 저장된 ONTAP 이미지에서 부팅함을 의미합니다. netboot를 준비할 때 시스템이 액세스할 수 있는 웹 서버에 ONTAP 9 부트 이미지 사본을 넣어야 합니다.</block>
   <block id="302937ad7234fe283f1f179989cd1fe0" category="list-text">NetApp Support 사이트에 액세스하여 시스템 netboot에 사용되는 파일을 다운로드합니다.</block>
-  <block id="c7b2f3e7dacd4ee5eb9b0618c5079d8f" category="paragraph">의 디렉토리에 있는 정보를 사용합니다 <block ref="1f9dd4a8865e8664f884ec11b5f13dfc" category="inline-link-macro-rx"></block>.</block>
   <block id="3926b0a999f25273c8f07ee812e70656" category="summary">을 사용하여 ONTAP 9.5를 실행하는 컨트롤러 하드웨어를 9.7로 업그레이드할 수 있습니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령을 실행하여 루트 이외의 애그리게이트에 대한 소유권을 재배치하십시오.</block>
   <block id="b9872d104f5b4706bfb3c12a12c6f3d6" category="cell">9.5에서 9.7</block>
   <block id="d272b28cc3a53d512c32ecaa4766dcac" category="cell"><block ref="d272b28cc3a53d512c32ecaa4766dcac" category="inline-link-macro-rx"></block></block>
@@ -3020,7 +3016,6 @@
   <block id="d06e5a4b4321a973665eb5bf9239cbfa" category="cell"><block ref="d06e5a4b4321a973665eb5bf9239cbfa" category="inline-link-macro-rx"></block></block>
   <block id="767ebec2859c7f997386a7679698edb4" category="summary">을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 netboot node3 및 node4를 준비합니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="83e3abbe2d4f63155eff798e62e1a616" category="inline-link-macro">3단계 노드 설치 및 부팅3</block>
-  <block id="bb9252c2a7cbae6e0a2014a53400a55c" category="paragraph">하지만 원래 컨트롤러에 설치된 것과 동일한 버전의 ONTAP 9가 설치된 경우 컨트롤러를 netboot 하지 않아도 됩니다. 이 경우 이 섹션을 건너뛰고 로 진행할 수 있습니다 <block ref="a3940c661e200ff7ee0136ca0ef37651" category="inline-link-macro-rx"></block></block>
   <block id="6e58652b4dc76659a9eeef1a0ccc6daf" category="paragraph">이 내용은 ARL(Aggregate Relocation)을 사용하여 운영 중단 없이 컨트롤러 하드웨어를 업그레이드하는 방법을 설명합니다.</block>
   <block id="35deab861c4c6574ac8f1f1318cc7d5e" category="paragraph">컨트롤러 하드웨어를 업그레이드하는 다른 방법은 을 참조하십시오 <block ref="503464dd540ecb373e0d8f614f4262f2" category="inline-xref-macro-rx"></block> 볼륨 또는 스토리지 _ 을(를) 이동하여 _ 업그레이드 에 연결합니다.</block>
   <block id="645b41b640376c487d825f5296fcae9d" category="paragraph">ONTAP를 실행하는 노드 쌍에서 비 루트 애그리게이트를 동일한 클러스터의 새 노드로 마이그레이션하여 컨트롤러 하드웨어를 중단 없이 업그레이드할 수 있습니다. 업그레이드 중인 노드에서 호스팅되는 데이터에 액세스할 수 있습니다.</block>
@@ -3626,7 +3621,6 @@
   <block id="301e2a674920a7bb1b220a6ccd88ce36" category="inline-link">업그레이드 또는 새로 고침 방법 선택</block>
   <block id="58e1fb49e8eda8dc590e37ebdffc8e85" category="list-text">2노드 MetroCluster 구성을 업그레이드하는 경우 다음을 참조하십시오.<block ref="a3f8fb08d450ed0f7b5dc460c9a9149e" category="inline-link-rx"></block></block>
   <block id="f2c81e3dbd5898a4f589948eb2c23e36" category="paragraph">시스템에 내부 스토리지가 있습니다</block>
-  <block id="db80f5bf265434b9ca90bc5f0cac1f17" category="admonition">다음 시스템에는 내부 스토리지가 있습니다. FAS2520, FAS2552, FAS2554, FAS2620, FAS2650, FAS2720, FAS2750, AFF A200, AFF A220, AFF A700s, AFF A800, AFF A250 및 AFF C190.</block>
   <block id="2c422b7143016a62faa144bc1c6e89e1" category="list-text">내부 스토리지가 있는 시스템의 경우 볼륨을 이동하여 업그레이드하는 것이 좋습니다.</block>
   <block id="e908e6e2b5df3efafd19fa616b538a72" category="list-text">내부 스토리지가 있는 시스템의 경우 시스템을 드라이브 쉘프로 변환한 후 동일한 클러스터의 새 노드에 연결할 수 있습니다. FAS2520 컨트롤러는 드라이브 쉘프로 변환할 수 없습니다.</block>
   <block id="e9ddbc0542fbe11aae2eccf01c4e4a89" category="paragraph">FAS255x 시스템을 드라이브 쉘프로 변환하는 작업은 스토리지를 이동하여 업그레이드하는 워크플로우에서 선택적 작업입니다.</block>
@@ -3641,8 +3635,6 @@
   <block id="31e9ea6f4ed38186085bf9a52128a461" category="inline-link">스토리지 컨트롤러 마더보드를 교체하는 동안 문제를 해결하는 방법 및 iSCSI 및 FCP로 헤드 업그레이드</block>
   <block id="b1ddd6d6d90c80426e14d10c6ded3cc0" category="paragraph"><block ref="b1ddd6d6d90c80426e14d10c6ded3cc0" category="inline-link-rx"></block></block>
   <block id="6125b5468b29015c919d2eaf565415e6" category="list-text">아웃오브밴드 ACP를 사용하는 시스템의 경우, 아웃오브밴드 ACP에서 인밴드 ACP로 마이그레이션해야 할 수 있습니다.</block>
-  <block id="c0ae7629e7bfcf00be0d40631578d6f7" category="inline-link">NetApp KB 문서 1029778: 대역 내 ACP 설정 및 지원</block>
-  <block id="8481ff5a6197df6d5f77cc03a2cc6d88" category="paragraph"><block ref="8481ff5a6197df6d5f77cc03a2cc6d88" category="inline-link-rx"></block></block>
   <block id="d33f2a600ba4fe43084a26e95e4908c0" category="paragraph">* 관련 정보 *</block>
   <block id="5b0415c2846efde1fb66c48433f25633" category="inline-xref-macro">컨트롤러 하드웨어를 업그레이드하는 방법을 선택합니다</block>
   <block id="41e8d90d580396f4d1d06d6dcc1e6ff7" category="paragraph"><block ref="41e8d90d580396f4d1d06d6dcc1e6ff7" category="inline-xref-macro-rx"></block></block>
@@ -3949,7 +3941,6 @@
   <block id="589fe3c8d827ae39970fa59898cfc3ee" category="summary">일반적으로 컨트롤러 하드웨어를 업그레이드하는 방법은 원래 노드의 플랫폼 모델에 따라 다릅니다. 스토리지\(중단 절차\)를 이동하거나 볼륨 \(무중단 절차\)을 이동하여 업그레이드하십시오.</block>
   <block id="39b87627b0135db0ab3ea0a8e2f859bd" category="paragraph">일반적으로 컨트롤러 하드웨어를 업그레이드하는 방법은 원래 노드의 플랫폼 모델에 따라 다릅니다. 스토리지(운영 중단 절차) 또는 볼륨 이동(무중단 절차)을 통해 업그레이드하십시오.</block>
   <block id="e8617aabffae0af74d02587319a2e105" category="image-alt">컨트롤러 하드웨어 업그레이드 방법</block>
-  <block id="e427f9006ac0f6079ad11054809d205e" category="admonition">내부 드라이브가 포함된 모델: FAS2520, FAS2552, FAS2554, FAS2620, FAS2650, FAS2720, FAS2750, AFF A200, AFF A220, AFF A700s, AFF A800, AFF A250</block>
   <block id="dafbb22fd53a8bbbcd7e0e587f256606" category="inline-link-macro">스토리지 이동을 통한 업그레이드 워크플로우</block>
   <block id="268c885d4c1c9189f00bfa017a5b9d17" category="paragraph"><block ref="268c885d4c1c9189f00bfa017a5b9d17" category="inline-link-macro-rx"></block></block>
   <block id="7d466f4faaea4136b0f35ee3a444b2ee" category="inline-link-macro">볼륨을 이동하여 업그레이드하는 데 필요한 워크플로우</block>
@@ -4491,4 +4482,12 @@
   <block id="a6b5dd0182841750a8833ae708a7b2f5" category="admonition">* HA 쌍에서 컨트롤러 업그레이드가 완료되면 즉시 의 설정을 해제해야 합니다<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 변수. 을 참조하십시오 <block ref="70709a8592d9d71b5cffa2529c50ab50" category="inline-link-macro-rx"></block>. 그렇지 않으면 정전 발생 시 데이터가 손실될 수 있습니다.*</block>
   <block id="d5252796ebf0e69c5d3078a9ac59bb72" category="list-text">[[unset_maxwait_manual]] 구성에 자체 암호화 드라이브가 사용되고 있고 를 설정한 경우<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 변수 대상<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> (예: 에서 <block ref="c34adc28d35ee24325c874eba95a8786" category="inline-link-macro-rx"></block> of_Install 및 boot node3_) 변수를 설정 해제해야 합니다.</block>
   <block id="ff8e7d9040b97e4276e06db695236077" category="list-text">node2의 Loader&gt; 프롬프트에서 기본 환경 변수를 설정합니다.</block>
+  <block id="12dd85e558ba4dfcc9dce978f489296a" category="admonition">내부 드라이브가 포함된 모델: FAS2520, FAS2552, FAS2554, FAS2620, FAS2650, FAS2720, FAS2750, AFF A200, AFF A220, AFF A700s, AFF A800, AFF A250 및 AFF C250</block>
+  <block id="61a0b5df76df0fff1f7315d4d3251795" category="admonition">다음 시스템에는 내부 스토리지가 있습니다. FAS2520, FAS2552, FAS2554, FAS2620, FAS2650, FAS2720, FAS2750, AFF A200, AFF A220, AFF A700s, AFF A800, AFF A250, AFF C250 및 AFF C190.</block>
+  <block id="91d5a2c546d26762fc836e91700a4d86" category="inline-link">NetApp KB 문서: 대역 내 ACP 설정 및 지원</block>
+  <block id="0af17efca2dae8b310233b584154a94b" category="paragraph"><block ref="0af17efca2dae8b310233b584154a94b" category="inline-link-rx"></block></block>
+  <block id="00e3434af8f53caecc96a787f100e5fa" category="paragraph">하지만 원래 컨트롤러에 설치된 것과 동일한 버전의 ONTAP 9가 설치된 경우 컨트롤러를 netboot 하지 않아도 됩니다. 이 경우 이 섹션을 건너뛰고 로 진행할 수 있습니다 <block ref="6ba5630a5f60662e8fc1f03d17393494" category="inline-link-macro-rx"></block>.</block>
+  <block id="f2d3ce1d1db6751407cc3928aac9de0c" category="paragraph">의 디렉토리에 있는 정보를 사용합니다 <block ref="17f88a9bcb978d5101977810aab93c38" category="inline-link-macro-rx"></block>.</block>
+  <block id="ab2126455dabf7b57fb465e0cbe0ec41" category="paragraph">의 디렉토리에 있는 정보를 사용합니다 <block ref="ab6acaf1648b65fe7eff652317a95a17" category="inline-link-macro-rx"></block>.</block>
+  <block id="85e374a47bd77502ca7ecd58923ec819" category="paragraph">하지만 원래 컨트롤러에 설치된 것과 동일한 버전의 ONTAP 9가 설치된 경우 컨트롤러를 netboot 하지 않아도 됩니다. 이 경우 이 섹션을 건너뛰고 로 진행할 수 있습니다 <block ref="c6531ef0bbbd2a28b8b9b75b1dc2026b" category="inline-link-macro-rx"></block></block>
 </blocks>

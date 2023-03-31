@@ -55,6 +55,6 @@ NOTE: 의 내용을 추출할 필요는 없습니다 `<ontap_version>_image.tgz`
 
 |===
 +
-의 디렉토리에 있는 정보를 사용합니다 link:stage_3_install_boot_node3_overview.html["3단계"].
+의 디렉토리에 있는 정보를 사용합니다 link:install_boot_node3.html["3단계"].
 
 

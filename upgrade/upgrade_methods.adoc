@@ -16,7 +16,7 @@ summary: '일반적으로 컨트롤러 하드웨어를 업그레이드하는 방
 image::../upgrade/media/methods_for_upgrading_controller_hardware.png[컨트롤러 하드웨어 업그레이드 방법]
 
 
-NOTE: 내부 드라이브가 포함된 모델: FAS2520, FAS2552, FAS2554, FAS2620, FAS2650, FAS2720, FAS2750, AFF A200, AFF A220, AFF A700s, AFF A800, AFF A250
+NOTE: 내부 드라이브가 포함된 모델: FAS2520, FAS2552, FAS2554, FAS2620, FAS2650, FAS2720, FAS2750, AFF A200, AFF A220, AFF A700s, AFF A800, AFF A250 및 AFF C250
 
 시스템이 위에 나열되지 않은 경우 를 참조하십시오 https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^] 내부 드라이브가 있는지 확인합니다.
 

@@ -49,7 +49,7 @@ https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["CLI를 통한 �
 시스템에 내부 스토리지가 있습니다
 
 
-NOTE: 다음 시스템에는 내부 스토리지가 있습니다. FAS2520, FAS2552, FAS2554, FAS2620, FAS2650, FAS2720, FAS2750, AFF A200, AFF A220, AFF A700s, AFF A800, AFF A250 및 AFF C190.
+NOTE: 다음 시스템에는 내부 스토리지가 있습니다. FAS2520, FAS2552, FAS2554, FAS2620, FAS2650, FAS2720, FAS2750, AFF A200, AFF A220, AFF A700s, AFF A800, AFF A250, AFF C250 및 AFF C190.
 
 * 시스템이 위에 나열되지 않은 경우 를 참조하십시오 https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^] 내부 드라이브가 있는지 확인합니다.
 * 내부 스토리지가 있는 시스템의 경우 볼륨을 이동하여 업그레이드하는 것이 좋습니다.
@@ -79,7 +79,7 @@ https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FlexPod_wi
 
 * 아웃오브밴드 ACP를 사용하는 시스템의 경우, 아웃오브밴드 ACP에서 인밴드 ACP로 마이그레이션해야 할 수 있습니다.
 +
-https://kb.netapp.com/app/answers/answer_view/a_id/1029778["NetApp KB 문서 1029778: 대역 내 ACP 설정 및 지원"^]
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/In-Band_ACP_Setup_and_Support["NetApp KB 문서: 대역 내 ACP 설정 및 지원"^]
 
 
 
