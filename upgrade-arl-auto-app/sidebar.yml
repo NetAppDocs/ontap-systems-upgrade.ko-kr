@@ -37,7 +37,7 @@ entries:
   - title: 노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치합니다
     url: "/upgrade-arl-auto-app/relocate_non_root_aggr_nas_data_lifs_node1_node2.html"
   - title: 장애가 발생하거나 거부권을 행사한 Aggregate를 재배치합니다
-    url: "/upgrade-arl-auto-app/relocate_failed_vetoed_aggr.html"
+    url: "/upgrade-arl-auto-app/relocate_failed_or_vetoed_aggr.html"
   - title: 노드1을 폐기합니다
     url: "/upgrade-arl-auto-app/retire_node1.html"
   - title: netboot를 준비합니다
