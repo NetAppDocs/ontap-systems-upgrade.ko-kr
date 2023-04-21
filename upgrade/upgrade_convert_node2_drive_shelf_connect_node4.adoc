@@ -1,0 +1,35 @@
+---
+permalink: upgrade/upgrade_convert_node2_drive_shelf_connect_node4.html 
+sidebar: sidebar 
+keywords: ndu, nondisruptive, upgrade, node2, node4, reassign, drives 
+summary: '노드 2(AFF A250)를 NS224 드라이브 쉘프로 변환한 다음 노드 4(AFF A400)에 연결합니다.' 
+---
+= 노드 2를 드라이브 쉘프로 변환한 후 노드 4에 연결합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+노드 2에서 노드 4로 드라이브를 재할당하기 전에 AFF A250 노드 2를 NS224 드라이브 쉘프로 변환한 다음 AFF A400 노드 4에 연결합니다.
+
+.단계
+. 노드 2에서 모든 네트워크 케이블을 분리합니다.
+. AFF A250 섀시에서 노드 2를 제거합니다.
+. 노드 2의 베이에 NVMe 쉘프 모듈(NSM)을 삽입합니다.
+. 노드 4 100GbE 포트 e0c를 NSM B 포트 e0a에 케이블로 연결하여 NSM을 노드 4에 연결합니다.
++
+image::../upgrade/media/a400_with_ns224_shelf.PNG[하나의 NS224 쉘프로 AFF A400]
+
+. 노드4의 25GbE 온보드 포트(e0e, e0f, e0g 또는 e0h)에 노드2 포트 e0c 및 e0d의 25GbE 케이블 연결을 연결합니다.
++
+
+NOTE: 25GbE 온보드 포트가 노드4에 없는 경우 25GbE PCIe 어댑터를 사용하여 연결할 수 있습니다.
+
+. AFF A400 시스템에서 FC 포트를 온보드 포트로 사용하는 경우, 마이그레이션 중에 클러스터 연결을 위해 각 노드에 25GB 이더넷 어댑터를 설치합니다.
++
+.. e0a 및 e0b 포트를 사용하여 AFF A400 노드 간에 HA 쌍 케이블을 연결합니다.
+.. 포트 e3a와 e3b를 사용하여 AFF A400 노드 간에 클러스터 케이블을 연결합니다.
+
+
+

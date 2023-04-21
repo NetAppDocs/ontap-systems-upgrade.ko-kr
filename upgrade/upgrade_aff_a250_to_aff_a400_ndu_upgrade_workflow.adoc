@@ -1,0 +1,28 @@
+---
+permalink: upgrade/upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html 
+sidebar: sidebar 
+keywords: ndu, nondisruptive, upgrade, AFF, FAS, systems, entry, level 
+summary: 스토리지 및 클러스터 스위치를 추가로 구매하지 않고도 엔트리 레벨 NetApp AFF 및 FAS 시스템으로 NDU를 수행하십시오. 
+---
+= 워크플로우
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+각 AFF A250 노드를 NS224 드라이브 쉘프로 변환한 다음 AFF A400 교체 노드에 연결하여 NetApp AFF A250 시스템에서 AFF A400 시스템으로 무중단 업그레이드를 수행할 수 있습니다.
+
+이 절차에서는 AFF A250 HA(고가용성) 쌍 컨트롤러를 노드 1과 노드 2라고 하며, 교체용 AFF A400 HA 쌍 컨트롤러를 노드 3과 노드 4라고 합니다.
+
+image::../upgrade/media/ndu_upgrade_entry_level_systems.PNG[드라이브 쉘프로 전환하여 AFF A250을 AFF A400으로 업그레이드하기 위한 워크플로우]
+
+.단계.
+. xref:upgrade_migrate_lifs_aggregates_node2_to_node1.adoc[노드 2의 LIF 및 데이터 애그리게이트를 노드 1로 마이그레이션합니다]
+. xref:upgrade_convert_node2_drive_shelf_connect_node4.adoc[노드 2를 드라이브 쉘프로 변환한 후 노드 4에 연결합니다]
+. xref:upgrade_reassign_drives_node2_to_node4.adoc[노드 2에서 노드 4로 드라이브를 재할당합니다]
+. xref:upgrade_migrate_aggregates_epsilon_lifs_node1_node4.adoc[노드 1의 데이터 애그리게이트, epsilon 및 LIF를 노드 4로 마이그레이션합니다]
+. xref:upgrade_convert_node1_drive_shelf_connect_node3.html[노드 1을 드라이브 쉘프로 변환한 후 노드 3에 연결합니다]
+. xref:upgrade_reassign_drives_node1_to_node3.adoc[노드 1에서 노드 3으로 드라이브를 재할당합니다]
+. xref:upgrade_migrate_lIFs_aggregates_node4_node3.adoc[노드 4의 LIF 및 데이터 애그리게이트를 노드 3으로 마이그레이션]
+

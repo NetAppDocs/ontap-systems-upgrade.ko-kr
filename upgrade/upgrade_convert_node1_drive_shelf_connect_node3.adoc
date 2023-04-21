@@ -1,0 +1,29 @@
+---
+permalink: upgrade/upgrade_convert_node1_drive_shelf_connect_node3.html 
+sidebar: sidebar 
+keywords: ndu, nondisruptive, upgrade, node3, node1, reassign, drives 
+summary: 노드 1에서 노드 3으로 드라이브를 다시 할당하기 전에 노드 1을 노드 3에 물리적으로 연결합니다 
+---
+= 노드 1을 드라이브 쉘프로 변환한 후 노드 3에 연결합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+노드 1에서 노드 3으로 드라이브를 재할당하기 전에 AFF A250 노드 1을 NS224 드라이브 쉘프로 변환한 다음 AFF A400 노드 3에 연결합니다.
+
+.단계
+. 노드 1에서 모든 네트워크 케이블을 분리합니다.
+. AFF A250 섀시에서 노드 1을 제거합니다.
+. 노드 1의 베이에 NVMe 쉘프 모듈(NSM)을 삽입합니다.
+. 노드 3 100GbE 포트 e0c를 NSM A 포트 e0a에 케이블로 NSM을 노드 3에 연결합니다.
++
+image::../upgrade/media/a400_with_ns224_shelf.PNG[하나의 NS224 쉘프로 AFF A400]
+
+. 노드1의 25GbE 포트 e0c 및 e0d에서 노드3의 25GbE 온보드 포트(e0e, e0f, e0g 또는 e0h) 2개에 25GbE 케이블을 연결합니다.
++
+
+NOTE: 25GbE 온보드 포트가 노드3에 없는 경우 25GbE PCIe 어댑터를 사용하여 연결할 수 있습니다.
+
+

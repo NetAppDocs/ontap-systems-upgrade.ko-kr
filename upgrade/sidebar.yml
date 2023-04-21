@@ -82,3 +82,21 @@ entries:
     url: "/upgrade/upgrade-unjoin-original-nodes-move-volumes.html"
   - title: 업그레이드를 완료합니다
     url: "/upgrade/upgrade-complete-move-volumes.html"
+- title: 드라이브 쉘프로 전환하여 AFF A250을 AFF A400으로 업그레이드합니다
+  entries:
+  - title: 워크플로우
+    url: "/upgrade/upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html"
+  - title: 노드 2의 LIF 및 데이터 애그리게이트를 노드 1로 마이그레이션합니다
+    url: "/upgrade/upgrade_migrate_lifs_aggregates_node2_to_node1.html"
+  - title: 노드 2를 드라이브 쉘프로 변환한 후 노드 4에 연결합니다
+    url: "/upgrade/upgrade_convert_node2_drive_shelf_connect_node4.html"
+  - title: 노드 2에서 노드 4로 드라이브를 재할당합니다
+    url: "/upgrade/upgrade_reassign_drives_node2_to_node4.html"
+  - title: 노드 1의 데이터 애그리게이트, epsilon 및 LIF를 노드 4로 마이그레이션합니다
+    url: "/upgrade/upgrade_migrate_aggregates_epsilon_lifs_node1_to_node4.html"
+  - title: 노드 1을 드라이브 쉘프로 변환한 후 노드 3에 연결합니다
+    url: "/upgrade/upgrade_convert_node1_drive_shelf_connect_node3.html"
+  - title: 노드 1에서 노드 3으로 드라이브를 재할당합니다
+    url: "/upgrade/upgrade_reassign_drives_node1_to_node3.html"
+  - title: 노드 4의 LIF 및 데이터 애그리게이트를 노드 3으로 마이그레이션
+    url: "/upgrade/upgrade_migrate_lIFs_aggregates_node4_node3.html"

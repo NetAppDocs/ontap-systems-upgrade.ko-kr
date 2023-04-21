@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app/manage-authentication-using-kmip-servers.html 
+keywords: ip, address, external, key, management, server, storage, encryption, upgrading, authentication 
+summary: '을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 스토리지 암호화를 구성 및 관리하고 인증 키를 관리하고 SnapMirror 관계를 중지합니다 `system controller replace` 명령.' 
+---
+= KMIP 서버를 사용하여 인증 관리
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ONTAP 9.8 이상에서는 키 관리 상호 운용성 프로토콜(KMIP) 서버를 사용하여 인증 키를 관리할 수 있습니다.
+
+.단계
+. 새 컨트롤러 추가:
++
+`security key-manager external enable`
+
+. 키 관리자 추가:
++
+`security key-manager external add-servers -key-servers _key_management_server_ip_address_`
+
+. 키 관리 서버가 구성되어 있고 클러스터의 모든 노드에서 사용할 수 있는지 확인합니다.
++
+`security key-manager external show-status`
+
+. 연결된 모든 키 관리 서버에서 새 노드로 인증 키를 복원합니다.
++
+`security key-manager external restore -node _new_controller_name_`
+
+

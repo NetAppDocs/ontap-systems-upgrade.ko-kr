@@ -129,7 +129,7 @@ Controller replacement operation has been paused for user intervention.
 
 NOTE: Onboard Key Manager를 사용하는 NetApp Volume Encryption(NVE) 또는 NetApp Aggregate Encryption(NAE)이 사용 중인 경우, 키 관리자 암호를 준비하여 절차의 뒷부분에서 키 관리자 재동기화를 완료하십시오.
 
-. 시스템에서 자체 암호화 드라이브를 사용하는 경우 기술 자료 문서를 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/How_to_tell_I_have_FIPS_drives_installed["FIPS 드라이브가 설치되어 있는지 확인하는 방법"^] 업그레이드하는 HA 쌍에서 사용 중인 자체 암호화 드라이브의 유형을 확인합니다. ONTAP 소프트웨어는 두 가지 유형의 자체 암호화 드라이브를 지원합니다.
+. 시스템에서 자체 암호화 드라이브를 사용하는 경우 기술 자료 문서를 참조하십시오 https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["드라이브가 FIPS 인증되었는지 확인하는 방법"^] 업그레이드하는 HA 쌍에서 사용 중인 자체 암호화 드라이브의 유형을 확인합니다. ONTAP 소프트웨어는 두 가지 유형의 자체 암호화 드라이브를 지원합니다.
 +
 --
 ** FIPS 인증 NSE(NetApp Storage Encryption) SAS 또는 NVMe 드라이브

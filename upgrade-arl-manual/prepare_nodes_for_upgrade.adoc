@@ -682,19 +682,14 @@ node2            enable    Postmaster    -                 mailhost
 
 
 | AutoSupport가 활성화되어 있습니다...  a| 
-.. 로 이동합니다 <<man_prepare_nodes_step34,34단계>>.
-.. 섹션으로 이동합니다 link:get_address_key_management_server_encryption.html["스토리지 암호화를 위한 외부 키 관리 서버의 IP 주소를 가져옵니다"].
-
+로 이동합니다 <<man_prepare_nodes_step34,34단계>>.
 
 
 
 | AutoSupport가 활성화되지 않았습니다...  a| 
-.. 시스템 관리 참조 _ 의 지침에 따라 AutoSupport를 활성화합니다. (을 참조하십시오 link:other_references.html["참조"] 시스템 관리 참조 _.(에 대한 링크)
-+
-* 참고: * 스토리지 시스템을 처음 구성할 때 AutoSupport는 기본적으로 사용하도록 설정됩니다. AutoSupport는 언제든지 비활성화할 수 있지만 활성화 상태를 유지해야 합니다. AutoSupport를 활성화하면 스토리지 시스템에서 문제가 발생할 경우 문제 및 솔루션을 쉽게 식별할 수 있습니다.
+시스템 관리 참조 _ 의 지침에 따라 AutoSupport를 활성화합니다. (을 참조하십시오 link:other_references.html["참조"] 시스템 관리 참조 _.(에 대한 링크)
 
-.. 로 이동합니다 link:get_address_key_management_server_encryption.html["스토리지 암호화를 위한 외부 키 관리 서버의 IP 주소를 가져옵니다"] 섹션을 참조하십시오.
-
++ * 참고: * 스토리지 시스템을 처음 구성할 때 AutoSupport는 기본적으로 사용하도록 설정됩니다. AutoSupport는 언제든지 비활성화할 수 있지만 활성화 상태를 유지해야 합니다. AutoSupport를 활성화하면 스토리지 시스템에서 문제가 발생할 경우 문제 및 솔루션을 쉽게 식별할 수 있습니다.
 
 |===
 . [[man_prepare_nodes_step34]] 원본 노드 모두에 다음 명령을 입력하고 출력을 검사하여 AutoSupport가 올바른 메일 호스트 세부 정보와 수신자 이메일 ID로 구성되었는지 확인합니다.
@@ -719,7 +714,7 @@ NOTE: 이때 노드 2의 경우 AutoSupport 메시지를 NetApp에 보내지 마
 +
 필드 `Last Subject Sent:` 및 `Last Time Sent:` 마지막으로 보낸 메시지의 메시지 제목과 메시지를 보낸 시간을 포함합니다.
 
-. 시스템에서 자체 암호화 드라이브를 사용하는 경우 기술 자료 문서를 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/How_to_tell_I_have_FIPS_drives_installed["FIPS 드라이브가 설치되어 있는지 확인하는 방법"^] 업그레이드하는 HA 쌍에서 사용 중인 자체 암호화 드라이브의 유형을 확인합니다. ONTAP 소프트웨어는 두 가지 유형의 자체 암호화 드라이브를 지원합니다.
+. 시스템에서 자체 암호화 드라이브를 사용하는 경우 기술 자료 문서를 참조하십시오 https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["드라이브가 FIPS 인증되었는지 확인하는 방법"^] 업그레이드하는 HA 쌍에서 사용 중인 자체 암호화 드라이브의 유형을 확인합니다. ONTAP 소프트웨어는 두 가지 유형의 자체 암호화 드라이브를 지원합니다.
 +
 --
 ** FIPS 인증 NSE(NetApp Storage Encryption) SAS 또는 NVMe 드라이브

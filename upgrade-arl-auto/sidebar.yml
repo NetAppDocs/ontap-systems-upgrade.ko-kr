@@ -90,8 +90,8 @@ entries:
   entries:
   - title: 개요
     url: "/upgrade-arl-auto/stage_6_index.html"
-  - title: 스토리지 암호화를 위한 외부 키 관리 서버의 IP 주소를 가져옵니다
-    url: "/upgrade-arl-auto/get_ip_address_of_external_kms_for_storage_encryption.html"
+  - title: KMIP 서버를 사용하여 인증 관리
+    url: "/upgrade-arl-auto/manage-authentication-using-kmip-servers.html"
   - title: 새 컨트롤러가 올바르게 설정되었는지 확인합니다
     url: "/upgrade-arl-auto/ensure_new_controllers_are_set_up_correctly.html"
   - title: 새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다

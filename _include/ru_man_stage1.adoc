@@ -7,7 +7,7 @@
 .단계
 . link:determine_aggregates_on_internal_drives.html["컨트롤러에 내부 디스크 드라이브에 Aggregate가 있는지 확인합니다"]
 . link:prepare_nodes_for_upgrade.html["업그레이드할 노드를 준비합니다"]
-. link:manage_authentication_okm.html["온보드 키 관리자를 사용하여 인증을 관리합니다"]
+. link:manage_authentication_okm.html["Onboard Key Manager를 사용하여 인증 키를 관리합니다"]
 . link:quiesce_snapmirror_relationships.html["SnapMirror 관계를 중지합니다"]
 . link:prepare_for_netboot.html["netboot를 준비합니다"]
 

@@ -5,7 +5,7 @@
 6단계 동안 새 노드가 올바르게 설정되었는지 확인하고, 새 노드가 암호화를 사용하도록 설정된 경우 스토리지 암호화 또는 NetApp 볼륨 암호화를 구성하고 설정합니다. 또한 이전 노드의 사용을 중지하고 SnapMirror 작업을 다시 시작해야 합니다.
 
 .단계
-. link:get_ip_address_of_external_kms_for_storage_encryption.html["스토리지 암호화를 위한 외부 키 관리 서버의 IP 주소를 가져옵니다"]
+. link:manage-authentication-using-kmip-servers.html["KMIP 서버를 사용하여 인증 관리"]
 . link:ensure_new_controllers_are_set_up_correctly.html["새 컨트롤러가 올바르게 설정되었는지 확인합니다"]
 . link:set_up_storage_encryption_new_module.html["새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다"]
 . link:set_up_netapp_volume_encryption_new_module.html["새 컨트롤러 모듈에 NetApp 볼륨 또는 애그리게이트 암호화를 설정합니다"]

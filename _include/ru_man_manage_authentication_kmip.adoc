@@ -21,12 +21,4 @@ ONTAP 9.5 이상에서는 키 관리 상호 운용성 프로토콜(KMIP) 서버�
 +
 `security key-manager restore -node _new_controller_name_`
 
-. 새 인증 키를 사용하여 모든 자체 암호화 디스크를 다시 입력하다
-+
-`storage encryption disk modify -disk * [-data-key-id nonMSID AK]`
-
-. FIPS(Federal Information Processing Standard)를 사용하는 경우 새 인증 키를 사용하여 모든 자체 암호화 디스크를 다시 입력하다
-+
-`storage encryption disk* modify -disk * [-fips-key-id nonMSID AK]`
-
 

@@ -1,0 +1,103 @@
+---
+permalink: upgrade/upgrade_migrate_aggregates_epsilon_lifs_node1_to_node4.html 
+sidebar: sidebar 
+keywords: ndu, nondisruptive, upgrade, node1, node4, migrate, aggregates, lifs 
+summary: 노드 1의 데이터 애그리게이트, epsilon 및 LIF를 노드 4로 마이그레이션합니다. 
+---
+= 노드 1의 데이터 애그리게이트, epsilon 및 LIF를 노드 4로 마이그레이션합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+AFF A250 node1을 드라이브 쉘프로 변환하기 전에 node1의 데이터 애그리게이트, epsilon 및 논리 인터페이스(LIF)를 AFF A400 node4로 마이그레이션합니다.
+
+.단계
+. 노드의 LOADER 프롬프트에서 노드를 부팅 메뉴로 부팅합니다.
++
+`boot_ontap menu`
+
+. 옵션을 선택합니다 `6 Update flash from backup config` /var 파일 시스템을 node4로 복구합니다.
++
+그러면 모든 플래시 기반 구성이 디스크에 대한 마지막 백업으로 대체됩니다.
+
+. 를 입력합니다 `y` 를 눌러 계속합니다.
++
+[NOTE]
+====
+예상대로 노드가 자동으로 재부팅되어 /var 파일 시스템의 새 복사본을 로드합니다.
+
+노드가 시스템 ID 불일치 경고를 보고합니다. 를 입력합니다 `y` 시스템 ID를 무시하려면
+
+====
+. 클러스터 LIF 마이그레이션:
++
+`set -privilege advanced`
+
++
+`network port show`
+
++
+[NOTE]
+====
+AFF A250을 AFF A400으로 업그레이드할 때 시스템 클러스터 포트가 비슷하지 않으면 노드 4의 인터페이스를 클러스터 포트로 일시적으로 변경해야 할 수 있습니다.
+
+.. `network port modify -node _node4_ -port _port_name_ -mtu 9000 -ipspace Cluster`
+.. `network interface migrate -vserver Cluster -lif _cluster_LIF_  -destination-node _node4_ -destination-port _port_name_`
+
+
+====
+. 노드 1의 데이터 애그리게이트를 노드 4로 마이그레이션:
++
+`storage aggregate relocation start -aggregate-list _aggregate_list_name_ -node _node1_ -destination _node4_ -ndo-controller-upgrade true -override-destination-checks true`
+
+. 클러스터의 모든 데이터 애그리게이트 상태 표시:
++
+`storage aggregate show`
+
+. epsilon을 node1에서 제거한 후 node4로 이동하여 마이그레이션합니다.
++
+.. 노드 1에서 epsilon 제거:
++
+`cluster modify -epsilon false -node _local_node_name_`
+
+.. epsilon을 node4로 이동:
++
+`cluster modify -epsilon true -node _partner_node_name_`
+
+
+
+. 클러스터 상태 표시:
++
+`cluster show`
+
+. 모든 데이터 네트워크 LIF 표시:
++
+`network interface show -role data`
+
+. 모든 데이터 LIF를 노드 4로 마이그레이션:
++
+`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node_name_`
+
+. 클러스터에 있는 모든 데이터 LIF의 상태를 표시합니다.
++
+`network interface show -role data`
+
+. LIF가 하나라도 다운되면 LIF의 관리 상태를 로 설정합니다 `up` 다음 명령을 각 LIF에 대해 한 번 입력합니다.
++
+`network interface modify -vserver _vserver_name_ -lif _lif_name_ -home-node _node_name_ -status-admin up`
+
+. 클러스터 관리 LIF 마이그레이션:
++
+`network interface migrate -vserver _vserver_name_ -lif cluster_mgmt -destination-node _node4_ -destination-port _port_name_`
+
+. 클러스터 관리 LIF의 상태를 표시합니다.
++
+`network interface show cluster_mgmt`
+
+. 노드1 중지:
++
+`halt -node _node1_ -inhibit-takeover true -ignore-quorum-warnings true`
+
+

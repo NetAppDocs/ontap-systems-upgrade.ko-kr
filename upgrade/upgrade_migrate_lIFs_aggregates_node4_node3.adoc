@@ -1,0 +1,134 @@
+---
+permalink: upgrade/upgrade_migrate_lIFs_aggregates_node4_node3.html 
+sidebar: sidebar 
+keywords: ndu, nondisruptive, upgrade, node3, node4, migrate, aggregates, lif 
+summary: 노드 3을 준비하고 노드 3을 노드 4에 연결한 다음 노드 4의 데이터 LIF 및 데이터 애그리게이트를 노드 3으로 마이그레이션합니다. 
+---
+= 노드 4의 LIF 및 데이터 애그리게이트를 노드 3으로 마이그레이션
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+업그레이드를 완료하려면 노드 3을 노드 4에 연결한 다음 노드 4의 데이터 논리 인터페이스(LIF) 및 데이터 애그리게이트를 노드 3으로 마이그레이션합니다.
+
+.단계
+. 노드의 LOADER 프롬프트에서 노드를 부팅 메뉴로 부팅합니다.
++
+`boot_ontap menu`
+
+. 옵션을 선택합니다 `6 Update flash from backup config` /var 파일 시스템을 node3으로 복구합니다.
++
+그러면 모든 플래시 기반 구성이 디스크에 대한 마지막 백업으로 대체됩니다.
+
+. 를 입력합니다 `y` 를 눌러 계속합니다.
+. 노드가 정상적으로 부팅되도록 합니다.
++
+[NOTE]
+====
+예상대로 노드가 자동으로 재부팅되어 /var 파일 시스템의 새 복사본을 로드합니다.
+
+노드가 시스템 ID 불일치가 있다는 경고를 보고합니다. 를 입력합니다 `y` 시스템 ID를 무시하려면
+
+====
+. 노드 3을 노드 4에 연결합니다.
++
+.. 이중화를 보장하기 위해 NS224 쉘프에 MPHA(Multipath High Availability) 케이블을 연결합니다.
+.. 노드 간에 HA 쌍 케이블(별도의 인터페이스가 있는 경우)을 연결합니다.
+.. 노드 간에 클러스터 케이블(별도의 인터페이스가 있는 경우)을 연결합니다.
+
+
+. 클러스터 LIF 마이그레이션:
++
+`set -privilege advanced`
+
++
+`network port show`
+
+. 원하는 클러스터 포트를 포함하도록 클러스터 브로드캐스트 도메인 수정:
++
+`network port broadcast-domain remove-ports -broadcast-domain _broadcast_domain_name_ -ports _port_names_`
+
++
+`network port broadcast-domain add-ports -broadcast-domain Cluster -ports _port_names_`
+
++
+
+NOTE: ONTAP 9.8부터 새로운 IPspace와 하나 이상의 브로드캐스트 도메인을 클러스터 연결용 기존 물리적 포트에 지정할 수 있습니다.
+
+. 원하는 클러스터 포트를 포함하도록 클러스터 IPspace를 수정하고 아직 설정되지 않은 경우 최대 전송 단위를 9000으로 설정합니다.
++
+`network port modify -node _node_name_ -port _port_name_ -mtu 9000 -ipspace Cluster`
+
+. 모든 클러스터 네트워크 LIF 표시:
++
+`network interface show -role cluster`
+
+. 모든 클러스터 네트워크 LIF를 홈 포트로 마이그레이션:
++
+`network interface show -role cluster`
+
+. 모든 데이터 네트워크 LIF 표시:
++
+`network interface show -role data`
+
+. 모든 데이터 LIF를 노드 3으로 마이그레이션:
++
+`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node_name_`
+
+. 모든 데이터 네트워크 LIF 표시:
++
+`network interface show -role data`
+
++
+클러스터와 관리 LIF는 노드 간에 마이그레이션할 수 없습니다. LIF가 하나라도 다운되면 LIF의 관리 상태를 로 설정합니다 `up` 다음 명령을 각 LIF에 대해 한 번 입력합니다.
+
++
+`network interface modify -vserver _vserver_name_ -lif _lif_name_ -home-node _node_name_ -status-admin up`
+
+. 클러스터 관리 LIF 마이그레이션:
++
+`network interface migrate -vserver _vserver_name_ -lif cluster_mgmt -destination-node _node3_ -destination-port _port_name_`
+
+. 클러스터 관리 LIF의 상태를 표시합니다.
++
+`network interface show cluster_mgmt`
+
+. 클러스터의 모든 데이터 애그리게이트 상태 표시:
++
+`storage aggregate show`
+
+. HA 쌍, 스토리지 페일오버 및 자동 반환 설정:
++
+`cluster ha modify -configured true`
+
+. 노드 4가 소유한 데이터 애그리게이트를 노드 3으로 마이그레이션:
++
+`storage aggregate relocation start -aggregate _aggregate_name_ -node _node4_ -destination _node3_`
+
+. 클러스터의 모든 데이터 애그리게이트 상태 표시:
++
+`storage aggregate show`
+
+. 노드에서 네트워크 LIF 자동 되돌리기 사용:
++
+`network interface modify -lif * -auto-revert true`
+
+. 클러스터 상태 표시:
++
+`cluster show`
+
+. 페일오버 자격 표시:
++
+`storage failover show`
+
++
+
+NOTE: 클러스터 보고서 출력에서 노드는 다른 노드에 속한 애그리게이트를 잘못 소유할 수 있습니다. 이 경우 클러스터의 양쪽에서 Takeover와 Giveback을 수행하여 정규화합니다.
+
+. 클러스터의 모든 데이터 애그리게이트 상태 표시:
++
+`storage aggregate show`
+
+
