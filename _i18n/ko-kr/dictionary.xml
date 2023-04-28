@@ -805,7 +805,6 @@
   <block id="b2aee17ce5d9304ab1d7b938a9523e20" category="paragraph"><block ref="2b1556b8f6c5b7893260b881b8d97e7a" prefix="" category="inline-code"></block></block>
   <block id="5560b948b9e6ef0348c58a90d5656939" category="list-text">마법사의 단계를 완료하여 키 관리 서버를 구성합니다.</block>
   <block id="db109f602a3b7cebd1a7f99683224535" category="list-text">연결된 모든 키 관리 서버에서 새 노드로 인증 키를 복원합니다.</block>
-  <block id="ce647643e8b085a9425f156173190659" category="list-text">외부 키 관리자(EKD)에 대한 인증 복원:</block>
   <block id="74c90316d25b4cdc5c8e524af066a5a0" category="paragraph"><block ref="24b420efa276a683b4bd02f14a2d6f59" prefix="" category="inline-code"></block></block>
   <block id="a5e463e5138622ba8c2355b41f67a0ff" category="paragraph">이 명령을 실행하면 Onboard Key Manager(OKM) 암호가 필요합니다</block>
   <block id="57bd5edad2e4a85125aa9528f6fa4cea" category="list-text">OKM에 대한 인증 복원:</block>
@@ -1129,7 +1128,6 @@
   <block id="82afadce5c137568366e29a810db005a" category="cell">AutoSupport가 활성화되어 있습니다...</block>
   <block id="c732f1d7a89abd68a48f92313a9b4364" category="inline-xref">34단계</block>
   <block id="1ab718a04314b36269d3b2b096aac75a" category="list-text">로 이동합니다 <block ref="395265ffe56efe9e97ae9cc3752b2f60" category="inline-xref-macro-rx"></block>.</block>
-  <block id="e5358fe562a4d74ac4231d8e23d0b088" category="inline-link-macro">스토리지 암호화를 위한 외부 키 관리 서버의 IP 주소를 가져옵니다</block>
   <block id="9c13f9e2316ce6eb31c97c43c9f42070" category="cell">AutoSupport가 활성화되지 않았습니다...</block>
   <block id="6fcae9afe7013bc84597d8c4231312ba" category="list-text">시스템 관리 참조 _ 의 지침에 따라 AutoSupport를 활성화합니다. (을 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 시스템 관리 참조 _.(에 대한 링크)</block>
   <block id="4179c1d88c83e870ed525f69e82e0369" category="list-text">[[man_prepare_nodes_step34]] 원본 노드 모두에 다음 명령을 입력하고 출력을 검사하여 AutoSupport가 올바른 메일 호스트 세부 정보와 수신자 이메일 ID로 구성되었는지 확인합니다.</block>
@@ -1540,7 +1538,6 @@
   <block id="3d39e72120bdfa8b32eb4183896ece25" category="paragraph">로 이동합니다 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> SP 및 _ONTAP 9 명령에 대한 자세한 내용은 _시스템 관리 참조_에 대한 링크를 참조하십시오. 에 대한 자세한 내용은 수동 페이지 참조_를 참조하십시오<block ref="9d457aa716e00c2363b4c380e23a3068" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="52eb8cb5708af7396828abc72517413d" category="list-text">새 노드에서 스위치가 없는 클러스터를 설정하려면 로 이동하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> _Network Support 사이트_에 연결하고 스위치가 없는 2노드 클러스터_로 전환 의 지침을 따르십시오.</block>
   <block id="a98b8d21a1cabe96a7d765976c724ace" category="paragraph">노드 3과 노드 4에서 스토리지 암호화가 설정된 경우 의 단계를 완료합니다 <block ref="94c0a6a874300fcf012d00a23a1b673f" category="inline-link-macro-rx"></block>. 그렇지 않으면 의 단계를 완료합니다 <block ref="6e48b929ca0767f00c15eeb6d7e78755" category="inline-link-macro-rx"></block>.</block>
-  <block id="c9db4eeeb7068245ea24e65d2b3044b1" category="summary">ONTAP 9.7 이하를 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 스토리지 암호화를 구성합니다.</block>
   <block id="45e4301bce74949fdb13b7b2b487a728" category="summary">RCF 파일을 설치하여 ONTAP 9.7 이하를 실행하는 컨트롤러에서 수동 ARL 업그레이드 중에 Cisco 및 Brocade 스위치를 재구성합니다.</block>
   <block id="d666aabcb0474ed724f0c2bbfd2378fc" category="paragraph">새 노드를 수용하기 위해 스위치를 재구성하려면 적절한 RCFs(Reference Configuration File)를 적용해야 합니다. RCF를 적용한 후 스위치를 다시 사용할 수 있습니다.</block>
   <block id="b146e8621e721a92c4b9d852f016cd74" category="paragraph">FC 스위치 포트 사용은 RCFs를 사용할 수 있도록 _fFabric-Attached MetroCluster 설치 및 Configuration_content에 설명된 사용량과 일치해야 합니다. 로 이동합니다 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 를 눌러 _패브릭 연결 MetroCluster 설치 및 구성_내용에 연결합니다.</block>
@@ -1710,7 +1707,6 @@
   <block id="c3a51f505b0a44650db3707558ddeefc" category="list-text">불일치를 확인합니다. 노드가 정상적으로 부팅되기 전에 1라운드 재부팅을 완료할 수 있습니다.</block>
   <block id="cc7dd78f409b3f942015e8a65f2c11e8" category="list-text">노드 4에 로그인합니다.</block>
   <block id="19b4277aa4310fa75687e1f55755a62c" category="summary">ONTAP 9.7 이하를 실행하는 컨트롤러의 수동 ARL 업그레이드를 위한 4단계 프로세스 시퀀스.</block>
-  <block id="511701430e4fbf5079759a7c3b7c28ff" category="doc">4단계. 노드2 정보를 기록하고 노드2를 폐기합니다</block>
   <block id="bf281b48b35a7cc176890f2be65ca906" category="list-text"><block ref="bf281b48b35a7cc176890f2be65ca906" category="inline-link-macro-rx"></block></block>
   <block id="610cb2d6e87c5e838ceef8f48f57b082" category="list-text"><block ref="610cb2d6e87c5e838ceef8f48f57b082" category="inline-link-macro-rx"></block></block>
   <block id="b4828d73e6a54a557f1d9c688f9afada" category="summary">ONTAP 9.7 이하를 실행하는 컨트롤러에서 수동 ARL 업그레이드 중에 발생할 수 있는 애그리게이트 재배치 장애를 해결합니다.</block>
@@ -3983,10 +3979,8 @@
   <block id="92f11749596b34888281bb0c579c2d25" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러에서 수동 ARL 업그레이드 중에 노드 4 온보드 FC 포트, UTA/UTA2 포트 또는 UTA/UTA2 카드를 구성합니다.</block>
   <block id="118f7a6ae9a5d6b5cd8f73c4762b1730" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러에서 수동 ARL 업그레이드 중에 node3을 설치 및 부팅하고 ONTAP 소프트웨어를 설치합니다.</block>
   <block id="7311cf26cf7087361501590894ddf505" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레이드를 위한 5단계 프로세스 시퀀스.</block>
-  <block id="d21a0858f74e1b40b984bb621122ad41" category="doc">5단계. 노드 4를 설치하고 부팅합니다</block>
   <block id="c6834152ce1c2fbdaa43b11fcc10df66" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 내부 디스크 드라이브에 루트 또는 데이터 애그리게이트가 포함되어 있지 않은지 확인합니다.</block>
   <block id="0623848243436b0f8821316dbca47636" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러에서 수동 ARL 업그레이드를 완료한 후 이전 시스템이 더 이상 작동하지 않음을 NetApp에 알려 주십시오.</block>
-  <block id="08ac1a2fb254b60e9c511fe04b6536d0" category="cell">외부 키 관리자(EKM)</block>
   <block id="a9849e92b148965a7bbb6c14d0afbcd0" category="cell">온보드 키 관리자(OKM)</block>
   <block id="ec4374c74901037b92a2e0de7e3fe4a2" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 노드 2의 물리적 포트가 노드 4에 올바르게 매핑되는지 확인합니다.</block>
   <block id="4839549656731e0245736bfa32bc3606" category="list-text">스위치가 없는 2노드 클러스터인지 확인하려면 다음 단계를 수행하십시오.</block>
@@ -4190,7 +4184,6 @@
   <block id="3468b73fe010ca505a63fcddaa4f3601" category="paragraph-title">이 정보에 사용된 용어</block>
   <block id="5d022d26a75a4e30fae6648d5bcdd9e5" category="paragraph-title">MetroCluster FC 구성의 경우</block>
   <block id="e05e5b3ebbe0e2f7ee773e008e2cd7bd" category="cell">다음 드라이브를 사용 중인 경우…</block>
-  <block id="cbfa089efcac1a28956de515cdcbcecc" category="cell">NSE(NetApp Storage Encryption) 드라이브는 FIPS 140-2 레벨 2 자체 암호화 요구사항을 준수합니다</block>
   <block id="9a7a5052834bdcd10b9395aaeaf8d876" category="list-text"><block ref="62a739993e7d046df94dbc6dc7c3f174" prefix="" category="inline-code"></block></block>
   <block id="102a08eb3220b17bfbecbc277298074d" category="cell">NetApp 비 FIPS SED</block>
   <block id="ad55a196e6d3053365555c02e73f7628" category="list-text"><block ref="20ac903c04b877a6840785a4ed61d182" prefix="" category="inline-code"></block></block>
@@ -4350,7 +4343,6 @@
   <block id="2c524a09a41084103cfccb89e1e2dd49" category="paragraph">6단계에서는 업그레이드된 컨트롤러 및 NVRAM 모듈을 사용하여 노드 2를 부팅하고 업그레이드된 노드 2 설치를 확인합니다. NVE를 사용하는 경우 키 관리자 구성을 복원합니다. 또한 노드 1에서 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 1에서 업그레이드된 노드 2로 재배치하고 노드 2에 SAN LIF가 있는지 확인합니다.</block>
   <block id="2201f8be38de620c7e36cb511d56aa13" category="cell"><block ref="2201f8be38de620c7e36cb511d56aa13" category="inline-link-macro-rx"></block></block>
   <block id="fb13f8b167e25a81b898b43d42165d58" category="paragraph">7단계에서는 새 노드가 올바르게 설정되었는지 확인하고, 새 노드가 암호화를 사용하도록 설정된 경우 Storage Encryption 또는 NVE를 구성하고 설정합니다. 또한 이전 노드의 사용을 중지하고 SnapMirror 작업을 다시 시작해야 합니다.</block>
-  <block id="3c71d8aea4515e5bab3212b7c7635c9b" category="doc">2단계. 노드 1에서 리소스를 재배치하고 AFF A700 또는 FAS9000 노드 1을 폐기합니다</block>
   <block id="98d03c0eb9112cc9024f712528415cd8" category="paragraph">2단계에서는 노드 1이 아닌 Aggregate 및 NAS 데이터 LIF를 노드 2로 이동합니다. 이 프로세스는 대부분 자동화되어 있으며 사용자가 상태를 확인할 수 있도록 작업이 일시 중지됩니다. 작업을 수동으로 재개해야 합니다. 필요한 경우 장애가 발생한 애그리게이트를 재이동하거나 거부권을 행사합니다. 나중에 사용할 수 있도록 노드1 정보를 기록한 다음 해당 노드1 컨트롤러와 NVRAM 모듈을 바꾸고, 노드1을 폐기하고, 업그레이드된 노드1을 넷부팅해야 합니다.</block>
   <block id="ba3ed006f5a9fb6f965da2e3e183b4ad" category="inline-link-macro">netboot</block>
   <block id="d7c7c51e5bb760e2570a29b82d44f1bf" category="list-text"><block ref="d7c7c51e5bb760e2570a29b82d44f1bf" category="inline-link-macro-rx"></block></block>
@@ -4422,7 +4414,6 @@
   <block id="85e374a47bd77502ca7ecd58923ec819" category="paragraph">하지만 원래 컨트롤러에 설치된 것과 동일한 버전의 ONTAP 9가 설치된 경우 컨트롤러를 netboot 하지 않아도 됩니다. 이 경우 이 섹션을 건너뛰고 로 진행할 수 있습니다 <block ref="c6531ef0bbbd2a28b8b9b75b1dc2026b" category="inline-link-macro-rx"></block></block>
   <block id="ec8f42afc125efe6d556f20ecc052848" category="inline-link-macro">Onboard Key Manager를 사용하여 인증 키를 관리합니다</block>
   <block id="67f80d13cf548292184bc05f4b74227a" category="list-text"><block ref="67f80d13cf548292184bc05f4b74227a" category="inline-link-macro-rx"></block></block>
-  <block id="f4672cbaffd9e421a79615ec725fc37c" category="paragraph">+ * 참고: * 스토리지 시스템을 처음 구성할 때 AutoSupport는 기본적으로 사용하도록 설정됩니다. AutoSupport는 언제든지 비활성화할 수 있지만 활성화 상태를 유지해야 합니다. AutoSupport를 활성화하면 스토리지 시스템에서 문제가 발생할 경우 문제 및 솔루션을 쉽게 식별할 수 있습니다.</block>
   <block id="905e3cdcc0a66a5627f194c9bef68b48" category="inline-link">드라이브가 FIPS 인증되었는지 확인하는 방법</block>
   <block id="9a939769a0a1b5b6c994c5ee6a8c23b2" category="list-text">시스템에서 자체 암호화 드라이브를 사용하는 경우 기술 자료 문서를 참조하십시오<block ref="99bc6507ac71bae6bc6755b2bf68f73a" category="inline-link-rx"></block> 업그레이드하는 HA 쌍에서 사용 중인 자체 암호화 드라이브의 유형을 확인합니다. ONTAP 소프트웨어는 두 가지 유형의 자체 암호화 드라이브를 지원합니다.</block>
   <block id="93cbc4495a566db3a58548f326fa221c" category="paragraph">시스템을 부팅하기 전에 모든 SnapMirror 관계가 중지되었는지 확인해야 합니다. SnapMirror 관계가 중지되면 재부팅 및 페일오버 시에도 계속 정지됩니다.</block>
@@ -4452,11 +4443,8 @@
   <block id="28556bd95def05fed56f5833d7b0b25b" category="inline-link-macro">Onboard Key Manager를 사용하여 스토리지 암호화를 관리합니다</block>
   <block id="2b0f9b46416ed6835a9cf4374bf56295" category="list-text"><block ref="2b0f9b46416ed6835a9cf4374bf56295" category="inline-link-macro-rx"></block></block>
   <block id="2f3067e385c13bed8c91d99a529e1f6c" category="paragraph">온보드 키 관리자(OKM)를 사용하여 암호화 키를 관리할 수 있습니다. OKM을 설정한 경우 업그레이드를 시작하기 전에 암호문과 백업 자료를 기록해야 합니다.</block>
-  <block id="56848c85d01c97e89fd91301765bc221" category="list-text">NetApp 스토리지 암호화 드라이브가 설치된 경우 다음 단계를 수행하십시오.</block>
   <block id="03b784c13f464c141a29ed9b7adc0b70" category="paragraph">동일한 노드 또는 HA 쌍에서 다른 유형의 드라이브와 FIPS 드라이브를 혼합할 수 없습니다. 동일한 노드 또는 HA 쌍에서 SED를 비암호화 드라이브와 혼합할 수 있습니다.</block>
   <block id="bbe12f0052143b9b4fa08d13234931ab" category="paragraph">이전 절차에서 기록한 암호 및 백업 정보를 입력합니다. 을 참조하십시오 <block ref="2b0f9b46416ed6835a9cf4374bf56295" category="inline-link-macro-rx"></block>.</block>
-  <block id="08054d649addde697b85edb4a8ffb183" category="list-text">NSE(NetApp 스토리지 암호화) 드라이브가 설치되어 있는 경우, 를 설정합니다<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 를 선택합니다<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> 또는<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>.</block>
-  <block id="f5da7c2e2634ff80aa6ca2b591dbeb0c" category="paragraph">이전 절차에서 기록한 암호 및 백업 정보를 입력합니다. 을 참조하십시오 <block ref="2b0f9b46416ed6835a9cf4374bf56295" category="inline-link-macro-rx"></block></block>
   <block id="1b2c9b4403be6eaaf7fa2209a153c703" category="list-text"><block ref="1b2c9b4403be6eaaf7fa2209a153c703" category="inline-link-macro-rx"></block></block>
   <block id="eaf73ead47320ec21942b56fd3660eea" category="list-text">온보드 키 관리 정보 복원에 대한 자세한 내용은 NetApp 지원에 문의하십시오.</block>
   <block id="c5915780f057e573017a845938fc8511" category="summary">노드 3을 준비하고 노드 3을 노드 4에 연결한 다음 노드 4의 데이터 LIF 및 데이터 애그리게이트를 노드 3으로 마이그레이션합니다.</block>
@@ -4608,10 +4596,11 @@
   <block id="493f827b1132078fbdd11bc0ceceed47" category="list-text">노드 2에서 노드 4로 모든 드라이브 재할당:</block>
   <block id="c6de9e9749bb1b9764c879c3f4e55899" category="paragraph"><block ref="d3a7175de7ab1d1112d49ac67a531b10" prefix="" category="inline-code"></block></block>
   <block id="eedfdc7d9365a1f9e29964c35c82e348" category="paragraph"><block ref="8cf81755f02bee986a80060b929f2335" prefix="" category="inline-code"></block></block>
-  <block id="c9c88276ee2c2102cc859c79f38df03f" category="paragraph">&lt;stdin&gt;에서 해결되지 않은 지시문 - 포함: ../_include/ru_man_get_ip_address_external_km_server.adoc []</block>
   <block id="c8e281db9c8a31e8da74e7ff6bc12115" category="summary">ONTAP 9.7 이하를 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 인증 키를 관리하려면 OKM을 사용하십시오.</block>
-  <block id="e9e0a1f4688f13dee423ee10d2c9cf11" category="list-text">[[man_install3_step16]] NetApp 스토리지 암호화 드라이브가 설치되어 있는 경우 다음 단계를 수행하십시오.</block>
   <block id="20c4be209ec6c65b4221fa6f09f2df42" category="inline-link-macro">Onboard Key Manager를 사용하여 스토리지 암호화를 관리합니다</block>
   <block id="bd001ad1a159ea8195f2f6877d4e5047" category="list-text"><block ref="bd001ad1a159ea8195f2f6877d4e5047" category="inline-link-macro-rx"></block></block>
   <block id="73d106cd4da3fdbd0b8a8317db146c37" category="list-text">[[boot_node2_step1]] NSE(NetApp 스토리지 암호화) 드라이브가 설치되어 있는 경우 다음 단계를 수행하십시오.</block>
+  <block id="04f24e11b658105f38ef40a82c24839e" category="paragraph">* 참고: * 스토리지 시스템을 처음 구성할 때 AutoSupport는 기본적으로 사용하도록 설정됩니다. AutoSupport는 언제든지 비활성화할 수 있지만 활성화 상태를 유지해야 합니다. AutoSupport를 활성화하면 스토리지 시스템에서 문제가 발생할 경우 문제 및 솔루션을 쉽게 식별할 수 있습니다.</block>
+  <block id="cb6bc72e3e387b19e4fbc2f28ecc2940" category="list-text">설정<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 를 선택합니다<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> 또는<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>.</block>
+  <block id="e147253c0010bdd5968cb9b4b9ddf7dc" category="cell">외부 키 관리자</block>
 </blocks>

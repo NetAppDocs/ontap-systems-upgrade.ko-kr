@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-affa900/stage_7_index.html
 keywords: upgrade, preparing, preparation, prepare, overview, stage 1 
 summary: '를 사용하여 ARL 업그레이드를 위한 1단계 프로세스 시퀀스 `system controller replace` ONTAP 9.8 이상을 실행하는 컨트롤러의 명령입니다.' 
 ---
-= 7단계. 업그레이드를 완료합니다
+= 개요
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

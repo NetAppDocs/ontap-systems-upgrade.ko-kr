@@ -4,7 +4,7 @@ permalink: upgrade-arl-manual/stage_3_index.html
 keywords: relocate, retire, node1, steps, stage 3 
 summary: ONTAP 9.7 이하를 실행하는 컨트롤러의 수동 ARL 업그레이드를 위한 3단계 프로세스 시퀀스. 
 ---
-= 3단계. 노드3을 설치하고 부팅합니다
+= 개요
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

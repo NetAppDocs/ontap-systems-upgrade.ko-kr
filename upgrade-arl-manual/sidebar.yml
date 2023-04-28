@@ -42,6 +42,8 @@ entries:
   - title: 컨트롤러에 내부 디스크 드라이브에 Aggregate가 있는지 확인합니다
     url: "/upgrade-arl-manual/determine_aggregates_on_internal_drives.html"
   - title: 업그레이드할 노드를 준비합니다
+    url: "/upgrade-arl-manual/prepare_nodes_for_upgrade.html"
+  - title: Onboard Key Manager를 사용하여 인증 키를 관리합니다
     url: "/upgrade-arl-manual/manage_authentication_okm.html"
   - title: SnapMirror 관계를 중지합니다
     url: "/upgrade-arl-manual/quiesce_snapmirror_relationships.html"

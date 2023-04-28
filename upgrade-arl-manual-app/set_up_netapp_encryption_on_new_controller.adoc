@@ -56,7 +56,7 @@ summary: 필요한 경우 ONTAP 9.8 이상을 실행하는 컨트롤러의 수�
 | 대상... | 이 명령 사용... 
 
 
-| 외부 키 관리자(EKM) | `security key-manager external restore`이 명령을 실행하면 OKM 암호가 필요합니다 
+| 외부 키 관리자 | `security key-manager external restore`이 명령을 실행하면 OKM 암호가 필요합니다 
 
 
 | 온보드 키 관리자(OKM) | `security key-manager onboard sync` 
