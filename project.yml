@@ -23,6 +23,8 @@ homepage:
     links:
     - title: 컨트롤러 하드웨어를 업그레이드합니다
       url: "/upgrade/upgrade-decide-to-use-this-guide.html"
+    - title: 드라이브 쉘프로 전환하여 AFF A250을 AFF A400으로 업그레이드합니다
+      url: "/upgrade/upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html"
   - title: ONTAP 9.8 이상을 실행하는 시스템에서 애그리게이트를 이동하여 업그레이드
     links:
     - title: '"시스템 컨트롤러 교체" 명령 사용(AFF A700 ~ AFF A900)'

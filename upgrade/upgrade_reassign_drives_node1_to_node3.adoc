@@ -33,18 +33,40 @@ AFF A250 노드 1을 NS224 드라이브 쉘프로 전환하고 AFF A400 노드 3
 +
 `storage port show`
 
++
+다음 예제와 같은 출력이 표시됩니다.
+
++
+[listing]
+----
+*> storage port modify -p e0c -m storage
+Nov 10 16:27:23 [localhost:nvmeof.port.modify:notice]: Changing NVMe-oF port e0c to storage mode.
+
+Nov 10 16:27:29 [localhost:nvmeof.subsystem.add:notice]: NVMe-oF subsystem added at address fe80::2a0:98ff:fefa:8885.
+
+*> storage port modify -p e0d -m storage
+Nov 10 16:27:34 [localhost:nvmeof.port.modify:notice]: Changing NVMe-oF port e0d to storage mode.
+
+Nov 10 16:27:38 [localhost:nvmeof.subsystem.add:notice]: NVMe-oF subsystem added at address fe80::2a0:98ff:fefa:8886.
+
+*> storage port show
+Port Type Mode    Speed(Gb/s) State    Status  VLAN ID
+---- ---- ------- ----------- -------- ------- -------
+e0c  ENET storage 100 Gb/s    enabled  online  30
+e0d  ENET storage 100 Gb/s    enabled  offline 30
+----
 . 연결된 모든 드라이브 표시:
 +
 `disk show -v`
 
-. 로컬 시스템 ID를 기록합니다.
+. 로컬 시스템 ID 값을 기록합니다. 이 값은 node3의 시스템 ID입니다. 또한 "owner" 열에서 node1과 node2의 시스템 ID를 기록합니다.
 . 노드 1에서 노드 3으로 모든 드라이브 재할당:
 +
-`disk reassign -s _node1_ -d _node3_ -p _node2_`
+`disk reassign -s _node1_system_ID_ -d _node3_system_ID_ -p _node4_system_ID_`
 
 . 재할당된 모든 드라이브가 새 시스템 ID에 표시되는지 확인합니다.
 +
-`disk show -s _node3 system ID_`
+`disk show -s _node3_system_ID_`
 
 +
 
@@ -55,3 +77,6 @@ NOTE: 드라이브를 볼 수 없는 경우 * STOP * 을 하고 기술 지원 �
 `halt`
 
 
+
+.다음 단계
+link:upgrade_migrate_lIFs_aggregates_node4_node3.html["노드 4의 LIF 및 데이터 애그리게이트를 노드 3으로 마이그레이션"]

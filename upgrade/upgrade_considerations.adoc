@@ -65,7 +65,7 @@ FAS255x 시스템을 드라이브 쉘프로 변환하는 작업은 스토리지�
 
 추가 단계가 필요할 수 있는 상황
 
-* AFF A250에서 AFF A400으로 업그레이드하는 경우 를 참조하십시오 xref:upgrade-aff_a250_to_aff_a400_ndu_upgrade_workflow.adoc[드라이브 쉘프로 전환하여 AFF A250을 AFF A400으로 업그레이드합니다].
+* AFF A250에서 AFF A400으로 업그레이드하는 경우 를 참조하십시오 xref:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.adoc[드라이브 쉘프로 전환하여 AFF A250을 AFF A400으로 업그레이드합니다].
 * 새 시스템의 슬롯 수가 원래 시스템보다 적거나 포트 유형이 적거나 다른 경우 새 시스템에 어댑터를 추가해야 할 수 있습니다.
 +
 https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]

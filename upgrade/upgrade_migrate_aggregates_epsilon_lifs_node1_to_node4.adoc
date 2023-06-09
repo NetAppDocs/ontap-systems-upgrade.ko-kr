@@ -14,7 +14,7 @@ summary: 노드 1의 데이터 애그리게이트, epsilon 및 LIF를 노드 4�
 AFF A250 node1을 드라이브 쉘프로 변환하기 전에 node1의 데이터 애그리게이트, epsilon 및 논리 인터페이스(LIF)를 AFF A400 node4로 마이그레이션합니다.
 
 .단계
-. 노드의 LOADER 프롬프트에서 노드를 부팅 메뉴로 부팅합니다.
+. 노드 4의 로더 프롬프트에서 노드를 부팅 메뉴로 부팅합니다.
 +
 `boot_ontap menu`
 
@@ -26,7 +26,7 @@ AFF A250 node1을 드라이브 쉘프로 변환하기 전에 node1의 데이터 
 +
 [NOTE]
 ====
-예상대로 노드가 자동으로 재부팅되어 /var 파일 시스템의 새 복사본을 로드합니다.
+노드가 자동으로 재부팅되어 /var 파일 시스템의 새 복사본이 로드됩니다.
 
 노드가 시스템 ID 불일치 경고를 보고합니다. 를 입력합니다 `y` 시스템 ID를 무시하려면
 
@@ -43,11 +43,31 @@ AFF A250 node1을 드라이브 쉘프로 변환하기 전에 node1의 데이터 
 ====
 AFF A250을 AFF A400으로 업그레이드할 때 시스템 클러스터 포트가 비슷하지 않으면 노드 4의 인터페이스를 클러스터 포트로 일시적으로 변경해야 할 수 있습니다.
 
-.. `network port modify -node _node4_ -port _port_name_ -mtu 9000 -ipspace Cluster`
-.. `network interface migrate -vserver Cluster -lif _cluster_LIF_  -destination-node _node4_ -destination-port _port_name_`
-
+`network port modify -node _node4_ -port _port_name_ -mtu 9000 -ipspace Cluster`
 
 ====
++
+`network interface migrate -vserver Cluster -lif _cluster_LIF_  -destination-node _node4_ -destination-port _port_name_`
+
+. 클러스터가 쿼럼에 들어올 때까지 기다린 다음 클러스터 노드가 정상인지 확인합니다.
++
+`– cluster show`
+
++
+
+NOTE: HA Pair 및 스토리지 페일오버는 현재 상태에서 비활성 상태로 유지됩니다.
+
+. 클러스터 LIF를 노드 4의 임시 25G 클러스터 포트로 이동합니다.
++
+`network interface modify`
+
+. 업그레이드하는 AFF A250 클러스터에서 인터페이스 그룹 및 데이터 VLAN을 사용 중인 경우 이 단계를 수행하십시오. 그렇지 않은 경우 로 이동합니다 <<migrate_node1_nod4,8단계>>.
++
+물리적 네트워크 포트 이름은 AFF A250과 AFF A400 시스템 간에 다릅니다. 따라서 노드 4에서 인터페이스 그룹 및 교체된 VLAN이 잘못 구성되었을 수 있습니다. 잘못 구성된 인터페이스 그룹 및 교체된 VLAN을 확인하고 필요한 경우 수정합니다.
+
+
+
+[[migrate_node1_nod4]]
 . 노드 1의 데이터 애그리게이트를 노드 4로 마이그레이션:
 +
 `storage aggregate relocation start -aggregate-list _aggregate_list_name_ -node _node1_ -destination _node4_ -ndo-controller-upgrade true -override-destination-checks true`
@@ -60,11 +80,11 @@ AFF A250을 AFF A400으로 업그레이드할 때 시스템 클러스터 포트�
 +
 .. 노드 1에서 epsilon 제거:
 +
-`cluster modify -epsilon false -node _local_node_name_`
+`cluster modify -epsilon false -node _node1_`
 
 .. epsilon을 node4로 이동:
 +
-`cluster modify -epsilon true -node _partner_node_name_`
+`cluster modify -epsilon true -node _node4_`
 
 
 
@@ -78,7 +98,7 @@ AFF A250을 AFF A400으로 업그레이드할 때 시스템 클러스터 포트�
 
 . 모든 데이터 LIF를 노드 4로 마이그레이션:
 +
-`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node_name_`
+`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node4_ -destination-port _port_name_`
 
 . 클러스터에 있는 모든 데이터 LIF의 상태를 표시합니다.
 +
@@ -86,7 +106,7 @@ AFF A250을 AFF A400으로 업그레이드할 때 시스템 클러스터 포트�
 
 . LIF가 하나라도 다운되면 LIF의 관리 상태를 로 설정합니다 `up` 다음 명령을 각 LIF에 대해 한 번 입력합니다.
 +
-`network interface modify -vserver _vserver_name_ -lif _lif_name_ -home-node _node_name_ -status-admin up`
+`network interface modify -vserver _vserver_name_ -lif _lif_name_ -status-admin up`
 
 . 클러스터 관리 LIF 마이그레이션:
 +
@@ -101,3 +121,6 @@ AFF A250을 AFF A400으로 업그레이드할 때 시스템 클러스터 포트�
 `halt -node _node1_ -inhibit-takeover true -ignore-quorum-warnings true`
 
 
+
+.다음 단계
+link:upgrade_convert_node1_drive_shelf_connect_node3.html["노드 1을 드라이브 쉘프로 변환한 후 노드 3에 연결합니다"]

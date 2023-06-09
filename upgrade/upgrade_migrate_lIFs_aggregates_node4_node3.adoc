@@ -14,7 +14,7 @@ summary: 노드 3을 준비하고 노드 3을 노드 4에 연결한 다음 노�
 업그레이드를 완료하려면 노드 3을 노드 4에 연결한 다음 노드 4의 데이터 논리 인터페이스(LIF) 및 데이터 애그리게이트를 노드 3으로 마이그레이션합니다.
 
 .단계
-. 노드의 LOADER 프롬프트에서 노드를 부팅 메뉴로 부팅합니다.
+. 노드 3의 로더 프롬프트에서 노드를 부팅 메뉴로 부팅합니다.
 +
 `boot_ontap menu`
 
@@ -27,16 +27,16 @@ summary: 노드 3을 준비하고 노드 3을 노드 4에 연결한 다음 노�
 +
 [NOTE]
 ====
-예상대로 노드가 자동으로 재부팅되어 /var 파일 시스템의 새 복사본을 로드합니다.
+노드가 자동으로 재부팅되어 /var 파일 시스템의 새 복사본이 로드됩니다.
 
 노드가 시스템 ID 불일치가 있다는 경고를 보고합니다. 를 입력합니다 `y` 시스템 ID를 무시하려면
 
 ====
 . 노드 3을 노드 4에 연결합니다.
 +
-.. 이중화를 보장하기 위해 NS224 쉘프에 MPHA(Multipath High Availability) 케이블을 연결합니다.
-.. 노드 간에 HA 쌍 케이블(별도의 인터페이스가 있는 경우)을 연결합니다.
-.. 노드 간에 클러스터 케이블(별도의 인터페이스가 있는 경우)을 연결합니다.
+.. 이중화를 보장하기 위해 NS224 쉘프에 MPHA(Multipath High Availability) 케이블을 연결합니다. 노드 3 100GbE 포트 e0d를 NSM B 포트 e0b에 연결하고 노드 4 100GbE 포트 e0d를 NSM A 포트 e0a에 연결합니다.
+.. 노드 사이에 HA 포트 e0a 및 e0b가 연결되어 있는지 확인합니다.
+.. 클러스터 포트 e3a 및 e3b가 노드 간에 연결되었는지 확인합니다.
 
 
 . 클러스터 LIF 마이그레이션:
@@ -65,27 +65,29 @@ NOTE: ONTAP 9.8부터 새로운 IPspace와 하나 이상의 브로드캐스트 �
 +
 `network interface show -role cluster`
 
-. 모든 클러스터 네트워크 LIF를 홈 포트로 마이그레이션:
+. 두 노드의 모든 클러스터 네트워크 LIF를 홈 포트로 마이그레이션:
++
+`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node_name_ -destination-port _port_name_`
+
+. 모든 클러스터 네트워크 LIF 표시:
 +
 `network interface show -role cluster`
 
-. 모든 데이터 네트워크 LIF 표시:
+. 클러스터 네트워크 LIF의 홈 포트를 확인합니다.
 +
-`network interface show -role data`
+`network interface modify -vserver _vserver_name_ -lif _lif_name_ -home-port _port_name_`
 
 . 모든 데이터 LIF를 노드 3으로 마이그레이션:
 +
-`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node_name_`
+`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node_name_ -destination-port _port_name_`
 
 . 모든 데이터 네트워크 LIF 표시:
 +
 `network interface show -role data`
 
+. 모든 데이터 LIF에 대한 홈 노드 및 홈 포트를 구성합니다. LIF가 하나라도 다운되면 LIF의 관리 상태를 로 설정합니다 `up` 다음 명령을 각 LIF에 대해 한 번 입력합니다.
 +
-클러스터와 관리 LIF는 노드 간에 마이그레이션할 수 없습니다. LIF가 하나라도 다운되면 LIF의 관리 상태를 로 설정합니다 `up` 다음 명령을 각 LIF에 대해 한 번 입력합니다.
-
-+
-`network interface modify -vserver _vserver_name_ -lif _lif_name_ -home-node _node_name_ -status-admin up`
+`network interface modify -vserver _vserver_name_ -lif lif_name -home-node _node_name_ -home-port _port_name_ -status-admin up`
 
 . 클러스터 관리 LIF 마이그레이션:
 +
@@ -114,6 +116,10 @@ NOTE: ONTAP 9.8부터 새로운 IPspace와 하나 이상의 브로드캐스트 �
 . 노드에서 네트워크 LIF 자동 되돌리기 사용:
 +
 `network interface modify -lif * -auto-revert true`
+
+. 스토리지 페일오버 자동 반환 설정:
++
+`storage failover modify -node * -auto-giveback true`
 
 . 클러스터 상태 표시:
 +

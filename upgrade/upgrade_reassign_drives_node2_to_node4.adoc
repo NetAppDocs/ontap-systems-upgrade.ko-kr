@@ -14,7 +14,7 @@ summary: 노드 2에서 노드 4로 드라이브를 다시 할당하기 전에 �
 AFF A250 노드 2를 NS224 드라이브 쉘프로 전환하고 AFF A400 노드 4에 연결한 후, 이전에 노드 2에 속한 드라이브를 노드 4에 재할당해야 합니다.
 
 .시작하기 전에
-LOADER 프롬프트에서 node2와 node4가 모두 대기 상태인지 확인합니다.
+LOADER 프롬프트에서 node3과 node4가 모두 대기 상태인지 확인합니다.
 
 .이 작업에 대해
 노드 4에서 다음 단계를 수행합니다.
@@ -40,7 +40,7 @@ LOADER 프롬프트에서 node2와 node4가 모두 대기 상태인지 확인합
 `storage port show`
 
 +
-다음과 같은 출력이 표시됩니다.
+다음 예제와 같은 출력이 표시됩니다.
 
 +
 [listing]
@@ -59,16 +59,16 @@ Nov 10 16:27:38 [localhost:nvmeof.subsystem.add:notice]: NVMe-oF subsystem added
 Port Type Mode    Speed(Gb/s) State    Status  VLAN ID
 ---- ---- ------- ----------- -------- ------- -------
 e0c  ENET storage 100 Gb/s    enabled  online  30
-e0d  ENET storage 100 Gb/s    enabled  online  30
+e0d  ENET storage 100 Gb/s    enabled  offline 30
 ----
 . 연결된 모든 드라이브 표시:
 +
 `disk show -v`
 
-. 로컬 시스템 ID를 기록합니다.
+. 로컬 시스템 ID 값을 기록합니다. 이 값은 node4의 시스템 ID입니다. 또한 "owner" 열에서 node1과 node2의 시스템 ID를 기록합니다.
 . 노드 2에서 노드 4로 모든 드라이브 재할당:
 +
-`disk reassign -s _node2_ -d _node4_ -p _node1_`
+`disk reassign -s _node2_system_ID_ -d _node4_system_ID_ -p _node1_system_ID_`
 
 . 재할당된 모든 드라이브가 새 시스템 ID에 표시되는지 확인합니다.
 +
@@ -78,8 +78,15 @@ e0d  ENET storage 100 Gb/s    enabled  online  30
 
 NOTE: 드라이브를 볼 수 없는 경우 * STOP * 을 하고 기술 지원 부서에 지원을 요청하십시오.
 
+. 노드 2의 루트 애그리게이트가 출력에 보고되고 애그리게이트가 온라인 상태인지 확인합니다.
++
+`aggr status`
+
 . 유지보수 모드 종료:
 +
 `halt`
 
 
+
+.다음 단계
+link:upgrade_migrate_aggregates_epsilon_lifs_node1_to_node4.html["노드 1의 데이터 애그리게이트, epsilon 및 LIF를 노드 4로 마이그레이션합니다"]

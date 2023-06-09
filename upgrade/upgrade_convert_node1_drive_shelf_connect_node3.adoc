@@ -21,9 +21,12 @@ summary: 노드 1에서 노드 3으로 드라이브를 다시 할당하기 전�
 +
 image::../upgrade/media/a400_with_ns224_shelf.PNG[하나의 NS224 쉘프로 AFF A400]
 
-. 노드1의 25GbE 포트 e0c 및 e0d에서 노드3의 25GbE 온보드 포트(e0e, e0f, e0g 또는 e0h) 2개에 25GbE 케이블을 연결합니다.
+. 노드 3의 25GbE 온보드 포트(e0e, e0f, e0g 또는 e0h)를 노드 1 포트 e0c 및 e0d에서 두 개의 25GbE 온보드 포트로 이동하여 임시 클러스터 연결을 노드 3으로 이동합니다.
 +
 
-NOTE: 25GbE 온보드 포트가 노드3에 없는 경우 25GbE PCIe 어댑터를 사용하여 연결할 수 있습니다.
+NOTE: AFF A400 시스템에서 FC 포트를 온보드 포트로 사용하는 경우, 마이그레이션 중에 클러스터 연결을 위해 각 노드에 25GB 이더넷 어댑터를 설치합니다.
 
 
+
+.다음 단계
+link:upgrade_reassign_drives_node1_to_node3.html["노드 1에서 노드 3으로 드라이브를 재할당합니다"]
