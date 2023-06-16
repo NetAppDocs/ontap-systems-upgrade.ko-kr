@@ -31,7 +31,7 @@ VAAI(VMware vStorage APIs for Array Integration)를 사용하면 복사 오프�
  a| 
 특정 LIF
  a| 
-`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -source-node _source_node_name_ -destination-node _dest_node_name_ -destination-port _dest_port_name_`
+`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _dest_node_name_ -destination-port _dest_port_name_`
 
 
 

@@ -3542,7 +3542,6 @@
   <block id="fc522dd9612f86c0ea7c802be05de893" category="cell">마이그레이션하려면...</block>
   <block id="1d073f20d5a5045e1aa3afacf792bf7c" category="cell">그런 다음 다음을 입력합니다.</block>
   <block id="0a4bc8aea04444e0f2b960facbd686f4" category="paragraph">특정 LIF</block>
-  <block id="83eac7b5032e95adcb3c31f926aca76c" category="paragraph"><block ref="ed050acaab1d268f8ed2abb19acf69d5" prefix="" category="inline-code"></block></block>
   <block id="fb465127c12aa152a3a6787bc1358040" category="paragraph">SAN이 아닌 모든 데이터 LIF 및 클러스터 관리 LIF</block>
   <block id="24aef972cbe11a33dc4e5cb93310061b" category="paragraph"><block ref="73a9ceac6380a2ab5a51f5b41953fd96" prefix="" category="inline-code"></block></block>
   <block id="8d4031ef52b7ff00f19077a56df4c26e" category="paragraph">다음 명령을 실행하면 SVM "vs0"의 "datalif1"이라는 LIF가 "node0b"의 포트 "e0d"로 마이그레이션됩니다.</block>
@@ -4626,4 +4625,5 @@
   <block id="b2e9444b2e3d3f6bcd5b8053418d9f98" category="paragraph"><block ref="b04273b4623b1fb5400a1445280a00fc" prefix="" category="inline-code"></block></block>
   <block id="9eaa084ea5e1fc23b5bd8f4e4b31ae16" category="list-text">스토리지 페일오버 자동 반환 설정:</block>
   <block id="452b3b4e54b69d07570137489de879c0" category="paragraph"><block ref="06113f79bc639d145a6e40cfdd6b4211" prefix="" category="inline-code"></block></block>
+  <block id="b7fb6eb57cd7c0b92ddce1c6b7f38e07" category="paragraph"><block ref="101c5ced41d107d54620027143ba74f3" prefix="" category="inline-code"></block></block>
 </blocks>
