@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/restore_key_manager_config_node2.html 
 keywords: restore key-manager, configuration, node1, nve, arl, volume, encryption 
-summary: 필요한 경우 AFF A700에서 AFF A900으로 업그레이드하는 동안 노드 2의 키 관리자 구성을 복원합니다. 
+summary: 필요한 경우 ARL을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드할 때 노드 2에서 Key-manager 구성을 복원합니다. 
 ---
 = 노드 2에서 키 관리자 구성을 복원합니다
 :hardbreaks:

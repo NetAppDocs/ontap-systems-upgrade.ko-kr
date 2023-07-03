@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/verify_upgrade_hardware.html 
-keywords: preparing, nodes, upgrade 
-summary: 업그레이드를 시작하기 전에 AFF A700에서 AFF A900 업그레이드용으로 올바른 하드웨어가 있는지 확인하십시오. 
+keywords: nodes, upgrade, verify, hardware 
+summary: 업그레이드를 시작하기 전에 동일한 섀시에서 컨트롤러 모델을 업그레이드할 수 있는 올바른 하드웨어가 있는지 확인하십시오. 
 ---
 = 업그레이드 하드웨어를 확인합니다
 :hardbreaks:
@@ -14,4 +14,23 @@ summary: 업그레이드를 시작하기 전에 AFF A700에서 AFF A900 업그�
 
 
 [role="lead"]
-업그레이드를 시작하기 전에 AFF A700에서 AFF A900으로 업그레이드할 수 있는 하드웨어가 있는지, FAS9500으로 업그레이드할 FAS9000이 올바른지 확인해야 합니다. 업그레이드하는 각 HA 쌍에 대해 시스템 컨트롤러 모듈 2개와 NVRAM 모듈 2개가 있어야 합니다. 누락된 부품이 있는 경우 기술 지원 팀에 문의하거나 NetApp 세일즈 담당자에게 문의하십시오.
+업그레이드를 시작하기 전에 업그레이드에 적합한 하드웨어가 있는지 확인해야 합니다. 업그레이드에 따라 업그레이드하는 각 HA 쌍에 2개의 컨트롤러 모듈 또는 2개의 컨트롤러 모듈과 2개의 NVRAM 모듈이 있어야 합니다. 누락된 부품이 있는 경우 기술 지원 팀에 문의하거나 NetApp 세일즈 담당자에게 문의하십시오.
+
+[cols="50,50"]
+|===
+| 업그레이드 중인 경우... | 필수 사항... 
+
+
+| AFF A220에서 AFF A150으로
+AFF A150에서 AFF A150으로
+AFF C190에서 AFF A150으로 | 컨트롤러 모듈 2개 
+
+
+| FAS2620 또는 FAS2720에서 FAS2820 | 컨트롤러 모듈 2개 
+
+
+| AFF A700에서 AFF A900으로 | 컨트롤러 2개 및 NVRAM 모듈 2개 
+
+
+| FAS9000에 FAS9000을 FAS9000으로 | 컨트롤러 2개 및 NVRAM 모듈 2개 
+|===

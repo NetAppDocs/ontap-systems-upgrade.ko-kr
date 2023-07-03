@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html 
-keywords: boot, NVRAM, controller, module, node1, aff, a700, a900 
-summary: AFF A900 컨트롤러 모듈 및 NVRAM 모듈을 사용하여 노드 1을 부팅합니다. 
+keywords: boot, NVRAM, controller, module, node1, replacement 
+summary: ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드할 때 교체 컨트롤러 모듈로 노드1을 부팅합니다. 
 ---
-= AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈을 사용하여 노드 1을 부팅합니다
+= 교체 시스템 모듈을 사용하여 노드1을 부팅합니다
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,29 @@ summary: AFF A900 컨트롤러 모듈 및 NVRAM 모듈을 사용하여 노드 1�
 
 
 [role="lead"]
-AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈을 사용하는 노드 1을 이제 부팅할 수 있습니다. 컨트롤러 및 NVRAM 모듈을 교체하여 AFF A700에서 AFF A900으로 또는 FAS9000에서 FAS9000으로 업그레이드하려면 콘솔 및 관리 연결만 필요합니다. 이 섹션에서는 AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈을 사용하여 노드 1을 부팅하는 데 필요한 단계를 제공합니다.
+교체 모듈이 있는 노드 1을 부팅할 준비가 되었습니다. 이 섹션에서는 다음 업그레이드 구성에서 노드 1을 교체 모듈로 부팅하는 데 필요한 단계를 설명합니다.
+
+[cols="35,65"]
+|===
+| 이전 노드1 컨트롤러 | 교체 노드1 시스템 모듈 
+
+
+| AFF A220
+AFF A200
+AFF C190 | AFF A150 컨트롤러 모듈 ^1^ 
+
+
+| FAS2620
+FAS2720 | FAS2820 컨트롤러 모듈 ^1^ 
+
+
+| AFF A700 | AFF A900 컨트롤러 및 NVRAM 모듈 ^2^ 
+
+
+| FAS9000 | FAS9500 컨트롤러 및 NVRAM 모듈^2^에 대해 설명합니다 
+|===
+^1^ 컨트롤러 모듈을 교체하여 업그레이드하는 경우 이전의 모든 연결을 교체 컨트롤러 모듈로 옮기는 작업이 포함됩니다.
+^2^ 컨트롤러와 NVRAM 모듈을 교체하여 업그레이드할 경우 콘솔과 관리 연결만 이동합니다.
 
 .단계
 . NSE(NetApp 스토리지 암호화) 드라이브가 설치되어 있는 경우 다음 단계를 수행하십시오.
@@ -51,7 +73,7 @@ NOTE: 절차의 앞부분에서 아직 수행하지 않은 경우 기술 자료 
 +
 `boot_ontap menu`
 
-. "22/7"을 입력하고 숨겨진 옵션을 선택하여 AFF A700 노드 1 디스크를 AFF A900 노드 1에 재할당합니다 `boot_after_controller_replacement` 부팅 메뉴에서 노드가 중지되면
+. "22/7"을 입력하고 숨겨진 옵션을 선택하여 이전 노드1 디스크를 교체 노드1에 재할당합니다 `boot_after_controller_replacement` 부팅 메뉴에서 노드가 중지되면
 +
 잠시 후에 교체되는 노드의 이름을 입력하라는 메시지가 표시됩니다. 공유 디스크(ADP(고급 디스크 파티셔닝) 또는 분할된 디스크라고도 함)가 있는 경우 HA 파트너의 노드 이름을 입력하라는 메시지가 표시됩니다.
 

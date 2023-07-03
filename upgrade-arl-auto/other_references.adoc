@@ -106,7 +106,7 @@ summary: '을 사용하여 ONTAP 9.5에서 9.7로 컨트롤러 업그레이드�
 | link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP를 업그레이드합니다"^] | ONTAP 다운로드 및 업그레이드에 대한 지침이 포함되어 있습니다. 
 
 
-| link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html[""system controller replace" 명령을 사용하여 AFF A700을 AFF A900 또는 FAS9000으로 ONTAP 9.10.1 이상을 실행하는 FAS9500으로 업그레이드할 수 있습니다"^] | "시스템 컨트롤러 교체" 명령을 사용하여 AFF A700을 AFF A900 시스템 또는 FAS9000을 ONTAP 9.10.1 이상을 실행하는 FAS9500 시스템으로 중단 없이 업그레이드하는 데 필요한 애그리게이트 재배치 절차를 설명합니다. 
+| link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html[""system controller replace" 명령을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드합니다"^] | 이전 시스템 섀시 및 디스크를 유지하면서 시스템을 중단 없이 업그레이드하는 데 필요한 애그리게이트 재배치 절차를 설명합니다. 
 
 
 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/index.html[""시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 업그레이드합니다"^] | "system controller replace" 명령을 사용하여 ONTAP 9.8을 실행하는 컨트롤러를 중단 없이 업그레이드하는 데 필요한 애그리게이트 재배치 절차를 설명합니다. 

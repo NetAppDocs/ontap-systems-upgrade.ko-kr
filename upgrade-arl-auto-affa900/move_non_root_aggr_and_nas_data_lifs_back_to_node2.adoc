@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: /upgrade-arl-auto-affa900/move_non_root_aggr_and_nas_data_lifs_back_to_node2.html 
 keywords: moving, non-root, aggregates, nas, lif, node1, node2 
-summary: AFF A700에서 AFF A900으로 업그레이드하는 동안 노드 1의 노드 2의 NAS 데이터 LIF가 노드 1에서 노드 2로 재배치되었는지 확인합니다. 
+summary: ARL을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드할 때 노드 1에 있는 node2의 NAS 데이터 LIF가 노드 1에서 노드 2로 재배치되는지 확인합니다. 
 ---
 = 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 2로 다시 이동합니다
 :hardbreaks:
@@ -55,7 +55,7 @@ summary: AFF A700에서 AFF A900으로 업그레이드하는 동안 노드 1의 
 
 --
 +
-이러한 확인을 수행한 후 시스템에서는 루트가 아닌 애그리게이트와 NAS 데이터 LIF를 노드 2로 재배치합니다. 이 LIF는 현재 AFF A900 또는 FAS9500 컨트롤러에서 실행되고 있습니다.
+이러한 확인을 수행한 후 시스템에서는 루트가 아닌 애그리게이트와 NAS 데이터 LIF를 노드 2로 재배치하고 현재 교체 컨트롤러에서 실행되고 있습니다.
 
 +
 리소스 재배치가 완료된 후 컨트롤러 교체 작업이 일시 중지됩니다.

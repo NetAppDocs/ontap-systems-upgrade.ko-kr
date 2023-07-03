@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/lif_migration_failure.html 
 keywords: lif, migration, failure, mtu 
-summary: AFF A700에서 AFF A900으로 업그레이드 중 2단계, 3단계 또는 5단계에서 마이그레이션한 후 LIF가 온라인 상태가 아닙니다. 
+summary: ARL을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드할 때 단계 2, 단계 3 또는 단계 5에서 마이그레이션 후 LIF가 온라인 상태가 아닙니다. 
 ---
 = LIF 마이그레이션 실패
 :hardbreaks:

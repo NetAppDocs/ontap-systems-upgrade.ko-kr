@@ -11,7 +11,7 @@
 ====
 .Onboard Key Manager(온보드 키 관리자
 --
-* Onboard Key Manager * 를 사용하여 NVE 또는 NAE를 구성합니다
+Onboard Key Manager를 사용하여 NVE 또는 NAE를 구성합니다.
 
 .단계
 . 연결된 모든 키 관리 서버에서 새 노드로 인증 키 복원:
@@ -23,7 +23,7 @@
 --
 .외부 키 관리
 --
-* External Key Management * 를 사용하여 NVE 또는 NAE 구성
+External Key Management를 사용하여 NVE 또는 NAE를 구성합니다.
 
 .단계
 . 키 관리 서버를 계속 사용할 수 있는지, 해당 상태 및 인증 키 정보를 확인합니다.

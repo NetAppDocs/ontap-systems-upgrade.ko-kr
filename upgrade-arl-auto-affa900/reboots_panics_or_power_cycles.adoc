@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/reboots_panics_or_power_cycles.html 
 keywords: reboots, panics, power, cycles, node, crash 
-summary: 'AFF A700을 AFF A900으로 업그레이드할 때 여러 단계에서 시스템이 충돌(재부팅, 패닉 또는 전원 껐다 켜기)할 수 있습니다.' 
+summary: ARL을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드할 때 다른 단계에서 재부팅, 패닉 또는 전원 사이클을 진행하는 등 시스템이 충돌할 수 있습니다. 
 ---
 = 재부팅, 패닉 또는 전원 껐다 켜기
 :hardbreaks:

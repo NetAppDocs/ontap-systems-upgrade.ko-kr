@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/manage-authentication-using-kmip-servers.html 
 keywords: storage, encryption, authentication, key, manager, external 
-summary: 스토리지 암호화를 구성 및 관리하고 인증 키를 관리하며 AFF A700에서 AFF A900으로 업그레이드하는 동안 SnapMirror 관계를 중지합니다. 
+summary: 스토리지 암호화를 구성 및 관리하고 인증 키를 관리하며, ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드할 때 SnapMirror 관계를 중지합니다. 
 ---
 = KMIP 서버를 사용하여 인증 관리
 :hardbreaks:

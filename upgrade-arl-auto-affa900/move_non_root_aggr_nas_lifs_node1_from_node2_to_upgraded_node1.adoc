@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: /upgrade-arl-auto-affa900/move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html 
 keywords: moving, non-root, aggregates, nas, lif, node1, node2 
-summary: AFF A700에서 AFF A900으로 업그레이드하는 동안 노드 2의 노드1 NAS 데이터 LIF가 노드 2에서 노드 1로 재배치되었는지 확인합니다. 
+summary: ARL을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드할 때 노드 2에 있는 node1 NAS 데이터 LIF가 노드 2에서 노드 1로 재배치되는지 확인합니다. 
 ---
 = 노드 1이 소유하는 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2에서 업그레이드된 노드 1로 이동합니다
 :hardbreaks:
@@ -42,7 +42,7 @@ summary: AFF A700에서 AFF A900으로 업그레이드하는 동안 노드 2의 
 
 . 네트워크 연결 상태 확인 수행:
 +
-`network port reachability -show-detail -node node1`
+`network port reachability show -node node1`
 
 +
 인터페이스 그룹 및 VLAN 포트를 포함하여 연결된 모든 포트의 상태가 로 표시되는지 확인합니다 `OK`.

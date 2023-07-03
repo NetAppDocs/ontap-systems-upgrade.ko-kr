@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/issues_in_multiple_stages_of_procedure.html 
 keywords: issues, arise, multiple, stages, procedure 
-summary: AFF A700에서 AFF A900으로 업그레이드하는 동안 발생할 수 있는 문제에 대한 정보 
+summary: ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드할 때 발생할 수 있는 문제에 대한 정보 
 ---
 = 절차의 여러 단계에서 발생할 수 있는 문제입니다
 :hardbreaks:

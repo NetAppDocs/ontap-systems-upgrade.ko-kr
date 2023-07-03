@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/required_tools_and_documentation.html 
 keywords: required, tools, documentation, install, worksheet, ontap 
-summary: AFF A700에서 AFF A900으로 업그레이드하려면 특정 도구 및 문서가 있어야 합니다. 
+summary: ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드하려면 특정 도구와 문서가 있어야 합니다. 
 ---
 = 필요한 도구 및 문서
 :hardbreaks:

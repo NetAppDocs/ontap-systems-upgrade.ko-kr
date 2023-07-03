@@ -131,7 +131,7 @@ NOTE: SAN LIF를 원래 포트와 링크 속도가 동일한 포트로 이동해
 +
 `network interface show -home-node <node4> -role data`
 
-.. LIF가 하나라도 다운되면 각 LIF에 대해 다음 명령을 한 번 입력하여 LIF의 관리 상태를 Up으로 설정합니다.
+.. LIF가 하나라도 다운되면 LIF의 관리 상태를 로 설정합니다 `up` 다음 명령을 각 LIF에 대해 한 번 입력합니다.
 +
 `network interface modify -vserver _vserver_name_ -lif _lif_name_ -status-admin up`
 
