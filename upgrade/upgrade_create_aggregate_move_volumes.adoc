@@ -4,13 +4,25 @@ sidebar: sidebar
 keywords: create, aggregate, node, store, volume, original, node, identify, aggregate, individually, create an aggregate and moving volumes to the new nodes 
 summary: 각 새 노드에 하나 이상의 애그리게이트를 만들어 원래 노드에서 이동하려는 볼륨을 저장합니다. 각 볼륨의 애그리게이트를 파악하고 각 볼륨을 개별적으로 이동해야 합니다. 
 ---
-= 애그리게이트를 생성하고 볼륨을 새 노드로 이동합니다
+= Aggregate를 생성하고 볼륨을 이동합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
+ONTAP 소프트웨어를 업그레이드하는 동안 새 노드에 애그리게이트를 생성한 다음, 볼륨을 이동하여 데이터를 마이그레이션합니다.
+
+스토리지 구성에 SAN 볼륨 또는 암호화된 볼륨이 포함된 경우 다음 볼륨도 이동해야 합니다.
+
+* <<move_san_vols,SAN 볼륨 이동>>
+* <<암호화가 활성화된 상태로 볼륨 이동>>
+
+
+
+
+== 애그리게이트를 생성하고 볼륨을 새 노드로 이동합니다
+
 각 새 노드에 하나 이상의 애그리게이트를 만들어 원래 노드에서 이동하려는 볼륨을 저장합니다. 각 볼륨의 애그리게이트를 파악하고 각 볼륨을 개별적으로 이동해야 합니다.
 
 .시작하기 전에
@@ -18,12 +30,15 @@ summary: 각 새 노드에 하나 이상의 애그리게이트를 만들어 원�
 
 https://docs.netapp.com/us-en/ontap/data-protection-disaster-recovery/index.html["필요한 데이터 보호 절차를 찾습니다"^].
 
+
+NOTE: 각 SVM(스토리지 가상 머신)에 대해 NetApp은 루트 볼륨을 이동하기 전에 클러스터에서 모든 비 루트 볼륨을 이동한 다음 한 번에 하나의 SVM에서 이 절차를 수행할 것을 권장합니다.
+
 .단계
 . 각 새 노드에 하나 이상의 Aggregate를 생성합니다.
 +
-`storage aggregate create -aggregate aggr_name -node new_node_name -diskcount integer`
+`storage aggregate create -aggregate _aggr_name_ -node _new_node_name_ -diskcount integer`
 
-. 볼륨을 이동할 원래 노드의 aggregate와 동일한 SVM에 새 애그리게이트를 추가합니다.
+. 볼륨을 이동할 원래 노드의 aggregate와 동일한 SVM(스토리지 가상 머신)에 새 애그리게이트를 추가합니다.
 +
 `vserver add-aggregates`
 
@@ -36,7 +51,7 @@ https://docs.netapp.com/us-en/ontap/data-protection-disaster-recovery/index.html
 
 . 원래 노드에서 새 노드로 이동할 볼륨의 정보를 표시합니다.
 +
-`volume show -vserver svm_name -node original_node_name`
+`volume show -vserver _svm_name_ -node _original_node_name_`
 
 +
 나중에 참조할 수 있도록 명령 출력을 유지해야 합니다.
@@ -57,7 +72,7 @@ vs1       vs1root      aggr1        online     RW         20MB    18.88MB    5%
 ----
 . 특정 볼륨을 이동할 수 있는 애그리게이트 결정:
 +
-`volume move target-aggr show -vserver svm_name -volume vol_name`
+`volume move target-aggr show -vserver _svm_name_ -volume _vol_name_`
 
 +
 다음 예에서는 "VS2" SVM에서 "user_max" 볼륨을 나열된 Aggregate로 이동할 수 있음을 보여 줍니다.
@@ -77,28 +92,40 @@ node12a_aggr4    10.36GB         FCAL
 ----
 . 이동할 각 볼륨에 대해 검증 검사를 실행하여 지정된 aggregate로 이동할 수 있는지 확인합니다.
 +
-`volume move start -vserver svm_name -volume volume_name -destination-aggregate destination_aggregate_name -perform-validation-only true`
+`volume move start -vserver _svm_name_ -volume _volume_name_ -destination-aggregate _destination_aggregate_name_ -perform-validation-only true`
 
 . 볼륨을 한 번에 하나씩 이동합니다(고급 권한 레벨).
 +
-`volume move start -vserver svm_name -volume vol_name -destination-aggregate destination_aggr_name -cutover-window integer`
+`volume move start -vserver _svm_name_ -volume _vol_name_ -destination-aggregate _destination_aggr_name_ -cutover-window integer`
 
 +
 노드 루트 볼륨(vol0)은 이동할 수 없습니다. SVM 루트 볼륨을 비롯한 다른 볼륨을 이동할 수 있습니다.
 
 . 의 결과를 표시합니다 `volume move` 볼륨이 성공적으로 이동되었는지 확인하는 작업:
 +
-`volume move show -vserver svm_name -volume vol_name`
+`volume move show -vserver _svm_name_ -volume _vol_name_`
 
 . 를 누릅니다 `volume move` 작업이 여러 번 시도해도 최종 단계를 완료하지 못합니다. 이동을 강제로 종료합니다.
 +
-`volume move trigger-cutover -vserver svm_name -volume vol_name -force true`
+`volume move trigger-cutover -vserver _svm_name_ -volume _vol_name_ -force true`
 
 +
 볼륨 이동 작업을 강제로 완료하면 이동 중인 볼륨에 대한 클라이언트 액세스가 중단될 수 있습니다.
 
 . 볼륨이 지정된 SVM으로 성공적으로 이동되었으며 올바른 애그리게이트에 있는지 확인합니다.
 +
-`volume show -vserver svm_name`
+`volume show -vserver _svm_name_`
 
 
+
+
+
+== SAN 볼륨 이동
+
+SAN 볼륨을 이동하려면 의 단계를 따릅니다 https://docs.netapp.com/us-en/ontap-metrocluster/transition/task_move_linux_iscsi_hosts_from_mcc_fc_to_mcc_ip_nodes.html["Linux iSCSI 호스트를 MetroCluster FC에서 MetroCluster IP 노드로 이동"^]. 이는 MetroCluster 구성과 비 MetroCluster 구성 모두에서 SAN 볼륨을 이동하는 경우에 적용됩니다.
+
+
+
+== 암호화가 활성화된 상태로 볼륨 이동
+
+애그리게이트 암호화가 활성화된 상태로 볼륨을 이동하려면 의 단계를 수행하십시오 https://docs.netapp.com/us-en/ontap/encryption-at-rest/encrypt-existing-volume-task.html["볼륨 이동 시작 명령을 사용하여 기존 볼륨에서 암호화를 활성화합니다"^].
