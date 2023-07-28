@@ -64,7 +64,7 @@ entries:
     url: "/upgrade/upgrade-prepare-when-moving-volumes.html"
   - title: 새 노드를 설치하고 연결합니다
     url: "/upgrade/upgrade-install-and-join-new-nodes-move-vols.html"
-  - title: Aggregate를 생성하고 볼륨을 이동합니다
+  - title: Aggregate를 생성하고 볼륨을 새로운 ndoes로 이동합니다
     url: "/upgrade/upgrade-create-aggregate-move-volumes.html"
   - title: SAN이 아닌 데이터 LIF 및 클러스터 관리 LIF를 이동합니다
     url: "/upgrade/upgrade-move-lifs-to-new-nodes.html"

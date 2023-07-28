@@ -3644,7 +3644,6 @@
   <block id="fe82c8b7274d1544ce545c5b1bb60481" category="paragraph"><block ref="f1851eed8781f22db14d4f07a13e575d" prefix="" category="inline-code"></block></block>
   <block id="39e7eb0e1fd08f1ba6fea6e4df4f0d50" category="paragraph">새 Aggregate와 볼륨을 이동할 이전 Aggregate는 모두 동일한 SVM에 있어야 합니다.</block>
   <block id="65c0e65d7f3d4f9b7e59695a5beed439" category="list-text">새 Aggregate가 이제 원래 노드의 Aggregate와 동일한 SVM에 할당되었는지 확인합니다.</block>
-  <block id="d144782c7f277a43532b9873909babed" category="paragraph"><block ref="b186c066dc880b3c14ba26f8af3a00b8" prefix="" category="inline-code"></block></block>
   <block id="60ffd94dccfc67beb8507929d59460e3" category="list-text">원래 노드에서 새 노드로 이동할 볼륨의 정보를 표시합니다.</block>
   <block id="045e4ac6df29d2cafc7b15a9d2d9e81e" category="paragraph">나중에 참조할 수 있도록 명령 출력을 유지해야 합니다.</block>
   <block id="291a171e8b949620eda68d899d2e3e06" category="paragraph">다음 예에서는 "VS1" SVM 및 "Node0" 노드의 볼륨을 표시합니다.</block>
@@ -4722,12 +4721,6 @@ AFF C190에서 AFF A150으로</block>
   <block id="4ca61b6580e69e11b24f59b9ac4072a9" category="list-text">원래 노드는 새 노드와 동일한 소프트웨어 버전을 지원해야 합니다.</block>
   <block id="36596c0816df78df5e957f4a98189433" category="inline-link">혼합 버전 ONTAP 클러스터</block>
   <block id="85e5b517efa68824f0234d73603eb6a7" category="admonition">혼합 소프트웨어 버전 클러스터 업그레이드에 대한 자세한 내용은 를 참조하십시오<block ref="d823e4718a376dd43333fd0519ed9811" category="inline-link-rx"></block>.</block>
-  <block id="b60ec04bcd2e9c2318176db5554a658d" category="doc">Aggregate를 생성하고 볼륨을 이동합니다</block>
-  <block id="963335c836d3a76f0b7a6fe41a21aa10" category="paragraph">ONTAP 소프트웨어를 업그레이드하는 동안 새 노드에 애그리게이트를 생성한 다음, 볼륨을 이동하여 데이터를 마이그레이션합니다.</block>
-  <block id="df6a90d1df953a09f0861a13f5b797ac" category="paragraph">스토리지 구성에 SAN 볼륨 또는 암호화된 볼륨이 포함된 경우 다음 볼륨도 이동해야 합니다.</block>
-  <block id="2b6df1fd9c8637b8e45b452843b61251" category="inline-xref">SAN 볼륨 이동</block>
-  <block id="5d3013f3192caf5b6d504d6b74b3c0bd" category="list-text"><block ref="bec3fd5974c2411b73ce484bc58515dc" category="inline-xref-macro-rx"></block></block>
-  <block id="c18328ed9c3f2ac31d9f3c316cc9e737" category="list-text"><block ref="4b487523353dbb4021f9c789f1abd771" category="inline-xref-macro-rx"></block></block>
   <block id="26e45a92e217288c9847a5d2ced10530" category="admonition">각 SVM(스토리지 가상 머신)에 대해 NetApp은 루트 볼륨을 이동하기 전에 클러스터에서 모든 비 루트 볼륨을 이동한 다음 한 번에 하나의 SVM에서 이 절차를 수행할 것을 권장합니다.</block>
   <block id="1c36e2804cb1ec373c2a554d3b816849" category="paragraph"><block ref="5f689443af4fd8e259550080d375f644" prefix="" category="inline-code"></block></block>
   <block id="d2d22984b72e7ba1d65fc825394c313c" category="list-text">볼륨을 이동할 원래 노드의 aggregate와 동일한 SVM(스토리지 가상 머신)에 새 애그리게이트를 추가합니다.</block>
@@ -4738,9 +4731,10 @@ AFF C190에서 AFF A150으로</block>
   <block id="cc3a467b8580d41426d4329faee0f040" category="paragraph"><block ref="f2384b5c154a2111fb6276b4aca913cf" prefix="" category="inline-code"></block></block>
   <block id="bffd5b081e9a5849648039713909f29e" category="paragraph"><block ref="0b16dbbb7b08013a425b1eda1ac6c38b" prefix="" category="inline-code"></block></block>
   <block id="ce294e2d50479fda57c6fd56279415cc" category="paragraph"><block ref="fb8ac527e5a233ade0c11a4584eca81d" prefix="" category="inline-code"></block></block>
-  <block id="ad6b5250334c326be9a638a7f4693ca4" category="inline-link">Linux iSCSI 호스트를 MetroCluster FC에서 MetroCluster IP 노드로 이동</block>
-  <block id="0bdc5d6c2eb50e1cec81ff459335b642" category="paragraph">SAN 볼륨을 이동하려면 의 단계를 따릅니다<block ref="5da33795dc988979c1b6bb2285c365f5" category="inline-link-rx"></block>. 이는 MetroCluster 구성과 비 MetroCluster 구성 모두에서 SAN 볼륨을 이동하는 경우에 적용됩니다.</block>
-  <block id="2729d03a958013cde2327ff523899d85" category="section-title">암호화가 활성화된 상태로 볼륨 이동</block>
   <block id="c773b38bfd21b7a35d0d8783b04fa05f" category="inline-link">볼륨 이동 시작 명령을 사용하여 기존 볼륨에서 암호화를 활성화합니다</block>
-  <block id="0a770440a8b9e6d0362d3a18060f162d" category="paragraph">애그리게이트 암호화가 활성화된 상태로 볼륨을 이동하려면 의 단계를 수행하십시오<block ref="f72c159bffbf92db3704805be06f351f" category="inline-link-rx"></block>.</block>
+  <block id="7dc9e3aa635e299178bab6d9a48bf453" category="inline-link">Linux iSCSI 호스트를 MetroCluster FC에서 MetroCluster IP 노드로 이동합니다</block>
+  <block id="0345ed9888a23976d10ee4dbe39e5b1c" category="paragraph">스토리지 구성에 SAN 볼륨이 포함되어 있는 경우 의 단계를 따릅니다<block ref="850d31fae3bf8532793cf4bdf951a1e7" category="inline-link-rx"></block> 볼륨을 새 노드로 이동하려면 다음을 수행합니다.</block>
+  <block id="666b05db74464377ceeeff39f469bcde" category="paragraph"><block ref="e31e4085164f9a5d9e1c0ec1ca25fc65" prefix="" category="inline-code"></block></block>
+  <block id="214d6a2680fcbe83e2c825740dae5888" category="admonition">스토리지 구성에 암호화가 활성화된 볼륨이 포함되어 있는 경우 의 단계를 수행하십시오<block ref="f72c159bffbf92db3704805be06f351f" category="inline-link-rx"></block> 를 눌러 해당 볼륨을 이동합니다.</block>
+  <block id="565ead98cf39206ccfb37fb835c84352" category="sidebar">Aggregate를 생성하고 볼륨을 새로운 ndoes로 이동합니다</block>
 </blocks>
