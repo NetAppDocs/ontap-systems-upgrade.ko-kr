@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/replace_node1_system_modules.html 
-keywords: replace, node1, system, modules 
+keywords: aff, asa, fas, replace, node1, system, modules 
 summary: ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드할 때 node1 시스템 모듈을 교체합니다. 
 ---
 = 노드1 시스템 모듈을 교체합니다
@@ -17,7 +17,15 @@ summary: ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업�
 업그레이드 구성을 위해 node1 시스템 모듈을 교체합니다.
 
 * <<replace_modules,AFF A220, AFF A200, AFF C190, FAS2620 또는 FAS2720 컨트롤러 모듈을 교체합니다>>
++
+
+NOTE: 이 절차를 사용하여 ASA로 구성된 AFF A220을 대체할 수도 있습니다.
+
 * <<AFF A700 또는 FAS9000 컨트롤러 및 NVRAM 모듈을 교체합니다>>
++
+
+NOTE: 이 절차를 사용하여 ASA로 구성된 AFF A700을 교체할 수도 있습니다.
+
 
 
 
@@ -53,9 +61,9 @@ image::../media/drw_2240_x_opening_cam_latch.png[drw 2240 x 캠 개방 래치]
 
 
 
-=== AFF A150 또는 FAS2820 컨트롤러 모듈을 설치합니다
+=== ASA A150, AFF A150 또는 FAS2820 컨트롤러 모듈을 설치합니다
 
-노드 1에 AFF A150 또는 FAS2820 컨트롤러 모듈을 설치하려면 다음 절차를 따르십시오.
+다음 절차를 사용하여 노드1에 ASA A150, AFF A150 또는 FAS2820 컨트롤러 모듈을 설치합니다.
 
 .단계
 . 컨트롤러 모듈의 끝을 섀시의 입구에 맞춘 다음 컨트롤러 모듈을 반쯤 조심스럽게 시스템에 밀어 넣습니다.
@@ -178,14 +186,14 @@ image::../media/black_circle_two.png[두 번째]
 
 
 
-=== AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다
+=== ASA A900, AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다
 
-노드 1에서 업그레이드하기 위해 받은 AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다.
+노드1에서 업그레이드를 위해 받은 ASA A900, AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다.
 
 설치를 수행할 때 다음 사항에 주의해야 합니다.
 
 * 슬롯 6-1과 6-2의 빈 필러 모듈을 모두 이전 NVRAM 모듈에서 새 NVRAM 모듈로 이동합니다.
-* 코어 덤프 장치를 AFF A700 NVRAM 모듈에서 AFF A900 NVRAM 모듈로 이동하지 마십시오.
+* AFF A700 NVRAM 모듈에서 ASA A900 또는 AFF A900 NVRAM 모듈로 코어 덤프 장치를 이동하지 마십시오.
 * FAS9000 NVRAM 모듈에 설치된 All-Flash 캐시 모듈을 FAS9500 NVRAM 모듈로 이동합니다.
 
 
@@ -194,9 +202,9 @@ image::../media/black_circle_two.png[두 번째]
 
 
 
-==== AFF A900 또는 FAS9500 NVRAM 모듈을 설치합니다
+==== ASA A900, AFF A900 또는 FAS9500 NVRAM 모듈을 설치합니다
 
-노드 1의 슬롯 6에 AFF A900 또는 FAS9500 NVRAM 모듈을 설치하려면 다음 절차를 따르십시오.
+다음 절차를 사용하여 노드 1의 슬롯 6에 ASA A900, AFF A900 또는 FAS9500 NVRAM 모듈을 설치합니다.
 
 .단계
 . NVRAM 모듈을 슬롯 6의 섀시 입구 가장자리에 맞춥니다.
@@ -222,9 +230,9 @@ image::../media/black_circle_two.png[두 번째]
 
 
 
-==== 노드 1에 AFF A900 또는 FAS9500 컨트롤러 모듈을 설치합니다.
+==== 노드1에 ASA A900, AFF A900 또는 FAS9500 컨트롤러 모듈을 설치합니다.
 
-노드1에 AFF A900 또는 FAS9500 컨트롤러 모듈을 설치하려면 다음 절차를 따르십시오.
+다음 절차를 사용하여 노드1에 ASA A900, AFA A900 또는 FAS9500 컨트롤러 모듈을 설치합니다.
 
 .단계
 . 컨트롤러 모듈의 끝을 섀시의 열기 A에 맞춘 다음 컨트롤러 모듈을 반쯤 조심스럽게 시스템에 밀어 넣습니다.

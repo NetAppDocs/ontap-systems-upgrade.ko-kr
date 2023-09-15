@@ -3002,7 +3002,6 @@
   <block id="4ed758f1326f5379f7dc30fe674ce726" category="inline-link-macro">컨트롤러 업그레이드 지침</block>
   <block id="61bb0e064fd915427168b2e72e080eff" category="list-text">이 절차는 복잡하고 고급 ONTAP 관리 기술이 있다고 가정합니다. 또한 을 읽고 이해해야 합니다 <block ref="937d04c1dac5501bcacf105e8700fe45" category="inline-link-macro-rx"></block> 및 <block ref="57e14e08755134bb6fef9ad899bb58ee" category="inline-link-macro-rx"></block> 섹션을 참조하십시오.</block>
   <block id="51108f40a613018fdc6b3ad89f42122e" category="list-text">이 절차에서는 교체 컨트롤러 하드웨어가 새 하드웨어이며 다른 시스템에서 사용되지 않은 것으로 가정합니다. 중고 컨트롤러를 와 함께 준비하는 데 필요한 단계입니다<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block> 이 절차에는 명령이 포함되어 있지 않습니다. 교체 컨트롤러 하드웨어를 이전에 다른 ONTAP 클러스터의 일부로 사용한 경우 또는 독립 실행형 단일 노드 시스템으로 사용한 경우에는 기술 지원 부서에 문의해야 합니다.</block>
-  <block id="f57bde3eaa64080d17b3c49dfac5f25f" category="list-text">AFF A900 및 FAS9500 시스템은 하이 라인 전원(200V~240V)만 지원합니다. AFF A700 또는 FAS9000 시스템이 낮은 전력(100V에서 120V로)에서 실행되는 경우 이 절차를 사용하기 전에 AFF A700 또는 FAS9000 입력 전원을 변환해야 합니다.</block>
   <block id="c08f0b6d71108219929095cbd90d111d" category="paragraph">다음과 같은 상황에서 이 절차를 사용하십시오.</block>
   <block id="eb51502469d00e14522e17bfff4124ad" category="list-text">새 컨트롤러를 새 HA 쌍으로 클러스터에 추가하고 볼륨 이동을 사용하여 데이터를 마이그레이션하지 않으려는 경우</block>
   <block id="a3bad37bbfc8cbb39ebdfc42ccfa6bec" category="list-text">ONTAP 관리에 대한 경험이 있으며 진단 권한 모드에서 작업할 때 발생할 수 있는 위험에 대해 잘 알 수 있습니다.</block>
@@ -3057,7 +3056,6 @@
   <block id="8fec9698e48614a1961275dcbf888442" category="doc">netboot 노드1</block>
   <block id="b3fa942f65431caf219b9891c77a7cc2" category="list-text">[[netboot_node1_step2] _NetApp Support 사이트_의 소프트웨어 다운로드 섹션에서 해당 ONTAP 소프트웨어를 다운로드하여 를 저장합니다<block ref="f466b354adfc3ad817d7c11c037c8797" prefix=" " category="inline-code"></block> 웹 액세스 가능 디렉터리에 있는 파일입니다.</block>
   <block id="2e9296c7316d4c4c76380224c1db72b2" category="list-text">노드 1에서 netboot 수행:</block>
-  <block id="fed5188660beab0c1ca98ade1cf9e488" category="list-text">AFF A900 또는 FAS9500 컨트롤러 모듈에서 노드 1이 부팅될 때까지 기다린 후 다음과 같이 부팅 메뉴 옵션을 표시합니다.</block>
   <block id="e581180eb51e0c55c220313efa4f6d03" category="paragraph">를 클릭합니다<block ref="8dea39d32c263f1671cb84e9e84964a0" prefix=" " category="inline-code"></block> 에서 다운로드한 위치로 이동합니다<block ref="f466b354adfc3ad817d7c11c037c8797" prefix=" " category="inline-code"></block> 인치 <block ref="3c453ca3ddf73b988300a74fd18c23c3" category="inline-xref-macro-rx"></block>.</block>
   <block id="963f89f538a2fcd5d086c865807c540a" category="list-text">프롬프트에서 를 실행합니다<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block> 부팅 미디어에서 이전 구성을 지우는 명령:</block>
   <block id="e3dcb6e98d703b4041ac7a4b6d40412e" category="list-text">옵션을 선택합니다<block ref="e4da3b7fbbce2345d7772b0674a318d5" prefix=" " category="inline-code"></block> 를 눌러 부팅 메뉴에서 유지보수 모드로 이동합니다. 답변<block ref="a6105c0a611b41b08f1209506350279e" prefix=" " category="inline-code"></block> 메시지가 표시되면 를 클릭하여 노드가 유지보수 모드에서 중지되고 명령 프롬프트가 표시됩니다<block ref="2cf8a3bab83c4d2618c18eeeca9ebc98" prefix=" " category="inline-code"></block>.</block>
@@ -3168,15 +3166,10 @@
   <block id="1ade29bb16a89d6eb1ac0378b26d08cc" category="image-alt">NVRAM 모듈을 분리합니다</block>
   <block id="c6e52defde912721ad3ec5315c5d9664" category="cell">문자 및 숫자 I/O 캠 래치</block>
   <block id="0e50691d6ac3e9df529fa546f2486bd7" category="cell">I/O 래치가 완전히 잠금 해제되었습니다</block>
-  <block id="32820fb65b578170b0fc242eb57ba80e" category="list-text">코어 덤프 장치를 AFF A700 NVRAM 모듈에서 AFF A900 NVRAM 모듈로 이동하지 마십시오.</block>
   <block id="d0106eeb656b11c6a07a8e45dcf1b214" category="list-text">FAS9000 NVRAM 모듈에 설치된 All-Flash 캐시 모듈을 FAS9500 NVRAM 모듈로 이동합니다.</block>
-  <block id="c7fecf95820e09d00c74bf86805bc991" category="section-title">AFF A900 또는 FAS9500 NVRAM 모듈을 설치합니다</block>
-  <block id="1a841cb7f620c7f0684b56a8a034fb65" category="paragraph">노드 1의 슬롯 6에 AFF A900 또는 FAS9500 NVRAM 모듈을 설치하려면 다음 절차를 따르십시오.</block>
   <block id="3d6ee5006b58007aa6b243ac902837ac" category="list-text">NVRAM 모듈을 슬롯 6의 섀시 입구 가장자리에 맞춥니다.</block>
   <block id="a8ad32b9b5381f0e3f1c5897679ae7eb" category="list-text">글자가 새겨진 번호가 매겨진 I/O 캠 래치가 I/O 캠 핀과 맞물릴 때까지 NVRAM 모듈을 슬롯에 부드럽게 밀어 넣은 다음 I/O 캠 래치를 끝까지 밀어 NVRAM 모듈을 제자리에 고정시킵니다.</block>
   <block id="5d555500d4c58002388a7088e1c8f510" category="image-alt">NVRAM 모듈을 설치합니다</block>
-  <block id="830a042377d7fdbd36c48ece8669e61c" category="section-title">노드 1에 AFF A900 또는 FAS9500 컨트롤러 모듈을 설치합니다.</block>
-  <block id="bb0ced2b785386259d517f7ae7bd88d1" category="paragraph">노드1에 AFF A900 또는 FAS9500 컨트롤러 모듈을 설치하려면 다음 절차를 따르십시오.</block>
   <block id="a93447d104277da61e99f98be3016581" category="list-text">컨트롤러 모듈의 끝을 섀시의 열기 A에 맞춘 다음 컨트롤러 모듈을 반쯤 조심스럽게 시스템에 밀어 넣습니다.</block>
   <block id="8c3e973bd184c686de74d4c99763571c" category="admonition">절차의 뒷부분에서 지시가 있을 때까지 컨트롤러 모듈을 섀시에 완전히 삽입하지 마십시오.</block>
   <block id="85b0e5132d3bec02fcda8eb6f24b6062" category="list-text">관리 및 콘솔 포트를 노드1 컨트롤러 모듈에 케이블로 연결합니다.</block>
@@ -3226,10 +3219,6 @@
   <block id="09e9f7abfe1cdfbd7b4465d4dbc6bd0c" category="paragraph">노드 1과 노드 2에서 스토리지 암호화가 설정된 경우 섹션을 완료합니다 <block ref="18c90c300c0b71334b8b427eaf4f38a3" category="inline-link-macro-rx"></block>. 그렇지 않으면 섹션을 완료합니다 <block ref="6e48b929ca0767f00c15eeb6d7e78755" category="inline-link-macro-rx"></block>.</block>
   <block id="1b8060cb5ae9dd21090d2ec07cc376b2" category="paragraph">업그레이드를 수행하려면 접지 스트랩이 있어야 하며 업그레이드 프로세스 중에 다른 문서를 참조해야 합니다.</block>
   <block id="d72e37445f435123c47c01a1bd03271c" category="paragraph">을 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 이 업그레이드에 필요한 참조 문서 및 참조 사이트 목록에 액세스합니다.</block>
-  <block id="dbc99796dd5482cbc7660b57b686c30f" category="doc">노드2에 AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다</block>
-  <block id="446e34a339be0fda54aae2fe862c868f" category="paragraph">노드2의 슬롯 6에 AFF A900 또는 FAS9500 NVRAM 모듈을 설치하려면 다음 절차를 따르십시오.</block>
-  <block id="b5e3968706cd8f4fee9d9a918b1b867f" category="section-title">노드2에 AFF A900 또는 FAS9500 컨트롤러 모듈을 설치합니다</block>
-  <block id="43d062a38b70447bd532892c53e0817c" category="paragraph">노드2에 AFF A900 또는 FAS9500 컨트롤러 모듈을 설치하려면 다음 절차를 따르십시오.</block>
   <block id="9242c558140d9a52d10f2e6b57f75893" category="list-text">컨트롤러 모듈의 끝을 섀시의 베이 B에 맞춘 다음 컨트롤러 모듈을 반쯤 가볍게 밀어 시스템에 넣습니다.</block>
   <block id="1ba57f7982d64e52fcc3eb0235996968" category="admonition">베이 레이블은 컨트롤러 모듈 바로 위의 섀시에 있습니다.</block>
   <block id="254d1495a725edffc2f7c4eb5441615a" category="admonition">절차의 뒷부분에서 컨트롤러 모듈을 삽입하라는 지시가 있을 때까지 섀시에 모듈을 완전히 삽입하지 마십시오.</block>
@@ -4057,10 +4046,8 @@
   <block id="1c328c36316a518e9532ed77177daa6c" category="list-text">기존 및 교체 컨트롤러에서 동일한 ONTAP 버전을 사용할 필요는 없습니다. ONTAP 소프트웨어 업그레이드는 컨트롤러 업그레이드로 수행됩니다.</block>
   <block id="da74cb1ad73d862a786d9f20938d9c7a" category="list-text">업그레이드할 때 지원되는 ONTAP 버전 및 패치 레벨로 교체 컨트롤러를 설치해야 합니다.</block>
   <block id="dee716592bbae6fdba2b32d2854360ba" category="list-text">절차를 시작하고 첫 번째 노드를 업그레이드한 후에는 컨트롤러 업그레이드를 취소하거나 다시 취소할 수 없습니다.</block>
-  <block id="37ef3103c62f7c4c537260066ec1fcad" category="paragraph">노드 2에서 업그레이드하기 위해 받은 AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다. 노드2는 시스템 뒷면에서 컨트롤러를 볼 때 섀시 오른쪽에 있는 컨트롤러 B입니다.</block>
   <block id="d9e40d62315bfc8bad4f1329f7f9b867" category="paragraph">설치를 수행할 때 다음 사항에 주의해야 합니다.</block>
   <block id="342f3ca2519e4e92f56675a89236fce6" category="list-text">슬롯 6-1과 6-2의 빈 필러 모듈을 모두 이전 NVRAM 모듈에서 새 NVRAM 모듈로 이동합니다.</block>
-  <block id="97bcf885640a80425f98f36e28630da4" category="paragraph">노드 1에서 업그레이드하기 위해 받은 AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다.</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">이 작업에 대해</block>
   <block id="3468b73fe010ca505a63fcddaa4f3601" category="paragraph-title">이 정보에 사용된 용어</block>
   <block id="5d022d26a75a4e30fae6648d5bcdd9e5" category="paragraph-title">MetroCluster FC 구성의 경우</block>
@@ -4521,9 +4508,6 @@ FAS2720</block>
   <block id="e1ea632cab9e8d0f0821fea579334839" category="cell">FAS2620 또는 FAS2720</block>
   <block id="cac76ada4fbfca68ed190eb21810e1af" category="cell">FAS2820</block>
   <block id="d12ea131bf417fe3ef7b6423e508e706" category="list-text">NetApp 세일즈 담당자에게 컨트롤러 업그레이드용 하드웨어를 수령했는지 확인했습니다.</block>
-  <block id="8e02c0c89f1b8ab4a56a9c71f0625665" category="list-text">AFF A150 컨트롤러</block>
-  <block id="6378cfc8fa57ccbd128875c2ace0b13d" category="list-text">FAS2820 컨트롤러</block>
-  <block id="7a91ac5d471b05d929d8adc1accb6f07" category="list-text">AFF A900 또는 FAS9500 컨트롤러와 NVRAM 모듈 및 업그레이드에 필요한 부품</block>
   <block id="798f018ee352fb079a57a34119747a3b" category="list-text">업그레이드를 위한 최소 ONTAP 버전을 실행하고 있습니다. 자세한 내용은 을 참조하십시오 <block ref="8294b96e46ba28730c909aaac28da089" category="inline-link-macro-rx"></block>.</block>
   <block id="1155b04ebff43df03ca1b9ec1d6b56a7" category="paragraph">AFF A700 또는 FAS9000 시스템에서 패브릭 MetroCluster 또는 MetroCluster IP 구성을 업그레이드하려면 를 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> MetroCluster 업그레이드 및 Expansion_content에 대한 링크</block>
   <block id="0ad9e0a8a319618923e172d4571038eb" category="summary">필요한 경우 ARL을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드할 때 업그레이드된 노드1에서 Key-manager 구성을 복원합니다.</block>
@@ -4535,9 +4519,6 @@ FAS2720</block>
   <block id="644e220a44e1ff19f9d586b2ec3ee2d5" category="summary">업그레이드를 시작하기 전에 동일한 섀시에서 컨트롤러 모델을 업그레이드할 수 있는 올바른 하드웨어가 있는지 확인하십시오.</block>
   <block id="03edb26b26a23464d3e656fd4bb1aa20" category="cell">업그레이드 중인 경우...</block>
   <block id="010fb6bd96430e7065ef62ecb9af2e9b" category="cell">필수 사항...</block>
-  <block id="c44a10256b9f85d5e800b2ed43581a1f" category="cell">AFF A220에서 AFF A150으로
-AFF A150에서 AFF A150으로
-AFF C190에서 AFF A150으로</block>
   <block id="4e106a6c623eb6811b42be00dbde2ef3" category="cell">컨트롤러 모듈 2개</block>
   <block id="a96a413dc366d34740f0c82530514332" category="cell">FAS2620 또는 FAS2720에서 FAS2820</block>
   <block id="327579b68dffec79f2bcb176142f3d56" category="cell">컨트롤러 2개 및 NVRAM 모듈 2개</block>
@@ -4563,10 +4544,6 @@ AFF C190에서 AFF A150으로</block>
   <block id="038a1f98f287c3e58631ad2264c784b5" category="summary">동일한 섀시에 있는 컨트롤러 모델의 ARL 업그레이드 중에 노드 2에 교체 시스템 모듈을 설치합니다.</block>
   <block id="7339c5b8269b308a3bb75b606b220a40" category="doc">노드 2에 교체 시스템 모듈을 설치합니다</block>
   <block id="34fc38d77d703f82e3ea00d22de0aeb3" category="paragraph">노드 2에서 업그레이드를 위해 받은 교체 시스템 모듈을 설치합니다. 노드2는 시스템 뒷면에서 컨트롤러를 볼 때 섀시 오른쪽에 있는 컨트롤러 B입니다.</block>
-  <block id="5e7fd8c323cf342aa95dc80800a1fdc6" category="list-text"><block ref="97cf05fba75cf4dbb437038017dd54d4" category="inline-xref-macro-rx"></block></block>
-  <block id="ba64144c5d9737bf50bbe571abc9950d" category="list-text"><block ref="969846cffb9e5ea10d5ad5e6bf7f7cb4" category="inline-xref-macro-rx"></block></block>
-  <block id="6758213905204ffa4f80a34952db5e54" category="section-title">노드 2에 AFF A150 또는 FAS2820 컨트롤러 모듈을 설치합니다</block>
-  <block id="7ceecefaf0c99b73e87c1d5f9cf924ab" category="paragraph">노드 2에서 업그레이드하기 위해 받은 AFF A150 또는 FAS2820 컨트롤러 모듈을 설치합니다. 노드2는 시스템 뒷면에서 컨트롤러를 볼 때 섀시 오른쪽에 있는 컨트롤러 B입니다.</block>
   <block id="d1cf73ac3312e046217517b06817c8be" category="list-text">분리할 컨트롤러에서 콘솔, 관리, SAS 스토리지 및 데이터 네트워크 케이블을 비롯한 모든 케이블을 분리합니다.</block>
   <block id="d31ea2ed80c8ed7a812def7ec46c2274" category="admonition">베이 B는 하단의 섀시에 있습니다.</block>
   <block id="e5c4a336c6c9037915d316eae71744e6" category="admonition">섀시의 전원이 이미 켜져 있으므로 노드 2가 완전히 장착되면 바로 부팅됩니다. 노드 2가 부팅되지 않도록 하려면 NetApp 컨트롤러 모듈을 슬롯에 완전히 삽입하기 전에 콘솔 및 관리 케이블을 노드2 컨트롤러 모듈에 연결하는 것이 좋습니다.</block>
@@ -4596,13 +4573,10 @@ AFF C190에서 AFF A150으로</block>
   <block id="1b96f3aa099b152fc864dedb115af912" category="list-text">캠 손잡이의 래치를 꽉 잡고 캠 핸들을 완전히 열어 미드플레인에서 컨트롤러 모듈을 분리한 다음 두 손으로 컨트롤러 모듈을 섀시에서 꺼냅니다.</block>
   <block id="d6daae29261c119313124d1d21a1c267" category="image-alt">drw 2240 x 캠 개방 래치</block>
   <block id="5fb9af22ffedd74df1492c91f96b8d7a" category="list-text">컨트롤러 모듈을 뒤집어 평평하고 안정적인 곳에 놓습니다.</block>
-  <block id="d6b285e69842dbc0d924036d7b995d3b" category="section-title">AFF A150 또는 FAS2820 컨트롤러 모듈을 설치합니다</block>
-  <block id="912a077db1a14ff7e811477241783af6" category="paragraph">노드 1에 AFF A150 또는 FAS2820 컨트롤러 모듈을 설치하려면 다음 절차를 따르십시오.</block>
   <block id="0dc0820d363c65f7e12beec6160b793f" category="list-text">컨트롤러 모듈의 끝을 섀시의 입구에 맞춘 다음 컨트롤러 모듈을 반쯤 조심스럽게 시스템에 밀어 넣습니다.</block>
   <block id="73c39df93369189180566421495bd86b" category="list-text">캠 핸들을 열린 위치에 둔 상태에서 컨트롤러 모듈이 중앙판과 만나 완전히 장착될 때까지 단단히 밀어 넣습니다. 컨트롤러 모듈이 완전히 장착되면 잠금 래치가 올라갑니다. 캠 핸들을 잠금 위치로 닫습니다.</block>
   <block id="3d642aff56195f4217e6874d1165bde1" category="list-text">자동 부팅을 중단하고 나면 로더 프롬프트에서 노드 1이 중지됩니다. 시간에 자동 부팅을 중단하지 않고 노드 1이 부팅을 시작하는 경우 메시지가 표시될 때까지 기다린 다음 * Ctrl-C * 를 눌러 부팅 메뉴로 이동합니다. 부팅 메뉴에서 노드가 중지되면 옵션 8을 사용하여 노드를 재부팅하고 재부팅 중에 자동 부팅을 중단합니다.</block>
   <block id="06fe1e1c3556d47d3a40caee57ba2411" category="section-title">AFF A700 또는 FAS9000 컨트롤러 및 NVRAM 모듈을 교체합니다</block>
-  <block id="72066ce06d5938f1862e6c83c33aada4" category="section-title">AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다</block>
   <block id="98b9e41d81ea8470149a461f166a4b92" category="summary">컨트롤러 업그레이드 후 이전 시스템이 더 이상 작동하지 않음을 NetApp에 알려 주십시오.</block>
   <block id="fd03f78134ad299c30781abefe876b6e" category="summary">ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드할 때 SnapMirror 전송 및 관계를 다시 시작합니다.</block>
   <block id="f941430cfefa788e4cbb0ace9529e703" category="summary">를 사용하여 ARL 업그레이드를 위한 1단계 프로세스 시퀀스<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 를 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드합니다.</block>
@@ -4623,9 +4597,7 @@ AFF C190에서 AFF A150으로</block>
   <block id="9e87e1dea37ce673e27a23a144a4e0ad" category="cell">교체 시스템</block>
   <block id="eae7ed824c301543a7e09d88d74d7b19" category="cell">지원되는 ONTAP 버전</block>
   <block id="c0aa270d19e4484079bd0c1488dd7e54" category="cell">9.10.1P15, 9.11.1P11, 9.12.1P5 이상</block>
-  <block id="faa1e7a6bde5d1d403d386d297d27d7d" category="paragraph">9.10.1P15, 9.11.1P11 이상(AFF A200 및 AFF A150)</block>
   <block id="1b09c77bbb88991cb420df4ea90eb3b8" category="admonition">AFF A200은 9.11.1 이후의 ONTAP 버전을 지원하지 않습니다.</block>
-  <block id="d64804559c99c24fbbd319d9bee6abb7" category="paragraph">9.11.1P7 이상(FAS2620)</block>
   <block id="9558d12002264bd41bf4a596c8f8ac1c" category="admonition">FAS2620은 9.11.1 이후의 ONTAP 버전을 지원하지 않습니다.</block>
   <block id="fe8a27b3504b515f0bd7508cfd89776a" category="paragraph">9.13.1 이상(FAS2820)</block>
   <block id="5abae7190ce598d45fe390e44304cde0" category="cell">9.13.1 이상</block>
@@ -4633,9 +4605,6 @@ AFF C190에서 AFF A150으로</block>
   <block id="17c022b189bd2857924f4bbe654cb97e" category="paragraph">가능하면 이전 시스템과 교체 시스템에서 동일한 ONTAP 버전을 사용하는 것이 좋습니다. NetApp</block>
   <block id="9c1e88e5963163799eaba4d977d7d52f" category="paragraph">위 표의 최소 ONTAP 버전은 필수입니다. 이러한 ONTAP 버전에는 업그레이드 중에 섀시 내에서 컨트롤러 유형을 혼합하는 데 필요한 서비스 프로세서 또는 BMC(베이스보드 관리 컨트롤러) 펌웨어 버전이 있습니다.</block>
   <block id="48adbf20fd6c8a4139f6b2da13a4ed5b" category="paragraph">이 절차를 수행하는 동안 루트가 아닌 애그리게이트를 이전 컨트롤러 노드 간에 마이그레이션합니다. 설치 후 비루트 애그리게이트를 이전 컨트롤러 노드에서 교체 컨트롤러 노드로 마이그레이션합니다. 업그레이드 절차 중에 업그레이드 중인 노드에서 호스팅되는 데이터에 액세스할 수 있습니다.</block>
-  <block id="a329d0cf2e9de4cf2f5e7d162573f7a5" category="list-text">AFF A220, AFF A200 또는 AFF C190 시스템의 각 노드에서 컨트롤러 모듈을 새 AFF A150 모듈로 교체하십시오.</block>
-  <block id="cc9c49df693f66fdb8e78aaa496a3ca9" category="list-text">FAS2620 또는 FAS2720 시스템의 각 노드에 있는 컨트롤러 모듈을 새 FAS2820 모듈로 바꾸십시오.</block>
-  <block id="6617b5d0f699d4c1d9a03a9a07c8eeab" category="list-text">AFF A700 또는 FAS9000 시스템의 각 노드에서 2개의 컨트롤러 및 NVRAM 모듈을 새로운 AFF A900 또는 FAS9500 모듈로 교체합니다.</block>
   <block id="1f08ef6e3750d69789334fc412377b8b" category="list-text">ONTAP 버전에서 지원되지 않는 스위치와 업그레이드하려는 교체 시스템이 있는 경우 을 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> Hardware Universe_에 대한 링크</block>
   <block id="9016b0ff2820f5a72022aceaaea6350a" category="list-text">이 절차는 AFF A200, AFF A220, AFF C190, FAS2620, FAS2720에만 적용됩니다. AFF A700 및 FAS9000 시스템 AFF A150, FAS2820, AFF A900 또는 FAS9500 시스템으로 업그레이드해야 하는 다른 모든 컨트롤러 모델은 을 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 에 연결하려면 _ "system controller replace" 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 업그레이드하고 _ 를 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드하십시오.</block>
   <block id="373edaf8d573901bcaba4be302784a3b" category="list-text">AFF A200, AFF A220, AFF C190, FAS2620, FAS2720에서 업그레이드할 경우 AFF A700 또는 FAS9000 시스템 다운타임. 스토리지를 이동하거나 기술 지원 팀에 문의하여 컨트롤러 하드웨어를 업그레이드할 수 있습니다. 을 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 볼륨 또는 스토리지 _ 을(를) 이동하여 _ 업그레이드 에 연결합니다.</block>
@@ -4737,4 +4706,49 @@ AFF C190에서 AFF A150으로</block>
   <block id="666b05db74464377ceeeff39f469bcde" category="paragraph"><block ref="e31e4085164f9a5d9e1c0ec1ca25fc65" prefix="" category="inline-code"></block></block>
   <block id="214d6a2680fcbe83e2c825740dae5888" category="admonition">스토리지 구성에 암호화가 활성화된 볼륨이 포함되어 있는 경우 의 단계를 수행하십시오<block ref="f72c159bffbf92db3704805be06f351f" category="inline-link-rx"></block> 를 눌러 해당 볼륨을 이동합니다.</block>
   <block id="565ead98cf39206ccfb37fb835c84352" category="sidebar">Aggregate를 생성하고 볼륨을 새로운 ndoes로 이동합니다</block>
+  <block id="d59048f21fd887ad520398ce677be586" category="inline-link-macro">자세한 정보</block>
+  <block id="bfa6cc72f08aa2823167e389b6677da0" category="cell"><block ref="70d1727ffc9c452707805fb17e6a5b52" category="inline-link-macro-rx"></block>
+
+이 절차를 사용하여 ASA(All SAN Array)로 구성된 AFF 컨트롤러를 특정 모델 및 ONTAP 소프트웨어 버전의 ASA 컨트롤러로 업그레이드할 수 있습니다. <block ref="dd8a9320d133fc6bc4cebf159be26035" category="inline-link-macro-rx"></block>.</block>
+  <block id="7fbeff1dd4b772a22c3163f4be820b9c" category="cell">ASA으로 구성된 AFF A220입니다</block>
+  <block id="8b3182da28f8002496d5953dd474566c" category="cell">ASA A150 컨트롤러 모듈</block>
+  <block id="ac8778c8e9d09a5fbedc8eed17a252ae" category="cell">ASA로 구성된 AFF A700</block>
+  <block id="04d8a92a6a296cdc3dcff1b84bdc663d" category="cell">ASA A900 컨트롤러 및 NVRAM 모듈</block>
+  <block id="0814a528a6e09bdfa454da4598d03b6a" category="cell">ASA A150</block>
+  <block id="0e096ce16590ab86950913510752010e" category="cell">ASA A900</block>
+  <block id="0d1ed1043a9669e13b81f70da0ae56bb" category="list-text">ASA A150, AFF A150 또는 FAS2820 컨트롤러</block>
+  <block id="4ab38fe544b152aed6d17891d6b4942f" category="list-text">ASA A900, AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈, 업그레이드에 필요한 부품</block>
+  <block id="eb33e3b941791062baa1b3c30813ebb4" category="list-text">ASA A900, AFF A900 또는 FAS9500 컨트롤러 모듈에서 실행 중인 노드 1이 부팅되고 아래와 같이 부팅 메뉴 옵션이 표시될 때까지 기다립니다.</block>
+  <block id="93f5e3175d1952ff3357d8c3f9f9ebcc" category="admonition">이 절차를 사용하여 ASA로 구성된 AFF A220을 대체할 수도 있습니다.</block>
+  <block id="fe86eeb48c828c1dfa6494efc6b765cd" category="admonition">이 절차를 사용하여 ASA로 구성된 AFF A700을 교체할 수도 있습니다.</block>
+  <block id="23025a0dc68c759874f99e85d38e7ede" category="section-title">ASA A150, AFF A150 또는 FAS2820 컨트롤러 모듈을 설치합니다</block>
+  <block id="a75c1ab30ac0399f6d1308046a287763" category="paragraph">다음 절차를 사용하여 노드1에 ASA A150, AFF A150 또는 FAS2820 컨트롤러 모듈을 설치합니다.</block>
+  <block id="d7a4c6633fbd09856927cf66880d4940" category="section-title">ASA A900, AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다</block>
+  <block id="8c93dbb7f81c4c2f4b51369fa9829a6f" category="paragraph">노드1에서 업그레이드를 위해 받은 ASA A900, AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다.</block>
+  <block id="70b323769da32749c57798f0d8e782e5" category="list-text">AFF A700 NVRAM 모듈에서 ASA A900 또는 AFF A900 NVRAM 모듈로 코어 덤프 장치를 이동하지 마십시오.</block>
+  <block id="74cfe385d1c40d7e412430b003bd358b" category="section-title">ASA A900, AFF A900 또는 FAS9500 NVRAM 모듈을 설치합니다</block>
+  <block id="ea5c1600c51a21564153c6355d751d45" category="paragraph">다음 절차를 사용하여 노드 1의 슬롯 6에 ASA A900, AFF A900 또는 FAS9500 NVRAM 모듈을 설치합니다.</block>
+  <block id="ad6cf4baff2cddaf65f868a474f4ace2" category="section-title">노드1에 ASA A900, AFF A900 또는 FAS9500 컨트롤러 모듈을 설치합니다.</block>
+  <block id="1e05d2a5422d862c8080573b0bffa1d7" category="paragraph">다음 절차를 사용하여 노드1에 ASA A900, AFA A900 또는 FAS9500 컨트롤러 모듈을 설치합니다.</block>
+  <block id="d98f9591f3c1e658d83adfdac174718a" category="cell">ASA A900 컨트롤러 및 NVRAM 모듈 2</block>
+  <block id="400a12b5c5627da96b0587ceaacabfa4" category="inline-xref">ASA A150, AFF A150 또는 FAS2820 컨트롤러 모듈을 노드2에 설치합니다</block>
+  <block id="6d3b42496d1ff908492db44e6a7a996a" category="list-text"><block ref="4e16cb21c83d577e1da9298c1d3d7001" category="inline-xref-macro-rx"></block></block>
+  <block id="74cae3e1383e831697d2a89099232c43" category="inline-xref">ASA A900, AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 노드2에 설치합니다</block>
+  <block id="4f801783b3b54e6e155c8ba840a7984b" category="list-text"><block ref="090089409a807fc3646805d2e86db88d" category="inline-xref-macro-rx"></block></block>
+  <block id="abb999476ce6c21d1aa738091bf3cc58" category="section-title">노드2에 ASA A150, AFF A150 또는 FAS2820 컨트롤러 모듈을 설치합니다</block>
+  <block id="78bd224431479d8d5cafd763cca39b7c" category="paragraph">업그레이드를 위해 받은 ASA A150, AFF A150 또는 FAS2820 컨트롤러 모듈을 노드2에 설치합니다. 노드2는 시스템 뒷면에서 컨트롤러를 볼 때 섀시 오른쪽에 있는 컨트롤러 B입니다.</block>
+  <block id="a2f2586b0e85eb39267cb5c9d9e043d2" category="paragraph">노드2에서 업그레이드를 위해 받은 ASA A900, AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다. 노드2는 시스템 뒷면에서 컨트롤러를 볼 때 섀시 오른쪽에 있는 컨트롤러 B입니다.</block>
+  <block id="5dc4e3a6479ea8cf51106f2ac874a145" category="paragraph">다음 절차를 사용하여 노드 2의 슬롯 6에 ASA A900, AFF A900 또는 FAS9500 NVRAM 모듈을 설치합니다.</block>
+  <block id="f457531b113b8b894781ad94a1fa19d3" category="section-title">ASA A900, AFF A900 또는 FAS9500 컨트롤러 모듈을 노드2에 설치합니다</block>
+  <block id="839847d15e69edb34b89aa9634714fd2" category="paragraph">다음 절차를 사용하여 노드2에 ASA A900, AFF A900 또는 FAS9500 컨트롤러 모듈을 설치합니다.</block>
+  <block id="86e722dcbc94e4ea341e26dd6af9f76a" category="cell">All SAN 어레이로 구성된 AFF A220(ASA)</block>
+  <block id="4fdc3efb53d664a8ab709272358f7966" category="cell">9.13.1P1 이상</block>
+  <block id="184f38916b6639f5bdbf7619d90cebc3" category="paragraph">9.10.1P15, 9.11.1P11 이상</block>
+  <block id="d243c4c373219990c87996aba8af4741" category="paragraph">9.11.1P7(FAS2620)</block>
+  <block id="a4e58f4757b38ca2c59f5da9e90013a5" category="list-text">이전 컨트롤러의 각 노드에 있는 컨트롤러 모듈을 새 모듈로 바꿉니다. AFF A220, AFF A200, AFF C190, FAS2620 또는 FAS2720 시스템 업그레이드에 적용됩니다.</block>
+  <block id="15f948008082950e48724b1453dd6e11" category="list-text">이전 컨트롤러의 각 노드에 있는 컨트롤러와 NVRAM 모듈을 새 모듈로 바꿉니다. 이 내용은 AFF A700 또는 FAS9000 시스템 업그레이드에 적용됩니다.</block>
+  <block id="6e43ae996b970f40321b42d34dd0b4b8" category="list-text">ASA A900, AFF A900 및 FAS9500 시스템은 하이 라인 전력(200V~240V)만 지원합니다. AFF A700 또는 FAS9000 시스템이 낮은 전력(100V에서 120V로)에서 실행되는 경우 이 절차를 사용하기 전에 AFF A700 또는 FAS9000 입력 전원을 변환해야 합니다.</block>
+  <block id="97a6d360c94d9b7bc50b22cbefedff0a" category="cell">ASA A150에서 ASA로 구성된 AFF A220입니다</block>
+  <block id="d6e2de75372db4a1d57d81d7f91749d1" category="cell">AFF A220, AFF A200 또는 AFF C190을 AFF A150으로 전환</block>
+  <block id="6370691b1097dc9c4671ff1a5e381609" category="cell">ASA A900에 대한 ASA로 구성된 AFF A700</block>
 </blocks>
