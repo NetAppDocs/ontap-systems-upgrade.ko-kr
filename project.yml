@@ -13,6 +13,8 @@ sidebar:
     url: "/index.html"
   - section: upgrade
   - section: upgrade-arl
+  - title: 법적 고지
+    url: "/legal-notices.html"
 homepage:
   tiles:
   - title: 시작하십시오
