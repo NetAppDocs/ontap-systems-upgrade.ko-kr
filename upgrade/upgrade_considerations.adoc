@@ -13,52 +13,91 @@ summary: 업그레이드를 계획하려면 일반적인 업그레이드 고려 
 [role="lead"]
 업그레이드를 계획하려면 일반적인 업그레이드 고려 사항을 숙지해야 합니다. 필요한 경우 기술 지원 팀에 문의하여 클러스터 구성과 관련된 권장사항과 지침을 확인하십시오.
 
-.요구 사항 및 제한 사항
-* 스토리지를 이동하여 업그레이드하는 절차는 운영 중단이 있습니다. 볼륨을 이동하여 업그레이드하는 절차는 무중단으로 수행할 수 있으며
-* 원래 노드는 새 노드와 동일한 소프트웨어 버전을 지원해야 합니다.
+
+
+== 요구 사항 및 제한 사항
+
+환경에 따라 업그레이드를 시작하기 전에 특정 요소를 고려해야 합니다. 먼저 아래 표를 검토하여 고려해야 할 요구 사항 및 제한 사항을 확인하십시오.
+
+
+NOTE: 컨트롤러 업그레이드 절차를 시작하기 전에 아래 표에 나열된 질문을 모두 검토해야 합니다.
+
+[cols="30,70"]
+|===
+| 스스로에게 물어보십시오. | 대답이 '예'인 경우 다음을 수행합니다. 
+
+
+| 클러스터에서 서로 다른 컨트롤러 플랫폼 모델을 결합하고 있는가?  a| 
+link:https://hwu.netapp.com["스토리지 플랫폼 혼합 규칙을 따르고 있는지 확인합니다"^].
+
+HA 2노드의 컨트롤러는 AFF, FAS 또는 ASA 모델 2개여야 합니다.
+
+
+
+| 원래 노드와 새 노드에서 서로 다른 ONTAP 버전을 실행합니까?  a| 
+. https://hwu.netapp.com["원래 노드와 새 노드에서 지원하는 ONTAP 버전 및 패치 레벨을 확인합니다"^].
+. NetApp은 가능한 경우 원본 노드와 새 노드에서 동일한 ONTAP 버전을 실행할 것을 권장합니다. 이것이 불가능한 경우, link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP 버전을 업그레이드합니다"^] 원래 노드와 새 노드 간의 버전 차이가 4보다 크지 않도록 원래 노드에서 지원되는 최대 버전으로 설정합니다. 예를 들어 ONTAP 9.8 및 9.12.1이 지원되지만 ONTAP 9.8 및 9.13.1은 지원되지 않습니다.
 +
-link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["ONTAP를 업그레이드합니다"^]
+https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html["혼합 버전 ONTAP 클러스터에 대해 자세히 알아보십시오"^].
+
+
+
+
+
+| 시스템에 내부 드라이브가 있고 볼륨을 이동합니까?  a| 
+. link:https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["새 노드에 원래 노드와 연결된 스토리지를 수용할 수 있는 충분한 스토리지가 있는지 확인합니다"^].
+. 볼륨을 이동하여 업그레이드하면 원래 노드가 제거되기 전에 새 노드가 클러스터에 연결됩니다. 최대 클러스터 크기를 관찰해야 합니다.
++
+https://hwu.netapp.com["절차 중에 클러스터에서 컨트롤러의 총 수가 지원되는 최대 클러스터 크기를 초과하지 않는지 확인합니다"^].
 
 +
 
-NOTE: 혼합 소프트웨어 버전 클러스터 업그레이드에 대한 자세한 내용은 를 참조하십시오 https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html["혼합 버전 ONTAP 클러스터"^].
+NOTE: FCP, iSCSI 또는 FCoE와 같은 블록 프로토콜을 지원하는 8노드 클러스터를 업그레이드하려면 새 노드가 LUN을 올바르게 알고 있는지 확인하십시오. 자세한 내용은 을 참조하십시오 https://docs.netapp.com/us-en/ontap/san-management/index.html["SAN 스토리지 관리"^].
 
-* 최대 클러스터 크기를 관찰해야 합니다.
-+
-볼륨을 이동하여 업그레이드하면 원래 노드가 제거되기 전에 새 노드가 클러스터에 연결됩니다. 절차 중에 클러스터의 컨트롤러 수가 지원되는 최대 클러스터 크기를 초과하지 않는지 확인합니다.
-
-+
-https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
-
-* 클러스터에서 다른 컨트롤러 플랫폼 모델을 결합할 경우 스토리지 플랫폼 혼합 규칙을 따라야 합니다.
-+
-https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
-
-* 새 노드에는 원래 노드와 연결된 스토리지를 수용할 수 있는 충분한 스토리지가 있어야 합니다.
-+
-https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["CLI를 통한 디스크 및 애그리게이트 관리"^]
-
-* 루트 애그리게이트 크기와 새 시스템에서 지원하는 디스크 수는 원래 시스템에서 지원하는 디스크 수보다 크거나 같아야 합니다.
-+
-루트 애그리게이트 크기 요구 사항은 를 참조하십시오 https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
-
-* HA 쌍의 컨트롤러는 AFF 모델 2개 또는 FAS 모델 2개로 구성됩니다.
-* 동일한 클러스터에 있는 노드가 있는 경우 하나의 FAS2xxx에서 이후의 FAS2xxx로 볼륨 또는 물리적 스토리지를 이동하여 업그레이드할 수 있습니다. 예를 들어, FAS2552에서 FAS2750으로 볼륨 또는 물리적 스토리지를 이동할 수 있습니다.
-* 여러 HA 쌍이 있는 클러스터에서 HA 쌍을 업그레이드하는 경우, epsilon을 컨트롤러 업그레이드를 받지 않는 HA 쌍의 노드로 이동해야 합니다. 예를 들어 HA 쌍 구성 NodeA/NodeB 및 nodeC/noded를 사용하여 클러스터의 NodeA/NodeB를 업그레이드하는 경우 epsilon을 노드 C 또는 noded로 이동해야 합니다.
-* ONTAP 9.6P11, 9.7P8 이상 릴리즈를 사용하는 경우 특정 노드 장애가 발생할 때 연결, 활성화 및 가용성 모니터(clam) 테이크오버가 클러스터를 쿼럼으로 반환하도록 설정하는 것이 좋습니다. 를 클릭합니다 `kernel-service` 명령에 고급 권한 레벨 액세스가 필요합니다. 자세한 내용은 다음을 참조하십시오. https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU436["NetApp KB 문서 SU436: clam takeover 기본 구성이 변경되었습니다"^]. ONTAP 9.8부터 `kcs-enable-takeover` 매개 변수는 기본적으로 사용하도록 설정됩니다.
-* 2노드 MetroCluster 구성을 업그레이드하는 경우 다음을 참조하십시오. https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["업그레이드 또는 새로 고침 방법 선택"^]
+. link:upgrade-by-moving-volumes-parent.html["볼륨을 이동하여 업그레이드"] (중단 절차).
 
 
-시스템에 내부 스토리지가 있습니다
 
 
-NOTE: 다음 시스템에는 내부 스토리지가 있습니다. FAS2520, FAS2552, FAS2554, FAS2620, FAS2650, FAS2720, FAS2750, AFF A150, AFF A200, AFF A220, AFF A250, AFF A700s, AFF A800, AFF C190, AFF C250, 및 AFF C800을 참조하십시오.
+| 내부 스토리지를 이동하거나 시스템을 드라이브 쉘프로 변환해야 하는가?  a| 
+. https://hwu.netapp.com/["루트 애그리게이트 크기 및 새 시스템에서 지원하는 디스크 수가 원래 시스템에서 지원하는 디스크 수보다 크거나 같은지 확인합니다"^].
+. link:upgrade-by-moving-storage-parent.html["스토리지를 이동하여 업그레이드"] (중단 절차).
 
+
+
+
+| 여러 HA 쌍이 있는 클러스터에서 HA 쌍을 업그레이드합니까? | 컨트롤러 업그레이드가 진행되고 있지 않은 HA 2노드의 노드로 epsilon을 이동합니다. 예를 들어 HA 쌍 구성 NodeA/NodeB 및 nodeC/noded를 사용하여 클러스터의 NodeA/NodeB를 업그레이드하는 경우 epsilon을 노드 C 또는 noded로 이동해야 합니다. 
+
+
+| ONTAP 9.6P11, 9.7P8 이상 릴리즈를 실행하고 있습니까? | NetApp에서는 특정 노드 장애가 발생할 때 클러스터를 quorum으로 반환하도록 Connectivity, liveliness 및 clam(가용성 모니터) 인수를 사용하도록 설정하는 것이 좋습니다. 를 클릭합니다 `kernel-service` 명령에 고급 권한 레벨 액세스가 필요합니다. 자세한 내용은 NetApp 기술 자료 문서 를 참조하십시오 https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU436["Clam Takeover 기본 구성이 변경되었습니다"^].
+
+ONTAP 9.8부터 `kcs-enable-takeover` 매개 변수는 기본적으로 사용하도록 설정됩니다. 
+|===
+
+NOTE: 데이터를 새 스토리지로 이동하거나(볼륨을 이동) 기존 통합 시스템을 쉘프로 변환한 다음 새 시스템으로 마이그레이션하여 통합 시스템을 업그레이드할 수 있습니다. 예를 들어, FAS2650 컨트롤러 섀시를 DS224C SAS 쉘프로 변환한 후 FAS8300에 연결하여 FAS2650을 FAS8300으로 업그레이드할 수 있습니다. 어느 경우든 데이터 마이그레이션이나 변환된 쉘프는 동일한 스위치 클러스터에 유지됩니다.
+
+
+
+== 시스템에 내부 스토리지가 있습니다
+
+다음 시스템에는 내부 스토리지가 있습니다.
+
+[cols="4*"]
+|===
+4+| 시스템의 내부 드라이브 
+
+
+ a| 
+FAS2620, FAS2650, FAS2720 및 FAS2750를 참조하십시오
+ a| 
+AFF A150, AFF A200, AFF A220, AFF A250, AFF A700s, 및 AFF A800을 받았습니다
+| AFF C190, AFF C250 및 AFF C800의 약어입니다 | ASA A150, ASA A250, ASA A800 및 ASA AFF A220 
+|===
 * 시스템이 위에 나열되지 않은 경우 를 참조하십시오 https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^] 내부 드라이브가 있는지 확인합니다.
-* 내부 스토리지가 있는 시스템의 경우 볼륨을 이동하여 업그레이드하는 것이 좋습니다.
-* 내부 스토리지가 있는 시스템의 경우 시스템을 드라이브 쉘프로 변환한 후 동일한 클러스터의 새 노드에 연결할 수 있습니다. FAS2520 컨트롤러는 드라이브 쉘프로 변환할 수 없습니다.
+* 내부 스토리지가 있는 시스템의 경우 시스템을 드라이브 쉘프로 변환한 후 동일한 클러스터의 새 노드에 연결할 수 있습니다.
 +
-FAS255x 시스템을 드라이브 쉘프로 변환하는 작업은 스토리지를 이동하여 업그레이드하는 워크플로우에서 선택적 작업입니다.
+
+NOTE: AFF A700s, AFF A800, AFF C800 또는 ASA A800 시스템은 드라이브 쉘프로 전환할 수 없습니다.
 
 * 내부 스토리지가 있는 시스템이나 내부 SATA 드라이브 또는 SSD에 볼륨 또는 애그리게이트가 있는 시스템이 있는 경우, 내부 스토리지를 동일한 클러스터의 새 노드에 연결된 드라이브 쉘프로 전송하여 업그레이드할 수 있습니다.
 +
@@ -66,31 +105,19 @@ FAS255x 시스템을 드라이브 쉘프로 변환하는 작업은 스토리지�
 
 
 
-추가 단계가 필요할 수 있는 상황
-
-* AFF A250에서 AFF A400으로 업그레이드하는 경우 를 참조하십시오 xref:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.adoc[드라이브 쉘프로 전환하여 AFF A250을 AFF A400으로 업그레이드합니다].
-* 새 시스템의 슬롯 수가 원래 시스템보다 적거나 포트 유형이 적거나 다른 경우 새 시스템에 어댑터를 추가해야 할 수 있습니다.
-+
-https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
-
-* 원래 노드 또는 새 노드가 FlexArray 가상화 소프트웨어를 사용하는 경우
-+
-https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/V_Series/What_are_the_specific_steps_involved_in_FlexArray_for_NetApp_controller_upgrades%2F%2Freplacements%3F["NetApp KB 문서: NetApp 컨트롤러 업그레이드 및 교체를 위한 FlexArray의 특정 단계는 무엇입니까"^]
-
-* 클러스터에 SAN 호스트가 있는 경우 LUN 일련 번호 변경 문제를 해결하기 위한 단계를 수행해야 할 수 있습니다.
-+
-https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FlexPod_with_Infrastructure_Automation/resolve_issues_during_storage_controller_motherboard_replacement_and_head_upgrades_with_iSCSI_and_FCP["스토리지 컨트롤러 마더보드를 교체하는 동안 문제를 해결하는 방법 및 iSCSI 및 FCP로 헤드 업그레이드"^]
-
-* 아웃오브밴드 ACP를 사용하는 시스템의 경우, 아웃오브밴드 ACP에서 인밴드 ACP로 마이그레이션해야 할 수 있습니다.
-+
-https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/In-Band_ACP_Setup_and_Support["NetApp KB 문서: 대역 내 ACP 설정 및 지원"^]
 
 
+== 추가 단계가 필요한 경우
 
-* 관련 정보 *
+* xref:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.adoc[AFF A250에서 AFF A400으로 업그레이드하는 중입니다] (중단 절차).
+* 새 시스템의 슬롯 수가 원래 시스템보다 적거나 포트 유형이 적거나 다른 경우 새 시스템에 어댑터를 추가해야 할 수 있습니다. 를 참조하십시오 https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^].
+* 원래 노드 또는 새 노드에서 FlexArray 가상화 소프트웨어를 사용하는 경우 기술 자료 문서를 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/V_Series/What_are_the_specific_steps_involved_in_FlexArray_for_NetApp_controller_upgrades%2F%2Freplacements%3F["FlexArray for NetApp 컨트롤러 업그레이드 및 교체와 관련된 구체적인 단계는 무엇입니까"^].
+* 클러스터에 SAN 호스트가 있는 경우 LUN 일련 번호 변경 문제를 해결하기 위한 단계를 수행해야 할 수 있습니다. 기술 자료 문서를 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FlexPod_with_Infrastructure_Automation/resolve_issues_during_storage_controller_motherboard_replacement_and_head_upgrades_with_iSCSI_and_FCP["스토리지 컨트롤러 마더보드를 교체하는 동안 문제를 해결하는 방법 및 iSCSI 및 FCP로 헤드 업그레이드"^].
+* 아웃오브밴드 ACP를 사용하는 시스템의 경우, 아웃오브밴드 ACP에서 인밴드 ACP로 마이그레이션해야 할 수 있습니다. 기술 자료 문서를 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/In-Band_ACP_Setup_and_Support["대역 내 ACP 설정 및 지원"^]
 
-xref:upgrade-methods.adoc[컨트롤러 하드웨어를 업그레이드하는 방법을 선택합니다]
 
-xref:upgrade-by-moving-storage-parent.adoc[스토리지를 이동하여 컨트롤러 하드웨어 업그레이드]
+.관련 정보
+* link:../choose_controller_upgrade_procedure.html["컨트롤러 하드웨어를 업그레이드하는 방법을 선택합니다"]
+* xref:upgrade-by-moving-storage-parent.adoc[스토리지를 이동하여 컨트롤러 하드웨어 업그레이드]
+* xref:upgrade-by-moving-volumes-parent.adoc[볼륨을 이동하여 컨트롤러 하드웨어 업그레이드]
 
-xref:upgrade-by-moving-volumes-parent.adoc[볼륨을 이동하여 컨트롤러 하드웨어 업그레이드]

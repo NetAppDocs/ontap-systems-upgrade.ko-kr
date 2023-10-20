@@ -11,8 +11,10 @@ sidebar:
   entries:
   - title: AFF 및 FAS 시스템 업그레이드 설명서
     url: "/index.html"
-  - section: upgrade
+  - title: 컨트롤러 하드웨어 업그레이드 절차를 선택합니다
+    url: "/choose_controller_upgrade_procedure.html"
   - section: upgrade-arl
+  - section: upgrade
   - title: 법적 고지
     url: "/legal-notices.html"
 homepage:
@@ -21,13 +23,9 @@ homepage:
     links:
     - title: ONTAP 릴리즈 노트
       url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508
-  - title: 스토리지 또는 볼륨(대부분의 시스템)을 이동하여 업그레이드
-    links:
-    - title: 컨트롤러 하드웨어를 업그레이드합니다
-      url: "/upgrade/upgrade-decide-to-use-this-guide.html"
-    - title: 드라이브 쉘프로 전환하여 AFF A250을 AFF A400으로 업그레이드합니다
-      url: "/upgrade/upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html"
-  - title: ONTAP 9.8 이상을 실행하는 시스템에서 애그리게이트를 이동하여 업그레이드
+    - title: 컨트롤러 하드웨어 업그레이드 절차를 선택합니다
+      url: "/choose_controller_upgrade_procedure.html"
+  - title: ONTAP 9.8 이상을 실행하는 시스템에서 애그리게이트를 재배치하여 업그레이드
     links:
     - title: '"system controller replace" 명령을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드합니다'
       url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/
@@ -35,12 +33,18 @@ homepage:
       url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/
     - title: 수동 명령을 사용합니다
       url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/
-  - title: ONTAP 9.7 이하를 실행하는 시스템에서 애그리게이트를 이동하여 업그레이드
+  - title: ONTAP 9.7 이하를 실행하는 시스템에서 애그리게이트를 재배치하여 업그레이드
     links:
     - title: '"시스템 컨트롤러 교체" 명령 사용(대부분의 시스템)'
       url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/
     - title: 수동 명령을 사용합니다
       url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/
+  - title: 스토리지 또는 볼륨을 이동하여 업그레이드
+    links:
+    - title: 컨트롤러 하드웨어를 업그레이드합니다
+      url: "/upgrade/upgrade-decide-to-use-this-guide.html"
+    - title: 드라이브 쉘프로 전환하여 AFF A250을 AFF A400으로 업그레이드합니다
+      url: "/upgrade/upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html"
   - title: MetroCluster 구성에서 시스템을 업그레이드합니다
     links:
     - title: MetroCluster 구성에 대한 업그레이드 절차를 선택합니다

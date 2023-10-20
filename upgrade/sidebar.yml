@@ -6,8 +6,6 @@ entries:
   url: "/upgrade/upgrade-decide-to-use-this-guide.html"
 - title: 고려 사항
   url: "/upgrade/upgrade-considerations.html"
-- title: 방법을 선택합니다
-  url: "/upgrade/upgrade-methods.html"
 - title: 스토리지를 이동하여 업그레이드
   entries:
   - title: 워크플로우
@@ -64,7 +62,9 @@ entries:
     url: "/upgrade/upgrade-prepare-when-moving-volumes.html"
   - title: 새 노드를 설치하고 연결합니다
     url: "/upgrade/upgrade-install-and-join-new-nodes-move-vols.html"
-  - title: Aggregate를 생성하고 볼륨을 새로운 ndoes로 이동합니다
+  - title: Linux iSCSI 호스트를 새 노드로 이동합니다
+    url: "/upgrade/upgrade_move_linux_iscsi_hosts_to_new_nodes.html"
+  - title: 애그리게이트를 생성하고 볼륨을 새 노드로 이동합니다
     url: "/upgrade/upgrade-create-aggregate-move-volumes.html"
   - title: SAN이 아닌 데이터 LIF 및 클러스터 관리 LIF를 이동합니다
     url: "/upgrade/upgrade-move-lifs-to-new-nodes.html"

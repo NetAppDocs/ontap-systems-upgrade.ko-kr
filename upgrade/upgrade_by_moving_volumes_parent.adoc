@@ -18,6 +18,7 @@ image::../upgrade/media/workflow_for_upgrading_by_moving_volumes.gif[볼륨을 �
 .단계
 . xref:upgrade-prepare-when-moving-volumes.adoc[볼륨을 이동할 때 업그레이드를 준비합니다]
 . xref:upgrade-install-and-join-new-nodes-move-vols.adoc[새 노드를 설치하고 이를 클러스터에 연결합니다]
+. xref:upgrade_move_linux_iscsi_hosts_to_new_nodes.html[Linux iSCSI 호스트를 새 노드로 이동합니다]
 . xref:upgrade-create-aggregate-move-volumes.adoc[애그리게이트를 생성하고 볼륨을 새 노드로 이동합니다]
 . xref:upgrade-move-lifs-to-new-nodes.adoc[SAN이 아닌 데이터 LIF 및 클러스터 관리 LIF를 새로운 노드로 이동]
 . xref:upgrade_move_delete_recreate_san_lifs.adoc[SAN LIFS를 이동, 삭제 또는 생성합니다]
