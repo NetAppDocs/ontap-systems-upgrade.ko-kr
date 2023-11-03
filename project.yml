@@ -35,7 +35,7 @@ homepage:
       url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/
   - title: ONTAP 9.7 이하를 실행하는 시스템에서 애그리게이트를 재배치하여 업그레이드
     links:
-    - title: '"시스템 컨트롤러 교체" 명령 사용(대부분의 시스템)'
+    - title: '"system controller replace" 명령을 사용합니다'
       url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/
     - title: 수동 명령을 사용합니다
       url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/

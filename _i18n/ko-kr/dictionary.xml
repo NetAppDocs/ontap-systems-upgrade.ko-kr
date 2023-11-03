@@ -158,7 +158,6 @@
   <block id="48d957729e77cbd1ec1cf772f951270a" category="list-text">이 절차에서는 교체 컨트롤러 하드웨어가 새 하드웨어이며 사용되지 않은 것으로 가정합니다. 중고 컨트롤러를 와 함께 준비하는 데 필요한 단계입니다<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block> 이 절차에는 명령이 포함되어 있지 않습니다. 교체 컨트롤러 하드웨어를 이전에 사용한 경우, 특히 컨트롤러가 7-Mode에서 Data ONTAP를 실행 중인 경우 기술 지원 부서에 문의해야 합니다.</block>
   <block id="3f95c69711726ab20c6ad2092e62e13d" category="list-text">이 절차를 사용하여 2개 이상의 노드가 있는 클러스터에서 컨트롤러 하드웨어를 업그레이드할 수 있습니다. 하지만 클러스터의 각 HA(고가용성) 쌍에 대해 이 절차를 별도로 수행해야 합니다.</block>
   <block id="58d2951f9fe54692264bb8d42558291f" category="list-text">이 절차는 FAS 시스템, V-Series 시스템, AFF 시스템 및 FlexArray 가상화 소프트웨어가 설치된 시스템에 적용됩니다. ONTAP 9 이후 출시된 FAS 시스템은 필요한 라이센스가 설치된 경우 스토리지 시스템에 연결할 수 있습니다. 기존 V 시리즈 시스템은 ONTAP 9에서 지원됩니다. 스토리지 어레이 및 V-Series 모델에 대한 자세한 내용은 을 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> Hardware Universe_에 연결하고 _V 시리즈 지원 매트릭스_를 참조하십시오.</block>
-  <block id="e6063d0ab61b368bdfbca64be36dbd64" category="list-text">이 절차는 ONTAP 9.5 이전 버전을 실행하는 MetroCluster 4노드 및 8노드 구성에 적용됩니다. ONTAP 9.6 이상을 실행하는 MetroCluster 구성의 경우 로 이동하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> ONTAP 9.5를 실행하는 컨트롤러 하드웨어를 ONTAP 9.7_로 업그레이드하기 위해 "시스템 컨트롤러 교체" 명령을 사용하여 _ 에 연결하려면</block>
   <block id="1f03fa93b012b982c272f6559a72a764" category="summary">루트 이외의 애그리게이트를 노드 1에서 노드 2로 이동하고, ONTAP 9.7 이하를 실행하는 컨트롤러에서 수동 ARL 업그레이드 중에 재배치가 올바른지 확인합니다.</block>
   <block id="11856588314d0c959b2b916a938edde8" category="doc">노드 1에서 노드 2로 비루트 애그리게이트를 재배치합니다</block>
   <block id="7368fc5c8c51bc8dc679464700a9f443" category="paragraph">노드 1을 노드 3으로 교체하려면 먼저 storage aggregate reocation 명령을 사용하여 비루트 애그리게이트를 노드 1에서 노드 2로 이동한 다음 재배치를 확인해야 합니다.</block>
@@ -3921,11 +3920,9 @@
   <block id="94c614d182457fbc97ae1deaaabd5813" category="paragraph">스위치가 없는 2노드 클러스터에서 노드를 업그레이드할 경우 업그레이드를 수행하는 동안 스위치가 없는 클러스터에 노드를 그대로 둘 수 있습니다. 이러한 LUN을 스위치 클러스터로 변환할 필요는 없습니다</block>
   <block id="c0ff48676f87627f73474db6b1018a88" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 netboot node3 및 node4를 준비합니다.</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">시작하십시오</block>
-  <block id="ec01d482cf394f212f073921cfd9d5bd" category="sidebar">ONTAP 릴리즈 노트</block>
   <block id="6c54fdf57ce13c518f1cc0d9d5f32820" category="sidebar">컨트롤러 하드웨어를 업그레이드합니다</block>
   <block id="194cc1951d00be469039af6dbda275d0" category="sidebar">"시스템 컨트롤러 교체" 명령 사용(대부분의 시스템)</block>
   <block id="b4d25e7f066e6393a7e3a6a7115b4f94" category="sidebar">수동 명령을 사용합니다</block>
-  <block id="5f9c427150012de98abaaa70885c293c" category="sidebar">"시스템 컨트롤러 교체" 명령 사용(대부분의 시스템)</block>
   <block id="7d94daad2b6e9d77a6320a64c21fbc4a" category="sidebar">MetroCluster 구성에서 시스템을 업그레이드합니다</block>
   <block id="c6bb96cc8b84319277f00b15adc71d75" category="sidebar">MetroCluster 구성에 대한 업그레이드 절차를 선택합니다</block>
   <block id="dfcc398099d6a64026e51ab282e16253" category="sidebar">더 많은 리소스</block>
@@ -4762,7 +4759,6 @@ FAS2720</block>
   <block id="c62a490dc179bcb1d44777cba5eb4845" category="paragraph">iSCSI SAN 볼륨을 새 노드로 이동하기 전에 새 iSCSI 연결을 생성하고 iSCSI 경로를 새 노드로 다시 스캔해야 합니다.</block>
   <block id="c19689d06a29f6feeef4510514125400" category="paragraph">볼륨을 이동하여 업그레이드할 때 iSCSI SAN 볼륨을 이동할 필요가 없는 경우 이 절차를 건너뛰고 로 이동할 수 있습니다 <block ref="0187590ed6627836f657d0d4157f4bd9" category="inline-link-macro-rx"></block>.</block>
   <block id="067e2e3846b3b294b518d3f733e2a96b" category="list-text">IPv4 인터페이스는 새 iSCSI 연결을 설정할 때 생성됩니다.</block>
-  <block id="53c3dbfeb6f99087434e72b6b5c6d75f" category="list-text">호스트 명령과 예는 Linux 운영 체제에만 해당됩니다.</block>
   <block id="b3b6efa3f6df48fc93b3542c29661f7c" category="inline-xref-macro">Linux iSCSI 호스트를 새 노드로 이동합니다</block>
   <block id="184c3f7752a9e68702c55c35faa973db" category="list-text"><block ref="184c3f7752a9e68702c55c35faa973db" category="inline-xref-macro-rx"></block></block>
   <block id="fef2f3438d6db0111e356d7cf9de46ab" category="paragraph">이 콘텐츠에서는 스토리지 또는 볼륨을 이동하여 클러스터에서 AFF, FAS 또는 ASA 시스템의 컨트롤러 하드웨어를 업그레이드하는 방법에 대해 설명합니다.</block>
@@ -4771,7 +4767,6 @@ FAS2720</block>
   <block id="524f05419622851f7f6289320cc91a6e" category="inline-link">MetroCluster 구성을 업그레이드, 새로 고침 또는 확장합니다</block>
   <block id="54fbf367f6c88f6a32c90b81e113fdbc" category="paragraph">MetroCluster 구성을 업그레이드하는 경우 를 참조하십시오<block ref="ce6e655e9cb4a81012dd5871edda628b" category="inline-link-rx"></block>.</block>
   <block id="30f60d67f457bb040dffde52197a54da" category="list-title">관련 정보</block>
-  <block id="06852d9347cc17e2896148f62d8b43e8" category="list-text"><block ref="06852d9347cc17e2896148f62d8b43e8" category="inline-xref-macro-rx"></block></block>
   <block id="ff13d8bc09b612151174d9b83a1e0634" category="paragraph">node1, node2, node3 및 node4라는 용어는 원래 노드와 새 노드를 구별하는 데만 사용됩니다. 이 절차를 수행할 때 이러한 노드를 원래 노드 및 새 노드의 실제 이름으로 대체해야 합니다. 그러나 실제로 노드 이름은 변경되지 않습니다. node3에는 node1이라는 이름이 있고, node4에는 컨트롤러 하드웨어를 업그레이드한 후 node2라는 이름이 있습니다.</block>
   <block id="6cbbb16b482dd046bc6d845094f114f9" category="list-text"><block ref="16a60590ab4a03950f527e475b265368" category="inline-xref-macro-rx"></block> (중단 절차).</block>
   <block id="608ce5a5400efa8f95d0e8e4878a465d" category="paragraph">예를 들어, 이전 AFF A200의 섀시와 디스크를 그대로 유지하면서 이전 AFF A200 컨트롤러 모듈과 새 AFF A220 컨트롤러 모듈을 스왑하기만 하면 AFF A200에서 AFF A220으로 시스템을 업그레이드할 경우, 이 섹션_새 노드에 연결된 디스크의 소유권 제거_에 설명된 대로 새 AFF A220 컨트롤러 모듈용 디스크 소유권을 제거하지 않습니다.</block>
@@ -4859,4 +4854,9 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="c024cf342a69d8b35b142333f2608aa5" category="sidebar">ONTAP 9.8 이상을 실행하는 시스템에서 애그리게이트를 재배치하여 업그레이드</block>
   <block id="5d3c4b59db4a991b7c6450c61662dc60" category="sidebar">ONTAP 9.7 이하를 실행하는 시스템에서 애그리게이트를 재배치하여 업그레이드</block>
   <block id="d58d42ec84ab0189beb36da55893f387" category="sidebar">스토리지 또는 볼륨을 이동하여 업그레이드</block>
+  <block id="ef69680bc1ee7b1fd5e0950d56699d33" category="list-text">이 절차는 ONTAP 9.5 이전 버전을 실행하는 MetroCluster 4노드 및 8노드 구성에 적용됩니다. ONTAP 9.6 이상을 실행하는 MetroCluster 구성의 경우 로 이동하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> "system controller replace" 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러 하드웨어를 ONTAP 9.7_로 업그레이드하려면</block>
+  <block id="187aa569481ce25a564facc34217dda3" category="list-text">호스트 명령과 예는 Linux 운영 체제에만 해당됩니다.</block>
+  <block id="fcbf56c541d4d283030e94ff96a44848" category="paragraph">USB 부팅 옵션을 사용하여 NetBoot을 수행할 수도 있습니다. 기술 자료 문서를 참조하십시오 <block ref="184f8f7294797efad8be0da4fb907563" category="inline-link-macro-rx"></block>.</block>
+  <block id="626a7cbe056796bcb1c158b143866230" category="sidebar">ONTAP 릴리즈 노트</block>
+  <block id="806e982f94b5ab4054aa07ccb047ecdb" category="sidebar">"system controller replace" 명령을 사용합니다</block>
 </blocks>
