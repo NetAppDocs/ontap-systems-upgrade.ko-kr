@@ -242,7 +242,7 @@ Cluster          NodeB_clus1:7700               TCP/ctlopcp
 Cluster          NodeB_clus2:7700               TCP/ctlopcp
 4 entries were displayed.
 ----
-. 필요한 경우 포트 7700에서 청취하지 않는 각 클러스터 LIF에 대해 LIF의 관리 상태를 로 설정합니다 `down` 그리고 나서 `up`:
+. 포트 7700에서 수신 대기하지 않는 각 클러스터 LIF에 대해 LIF의 관리 상태를 로 설정합니다 `down` 그리고 나서 `up`:
 +
 `::> net int modify -vserver Cluster -lif _cluster-lif_ -status-admin down; net int modify -vserver Cluster -lif _cluster-lif_ -status-admin up`
 

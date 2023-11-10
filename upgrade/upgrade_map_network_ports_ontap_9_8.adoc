@@ -61,10 +61,20 @@ https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^]
 +
 `cluster show -node _node1_ -fields health`
 
-.. 각 클러스터 LIF는 포트 7700에서 수신 대기 중이어야 합니다. 클러스터 LIF가 포트 7700에서 수신 중인지 확인합니다.
+.. 업그레이드하는 HA 쌍에서 실행 중인 ONTAP 버전에 따라 다음 작업 중 하나를 수행합니다.
 +
-`::> network connections listening show -vserver Cluster`
+[cols="30,70"]
+|===
+| ONTAP 버전이... | 그러면... 
 
+
+| 9.8 ~ 9.11.1 | 클러스터 LIF가 포트 7700에서 수신 중인지 확인합니다.
+
+`::> network connections listening show -vserver Cluster` 
+
+
+| 9.12.1 이상 | 이 단계를 건너뛰고 로 이동합니다 <<map_9.8_5,5단계>>. 
+|===
 +
 클러스터 포트에서 수신 대기하는 포트 7700은 2노드 클러스터의 다음 예에 표시된 대로 예상되는 결과입니다.
 
@@ -82,7 +92,7 @@ Cluster          NodeB_clus1:7700               TCP/ctlopcp
 Cluster          NodeB_clus2:7700               TCP/ctlopcp
 4 entries were displayed.
 ----
-.. 필요한 경우 포트 7700에서 청취하지 않는 각 클러스터 LIF에 대해 LIF의 관리 상태를 로 설정합니다 `down` 그리고 나서 `up`:
+.. 포트 7700에서 수신 대기하지 않는 각 클러스터 LIF에 대해 LIF의 관리 상태를 로 설정합니다 `down` 그리고 나서 `up`:
 +
 `::> net int modify -vserver Cluster -lif _cluster-lif_ -status-admin down; net int modify -vserver Cluster -lif _cluster-lif_ -status-admin up`
 
