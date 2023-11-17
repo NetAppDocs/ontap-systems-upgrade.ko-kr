@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: move, volume, original, node, migrate, non-san, lif, cluster-management, move non-san data lifs and cluster management lifs to the new nodeas 
 summary: 원래 노드에서 볼륨을 이동한 후에는 비 SAN 데이터 LIF 및 클러스터 관리 LIF를 원래 노드에서 새 노드로 마이그레이션해야 합니다. 
 ---
-= SAN이 아닌 데이터 LIF 및 클러스터 관리 LIF를 새로운 노드로 이동
+= 비 SAN 데이터 LIF 및 클러스터 관리 LIF를 새 노드로 이동합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -17,10 +17,18 @@ summary: 원래 노드에서 볼륨을 이동한 후에는 비 SAN 데이터 LIF
 VAAI(VMware vStorage APIs for Array Integration)를 사용하면 복사 오프로드 작업에 사용되는 LIF를 마이그레이션할 수 없습니다.
 
 .단계
-. 클러스터 LIF가 호스팅되는 노드에서 비 SAN 데이터 LIF의 홈 포트를 원래 노드에서 새 노드로 변경합니다.
+. 클러스터 관리 LIF로 로그인하고, 원래 노드의 모든 LIF를 나열합니다(쉼표로 구분된 목록).
 +
-`network interface modify -vserver _vserver_name_ -lif _lif_name_ -home-node _new_node_name_ -home-port {<netport|ifgrp>}`
-
+[source, cli]
+----
+network interface show -curr-node <list_of_original_node_names>
+----
+. SAN 이외의 데이터 LIF의 홈 포트를 원래 노드에서 새 노드로 변경합니다.
++
+[source, cli]
+----
+network interface modify -vserver <vserver_name> -lif <lif_name> -home-node <new_node_name> -home-port {<netport|ifgrp>}
+----
 . 다음 작업 중 하나를 수행합니다.
 +
 [cols="1,2"]
@@ -31,21 +39,25 @@ VAAI(VMware vStorage APIs for Array Integration)를 사용하면 복사 오프�
  a| 
 특정 LIF
  a| 
-`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _dest_node_name_ -destination-port _dest_port_name_`
-
+[source, cli]
+----
+network interface migrate -vserver <vserver_name> -lif <lif_name> -destination-node <dest_node_name> -destination-port <dest_port_name>
+----
 
 
  a| 
 SAN이 아닌 모든 데이터 LIF 및 클러스터 관리 LIF
  a| 
-`network interface migrate-all -node _node_name_`
-
+[source, cli]
+----
+network interface migrate-all -node <node_name>
+----
 |===
 +
 다음 명령을 실행하면 SVM "vs0"의 "datalif1"이라는 LIF가 "node0b"의 포트 "e0d"로 마이그레이션됩니다.
 
 +
-[listing]
+[source, cli]
 ----
 cluster::> network interface migrate -vserver vs0 -lif datalif1 -destination-node node0b -destination-port e0d
 ----
@@ -53,21 +65,30 @@ cluster::> network interface migrate -vserver vs0 -lif datalif1 -destination-nod
 다음 명령을 실행하면 현재(로컬) 노드의 모든 데이터 및 클러스터 관리 LIF가 마이그레이션됩니다.
 
 +
-[listing]
+[source, cli]
 ----
 cluster::> network interface migrate-all -node local
 ----
-. 클러스터 관리 LIF의 홈 노드가 원본 노드 중 하나에 있는지 확인합니다. `network interface show -lif cluster_mgmt -fields home-node`
+. 클러스터 관리 LIF의 홈 노드가 원본 노드 중 하나에 있는지 확인합니다.
++
+[source, cli]
+----
+network interface show -lif cluster_mgmt -fields home-node
+----
 . 클러스터 관리 LIF의 홈 노드가 원래 노드 중 하나에 있는 경우 다음 단계를 완료하십시오.
 +
 .. 클러스터 관리 LIF의 홈 노드를 새 노드 중 하나로 전환합니다.
 +
-`network interface modify -vserver _cluster_name_ -lif cluster_mgmt -home-node _new_node_name_ -home-port {<netport|ifgrp>}`
-
+[source, cli]
+----
+network interface modify -vserver <cluster_name> -lif cluster_mgmt -home-node <new_node_name> -home-port {<netport|ifgrp>}
+----
 .. 클러스터 관리 LIF를 새 노드 중 하나로 마이그레이션합니다.
 +
-`network interface migrate -vserver _vserver_name_ -lif cluster-mgmt -destination-node _new_node_name_ -destination-port {<netport|ifgrp>}`
-
+[source, cli]
+----
+network interface migrate -vserver <vserver_name> -lif cluster-mgmt -destination-node <new_node_name> -destination-port {<netport|ifgrp>}
+----
 
 
 

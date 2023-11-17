@@ -3424,21 +3424,15 @@
   <block id="7d0330f92f5b6340af08f88bf712e687" category="doc">SAN이 아닌 데이터 LIF 및 클러스터 관리 LIF를 새로운 노드로 이동</block>
   <block id="19c5e12737453438de328e8d1b0bf8e9" category="paragraph">원래 노드에서 볼륨을 이동한 후에는 비 SAN 데이터 LIF 및 클러스터 관리 LIF를 원래 노드에서 새 노드로 마이그레이션해야 합니다.</block>
   <block id="87375b5769d5bc8e37ee39d964c25804" category="paragraph">VAAI(VMware vStorage APIs for Array Integration)를 사용하면 복사 오프로드 작업에 사용되는 LIF를 마이그레이션할 수 없습니다.</block>
-  <block id="d079690ef04f3c3ab2f4e91b5f28e90b" category="list-text">클러스터 LIF가 호스팅되는 노드에서 비 SAN 데이터 LIF의 홈 포트를 원래 노드에서 새 노드로 변경합니다.</block>
-  <block id="0c7ec176679cf1c9c562b2bc88ed9472" category="paragraph"><block ref="9ce50f31221c49bbd391703be795af4d" prefix="" category="inline-code"></block></block>
   <block id="fc522dd9612f86c0ea7c802be05de893" category="cell">마이그레이션하려면...</block>
   <block id="1d073f20d5a5045e1aa3afacf792bf7c" category="cell">그런 다음 다음을 입력합니다.</block>
   <block id="0a4bc8aea04444e0f2b960facbd686f4" category="paragraph">특정 LIF</block>
   <block id="fb465127c12aa152a3a6787bc1358040" category="paragraph">SAN이 아닌 모든 데이터 LIF 및 클러스터 관리 LIF</block>
-  <block id="24aef972cbe11a33dc4e5cb93310061b" category="paragraph"><block ref="73a9ceac6380a2ab5a51f5b41953fd96" prefix="" category="inline-code"></block></block>
   <block id="8d4031ef52b7ff00f19077a56df4c26e" category="paragraph">다음 명령을 실행하면 SVM "vs0"의 "datalif1"이라는 LIF가 "node0b"의 포트 "e0d"로 마이그레이션됩니다.</block>
   <block id="44807f621f3e0960500d7db205f07c8e" category="paragraph">다음 명령을 실행하면 현재(로컬) 노드의 모든 데이터 및 클러스터 관리 LIF가 마이그레이션됩니다.</block>
-  <block id="08784f3476a94c005c9ffbca34e62ce0" category="list-text">클러스터 관리 LIF의 홈 노드가 원본 노드 중 하나에 있는지 확인합니다.<block ref="07b1b9ff588bffae7170930b8ae09995" prefix=" " category="inline-code"></block></block>
   <block id="68c8a99bc9172a87f6301c02d55008f8" category="list-text">클러스터 관리 LIF의 홈 노드가 원래 노드 중 하나에 있는 경우 다음 단계를 완료하십시오.</block>
   <block id="a7d2bd92477c7708999d89fc281f2cfb" category="list-text">클러스터 관리 LIF의 홈 노드를 새 노드 중 하나로 전환합니다.</block>
-  <block id="b84d32c43b649cc6913dcced9685f6db" category="paragraph"><block ref="d8b32906ebecdefb36df4d68d8062daf" prefix="" category="inline-code"></block></block>
   <block id="038faacffbd9c39ca68e42dccdbe915f" category="list-text">클러스터 관리 LIF를 새 노드 중 하나로 마이그레이션합니다.</block>
-  <block id="6e4f5a3bbafa35688ed0eba9be161169" category="paragraph"><block ref="104938e4d42e24b3ee13fd4c80125896" prefix="" category="inline-code"></block></block>
   <block id="9dd804cbb0c89e2e63928e7cedd0c88f" category="summary">업그레이드를 계획하려면 일반적인 업그레이드 고려 사항을 숙지해야 합니다. 필요한 경우 기술 지원 팀에 문의하여 클러스터 구성과 관련된 권장사항과 지침을 확인하십시오.</block>
   <block id="afe97a2560f5930aa2a5c5663fce5add" category="doc">컨트롤러 하드웨어 업그레이드에 대한 고려 사항</block>
   <block id="b245fdf63109e1cd27dd2f23120f7502" category="paragraph">업그레이드를 계획하려면 일반적인 업그레이드 고려 사항을 숙지해야 합니다. 필요한 경우 기술 지원 팀에 문의하여 클러스터 구성과 관련된 권장사항과 지침을 확인하십시오.</block>
@@ -4401,7 +4395,6 @@
   <block id="b2e9444b2e3d3f6bcd5b8053418d9f98" category="paragraph"><block ref="b04273b4623b1fb5400a1445280a00fc" prefix="" category="inline-code"></block></block>
   <block id="9eaa084ea5e1fc23b5bd8f4e4b31ae16" category="list-text">스토리지 페일오버 자동 반환 설정:</block>
   <block id="452b3b4e54b69d07570137489de879c0" category="paragraph"><block ref="06113f79bc639d145a6e40cfdd6b4211" prefix="" category="inline-code"></block></block>
-  <block id="b7fb6eb57cd7c0b92ddce1c6b7f38e07" category="paragraph"><block ref="101c5ced41d107d54620027143ba74f3" prefix="" category="inline-code"></block></block>
   <block id="a48dffce96c7d2cee50452bbbe3c3149" category="list-text"><block ref="f1c84a71e0779351e0f5be10141fff81" prefix="" category="inline-code"></block></block>
   <block id="1b0afd0b9e1ef791af87236c19a70f16" category="list-text"><block ref="7f5b95324bf0335821a8f979872431c9" prefix="" category="inline-code"></block></block>
   <block id="6dcc62df7a079d79f6374d9c17d2120e" category="list-text"><block ref="169aa9029e0b9363f74914feb183b562" prefix="" category="inline-code"></block></block>
@@ -4782,7 +4775,6 @@ FAS2720</block>
   <block id="ca189dbb46d0896b1743f452fe344293" category="inline-link">원래 노드와 새 노드에서 지원하는 ONTAP 버전 및 패치 레벨을 확인합니다</block>
   <block id="8870bf8eb809743305db4031987fa36e" category="list-text"><block ref="b3ab3127149837ef7459a9eb97a04a54" category="inline-link-rx"></block>.</block>
   <block id="7d01893ca79a018810882cd8d3394250" category="inline-link-macro">ONTAP 버전을 업그레이드합니다</block>
-  <block id="2268f05309a25f9d6de565ec4364d034" category="list-text">NetApp은 가능한 경우 원본 노드와 새 노드에서 동일한 ONTAP 버전을 실행할 것을 권장합니다. 이것이 불가능한 경우, <block ref="a6dedec0dd1fe7caeb3c7769e262d6a2" category="inline-link-macro-rx"></block> 원래 노드와 새 노드 간의 버전 차이가 4보다 크지 않도록 원래 노드에서 지원되는 최대 버전으로 설정합니다. 예를 들어 ONTAP 9.8 및 9.12.1이 지원되지만 ONTAP 9.8 및 9.13.1은 지원되지 않습니다.</block>
   <block id="50250e80343bef6bd18b0a749aecd73b" category="inline-link">혼합 버전 ONTAP 클러스터에 대해 자세히 알아보십시오</block>
   <block id="bb9ba0401316edbefdd465cc73bfbf1c" category="paragraph"><block ref="d732a285dea0d120c69b9115e25ab72f" category="inline-link-rx"></block>.</block>
   <block id="5df011f91a8a4b3c3604963326b854f6" category="cell">시스템에 내부 드라이브가 있고 볼륨을 이동합니까?</block>
@@ -4845,7 +4837,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="51d3b2a6cd78fb20797c74bb50b689f5" category="paragraph">애그리게이트 재배치는 교체 절차입니다. 스위치가 없는 2노드 클러스터에 도움이 되는 새로운 노드로 클러스터를 확장하거나 축소할 필요가 없습니다. 애그리게이트 재배치를 통한 데이터 이동은 볼륨을 이동할 때 애그리게이트 간에 데이터를 복사하는 것보다 빠릅니다.</block>
   <block id="73d856629c7408ec32b9b5ffa5af9ed6" category="list-text"><block ref="73d856629c7408ec32b9b5ffa5af9ed6" category="inline-link-macro-rx"></block></block>
   <block id="8b9b2634fd898f04166a765851aba8f2" category="list-text"><block ref="8b9b2634fd898f04166a765851aba8f2" category="inline-link-macro-rx"></block></block>
-  <block id="b10988c4185192c8e53d7add421e9720" category="paragraph">*참고1*: 원래 노드에서 실행되는 ONTAP 버전은 새 노드에서 지원해야 합니다. 필요한 경우 <block ref="a6dedec0dd1fe7caeb3c7769e262d6a2" category="inline-link-macro-rx"></block> 원래 노드에서 지원되는 최대 버전으로. 원래 노드와 새 노드 간의 버전 차이는 4보다 클 수 없습니다. 예를 들어 ONTAP 9.8 및 9.12.1이 지원되지만 ONTAP 9.8 및 9.13.1은 지원되지 않습니다.<block ref="ce537934e178c1610dae82a1b82553bf" category="inline-link-rx"></block>.</block>
   <block id="441e5e19c045de8820e45a5b22e45056" category="paragraph">* Note2 *: 무중단 업그레이드를 수행하려면 원래 시스템의 데이터를 저장할 수 있는 자체 스토리지와 셸프가 있는 새 시스템이 필요합니다.</block>
   <block id="272d55e2adea123757d8811eaaaebd88" category="paragraph">*Note3*: 볼륨을 이동하여 업그레이드할 때 새 노드에 가입하고 볼륨과 LIF를 새 노드로 이동한 다음 클러스터에서 제거할 노드의 연결을 해제합니다. 스위치가 없는 2노드 클러스터를 업그레이드하는 경우 새 노드를 추가하기 전에 클러스터 스위치 쌍을 사용하여 스위치 연결 클러스터로 변환합니다.</block>
   <block id="16319414c65274d365d86327a61ef5dc" category="inline-link">AFF 및 FAS 시스템 설명서</block>
@@ -4876,4 +4867,12 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="403701bd83bf4b3cf916d0207d89b4e6" category="cell">이 단계를 건너뛰고 로 이동합니다 <block ref="8837566debd0bf055ddeb89904e2fbbc" category="inline-xref-macro-rx"></block>.</block>
   <block id="6fdc0880de0e199aedb20bf62f491976" category="list-text">[[Verify_node4_step5]] 고급 권한 모드로 전환:</block>
   <block id="694bd1275df145cf6b146f04be06b773" category="cell">이 단계를 건너뛰고 로 이동합니다 <block ref="b6919d088e29a20fea866ec3a396e020" category="inline-xref-macro-rx"></block>.</block>
+  <block id="2e23c7e78862e31423e93a8c06fbeebd" category="doc">비 SAN 데이터 LIF 및 클러스터 관리 LIF를 새 노드로 이동합니다</block>
+  <block id="0479b56f75b526758f089a2063e31e6c" category="list-text">클러스터 관리 LIF로 로그인하고, 원래 노드의 모든 LIF를 나열합니다(쉼표로 구분된 목록).</block>
+  <block id="47abbe9b564eba6007fe4489d824eb6e" category="list-text">SAN 이외의 데이터 LIF의 홈 포트를 원래 노드에서 새 노드로 변경합니다.</block>
+  <block id="d0301a3c428aa6200596747434ea62ce" category="list-text">클러스터 관리 LIF의 홈 노드가 원본 노드 중 하나에 있는지 확인합니다.</block>
+  <block id="f4050efc501652e600f6e7e735cf5616" category="inline-link-macro">새 iSCSI 연결을 생성했습니다</block>
+  <block id="527226c39d06e4e2f6eec2dca988d2ba" category="list-text">iSCSI SAN 볼륨을 이동하는 경우 가 있는지 확인합니다 <block ref="6f18756f17709181fa11fd9271f705fc" category="inline-link-macro-rx"></block>.</block>
+  <block id="5dac5a25730948f28ff49739852d7be9" category="list-text">NetApp은 가능한 경우 원본 노드와 새 노드에서 동일한 ONTAP 버전을 실행할 것을 권장합니다. 이것이 불가능한 경우, <block ref="9fa2b66114da266713b82d418ec229cf" category="inline-link-macro-rx"></block> 원래 노드와 새 노드 간의 버전 차이가 4보다 크지 않도록 원래 노드에서 지원되는 최대 버전으로 설정합니다. 예를 들어 ONTAP 9.8 및 9.12.1이 지원되지만 ONTAP 9.8 및 9.13.1은 지원되지 않습니다.</block>
+  <block id="d9bec0f0ae398cfc3abbf7091d735c22" category="paragraph">*참고1*: 원래 노드에서 실행되는 ONTAP 버전은 새 노드에서 지원해야 합니다. 필요한 경우 <block ref="9fa2b66114da266713b82d418ec229cf" category="inline-link-macro-rx"></block> 원래 노드에서 지원되는 최대 버전으로. 원래 노드와 새 노드 간의 버전 차이는 4보다 클 수 없습니다. 예를 들어 ONTAP 9.8 및 9.12.1이 지원되지만 ONTAP 9.8 및 9.13.1은 지원되지 않습니다.<block ref="ce537934e178c1610dae82a1b82553bf" category="inline-link-rx"></block>.</block>
 </blocks>
