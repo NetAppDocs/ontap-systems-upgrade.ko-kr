@@ -11,18 +11,35 @@ summary: 스토리지 및 클러스터 스위치를 추가로 구매하지 않�
 
 
 [role="lead"]
-각 AFF A250 노드를 NS224 드라이브 쉘프로 변환한 다음 AFF A400 교체 노드에 연결하여 NetApp AFF A250 시스템에서 AFF A400 시스템으로 무중단 업그레이드를 수행할 수 있습니다.
+각 AFF A250 노드를 NS224 드라이브 쉘프로 변환한 다음 AFF A400 교체 노드에 연결하여 NetApp AFF A250 시스템에서 NetApp AFF A400 시스템으로 무중단 업그레이드를 수행할 수 있습니다.
 
+.이 작업에 대해
 이 절차에서는 AFF A250 HA(고가용성) 쌍 컨트롤러를 노드 1과 노드 2라고 하며, 교체용 AFF A400 HA 쌍 컨트롤러를 노드 3과 노드 4라고 합니다.
 
-image::../upgrade/media/ndu_upgrade_entry_level_systems.PNG[드라이브 쉘프로 전환하여 AFF A250을 AFF A400으로 업그레이드하기 위한 워크플로우]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1개"]link:upgrade_migrate_lifs_aggregates_node2_to_node1.html["노드 2의 LIF 및 데이터 애그리게이트를 노드 1로 마이그레이션합니다"]
+[role="quick-margin-para"]
+AFF A250 node2를 드라이브 쉘프로 변환하기 전에 노드 2의 논리 인터페이스(LIF) 및 데이터 애그리게이트를 노드 1로 마이그레이션합니다.
 
-.단계.
-. xref:upgrade_migrate_lifs_aggregates_node2_to_node1.adoc[노드 2의 LIF 및 데이터 애그리게이트를 노드 1로 마이그레이션합니다]
-. xref:upgrade_convert_node2_drive_shelf_connect_node4.adoc[노드 2를 드라이브 쉘프로 변환한 후 노드 4에 연결합니다]
-. xref:upgrade_reassign_drives_node2_to_node4.adoc[노드 2에서 노드 4로 드라이브를 재할당합니다]
-. xref:upgrade_migrate_aggregates_epsilon_lifs_node1_node4.adoc[노드 1의 데이터 애그리게이트, epsilon 및 LIF를 노드 4로 마이그레이션합니다]
-. xref:upgrade_convert_node1_drive_shelf_connect_node3.html[노드 1을 드라이브 쉘프로 변환한 후 노드 3에 연결합니다]
-. xref:upgrade_reassign_drives_node1_to_node3.adoc[노드 1에서 노드 3으로 드라이브를 재할당합니다]
-. xref:upgrade_migrate_lIFs_aggregates_node4_node3.adoc[노드 4의 LIF 및 데이터 애그리게이트를 노드 3으로 마이그레이션]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2개"]link:upgrade_convert_node2_drive_shelf_connect_node4.html["노드 2를 드라이브 쉘프로 변환한 후 노드 4에 연결합니다"]
+[role="quick-margin-para"]
+AFF A250 노드 2를 NS224 드라이브 쉘프로 변환한 다음 AFF A400 노드 4에 연결한 후 노드 2에서 노드 4로 드라이브를 재할당합니다.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["세 가지"]link:upgrade_reassign_drives_node2_to_node4.html["노드 2에서 노드 4로 드라이브를 재할당합니다"]
+[role="quick-margin-para"]
+AFF A250 노드 2를 NS224 드라이브 쉘프로 전환하고 AFF A400 노드 4에 연결한 후 이전에 노드 2에 속한 드라이브를 노드 4에 재할당합니다
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["네"]link:upgrade_migrate_aggregates_epsilon_lifs_node1_to_node4.html["노드 1의 데이터 애그리게이트, epsilon 및 LIF를 노드 4로 마이그레이션합니다"]
+[role="quick-margin-para"]
+AFF A250 노드 1을 드라이브 쉘프로 변환하기 전에 먼저 노드 1의 데이터 애그리게이트, epsilon, LIF를 AFF A400 node4로 마이그레이션합니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["다섯"]link:upgrade_convert_node1_drive_shelf_connect_node3.html["노드 1을 드라이브 쉘프로 변환한 후 노드 3에 연결합니다"]
+[role="quick-margin-para"]
+노드 1에서 노드 3으로 드라이브를 재할당하기 전에 AFF A250 노드 1을 NS224 드라이브 쉘프로 변환한 다음 AFF A400 노드 3에 연결합니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["6개"]link:upgrade_reassign_drives_node1_to_node3.html["노드 1에서 노드 3으로 드라이브를 재할당합니다"]
+[role="quick-margin-para"]
+AFF A250 노드 1을 NS224 드라이브 쉘프로 전환하고 AFF A400 노드 3에 연결한 후 이전에 노드 1에 속한 드라이브를 노드 3에 재할당합니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["7번"]link:upgrade_migrate_lIFs_aggregates_node4_node3.html["노드 4의 LIF 및 데이터 애그리게이트를 노드 3으로 마이그레이션"]
+[role="quick-margin-para"]
+업그레이드를 완료하려면 노드3을 노드4에 연결한 다음, 노드4의 데이터 LIF 및 데이터 애그리게이트를 노드3로 마이그레이션합니다.

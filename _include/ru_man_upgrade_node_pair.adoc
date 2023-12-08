@@ -5,10 +5,10 @@
 노드 쌍을 업그레이드하려면 원래 노드를 준비한 다음 원래 노드와 새 노드 모두에서 일련의 단계를 수행해야 합니다. 그런 다음 원래 노드를 서비스 해제할 수 있습니다.
 
 .단계
-. link:stage1_prepare_for_upgrade.html["1단계: 업그레이드 준비"]
-. link:stage2_relocate_retire_node1.html["2단계: 노드 1을 재배치하거나 폐기합니다"]
-. link:stage_3_install_boot_node3.html["3단계: 노드 3을 설치하고 부팅합니다"]
-. link:stage4_record_info_retire_node2.html["4단계: 정보를 기록하고 노드2를 폐기합니다"]
-. link:stage5_install_boot_node4.html["5단계: 노드 4를 설치하고 부팅합니다"]
-. link:stage6_complete_upgrade.html["6단계: 업그레이드를 완료합니다"]
+. link:stage_1_index.html["1단계: 업그레이드 준비"]
+. link:stage_2_index.html["2단계: 노드 1을 재배치하거나 폐기합니다"]
+. link:stage_3_index.html["3단계: 노드 3을 설치하고 부팅합니다"]
+. link:stage_4_index.html["4단계: 정보를 기록하고 노드2를 폐기합니다"]
+. link:stage_5_index.html["5단계: 노드 4를 설치하고 부팅합니다"]
+. link:stage_6_index.html["6단계: 업그레이드를 완료합니다"]
 

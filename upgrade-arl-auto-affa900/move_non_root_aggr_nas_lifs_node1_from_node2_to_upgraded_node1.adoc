@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: /upgrade-arl-auto-affa900/move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html 
+permalink: upgrade-arl-auto-affa900/move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html 
 keywords: moving, non-root, aggregates, nas, lif, node1, node2 
 summary: ARL을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드할 때 노드 2에 있는 node1 NAS 데이터 LIF가 노드 2에서 노드 1로 재배치되는지 확인합니다. 
 ---

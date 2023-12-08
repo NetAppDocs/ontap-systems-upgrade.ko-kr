@@ -1,0 +1,67 @@
+---
+permalink: upgrade/upgrade-by-moving-storage-parent.html 
+sidebar: sidebar 
+keywords: upgrade 
+summary: 스토리지를 이동하여 업그레이드할 경우 원래 노드를 준비하고 새 노드를 설정합니다. 일부 플랫폼 모델은 내부 스토리지를 새 노드로 전송하는 기능을 지원합니다. 디스크를 재할당하고 루트 볼륨 구성을 새 노드에 복원하고 네트워크 포트를 구성합니다. 스토리지 이동을 통한 업그레이드는 운영 중단 절차입니다. 
+---
+= 워크플로우
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+스토리지를 이동하여 컨트롤러 하드웨어를 업그레이드할 경우 원래 노드를 준비하고 새 노드를 설정합니다. 일부 플랫폼 모델은 내부 스토리지를 새 노드로 전송하는 기능을 지원합니다. 디스크를 재할당하고 루트 볼륨 구성을 새 노드에 복원하고 네트워크 포트를 구성합니다. 스토리지 이동을 통한 업그레이드는 운영 중단 절차입니다.
+
+[NOTE]
+====
+스토리지를 이동하여 컨트롤러 하드웨어를 업그레이드하는 단계에서는 원래 노드를 node1과 node2라고 하며 새 노드를 node3과 node4라고 합니다. 이 절차를 수행하는 동안 노드 1은 노드 3으로 대체되고 노드 2는 노드 4로 대체됩니다.
+
+image::../upgrade/media/original_to_new_nodes.png[node3 및 node4를 node1 및 node2로 바꿉니다]
+
+node1, node2, node3 및 node4라는 용어는 원래 노드와 새 노드를 구별하는 데만 사용됩니다. 이 절차를 수행할 때 이러한 노드를 원래 노드 및 새 노드의 실제 이름으로 대체해야 합니다. 그러나 실제로 노드 이름은 변경되지 않습니다. node3에는 node1이라는 이름이 있고, node4에는 컨트롤러 하드웨어를 업그레이드한 후 node2라는 이름이 있습니다.
+
+====
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1개"]link:upgrade-prepare-when-moving-storage.html["스토리지를 이동할 때 업그레이드를 준비합니다"]
+[role="quick-margin-para"]
+스토리지를 이동하여 업그레이드하기 전에 원래 노드에서 라이센스 정보를 수집하고, 네트워크 구성을 계획하고, 시스템 ID를 기록하고, NetBoot에 필요한 파일을 준비합니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2개"]link:upgrade-shutdown-remove-original-nodes.html["원래 노드를 종료합니다"]
+[role="quick-margin-para"]
+원래 노드를 종료하고 제거할 때 업그레이드와 관련된 AutoSupport 메시지를 보내고, 사서함 제거, 노드 전원 종료, 섀시를 제거합니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["세 가지"]link:upgrade-remove-disk-ownership-new-nodes.html["새 노드에 연결된 디스크의 소유권을 제거합니다"]
+[role="quick-margin-para"]
+새 노드에 내부 디스크 또는 애드온 쉘프가 시스템에 연결된 경우 컨트롤러 업그레이드에 방해가 될 수 있습니다.  node3/node4와 함께 제공된 새 디스크의 소유권을 제거해야 합니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["네"]link:upgrade-reset-default-configuration-node3-and-node4.html["새 노드에서 기본 구성을 재설정합니다"]
+[role="quick-margin-para"]
+부팅 매체의 구성 정보가 컨트롤러 업그레이드를 방해하지 않는지 확인하려면 node3 및 node4의 구성을 기본 구성 설정으로 재설정합니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["다섯"]link:upgrade-install-new-nodes.html["새 노드를 설치합니다"]
+[role="quick-margin-para"]
+스토리지를 이동하여 업그레이드하면 먼저 노드 3과 노드 4를 설치하고 전원, 콘솔 및 네트워크 연결을 새 노드에 연결하여 업그레이드할 수 있습니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["6개"]link:upgrade-set-up-new-nodes.html["새 노드를 설정합니다"]
+[role="quick-margin-para"]
+스토리지를 이동하여 업그레이드하는 동안 노드 3과 노드 4의 전원을 켜고 소프트웨어 이미지를 부팅하고 노드를 구성합니다. 원래 노드와 새 노드 간의 물리적 포트 레이아웃은 다를 수 있습니다. 원래 노드와 대체 노드 간의 포트 매핑은 포트와 연결의 적절한 레이아웃을 식별하기 위해 수행해야 합니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["7번"]link:upgrade-optional-move-internal-storage.html["선택 사항: 내부 스토리지를 이동하거나 시스템을 드라이브 쉘프로 변환할 수 있습니다"]
+[role="quick-margin-para"]
+선택적으로 원래 노드가 지원되는 모델 중 하나인 경우, 스토리지를 이동하여 업그레이드 과정에서 내부 SATA 드라이브, SSD 또는 SAS 드라이브를 새 노드에 연결된 드라이브 쉘프로 이동할 수 있습니다. 시스템을 드라이브 쉘프로 변환하여 새 노드에 연결할 수도 있습니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-8.png["8개"]link:upgrade-attach-shelves-reassign-disks.html["스토리지 쉘프를 연결하고 디스크 소유권을 다시 할당합니다"]
+[role="quick-margin-para"]
+node1 및 node2에 속한 디스크를 node3 및 node4에 각각 재할당합니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-9.png["아홉"]link:upgrade-restore-root-volume-config.html["루트 볼륨 구성을 복구합니다"]
+[role="quick-margin-para"]
+루트 볼륨에서 부팅 장치로 구성 정보를 복원합니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-10.png["10개"]link:upgrade-complete.html["업그레이드를 완료합니다"]
+[role="quick-margin-para"]
+ONTAP 9.8 이상 또는 ONTAP 9.7 이전 버전에서 업그레이드를 완료하십시오.
+
+.관련 정보
+* link:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html["드라이브 쉘프로 전환하여 AFF A250을 AFF A400으로 업그레이드합니다"] (중단 절차).
+

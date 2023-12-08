@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: /upgrade-arl-auto-affa900/decommission_old_system.html 
+permalink: upgrade-arl-auto-affa900/decommission_old_system.html 
 keywords: decommission, old system, upgrade, databases, netapp, support, site, serial, number, cluster 
 summary: 컨트롤러 업그레이드 후 이전 시스템이 더 이상 작동하지 않음을 NetApp에 알려 주십시오. 
 ---

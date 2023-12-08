@@ -8,7 +8,7 @@ summary: 'ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어는 를 사�
 :allow-uri-read: 
 
 
-[role="lead lead"]
+[role="lead"]
 이 절차에서는 다음 시스템 구성에 대해 ARL(Aggregate Relocation)을 사용하여 컨트롤러 하드웨어를 업그레이드하는 방법에 대해 설명합니다.
 
 [cols="40,20,40"]

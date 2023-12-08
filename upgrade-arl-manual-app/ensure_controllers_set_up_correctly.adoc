@@ -75,7 +75,7 @@ node4          node3          true     Connected to node3
 `volume show -node _node3_ -state offline`
 `volume show -node _node4_ -state offline`
 
-. 오프라인 상태인 볼륨이 있으면 에서 캡처한 오프라인 볼륨 목록과 비교합니다 link:prepare_nodes_for_upgrade.html#step19d["19단계(d)"] 에서 업그레이드할 노드를 준비하고 필요에 따라 각 볼륨에 대해 다음 명령을 한 번 입력하여 오프라인 볼륨을 온라인 상태로 전환합니다.
+. 오프라인 상태인 볼륨이 있으면 에서 캡처한 오프라인 볼륨 목록과 비교합니다  link:prepare_nodes_for_upgrade.html#man_prepare_nodes_step19["19단계(d)"] 에서 업그레이드할 노드를 준비하고 필요에 따라 각 볼륨에 대해 다음 명령을 한 번 입력하여 오프라인 볼륨을 온라인 상태로 전환합니다.
 +
 `volume online -vserver _vserver_name_ -volume _volume_name_`
 
@@ -86,7 +86,7 @@ node4          node3          true     Connected to node3
 +
 license-code 매개변수는 28개의 대문자 알파벳 문자 키 목록을 허용합니다. 한 번에 하나의 라이센스를 추가하거나, 각 라이센스 키를 쉼표로 구분하여 한 번에 여러 라이센스를 추가할 수 있습니다.
 
-. [[unset_maxwait_manual]] 구성에 자체 암호화 드라이브가 사용되고 있고 를 설정한 경우 `kmip.init.maxwait` 변수 대상 `off` (예: 에서 link:install_boot_node3.html#step16["16단계"] of_Install 및 boot node3_) 변수를 설정 해제해야 합니다.
+. [[unset_maxwait_manual]] 구성에 자체 암호화 드라이브가 사용되고 있고 를 설정한 경우 `kmip.init.maxwait` 변수 대상 `off` (예: 에서 link:install_boot_node3.html#man_install3_step16["16단계"] of_Install 및 boot node3_) 변수를 설정 해제해야 합니다.
 +
 `set diag; systemshell -node _node_name_ -command sudo kenv -u -p kmip.init.maxwait`
 
@@ -129,7 +129,7 @@ Do you want to continue? {y|n}: y
 `system license show`
 
 +
-에서 캡처한 출력과 출력을 비교할 수 있습니다 link:prepare_nodes_for_upgrade.html#step30["30단계"] 의 _ 업그레이드 _ 을(를) 위해 노드를 준비합니다.
+에서 캡처한 출력과 출력을 비교할 수 있습니다 link:prepare_nodes_for_upgrade.html#man_prepare_nodes_step30["30단계"] 의 _ 업그레이드 _ 을(를) 위해 노드를 준비합니다.
 
 . 두 노드에서 다음 명령을 수행하여 SP를 구성합니다.
 +

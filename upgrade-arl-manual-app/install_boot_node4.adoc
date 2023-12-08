@@ -340,7 +340,7 @@ NOTE: 시스템에서 공유 디스크, 하이브리드 애그리게이트 또�
 `_node2_sysid_ -d _node4_sysid_` 
 |===
 +
-의 경우 `<node2_sysid>` 값, 에서 캡처한 정보를 사용합니다 link:record_node2_information.html#man_node2_info_step10["10단계"] 를 참조하십시오. 용 `_node4_sysid_`에서 캡처한 정보를 사용합니다 <<man_install4_step23,23단계>>.
+의 경우 `<node2_sysid>` 값, 에서 캡처한 정보를 사용합니다 link:record_node2_information.html#man_record_2_step10["10단계"] 를 참조하십시오. 용 `_node4_sysid_`에서 캡처한 정보를 사용합니다 <<man_install4_step23,23단계>>.
 
 +
 

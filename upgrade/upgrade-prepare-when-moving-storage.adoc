@@ -169,4 +169,4 @@ NOTE: 의 내용을 추출할 필요는 없습니다 `<ontap_version>_image.tgz`
 |===
 
 
-디렉터리에 있는 정보를 사용하여 로 이동합니다 xref:upgrade-set-up-new-nodes.adoc[새 노드를 설정합니다].
+디렉터리에 있는 정보를 사용하여 로 이동합니다 link:upgrade-set-up-new-nodes.html["새 노드를 설정합니다"].

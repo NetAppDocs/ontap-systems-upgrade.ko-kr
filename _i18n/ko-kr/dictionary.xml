@@ -90,7 +90,6 @@
   <block id="9ad3dc0563b6521da592666e0c96170d" category="paragraph">노드 2는 인수되지 않지만 모든 비루트 애그리게이트에서 데이터를 계속 처리하고 있습니다.</block>
   <block id="84604a4d07dcc33bcf3def32522ced97" category="list-text">노드1을 불러옵니다.</block>
   <block id="cf843a9114c64e407d26e842eb2aa5c2" category="inline-link-macro">예기치 않은 스토리지 페일오버 표시 명령 출력입니다</block>
-  <block id="94a4747b7f624695a71106c7bd97a9c7" category="paragraph">의 출력에 일부 변경 사항이 있을 수 있습니다<block ref="ddf400f1cb6b8b9330ed6c79c508123c" prefix=" " category="inline-code"></block> 명령이지만, 이는 일반적인 것으로 절차에는 영향을 미치지 않습니다. 문제 해결 섹션을 참조하십시오 <block ref="b83b9fc12613c040fac52ff371fe932a" category="inline-link-macro-rx"></block>.</block>
   <block id="15c9d515df1ae9990db781b0882abe66" category="section-title">HA가 활성화된 상태에서 2단계 중 또는 이후에 노드 2에 장애가 발생합니다</block>
   <block id="716abd00d1127a1995735a99a806c57a" category="paragraph">노드 1은 해당 애그리게이트의 일부 또는 전부를 노드 2로 재배치했습니다. HA가 활성화되었습니다.</block>
   <block id="f0cdf8c3a0614c42ddbb847f4d954ecc" category="paragraph">노드 1은 노드 2에 재배치된 자체 애그리게이트뿐만 아니라 노드 2에 모두 테이크오버됩니다. 노드 2가 에 들어갈 때<block ref="6975ddc7f024555d2a823b8031b5588a" prefix=" " category="inline-code"></block> 노드 1은 노드 2의 모든 애그리게이트를 제공합니다.</block>
@@ -129,7 +128,6 @@
   <block id="188229afd48ed8799252ee3f4371adf0" category="section-title">5단계 중에 Node3이 충돌합니다</block>
   <block id="12c209a765d259bdad104c55c61bccd8" category="paragraph">Node3는 노드 2의 일부 또는 전부를 노드 4로 재배치했습니다. Node4는 인수되지 않지만, 노드 3이 이미 재배치된 비루트 애그리게이트를 계속 제공합니다. HA 쌍이 사용되지 않습니다.</block>
   <block id="28332742784b3fba161ff8020b7948ef" category="paragraph">노드 3이 다시 부팅될 때까지 나머지 애그리게이트는 중단 상태가 됩니다.</block>
-  <block id="059fe117edfac83eeb29495f9fd915b7" category="list-text">반복하여 노드 2에 속한 나머지 애그리게이트를 재배치합니다 <block ref="21d698177270cdcc53abb50c511e3bde" category="inline-link-macro-rx"></block> 부터 까지 <block ref="c5be787c4fcfd0f49f014e8618d28c15" category="inline-link-macro-rx"></block> section_Relocate node3에서 node4_로 node2의 비 루트 애그리게이트를 이동합니다.</block>
   <block id="a018f0afc69622b99ebe84263c79ed31" category="list-text">노드 쌍 업그레이드 절차를 계속 진행합니다.</block>
   <block id="17772501b6724fd9858e76539d802bae" category="section-title">5단계 중에 Node4가 충돌합니다</block>
   <block id="ed77b7aeb374975ae2dc4f8a9a5d5551" category="paragraph">Node3는 노드 2의 일부 또는 전부를 노드 4로 재배치했습니다. Node3는 인수된 것이 아니라, 노드 3이 소유한 비루트 애그리게이트뿐만 아니라 재배치되지 않은 Aggregate를 계속 제공합니다. HA가 비활성화되었습니다.</block>
@@ -205,7 +203,6 @@
   <block id="9bced622fe4463826e54e9d72ffb3105" category="inline-link-macro">노드 1의 포트를 노드 3으로 매핑합니다</block>
   <block id="0f7670789359a9e1e91e25e19d469dad" category="list-text">노드 3에 온보드 FC 포트, 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드가 없는 경우 스토리지 디스크를 사용하여 시스템을 업그레이드하는 경우 로 건너뛸 수 있습니다 <block ref="3b6c063a8efbc88c969c7838f0611434" category="inline-link-macro-rx"></block>.</block>
   <block id="e5d8ce1e4e0f9c50b3cbdf452d60972e" category="inline-link-macro">22단계</block>
-  <block id="04bc530160a0c8cfe78397922bf1025e" category="list-text">하지만 스토리지 어레이가 있는 FlexArray 가상화 소프트웨어를 사용하는 V 시리즈 시스템 또는 시스템이 있고 노드 3에 온보드 FC 포트, 온보드 UTA/UTA 포트 또는 UTA/UTA2 카드가 없는 경우, _Install로 돌아가서 노드 3_를 다시 시작한 다음 에서 작업을 시작하십시오 <block ref="8334b800bcf351711ec77ec1fb7390b3" category="inline-link-macro-rx"></block>.</block>
   <block id="d3f49e44800c8ff8556d915b88782e44" category="list-title">선택 사항:</block>
   <block id="a1a2d377f686ce4835b9ee342fd6089b" category="list-text"><block ref="750d6dbe3bf1312d0d97a8f03a0d2304" category="inline-xref-macro-rx"></block></block>
   <block id="3088a544c36eafa56a0950901fa93b6a" category="list-text"><block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block></block>
@@ -258,7 +255,6 @@
   <block id="306e854e226a650b7acec40ba5a0e249" category="list-text">노드 3에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우 건너뛰십시오 <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block> 로 이동합니다 <block ref="3b6c063a8efbc88c969c7838f0611434" category="inline-link-macro-rx"></block>.</block>
   <block id="6c804c4adac8740743dd6f41da471795" category="list-text">노드 3에 카드 또는 온보드 포트가 있는 경우 로 이동합니다 <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>.</block>
   <block id="805e47ec7b4ef2165b02c8ff12688343" category="inline-link-macro">7단계</block>
-  <block id="49844625e7eb80b095f9d3c525f8cba6" category="list-text">노드 3에 카드 또는 온보드 포트가 없는 경우 건너뛰십시오 <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>그런 다음, _Install로 돌아가서 node3_을 부팅하고 에서 다시 시작합니다 <block ref="a4103675c41ea57f7287e0804dd0c9dd" category="inline-link-macro-rx"></block>.</block>
   <block id="b6f436f6398306a921de09279a6a8256" category="section-title">노드 3의 UTA/UTA2 포트를 확인하고 구성합니다</block>
   <block id="d190fd34bae28aff670090c55eb7e24b" category="paragraph">노드 3에 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드를 사용하는 경우, 업그레이드 시스템을 사용할 방식에 따라 포트 구성을 확인하고 필요에 따라 포트를 다시 구성해야 합니다.</block>
   <block id="cb462dbb35ebe0e4c6fef592bf7fd143" category="paragraph">UTA/UTA2 포트에 알맞은 SFP+ 모듈이 있어야 합니다.</block>
@@ -320,7 +316,6 @@
   <block id="ed79a6f393f23524ed190af7b250c69b" category="list-text">[[pep14]] 다음 작업 중 하나를 수행합니다.</block>
   <block id="eb62d15c59e51a7bf19844fae4092453" category="cell">로 이동합니다 <block ref="3b6c063a8efbc88c969c7838f0611434" category="inline-link-macro-rx"></block>.</block>
   <block id="5bb1d2d89905f521825083d671817bcb" category="cell">V-시리즈 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다</block>
-  <block id="8ec15d413a08247a2b2856ae1be9d192" category="cell">에서 _Install로 돌아가서 node3_을 부팅한 다음 를 다시 시작합니다 <block ref="a4103675c41ea57f7287e0804dd0c9dd" category="inline-link-macro-rx"></block>.</block>
   <block id="c91d99382b92408513aed0c125178f52" category="summary">ONTAP 9.7 이하를 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 새 컨트롤러 모듈 및 디스크 쉘프의 케이블링 레이아웃을 결정합니다.</block>
   <block id="7fc77faa536c8e7ba6f065e5930679ee" category="doc">새 케이블 연결 레이아웃을 확인합니다</block>
   <block id="0d687993b6b67e20ff0472f32d9693b0" category="paragraph">새 컨트롤러 모듈과 새 디스크 쉘프의 케이블을 기존 FC 스위치에 케이블로 연결해야 합니다.</block>
@@ -402,7 +397,6 @@
   <block id="06482362cad7119c97decfadddef47d1" category="list-text">노드 2에서 클러스터 네트워크, 노드 관리, 인터클러스터 및 클러스터 관리 포트를 찾습니다.</block>
   <block id="c657c3ae0ae199bbaa1464608a597ac0" category="paragraph"><block ref="29bd86bf3f580f312d0ae4af39de3c41" prefix="" category="inline-code"></block></block>
   <block id="9581ef2fce7ca5bef124feac72dd7c62" category="paragraph">다음 예제와 같이 시스템에서 클러스터의 해당 노드 및 기타 노드에 대한 LIF를 표시합니다.</block>
-  <block id="66df24136907c6cba70f63950b15a0d8" category="admonition">시스템에 인터클러스터 LIF가 없을 수 있습니다. 클러스터 관리 LIF는 노드 쌍의 한 노드에만 있습니다. 의 예제 출력에 클러스터 관리 LIF가 표시됩니다 <block ref="4d0816bae74d8d665981da69c5c8d7a9" category="inline-link-macro-rx"></block> IN_레코드 노드1 포트 정보 _.</block>
   <block id="04e69ed9c039a8d1bc156ec97e69f0d2" category="inline-link-macro">노드 2의 포트를 노드 4로 매핑합니다</block>
   <block id="db388cc11af248e636d23a7634f79da1" category="list-text">섹션에서 사용할 출력 정보를 캡처합니다 <block ref="fface1ac702bde6d72ceb6e55eb8b2b6" category="inline-link-macro-rx"></block>.</block>
   <block id="d852fb2583585e10c3885982eaf29670" category="paragraph">새 컨트롤러 포트를 이전 컨트롤러 포트에 매핑하려면 출력 정보가 필요합니다.</block>
@@ -473,7 +467,6 @@
   <block id="291e8826d2b19041a0543b448060f314" category="paragraph">노드 4에 온보드 FC 포트, 온보드 UTA/UTA2(Unified Target Adapter) 포트 또는 UTA/UTA2 카드가 있는 경우, 나머지 절차를 완료하기 전에 설정을 구성해야 합니다.</block>
   <block id="a5eaebf8eb363498d59b7e808ae14a67" category="paragraph">완료해야 할 수도 있습니다 <block ref="b22a2e603d310a795a7b59d2bdda39ee" category="inline-xref-macro-rx"></block>, <block ref="5752cac0a470e06ffceef40fba1931c1" category="inline-xref-macro-rx"></block>또는 두 섹션을 모두 선택합니다.</block>
   <block id="d3724945a8761461ffee756c3d88b5f7" category="paragraph">노드 4에 온보드 FC 포트, 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드가 없는 경우 스토리지 디스크를 사용하여 시스템을 업그레이드하는 경우 로 건너뛸 수 있습니다 <block ref="fface1ac702bde6d72ceb6e55eb8b2b6" category="inline-link-macro-rx"></block>.</block>
-  <block id="2f23b838fc1ce32542c8c66d9e287935" category="paragraph">하지만 V 시리즈 시스템이 있거나 FlexArray 가상화 소프트웨어가 있고 스토리지 어레이에 연결되어 있는 경우, 노드 4에 온보드 FC 포트, 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드가 없는 경우, _Install and boot node4_ 섹션으로 돌아가서 에서 다시 시작해야 합니다 <block ref="04be07c8b8cd85d6b2140c2bfb8113b6" category="inline-link-macro-rx"></block>. 노드 4에 충분한 랙 공간이 있는지 확인합니다. 노드 4가 노드 2와 다른 섀시에 있는 경우 노드 4를 노드 3과 같은 위치에 배치할 수 있습니다. 노드 2와 노드 4가 동일한 섀시에 있는 경우 노드 4는 이미 해당 랙 위치에 있습니다.</block>
   <block id="6ef697f11922be2e4de0971f7d70997f" category="list-title">선택</block>
   <block id="32681c366792ff09536e44772a3bddf2" category="list-text"><block ref="b22a2e603d310a795a7b59d2bdda39ee" category="inline-xref-macro-rx"></block></block>
   <block id="17889f6fb09adc44188f6076a9e7852a" category="list-text"><block ref="5752cac0a470e06ffceef40fba1931c1" category="inline-xref-macro-rx"></block></block>
@@ -509,7 +502,6 @@
   <block id="5f05ecbc9bc4d038e9ed396780511251" category="list-text">로 이동합니다 <block ref="5752cac0a470e06ffceef40fba1931c1" category="inline-xref-macro-rx"></block> 노드 4에 UTA/UTA2A 카드 또는 UTA/UTA2 온보드 포트가 있는 경우</block>
   <block id="1e7bd254c963a338c489202373c4ab17" category="list-text">섹션을 건너뛰고 로 이동합니다 <block ref="fface1ac702bde6d72ceb6e55eb8b2b6" category="inline-link-macro-rx"></block> 노드 4에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우</block>
   <block id="08b25b9ad88e79131839ab732517a679" category="list-text">로 이동합니다 <block ref="5752cac0a470e06ffceef40fba1931c1" category="inline-xref-macro-rx"></block> 노드 4에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 있는 경우</block>
-  <block id="11b3cd1a1063bf814b7d2eeabae1825d" category="list-text">node4에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우 section_Check 및 UTA/UTA2 포트를 구성하고, node4에서 UTA/UTA2 포트 또는 UTA/UTA2 온보드 포트를 사용하지 않도록 설정한 다음, 에서 섹션을 다시 시작하십시오 <block ref="04be07c8b8cd85d6b2140c2bfb8113b6" category="inline-link-macro-rx"></block>.</block>
   <block id="113dd8c6d49d13f5871e1cbe53350eb2" category="section-title">노드 4의 UTA/UTA2 포트를 확인하고 구성합니다</block>
   <block id="69e973a9aba58ba3c0012cb107497fbd" category="paragraph">노드 4에 온보드 UTA/UTA2 포트 또는 UTA/UTA2A 카드가 있는 경우 업그레이드 시스템을 사용할 방식에 따라 포트 구성을 확인하고 포트를 구성해야 합니다.</block>
   <block id="78216d3d261872be404d0ef7c21408bf" category="paragraph">UTA/UTA2 포트를 네이티브 FC 모드 또는 UTA/UTA2A 모드로 구성할 수 있습니다. FC 모드는 FC 이니시에이터 및 FC 타겟을 지원하며, UTA/UTA2 모드를 사용하면 동시 NIC 및 FCoE 트래픽을 지원하여 동일한 10GbE SFP+ 인터페이스를 공유하고 FC 타겟을 지원합니다.</block>
@@ -546,7 +538,6 @@
   <block id="4cf4d3bfbda859f7fbe3247599afeba5" category="list-text">각 포트에 대해 다음 명령 중 하나를 입력하여 타겟 포트를 온라인으로 전환합니다.</block>
   <block id="f8cd2564c015235fc797e229583e1023" category="list-text">[[man_check_4_Step13]] 포트에 케이블을 연결합니다.</block>
   <block id="439c508e4033b6c215e1a9262db35444" category="cell">로 이동합니다 <block ref="fface1ac702bde6d72ceb6e55eb8b2b6" category="inline-link-macro-rx"></block>.</block>
-  <block id="dbe83a6e258bdc99b8051f4d3cf01d67" category="cell">_Install and boot node4_ 섹션으로 돌아가서 에서 섹션을 다시 시작합니다 <block ref="04be07c8b8cd85d6b2140c2bfb8113b6" category="inline-link-macro-rx"></block>.</block>
   <block id="42a668f937c22ef51746479a618fb229" category="summary">ONTAP 9.7 이하를 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 발생할 수 있는 장애 문제를 해결합니다.</block>
   <block id="d60c463bb4096f3ed4bd1618626dfe10" category="doc">문제 해결</block>
   <block id="9fd68cc494a9f57cae67ac737ab1370f" category="paragraph">노드 쌍을 업그레이드하는 동안 장애가 발생할 수 있습니다. 노드가 충돌하거나 애그리게이트가 재배치되지 않거나 LIF가 마이그레이션되지 않을 수 있습니다. 장애 원인 및 해결 방법은 업그레이드 절차 중 장애가 발생한 시기에 따라 다릅니다.</block>
@@ -593,7 +584,6 @@
   <block id="b0d05d370a8e827d5c1d1e92258a25b2" category="cell">디스크 및 백엔드 스토리지가 없습니다</block>
   <block id="ad9768b53d0a33cd1368bd0b1d373a3b" category="cell">7단계부터 12단계까지 건너뛰고 로 이동합니다 <block ref="85131af613f0169831e213f11ca11041" category="inline-xref-macro-rx"></block>.</block>
   <block id="c9d3e45a02f36166b1f2d250fefe0e40" category="cell">는 스토리지 어레이에 연결된 FlexArray 가상화 소프트웨어가 설치된 V-Series 시스템 또는 시스템입니다</block>
-  <block id="6dd9e2c232d9aa889adc2bdc1d259396" category="list-text">로 이동합니다 <block ref="fae618cfa140cbca52d057afef5df1da" category="inline-link-macro-rx"></block> 하위 섹션을 완료합니다 <block ref="b874d68563e926f19d0f15015f15f190" category="inline-link-macro-rx"></block> 및 <block ref="a9e7644d0d01665bbdf613cdb831fa7f" category="inline-link-macro-rx"></block>시스템에 맞게.</block>
   <block id="66b6cfbf89b613b9a80d84ec1d7b5fa0" category="list-text">이 섹션으로 돌아가 나머지 단계를 완료합니다 <block ref="239474d202713b3a406727408fd68f72" category="inline-xref-macro-rx"></block>.</block>
   <block id="120d825f771126cb963c76c2ff005e6d" category="list-text">[[man_install3_step7]] 새 노드의 FC 이니시에이터 포트를 스위치 영역에 추가합니다.</block>
   <block id="12aae7624013a12c0ade8f6f2e309d62" category="paragraph">시스템에 테이프 SAN이 있는 경우 이니시에이터에 대해 조닝이 필요합니다. 자세한 내용은 스토리지 배열 및 조닝 설명서를 참조하십시오.</block>
@@ -1222,17 +1212,11 @@
   <block id="15577d2c813239ab53fdc6f35d8a1dc5" category="doc">노드 쌍을 업그레이드합니다</block>
   <block id="c2f768afcc24a25937246844b60ab9eb" category="paragraph">노드 쌍을 업그레이드하려면 원래 노드를 준비한 다음 원래 노드와 새 노드 모두에서 일련의 단계를 수행해야 합니다. 그런 다음 원래 노드를 서비스 해제할 수 있습니다.</block>
   <block id="b72f5020c23dbd9ffc6d4450f84ec5f3" category="inline-link-macro">1단계: 업그레이드 준비</block>
-  <block id="2f0c5661dcce8bdab7165128442db993" category="list-text"><block ref="2f0c5661dcce8bdab7165128442db993" category="inline-link-macro-rx"></block></block>
   <block id="2751979c348fa4496d4f5e77b42bd6f7" category="inline-link-macro">2단계: 노드 1을 재배치하거나 폐기합니다</block>
-  <block id="1c4bcac5938cde9a8029f70ed983f129" category="list-text"><block ref="1c4bcac5938cde9a8029f70ed983f129" category="inline-link-macro-rx"></block></block>
   <block id="34c13ce480fd28c643a03477e436ea69" category="inline-link-macro">3단계: 노드 3을 설치하고 부팅합니다</block>
-  <block id="2bff11e37a7944fe4126fc6d0031317c" category="list-text"><block ref="2bff11e37a7944fe4126fc6d0031317c" category="inline-link-macro-rx"></block></block>
   <block id="5031d6e060f03ca2e474f28550af0fd8" category="inline-link-macro">4단계: 정보를 기록하고 노드2를 폐기합니다</block>
-  <block id="40e3db2ec211fe309d66e01bc6d6863f" category="list-text"><block ref="40e3db2ec211fe309d66e01bc6d6863f" category="inline-link-macro-rx"></block></block>
   <block id="6c02f76a0894d55a982cb5450ab57f22" category="inline-link-macro">5단계: 노드 4를 설치하고 부팅합니다</block>
-  <block id="a9e86788143677bb2fee738ac1306c36" category="list-text"><block ref="a9e86788143677bb2fee738ac1306c36" category="inline-link-macro-rx"></block></block>
   <block id="f76e06dd184bc4ee38bfcca355bec6fd" category="inline-link-macro">6단계: 업그레이드를 완료합니다</block>
-  <block id="a8f4b0dd7dd43592ec02ea010ada1285" category="list-text"><block ref="a8f4b0dd7dd43592ec02ea010ada1285" category="inline-link-macro-rx"></block></block>
   <block id="921eaa458ace17addc7c79b9466bf144" category="doc">노드 1이 소유한 NAS 데이터 LIF를 노드 2에서 노드 3으로 이동하고 노드 3의 SAN LIF를 확인합니다</block>
   <block id="04a9af523510dc4b38fa46c583f9e00f" category="paragraph">노드 3의 설치를 확인하고 노드 2에서 노드 3으로 애그리게이트를 재배치하는 경우, 노드 2에 현재 있는 노드 1에 속하는 NAS 데이터 LIF를 노드 2에서 노드 3으로 이동해야 합니다. 노드 3의 SAN LIF도 확인해야 합니다.</block>
   <block id="f329a7087048b2fb128acd99205356e2" category="paragraph">원격 LIF는 업그레이드 절차 중에 SAN LUN의 트래픽을 처리합니다. 업그레이드 중에 클러스터 또는 서비스 상태를 위해 SAN LIF를 이동할 필요가 없습니다. SAN LIF는 새 포트에 매핑되지 않으면 이동하지 않습니다. 노드 3을 온라인으로 설정한 후 LIF가 정상 작동하는지 확인합니다.</block>
@@ -1506,7 +1490,6 @@
   <block id="862da4c0b3b19ba62c050373943cd909" category="list-text">볼륨이 오프라인 상태인지 확인합니다.</block>
   <block id="68c05b65b923848aa186ea69ee9487d7" category="paragraph"><block ref="e3a438e4ea5a16cab1f093e0d1ef458f" prefix="" category="inline-code"></block><block ref="ef010c4877b307761f92dfee774f7025" prefix=" " category="inline-code"></block></block>
   <block id="183048ad5f29710efbac355627777865" category="inline-link-macro">19단계(d)</block>
-  <block id="be3ae65f9ab44c1be767b14ddc884bfc" category="list-text">오프라인 상태인 볼륨이 있으면 에서 캡처한 오프라인 볼륨 목록과 비교합니다 <block ref="f226f1513a3b2dc8065e1f4d6987a247" category="inline-link-macro-rx"></block> 에서 업그레이드할 노드를 준비하고 필요에 따라 각 볼륨에 대해 다음 명령을 한 번 입력하여 오프라인 볼륨을 온라인 상태로 전환합니다.</block>
   <block id="113d7e75ab71ebd9bcdd1155228482fc" category="paragraph"><block ref="c0158aac7761d0859a618e28877616c4" prefix="" category="inline-code"></block></block>
   <block id="5d41e09cfbf05ac79dc026cd1e32857c" category="list-text">각 노드에 대해 다음 명령을 입력하여 새 노드에 대한 새 라이센스를 설치합니다.</block>
   <block id="d5538e0d48b9561003d2506ab100c330" category="paragraph"><block ref="18a5bd82f1a3af65ac694296ca5e36f9" prefix="" category="inline-code"></block></block>
@@ -1525,7 +1508,6 @@
   <block id="4883a9a9fced202f6b61720c6c0446a2" category="list-text">다음 명령을 입력하고 출력을 확인하여 라이센스가 올바르게 설치되었는지 확인합니다.</block>
   <block id="f52d44aaa981f34fa588225f9d4cc820" category="paragraph"><block ref="684590f66f47755afa88d3f70f9f25ad" prefix="" category="inline-code"></block></block>
   <block id="7092e15f19aa79a4b642157f15a4bcf6" category="inline-link-macro">30단계</block>
-  <block id="d9128463a6e9a9f5e58f74dfe42dba7b" category="paragraph">에서 캡처한 출력과 출력을 비교할 수 있습니다 <block ref="aa31de159a7a7903f22336e05c00b63e" category="inline-link-macro-rx"></block> 의 _ 업그레이드 _ 을(를) 위해 노드를 준비합니다.</block>
   <block id="65816664fef74fe3f15406730c518f76" category="list-text">두 노드에서 다음 명령을 수행하여 SP를 구성합니다.</block>
   <block id="bb445430e4b0638bdd79f943cd99a597" category="paragraph"><block ref="b719f6b0341abbd7e4f3483e4f9d804e" prefix="" category="inline-code"></block></block>
   <block id="3d39e72120bdfa8b32eb4183896ece25" category="paragraph">로 이동합니다 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> SP 및 _ONTAP 9 명령에 대한 자세한 내용은 _시스템 관리 참조_에 대한 링크를 참조하십시오. 에 대한 자세한 내용은 수동 페이지 참조_를 참조하십시오<block ref="9d457aa716e00c2363b4c380e23a3068" prefix=" " category="inline-code"></block> 명령.</block>
@@ -1659,7 +1641,6 @@
   <block id="567c7db5eb132ed0419b894d763f1872" category="cell">공유 안 됨</block>
   <block id="9666e158b6e459758482181fdc5caf71" category="cell"><block ref="a7379a38aff897cac969010054762e4a" prefix="" category="inline-code"></block>
 <block ref="d1480f9ae6cae0db4da0a85dd3a00345" prefix=" " category="inline-code"></block></block>
-  <block id="8739e96f08e6885d251dc263aa1b42b4" category="paragraph">의 경우<block ref="4bc6af92800eaece42a512a876786ce9" prefix=" " category="inline-code"></block> 값, 에서 캡처한 정보를 사용합니다 <block ref="09a261426dbc4b06f375c3dc720b5b79" category="inline-link-macro-rx"></block> 를 참조하십시오. 용<block ref="3a5307c9225c62c92d2cd1fab07d458d" prefix=" " category="inline-code"></block>에서 캡처한 정보를 사용합니다 <block ref="9c7125eb7b33f2cb03297a560d0660b0" category="inline-xref-macro-rx"></block>.</block>
   <block id="ff573218a71a52e566a9d2cb9c112902" category="paragraph">를 클릭합니다<block ref="a5160db2f330101874d96e78b0693369" prefix=" " category="inline-code"></block> 명령을 실행하면 해당 디스크만 재할당됩니다<block ref="0395107b450be7489aafae3e3de11830" prefix=" " category="inline-code"></block> 현재 소유자입니다.</block>
   <block id="685b8dfe5883c0cc4f183236c52e6cdd" category="paragraph">를 입력합니다<block ref="7b8b965ad4bca0e41ab51de7b31363a1" prefix=" " category="inline-code"></block> 디스크 재할당을 중단하라는 메시지가 표시됩니다.</block>
   <block id="c8baecc7560f46020b0d73d658566eab" category="paragraph">디스크 재할당을 중단하라는 메시지가 표시되면 다음 단계에 표시된 것처럼 일련의 프롬프트에 응답해야 합니다.</block>
@@ -2044,7 +2025,6 @@
   <block id="4852954d031f57b417813707e91dd5bd" category="admonition">컨트롤러 업그레이드 모델 조합이 위 표에 없는 경우 기술 지원 부서에 문의하십시오.</block>
   <block id="f02eccb3076760465f52e896d2649983" category="inline-link-macro">노드3, 23단계에서 UTA/UTA2 포트를 확인하고 구성합니다</block>
   <block id="51de0f52809b4037608dba4b84c411b1" category="inline-link-macro">노드 4, 23단계에서 UTA/UTA2 포트를 확인하고 구성합니다</block>
-  <block id="9d84cc48ac59ed03e236e199b8e72aa8" category="paragraph">^1^ AFF A800 시스템에 필요한 추가 단계를 보려면 섹션에서 A800을 참조하는 단계로 이동하십시오 <block ref="46e0d635bf9a753e435b3e56ea555b72" category="inline-link-macro-rx"></block>, 또는 <block ref="916a396aec2ea8c5191dac1b7e554adf" category="inline-link-macro-rx"></block>.</block>
   <block id="41c1636eb5024bf8b152d1ca09286521" category="paragraph">^2^ AFF A300에서 AFF A400 또는 FAS8200으로 2노드 스위치가 없는 클러스터 구성의 FAS8300 시스템으로 업그레이드하는 경우 컨트롤러 업그레이드를 위한 임시 클러스터 포트를 선택해야 합니다. AFF A400 및 FAS8300 시스템은 2개의 구성으로 제공됩니다. 메자닌 카드 포트는 이더넷 유형이고 메자닌 포트가 FC 유형인 FC 번들입니다.</block>
   <block id="3ea026f4657fa31414c8a7e80af567b7" category="list-text">이더넷 유형 구성이 있는 AFF A400 또는 FAS8300 의 경우 두 메자닌 포트 중 하나를 임시 클러스터 포트로 사용할 수 있습니다.</block>
   <block id="c9ee572a8e71e6ba4e03747ac09a21a8" category="list-text">FC 유형 구성을 사용하는 AFF A400 또는 FAS8300 의 경우 임시 클러스터 포트를 제공하려면 4포트 10GbE 네트워크 인터페이스 카드(부품 번호 X1147A)를 추가해야 합니다.</block>
@@ -2261,7 +2241,6 @@
   <block id="d897564a1ca4a58b7f422ba34b232ab7" category="paragraph">이 섹션을 완료해야 할 수 있습니다 <block ref="750d6dbe3bf1312d0d97a8f03a0d2304" category="inline-xref-macro-rx"></block>섹션을 참조하십시오 <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>또는 두 섹션을 모두 선택합니다.</block>
   <block id="6e8734f19d50032240b4c921c28e1359" category="admonition">NetApp 마케팅 자료에서는 UTA2 라는 용어를 사용하여 통합 네트워크 어댑터(CNA) 어댑터 및 포트를 참조할 수 있습니다. 그러나 CLI에서는 CNA라는 용어를 사용합니다.</block>
   <block id="1702aae1f318978efc37a136675dc355" category="list-text">노드 3에 온보드 FC 포트, 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드가 없는 경우 스토리지 디스크를 사용하여 시스템을 업그레이드하는 경우 로 건너뛸 수 있습니다 <block ref="35ed01fca1dde6c35ca197b89d2bbfc7" category="inline-link-macro-rx"></block> 섹션을 참조하십시오.</block>
-  <block id="be6b715addf3303698d174b13e915620" category="list-text">하지만 스토리지 어레이가 있는 FlexArray 가상화 소프트웨어를 사용하는 V 시리즈 시스템이나 시스템이 있고 노드 3에 온보드 FC 포트, 온보드 UTA/UTA 포트 또는 UTA/UTA2 카드가 없는 경우, _Install and boot node3_섹션으로 돌아가서 섹션을 다시 시작하십시오 <block ref="279060155dcadaa13689560d46e381cb" category="inline-link-macro-rx"></block>.</block>
   <block id="7551ace690fab9fce9d0a9cad21a0ae7" category="paragraph">섹션에 저장한 노드 1의 FC 포트 설정 값이 있어야 합니다 <block ref="cd8ad1809865824065fe011b80800cd6" category="inline-link-macro-rx"></block>.</block>
   <block id="bc56374912cd801964f37da82292340c" category="list-text">[[step1]]노드 3의 FC 설정을 노드 1에서 이전에 캡처한 설정과 비교합니다.</block>
   <block id="9e7870f5e5208d6877c9cc3acc6453c0" category="paragraph">유지보수 모드(부팅 메뉴의 옵션 5)에서 필요에 따라 노드 3의 FC 포트를 수정합니다.</block>
@@ -2275,7 +2254,6 @@
   <block id="d2dce3cff13fd2c8259fdef7c637226e" category="list-text">[[auto_check3_step8]]다음 작업 중 하나를 수행합니다.</block>
   <block id="dc1d267429f36a93fe45402105c83a9b" category="list-text">노드 3에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 있는 경우 섹션으로 이동하십시오 <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>.</block>
   <block id="09a561f3362ed88514963066e3d7b720" category="list-text">노드 3에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우 섹션을 건너뛰십시오 <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block> 섹션으로 이동합니다 <block ref="35ed01fca1dde6c35ca197b89d2bbfc7" category="inline-link-macro-rx"></block>.</block>
-  <block id="70d6bd3154ab38128a772f6268fea926" category="list-text">노드 3에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우 섹션을 건너뛰십시오 <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block> 그런 다음, _Install and boot node3_ 섹션으로 돌아가서 에서 다시 시작합니다 <block ref="279060155dcadaa13689560d46e381cb" category="inline-link-macro-rx"></block>.</block>
   <block id="ef5ec2a32c562be2385847f4327ea89b" category="paragraph">UTA/UTA2 포트를 네이티브 FC 모드 또는 UTA/UTA2 모드로 구성할 수 있습니다. FC 모드는 FC 이니시에이터 및 FC 타겟을 지원하며, UTA/UTA2 모드는 동일한 10GbE SFP+ 인터페이스를 공유하는 NIC 및 FCoE 트래픽을 동시에 허용할 수 있으며 FC 타겟을 지원합니다.</block>
   <block id="1acb31a5b3534092750f6ee560e0995c" category="admonition">* 주의 *: 시스템에 스토리지 디스크가 있는 경우, 유지보수 모드로 들어가라는 지시가 없는 한 클러스터 프롬프트에서 이 섹션에 있는 명령을 입력합니다. V-Series 시스템이 있거나 FlexArray 가상화 소프트웨어가 있고 스토리지 어레이에 연결되어 있는 경우, 유지 관리 모드 프롬프트에서 이 섹션에 명령을 입력합니다. UTA/UTA2 포트를 구성하려면 유지보수 모드여야 합니다.</block>
   <block id="acb716cb88324392697eb22eddc7c3a3" category="list-text">[[step1]] 노드 3에서 다음 명령을 입력하여 포트가 현재 어떻게 구성되어 있는지 확인합니다.</block>
@@ -2296,7 +2274,6 @@
   <block id="b479e4a9e97e157251ef3d2064ea4380" category="list-text">[[step11]] 포트에 케이블을 연결합니다.</block>
   <block id="3f9068a407bdbb378e93f4d5d6b9abe6" category="list-text">[[auto_check3_step12]]다음 작업 중 하나를 수행합니다.</block>
   <block id="66610f6c17cdd2f74ae18935d0791243" category="cell">로 이동합니다 <block ref="35ed01fca1dde6c35ca197b89d2bbfc7" category="inline-link-macro-rx"></block>.</block>
-  <block id="f0d8df7e74601e48e696d4b303665234" category="cell">Install and boot node3_ 섹션으로 돌아가서 에서 다시 시작합니다 <block ref="279060155dcadaa13689560d46e381cb" category="inline-link-macro-rx"></block>.</block>
   <block id="56b97cceb683f15e6179871d3991edcc" category="list-text">[[auto_check3_step13]]유지보수 모드 종료:</block>
   <block id="0e0a51d5d131ec116dbea50118d432b6" category="list-text">[[step14]]을(를) 실행하여 부팅 메뉴로 노드를 부팅합니다<block ref="d20d8416248acf69156e4b7875cc4868" prefix=" " category="inline-code"></block>. A800으로 업그레이드할 경우 으로 이동하십시오 <block ref="8de8415e5ddf050c51dc9df1ad54385b" category="inline-xref-macro-rx"></block>.</block>
   <block id="8818e56033c79a7d315b502b9d66c4b0" category="list-text">[[auto9597_check_node3_step15]]노드 3에서 부팅 메뉴로 이동하여 22/7을 사용하여 숨겨진 옵션을 선택합니다<block ref="b4ab52f7185d092e3aa56aaa9905e7e1" prefix=" " category="inline-code"></block>. 다음 예에 따라 프롬프트에 node1을 입력하여 node3에 노드 1의 디스크를 재할당합니다.</block>
@@ -2449,7 +2426,6 @@
   <block id="20285adb42be1ddc0c2df8f7a2de7595" category="list-text">스토리지 어레이의 어레이 LUN과 연결된 호스트 또는 볼륨 그룹에서 WWPN(Worldwide Port Name) 값을 수정합니다.</block>
   <block id="d1cffd7fada9f21315c30db304bb2ca9" category="list-text">부팅 메뉴로 노드 부팅:</block>
   <block id="64782ddcc78f95845d4571abdc1d5f5a" category="inline-link-macro">노드 4, 15단계에서 UTA/UTA2 포트를 확인하고 구성합니다</block>
-  <block id="f5de4d1593689e91265cc76abd91be3e" category="paragraph">FC 또는 UTA/UTA2 구성을 사용하지 않는 경우, 를 실행합니다 <block ref="65c4c751ac1fc661b74f2a8dfa84d816" category="inline-link-macro-rx"></block> 따라서 노드 4는 노드 2의 디스크를 인식할 수 있습니다.</block>
   <block id="9f6c1c59e595c7b6b493f92b24930c14" category="inline-link-macro">노드 4에 FC 또는 UTA/UT2 구성을 설정합니다</block>
   <block id="cbe290335ddc7c966d9c148980b1ddd5" category="list-text">[[29단계] MetroCluster 구성의 경우, 스토리지 어레이에 연결된 FlexArray 가상화 소프트웨어가 있는 V-Series 시스템 및 시스템의 경우 노드에 연결된 디스크를 검색하려면 노드 4의 FC 또는 UTA/UTA2 포트를 설정하고 구성해야 합니다. 이 작업을 완료하려면 섹션으로 이동하십시오 <block ref="39202fc611c1fcac2f1575fc00cb55d3" category="inline-link-macro-rx"></block>.</block>
   <block id="1565fea61c4b7c7821ea0d9a5ab00d22" category="summary">을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 Config Advisor 도구를 사용하여 일반적인 구성 오류를 확인하십시오<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
@@ -2491,7 +2467,6 @@
   <block id="59df83a3d8dd25ad19619fe75cc32a49" category="list-text">[[step8]] 다음 작업 중 하나를 수행합니다.</block>
   <block id="f57ce051c0dd7274751c09db8a0e40b1" category="list-text">이 섹션을 건너뛰고 로 이동합니다 <block ref="3a339ed5bdc85366b677c546716fabfa" category="inline-link-macro-rx"></block> 노드 4에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우</block>
   <block id="403ef226990b83673617ca3be4865d06" category="list-text">로 이동합니다 <block ref="5752cac0a470e06ffceef40fba1931c1" category="inline-xref-macro-rx"></block> 노드 4에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 있는 경우</block>
-  <block id="be1e23bb281357a07ce5db58c0e3ed83" category="list-text">node4에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우 section_Check 및 UTA/UTA2 포트를 구성하고, node4에서 다시 시작하려면 _Install and boot node4_섹션으로 돌아가서 UTA/UTA2 포트를 구성하십시오 <block ref="ec6d4cacddb01e88226b9b376590bcc5" category="inline-link-macro-rx"></block>.</block>
   <block id="585bb8123c8fd5789aad3617861008af" category="paragraph">UTA/UTA2 포트를 네이티브 FC 모드 또는 UTA/UTA2A 모드로 구성할 수 있습니다. FC 모드는 FC 이니시에이터 및 FC 타겟을 지원하며, UTA/UTA2 모드를 사용하면 동시 NIC 및 FCoE 트래픽이 동일한 10GbE SFP+ 인터페이스를 공유하고 FC 타겟을 지원할 수 있습니다.</block>
   <block id="898667c4cb95b7e44aafe17e4edf0567" category="paragraph">하지만 노드 4의 UTA/UTA2 포트 구성을 확인하고 필요한 경우 이를 변경해야 합니다.</block>
   <block id="89d66b059cd78c250aa205de02793541" category="list-text">의 출력을 검사합니다<block ref="773b5d44fd1b5ae080ff3a379be13169" prefix=" " category="inline-code"></block> UTA/UTA2 포트가 원하는 특성을 가지고 있는지 여부를 확인합니다.</block>
@@ -2507,7 +2482,6 @@
   <block id="b50635aa317c4f94943cbad3bf2ffdf2" category="list-text">포트에 케이블을 연결합니다.</block>
   <block id="8eeb6ccf00d6f27741c5b734b3130459" category="list-text">[[12단계]] 다음 작업 중 하나를 수행합니다.</block>
   <block id="803497e06fb63becf479290f3ae30e01" category="cell">로 이동합니다 <block ref="3a339ed5bdc85366b677c546716fabfa" category="inline-link-macro-rx"></block>.</block>
-  <block id="00538e299fb2786306fe6cdcd6e9fd03" category="cell">install and boot node4_ 섹션으로 돌아가서 에서 다시 시작합니다 <block ref="ec6d4cacddb01e88226b9b376590bcc5" category="inline-link-macro-rx"></block>.</block>
   <block id="4a137bad34f46785824a8100e1c6cba6" category="list-text">[[auto_check_4_step13] 유지보수 모드 종료:</block>
   <block id="479951d6e509fddf053f700071fd43a4" category="list-text">[[step14]] 부트 메뉴의 부트 노드:</block>
   <block id="204783b1ca658239a7b205df8e2d83dd" category="paragraph"><block ref="d20d8416248acf69156e4b7875cc4868" prefix="" category="inline-code"></block>.</block>
@@ -2850,11 +2824,8 @@
   <block id="8c094e66fbad29785444d71fd6c0dcac" category="paragraph"><block ref="949859373da3acde4a6ae0648f1294c5" prefix="" category="inline-code"></block></block>
   <block id="1609725c89da712556fac3c5249a458a" category="summary">을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 업그레이드할 때 노드 3 온보드 FC 포트, UTA/UTA2 포트 또는 UTA/UTA2 카드를 구성하십시오<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="e163b825512519a699383447144a9f8c" category="list-text">노드 3에 온보드 FC 포트, 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드가 없는 경우 스토리지 디스크를 사용하여 시스템을 업그레이드하는 경우 로 건너뛸 수 있습니다 <block ref="3b6c063a8efbc88c969c7838f0611434" category="inline-link-macro-rx"></block> 섹션을 참조하십시오.</block>
-  <block id="7d0739079baed100420d18c056ca0deb" category="list-text">하지만 스토리지 어레이가 있는 FlexArray 가상화 소프트웨어를 사용하는 V 시리즈 시스템이나 시스템이 있고 노드 3에 온보드 FC 포트, 온보드 UTA/UTA 포트 또는 UTA/UTA2 카드가 없는 경우, _Install 섹션으로 돌아가서 노드 3_를 다시 시작합니다 <block ref="279060155dcadaa13689560d46e381cb" category="inline-link-macro-rx"></block>.</block>
   <block id="81fed3b8a4c90b1e08e96db4e364a264" category="list-text">노드 3에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우 섹션을 건너뛰십시오 <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>. 섹션으로 이동합니다 <block ref="3b6c063a8efbc88c969c7838f0611434" category="inline-link-macro-rx"></block>.</block>
-  <block id="192b140d95aa5779e6ddd34b883a91bb" category="list-text">노드 3에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우 섹션을 건너뛰십시오 <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block> 그런 다음 resume at resume에서 _Install and boot node3_ 섹션으로 돌아갑니다 <block ref="279060155dcadaa13689560d46e381cb" category="inline-link-macro-rx"></block>.</block>
   <block id="a69c4b39f212e41199201fde407c6c9e" category="cell">로 이동합니다 <block ref="3b6c063a8efbc88c969c7838f0611434" category="inline-link-macro-rx"></block></block>
-  <block id="06ebdeec742f5f261b968dabee7ce4bc" category="cell">에서 _Install 및 boot node3_로 돌아가서 섹션을 다시 시작합니다 <block ref="279060155dcadaa13689560d46e381cb" category="inline-link-macro-rx"></block>.</block>
   <block id="562fafbbb89476d10c038539c7edc691" category="list-text">시스템이 메시지와 함께 재부팅 루프에 들어갈 경우<block ref="bc1d3ad68c46835686e44d5c5c600a71" prefix=" " category="inline-code"></block>이는 포트가 타겟 모드로 다시 재설정되었기 때문에 디스크를 볼 수 없기 때문입니다. 를 계속 진행합니다 <block ref="cc511b4dbeed99af4a19f83ac3e97f04" category="inline-xref-macro-rx"></block> 를 선택합니다 <block ref="8dac798a0974640f6cae187a1dbe2d57" category="inline-xref-macro-rx"></block> 를 눌러 이 문제를 해결합니다.</block>
   <block id="9415404d53d7363f16891e644c2747f0" category="summary">을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 실패한 애그리게이트를 수동으로 재배치합니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="b42a4717030452cc205d4d9947f80c7b" category="paragraph">Aggregate가 재배치되지 않거나 거부되면 Aggregate를 수동으로 재이동하거나 필요한 경우 거부나 대상 검사를 재정의해야 합니다.</block>
@@ -2874,7 +2845,6 @@
   <block id="3554bd6dca965e0e8bcb314a54ef655c" category="list-text">Onboard Key Manager의 클러스터 전체 암호를 입력합니다.</block>
   <block id="14e89b35ebfcce3b97d4642f23842015" category="summary">을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 node4를 설치 및 부팅하고 ONTAP 소프트웨어를 설치합니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="732b920f8c31e81584bfe00d62cf46b6" category="paragraph">필요한 경우 을 참조하여 온보드 포트를 이니시에이터로 수정합니다 <block ref="1d789633b45165b05bf13f9838060fe6" category="inline-link-macro-rx"></block>. 조닝에 대한 자세한 내용은 스토리지 어레이 및 조닝 설명서를 참조하십시오.</block>
-  <block id="d3feb03e5c47d69a9cd8b610c3e8e8ce" category="list-text">[[29단계]] FlexArray 구성, 스토리지 어레이에 연결된 MetroCluster 가상화 소프트웨어가 있는 V-Series 시스템 및 시스템의 경우 로 이동하십시오 <block ref="65c4c751ac1fc661b74f2a8dfa84d816" category="inline-link-macro-rx"></block>.</block>
   <block id="61bde87b9b52e5308c77a1e67f8e306c" category="summary">를 사용하여 ARL 업그레이드를 위한 4단계 프로세스 시퀀스<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> ONTAP 9.5 - 9.7을 실행하는 컨트롤러의 명령</block>
   <block id="8c50cd8a05046fd9b1080cf4c1c27c2f" category="summary">을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 node2의 비루트 애그리게이트를 노드 3으로 재배치합니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="37df1e4edda8a9bce8aa91096f265331" category="list-text">[[step5]] 다음 명령을 입력하고 출력을 확인하여 노드 2에 남아 있는 데이터 LIF가 없는지 확인합니다.</block>
@@ -2954,7 +2924,6 @@
   <block id="767ebec2859c7f997386a7679698edb4" category="summary">을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 netboot node3 및 node4를 준비합니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="83e3abbe2d4f63155eff798e62e1a616" category="inline-link-macro">3단계 노드 설치 및 부팅3</block>
   <block id="6e58652b4dc76659a9eeef1a0ccc6daf" category="paragraph">이 내용은 ARL(Aggregate Relocation)을 사용하여 운영 중단 없이 컨트롤러 하드웨어를 업그레이드하는 방법을 설명합니다.</block>
-  <block id="35deab861c4c6574ac8f1f1318cc7d5e" category="paragraph">컨트롤러 하드웨어를 업그레이드하는 다른 방법은 을 참조하십시오 <block ref="503464dd540ecb373e0d8f614f4262f2" category="inline-xref-macro-rx"></block> 볼륨 또는 스토리지 _ 을(를) 이동하여 _ 업그레이드 에 연결합니다.</block>
   <block id="645b41b640376c487d825f5296fcae9d" category="paragraph">ONTAP를 실행하는 노드 쌍에서 비 루트 애그리게이트를 동일한 클러스터의 새 노드로 마이그레이션하여 컨트롤러 하드웨어를 중단 없이 업그레이드할 수 있습니다. 업그레이드 중인 노드에서 호스팅되는 데이터에 액세스할 수 있습니다.</block>
   <block id="f7a0874d2fe18058d08d01fb0120a9d9" category="paragraph">ARL은 HA 구성을 활용하여 동일한 클러스터 내에서 스토리지를 공유하는 경우 비루트 애그리게이트의 소유권을 한 노드에서 다른 노드로 이동할 수 있는 기능을 제공합니다.</block>
   <block id="baf4103e3ee1058b17cd4da23c15704b" category="paragraph">시스템 명령을 사용하거나 수동 업그레이드를 수행하는 등 컨트롤러 하드웨어를 업그레이드하기 위한 ARL 방법은 두 가지가 있습니다. 시작하기 전에 컨트롤러 하드웨어 업그레이드를 위한 올바른 콘텐츠를 선택했는지 확인해야 합니다.</block>
@@ -3078,7 +3047,6 @@
   <block id="d22abe120efea253d7c808e8381ed917" category="paragraph">이러한 확인을 수행한 후 시스템은 노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 새 노드 1로 재배치합니다.</block>
   <block id="3757d9b51a1e3f55c16c5d25fae22e61" category="paragraph">LIF가 대체된 경우 홈 노드를 노드 1로 다시 복원합니다.</block>
   <block id="0ac66da022e888300d8ec43f47b716d6" category="doc">업그레이드된 노드1에서 키 관리자 구성을 복원합니다</block>
-  <block id="3dbb60dab5c1891455791640814da2b9" category="list-text">에서 설명한 스토리지 암호화 boots를 확인하고 재설정합니다 <block ref="025202ee75dff38076e126e76d5042ed" category="inline-xref-macro-rx"></block>.</block>
   <block id="af9d3f15b5098b02572b4a5b4c346c3d" category="doc">노드1 설치를 확인합니다</block>
   <block id="c6fd244601cc323697fc7e6249268acd" category="paragraph">절차의 이 시점에서 노드 1이 쿼럼 자동 연결을 시도할 때 컨트롤러 업그레이드 작업이 일시 중지되어야 합니다.</block>
   <block id="ff5725f7647773e4bb6ba48f86580a14" category="list-text">노드 1이 쿼럼에 연결되었는지 확인합니다.</block>
@@ -3378,7 +3346,6 @@
   <block id="3c18bf7f079d36181ad6878ed8071663" category="summary">루트 볼륨에서 부팅 장치로 구성 정보를 복원해야 합니다.</block>
   <block id="bc40b2f6345ce25ab7662ef954f79eac" category="doc">루트 볼륨 구성을 복구합니다</block>
   <block id="8b793a703e41666db1139bfcac16c982" category="inline-xref-macro">관리 또는 인터클러스터 LIF를 재할당했습니다</block>
-  <block id="619d3ee4d9d03f1c8e85902faacf818d" category="admonition">FAS8300, AFF A400 또는 FAS8700과 같은 고가용성(HA) 상호 연결 포트로 포트 "e0a" 및 "e0b"를 사용하는 시스템으로 데이터 이동 없이 컨트롤러 업그레이드를 수행하는 경우 이 있는지 확인하십시오 <block ref="5b2064061510a35b81a212ddd1a165e7" category="inline-xref-macro-rx"></block> 업그레이드 절차를 시작하기 전에 원래 시스템의 포트 "e0a" 및 "e0b"에 구성되어 있습니다.</block>
   <block id="89cb6d555dc47b476897d862f860da4b" category="paragraph">다음 단계로 진행하기 전에 노드 3과 노드 4에서 다음 단계를 수행하여 한 노드에서 각 단계를 완료한 다음 다른 노드에서 다른 단계를 완료해야 합니다.</block>
   <block id="8025560869bc5bb571a283b93eb36c25" category="list-text">LOADER 프롬프트에서 부팅 메뉴에 액세스합니다.</block>
   <block id="3b30581e1dcf21fb5bc10ab7b7b14ebc" category="list-text">부팅 메뉴에서 를 선택합니다<block ref="c134ff64a382143669dacaf548a64ba7" prefix=" " category="inline-code"></block> 를 입력하고 을 입력합니다<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> 계속할 것인지 묻는 메시지가 나타나면 다음 중 하나를 선택하십시오.</block>
@@ -3400,8 +3367,6 @@
   <block id="5112ce36807c8e031c9ab063bc28ce71" category="doc">ONTAP 9.7 이전 버전에서 최종 업그레이드 단계를 수행합니다</block>
   <block id="de87a7c00dcfcf1112ca50efd583f924" category="paragraph">스토리지를 이동하여 업그레이드 절차를 완료하려면 새 노드에서 사용되지 않는 포트 및 LIF를 삭제하고, 스토리지 페일오버 또는 고가용성을 재설정하고, 서비스 프로세서(SP)를 구성하고, 새 라이센스를 설치하고, AutoSupport를 설정해야 합니다. 스토리지 또는 볼륨 암호화를 설정하고 FC 또는 CNA 포트를 구성해야 할 수도 있습니다.</block>
   <block id="cef52224881fd5dedd26a040c1359ee9" category="inline-xref-macro">ONTAP 9.8 이상에서 최종 업그레이드 단계를 수행합니다</block>
-  <block id="c2acf33141c1e1d2087c7bc181c42bb7" category="paragraph">다음 단계는 ONTAP 9.7 이하를 실행하는 시스템에 적용됩니다. ONTAP 9.8 이상을 실행하는 경우 의 절차를 사용해야 합니다 <block ref="3b2ec221cc352b28fa15c204e2ae21f2" category="inline-xref-macro-rx"></block>.</block>
-  <block id="8369511a77d2231fe0dc2666b1eb7bc3" category="list-text">시스템에서 ONTAP 9.8 이상을 실행하는 경우 * STOP * 을 사용합니다. 의 절차를 사용해야 합니다 <block ref="9755845ab3f2cc4f5f51d0cd1be3153b" category="inline-xref-macro-rx"></block>.</block>
   <block id="83e8f1a7c1a2c10d90059989f69becc7" category="list-text">스토리지 시스템 프롬프트에서 LIF에 대한 정보를 표시합니다.</block>
   <block id="de11c3d9da699c5b0528297ad39e25cb" category="list-text">새 노드에서 사용하지 않는 포트 삭제(고급 권한 레벨):</block>
   <block id="1edc30c9cec2665a01f0a9cc7910d9fc" category="paragraph"><block ref="ce40425bd6c0ef0314bdd114d6980b61" prefix="" category="inline-code"></block></block>
@@ -3444,15 +3409,11 @@
   <block id="31e9ea6f4ed38186085bf9a52128a461" category="inline-link">스토리지 컨트롤러 마더보드를 교체하는 동안 문제를 해결하는 방법 및 iSCSI 및 FCP로 헤드 업그레이드</block>
   <block id="5b0415c2846efde1fb66c48433f25633" category="inline-xref-macro">컨트롤러 하드웨어를 업그레이드하는 방법을 선택합니다</block>
   <block id="b578e0f4f47404bddfc292477bc08776" category="inline-xref-macro">스토리지를 이동하여 컨트롤러 하드웨어 업그레이드</block>
-  <block id="dbef6fd254e4765e61a6f3112a900a32" category="paragraph"><block ref="dbef6fd254e4765e61a6f3112a900a32" category="inline-xref-macro-rx"></block></block>
   <block id="9932dd20d13ac6c57fa0b56b3ed1e4a0" category="inline-xref-macro">볼륨을 이동하여 컨트롤러 하드웨어 업그레이드</block>
-  <block id="cbcda6d2b36f65f36ae58e3c1d7065e5" category="paragraph"><block ref="cbcda6d2b36f65f36ae58e3c1d7065e5" category="inline-xref-macro-rx"></block></block>
   <block id="ef29cfe4123c7b4d36dffdb01aac77fc" category="summary">ONTAP 9.8 이상 또는 ONTAP 9.7 이전 버전에서 업그레이드를 완료하십시오.</block>
   <block id="f5b49dd631a7fa0c45fc2aea8bcfa384" category="paragraph">사용 중인 ONTAP 버전에 대한 절차를 사용해야 합니다.</block>
   <block id="7b416fb3b0ecbf485baebef5aa26f421" category="inline-xref-macro">ONTAP 9.8 이상에서 업그레이드를 완료합니다</block>
-  <block id="a728e0150a3319c807decfef9fd8b00c" category="list-text"><block ref="a728e0150a3319c807decfef9fd8b00c" category="inline-xref-macro-rx"></block></block>
   <block id="0c297b93e672c9bc05e823d846073d38" category="inline-xref-macro">ONTAP 9.7 이전 버전에서 업그레이드를 완료하십시오</block>
-  <block id="a6085d08f51c0f7b45dd12344b481637" category="list-text"><block ref="a6085d08f51c0f7b45dd12344b481637" category="inline-xref-macro-rx"></block></block>
   <block id="4e54dc85c62992992a1dbefa82b638aa" category="summary">원래 노드가 지원되는 모델 중 하나인 경우 스토리지를 이동하여 업그레이드하는 동안 노드의 내부 SATA 드라이브, SSD 또는 SAS 드라이브를 동일한 클러스터의 새 노드에 연결된 드라이브 쉘프로 이동할 수 있습니다.</block>
   <block id="5445f44c8361f04d7db7417496478290" category="doc">원래 노드에서 내부 드라이브를 이동합니다</block>
   <block id="605eb2ff368b7d55e14901ea718fa36c" category="list-text">검토를 완료해야 합니다 <block ref="3548781d8fe3c65e8421c7698ed973f9" category="inline-link-macro-rx"></block> 내부 드라이브 이동 정보.</block>
@@ -3482,22 +3443,11 @@
   <block id="1a364d01ffd247339721f8976186fb42" category="summary">스토리지를 이동하여 업그레이드할 경우 원래 노드를 준비하고 새 노드를 설정합니다. 일부 플랫폼 모델은 내부 스토리지를 새 노드로 전송하는 기능을 지원합니다. 디스크를 재할당하고 루트 볼륨 구성을 새 노드에 복원하고 네트워크 포트를 구성합니다. 스토리지 이동을 통한 업그레이드는 운영 중단 절차입니다.</block>
   <block id="24f47cdbe9ddba774a7cc53e51d9032e" category="doc">워크플로우</block>
   <block id="0d19f6d9c6616aec6c0d6fa998fcdc06" category="paragraph">스토리지를 이동하여 컨트롤러 하드웨어를 업그레이드할 경우 원래 노드를 준비하고 새 노드를 설정합니다. 일부 플랫폼 모델은 내부 스토리지를 새 노드로 전송하는 기능을 지원합니다. 디스크를 재할당하고 루트 볼륨 구성을 새 노드에 복원하고 네트워크 포트를 구성합니다. 스토리지 이동을 통한 업그레이드는 운영 중단 절차입니다.</block>
-  <block id="46ade9d238c9383a9fd555f9909703f2" category="image-alt">스토리지 이동을 통한 컨트롤러 하드웨어 업그레이드 워크플로우</block>
   <block id="4b52611cbeb99e3693b2989804997376" category="inline-xref-macro">스토리지를 이동할 때 업그레이드를 준비합니다</block>
-  <block id="9b9c1d93f638d2492d52c449af4a9f8e" category="list-text"><block ref="9b9c1d93f638d2492d52c449af4a9f8e" category="inline-xref-macro-rx"></block></block>
   <block id="c4612c419c5b77fdb1400d9db61d37d0" category="inline-xref-macro">원래 노드를 종료합니다</block>
-  <block id="fa92526c370e0e83caaa8ef73071e577" category="list-text"><block ref="fa92526c370e0e83caaa8ef73071e577" category="inline-xref-macro-rx"></block></block>
-  <block id="9208c7088ce84da232091879b3770a18" category="list-text"><block ref="9208c7088ce84da232091879b3770a18" category="inline-xref-macro-rx"></block></block>
   <block id="65e0e6759e9c5622cb5684aa9ab3918c" category="inline-xref-macro">새 노드에서 기본 구성을 재설정합니다</block>
-  <block id="f241fa08ba08580f443015464e8677f1" category="list-text"><block ref="f241fa08ba08580f443015464e8677f1" category="inline-xref-macro-rx"></block></block>
-  <block id="f23e0348fed3fc9f91c4876ac685e8b2" category="list-text"><block ref="f23e0348fed3fc9f91c4876ac685e8b2" category="inline-xref-macro-rx"></block></block>
-  <block id="74e73fdeb27abf5972d451e384c0b008" category="list-text"><block ref="74e73fdeb27abf5972d451e384c0b008" category="inline-xref-macro-rx"></block></block>
   <block id="0f25f34bbc6624def56436f34d66a8ca" category="inline-xref-macro">선택 사항: 내부 스토리지를 이동하거나 시스템을 드라이브 쉘프로 변환할 수 있습니다</block>
-  <block id="95d2cfc09ea488ae65b24491b681ba10" category="list-text"><block ref="95d2cfc09ea488ae65b24491b681ba10" category="inline-xref-macro-rx"></block></block>
   <block id="43b6e140cee78de5a68c093867c65596" category="inline-xref-macro">스토리지 쉘프를 연결하고 디스크 소유권을 다시 할당합니다</block>
-  <block id="406f6aaf2009833158ad659b727bd7bc" category="list-text"><block ref="406f6aaf2009833158ad659b727bd7bc" category="inline-xref-macro-rx"></block></block>
-  <block id="a2e87312e255032446cf18ba0d44062f" category="list-text"><block ref="a2e87312e255032446cf18ba0d44062f" category="inline-xref-macro-rx"></block></block>
-  <block id="42b305e24e95a29c3fcfe6708c1ae7a8" category="list-text"><block ref="42b305e24e95a29c3fcfe6708c1ae7a8" category="inline-xref-macro-rx"></block></block>
   <block id="f068cb7de6bc557a6102cbb510f726f0" category="summary">원래 노드에서 볼륨을 이동할 수 있도록 새 노드를 설치하고 이를 클러스터에 연결해야 합니다.</block>
   <block id="0a89217206ded71020fde70b9be96510" category="doc">새 노드를 설치하고 이를 클러스터에 연결합니다</block>
   <block id="b241ff4d47149b1cfcc3bff8ac743191" category="paragraph">볼륨을 이동하여 컨트롤러 하드웨어를 업그레이드할 경우 원래 노드와 새 노드가 같은 클러스터에 있어야 합니다.</block>
@@ -3512,17 +3462,9 @@
   <block id="9d9192129e1b9a1e59bd50fc144f8867" category="paragraph"><block ref="9d9192129e1b9a1e59bd50fc144f8867" category="inline-link-rx"></block></block>
   <block id="5b3de670b2de55fec257c6f89ab421bc" category="summary">볼륨을 이동하여 업그레이드할 경우 원래 노드를 준비하고 새 노드를 클러스터에 연결합니다. 볼륨을 새 노드로 이동하고 LIF를 구성한 다음 클러스터에서 원래 노드의 연결을 해제합니다. 볼륨을 이동하여 업그레이드하는 무중단 절차는 무중단 절차와 같습니다.</block>
   <block id="efedd93f47ad7262715836d27d7741ae" category="paragraph">볼륨을 이동하여 컨트롤러 하드웨어를 업그레이드할 경우 원래 노드를 준비하고 새 노드를 클러스터에 연결합니다. 볼륨을 새 노드로 이동하고 LIF를 구성한 다음 클러스터에서 원래 노드의 연결을 해제합니다. 볼륨을 이동하여 업그레이드하는 무중단 절차는 무중단 절차와 같습니다.</block>
-  <block id="876fbfc42051162ba587b0a0690449f5" category="image-alt">볼륨을 이동하여 컨트롤러 하드웨어 업그레이드 워크플로우를 따릅니다</block>
   <block id="65ef2ef8754850d3945f71f106c239bf" category="inline-xref-macro">볼륨을 이동할 때 업그레이드를 준비합니다</block>
-  <block id="dee313fe9eeb0dec5f1340bd0e818631" category="list-text"><block ref="dee313fe9eeb0dec5f1340bd0e818631" category="inline-xref-macro-rx"></block></block>
-  <block id="c90fa15ea4f7f1e277e469d1d20e9188" category="list-text"><block ref="c90fa15ea4f7f1e277e469d1d20e9188" category="inline-xref-macro-rx"></block></block>
   <block id="3085ebd8810ece8cd93e0024bdb65eb1" category="inline-xref-macro">애그리게이트를 생성하고 볼륨을 새 노드로 이동합니다</block>
-  <block id="5000633fe0b5f0aa09b151f9fed8c9f2" category="list-text"><block ref="5000633fe0b5f0aa09b151f9fed8c9f2" category="inline-xref-macro-rx"></block></block>
-  <block id="8829820fd8a035233c013956f191d0e7" category="list-text"><block ref="8829820fd8a035233c013956f191d0e7" category="inline-xref-macro-rx"></block></block>
   <block id="8093d580d9cc0468991044c64c97b174" category="inline-xref-macro">SAN LIFS를 이동, 삭제 또는 생성합니다</block>
-  <block id="a0b4daa7e353d3d7dd1a62bec6a63421" category="list-text"><block ref="a0b4daa7e353d3d7dd1a62bec6a63421" category="inline-xref-macro-rx"></block></block>
-  <block id="ce218642d156a102e02a50d62a3bf028" category="list-text"><block ref="ce218642d156a102e02a50d62a3bf028" category="inline-xref-macro-rx"></block></block>
-  <block id="58c6b3bbc2bbb34b0e96a9731bc9133c" category="list-text"><block ref="58c6b3bbc2bbb34b0e96a9731bc9133c" category="inline-xref-macro-rx"></block></block>
   <block id="e062efd67a70d34c188657c2ffafc80e" category="summary">노드 1과 노드 2에 속한 디스크를 노드 3과 노드 4에 각각 재할당해야 합니다.</block>
   <block id="507efb4e488acd48724d3f1c3d4b184d" category="paragraph">다음 단계로 진행하기 전에 노드 3과 노드 4에서 이 섹션의 단계를 수행하고 노드 3과 노드 4의 각 단계를 완료한 다음,</block>
   <block id="3a1ea4eb792e23021a7c1dcb702a9545" category="list-text">노드 1/노드 2의 스토리지 쉘프 케이블을 노드 3/노드 4에 연결합니다. 전원 공급 장치 및 쉘프의 물리적 연결을 확인합니다.</block>
@@ -3561,8 +3503,6 @@
   <block id="8cdba56188d6642a771d0c327a72af57" category="paragraph">볼륨 이동을 통한 업그레이드는 무중단으로 가능합니다.</block>
   <block id="56089842bd614396cfba7cdf9bb6601f" category="list-text">지원되는 모델의 노드를 디스크 쉘프로 변환한 다음, 새 노드에 연결할 계획입니다.</block>
   <block id="3d9010fa119828bc81f438c75af15b63" category="paragraph">스토리지를 이동하여 컨트롤러 하드웨어를 업그레이드하는 단계에서는 원래 노드를 node1과 node2라고 하며 새 노드를 node3과 node4라고 합니다. 이 절차를 수행하는 동안 노드 1은 노드 3으로 대체되고 노드 2는 노드 4로 대체됩니다.</block>
-  <block id="e338e550ae3c8accad87f4fd0e1f2380" category="image-alt">원래 노드에서 새 노드로</block>
-  <block id="13157ca9b210750790526c100cf951d7" category="paragraph"><block ref="13157ca9b210750790526c100cf951d7" category="inline-xref-macro-rx"></block></block>
   <block id="4888a1163bab7e13f5a9de829f599dba" category="inline-link">MetroCluster 유지 관리 작업의 절차를 찾는 방법</block>
   <block id="effb241d20cc6c1913b072368a57f470" category="paragraph"><block ref="effb241d20cc6c1913b072368a57f470" category="inline-link-rx"></block></block>
   <block id="928eff2006adc1184e5f768e70b85796" category="summary">원래 노드가 지원되는 모델 중 하나인 경우 스토리지를 이동하여 업그레이드하는 동안 노드를 드라이브 쉘프로 변환한 다음, 같은 클러스터의 새 노드에 연결할 수 있습니다.</block>
@@ -3578,8 +3518,6 @@
   <block id="c2f0cd821e5ee148eb1900a96d516f19" category="list-text">새 노드의 전원을 켠 다음 Ctrl+C를 눌러 각 노드의 부팅 프로세스를 중단함으로써 부팅 환경 프롬프트에 액세스합니다.</block>
   <block id="4d3a4f006fa6b11c769a39a41cac5793" category="summary">스토리지를 이동하여 업그레이드 절차를 완료하려면 새 노드에서 사용되지 않는 포트 및 LIF를 삭제하고, 스토리지 페일오버 또는 고가용성을 다시 설정하고, 서비스 프로세서(SP\)를 구성하고, 새 라이센스를 설치하고, AutoSupport를 설정해야 합니다. 스토리지 또는 볼륨 암호화를 설정하고 FC 또는 CNA 포트를 구성해야 할 수도 있습니다.</block>
   <block id="0bde8f7cae6f7006cf8059b9d923c0a4" category="inline-xref-macro">ONTAP 9.7 이전 버전에서 최종 업그레이드 단계 수행</block>
-  <block id="209c912a443f069511053cb5ed7c8175" category="paragraph">다음 단계는 ONTAP 9.8 이상을 실행하는 시스템에 적용됩니다. ONTAP 9.7 이하를 실행하는 경우 의 절차를 사용해야 합니다 <block ref="91f2c94dbfb488703dd443559499d8cb" category="inline-xref-macro-rx"></block>.</block>
-  <block id="a1aef6bc19056065e0e5c87b39d71b96" category="list-text">시스템에서 ONTAP 9.7 이하를 실행 중인 경우 * STOP * 을 사용합니다. 의 절차를 사용해야 합니다 <block ref="91f2c94dbfb488703dd443559499d8cb" category="inline-xref-macro-rx"></block>.</block>
   <block id="602dfb74c3c65622a6e81f6da6da5716" category="paragraph">고가용성 재활성화:<block ref="acc3b99f812f210de5147296e269009d" prefix=" " category="inline-code"></block></block>
   <block id="68e75079cb8b3e7a53d47ecb9c69a59e" category="paragraph">스토리지 페일오버 다시 설정:<block ref="d1cccee3a49795b9594a03c793e6456b" prefix=" " category="inline-code"></block></block>
   <block id="fb466db54f62bed3a97d8ba7d3ed2c8e" category="list-text">의 적절한 절차를 사용하여 스토리지 또는 볼륨 암호화 기능을 복원합니다<block ref="9dcdd70dc160b50ece72ebdfa01ae45b" category="inline-link-rx"></block> 콘텐츠.</block>
@@ -3604,10 +3542,8 @@
   <block id="faadc653b9d5250917700d625763b5cc" category="paragraph">볼륨 이동 작업을 강제로 완료하면 이동 중인 볼륨에 대한 클라이언트 액세스가 중단될 수 있습니다.</block>
   <block id="c127e808b121ddcc589e1612e8629e3d" category="list-text">볼륨이 지정된 SVM으로 성공적으로 이동되었으며 올바른 애그리게이트에 있는지 확인합니다.</block>
   <block id="03004a754e91e01bc54b3719dea50cd1" category="paragraph">업그레이드 후 노드 3과 노드 4가 클러스터의 상호 및 네트워크와 통신하도록 하려면 물리적 포트가 클러스터, 데이터 등과 같은 사용 목적에 맞게 올바르게 구성되었는지 확인해야 합니다.</block>
-  <block id="6502ece9e464ee9b76872ac1891890b1" category="paragraph">다음 단계는 ONTAP 9.8 이상을 실행하는 시스템에 적용됩니다. ONTAP 9.7 이하를 실행하는 경우 의 절차를 사용해야 합니다 <block ref="02cafea91ec73e57361f0e2559069996" category="inline-xref-macro-rx"></block>.</block>
   <block id="1e9be7aa46166eca7db0fc1c4e7a887b" category="paragraph">노드 3과 노드 4에서 이러한 단계를 수행해야 합니다.</block>
   <block id="7f0307060728fe46960f5901c576848b" category="admonition">다음 명령 예제에서는 프로시저의 이 단계에서 교체 노드 "node3"과 "node4"는 실제로 "node1"과 "node2"로 명명되므로 "node1"을 참조합니다.</block>
-  <block id="49b95b3a1c8fd0bd354de5fc2ec2b96e" category="list-text">시스템에서 ONTAP 9.7 이하를 실행 중인 경우 * STOP * 을 사용합니다. 의 절차를 사용해야 합니다 <block ref="02cafea91ec73e57361f0e2559069996" category="inline-xref-macro-rx"></block>.</block>
   <block id="3098dc1e81196ed0a5c7526536b21dc6" category="list-text">스토리지 _ 을(를) 이동할 때 _prepare for upgrade에 기록한 노드 1 및 노드 2의 포트 및 LIF 구성 정보를 찾습니다. <block ref="54c74de3517b342dfae1a3129a67e9ec" category="inline-link-macro-rx"></block>.</block>
   <block id="785fd52ca2c4957e9caba4406db084c0" category="list-text">에서 기록한 포트, 브로드캐스트 도메인 및 IPspace용 정보 찾기 _ 스토리지 이동 시 업그레이드 준비 _, <block ref="54c74de3517b342dfae1a3129a67e9ec" category="inline-link-macro-rx"></block>.</block>
   <block id="4fb89fe4ba344b621e7afe206f6a8a4e" category="list-text">다음과 같이 변경합니다.</block>
@@ -3625,7 +3561,6 @@
   <block id="19e2489a410c822305a9adb3afaaa7b9" category="paragraph"><block ref="0863b290d7c428d15291d502bfd25ea9" prefix="" category="inline-code"></block></block>
   <block id="ceb1502357ca7edd7dc13458f9f78895" category="paragraph">하위 단계(g)를 반복하여 클러스터 LIF가 포트 7700에서 청취 중인지 확인합니다.</block>
   <block id="9694fd9e35e64d8c445c0824b45a5dff" category="inline-link-macro">ONTAP 9.7 이전 버전인 7단계를 사용하여 네트워크 포트를 매핑합니다</block>
-  <block id="49df8ec8bead5c5a65249d6fe95ee476" category="list-text">[[MAP_9.8_5]] 데이터 LIF를 호스팅하는 물리적 포트의 브로드캐스트 도메인 구성원을 수정합니다. 에서와 같이 수동으로 이 작업을 수행할 수 있습니다 <block ref="5b39191cf693f735bfc52c1b3429857e" category="inline-link-macro-rx"></block>. 권장되는 접근 방식은 다음 5단계, 하위 단계(a)에서 (g)까지 ONTAP 9.8에 도입된 향상된 네트워크 도달 가능성 스캔 및 수리 절차를 사용하는 것입니다.</block>
   <block id="2e2786810124b219ec88817aab856aed" category="list-text">모든 포트의 도달 가능성 상태를 나열합니다.</block>
   <block id="339d7d0493d7df43c35e2a1d483c9cba" category="list-text">각 포트에서 한 번에 하나씩 다음 명령을 실행하여 물리적 포트 및 VLAN 포트의 연결 기능을 복구합니다.</block>
   <block id="125acf99178c1bb4d2f46c0b3ac0015a" category="paragraph"><block ref="3d30f625329532027e3092f772223371" prefix="" category="inline-code"></block></block>
@@ -3664,7 +3599,6 @@
   <block id="0f5308f3f4f3c464e7f648069ec71c80" category="admonition">iSCSI LIF의 경우 홈 포트를 수정하려면 LIF를 관리 방식으로 중지해야 합니다.</block>
   <block id="7960433234d5162e1055d53630a352f5" category="list-text">홈 포트가 아닌 LIF 되돌리기:</block>
   <block id="50314d4f124e0153ee89d1686a2bc452" category="paragraph"><block ref="fd8546bec935bd9ce019e2ed40025470" prefix="" category="inline-code"></block></block>
-  <block id="4a78c0c542d23d6fb37a4fe36a2eadfa" category="paragraph">물리적 포트 매핑을 완료했습니다. 업그레이드를 완료하려면 로 이동합니다 <block ref="9755845ab3f2cc4f5f51d0cd1be3153b" category="inline-xref-macro-rx"></block>.</block>
   <block id="f6feea768bbf907f8918a30130dc7d38" category="summary">진단 프로그램을 실행한 후 컨트롤러 모듈의 스토리지 및 네트워크 연결을 다시 설정해야 합니다.</block>
   <block id="ea122bb8fa70f0ea4b180db441cf1abd" category="doc">시스템을 다시 연결합니다</block>
   <block id="3c0c8efee11cd7a51266228208ce0a13" category="paragraph">진단 프로그램을 실행한 후 컨트롤러 모듈의 스토리지 및 네트워크 연결을 다시 시작해야 합니다.</block>
@@ -3770,9 +3704,6 @@
   <block id="00296cd0500c321060de54661554739a" category="paragraph"><block ref="f466b354adfc3ad817d7c11c037c8797" prefix="" category="inline-code"></block></block>
   <block id="0caecd7c9276edc19599cb97a20eac4d" category="admonition">의 내용을 추출할 필요는 없습니다<block ref="f466b354adfc3ad817d7c11c037c8797" prefix=" " category="inline-code"></block> 파일.</block>
   <block id="7d29fb6edb20ce6f3fcde443c39ef137" category="inline-xref-macro">새 노드를 설정합니다</block>
-  <block id="ca8b0b541358f7e84a5255015051bf42" category="paragraph">디렉터리에 있는 정보를 사용하여 로 이동합니다 <block ref="8bfb8dcff60c45f1bd8ce7151db542d5" category="inline-xref-macro-rx"></block>.</block>
-  <block id="1e6def9e9dd4f1f64f3de8b0a57f2778" category="paragraph">다음 단계는 ONTAP 9.7 이하를 실행하는 시스템에 적용됩니다. ONTAP 9.8 이상을 실행하는 경우 의 절차를 사용해야 합니다 <block ref="ccd35a957ce7354dac1b2737d83bc4f4" category="inline-xref-macro-rx"></block>.</block>
-  <block id="2fdb8263a29ca795ef82322d81fda239" category="list-text">시스템에서 ONTAP 9.8 이상을 실행하는 경우 * STOP * 을 사용합니다. 의 절차를 사용해야 합니다 <block ref="ccd35a957ce7354dac1b2737d83bc4f4" category="inline-xref-macro-rx"></block>.</block>
   <block id="8b6679d6197b72adb78dae0febbb41a1" category="list-text">에서 기록한 포트, 브로드캐스트 도메인 및 IPspace용 정보 찾기 _ 스토리지 이동 시 업그레이드 준비 _, <block ref="54c74de3517b342dfae1a3129a67e9ec" category="inline-link-macro-rx"></block>.</block>
   <block id="1a8639e4c8ee9656522efd4a2b9f58d0" category="list-text">아직 부팅하지 않은 경우 노드 3과 노드 4를 클러스터 프롬프트로 부팅합니다.</block>
   <block id="4a95a6730ba2310bfeb433fbf30d8aab" category="list-text">에 올바른 포트를 추가합니다<block ref="249694a485fc5d3289c38986b4f8e887" prefix=" " category="inline-code"></block> 브로드캐스트 도메인:</block>
@@ -3791,7 +3722,6 @@
   <block id="c625e6bca32182b354cc2e2ecdbbf7ec" category="paragraph">다음 명령은 페일오버 정책을 브로드캐스트 도메인 전체에 설정하고 페일오버 그룹 "fg1"의 포트를 "노드 1"의 LIF "data1"의 페일오버 타겟으로 사용합니다.</block>
   <block id="f0307b0ba42c934e076f749d65448b21" category="paragraph"><block ref="a2e895e9b7f39c7f7e4b5fe89368a7ce" prefix="" category="inline-code"></block></block>
   <block id="baec9716e3c721b8360a740bf6d657ec" category="list-text">노드 3과 노드 4의 네트워크 포트 속성을 표시합니다.</block>
-  <block id="2055508ed7949fd5d7f5059c98af8f4f" category="paragraph">물리적 포트 매핑을 완료했습니다. 업그레이드를 완료하려면 로 이동합니다 <block ref="f1628fd5567e155c657c0c615c63b8cf" category="inline-xref-macro-rx"></block>.</block>
   <block id="5d49caed50d255b668dbd7e784fc3b12" category="summary">수동 ARL 절차를 사용하여 ONTAP 9.8 이상을 실행하는 새 컨트롤러와 HA 쌍에서 스토리지 컨트롤러를 업그레이드할지 여부를 결정합니다.</block>
   <block id="90506ded7e085b5dfb368983176adad1" category="list-text">MetroCluster 9.8 이상을 실행하는 패브릭 ONTAP 4노드 및 8노드 구성을 사용하는 시스템이 있습니다.</block>
   <block id="4c00b803b6709d23e498ac9ee5baa935" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 node2에 대한 AutoSupport 메시지를 보내고 노드 2의 비루트 애그리게이트를 노드 3으로 수동으로 재배치합니다.</block>
@@ -4177,8 +4107,6 @@
   <block id="5db260fa0b5fbfacb2534214a3285812" category="paragraph">NetApp Aggregate Encryption(NAE) 또는 NetApp Volume Encryption(NVE)을 사용하여 업그레이드 중인 시스템의 볼륨을 암호화하는 경우 암호화 구성을 새 노드와 동기화해야 합니다. Key-Manager를 다시 동기화하지 않는 경우 ARL을 사용하여 node2 애그리게이트를 업그레이드된 node1에서 업그레이드된 node2로 재배치할 때, node2에 암호화된 볼륨 및 애그리게이트를 온라인으로 전환하는 데 필요한 암호화 키가 없으므로 장애가 발생할 수 있습니다.</block>
   <block id="593e2ad3d429d61bda399cdc2971b3d5" category="list-text">노드 2에서 다음 명령을 실행합니다.</block>
   <block id="2c44030cea2ae320e19712bb71a7d594" category="list-text">데이터 애그리게이트를 재배치하기 전에 SVM-KEK 키가 노드 2에서 "true"로 복원되는지 확인합니다.</block>
-  <block id="ec7ebf7252ffb49093b999d707b7b03f" category="list-text">[[unset_maxwait_system_commands]] 구성에 자체 암호화 드라이브가 사용되고 있고 를 설정한 경우<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 변수 대상<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> (예: 에서 <block ref="8eec167848fab5c118476094c3efd320" category="inline-link-macro-rx"></block>), 변수를 설정 해제해야 합니다.</block>
-  <block id="d5252796ebf0e69c5d3078a9ac59bb72" category="list-text">[[unset_maxwait_manual]] 구성에 자체 암호화 드라이브가 사용되고 있고 를 설정한 경우<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 변수 대상<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> (예: 에서 <block ref="c34adc28d35ee24325c874eba95a8786" category="inline-link-macro-rx"></block> of_Install 및 boot node3_) 변수를 설정 해제해야 합니다.</block>
   <block id="ff8e7d9040b97e4276e06db695236077" category="list-text">node2의 Loader&gt; 프롬프트에서 기본 환경 변수를 설정합니다.</block>
   <block id="00e3434af8f53caecc96a787f100e5fa" category="paragraph">하지만 원래 컨트롤러에 설치된 것과 동일한 버전의 ONTAP 9가 설치된 경우 컨트롤러를 netboot 하지 않아도 됩니다. 이 경우 이 섹션을 건너뛰고 로 진행할 수 있습니다 <block ref="6ba5630a5f60662e8fc1f03d17393494" category="inline-link-macro-rx"></block>.</block>
   <block id="f2d3ce1d1db6751407cc3928aac9de0c" category="paragraph">의 디렉토리에 있는 정보를 사용합니다 <block ref="17f88a9bcb978d5101977810aab93c38" category="inline-link-macro-rx"></block>.</block>
@@ -4197,8 +4125,6 @@
   <block id="b57235dcd9249f0e9bf6001eecd99ce5" category="list-text">클러스터 전체 암호를 기록합니다.</block>
   <block id="f97bf876165b297d6e8425acab009019" category="paragraph">OKM을 구성하거나 CLI 또는 REST API를 사용하여 업데이트할 때 입력한 암호입니다.</block>
   <block id="8cada82213a4eb50c1f0cba46389bd44" category="list-text">를 실행하여 키 관리자 정보를 백업합니다<block ref="32ba7af89b7557f6e3e6d80a922080ce" prefix=" " category="inline-code"></block> 명령.</block>
-  <block id="84e15175fee547890f80ef26b850c677" category="paragraph">스토리지 어레이에 연결된 V-Series 시스템이나 스토리지 어레이에 연결된 FlexArray 가상화 소프트웨어를 사용하여 시스템을 업그레이드하려면 시스템을 완료해야 합니다 <block ref="533e5b5383ee7eeec7355f568e8aaf6b" category="inline-xref-macro-rx"></block> 부터 까지 <block ref="593996bb06ec10671cada9089fb35dd4" category="inline-xref-macro-rx"></block>에서 이 섹션을 그대로 둡니다 <block ref="72140e6a9de023ebc205559b767779ea" category="inline-xref-macro-rx"></block> 및 의 지침을 따릅니다 <block ref="b874d68563e926f19d0f15015f15f190" category="inline-link-macro-rx"></block> 및 <block ref="a9e7644d0d01665bbdf613cdb831fa7f" category="inline-link-macro-rx"></block> 필요에 따라 유지보수 모드에서 명령을 입력합니다. 그런 다음 이 섹션으로 돌아가서 을(를) 다시 시작해야 합니다 <block ref="239474d202713b3a406727408fd68f72" category="inline-xref-macro-rx"></block>.</block>
-  <block id="f05e84d187272de0f180d78ae085a489" category="paragraph">그러나 스토리지 디스크가 있는 시스템을 업그레이드하는 경우 이 전체 섹션을 완료한 다음 로 이동해야 합니다 <block ref="b874d68563e926f19d0f15015f15f190" category="inline-link-macro-rx"></block> 및 <block ref="a9e7644d0d01665bbdf613cdb831fa7f" category="inline-link-macro-rx"></block>, 클러스터 프롬프트에서 명령 입력</block>
   <block id="219d5a10054a3daaa60cc6dc3881a506" category="paragraph">노드 1과 노드 2가 별도의 섀시에 있는 경우 노드 1과 동일한 랙 위치에 노드 3을 배치할 수 있습니다. 그러나 노드 1이 노드 2가 있는 동일한 섀시에 있는 경우 노드 3을 노드 1의 위치에 가까운 자체 랙 공간에 넣어야 합니다.</block>
   <block id="7abb4d22dfb96ceb2a52ebfc5cef2026" category="admonition">대부분의 플랫폼 모델에는 고유한 상호 연결 카드 모델이 있으므로 상호 연결 카드 또는 클러스터 인터커넥트 케이블 연결을 노드 1에서 노드 3으로 이동할 필요가 없습니다. MetroCluster 구성의 경우 FC-VI 케이블 연결을 노드 1에서 노드 3으로 이동해야 합니다. 새 호스트에 FC-VI 카드가 없는 경우 FC-VI 카드를 이동해야 할 수 있습니다.</block>
   <block id="215bdc272bd2e7402000e545b699610b" category="list-text">[[man_install3_step16]] NSE(NetApp 스토리지 암호화) 드라이브가 설치되어 있는 경우 다음 단계를 수행하십시오.</block>
@@ -4292,20 +4218,10 @@
   <block id="b81d07712272425546299d94028eada1" category="list-text">유지 관리 모드 종료:</block>
   <block id="6a3104dd603be761e5020da6f96a9944" category="inline-xref-macro">드라이브 쉘프로 전환하여 AFF A250을 AFF A400으로 업그레이드합니다</block>
   <block id="15cef8c52a9390a0d7fe3fdbd4c153c8" category="summary">스토리지 및 클러스터 스위치를 추가로 구매하지 않고도 엔트리 레벨 NetApp AFF 및 FAS 시스템으로 NDU를 수행하십시오.</block>
-  <block id="88123ea98247c1cbdb6aca7561de79a7" category="paragraph">각 AFF A250 노드를 NS224 드라이브 쉘프로 변환한 다음 AFF A400 교체 노드에 연결하여 NetApp AFF A250 시스템에서 AFF A400 시스템으로 무중단 업그레이드를 수행할 수 있습니다.</block>
   <block id="f023a71f63cfb01aeff4e5fe98a66467" category="paragraph">이 절차에서는 AFF A250 HA(고가용성) 쌍 컨트롤러를 노드 1과 노드 2라고 하며, 교체용 AFF A400 HA 쌍 컨트롤러를 노드 3과 노드 4라고 합니다.</block>
-  <block id="52b4183a9440928b6e7f5edcfd3cc6a0" category="image-alt">드라이브 쉘프로 전환하여 AFF A250을 AFF A400으로 업그레이드하기 위한 워크플로우</block>
-  <block id="7b6010c67d690c83a26fcd90c0eb61e4" category="list-title">단계.</block>
   <block id="b3105979177988818fc1f2f63701e999" category="inline-xref-macro">노드 2의 LIF 및 데이터 애그리게이트를 노드 1로 마이그레이션합니다</block>
-  <block id="6912909b3c16267c5ef34039b74c006b" category="list-text"><block ref="6912909b3c16267c5ef34039b74c006b" category="inline-xref-macro-rx"></block></block>
   <block id="ea7226a78f02b3e8ba077638a2e6fb6a" category="inline-xref-macro">노드 2를 드라이브 쉘프로 변환한 후 노드 4에 연결합니다</block>
-  <block id="9a587ea456a03c01d85123233641d656" category="list-text"><block ref="9a587ea456a03c01d85123233641d656" category="inline-xref-macro-rx"></block></block>
   <block id="3dd43dc6ebaff4c46e6ce0976cbd1a04" category="inline-xref-macro">노드 2에서 노드 4로 드라이브를 재할당합니다</block>
-  <block id="79e2471f8a925ac6dbb28f4a09b70c16" category="list-text"><block ref="79e2471f8a925ac6dbb28f4a09b70c16" category="inline-xref-macro-rx"></block></block>
-  <block id="9fbc32c9c0c875c38ad2a1875656c81b" category="list-text"><block ref="9fbc32c9c0c875c38ad2a1875656c81b" category="inline-xref-macro-rx"></block></block>
-  <block id="b4e4ed6c140eb67800998da99d444a30" category="list-text"><block ref="b4e4ed6c140eb67800998da99d444a30" category="inline-xref-macro-rx"></block></block>
-  <block id="b9b7049e73accb5b7265d03be4c56d7d" category="list-text"><block ref="b9b7049e73accb5b7265d03be4c56d7d" category="inline-xref-macro-rx"></block></block>
-  <block id="1cbbad04708d5c9030bde2a851425d1a" category="list-text"><block ref="1cbbad04708d5c9030bde2a851425d1a" category="inline-xref-macro-rx"></block></block>
   <block id="a5e24971e7f8bc950fa0e926bf40be01" category="summary">노드 2의 논리 인터페이스(LIF) 및 데이터 애그리게이트를 노드 1로 마이그레이션합니다.</block>
   <block id="45993060a44a5e6d17ba07cb1a841a66" category="paragraph">AFF A250 node2를 드라이브 쉘프로 변환하기 전에 노드 2의 논리 인터페이스(LIF) 및 데이터 애그리게이트를 노드 1로 마이그레이션합니다.</block>
   <block id="e291c5603b49506d01779471f77ce7c8" category="paragraph">다음 요구 사항을 충족하는지 확인합니다.</block>
@@ -4507,9 +4423,7 @@ FAS2720</block>
   <block id="359b2f64ed46d9bc640532f2fd8810c0" category="list-text">케이블을 케이블 관리 장치에 연결하는 후크 및 루프 스트랩을 푼 다음, 케이블이 연결된 위치를 추적하면서 컨트롤러 모듈에서 시스템 케이블과 SFP(필요한 경우)를 분리합니다.</block>
   <block id="73ffa1532dd710d7eb1520cb730fb392" category="paragraph">케이블 관리 장치에 케이블을 남겨 두면 케이블 관리 장치를 다시 설치할 때 케이블이 정리됩니다.</block>
   <block id="3e5a02473a086978bae6a6516ad46c5e" category="list-text">컨트롤러 모듈의 왼쪽과 오른쪽에서 케이블 관리 장치를 분리하여 한쪽에 둡니다.</block>
-  <block id="cf233c8f355b435b1d8d0eac06c1f98c" category="image-alt">drw 25xx 케이블 관리대</block>
   <block id="1b96f3aa099b152fc864dedb115af912" category="list-text">캠 손잡이의 래치를 꽉 잡고 캠 핸들을 완전히 열어 미드플레인에서 컨트롤러 모듈을 분리한 다음 두 손으로 컨트롤러 모듈을 섀시에서 꺼냅니다.</block>
-  <block id="d6daae29261c119313124d1d21a1c267" category="image-alt">drw 2240 x 캠 개방 래치</block>
   <block id="5fb9af22ffedd74df1492c91f96b8d7a" category="list-text">컨트롤러 모듈을 뒤집어 평평하고 안정적인 곳에 놓습니다.</block>
   <block id="0dc0820d363c65f7e12beec6160b793f" category="list-text">컨트롤러 모듈의 끝을 섀시의 입구에 맞춘 다음 컨트롤러 모듈을 반쯤 조심스럽게 시스템에 밀어 넣습니다.</block>
   <block id="73c39df93369189180566421495bd86b" category="list-text">캠 핸들을 열린 위치에 둔 상태에서 컨트롤러 모듈이 중앙판과 만나 완전히 장착될 때까지 단단히 밀어 넣습니다. 컨트롤러 모듈이 완전히 장착되면 잠금 래치가 올라갑니다. 캠 핸들을 잠금 위치로 닫습니다.</block>
@@ -4752,7 +4666,6 @@ FAS2720</block>
   <block id="c19689d06a29f6feeef4510514125400" category="paragraph">볼륨을 이동하여 업그레이드할 때 iSCSI SAN 볼륨을 이동할 필요가 없는 경우 이 절차를 건너뛰고 로 이동할 수 있습니다 <block ref="0187590ed6627836f657d0d4157f4bd9" category="inline-link-macro-rx"></block>.</block>
   <block id="067e2e3846b3b294b518d3f733e2a96b" category="list-text">IPv4 인터페이스는 새 iSCSI 연결을 설정할 때 생성됩니다.</block>
   <block id="b3b6efa3f6df48fc93b3542c29661f7c" category="inline-xref-macro">Linux iSCSI 호스트를 새 노드로 이동합니다</block>
-  <block id="184c3f7752a9e68702c55c35faa973db" category="list-text"><block ref="184c3f7752a9e68702c55c35faa973db" category="inline-xref-macro-rx"></block></block>
   <block id="fef2f3438d6db0111e356d7cf9de46ab" category="paragraph">이 콘텐츠에서는 스토리지 또는 볼륨을 이동하여 클러스터에서 AFF, FAS 또는 ASA 시스템의 컨트롤러 하드웨어를 업그레이드하는 방법에 대해 설명합니다.</block>
   <block id="b01ff62768b0c0f969479f63cc8a0981" category="list-text">원래 노드와 새 노드는 ONTAP 9.0 이상을 실행합니다. NetApp은 가능한 경우 원본 노드와 새 노드에서 동일한 ONTAP 버전을 실행할 것을 권장합니다.</block>
   <block id="7a4addbb19265c78a3cdb3aca2a49536" category="paragraph">컨트롤러 업그레이드에 혼합 ONTAP 버전이 포함된 경우 를 참조하십시오<block ref="d823e4718a376dd43333fd0519ed9811" category="inline-link-rx"></block> 를 참조하십시오.</block>
@@ -4760,7 +4673,6 @@ FAS2720</block>
   <block id="54fbf367f6c88f6a32c90b81e113fdbc" category="paragraph">MetroCluster 구성을 업그레이드하는 경우 를 참조하십시오<block ref="ce6e655e9cb4a81012dd5871edda628b" category="inline-link-rx"></block>.</block>
   <block id="30f60d67f457bb040dffde52197a54da" category="list-title">관련 정보</block>
   <block id="ff13d8bc09b612151174d9b83a1e0634" category="paragraph">node1, node2, node3 및 node4라는 용어는 원래 노드와 새 노드를 구별하는 데만 사용됩니다. 이 절차를 수행할 때 이러한 노드를 원래 노드 및 새 노드의 실제 이름으로 대체해야 합니다. 그러나 실제로 노드 이름은 변경되지 않습니다. node3에는 node1이라는 이름이 있고, node4에는 컨트롤러 하드웨어를 업그레이드한 후 node2라는 이름이 있습니다.</block>
-  <block id="6cbbb16b482dd046bc6d845094f114f9" category="list-text"><block ref="16a60590ab4a03950f527e475b265368" category="inline-xref-macro-rx"></block> (중단 절차).</block>
   <block id="608ce5a5400efa8f95d0e8e4878a465d" category="paragraph">예를 들어, 이전 AFF A200의 섀시와 디스크를 그대로 유지하면서 이전 AFF A200 컨트롤러 모듈과 새 AFF A220 컨트롤러 모듈을 스왑하기만 하면 AFF A200에서 AFF A220으로 시스템을 업그레이드할 경우, 이 섹션_새 노드에 연결된 디스크의 소유권 제거_에 설명된 대로 새 AFF A220 컨트롤러 모듈용 디스크 소유권을 제거하지 않습니다.</block>
   <block id="f5139354fcc216a1fa89fc75d4acdb39" category="paragraph">내부 스토리지가 있는 시스템 목록은 FAS2620, FAS2650, FAS2720, FAS2750, AFF A200, AFF A220, AFF A700s, AFF A800, AFF A250</block>
   <block id="3c78f0ccb18b56cf56ef7db01c7967a6" category="paragraph">환경에 따라 업그레이드를 시작하기 전에 특정 요소를 고려해야 합니다. 먼저 아래 표를 검토하여 고려해야 할 요구 사항 및 제한 사항을 확인하십시오.</block>
@@ -4808,7 +4720,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="caaabddaf0ae26915d0c67052254e13f" category="admonition">AFF A700s, AFF A800, AFF C800 또는 ASA A800 시스템은 드라이브 쉘프로 전환할 수 없습니다.</block>
   <block id="e83ec3e9b2b468e112627883187c2fd0" category="section-title">추가 단계가 필요한 경우</block>
   <block id="d79f8da307382ba028e64d108c30f593" category="inline-xref-macro">AFF A250에서 AFF A400으로 업그레이드하는 중입니다</block>
-  <block id="52a32d03c079aac136c05b21490e9d42" category="list-text"><block ref="af700f4d1c70ca1f359f7b935a5d8fbc" category="inline-xref-macro-rx"></block> (중단 절차).</block>
   <block id="e6dd5543cbcf668267e622e1c4af270f" category="list-text">새 시스템의 슬롯 수가 원래 시스템보다 적거나 포트 유형이 적거나 다른 경우 새 시스템에 어댑터를 추가해야 할 수 있습니다. 를 참조하십시오<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block>.</block>
   <block id="cb1a8b9d3abd4e33bdd8ea771ae95f90" category="inline-link">FlexArray for NetApp 컨트롤러 업그레이드 및 교체와 관련된 구체적인 단계는 무엇입니까</block>
   <block id="719139d3840fec9d3f2eb2a98eeabf46" category="list-text">원래 노드 또는 새 노드에서 FlexArray 가상화 소프트웨어를 사용하는 경우 기술 자료 문서를 참조하십시오<block ref="aa5f5c779b9d140822ad13dbd4dfcaef" category="inline-link-rx"></block>.</block>
@@ -4866,7 +4777,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="4a38eadfc2a9ece3d72590e6313fbd6e" category="admonition">T6 기반 이더넷 네트워크 인터페이스 카드 또는 마더보드 포트의 포트 속도를 변경하는 경우 속도 변환 후 잘못된 패킷이 수신될 수 있습니다. 을 참조하십시오<block ref="6d2ed5cfb453d16c38a7a5c4ec937198" category="inline-link-rx"></block> 기술 문서를 참조하십시오<block ref="2a93cc61bbc3892324bc1b6369d71212" category="inline-link-rx"></block> 참조하십시오.</block>
   <block id="403701bd83bf4b3cf916d0207d89b4e6" category="cell">이 단계를 건너뛰고 로 이동합니다 <block ref="8837566debd0bf055ddeb89904e2fbbc" category="inline-xref-macro-rx"></block>.</block>
   <block id="6fdc0880de0e199aedb20bf62f491976" category="list-text">[[Verify_node4_step5]] 고급 권한 모드로 전환:</block>
-  <block id="694bd1275df145cf6b146f04be06b773" category="cell">이 단계를 건너뛰고 로 이동합니다 <block ref="b6919d088e29a20fea866ec3a396e020" category="inline-xref-macro-rx"></block>.</block>
   <block id="2e23c7e78862e31423e93a8c06fbeebd" category="doc">비 SAN 데이터 LIF 및 클러스터 관리 LIF를 새 노드로 이동합니다</block>
   <block id="0479b56f75b526758f089a2063e31e6c" category="list-text">클러스터 관리 LIF로 로그인하고, 원래 노드의 모든 LIF를 나열합니다(쉼표로 구분된 목록).</block>
   <block id="47abbe9b564eba6007fe4489d824eb6e" category="list-text">SAN 이외의 데이터 LIF의 홈 포트를 원래 노드에서 새 노드로 변경합니다.</block>
@@ -4875,4 +4785,120 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="527226c39d06e4e2f6eec2dca988d2ba" category="list-text">iSCSI SAN 볼륨을 이동하는 경우 가 있는지 확인합니다 <block ref="6f18756f17709181fa11fd9271f705fc" category="inline-link-macro-rx"></block>.</block>
   <block id="5dac5a25730948f28ff49739852d7be9" category="list-text">NetApp은 가능한 경우 원본 노드와 새 노드에서 동일한 ONTAP 버전을 실행할 것을 권장합니다. 이것이 불가능한 경우, <block ref="9fa2b66114da266713b82d418ec229cf" category="inline-link-macro-rx"></block> 원래 노드와 새 노드 간의 버전 차이가 4보다 크지 않도록 원래 노드에서 지원되는 최대 버전으로 설정합니다. 예를 들어 ONTAP 9.8 및 9.12.1이 지원되지만 ONTAP 9.8 및 9.13.1은 지원되지 않습니다.</block>
   <block id="d9bec0f0ae398cfc3abbf7091d735c22" category="paragraph">*참고1*: 원래 노드에서 실행되는 ONTAP 버전은 새 노드에서 지원해야 합니다. 필요한 경우 <block ref="9fa2b66114da266713b82d418ec229cf" category="inline-link-macro-rx"></block> 원래 노드에서 지원되는 최대 버전으로. 원래 노드와 새 노드 간의 버전 차이는 4보다 클 수 없습니다. 예를 들어 ONTAP 9.8 및 9.12.1이 지원되지만 ONTAP 9.8 및 9.13.1은 지원되지 않습니다.<block ref="ce537934e178c1610dae82a1b82553bf" category="inline-link-rx"></block>.</block>
+  <block id="21a85b3019273d4c48b6fb1ef3e49e7d" category="list-text">하지만 스토리지 어레이가 있는 FlexArray 가상화 소프트웨어를 사용하는 V 시리즈 시스템이나 시스템이 있고 노드 3에 온보드 FC 포트, 온보드 UTA/UTA 포트 또는 UTA/UTA2 카드가 없는 경우, _Install 섹션으로 돌아가서 노드 3_를 다시 시작합니다 <block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block>.</block>
+  <block id="6ed28b3c0adc6f3b3aaac485905cf1df" category="list-text">노드 3에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우 섹션을 건너뛰십시오 <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block> 그런 다음 resume at resume에서 _Install and boot node3_ 섹션으로 돌아갑니다 <block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block>.</block>
+  <block id="ebf27722a719cbdcb3983568ea50ef42" category="cell">에서 _Install 및 boot node3_로 돌아가서 섹션을 다시 시작합니다 <block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block>.</block>
+  <block id="2f11d42ddac81f44eaf7d7e313420db0" category="list-text">node4에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우 section_Check 및 UTA/UTA2 포트를 구성하고, node4에서 다시 시작하려면 _Install and boot node4_섹션으로 돌아가서 UTA/UTA2 포트를 구성하십시오 <block ref="2365e31070f1c277afd5c68b5793121e" category="inline-link-macro-rx"></block>.</block>
+  <block id="90861cf7b10beb9ddcf12f747ac333be" category="cell">install and boot node4_ 섹션으로 돌아가서 에서 다시 시작합니다 <block ref="2365e31070f1c277afd5c68b5793121e" category="inline-link-macro-rx"></block>.</block>
+  <block id="c831598247828182099eb185f3656967" category="paragraph">FC 또는 UTA/UTA2 구성이 없는 경우, 를 수행하십시오 <block ref="cd67767b7b87c1efe6325584571ce48d" category="inline-link-macro-rx"></block> 따라서 노드 4는 노드 2의 디스크를 인식할 수 있습니다.</block>
+  <block id="06497c4478fee55f8a0ff3319fb722a8" category="list-text">[[auto_install4_step27]] NSE(NetApp Storage Encryption) 드라이브가 설치되어 있으면 다음 단계를 수행하십시오.</block>
+  <block id="6a18fa4683a0433c409fb18cd5fcd4b3" category="list-text">[[29단계]] MetroCluster 구성, V-Series 시스템 및 FlexArray 가상화 소프트웨어가 스토리지 어레이에 연결된 시스템에 대해서는 link:set_fc_or_uta2_config_node4.html#auto_check_4_step15 [노드4에서 UTA/UTA2 포트 확인 및 구성, 15단계] 로 이동합니다.</block>
+  <block id="1e4625a567102c02db411f8ac4403956" category="list-text">[[unset_maxwait_system_commands]] 구성에 자체 암호화 드라이브가 사용되고 있고 를 설정한 경우<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 변수 대상<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> (예: 에서 <block ref="e646557bd849df21a23243b7031e90bc" category="inline-link-macro-rx"></block>), 변수를 설정 해제해야 합니다.</block>
+  <block id="b0da566a6b16767a9a4f6a9815cc8a8c" category="image-alt">케이블 관리 ARM 분리</block>
+  <block id="df4c49d6d7d92d1a3dd7d374cec6fe02" category="image-alt">캠 핸들 열기</block>
+  <block id="ab8dc73b82108799ac3b6894e5efe57e" category="list-text">[[A900_BOOT_NODE1]] NSE(NetApp 스토리지 암호화) 드라이브를 설치한 경우 다음 단계를 수행하십시오.</block>
+  <block id="401ec6649ed8fe314eef631a190858b3" category="list-text">에서 설명한 스토리지 암호화 boots를 확인하고 재설정합니다 <block ref="d1353daad078803f11ba1627582281b9" category="inline-xref-macro-rx"></block>.</block>
+  <block id="e807a193ac5d601655295b7da3f1b093" category="paragraph">하지만 V 시리즈 시스템이 있거나 FlexArray 가상화 소프트웨어가 있고 스토리지 어레이에 연결되어 있는 경우, 노드 4에 온보드 FC 포트, 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드가 없는 경우, _Install and boot node4_ 섹션으로 돌아가서 에서 다시 시작해야 합니다 <block ref="dc87380ee6757ad7d02cae49ae9cdab7" category="inline-link-macro-rx"></block>. 노드 4에 충분한 랙 공간이 있는지 확인합니다. 노드 4가 노드 2와 다른 섀시에 있는 경우 노드 4를 노드 3과 같은 위치에 배치할 수 있습니다. 노드 2와 노드 4가 동일한 섀시에 있는 경우 노드 4는 이미 해당 랙 위치에 있습니다.</block>
+  <block id="1e46f02c6c16752b68ae9ed5650557a7" category="list-text">node4에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우 section_Check 및 UTA/UTA2 포트를 구성하고, node4에서 UTA/UTA2 포트 또는 UTA/UTA2 온보드 포트를 사용하지 않도록 설정한 다음, 에서 섹션을 다시 시작하십시오 <block ref="dc87380ee6757ad7d02cae49ae9cdab7" category="inline-link-macro-rx"></block>.</block>
+  <block id="deee248d6405c9db93b26d1add330e26" category="cell">_Install and boot node4_ 섹션으로 돌아가서 에서 섹션을 다시 시작합니다 <block ref="dc87380ee6757ad7d02cae49ae9cdab7" category="inline-link-macro-rx"></block>.</block>
+  <block id="6b9fac60e06c90ccfa462d0bed7926e6" category="list-text">하지만 스토리지 어레이가 있는 FlexArray 가상화 소프트웨어를 사용하는 V 시리즈 시스템 또는 시스템이 있고 노드 3에 온보드 FC 포트, 온보드 UTA/UTA 포트 또는 UTA/UTA2 카드가 없는 경우, _Install로 돌아가서 노드 3_를 다시 시작한 다음 에서 작업을 시작하십시오 <block ref="69768913474e5068248c1757dc80b632" category="inline-link-macro-rx"></block>.</block>
+  <block id="83432b93e47408926e2f9d1271b103a1" category="list-text">노드 3에 카드 또는 온보드 포트가 없는 경우 건너뛰십시오 <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>그런 다음, _Install로 돌아가서 node3_을 부팅하고 에서 다시 시작합니다 <block ref="481a145f420f6aa5236e7c999fd1b8de" category="inline-link-macro-rx"></block>.</block>
+  <block id="8175f9681530613457de61e5da0e90c4" category="cell">에서 _Install로 돌아가서 node3_을 부팅한 다음 를 다시 시작합니다 <block ref="481a145f420f6aa5236e7c999fd1b8de" category="inline-link-macro-rx"></block>.</block>
+  <block id="3e2666421648278a5df2289ddcbcf930" category="paragraph">스토리지 어레이에 연결된 V-Series 시스템이나 스토리지 어레이에 연결된 FlexArray 가상화 소프트웨어를 사용하여 시스템을 업그레이드하려면 시스템을 완료해야 합니다 <block ref="533e5b5383ee7eeec7355f568e8aaf6b" category="inline-xref-macro-rx"></block> 부터 까지 <block ref="593996bb06ec10671cada9089fb35dd4" category="inline-xref-macro-rx"></block>에서 이 섹션을 그대로 둡니다 <block ref="72140e6a9de023ebc205559b767779ea" category="inline-xref-macro-rx"></block> 및 의 지침을 따릅니다 <block ref="b874d68563e926f19d0f15015f15f190" category="inline-link-macro-rx"></block> 및 <block ref="65c0a9634aad86b4a452ae0da56bfb85" category="inline-link-macro-rx"></block> 필요에 따라 유지보수 모드에서 명령을 입력합니다. 그런 다음 이 섹션으로 돌아가서 을(를) 다시 시작해야 합니다 <block ref="239474d202713b3a406727408fd68f72" category="inline-xref-macro-rx"></block>.</block>
+  <block id="fc4796cb6078c1f01a0581499d533d3e" category="paragraph">그러나 스토리지 디스크가 있는 시스템을 업그레이드하는 경우 이 전체 섹션을 완료한 다음 로 이동해야 합니다 <block ref="b874d68563e926f19d0f15015f15f190" category="inline-link-macro-rx"></block> 및 <block ref="65c0a9634aad86b4a452ae0da56bfb85" category="inline-link-macro-rx"></block>, 클러스터 프롬프트에서 명령 입력</block>
+  <block id="2e2fd13bfb2c4fbd1d4fc09aab6cf4ed" category="list-text">로 이동합니다 <block ref="fae618cfa140cbca52d057afef5df1da" category="inline-link-macro-rx"></block> 하위 섹션을 완료합니다 <block ref="b874d68563e926f19d0f15015f15f190" category="inline-link-macro-rx"></block> 및 <block ref="65c0a9634aad86b4a452ae0da56bfb85" category="inline-link-macro-rx"></block>시스템에 맞게.</block>
+  <block id="0aea1498f34eb74d0a3186e725a10d34" category="list-text"><block ref="0aea1498f34eb74d0a3186e725a10d34" category="inline-link-macro-rx"></block></block>
+  <block id="dd2f6bfe3d3c1620155460e6db2bca36" category="list-text"><block ref="dd2f6bfe3d3c1620155460e6db2bca36" category="inline-link-macro-rx"></block></block>
+  <block id="f21399d0ef733f2bac07631b61733da2" category="list-text">오프라인 상태인 볼륨이 있으면 에서 캡처한 오프라인 볼륨 목록과 비교합니다  <block ref="f8559d826afe76e8a44f3ff6b2b551c5" category="inline-link-macro-rx"></block> 에서 업그레이드할 노드를 준비하고 필요에 따라 각 볼륨에 대해 다음 명령을 한 번 입력하여 오프라인 볼륨을 온라인 상태로 전환합니다.</block>
+  <block id="3bc4849f9b157d49c1711e6e16889370" category="list-text">[[unset_maxwait_manual]] 구성에 자체 암호화 드라이브가 사용되고 있고 를 설정한 경우<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 변수 대상<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> (예: 에서 <block ref="90030e72e0588538d4fa2173f000cf21" category="inline-link-macro-rx"></block> of_Install 및 boot node3_) 변수를 설정 해제해야 합니다.</block>
+  <block id="53658d8e911ed99b785059dfe4444ff6" category="paragraph">에서 캡처한 출력과 출력을 비교할 수 있습니다 <block ref="9931aed421ff2a2523e8089d4d074996" category="inline-link-macro-rx"></block> 의 _ 업그레이드 _ 을(를) 위해 노드를 준비합니다.</block>
+  <block id="7f56dbb7f8f9c7edeba6759e22db809d" category="admonition">시스템에 인터클러스터 LIF가 없을 수 있습니다. 클러스터 관리 LIF는 노드 쌍의 한 노드에만 있습니다. 클러스터 관리 LIF가 의 예 출력에 표시됩니다 <block ref="bd32fdbc5854e6c20c0a8915777bab3f" category="inline-link-macro-rx"></block> IN_레코드 노드1 포트 정보 _.</block>
+  <block id="654d75bbbd9ba4437d62775d8c78fd4e" category="paragraph">의 경우<block ref="4bc6af92800eaece42a512a876786ce9" prefix=" " category="inline-code"></block> 값, 에서 캡처한 정보를 사용합니다 <block ref="4bd427aca76f4838cf29941d65834087" category="inline-link-macro-rx"></block> 를 참조하십시오. 용<block ref="3a5307c9225c62c92d2cd1fab07d458d" prefix=" " category="inline-code"></block>에서 캡처한 정보를 사용합니다 <block ref="9c7125eb7b33f2cb03297a560d0660b0" category="inline-xref-macro-rx"></block>.</block>
+  <block id="c1ec927231ff7eccaa7988a2e2070107" category="paragraph">의 출력에 일부 변경 사항이 있을 수 있습니다<block ref="ddf400f1cb6b8b9330ed6c79c508123c" prefix=" " category="inline-code"></block> 명령이지만, 이는 일반적인 것으로 절차에는 영향을 미치지 않습니다. 문제 해결 섹션을 참조하십시오 <block ref="75a39bd28c4eb9db95179fd2fef50fb3" category="inline-link-macro-rx"></block>.</block>
+  <block id="4d71aeb459e7fed93e6f01c378ca3c04" category="list-text">반복하여 노드 2에 속한 나머지 애그리게이트를 재배치합니다 <block ref="bd44335b572d50c129363547aa87bcee" category="inline-link-macro-rx"></block> 부터 까지 <block ref="c5be787c4fcfd0f49f014e8618d28c15" category="inline-link-macro-rx"></block> section_Relocate node3에서 node4_로 node2의 비 루트 애그리게이트를 이동합니다.</block>
+  <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">1개</block>
+  <block id="f63c237677c2c2f5bdf2eaff278a8f15" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="b4da832a26951a011118018d4f3f9a8e" category="inline-link-macro-rx"></block></block>
+  <block id="dda3bdc300127980e1b61912d179329b" category="paragraph">볼륨을 이동하여 컨트롤러 하드웨어를 업그레이드하기 전에 몇 가지 준비 단계를 수행합니다.</block>
+  <block id="aada29daee1d64ed0fe907043855cb7e" category="inline-image-macro">2개</block>
+  <block id="df6389af4f1c6bb1d9fd56fa4f5bb3ef" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="638758de43a31bd2903f659581f78fa7" category="inline-link-macro-rx"></block></block>
+  <block id="5d0c14865b7b1cd673dec55e251fe56d" category="paragraph">새 노드를 설치하고 클러스터에 결합하여 원래 노드의 볼륨을 이동할 수 있습니다.</block>
+  <block id="ca8a2087e5557e317599344687a57391" category="inline-image-macro">세 가지</block>
+  <block id="03e3b4a5ff5cc729e695564e153a6bcf" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="f3adcf0fc7960e1a4813e477241cd682" category="inline-link-macro-rx"></block></block>
+  <block id="715826e331097ac1c57f9353069e128c" category="paragraph">iSCSI SAN 볼륨을 새 노드로 이동하기 전에 새 iSCSI 연결을 생성하고 새 노드에 대한 iSCSI 경로를 다시 스캔합니다.</block>
+  <block id="981b8fcee42e1e726a67a2b9a98ea6e9" category="inline-image-macro">네</block>
+  <block id="41267730c573da839239ae8e159fd21e" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block><block ref="0187590ed6627836f657d0d4157f4bd9" category="inline-link-macro-rx"></block></block>
+  <block id="66b94afb6105e6b18a79a4e7e108f4e1" category="paragraph">원래 노드에서 이동할 볼륨을 저장할 각 새 노드에 대해 적어도 하나의 애그리게이트를 생성합니다. 각 볼륨의 애그리게이트를 파악하고 각 볼륨을 개별적으로 이동해야 합니다</block>
+  <block id="e5d9de39f7ca1ba2637e5640af3ae8aa" category="inline-image-macro">다섯</block>
+  <block id="b8ad3730009624b3c7d392b9ca5f9bec" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block><block ref="e4238bcb27c7bdac2a633b9164d00cec" category="inline-link-macro-rx"></block></block>
+  <block id="7a1bd66a00a8c26f108e81431b33481d" category="paragraph">볼륨을 원래 노드에서 이동한 후에는 비 SAN 데이터 LIF 및 클러스터 관리 LIF를 원래 노드에서 새 노드로 마이그레이션합니다.</block>
+  <block id="e6fbc0b9673f8c86726688d7607fc8f5" category="inline-image-macro">6개</block>
+  <block id="66686106038dcdf0e7037a2679e6be2b" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block><block ref="a931a68d44bca92701e3cc2575cb8e58" category="inline-link-macro-rx"></block></block>
+  <block id="2431d8b533362d8472db79a8849836be" category="paragraph">클러스터 콘텐츠 및 클러스터 환경에 따라 SAN LIF를 이동, 삭제 또는 생성하거나 삭제된 SAN LIF를 다시 생성합니다.</block>
+  <block id="12e67aac3e7f9227cc35f8f047d7dc74" category="inline-image-macro">7번</block>
+  <block id="3c49f3e0113334d7428d508b5d1dba98" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block><block ref="a6976dfe70e597796c77b019f33f6b95" category="inline-link-macro-rx"></block></block>
+  <block id="baca0ca6729684fd54206793ae4b5bd5" category="inline-image-macro">8개</block>
+  <block id="266c2a634fcfab43713325017c0d1fc1" category="paragraph-title"><block ref="430057c670c01688e904ed2ba129a0b5" category="inline-image-macro-rx" type="image"></block><block ref="25f018c3ca0d5083cf0a96e5a5daf8b3" category="inline-link-macro-rx"></block></block>
+  <block id="55388932978c50267bc31e99b8d1d4d9" category="paragraph">볼륨을 이동하여 업그레이드 절차를 완료하려면 서비스 프로세서(SP)를 구성하고, 새 라이센스를 설치하고, AutoSupport를 설정해야 합니다. 저장소 또는 볼륨 암호화를 설정하고 FC 또는 NCA 포트를 구성해야 할 수도 있습니다.</block>
+  <block id="65f4a18389014fc2ed789c3ceb554cb6" category="paragraph">디렉터리에 있는 정보를 사용하여 로 이동합니다 <block ref="0a727bbbc25c95678f69d03f75493928" category="inline-link-macro-rx"></block>.</block>
+  <block id="8ac01998c43f72f2629ab7ce7e617839" category="list-text"><block ref="8ac01998c43f72f2629ab7ce7e617839" category="inline-link-macro-rx"></block></block>
+  <block id="22f824da080a7ab073c72402d8529c27" category="list-text"><block ref="22f824da080a7ab073c72402d8529c27" category="inline-link-macro-rx"></block></block>
+  <block id="fc27315074573c8a9ba25a2c6cd31532" category="paragraph">다음 단계는 ONTAP 9.7 이하를 실행하는 시스템에 적용됩니다. ONTAP 9.8 이상을 실행하는 경우 의 절차를 사용해야 합니다 <block ref="910c99c10b2b8f326ca77c1b3e34eb83" category="inline-link-macro-rx"></block>.</block>
+  <block id="030ccf72b042f5c207c87680b8cda90b" category="list-text">시스템에서 ONTAP 9.8 이상을 실행하는 경우 * STOP * 을 사용합니다. 의 절차를 사용해야 합니다 <block ref="910c99c10b2b8f326ca77c1b3e34eb83" category="inline-link-macro-rx"></block>.</block>
+  <block id="e1d9300a5e6bf8e78b0757b6849a8ce6" category="paragraph">물리적 포트 매핑을 완료했습니다. 업그레이드를 완료하려면 로 이동합니다 <block ref="00ba9232a950e876c165749336dea823" category="inline-link-macro-rx"></block>.</block>
+  <block id="c3241c585c0680bacd1308d6f2c7f051" category="paragraph">다음 단계는 ONTAP 9.7 이하를 실행하는 시스템에 적용됩니다. ONTAP 9.8 이상을 실행하는 경우 의 절차를 사용해야 합니다 <block ref="2a32a1887b2d01dbc6f66ce7f3bde379" category="inline-link-macro-rx"></block>.</block>
+  <block id="14c8c7cd715ed376698ba17d9b3263a3" category="list-text">시스템에서 ONTAP 9.8 이상을 실행하는 경우 * STOP * 을 사용합니다. 의 절차를 사용해야 합니다 <block ref="479694184a7596b8d654b4519a939fb4" category="inline-link-macro-rx"></block>.</block>
+  <block id="019e462408d5236cafe9463f4045db3d" category="paragraph">각 AFF A250 노드를 NS224 드라이브 쉘프로 변환한 다음 AFF A400 교체 노드에 연결하여 NetApp AFF A250 시스템에서 NetApp AFF A400 시스템으로 무중단 업그레이드를 수행할 수 있습니다.</block>
+  <block id="ee1607b96090f48bac4dd25134093834" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="f5b56c210a0d4c20980ddfe8b334c676" category="inline-link-macro-rx"></block></block>
+  <block id="316fbda1f1480f59ea91e4245a06ca9b" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="89f7cee20d9833c231c0e50fc41ce58d" category="inline-link-macro-rx"></block></block>
+  <block id="bbadb0866103c09529bf7f6484a7d090" category="paragraph">AFF A250 노드 2를 NS224 드라이브 쉘프로 변환한 다음 AFF A400 노드 4에 연결한 후 노드 2에서 노드 4로 드라이브를 재할당합니다.</block>
+  <block id="2fce8a2d690ba83af5432e4cae17de6f" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="3c6ba9b5c38f48cb17c85b592674d539" category="inline-link-macro-rx"></block></block>
+  <block id="e718380a27225cee9937552d63279ec4" category="paragraph">AFF A250 노드 2를 NS224 드라이브 쉘프로 전환하고 AFF A400 노드 4에 연결한 후 이전에 노드 2에 속한 드라이브를 노드 4에 재할당합니다</block>
+  <block id="f82507a2b9b5f8c5aefa824395d9718d" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block><block ref="e2c52cb2e34e893afee819116adecafb" category="inline-link-macro-rx"></block></block>
+  <block id="d05c49cd0e63bffcd5674e232b1afbb9" category="paragraph">AFF A250 노드 1을 드라이브 쉘프로 변환하기 전에 먼저 노드 1의 데이터 애그리게이트, epsilon, LIF를 AFF A400 node4로 마이그레이션합니다.</block>
+  <block id="81dc3cbf2118e8579a9b2450f7a12e5d" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block><block ref="e86b9bc23de1f214996444ef551bacb8" category="inline-link-macro-rx"></block></block>
+  <block id="58cb6081dfeeba17660c15ea6ea91ba5" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block><block ref="2fbb74e3e06daf149b588471e96a56a4" category="inline-link-macro-rx"></block></block>
+  <block id="00c1c8079c802e3e24aa7784bdfb9fbf" category="paragraph">AFF A250 노드 1을 NS224 드라이브 쉘프로 전환하고 AFF A400 노드 3에 연결한 후 이전에 노드 1에 속한 드라이브를 노드 3에 재할당합니다.</block>
+  <block id="fe2f8aac9baa1b8fcda89bf672f09bc8" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block><block ref="bfdfbe3df70ea3584435d9a8c7e7cd9c" category="inline-link-macro-rx"></block></block>
+  <block id="663e41c83a5c4afbfe905c75bda6d9cd" category="paragraph">업그레이드를 완료하려면 노드3을 노드4에 연결한 다음, 노드4의 데이터 LIF 및 데이터 애그리게이트를 노드3로 마이그레이션합니다.</block>
+  <block id="18101d4aba30800c4dc0822c723a1de6" category="paragraph">다음 단계는 ONTAP 9.8 이상을 실행하는 시스템에 적용됩니다. ONTAP 9.7 이하를 실행하는 경우 의 절차를 사용해야 합니다 <block ref="df92ac10eb53320f3aee49e68f1573a2" category="inline-link-macro-rx"></block>.</block>
+  <block id="2408bbc2877d469c8a828dd2f71d5815" category="list-text">시스템에서 ONTAP 9.7 이하를 실행 중인 경우 * STOP * 을 사용합니다. 의 절차를 사용해야 합니다 <block ref="df92ac10eb53320f3aee49e68f1573a2" category="inline-link-macro-rx"></block>.</block>
+  <block id="323f7a087e92b0783382d6a319113ac8" category="cell">이 단계를 건너뛰고 로 이동합니다 <block ref="84a764803e273063ea87749716b7c654" category="inline-xref-macro-rx"></block>.</block>
+  <block id="24c234c0d0c43e69b12af6b120695505" category="list-text">[[MAP_98_5]] 데이터 LIF를 호스팅하는 물리적 포트의 브로드캐스트 도메인 구성원을 수정합니다. 에서와 같이 수동으로 이 작업을 수행할 수 있습니다 <block ref="2d50e52fa53ee066c1e23dfcd4b5dae8" category="inline-link-macro-rx"></block>. NetApp는 다음 5단계, (a) ~ (g)에 나와 있는 것처럼 ONTAP 9.8에 도입된 향상된 네트워크 연결성 스캔 및 복구 절차를 사용할 것을 권장합니다.</block>
+  <block id="3a2b68bdec4a67d63868881c41adfd33" category="paragraph">물리적 포트 매핑을 완료했습니다. 업그레이드를 완료하려면 로 이동합니다 <block ref="479694184a7596b8d654b4519a939fb4" category="inline-link-macro-rx"></block>.</block>
+  <block id="3548781d8fe3c65e8421c7698ed973f9" category="list-text"><block ref="3548781d8fe3c65e8421c7698ed973f9" category="inline-link-macro-rx"></block></block>
+  <block id="3f22ff9f0de0ae158372929690ccd37d" category="list-text"><block ref="7a22ca21c86b9e16042b418efc302d00" category="inline-link-macro-rx"></block> (중단 절차).</block>
+  <block id="50ae6167d8a0516c8e8cb720a6888cf9" category="list-text"><block ref="50ae6167d8a0516c8e8cb720a6888cf9" category="inline-link-macro-rx"></block></block>
+  <block id="54e45682922af9929fbc5d361d7c0b49" category="list-text"><block ref="54e45682922af9929fbc5d361d7c0b49" category="inline-link-macro-rx"></block></block>
+  <block id="1b70cbc4d15cd633d93e8057d460d873" category="image-alt">node3 및 node4를 node1 및 node2로 바꿉니다</block>
+  <block id="3ca57071250bef466a089a9c6c848bd5" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="964fb2d7d8e53060676c08185881a5ae" category="inline-link-macro-rx"></block></block>
+  <block id="413dcaed8881bfe244a4fc03bcf787a2" category="paragraph">스토리지를 이동하여 업그레이드하기 전에 원래 노드에서 라이센스 정보를 수집하고, 네트워크 구성을 계획하고, 시스템 ID를 기록하고, NetBoot에 필요한 파일을 준비합니다.</block>
+  <block id="d108a972a08fb1ea74a0d36841ffcc4e" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="6fb98438a67f401b75e7e2b4323d24af" category="inline-link-macro-rx"></block></block>
+  <block id="0252af049a4de8ed0fac44e42832448b" category="paragraph">원래 노드를 종료하고 제거할 때 업그레이드와 관련된 AutoSupport 메시지를 보내고, 사서함 제거, 노드 전원 종료, 섀시를 제거합니다.</block>
+  <block id="f7819171f0f863156d82723147616295" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="827547d777444e882f8e6b39e3049760" category="inline-link-macro-rx"></block></block>
+  <block id="a03a72ab3f48fd14717cf02650d9c540" category="paragraph">새 노드에 내부 디스크 또는 애드온 쉘프가 시스템에 연결된 경우 컨트롤러 업그레이드에 방해가 될 수 있습니다.  node3/node4와 함께 제공된 새 디스크의 소유권을 제거해야 합니다.</block>
+  <block id="59fc537444ccc8a7c0aeae28ca1ea722" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block><block ref="d83a3a54810d80228b064355e0fe27d5" category="inline-link-macro-rx"></block></block>
+  <block id="c48f41c12a7b6e0f8781b1bbf5999271" category="paragraph">부팅 매체의 구성 정보가 컨트롤러 업그레이드를 방해하지 않는지 확인하려면 node3 및 node4의 구성을 기본 구성 설정으로 재설정합니다.</block>
+  <block id="5c1c2f78e722e472ee36736ebc6c1689" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block><block ref="fbf829b8cea6df1e80a138062bd9f467" category="inline-link-macro-rx"></block></block>
+  <block id="75b807a9d56afedce5682f51dd4c50ce" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block><block ref="f26706f607ba852d4faf88f9bc700778" category="inline-link-macro-rx"></block></block>
+  <block id="5c040b5ed035ab70a7450123a684a8fa" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block><block ref="8077a74f1c626282122155497a5c996a" category="inline-link-macro-rx"></block></block>
+  <block id="ab9d4e156dbc1c230427f44fb6437a32" category="paragraph">선택적으로 원래 노드가 지원되는 모델 중 하나인 경우, 스토리지를 이동하여 업그레이드 과정에서 내부 SATA 드라이브, SSD 또는 SAS 드라이브를 새 노드에 연결된 드라이브 쉘프로 이동할 수 있습니다. 시스템을 드라이브 쉘프로 변환하여 새 노드에 연결할 수도 있습니다.</block>
+  <block id="2c75fbd01a1262b1abfbec5cf8dbff7a" category="paragraph-title"><block ref="430057c670c01688e904ed2ba129a0b5" category="inline-image-macro-rx" type="image"></block><block ref="036c48d3559729ec3a9c415e3b3d1afc" category="inline-link-macro-rx"></block></block>
+  <block id="d05468fe6542160f0bdb1ff547dfe7fd" category="paragraph">node1 및 node2에 속한 디스크를 node3 및 node4에 각각 재할당합니다.</block>
+  <block id="24db11216549ee55172c33cf3def2f3f" category="inline-image-macro">아홉</block>
+  <block id="2e374b477618cba10e827120623746d3" category="paragraph-title"><block ref="b37b448eff4f65237cf47b29bdd2817c" category="inline-image-macro-rx" type="image"></block><block ref="6d97c340d71b4863e0d24d9de3d7740e" category="inline-link-macro-rx"></block></block>
+  <block id="d1d6580288f1472dbd1db17b372d51d7" category="paragraph">루트 볼륨에서 부팅 장치로 구성 정보를 복원합니다.</block>
+  <block id="a185c3c138dca5ef46afc33288a67d1f" category="inline-image-macro">10개</block>
+  <block id="7cdc9e64dfc551099556d0123c5bb981" category="paragraph-title"><block ref="6097494f0af631df68e3dcb7a6da8d2a" category="inline-image-macro-rx" type="image"></block><block ref="d38ccbe9c555caadedf9e9523ed99b16" category="inline-link-macro-rx"></block></block>
+  <block id="c9dc32dde68fdd77f0e2c8f513e472f8" category="list-text"><block ref="1aa042908822fc17e30db57dc8f3c350" category="inline-link-macro-rx"></block> (중단 절차).</block>
+  <block id="d0820066ba6f14dca2420f2960ea8c42" category="paragraph">다음 단계는 ONTAP 9.8 이상을 실행하는 시스템에 적용됩니다. ONTAP 9.7 이하를 실행하는 경우 의 절차를 사용해야 합니다 <block ref="05d6674d1c6e0d48e8203d8e927e45b4" category="inline-link-macro-rx"></block>.</block>
+  <block id="5e79c247ab4077723eed9dcb39fcfe47" category="list-text">시스템에서 ONTAP 9.7 이하를 실행 중인 경우 * STOP * 을 사용합니다. 의 절차를 사용해야 합니다 <block ref="05d6674d1c6e0d48e8203d8e927e45b4" category="inline-link-macro-rx"></block>.</block>
+  <block id="31f3762a2a2ed806ac8dc72ae0dc1eb5" category="admonition">FAS8300, AFF A400 또는 FAS8700과 같은 고가용성(HA) 상호 연결 포트로 포트 "e0a" 및 "e0b"를 사용하는 시스템으로 데이터 이동 없이 컨트롤러 업그레이드를 수행하는 경우 이 있는지 확인하십시오 <block ref="7c3698c6a5737cb69d525ebacf49b908" category="inline-link-macro-rx"></block> 업그레이드 절차를 시작하기 전에 원래 시스템의 포트 "e0a" 및 "e0b"에 구성되어 있습니다.</block>
+  <block id="e6f4135ab973821b77dd837db2b0bce2" category="list-text">하지만 스토리지 어레이가 있는 FlexArray 가상화 소프트웨어를 사용하는 V 시리즈 시스템이나 시스템이 있고 노드 3에 온보드 FC 포트, 온보드 UTA/UTA 포트 또는 UTA/UTA2 카드가 없는 경우, _Install and boot node3_섹션으로 돌아가서 섹션을 다시 시작하십시오 <block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block>.</block>
+  <block id="b8382fc49ca5dc975bdfc510891f75ea" category="list-text">노드 3에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우 섹션을 건너뛰십시오 <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block> 그런 다음, _Install and boot node3_ 섹션으로 돌아가서 에서 다시 시작합니다 <block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block>.</block>
+  <block id="ba0dff3600915257a49c8a2529be3afd" category="cell">Install and boot node3_ 섹션으로 돌아가서 에서 다시 시작합니다 <block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block>.</block>
+  <block id="756e1a7c05678e697a7ba0945d87ed6c" category="paragraph">FC 또는 UTA/UTA2 구성을 사용하지 않는 경우, 를 실행합니다 <block ref="cd67767b7b87c1efe6325584571ce48d" category="inline-link-macro-rx"></block> node4가 node2의 디스크를 인식할 수 있도록 합니다.</block>
+  <block id="ac5c825456c3417b5a4af98c4f3e915f" category="paragraph">^1^ AFF A800 시스템에 필요한 추가 단계를 보려면 섹션에서 A800을 참조하는 단계로 이동하십시오 <block ref="d7767766539bb5c2349ec33972e353b3" category="inline-link-macro-rx"></block>, 또는 <block ref="1ac9d612a445bb1be7d33490e7f7168c" category="inline-link-macro-rx"></block>.</block>
+  <block id="e517f479718742d7735088b63cb4b0a6" category="list-text">[[step5]] 다음 작업 중 하나를 수행합니다.</block>
+  <block id="1f6c36e4c21adc6fcbbeb1628f0ce398" category="paragraph">컨트롤러 하드웨어를 업그레이드하는 다른 방법은 을 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 볼륨 또는 스토리지 _ 을(를) 이동하여 _ 업그레이드 에 연결합니다.</block>
+  <block id="a8337c93c769b636588431825fedbc33" category="sidebar">이 사이트에서는 AFF 및 FAS 스토리지 시스템의 업그레이드 절차를 제공합니다. 스토리지 시스템에 적합한 업그레이드 절차를 선택합니다.</block>
 </blocks>

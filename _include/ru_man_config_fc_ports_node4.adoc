@@ -146,7 +146,7 @@ NOTE: FC 포트는 이니시에이터로 프로그래밍해야 합니다.
 
 | V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다  a| 
 ** 로 이동합니다 <<노드 4의 UTA/UTA2 포트를 확인하고 구성합니다>> 노드 4에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 있는 경우
-** node4에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우 section_Check 및 UTA/UTA2 포트를 구성하고, node4에서 UTA/UTA2 포트 또는 UTA/UTA2 온보드 포트를 사용하지 않도록 설정한 다음, 에서 섹션을 다시 시작하십시오 link:install_boot_node4.html#Step9["9단계"].
+** node4에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우 section_Check 및 UTA/UTA2 포트를 구성하고, node4에서 UTA/UTA2 포트 또는 UTA/UTA2 온보드 포트를 사용하지 않도록 설정한 다음, 에서 섹션을 다시 시작하십시오 link:install_boot_node4.html#man_install4_Step9["9단계"].
 
 
 |===

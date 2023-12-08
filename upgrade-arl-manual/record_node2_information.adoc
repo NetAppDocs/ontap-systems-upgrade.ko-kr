@@ -41,7 +41,7 @@ node2
 ----
 +
 
-NOTE: 시스템에 인터클러스터 LIF가 없을 수 있습니다. 클러스터 관리 LIF는 노드 쌍의 한 노드에만 있습니다. 의 예제 출력에 클러스터 관리 LIF가 표시됩니다 link:record_node1_information.html#step["1단계"] IN_레코드 노드1 포트 정보 _.
+NOTE: 시스템에 인터클러스터 LIF가 없을 수 있습니다. 클러스터 관리 LIF는 노드 쌍의 한 노드에만 있습니다. 클러스터 관리 LIF가 의 예 출력에 표시됩니다 link:record_node1_information.html#step1["1단계"] IN_레코드 노드1 포트 정보 _.
 
 . 섹션에서 사용할 출력 정보를 캡처합니다 link:map_ports_node2_node4.html["노드 2의 포트를 노드 4로 매핑합니다"].
 +

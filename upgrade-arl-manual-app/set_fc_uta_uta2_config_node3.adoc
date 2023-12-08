@@ -23,7 +23,7 @@ summary: ONTAP 9.8 이상을 실행하는 컨트롤러에서 수동 ARL 업그�
 NOTE: NetApp 마케팅 자료에서는 "UTA2"라는 용어를 사용하여 CNA 어댑터 및 포트를 참조할 수 있습니다. 그러나 CLI에서는 "CNA"라는 용어를 사용합니다.
 
 * 노드 3에 온보드 FC 포트, 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드가 없는 경우 스토리지 디스크를 사용하여 시스템을 업그레이드하는 경우 로 건너뛸 수 있습니다 link:map_ports_node1_node3.html["노드 1의 포트를 노드 3으로 매핑합니다"].
-* 하지만 스토리지 어레이가 있는 FlexArray 가상화 소프트웨어를 사용하는 V 시리즈 시스템 또는 시스템이 있고 노드 3에 온보드 FC 포트, 온보드 UTA/UTA 포트 또는 UTA/UTA2 카드가 없는 경우, _Install로 돌아가서 노드 3_를 다시 시작한 다음 에서 작업을 시작하십시오 link:install_boot_node3.html#step22["22단계"].
+* 하지만 스토리지 어레이가 있는 FlexArray 가상화 소프트웨어를 사용하는 V 시리즈 시스템 또는 시스템이 있고 노드 3에 온보드 FC 포트, 온보드 UTA/UTA 포트 또는 UTA/UTA2 카드가 없는 경우, _Install로 돌아가서 노드 3_를 다시 시작한 다음 에서 작업을 시작하십시오 link:install_boot_node3.html#man_install3_step22["22단계"].
 
 
 .선택 사항:
@@ -173,7 +173,7 @@ NOTE: FC 포트는 이니시에이터로 프로그래밍해야 합니다.
 
 | V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다  a| 
 ** 노드 3에 카드 또는 온보드 포트가 있는 경우 로 이동합니다 <<노드 3의 UTA/UTA2 포트를 확인하고 구성합니다>>.
-** 노드 3에 카드 또는 온보드 포트가 없는 경우 건너뛰십시오 <<노드 3의 UTA/UTA2 포트를 확인하고 구성합니다>>그런 다음, _Install로 돌아가서 node3_을 부팅하고 에서 다시 시작합니다 link:install_boot_node3.html#step7["7단계"].
+** 노드 3에 카드 또는 온보드 포트가 없는 경우 건너뛰십시오 <<노드 3의 UTA/UTA2 포트를 확인하고 구성합니다>>그런 다음, _Install로 돌아가서 node3_을 부팅하고 에서 다시 시작합니다 link:install_boot_node3.html#man_install3_step7["7단계"].
 
 
 |===
@@ -432,6 +432,6 @@ Adapter  Mode     Type       Mode     Type       Status
 | 스토리지 디스크가 있습니다 | 로 이동합니다 link:map_ports_node1_node3.html["노드 1의 포트를 노드 3으로 매핑합니다"]. 
 
 
-| V-시리즈 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 에서 _Install로 돌아가서 node3_을 부팅한 다음 를 다시 시작합니다 link:install_boot_node3.html#step7["7단계"]. 
+| V-시리즈 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 에서 _Install로 돌아가서 node3_을 부팅한 다음 를 다시 시작합니다 link:install_boot_node3.html#man_install3_step7["7단계"]. 
 |===
 
