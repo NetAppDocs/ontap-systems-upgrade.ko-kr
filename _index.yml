@@ -1,6 +1,7 @@
 ---
 indexpage:
-  lead: 이 사이트에서는 AFF 및 FAS 스토리지 시스템의 업그레이드 절차를 제공합니다. 스토리지 시스템에 적합한 업그레이드 절차를 선택합니다.
+  lead: 이 사이트에서는 AFF, FAS 및 ASA 스토리지 시스템의 업그레이드 절차를 제공합니다. 스토리지 시스템에 적합한 업그레이드 절차를
+    선택합니다.
   tiles:
   - title: 시작하십시오
     links:
@@ -34,7 +35,7 @@ indexpage:
       url: https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html
   - title: 더 많은 리소스
     links:
-    - title: ONTAP 시스템 설명서
+    - title: ONTAP 하드웨어 시스템 설명서
       url: https://docs.netapp.com/us-en/ontap-systems/index.html
     - title: ONTAP 스위치 설명서
       url: https://docs.netapp.com/us-en/ontap-systems-switches/index.html

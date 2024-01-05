@@ -1969,7 +1969,6 @@
   <block id="74553544aa9c0c94d16a5a5ed85d6720" category="list-text">상태 경고가 없는지 확인합니다.</block>
   <block id="838f9a3aa0c54c620c1dab5cccc98ca5" category="paragraph"><block ref="79c86ac639c7742d6046026cf6726bce" prefix="" category="inline-code"></block></block>
   <block id="8fb4b518ce39a0704f920c9d4f2f7b77" category="summary">애그리게이트 재배치를 사용하여 컨트롤러 하드웨어를 업그레이드합니다</block>
-  <block id="6af6b76d592516d40ca101051c678be3" category="doc">AFF 및 FAS 시스템 업그레이드 설명서</block>
   <block id="0bc12c090040b2c995d1f511a738331b" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어는 를 사용하여 업그레이드할 수 있습니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령을 실행하여 루트 이외의 애그리게이트에 대한 소유권을 재배치하십시오.</block>
   <block id="b9e53a247da3982cb706e33287d2a8fd" category="cell">사용<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령</block>
   <block id="041dd7a51404fc5dc5a87c2a0bc90b15" category="cell">9.8 이상</block>
@@ -3849,7 +3848,6 @@
   <block id="7d94daad2b6e9d77a6320a64c21fbc4a" category="sidebar">MetroCluster 구성에서 시스템을 업그레이드합니다</block>
   <block id="c6bb96cc8b84319277f00b15adc71d75" category="sidebar">MetroCluster 구성에 대한 업그레이드 절차를 선택합니다</block>
   <block id="dfcc398099d6a64026e51ab282e16253" category="sidebar">더 많은 리소스</block>
-  <block id="aaf23d643347b5921ba9716fa4c13f83" category="sidebar">ONTAP 시스템 설명서</block>
   <block id="743b2bde29eae11996923323c6b89672" category="sidebar">ONTAP 스위치 설명서</block>
   <block id="dd032435fa83549d8bf3928550409a3e" category="sidebar">ONTAP 소프트웨어 설명서</block>
   <block id="519131237f79eadb2dc6a1e003a087bc" category="sidebar">NetApp Active IQ Config Advisor를 참조하십시오</block>
@@ -4750,8 +4748,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="8b9b2634fd898f04166a765851aba8f2" category="list-text"><block ref="8b9b2634fd898f04166a765851aba8f2" category="inline-link-macro-rx"></block></block>
   <block id="441e5e19c045de8820e45a5b22e45056" category="paragraph">* Note2 *: 무중단 업그레이드를 수행하려면 원래 시스템의 데이터를 저장할 수 있는 자체 스토리지와 셸프가 있는 새 시스템이 필요합니다.</block>
   <block id="272d55e2adea123757d8811eaaaebd88" category="paragraph">*Note3*: 볼륨을 이동하여 업그레이드할 때 새 노드에 가입하고 볼륨과 LIF를 새 노드로 이동한 다음 클러스터에서 제거할 노드의 연결을 해제합니다. 스위치가 없는 2노드 클러스터를 업그레이드하는 경우 새 노드를 추가하기 전에 클러스터 스위치 쌍을 사용하여 스위치 연결 클러스터로 변환합니다.</block>
-  <block id="16319414c65274d365d86327a61ef5dc" category="inline-link">AFF 및 FAS 시스템 설명서</block>
-  <block id="c2238e72fe75968b1d2d41e7beba323b" category="paragraph">개별 부품을 교체하는 경우 을 참조하십시오<block ref="9e966fb68ec771eec4870f18e1909b4f" category="inline-link-rx"></block> 해당 구성요소의 현장 교체 장치(FRU) 전단을 찾으십시오.</block>
   <block id="c024cf342a69d8b35b142333f2608aa5" category="sidebar">ONTAP 9.8 이상을 실행하는 시스템에서 애그리게이트를 재배치하여 업그레이드</block>
   <block id="5d3c4b59db4a991b7c6450c61662dc60" category="sidebar">ONTAP 9.7 이하를 실행하는 시스템에서 애그리게이트를 재배치하여 업그레이드</block>
   <block id="d58d42ec84ab0189beb36da55893f387" category="sidebar">스토리지 또는 볼륨을 이동하여 업그레이드</block>
@@ -4900,5 +4896,15 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="ac5c825456c3417b5a4af98c4f3e915f" category="paragraph">^1^ AFF A800 시스템에 필요한 추가 단계를 보려면 섹션에서 A800을 참조하는 단계로 이동하십시오 <block ref="d7767766539bb5c2349ec33972e353b3" category="inline-link-macro-rx"></block>, 또는 <block ref="1ac9d612a445bb1be7d33490e7f7168c" category="inline-link-macro-rx"></block>.</block>
   <block id="e517f479718742d7735088b63cb4b0a6" category="list-text">[[step5]] 다음 작업 중 하나를 수행합니다.</block>
   <block id="1f6c36e4c21adc6fcbbeb1628f0ce398" category="paragraph">컨트롤러 하드웨어를 업그레이드하는 다른 방법은 을 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 볼륨 또는 스토리지 _ 을(를) 이동하여 _ 업그레이드 에 연결합니다.</block>
-  <block id="a8337c93c769b636588431825fedbc33" category="sidebar">이 사이트에서는 AFF 및 FAS 스토리지 시스템의 업그레이드 절차를 제공합니다. 스토리지 시스템에 적합한 업그레이드 절차를 선택합니다.</block>
+  <block id="ce334042acf5cdb00aa6b0cacc91188d" category="list-text">필요한 경우 이전 시스템에서 베이스보드 관리 컨트롤러(BMC)에 대해 사용했던 기본 사용자 계정이 아닌 사용자 계정을 다시 만듭니다.</block>
+  <block id="7cd124c3569d4b8de1ffd3a55e5a0f72" category="list-text">BMC admin 사용자 계정 암호를 변경하거나 재설정합니다.</block>
+  <block id="f9c20a87fa881cd6931b55ff9caab40b" category="paragraph">BMC admin 사용자 계정 암호가 비어 있거나(암호 없음) 시스템 관리자 계정 암호와 동일합니다.</block>
+  <block id="98295c6ad28170a1a290ca42442cdb79" category="list-text">를 사용하여 기본이 아닌 BMC 사용자 계정을 다시 만듭니다<block ref="5d6b067bb8a979d6b47c787077dfae6f" prefix=" " category="inline-code"></block> 명령을 사용합니다<block ref="3676d55f84497cbeadfc614c1b1b62fc" prefix=" " category="inline-code"></block> 다음 예에 표시된 것처럼 "service-processor"로 설정합니다.</block>
+  <block id="715d318a746fe248ce78ec5e2626f09e" category="paragraph"><block ref="95c8ee682558c9e9a0683d5d70ee2be7" prefix="" category="inline-code"></block></block>
+  <block id="b6025c8f8309b4b8106567e8e60f52ac" category="admonition">BMC에서 사용자 계정을 생성하려면 관리자 권한이 필요합니다.</block>
+  <block id="a64a5798382cc068c2d777ff826bccb5" category="doc">ONTAP 하드웨어 업그레이드 설명서</block>
+  <block id="646d7d5f93b4a6d7bbbc65acf5ac1077" category="inline-link">ONTAP 하드웨어 시스템 설명서</block>
+  <block id="c2bb4d5f8818bc80f7aa15d94d57c6e3" category="paragraph">개별 부품을 교체하는 경우 을 참조하십시오<block ref="e18a2433f1085adba8dc86307fee18d1" category="inline-link-rx"></block> 해당 구성요소의 현장 교체 장치(FRU) 전단을 찾으십시오.</block>
+  <block id="dec452d8e293e5516524ae8a86713211" category="sidebar">이 사이트에서는 AFF, FAS 및 ASA 스토리지 시스템의 업그레이드 절차를 제공합니다. 스토리지 시스템에 적합한 업그레이드 절차를 선택합니다.</block>
+  <block id="ec6e72d1c4bb7dccdc62b6caf35c95f7" category="sidebar">ONTAP 하드웨어 시스템 설명서</block>
 </blocks>
