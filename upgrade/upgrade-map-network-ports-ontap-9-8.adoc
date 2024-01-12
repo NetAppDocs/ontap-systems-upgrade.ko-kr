@@ -218,4 +218,5 @@ NOTE: iSCSI LIF의 경우 홈 포트를 수정하려면 LIF를 관리 방식으�
 
 
 
+.작업을 마친 후
 물리적 포트 매핑을 완료했습니다. 업그레이드를 완료하려면 로 이동합니다 link:upgrade-final-upgrade-steps-in-ontap-9-8.html["ONTAP 9.8 이상에서 최종 업그레이드 단계를 수행합니다"].
