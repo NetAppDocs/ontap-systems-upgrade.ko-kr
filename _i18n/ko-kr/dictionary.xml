@@ -1592,7 +1592,6 @@
   <block id="0eac7849b27808b92dfd85fd93d5adf9" category="cell">노드 3과 동일한 섀시</block>
   <block id="ebfef1d5b820c6361e45e99afc605aff" category="cell">로 이동합니다 <block ref="4b3dcb4f5ad67f2f001c91135169a837" category="inline-xref-macro-rx"></block>.</block>
   <block id="23651fb868295760fbf6e0040b0debb0" category="cell">로 이동합니다 <block ref="38932d9b2776291a7bec718b723ae495" category="inline-xref-macro-rx"></block>.</block>
-  <block id="84857d961b292bb9faee31d20a2e4320" category="list-text">[[man_install4_Step6]] 노드 4의 전원을 켠 다음 키를 눌러 부팅을 중단합니다<block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block> 부팅 환경 프롬프트에 액세스합니다.</block>
   <block id="2533698a45ba6cab05df3bd9337b544f" category="admonition">노드 4를 부팅할 때 다음 메시지가 나타날 수 있습니다.</block>
   <block id="6904f97422da010c9982167637cc6d56" category="list-text">[[man_install4_Step7]] 6단계에서 경고 메시지가 나타나면 다음 작업을 수행합니다.</block>
   <block id="abb5e8621f032d746c9aa9b35f472595" category="list-text">NVRAM 배터리 부족 이외의 다른 문제를 나타내는 콘솔 메시지를 확인하고 필요한 경우 수정 조치를 수행합니다.</block>
@@ -1609,7 +1608,6 @@
   <block id="23eacbaf200afc53fbaaaaa3d6705308" category="list-text">구성에서 스위치 기반 조닝을 사용하는 경우 새 WWPN 값이 반영되도록 조닝을 조정하십시오.</block>
   <block id="1ad5461b16a79391d48cbca2383e0c9e" category="list-text">다음 명령을 입력하고 해당 출력을 확인하여 스토리지 LUN이 이제 노드 4에 표시되는지 확인합니다.</block>
   <block id="134f75a624b82855271656ebc0cf2d5f" category="paragraph">각 FC 이니시에이터 포트에 표시되는 모든 스토리지 LUN이 표시됩니다. 어레이 LUN이 표시되지 않으면 이 섹션 뒷부분의 노드 2에서 노드 4로 디스크를 재할당할 수 없습니다.</block>
-  <block id="05ecdb384acc604bb6388efe9a979597" category="list-text">를 누릅니다<block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block> 를 눌러 부팅 메뉴를 표시하고 유지보수 모드를 선택합니다.</block>
   <block id="a2835e58397213dc9bedb9afe05d29d2" category="list-text">[[man_install4_Step15]] 유지 관리 모드 프롬프트에서 다음 명령을 입력합니다.</block>
   <block id="9b30a77b62fcc76d557f789dd6ce3167" category="list-text">ONTAP용 노드 4 구성:</block>
   <block id="c769624c49a19cf249ae2dabe50fafd5" category="list-text">노드 4에 설치된 ONTAP 버전이 노드 2에 설치된 ONTAP 9 버전과 동일하거나 더 높은 버전인 경우 다음 명령을 입력합니다.</block>
@@ -1988,7 +1986,6 @@
   <block id="c5ab586f079393b46529e61d3aad76d5" category="summary">를 사용하여 ARL 업그레이드를 위한 6단계 프로세스 시퀀스<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> ONTAP 9.8 이상을 실행하는 컨트롤러의 명령입니다.</block>
   <block id="18c90c300c0b71334b8b427eaf4f38a3" category="list-text"><block ref="18c90c300c0b71334b8b427eaf4f38a3" category="inline-link-macro-rx"></block></block>
   <block id="4486de9c48a88e42de77cb0ec9f11818" category="list-text"><block ref="4486de9c48a88e42de77cb0ec9f11818" category="inline-link-macro-rx"></block></block>
-  <block id="6458e4ec3f015720c168a55e444bc050" category="paragraph">MetroCluster FC 구성의 경우 가능한 한 빨리 재해 복구/페일오버 사이트 노드를 교체해야 합니다. 컨트롤러 모델이 일치하지 않을 경우 재해 복구 미러링이 오프라인 상태가 될 수 있으므로 MetroCluster 내의 컨트롤러 모델이 일치하지 않을 수 있습니다. 명령을 사용합니다 <block ref="2c0f0c82b7444434b02630e61cd42b95" prefix="-" category="inline-code"></block> 두 번째 사이트에서 노드를 교체할 때 MetroCluster 확인을 생략하는 옵션입니다.</block>
   <block id="5c004e4cd778be46f64bcf74109c107c" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 를 사용하여 MetroCluster 구성 및 올바른 작동 상태를 확인하십시오<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="7495838c3a0836d1a2caef4024f4af0e" category="paragraph">Fabric MetroCluster 구성에서 업그레이드를 시작하기 전에 MetroCluster 구성의 상태를 점검하여 올바르게 작동하는지 확인해야 합니다.</block>
   <block id="f005234d35c44406394bfc86ede22866" category="paragraph">작업은 백그라운드에서 실행됩니다.</block>
@@ -2247,7 +2244,6 @@
   <block id="e963df8c33a142fa50363ce5f3bbcbb9" category="paragraph"><block ref="0f0cbced497994b857a4f1c20648cf67" prefix="" category="inline-code"></block></block>
   <block id="6ee9ff94b07628e8d936112db18664d2" category="cell">다음 명령을 사용하여 출력을 검사하여 새 설정을 확인합니다.<block ref="773b5d44fd1b5ae080ff3a379be13169" prefix=" " category="inline-code"></block></block>
   <block id="bc53092d23cdf154996298ad69f4e7f0" category="list-text">[[4단계]] 유지보수 모드 종료:</block>
-  <block id="cfd64d6f476de1f0b6218d6edce64ba3" category="list-text">로더 프롬프트에서 시스템을 부팅합니다.</block>
   <block id="25c2f630f05e1a3933f0c056165ae65b" category="list-text">[[step6]] 명령을 입력한 후 부팅 환경 프롬프트에서 시스템이 중지될 때까지 기다립니다.</block>
   <block id="4e0dd5a6524aabaa8ad8173947fbf52a" category="list-text">옵션을 선택합니다<block ref="e4da3b7fbbce2345d7772b0674a318d5" prefix=" " category="inline-code"></block> 를 참조하십시오.</block>
   <block id="d2dce3cff13fd2c8259fdef7c637226e" category="list-text">[[auto_check3_step8]]다음 작업 중 하나를 수행합니다.</block>
@@ -2280,8 +2276,6 @@
   <block id="f91809c39c7c5ad59f2475c5ee644448" category="admonition">위의 콘솔 출력 예에서 시스템이 ADP(고급 디스크 파티셔닝) 디스크를 사용하는 경우 ONTAP에서 파트너 노드 이름을 묻는 메시지를 표시합니다.</block>
   <block id="9c709df0d0930ada3ab147bf9abe8f06" category="inline-xref">17단계</block>
   <block id="f2c15df21143edf73966939dd59ca6fb" category="list-text">시스템이 메시지와 함께 재부팅 루프에 들어갈 경우<block ref="bc1d3ad68c46835686e44d5c5c600a71" prefix=" " category="inline-code"></block>은 시스템이 FC 또는 UTA/UTA2 포트를 타겟 모드로 다시 설정했으므로 디스크를 볼 수 없음을 나타냅니다. 이 문제를 해결하려면 을 계속 진행합니다 <block ref="cc511b4dbeed99af4a19f83ac3e97f04" category="inline-xref-macro-rx"></block> 를 선택합니다 <block ref="8dac798a0974640f6cae187a1dbe2d57" category="inline-xref-macro-rx"></block>또는 섹션으로 이동합니다 <block ref="35ed01fca1dde6c35ca197b89d2bbfc7" category="inline-link-macro-rx"></block>.</block>
-  <block id="014925696b96cf52282301c416016c05" category="list-text">[[auto_check3_step17]]을 누릅니다<block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block> 자동 부팅 중에 의 노드가 중지됩니다<block ref="b4e58ddfd75fec23180551a08c0e87c6" prefix=" " category="inline-code"></block> 메시지가 표시됩니다.</block>
-  <block id="46f0d1accd1916f786a903c85ad13b0f" category="list-text">[[step18]] 로더 프롬프트에서 유지보수 모드로 전환합니다.</block>
   <block id="8e26679b9fca64c8419387ed5ddbd066" category="list-text">[[19단계]] 유지보수 모드에서 현재 타겟 모드에 있는 이전에 설정된 이니시에이터 포트를 모두 표시합니다.</block>
   <block id="0237455b5c9b0d306e2c96ee6c599c24" category="paragraph">포트를 다시 이니시에이터 모드로 변경합니다.</block>
   <block id="b23b4170fdfdcbdd9354becf14343de7" category="paragraph"><block ref="6c712b368ce4d44a27ac7e0272c3fd49" prefix="" category="inline-code"></block></block>
@@ -2289,7 +2283,6 @@
   <block id="4c830d7f040ff17fe7d01c1e6f446b3f" category="list-text">[[step21]]유지보수 모드 종료:</block>
   <block id="fe1416becf68ed78aa702542213dd3b3" category="paragraph">외부 디스크를 지원하는 시스템에서 외부 디스크도 지원하는 시스템으로 업그레이드하는 경우 로 이동합니다 <block ref="8dac798a0974640f6cae187a1dbe2d57" category="inline-xref-macro-rx"></block>.</block>
   <block id="9395831ce33669d17052a27e98938d9c" category="paragraph">외부 디스크를 지원하는 시스템에서 AFF A800 시스템과 같은 내부 디스크와 외부 디스크를 모두 지원하는 시스템으로 업그레이드하는 경우 로 이동하십시오 <block ref="8de8415e5ddf050c51dc9df1ad54385b" category="inline-xref-macro-rx"></block>.</block>
-  <block id="d5349bcef34e462b3ca716bdf6c513bd" category="list-text">[[auto_check3_step22]] 로더 프롬프트에서 다음 항목을 부팅합니다.</block>
   <block id="eedc84ab2e1ed2d5f77ae259bcc2e53d" category="paragraph">이제 부팅 시 노드에서 이전에 할당되었으며 예상대로 부팅할 수 있는 모든 디스크를 감지할 수 있습니다.</block>
   <block id="9450a99e74ec16b762595820712c299f" category="list-text">[[auto_check3_step23] 외부 디스크가 있는 시스템에서 내부 및 외부 디스크를 지원하는 시스템(예: AFF A800 시스템)으로 업그레이드하는 경우 node1 애그리게이트를 루트 애그리게이트로 설정하여 node3이 node1의 루트 애그리게이트에서 부팅되는지 확인하십시오. 루트 애그리게이트를 설정하려면 부팅 메뉴로 이동하여 옵션을 선택합니다<block ref="e4da3b7fbbce2345d7772b0674a318d5" prefix=" " category="inline-code"></block> 를 눌러 유지보수 모드로 전환합니다.</block>
   <block id="60429a189ace5d1ba3d34868ab11d685" category="admonition">* 표시된 정확한 순서대로 다음 하위 단계를 수행해야 합니다. 그렇지 않으면 운영 중단이나 데이터 손실이 발생할 수 있습니다. *</block>
@@ -2460,7 +2453,6 @@
   <block id="594ac9e04c14065852f0e508c7b91ccb" category="paragraph">다음 단계를 수행하여 암호화 구성을 새 노드에 동기화합니다.</block>
   <block id="53cd5409b5ec64b4f5341cb93a822fab" category="summary">필요한 경우 를 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 노드 3의 Key-Manager 구성을 복원합니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="bc8355e3ba73925a2f4cf661fa66be6a" category="summary">을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 노드 4 온보드 FC 포트, UTA/UTA2 포트 또는 UTA/UTA2 카드를 구성하십시오<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
-  <block id="85f1449ea514e1be4b11527eb6fbce31" category="paragraph">를 완료해야 할 수도 있습니다 <block ref="b22a2e603d310a795a7b59d2bdda39ee" category="inline-xref-macro-rx"></block> 섹션, 을 참조하십시오 <block ref="5752cac0a470e06ffceef40fba1931c1" category="inline-xref-macro-rx"></block>또는 두 섹션을 모두 선택합니다.</block>
   <block id="3dc7a36efda97abdf7240a1ca32de490" category="admonition">노드 4에 온보드 FC 포트, 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드가 없는 경우 스토리지 디스크를 사용하여 시스템을 업그레이드하는 경우 로 건너뛸 수 있습니다 <block ref="3a339ed5bdc85366b677c546716fabfa" category="inline-link-macro-rx"></block>. 하지만 V 시리즈 시스템이 있거나 FlexArray 가상화 소프트웨어가 있고 스토리지 어레이에 연결되어 있는 경우, 노드 4에 온보드 FC 포트, 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드가 없는 경우, _ Install and boot node4_ 섹션으로 돌아가서 를 다시 시작해야 합니다 <block ref="1a99f6ce933cd745b2b02e54c9272506" category="inline-link-macro-rx"></block>. 노드 4에 충분한 랙 공간이 있는지 확인합니다. 노드 4가 노드 2와 다른 섀시에 있는 경우 노드 4를 노드 3과 같은 위치에 배치할 수 있습니다. 노드 2와 노드 4가 동일한 섀시에 있는 경우 노드 4는 이미 해당 랙 위치에 있습니다.</block>
   <block id="ede48791c6a4d48413c294cc39314600" category="list-text">노드 4의 FC 설정을 노드 1에서 앞서 캡처한 설정과 비교합니다.</block>
   <block id="59df83a3d8dd25ad19619fe75cc32a49" category="list-text">[[step8]] 다음 작업 중 하나를 수행합니다.</block>
@@ -2486,13 +2478,10 @@
   <block id="204783b1ca658239a7b205df8e2d83dd" category="paragraph"><block ref="d20d8416248acf69156e4b7875cc4868" prefix="" category="inline-code"></block>.</block>
   <block id="d27b8c8cfb6e88cecd06bd564e90cd36" category="paragraph">A800으로 업그레이드할 경우 으로 이동하십시오 <block ref="1917bbf2d6d289423b4a495f5ba4fcca" category="inline-xref-macro-rx"></block></block>
   <block id="5dbdf6da1c2d885026bcf4a6be74a4b0" category="list-text">시스템이 메시지와 함께 재부팅 루프에 들어갈 경우<block ref="bc1d3ad68c46835686e44d5c5c600a71" prefix=" " category="inline-code"></block>은 시스템이 FC 또는 UTA/UTA2 포트를 타겟 모드로 다시 설정했으므로 디스크를 볼 수 없음을 나타냅니다. 이 문제를 해결하려면 을 계속합니다 <block ref="d55e3a0f9758a99c055e4411cec66cde" category="inline-xref-macro-rx"></block> 를 선택합니다 <block ref="1abe7aef97cf6f4670adea7171f10403" category="inline-xref-macro-rx"></block> 또는 섹션으로 이동합니다 <block ref="3a339ed5bdc85366b677c546716fabfa" category="inline-link-macro-rx"></block>.</block>
-  <block id="00454a3a0a181cf262da410213cfcb17" category="list-text">[[auto_check_4_step17]]을 누릅니다<block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block> 자동 부팅 중에 의 노드가 중지됩니다<block ref="b4e58ddfd75fec23180551a08c0e87c6" prefix=" " category="inline-code"></block> 메시지가 표시됩니다.</block>
-  <block id="8923acb8081affcd156ba6d58720db9b" category="list-text">로더 프롬프트에서 유지보수 모드로 전환합니다.</block>
   <block id="82b61383829ad9f7c791ca9adcbe4b1f" category="list-text">유지보수 모드에서 현재 타겟 모드에 있는 이전에 설정된 이니시에이터 포트를 모두 표시합니다.</block>
   <block id="7dca1ec13f028b73f4170b0124cf9d45" category="list-text">포트가 이니시에이터 모드로 변경되었는지 확인합니다.</block>
   <block id="5f885c9d1f15ecb39fddf4635d1d4928" category="paragraph">외부 디스크를 지원하는 시스템에서 외부 디스크도 지원하는 시스템으로 업그레이드하는 경우 로 이동합니다 <block ref="1abe7aef97cf6f4670adea7171f10403" category="inline-xref-macro-rx"></block>.</block>
   <block id="e254aab1a193523733c079cf1e13cacb" category="paragraph">외부 디스크를 사용하는 시스템에서 AFF A800 시스템과 같은 내부 디스크와 외부 디스크를 모두 지원하는 시스템으로 업그레이드하는 경우 로 이동하십시오 <block ref="1917bbf2d6d289423b4a495f5ba4fcca" category="inline-xref-macro-rx"></block>.</block>
-  <block id="c591963f8f7b043803a41f69e9ac20a6" category="list-text">[[auto_check_4_step22]] 로더 프롬프트에서 부팅:</block>
   <block id="cf43f30b70f96333f3d873e68b6170ad" category="list-text">노드 2 애그리게이트의 상태를 확인합니다.</block>
   <block id="cb891bf7e336200833c9e240c76a0cc6" category="list-text">노드 4의 루트 애그리게이트가 오프라인 상태이고 노드 2에서 가져온 디스크의 루트 애그리게이트가 온라인 상태이고 루트:</block>
   <block id="6bab8b4510fec23b1120be927a0bfea7" category="admonition">이전 하위 단계를 수행하지 않으면 노드 4가 내부 루트 애그리게이트에서 부팅되거나 시스템에서 새 클러스터 구성이 있다고 가정하거나 클러스터 구성을 확인하라는 메시지가 표시될 수 있습니다.</block>
@@ -2597,7 +2586,6 @@
   <block id="37b10337aa44c11a05aa4efa324640ba" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 를 사용하여 SnapMirror 전송 및 관계를 다시 시작하십시오<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="23826189d4179acfb46645b446f69080" category="summary">을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드하려면 특정 툴과 설명서가 있어야 합니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="8e698b8d4467a7a6309118b19a3aa168" category="paragraph">새 하드웨어를 설치하려면 특정 도구가 있어야 하며 업그레이드 프로세스 중에 다른 문서를 참조해야 합니다.</block>
-  <block id="f987ca44be5e66313a3fedb59305367d" category="paragraph">상향 평점을 수행하려면 다음 도구가 필요합니다.</block>
   <block id="c76a89f966d60816d2016df1cbb1b151" category="paragraph">로 이동합니다 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 섹션을 참조하여 이 업그레이드에 필요한 참조 문서 및 참조 사이트 목록에 액세스합니다</block>
   <block id="f068e1c881bcb261ac497abe62b5aef7" category="summary">를 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 node2의 물리적 포트가 노드 4에 올바르게 매핑되는지 확인하고 노드 4의 네트워크 구성을 복원합니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="4b23fc3c80c3c248a200cfd0971d83e3" category="paragraph">노드 2의 물리적 포트가 노드 4의 물리적 포트에 올바르게 매핑되는지 확인해야 합니다. 이렇게 하면 노드 4가 업그레이드 후 클러스터의 다른 노드 및 네트워크와 통신할 수 있습니다.</block>
@@ -2961,19 +2949,15 @@
   <block id="6e13fc9d1e75c160461788f1b750083d" category="list-text">다음 명령을 사용하여 출력을 검사하여 노드 2에 남아 있는 데이터 LIF가 없는지 확인합니다.</block>
   <block id="1c962f08f92ca556b5f958f512421f7b" category="cell">AFF A700에서 AFF A900으로</block>
   <block id="3029eeb5ee6e861b02eb2a1ffd3d3b8e" category="cell">FAS9000에 FAS9000을 FAS9000으로</block>
-  <block id="c9df35145886ac45d1457faee2b9dd89" category="admonition">I/O 카드, 데이터 케이블, 디스크 쉘프 및 디스크를 이동, 분리 또는 다시 연결할 필요가 없습니다.</block>
-  <block id="61d5cfba7704fb82d2cf6a1ebdf016a2" category="admonition">node1 * 및 * node2 * 라는 용어는 이 문서의 노드 이름에 대한 참조용으로만 사용됩니다. 이 절차를 따를 때는 노드의 실제 이름을 대체해야 합니다.</block>
   <block id="addb9e70976c2f94b8ccfc3736a31888" category="list-title">중요 정보</block>
   <block id="4ed758f1326f5379f7dc30fe674ce726" category="inline-link-macro">컨트롤러 업그레이드 지침</block>
   <block id="61bb0e064fd915427168b2e72e080eff" category="list-text">이 절차는 복잡하고 고급 ONTAP 관리 기술이 있다고 가정합니다. 또한 을 읽고 이해해야 합니다 <block ref="937d04c1dac5501bcacf105e8700fe45" category="inline-link-macro-rx"></block> 및 <block ref="57e14e08755134bb6fef9ad899bb58ee" category="inline-link-macro-rx"></block> 섹션을 참조하십시오.</block>
   <block id="51108f40a613018fdc6b3ad89f42122e" category="list-text">이 절차에서는 교체 컨트롤러 하드웨어가 새 하드웨어이며 다른 시스템에서 사용되지 않은 것으로 가정합니다. 중고 컨트롤러를 와 함께 준비하는 데 필요한 단계입니다<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block> 이 절차에는 명령이 포함되어 있지 않습니다. 교체 컨트롤러 하드웨어를 이전에 다른 ONTAP 클러스터의 일부로 사용한 경우 또는 독립 실행형 단일 노드 시스템으로 사용한 경우에는 기술 지원 부서에 문의해야 합니다.</block>
   <block id="eb51502469d00e14522e17bfff4124ad" category="list-text">새 컨트롤러를 새 HA 쌍으로 클러스터에 추가하고 볼륨 이동을 사용하여 데이터를 마이그레이션하지 않으려는 경우</block>
   <block id="a3bad37bbfc8cbb39ebdfc42ccfa6bec" category="list-text">ONTAP 관리에 대한 경험이 있으며 진단 권한 모드에서 작업할 때 발생할 수 있는 위험에 대해 잘 알 수 있습니다.</block>
-  <block id="b0ce3e25b9ec3a13c13ca9a6fa5323b7" category="list-text">AFF A700 또는 FAS9000 시스템에서 FlexArray 가상화 소프트웨어를 사용하고 있습니다.</block>
   <block id="d94e9d7914bbd98510d8cb9e0a6d08b1" category="list-text">클러스터 인터커넥트 및 이더넷 연결 스토리지에 공유 스위치를 사용하고 있습니다.</block>
   <block id="2ed045fa4ee3544c7e5a632a26d55b9f" category="paragraph">ONTAP 9.10.1부터 KMIP(Key Management Interoperability Protocol) 서버를 사용하여 인증 키를 관리할 수 있습니다.</block>
   <block id="5077f34346404c6e6b1972588ad2c047" category="list-text">ONTAP 명령줄의 고급 권한 모드에서 다음 명령을 입력하여 컨트롤러 교체 프로세스를 시작합니다.</block>
-  <block id="78bcaff6352913ee1a07493a6be91635" category="paragraph">다음과 유사한 출력이 표시됩니다.</block>
   <block id="8a4f2711fdfcfeea79b7fe0124a6d453" category="list-text">를 선택합니다<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>. 다음과 같은 출력이 표시됩니다.</block>
   <block id="db4336e2ca46622010f5ba0c4094ec50" category="paragraph">사전 점검 단계 중에 시스템은 백그라운드에서 다음 점검 목록을 실행합니다.</block>
   <block id="eeb3813f1d9a188e4d0a912235894f96" category="cell">클러스터의 모든 노드를 검사하여 정상 상태인지 확인합니다.</block>
@@ -3011,8 +2995,6 @@
   <block id="01b22e2b8dff1191395f34f0d45cdd7e" category="paragraph">이러한 프롬프트는 콘솔 메시지에 묻힐 수 있습니다. 노드 이름을 입력하지 않거나 잘못된 이름을 입력하면 이름을 다시 입력하라는 메시지가 표시됩니다.</block>
   <block id="bca73eff7b855bcc19e7f22f49e2b8a3" category="paragraph">If(경우<block ref="6b3ad11739feb8cc4ffa9b2ab40dd757" prefix=" " category="inline-code"></block> 그리고, 또는,<block ref="b5ec5541590bbbd0608762c9c0eeb4c2" prefix=" " category="inline-code"></block> 오류가 발생하면 다음 단계를 수행하십시오.</block>
   <block id="36c8627224211217ec34fd42fe9d5435" category="list-text">LOADER 프롬프트에서 노드를 중단합니다.</block>
-  <block id="4881f451a26b5944c6775b5342df3dbd" category="list-text">에서 설명한 스토리지 암호화 boots를 확인하고 재설정합니다 <block ref="370a03845d272602c838e3924a658003" category="inline-xref-macro-rx"></block>.</block>
-  <block id="6e44d165d43069030cd99e370aeb5107" category="list-text">로더 프롬프트에서 다음을 부팅합니다.</block>
   <block id="5dd3fadb015da65e82238831e11341c9" category="paragraph">다음 예제를 참조로 사용할 수 있습니다.</block>
   <block id="939b677a0e4df037cd999a739cd94317" category="paragraph">위의 예에 표시된 시스템 ID는 ID의 예입니다. 업그레이드할 노드의 실제 시스템 ID는 다릅니다.</block>
   <block id="5952acedcc143d30a19364d245887b58" category="paragraph">프롬프트에 노드 이름을 입력하고 로그인 프롬프트에서 노드 이름을 입력하는 사이에 노드는 몇 번 재부팅하여 환경 변수를 복원하고, 시스템의 카드의 펌웨어를 업데이트하고, 다른 ONTAP 업데이트를 수행합니다.</block>
@@ -3059,7 +3041,6 @@
   <block id="85aa04fa5dfb58230ad2b2fb89c2b86d" category="paragraph">노드의 모든 물리적 네트워크 포트, VLAN 포트 및 인터페이스 그룹 포트가 표시됩니다. 이 출력에서 로 이동된 모든 물리적 포트를 볼 수 있습니다<block ref="249694a485fc5d3289c38986b4f8e887" prefix=" " category="inline-code"></block> ONTAP에 의한 브로드캐스트 도메인. 이 출력을 사용하면 인터페이스 그룹 구성원 포트, VLAN 기본 포트 또는 LIF 호스팅을 위한 독립 실행형 물리적 포트로 사용할 포트를 쉽게 결정할 수 있습니다.</block>
   <block id="97a140c436b20824a78c55187d8f3252" category="list-text">노드 1의 모든 포트에 대한 네트워크 포트 도달 가능 여부 나열:</block>
   <block id="cceb77422957d2a7588c1df43f5eacd8" category="paragraph"><block ref="03ad1ce2c607a73c79d164c5aae7d815" prefix="" category="inline-code"></block></block>
-  <block id="d51b3938c62e269961f6447fa716fc1f" category="paragraph">앞의 예제에서 노드 1은 컨트롤러 교체 후 부팅되었습니다. 물리적 연결이 없기 때문에 일부 포트에는 연결 기능이 없습니다. 이외의 도달 가능 상태인 모든 포트는 복구해야 합니다<block ref="444bcb3a3fcf8389296c49467f27e1d6" prefix=" " category="inline-code"></block>.</block>
   <block id="a5fb308a92e4604c009062c3de7b2789" category="list-text">[[restore_node1_step4] 노드 1의 각 포트에 대한 연결 상태를 이외의 다른 연결 상태로 복구합니다<block ref="444bcb3a3fcf8389296c49467f27e1d6" prefix=" " category="inline-code"></block> 다음 명령을 사용하여 다음 순서로 명령을 실행합니다.</block>
   <block id="1edb05285bdfcd8326cc54455703d7ec" category="list-text">물리적 포트</block>
   <block id="2c7aa9454c1ca6be9ef48b69c5b8cab5" category="list-text">VLAN 포트</block>
@@ -3104,8 +3085,6 @@
   <block id="eedd3589e87e21a342b71fbe4c46b471" category="paragraph">이 단계에서는 노드 1이 중단되며 모든 데이터를 노드 2에서 제공합니다. 노드 1과 노드 2는 동일한 섀시에 있고 동일한 전원 공급 장치 세트로 전원이 공급되므로 섀시의 전원을 끄지 마십시오. 노드1 컨트롤러 모듈과 노드1 NVRAM 모듈만 조심스럽게 분리해야 합니다. 일반적으로 노드 1은 시스템 뒷면에서 컨트롤러를 볼 때 섀시 왼쪽에 있는 컨트롤러 A입니다. 컨트롤러 레이블은 컨트롤러 모듈 바로 위의 섀시에 있습니다.</block>
   <block id="a7b5ccf02bd0f6b23fc889ebb5354dbc" category="paragraph">아직 접지되지 않은 경우 올바르게 접지하십시오.</block>
   <block id="ba579f865c148542656e741f915bc210" category="section-title">AFF A700 또는 FAS9000 컨트롤러 모듈을 제거합니다</block>
-  <block id="208671d931da81374958ab0bdeb8d0f0" category="paragraph">다음 절차를 사용하여 AFF A700 또는 FAS9000 컨트롤러 모듈을 제거합니다.</block>
-  <block id="21ae48aa7bbdbaeb1a967d5328b891b6" category="list-text">노드 1에서 컨트롤러 모듈을 분리하기 전에 콘솔 케이블(있는 경우)과 노드1 컨트롤러 모듈에서 관리 케이블을 분리합니다.</block>
   <block id="16597a9dd20f2d5db13339b0bf3ad60c" category="admonition">노드 1에서 작업할 때는 노드 1에서 콘솔 케이블과 e0M 케이블만 제거하면 됩니다. 이 프로세스 중에 노드 1이나 노드 2의 다른 케이블이나 연결을 제거하거나 변경해서는 안 됩니다.</block>
   <block id="4f15dffc58c8598c508fa46cd5335ebb" category="list-text">섀시에서 컨트롤러 모듈 A의 잠금을 해제하고 제거합니다.</block>
   <block id="c1ed0cd23ea77c49b5611e5929537b3f" category="list-text">캠 핸들의 주황색 버튼을 잠금 해제할 때까지 아래로 밉니다.</block>
@@ -3117,7 +3096,6 @@
   <block id="1ce9441378e5288a31f9dee89eb4cb1d" category="list-text">캠 핸들을 돌려 컨트롤러 모듈을 섀시에서 완전히 분리한 다음 컨트롤러 모듈을 섀시 밖으로 밉니다.</block>
   <block id="838771143f1029cc3b1ac5c3be2796bc" category="paragraph">컨트롤러 모듈 하단을 섀시 밖으로 밀어낼 때 지지하는지 확인합니다.</block>
   <block id="831816e1924f3edb2d170ec4c291d0f3" category="section-title">AFF A700 또는 FAS9000 NVRAM 모듈을 제거합니다</block>
-  <block id="fceff39b493e10b2b789e99ad15cc406" category="paragraph">다음 절차를 사용하여 AFF A700 또는 FAS9000 NVRAM 모듈을 제거합니다.</block>
   <block id="3d748e41fa426d2025ff3eb80b369ede" category="admonition">AFF A700 또는 FAS9000 NVRAM 모듈은 슬롯 6에 있으며 시스템 내 다른 모듈의 높이가 2배입니다.</block>
   <block id="0857dbdec564e89c1ed34a571bb8af41" category="list-text">노드 1의 슬롯 6에서 NVRAM 모듈을 잠금 해제하고 제거합니다.</block>
   <block id="1746c03166c1029bf12087835ea936f0" category="list-text">문자 및 번호가 매겨진 캠 버튼을 누릅니다.</block>
@@ -3135,7 +3113,6 @@
   <block id="a93447d104277da61e99f98be3016581" category="list-text">컨트롤러 모듈의 끝을 섀시의 열기 A에 맞춘 다음 컨트롤러 모듈을 반쯤 조심스럽게 시스템에 밀어 넣습니다.</block>
   <block id="8c3e973bd184c686de74d4c99763571c" category="admonition">절차의 뒷부분에서 지시가 있을 때까지 컨트롤러 모듈을 섀시에 완전히 삽입하지 마십시오.</block>
   <block id="85b0e5132d3bec02fcda8eb6f24b6062" category="list-text">관리 및 콘솔 포트를 노드1 컨트롤러 모듈에 케이블로 연결합니다.</block>
-  <block id="e4d9396571178474bbad7e96ad3d6ebb" category="admonition">섀시의 전원이 이미 켜져 있으므로 노드 1은 BIOS 초기화를 시작한 다음 완전히 장착되자마자 자동 부팅을 시작합니다. 노드1 부팅을 중단하려면 컨트롤러 모듈을 슬롯에 완전히 삽입하기 전에 직렬 콘솔 및 관리 케이블을 노드1 컨트롤러 모듈에 연결하는 것이 좋습니다.</block>
   <block id="9ce6fd0a8d01a2b4341b85fdb23f1ba5" category="list-text">컨트롤러 모듈이 중앙판과 만나 완전히 장착될 때까지 섀시 안으로 단단히 밀어 넣습니다.</block>
   <block id="9d3d5ccff9d9d7f336c5f4adfb3eea08" category="paragraph">컨트롤러 모듈이 완전히 장착되면 잠금 래치가 올라갑니다.</block>
   <block id="ea842e0d624cb37b7d5b336f29a0aa73" category="admonition">커넥터의 손상을 방지하려면 컨트롤러 모듈을 섀시에 밀어 넣을 때 과도한 힘을 가하지 마십시오.</block>
@@ -3143,7 +3120,6 @@
   <block id="f39c570aa40591b3a07f64b52d7d04bd" category="cell">캠 핸들 잠금 래치</block>
   <block id="3f5e8e551ad561c269d0656e1bd198f0" category="cell">캠 핸들이 잠금 해제 위치에 있습니다</block>
   <block id="2ea32610c0c34642fe97bf6f44009b1f" category="list-text">모듈이 장착되면 즉시 직렬 콘솔을 연결하고 노드 1의 자동 부팅을 중단시킵니다.</block>
-  <block id="79ba196960d086bc934b5c973394f991" category="list-text">자동 부팅을 중단하고 나면 로더 프롬프트에서 노드 1이 중지됩니다. 시간에 자동 부팅을 중단하지 않고 노드 1이 부팅을 시작하는 경우 메시지가 표시될 때까지 기다린 다음 * Ctrl-C * 를 눌러 부팅 메뉴로 이동합니다. 부팅 메뉴에서 노드가 중지된 후 옵션을 사용합니다<block ref="c9f0f895fb98ab9159f51fd0297e236d" prefix=" " category="inline-code"></block> 재부팅 중 노드를 재부팅하고 자동 부팅을 중단하려면 다음 작업을 중단합니다.</block>
   <block id="941f1a1f76f1ea9874688b46955c3e10" category="list-text">node1의 Loader&gt; 프롬프트에서 기본 환경 변수를 설정합니다.</block>
   <block id="bb54a67e0ba8edb77dda51dedb81fec0" category="list-text">기본 환경 변수 설정을 저장합니다.</block>
   <block id="af18adb321560258c2b9a80d2757792a" category="paragraph">업그레이드 단계가 서로 다를 경우 시스템이 충돌하여 재부팅, 패닉 또는 전원 사이클을 수행할 수 있습니다.</block>
@@ -3186,7 +3162,6 @@
   <block id="254d1495a725edffc2f7c4eb5441615a" category="admonition">절차의 뒷부분에서 컨트롤러 모듈을 삽입하라는 지시가 있을 때까지 섀시에 모듈을 완전히 삽입하지 마십시오.</block>
   <block id="2cd913fdf7e7f2f1c4a048df3be22534" category="list-text">노드2 컨트롤러 모듈에 관리 및 콘솔 포트를 케이블로 연결합니다.</block>
   <block id="e16c4744183a5e672dc0a8f50d7250d6" category="admonition">섀시의 전원이 이미 켜져 있으므로 노드 2가 완전히 장착되면 바로 부팅됩니다. 노드 2가 부팅되지 않도록 하려면 컨트롤러 모듈을 슬롯에 완전히 삽입하기 전에 콘솔 및 관리 케이블을 노드2 컨트롤러 모듈에 연결하는 것이 좋습니다.</block>
-  <block id="d9f54add7d47cd87694cd3f82ac8b56b" category="list-text">자동 부팅을 중단하고 나면 로더 프롬프트에서 노드 2가 중지됩니다. 시간에 자동 부팅을 중단하지 않고 노드 2가 부팅을 시작하면 메시지가 표시될 때까지 기다린 다음 * Ctrl-C * 를 눌러 부팅 메뉴로 이동합니다. 부팅 메뉴에서 노드가 중지된 후 옵션을 사용합니다<block ref="c9f0f895fb98ab9159f51fd0297e236d" prefix=" " category="inline-code"></block> 재부팅 중 노드를 재부팅하고 자동 부팅을 중단하려면 다음 작업을 중단합니다.</block>
   <block id="5967cd2dd5257e032e2c1568e265b057" category="list-text">노드 1은 노드 1 애그리게이트의 홈 소유자이며 현재 소유입니다</block>
   <block id="a324d0a89d17fcc011978fff16b784da" category="list-text">노드 2는 노드 2 애그리게이트의 홈 소유자이며 현재 소유입니다</block>
   <block id="70bfac3efc816446939b969cb549c8b8" category="list-text">노드 2는 노드 1 애그리게이트의 현재 소유자입니다</block>
@@ -3438,7 +3413,6 @@
   <block id="5a8dfa3943e8e71201fd576d26e40b9d" category="paragraph">여기에는 스토리지 쉘프를 연결하는 데 사용되지 않는 파이버 채널 및 이더넷 케이블이 포함됩니다.</block>
   <block id="1a364d01ffd247339721f8976186fb42" category="summary">스토리지를 이동하여 업그레이드할 경우 원래 노드를 준비하고 새 노드를 설정합니다. 일부 플랫폼 모델은 내부 스토리지를 새 노드로 전송하는 기능을 지원합니다. 디스크를 재할당하고 루트 볼륨 구성을 새 노드에 복원하고 네트워크 포트를 구성합니다. 스토리지 이동을 통한 업그레이드는 운영 중단 절차입니다.</block>
   <block id="24f47cdbe9ddba774a7cc53e51d9032e" category="doc">워크플로우</block>
-  <block id="0d19f6d9c6616aec6c0d6fa998fcdc06" category="paragraph">스토리지를 이동하여 컨트롤러 하드웨어를 업그레이드할 경우 원래 노드를 준비하고 새 노드를 설정합니다. 일부 플랫폼 모델은 내부 스토리지를 새 노드로 전송하는 기능을 지원합니다. 디스크를 재할당하고 루트 볼륨 구성을 새 노드에 복원하고 네트워크 포트를 구성합니다. 스토리지 이동을 통한 업그레이드는 운영 중단 절차입니다.</block>
   <block id="4b52611cbeb99e3693b2989804997376" category="inline-xref-macro">스토리지를 이동할 때 업그레이드를 준비합니다</block>
   <block id="c4612c419c5b77fdb1400d9db61d37d0" category="inline-xref-macro">원래 노드를 종료합니다</block>
   <block id="65e0e6759e9c5622cb5684aa9ab3918c" category="inline-xref-macro">새 노드에서 기본 구성을 재설정합니다</block>
@@ -3457,7 +3431,6 @@
   <block id="8f2f5cebfa6b4e869a159dbf3cedb773" category="inline-link">사용 중인 Data ONTAP 8 버전에 대한 클러스터 확장 익스프레스 가이드를 찾으십시오</block>
   <block id="9d9192129e1b9a1e59bd50fc144f8867" category="paragraph"><block ref="9d9192129e1b9a1e59bd50fc144f8867" category="inline-link-rx"></block></block>
   <block id="5b3de670b2de55fec257c6f89ab421bc" category="summary">볼륨을 이동하여 업그레이드할 경우 원래 노드를 준비하고 새 노드를 클러스터에 연결합니다. 볼륨을 새 노드로 이동하고 LIF를 구성한 다음 클러스터에서 원래 노드의 연결을 해제합니다. 볼륨을 이동하여 업그레이드하는 무중단 절차는 무중단 절차와 같습니다.</block>
-  <block id="efedd93f47ad7262715836d27d7741ae" category="paragraph">볼륨을 이동하여 컨트롤러 하드웨어를 업그레이드할 경우 원래 노드를 준비하고 새 노드를 클러스터에 연결합니다. 볼륨을 새 노드로 이동하고 LIF를 구성한 다음 클러스터에서 원래 노드의 연결을 해제합니다. 볼륨을 이동하여 업그레이드하는 무중단 절차는 무중단 절차와 같습니다.</block>
   <block id="65ef2ef8754850d3945f71f106c239bf" category="inline-xref-macro">볼륨을 이동할 때 업그레이드를 준비합니다</block>
   <block id="3085ebd8810ece8cd93e0024bdb65eb1" category="inline-xref-macro">애그리게이트를 생성하고 볼륨을 새 노드로 이동합니다</block>
   <block id="8093d580d9cc0468991044c64c97b174" category="inline-xref-macro">SAN LIFS를 이동, 삭제 또는 생성합니다</block>
@@ -3627,7 +3600,6 @@
   <block id="b14047e1956c68f095842760b1beaea2" category="paragraph">다음 화면은 부팅 메뉴 프롬프트를 표시합니다</block>
   <block id="d4041bfba261eda3180ae9fbf6285d95" category="list-text">를 입력합니다<block ref="a6105c0a611b41b08f1209506350279e" prefix=" " category="inline-code"></block> 다음과 유사한 메시지가 표시되는 경우:</block>
   <block id="8b8e41e588d3f28837be58712aeec25a" category="paragraph">시스템에서 를 시작합니다<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block> 절차를 수행한 후 재부팅합니다. 절차가 완료되면 시스템이 부팅 메뉴로 돌아갑니다.</block>
-  <block id="450526ff97e4fb534c60e357bc3b52a0" category="list-text">부팅 메뉴에서 8을 입력하여 노드를 재부팅한 다음, * Ctrl-C * 를 눌러 로더 프롬프트에서 노드를 중지합니다.</block>
   <block id="51bea01f527b8a0a7714408789058c6b" category="summary">원래 노드를 종료 및 제거할 때 업그레이드에 대한 AutoSupport 메시지를 보내고, 사서함을 제거하고, 노드의 전원을 끄고, 섀시를 제거해야 합니다.</block>
   <block id="0b5874c3f69c1393f6461a11d78dfa9c" category="list-text">node1과 node2에서 AutoSupport 메시지를 보내 업그레이드 기술 지원을 알립니다.</block>
   <block id="038bf310b30027962de2d4e7d3c544e6" category="paragraph"><block ref="b880f70c2b10401f03a1d98eaec1f249" prefix="" category="inline-code"></block></block>
@@ -3844,7 +3816,6 @@
   <block id="7d94daad2b6e9d77a6320a64c21fbc4a" category="sidebar">MetroCluster 구성에서 시스템을 업그레이드합니다</block>
   <block id="c6bb96cc8b84319277f00b15adc71d75" category="sidebar">MetroCluster 구성에 대한 업그레이드 절차를 선택합니다</block>
   <block id="dfcc398099d6a64026e51ab282e16253" category="sidebar">더 많은 리소스</block>
-  <block id="743b2bde29eae11996923323c6b89672" category="sidebar">ONTAP 스위치 설명서</block>
   <block id="dd032435fa83549d8bf3928550409a3e" category="sidebar">ONTAP 소프트웨어 설명서</block>
   <block id="519131237f79eadb2dc6a1e003a087bc" category="sidebar">NetApp Active IQ Config Advisor를 참조하십시오</block>
   <block id="bc8be72fdc9d6054f356bb2b7f80fd12" category="sidebar">NetApp 상호 운용성 매트릭스</block>
@@ -3919,7 +3890,6 @@
   <block id="342f3ca2519e4e92f56675a89236fce6" category="list-text">슬롯 6-1과 6-2의 빈 필러 모듈을 모두 이전 NVRAM 모듈에서 새 NVRAM 모듈로 이동합니다.</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">이 작업에 대해</block>
   <block id="3468b73fe010ca505a63fcddaa4f3601" category="paragraph-title">이 정보에 사용된 용어</block>
-  <block id="5d022d26a75a4e30fae6648d5bcdd9e5" category="paragraph-title">MetroCluster FC 구성의 경우</block>
   <block id="e05e5b3ebbe0e2f7ee773e008e2cd7bd" category="cell">다음 드라이브를 사용 중인 경우…</block>
   <block id="9a7a5052834bdcd10b9395aaeaf8d876" category="list-text"><block ref="62a739993e7d046df94dbc6dc7c3f174" prefix="" category="inline-code"></block></block>
   <block id="102a08eb3220b17bfbecbc277298074d" category="cell">NetApp 비 FIPS SED</block>
@@ -4004,7 +3974,6 @@
   <block id="ee70b93b550a5730542d0185fb89b3ce" category="paragraph">6단계에서는 새 노드가 올바르게 설정되었는지 확인하고, 새 노드가 암호화를 사용하도록 설정된 경우 Storage Encryption 또는 NVE를 구성하고 설정합니다. 또한 이전 노드의 사용을 중지하고 SnapMirror 작업을 다시 시작해야 합니다.</block>
   <block id="acd5b1c4fce9ef3151224f03792cb99f" category="paragraph">디렉토리 목록에는 다음 파일이 포함되어야 합니다.<block ref="f466b354adfc3ad817d7c11c037c8797" prefix=" " category="inline-code"></block></block>
   <block id="93e8beec297b8781a36255a18449c4be" category="admonition">시스템에 스토리지 디스크가 있는 경우 이 섹션의 명령을 클러스터 프롬프트에 입력합니다. 'V-Series 시스템'이 있거나 FlexArray 가상화 소프트웨어가 설치되어 있고 스토리지 어레이에 연결되어 있는 경우, 유지보수 모드에서 이 섹션의 명령을 입력하십시오.</block>
-  <block id="667d8c0d024d474a9ae5e0aeff664274" category="list-text">[[auto9597_check_node3_step15]]노드 3에서 부팅 메뉴로 이동하여 22/7을 사용하여 숨겨진 옵션을 선택합니다<block ref="b4ab52f7185d092e3aa56aaa9905e7e1" prefix=" " category="inline-code"></block>. 다음 예에 따라 프롬프트에 node1을 입력하여 node3에 노드 1의 디스크를 재할당합니다.</block>
   <block id="d64291323d18992b3445302961a6c6cb" category="paragraph"><block ref="5f228d2a3233663cd573460dd92ad9ce" prefix="" category="inline-code"></block></block>
   <block id="f8c0ac61744d21aa2bb63045fa011ea5" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 를 사용하여 NVE 또는 NAE용 새 컨트롤러 모듈을 구성하십시오<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="f1ce13c7bdc83a7edc61f28f1b45e2b3" category="paragraph">새 컨트롤러의 교체된 컨트롤러 또는 고가용성(HA) 파트너가 NetApp Volume Encryption(NVE) 또는 NetApp Aggregate Encryption(NAE)을 사용하는 경우, NVE 또는 NAE에 새 컨트롤러 모듈을 구성해야 합니다.</block>
@@ -4076,7 +4045,6 @@
   <block id="80995018ae45f8a93e75a901e9a9749b" category="list-text">노드 2에서 파트너 시스템 ID 설정:</block>
   <block id="92b03f1ecf66a6ee3c76ebd05afbddda" category="list-text">노드 2의 로더 프롬프트에서 를 확인합니다<block ref="d18fd3db938a26ebbd3f74de41f0b73f" prefix=" " category="inline-code"></block> 노드 2의 경우:</block>
   <block id="bd7f71fd091a70c3f0b23cb5a356e64c" category="paragraph">새 노드를 설치한 후 새 노드가 원래 노드와 같은 버전의 ONTAP를 실행 중인지 netboot에 확인해야 할 수 있습니다. netboot라는 용어는 원격 서버에 저장된 ONTAP 이미지에서 부팅됨을 의미합니다. netboot를 준비할 때 시스템이 액세스할 수 있는 웹 서버에 ONTAP 9 부트 이미지 사본을 넣어야 합니다.</block>
-  <block id="7ab8dfe9c5b72e3472374677882c9caf" category="paragraph">교체 중인 클러스터 노드에서 루트 볼륨 암호화를 사용하면 ONTAP 소프트웨어가 디스크에서 볼륨 정보를 읽을 수 없습니다. 루트 볼륨에 대한 키를 복구합니다.</block>
   <block id="973101ddb988b90ce601f6442c898594" category="list-text">특수 부팅 메뉴로 돌아갑니다.<block ref="16c75f7ad51c79b1cf539c94cd168367" prefix=" " category="inline-code"></block></block>
   <block id="17c034fb2d21ea55cdb8a8e69c62f069" category="list-text">Onboard Key Manager 복구 비밀 설정 * 을 선택합니다</block>
   <block id="a6b415fe2d6a649b63be379924ad9e5d" category="list-text">를 입력합니다<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> 다음 프롬프트에서 다음을 수행합니다.</block>
@@ -4312,7 +4280,6 @@
   <block id="d66193c9edc97e7077c88870d9d9ad6c" category="summary">필요한 경우 ARL을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드할 때 노드 2에서 Key-manager 구성을 복원합니다.</block>
   <block id="9707fefafa207e02950a3cdf70cdbd1b" category="summary">ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드할 때 교체 컨트롤러 모듈로 노드2를 부팅합니다.</block>
   <block id="91ff7bbceee45b872acd93e9fe14cf71" category="doc">교체 시스템 모듈을 사용하여 노드2를 부팅합니다</block>
-  <block id="1bb2ae6581a2169a2cf35ba5eee4f9cc" category="cell">이전 노드2 컨트롤러</block>
   <block id="8fe807476a83934f02a511fe79b45ebf" category="cell">교체 노드2 시스템 모듈</block>
   <block id="2735dd3663daa820735ddd5f17d0bef5" category="cell">AFF A220
 AFF A200
@@ -4357,16 +4324,13 @@ FAS2720</block>
   <block id="cac76ada4fbfca68ed190eb21810e1af" category="cell">FAS2820</block>
   <block id="d12ea131bf417fe3ef7b6423e508e706" category="list-text">NetApp 세일즈 담당자에게 컨트롤러 업그레이드용 하드웨어를 수령했는지 확인했습니다.</block>
   <block id="798f018ee352fb079a57a34119747a3b" category="list-text">업그레이드를 위한 최소 ONTAP 버전을 실행하고 있습니다. 자세한 내용은 을 참조하십시오 <block ref="8294b96e46ba28730c909aaac28da089" category="inline-link-macro-rx"></block>.</block>
-  <block id="1155b04ebff43df03ca1b9ec1d6b56a7" category="paragraph">AFF A700 또는 FAS9000 시스템에서 패브릭 MetroCluster 또는 MetroCluster IP 구성을 업그레이드하려면 를 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> MetroCluster 업그레이드 및 Expansion_content에 대한 링크</block>
   <block id="0ad9e0a8a319618923e172d4571038eb" category="summary">필요한 경우 ARL을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드할 때 업그레이드된 노드1에서 Key-manager 구성을 복원합니다.</block>
   <block id="f41084761f1192d11c824e139538a13d" category="summary">필요한 경우 ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드할 때 스토리지 암호화를 구성하고, SSL 인증서를 설치하고, 키 관리 서버를 설정합니다.</block>
   <block id="9d5a4ff5c4d356c12c02e3a7f81a2ad1" category="summary">를 사용하여 ARL 업그레이드를 위한 2단계 프로세스 시퀀스<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 동일한 섀시에서 컨트롤러 모델을 업그레이드하는 데 필요한 명령입니다.</block>
   <block id="82896d30ec8a78dd386c091a8c2121e6" category="inline-link-macro">노드1 시스템 모듈을 교체합니다</block>
-  <block id="9a7b988f1726c98d374372c643b0f2d6" category="list-text"><block ref="9a7b988f1726c98d374372c643b0f2d6" category="inline-link-macro-rx"></block></block>
   <block id="5bbb6082cd93a16b76d8e1d7d3ef3684" category="list-text"><block ref="5bbb6082cd93a16b76d8e1d7d3ef3684" category="inline-link-macro-rx"></block></block>
   <block id="644e220a44e1ff19f9d586b2ec3ee2d5" category="summary">업그레이드를 시작하기 전에 동일한 섀시에서 컨트롤러 모델을 업그레이드할 수 있는 올바른 하드웨어가 있는지 확인하십시오.</block>
   <block id="03edb26b26a23464d3e656fd4bb1aa20" category="cell">업그레이드 중인 경우...</block>
-  <block id="010fb6bd96430e7065ef62ecb9af2e9b" category="cell">필수 사항...</block>
   <block id="4e106a6c623eb6811b42be00dbde2ef3" category="cell">컨트롤러 모듈 2개</block>
   <block id="a96a413dc366d34740f0c82530514332" category="cell">FAS2620 또는 FAS2720에서 FAS2820</block>
   <block id="327579b68dffec79f2bcb176142f3d56" category="cell">컨트롤러 2개 및 NVRAM 모듈 2개</block>
@@ -4391,29 +4355,21 @@ FAS2720</block>
   <block id="25c0a64ebb3d4dec1d638d209b3b73a2" category="paragraph">이러한 확인을 수행한 후 시스템에서는 루트가 아닌 애그리게이트와 NAS 데이터 LIF를 노드 2로 재배치하고 현재 교체 컨트롤러에서 실행되고 있습니다.</block>
   <block id="038a1f98f287c3e58631ad2264c784b5" category="summary">동일한 섀시에 있는 컨트롤러 모델의 ARL 업그레이드 중에 노드 2에 교체 시스템 모듈을 설치합니다.</block>
   <block id="7339c5b8269b308a3bb75b606b220a40" category="doc">노드 2에 교체 시스템 모듈을 설치합니다</block>
-  <block id="34fc38d77d703f82e3ea00d22de0aeb3" category="paragraph">노드 2에서 업그레이드를 위해 받은 교체 시스템 모듈을 설치합니다. 노드2는 시스템 뒷면에서 컨트롤러를 볼 때 섀시 오른쪽에 있는 컨트롤러 B입니다.</block>
   <block id="d1cf73ac3312e046217517b06817c8be" category="list-text">분리할 컨트롤러에서 콘솔, 관리, SAS 스토리지 및 데이터 네트워크 케이블을 비롯한 모든 케이블을 분리합니다.</block>
   <block id="d31ea2ed80c8ed7a812def7ec46c2274" category="admonition">베이 B는 하단의 섀시에 있습니다.</block>
   <block id="e5c4a336c6c9037915d316eae71744e6" category="admonition">섀시의 전원이 이미 켜져 있으므로 노드 2가 완전히 장착되면 바로 부팅됩니다. 노드 2가 부팅되지 않도록 하려면 NetApp 컨트롤러 모듈을 슬롯에 완전히 삽입하기 전에 콘솔 및 관리 케이블을 노드2 컨트롤러 모듈에 연결하는 것이 좋습니다.</block>
-  <block id="d44aaf207a0546e3b20cb2c25c036681" category="list-text">자동 부팅을 중단하고 나면 로더 프롬프트에서 노드 2가 중지됩니다. 시간에 자동 부팅을 중단하지 않고 노드 2가 부팅을 시작하면 메시지가 표시될 때까지 기다린 다음 * Ctrl-C * 를 눌러 부팅 메뉴로 이동합니다. 부팅 메뉴에서 노드가 중지되면 옵션 8을 사용하여 노드를 재부팅하고 재부팅 중에 자동 부팅을 중단합니다.</block>
   <block id="0999b94892b1b34eb0ef08c34b267bc1" category="summary">ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드할 때 교체 모듈을 사용하여 node2 설치를 확인합니다.</block>
   <block id="0774c7bfeafd6a8db85f6f40e93164c5" category="paragraph">교체 시스템 모듈을 사용하여 node2 설치를 확인해야 합니다. 물리적 포트는 변경되지 않으므로 이전 노드 2에서 교체 노드 2로 물리적 포트를 매핑할 필요가 없습니다.</block>
   <block id="16c540fdea11cde8dcdbc04d5a6b8bf4" category="summary">ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드하려면 특정 도구와 문서가 있어야 합니다.</block>
   <block id="60990f5a7d4c2de72ffce9a721cd665f" category="summary">ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드할 때 교체 모듈을 사용하여 node1 설치를 확인합니다.</block>
-  <block id="2b142ba2fa1c8bc16a89b6e0586ac952" category="paragraph">교체 시스템 모듈을 사용하여 node1 설치를 확인해야 합니다. 물리적 포트는 변경되지 않으므로 이전 노드 1에서 교체 노드 1로 물리적 포트를 매핑할 필요가 없습니다.</block>
   <block id="b1a65206ecba20bb5f74f28f81b4f20b" category="admonition">업그레이드 중에는 네트워크 포트와 해당 연결이 변경되어서는 안 됩니다. 모든 포트는 올바른 브로드캐스트 도메인에 상주해야 하며 네트워크 포트 도달 가능성을 변경해서는 안 됩니다. 그러나 노드 2에서 노드 1로 LIF를 다시 이동하기 전에 네트워크 포트의 연결 가능성 및 상태를 확인해야 합니다.</block>
   <block id="3a3f289393d9aae4f5403ed3ce658b92" category="paragraph">3단계에서는 업그레이드된 시스템 모듈로 노드 1을 부팅하고 업그레이드된 노드1 설치를 확인합니다. NVE(NetApp Volume Encryption)를 사용하는 경우 키 관리자 구성을 복원합니다. 또한 노드 1의 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2에서 업그레이드된 노드 1로 재배치하고 노드 1에 SAN LIF가 있는지 확인합니다.</block>
   <block id="64a849a8de630f1ea4ad68009f78a51d" category="inline-link-macro">교체 시스템 모듈을 사용하여 노드1을 부팅합니다</block>
   <block id="f2b1226db11aca0a324fa7f209608175" category="list-text"><block ref="f2b1226db11aca0a324fa7f209608175" category="inline-link-macro-rx"></block></block>
   <block id="1b3e452c999601877239eefc02aa8eaf" category="summary">ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드할 때 발생할 수 있는 오류를 해결합니다.</block>
-  <block id="787dc86c93b2163933d361ba97fb8b70" category="summary">ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드할 때 node1 시스템 모듈을 교체합니다.</block>
-  <block id="3fca19dca268b33bb2d8b5b9865f4e29" category="paragraph">업그레이드 구성을 위해 node1 시스템 모듈을 교체합니다.</block>
   <block id="1cf4820f0a2cb46c48512331c3f04acd" category="inline-xref">AFF A220, AFF A200, AFF C190, FAS2620 또는 FAS2720 컨트롤러 모듈을 교체합니다</block>
-  <block id="ca859dc13cd573fdc0df9b1937478c90" category="list-text"><block ref="91d6479e3744cf9cf348a15cfdc40966" category="inline-xref-macro-rx"></block></block>
-  <block id="9519712c4ba6b7ea2b396cfebce143b9" category="list-text"><block ref="4380f90063e50d168f23f781bdd68156" category="inline-xref-macro-rx"></block></block>
   <block id="6a026e841b097cf406a7660b7c4ed603" category="paragraph">이 단계에서는 노드 1이 중단되며 모든 데이터를 노드 2에서 제공합니다. 노드 1과 노드 2는 동일한 섀시에 있고 동일한 전원 공급 장치 세트로 전원이 공급되므로 섀시의 전원을 끄지 마십시오. 노드1 컨트롤러 모듈만 조심스럽게 분리해야 합니다. 일반적으로 노드 1은 시스템 뒷면에서 컨트롤러를 볼 때 섀시 왼쪽에 있는 컨트롤러 A입니다. 컨트롤러 레이블은 컨트롤러 모듈 바로 위의 섀시에 있습니다.</block>
   <block id="c5c5d4bed82b3aa15921eef0f13a3aa2" category="section-title">AFF A220, AFF A200, AFF C190, FAS2620 또는 FAS2720 컨트롤러 모듈을 제거합니다</block>
-  <block id="63d6811d18004212a8a99f9cbad84f37" category="paragraph">컨트롤러 내의 구성 요소에 액세스하려면 먼저 시스템에서 컨트롤러 모듈을 분리한 다음 컨트롤러 모듈의 덮개를 분리해야 합니다.</block>
   <block id="359b2f64ed46d9bc640532f2fd8810c0" category="list-text">케이블을 케이블 관리 장치에 연결하는 후크 및 루프 스트랩을 푼 다음, 케이블이 연결된 위치를 추적하면서 컨트롤러 모듈에서 시스템 케이블과 SFP(필요한 경우)를 분리합니다.</block>
   <block id="73ffa1532dd710d7eb1520cb730fb392" category="paragraph">케이블 관리 장치에 케이블을 남겨 두면 케이블 관리 장치를 다시 설치할 때 케이블이 정리됩니다.</block>
   <block id="3e5a02473a086978bae6a6516ad46c5e" category="list-text">컨트롤러 모듈의 왼쪽과 오른쪽에서 케이블 관리 장치를 분리하여 한쪽에 둡니다.</block>
@@ -4421,14 +4377,12 @@ FAS2720</block>
   <block id="5fb9af22ffedd74df1492c91f96b8d7a" category="list-text">컨트롤러 모듈을 뒤집어 평평하고 안정적인 곳에 놓습니다.</block>
   <block id="0dc0820d363c65f7e12beec6160b793f" category="list-text">컨트롤러 모듈의 끝을 섀시의 입구에 맞춘 다음 컨트롤러 모듈을 반쯤 조심스럽게 시스템에 밀어 넣습니다.</block>
   <block id="73c39df93369189180566421495bd86b" category="list-text">캠 핸들을 열린 위치에 둔 상태에서 컨트롤러 모듈이 중앙판과 만나 완전히 장착될 때까지 단단히 밀어 넣습니다. 컨트롤러 모듈이 완전히 장착되면 잠금 래치가 올라갑니다. 캠 핸들을 잠금 위치로 닫습니다.</block>
-  <block id="3d642aff56195f4217e6874d1165bde1" category="list-text">자동 부팅을 중단하고 나면 로더 프롬프트에서 노드 1이 중지됩니다. 시간에 자동 부팅을 중단하지 않고 노드 1이 부팅을 시작하는 경우 메시지가 표시될 때까지 기다린 다음 * Ctrl-C * 를 눌러 부팅 메뉴로 이동합니다. 부팅 메뉴에서 노드가 중지되면 옵션 8을 사용하여 노드를 재부팅하고 재부팅 중에 자동 부팅을 중단합니다.</block>
   <block id="06fe1e1c3556d47d3a40caee57ba2411" category="section-title">AFF A700 또는 FAS9000 컨트롤러 및 NVRAM 모듈을 교체합니다</block>
   <block id="98b9e41d81ea8470149a461f166a4b92" category="summary">컨트롤러 업그레이드 후 이전 시스템이 더 이상 작동하지 않음을 NetApp에 알려 주십시오.</block>
   <block id="fd03f78134ad299c30781abefe876b6e" category="summary">ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드할 때 SnapMirror 전송 및 관계를 다시 시작합니다.</block>
   <block id="f941430cfefa788e4cbb0ace9529e703" category="summary">를 사용하여 ARL 업그레이드를 위한 1단계 프로세스 시퀀스<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 를 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드합니다.</block>
   <block id="0c266b0ddf80e06776f6545018e3be7b" category="summary">ARL을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드할 때 노드 2를 종료하고 랙 또는 섀시에서 분리합니다.</block>
   <block id="a08203ab52ab6d68a5604711cce7c11e" category="summary">ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드할 때 교체 컨트롤러 모듈로 노드1을 부팅합니다.</block>
-  <block id="85ea4cd2d33f91ef83959fa30a2111e3" category="cell">이전 노드1 컨트롤러</block>
   <block id="ed07f6ce0425575f59edaf54f2a15e4d" category="cell">교체 노드1 시스템 모듈</block>
   <block id="431479c194f9a621e786a261b511b5a5" category="cell">AFF A150 컨트롤러 모듈 ^1^</block>
   <block id="908914fc995dc89684c0447580cd8d0d" category="cell">FAS2820 컨트롤러 모듈 ^1^</block>
@@ -4437,14 +4391,9 @@ FAS2720</block>
   <block id="c69bd0ba9f1c79a4e93d2294615d5288" category="list-text">"22/7"을 입력하고 숨겨진 옵션을 선택하여 이전 노드1 디스크를 교체 노드1에 재할당합니다<block ref="b4ab52f7185d092e3aa56aaa9905e7e1" prefix=" " category="inline-code"></block> 부팅 메뉴에서 노드가 중지되면</block>
   <block id="d667641e845b5f1c132a905ef22a2ba3" category="summary">ARL을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드할 때 다른 단계에서 재부팅, 패닉 또는 전원 사이클을 진행하는 등 시스템이 충돌할 수 있습니다.</block>
   <block id="f5ef11ad502e748c59323d68be5d0747" category="summary">이전 시스템 섀시 및 디스크를 유지하면서 이전 시스템을 교체 시스템으로 전환하여 컨트롤러 하드웨어를 업그레이드할 수 있습니다.</block>
-  <block id="56b0558542c9b34984cbd02e816bd4d8" category="paragraph">이 절차에서는 다음 시스템 구성에 대해 ARL(Aggregate Relocation)을 사용하여 HA 쌍의 컨트롤러 하드웨어를 중단 없이 업그레이드하는 방법에 대해 설명합니다. 이 절차는 이전 시스템 섀시 및 디스크를 유지하면서 이전 시스템을 교체 시스템으로 변환합니다.</block>
-  <block id="02fed2c78ff53b2f6e3c9fabf2ebfdcc" category="admonition">이 절차는 다음 업그레이드 구성에 엄격히 적용됩니다. Do * Not * 이 절차를 사용하여 다른 시스템 조합 간에 업그레이드를 수행합니다.</block>
-  <block id="3fe507461c708cfe67db6ed39b069266" category="cell">더 이상 없습니다</block>
   <block id="9e87e1dea37ce673e27a23a144a4e0ad" category="cell">교체 시스템</block>
   <block id="eae7ed824c301543a7e09d88d74d7b19" category="cell">지원되는 ONTAP 버전</block>
   <block id="c0aa270d19e4484079bd0c1488dd7e54" category="cell">9.10.1P15, 9.11.1P11, 9.12.1P5 이상</block>
-  <block id="1b09c77bbb88991cb420df4ea90eb3b8" category="admonition">AFF A200은 9.11.1 이후의 ONTAP 버전을 지원하지 않습니다.</block>
-  <block id="9558d12002264bd41bf4a596c8f8ac1c" category="admonition">FAS2620은 9.11.1 이후의 ONTAP 버전을 지원하지 않습니다.</block>
   <block id="fe8a27b3504b515f0bd7508cfd89776a" category="paragraph">9.13.1 이상(FAS2820)</block>
   <block id="5abae7190ce598d45fe390e44304cde0" category="cell">9.13.1 이상</block>
   <block id="69fd94bb4e9440260d76785fb2e5370b" category="cell">9.10.1P10, 9.11.1P6 이상</block>
@@ -4452,14 +4401,11 @@ FAS2720</block>
   <block id="9c1e88e5963163799eaba4d977d7d52f" category="paragraph">위 표의 최소 ONTAP 버전은 필수입니다. 이러한 ONTAP 버전에는 업그레이드 중에 섀시 내에서 컨트롤러 유형을 혼합하는 데 필요한 서비스 프로세서 또는 BMC(베이스보드 관리 컨트롤러) 펌웨어 버전이 있습니다.</block>
   <block id="48adbf20fd6c8a4139f6b2da13a4ed5b" category="paragraph">이 절차를 수행하는 동안 루트가 아닌 애그리게이트를 이전 컨트롤러 노드 간에 마이그레이션합니다. 설치 후 비루트 애그리게이트를 이전 컨트롤러 노드에서 교체 컨트롤러 노드로 마이그레이션합니다. 업그레이드 절차 중에 업그레이드 중인 노드에서 호스팅되는 데이터에 액세스할 수 있습니다.</block>
   <block id="1f08ef6e3750d69789334fc412377b8b" category="list-text">ONTAP 버전에서 지원되지 않는 스위치와 업그레이드하려는 교체 시스템이 있는 경우 을 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> Hardware Universe_에 대한 링크</block>
-  <block id="9016b0ff2820f5a72022aceaaea6350a" category="list-text">이 절차는 AFF A200, AFF A220, AFF C190, FAS2620, FAS2720에만 적용됩니다. AFF A700 및 FAS9000 시스템 AFF A150, FAS2820, AFF A900 또는 FAS9500 시스템으로 업그레이드해야 하는 다른 모든 컨트롤러 모델은 을 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 에 연결하려면 _ "system controller replace" 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 업그레이드하고 _ 를 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드하십시오.</block>
-  <block id="373edaf8d573901bcaba4be302784a3b" category="list-text">AFF A200, AFF A220, AFF C190, FAS2620, FAS2720에서 업그레이드할 경우 AFF A700 또는 FAS9000 시스템 다운타임. 스토리지를 이동하거나 기술 지원 팀에 문의하여 컨트롤러 하드웨어를 업그레이드할 수 있습니다. 을 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 볼륨 또는 스토리지 _ 을(를) 이동하여 _ 업그레이드 에 연결합니다.</block>
   <block id="c6d40070c0f6f6a69481f2755cd2ca3d" category="summary">ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드하는 데 필요한 참조 콘텐츠 및 웹 사이트</block>
   <block id="61ade0ef1111239ef33a751208b321eb" category="inline-link-macro">"system controller replace" 명령을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드합니다</block>
   <block id="70d1727ffc9c452707805fb17e6a5b52" category="cell"><block ref="70d1727ffc9c452707805fb17e6a5b52" category="inline-link-macro-rx"></block></block>
   <block id="654c7caa1182ea592a8682474243e9b1" category="summary">ARL을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드할 때 노드 2에 있는 node1 NAS 데이터 LIF가 노드 2에서 노드 1로 재배치되는지 확인합니다.</block>
   <block id="1fa11ae5ee8ea18f6cb8353961e9a024" category="paragraph">5단계에서는 업그레이드된 노드 2에 대해 받은 새 시스템 모듈을 설치한 다음 netboot 노드 2를 설치합니다.</block>
-  <block id="474df8367398fad45b2effa9ec6a2b66" category="list-text"><block ref="474df8367398fad45b2effa9ec6a2b66" category="inline-link-macro-rx"></block></block>
   <block id="de5811c666f3438943e03926d9b216fd" category="summary">동일한 섀시에서 컨트롤러 모델을 업그레이드하는 ARL 절차가 어떻게 작동하는지 이해합니다.</block>
   <block id="24d8d7f98a89f04d7947553a1d35d0d3" category="inline-link-macro">2단계: 리소스를 재배치하고 노드1을 폐기합니다</block>
   <block id="bf5ddfba4848decf8a35ca037bac6ce0" category="cell"><block ref="bf5ddfba4848decf8a35ca037bac6ce0" category="inline-link-macro-rx"></block></block>
@@ -4481,7 +4427,6 @@ FAS2720</block>
   <block id="a4bac589c9731b4d185716354e684665" category="paragraph">노드 2의 경우, 를 참조하십시오<block ref="d18fd3db938a26ebbd3f74de41f0b73f" prefix=" " category="inline-code"></block> 업그레이드할 노드 1의 노드 1이어야 합니다.</block>
   <block id="b2573e3929d9e0e5f247b35cdab987cd" category="summary">ARL을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드할 때 노드 2와 HA 쌍을 비활성화하고 노드 1을 종료합니다.</block>
   <block id="5d629f141961a74282ed5faad7d9fd6d" category="summary">ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드할 때 해당 교체 시스템 모듈을 교체한 후 node1을 netboot 해야 합니다.</block>
-  <block id="9da52f4c338cfa7c6860f998cea8525e" category="paragraph">교체 컨트롤러 모듈의 부팅 미디어에 설치된 ONTAP 버전은 섀시에 설치하고 전원을 켜지 않는 한 확인할 수 없습니다. 교체 시스템 부팅 미디어의 ONTAP 버전은 업그레이드할 이전 시스템에서 실행 중인 ONTAP 버전과 동일해야 하며 기본 부팅 이미지와 백업 부팅 이미지가 모두 일치해야 합니다. 업그레이드에 대해 지원되는 최소 ONTAP 버전을 확인하려면 를 참조하십시오 <block ref="8294b96e46ba28730c909aaac28da089" category="inline-link-macro-rx"></block>.</block>
   <block id="88af1dd7397a85d0d0a5307af0325f9e" category="paragraph">netboot에 이어 를 수행하여 이미지를 구성할 수 있습니다<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block> 명령을 입력합니다. 이전에 컨트롤러 모듈을 다른 클러스터에서 사용한 경우, 를 참조하십시오<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block> 명령은 부팅 미디어의 나머지 구성을 지웁니다.</block>
   <block id="f4fe41582e347c8727fbdf631e2f1423" category="summary">ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드할 때 발생할 수 있는 애그리게이트 재배치 문제를 해결합니다.</block>
   <block id="c4eeac6e7cbe204225f518d511b60b39" category="list-text">4단계 후 노드 2를 새 시스템 모듈로 교체합니다.</block>
@@ -4521,17 +4466,13 @@ FAS2720</block>
   <block id="c37a160c512fc3e06086a2fc8cf83e54" category="summary">를 사용하여 ARL 업그레이드를 위한 4단계 프로세스 시퀀스<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 동일한 섀시에서 컨트롤러 모델을 업그레이드하는 데 필요한 명령입니다.</block>
   <block id="e20aa86d3860fd19e878d3bc582dced8" category="paragraph">2단계에서는 노드 1이 아닌 Aggregate 및 NAS 데이터 LIF를 노드 2로 이동합니다. 이 프로세스는 대부분 자동화되어 있으며 사용자가 상태를 확인할 수 있도록 작업이 일시 중지됩니다. 작업을 수동으로 재개해야 합니다. 필요한 경우 장애가 발생한 애그리게이트를 재이동하거나 거부권을 행사합니다. 또한 나중에 사용하기 위해 노드1 정보를 기록한 다음 해당 노드1 시스템 모듈을 바꾸고 노드1을 폐기하고 업그레이드된 노드1을 netboot에 기록합니다.</block>
   <block id="3f7870bbc941701fffee38d278aae849" category="paragraph">교체 모듈이 있는 노드 1을 부팅할 준비가 되었습니다. 이 섹션에서는 다음 업그레이드 구성에서 노드 1을 교체 모듈로 부팅하는 데 필요한 단계를 설명합니다.</block>
-  <block id="4426829ad46bcfc1fbd8d9a57e6d62dd" category="paragraph">^1^ 컨트롤러 모듈을 교체할 때 이전의 모든 연결을 교체 컨트롤러 모듈로 이동합니다.
-^2^ 컨트롤러와 NVRAM 모듈을 교체할 때 콘솔 및 관리 연결만 이동합니다.</block>
   <block id="9b04424299a27be6916f56e5fd474d5b" category="paragraph">교체 모듈이 있는 노드2를 부팅할 준비가 되었습니다. 시스템 모듈을 교체하여 업그레이드하는 경우 콘솔과 관리 연결만 이동합니다. 이 섹션에서는 다음 업그레이드 구성에서 노드 2를 교체 모듈로 부팅하는 데 필요한 단계를 설명합니다.</block>
   <block id="656030f2bc1d7ad32243a38c007d0770" category="paragraph">교체 시스템 모듈을 사용하여 노드 1을 부팅한 후 올바르게 설치되었는지 확인합니다. 노드 2가 쿼럼에 참가할 때까지 기다린 다음 컨트롤러 교체 작업을 다시 시작해야 합니다.</block>
   <block id="0213e016512152d4eca020a10cce819a" category="summary">를 사용하여 ARL 업그레이드를 위한 5단계 프로세스 시퀀스<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 동일한 섀시에서 컨트롤러 모델을 업그레이드하는 데 필요한 명령입니다.</block>
   <block id="fc654fff4abe048148189ff6fa5e3c9c" category="paragraph">올바른 설정을 확인하려면 HA 쌍이 설정되었는지 확인합니다. 또한 노드 1과 노드 2가 서로의 스토리지에 액세스할 수 있고 클러스터의 다른 노드에 속하는 데이터 LIF가 소유하지 않는지 확인합니다. 또한 모든 데이터 애그리게이트가 올바른 홈 노드에 있고 두 노드의 볼륨이 온라인 상태인지 확인합니다. 새 노드 중 하나에 통합 대상 어댑터가 있는 경우 포트 구성을 복원해야 하며 어댑터 사용을 변경해야 할 수도 있습니다.</block>
   <block id="55144b8e47bbff9fb360f3c30752b249" category="paragraph">1단계에서 사전 점검을 통해 업그레이드에 적합한 하드웨어가 있는지 확인하고, 필요한 경우 애그리게이트 소유권을 수정합니다. Onboard Key Manager를 사용하여 스토리지 암호화를 관리하는 경우 SnapMirror 관계를 중지하도록 선택할 수도 있습니다.</block>
-  <block id="d995b36f245f65afb6e029b66a19abe6" category="paragraph">업그레이드를 시작하기 전에 업그레이드에 적합한 하드웨어가 있는지 확인하십시오. 업그레이드에 따라 업그레이드하는 각 HA 쌍에 2개의 컨트롤러 모듈 또는 2개의 컨트롤러 모듈과 2개의 NVRAM 모듈이 있어야 합니다. 부품이 없는 경우 기술 지원 부서 또는 NetApp 영업 담당자에게 지원을 요청하십시오.</block>
   <block id="37e06fbb743ab1c1935f7d96672ee924" category="paragraph">해당 교체 노드2 시스템 모듈을 교체한 후 해당 모듈을 netboot 해야 할 수 있습니다. netboot라는 용어는 원격 서버에 저장된 ONTAP 이미지에서 부팅한다는 것을 의미합니다. netboot를 준비할 때 시스템이 액세스할 수 있는 웹 서버에 ONTAP 9 부트 이미지 사본을 넣습니다.</block>
   <block id="c6c7619b1c0744976ce686ab06900424" category="paragraph">1단계에서는 사전 점검을 통해 업그레이드에 적합한 하드웨어가 있는지 확인하고, 필요한 경우 애그리게이트 소유권을 수정합니다. Onboard Key Manager를 사용하여 스토리지 암호화를 관리하는 경우 특정 정보를 기록해야 하며 SnapMirror 관계를 중지할 수 있습니다.</block>
-  <block id="a39b228e0cb5998ca504b01d2a628df1" category="paragraph">교체 컨트롤러 모듈을 사용하여 노드 1을 부팅한 후 올바르게 설치되었는지 확인합니다. 노드 1이 쿼럼에 참가할 때까지 기다린 다음 컨트롤러 교체 작업을 다시 시작해야 합니다.</block>
   <block id="f0f9c628caff4d38eb141bb9b81f6441" category="paragraph">4단계에서는 비루트 애그리게이트 및 NAS 데이터 LIF를 노드 2에서 노드 3으로 재배치합니다. 또한 프로시저에서 나중에 사용할 수 있도록 필요한 노드2 정보를 기록한 다음 노드2를 폐기합니다.</block>
   <block id="36596c0816df78df5e957f4a98189433" category="inline-link">혼합 버전 ONTAP 클러스터</block>
   <block id="26e45a92e217288c9847a5d2ced10530" category="admonition">각 SVM(스토리지 가상 머신)에 대해 NetApp은 루트 볼륨을 이동하기 전에 클러스터에서 모든 비 루트 볼륨을 이동한 다음 한 번에 하나의 SVM에서 이 절차를 수행할 것을 권장합니다.</block>
@@ -4548,9 +4489,6 @@ FAS2720</block>
   <block id="666b05db74464377ceeeff39f469bcde" category="paragraph"><block ref="e31e4085164f9a5d9e1c0ec1ca25fc65" prefix="" category="inline-code"></block></block>
   <block id="214d6a2680fcbe83e2c825740dae5888" category="admonition">스토리지 구성에 암호화가 활성화된 볼륨이 포함되어 있는 경우 의 단계를 수행하십시오<block ref="f72c159bffbf92db3704805be06f351f" category="inline-link-rx"></block> 를 눌러 해당 볼륨을 이동합니다.</block>
   <block id="d59048f21fd887ad520398ce677be586" category="inline-link-macro">자세한 정보</block>
-  <block id="bfa6cc72f08aa2823167e389b6677da0" category="cell"><block ref="70d1727ffc9c452707805fb17e6a5b52" category="inline-link-macro-rx"></block>
-
-이 절차를 사용하여 ASA(All SAN Array)로 구성된 AFF 컨트롤러를 특정 모델 및 ONTAP 소프트웨어 버전의 ASA 컨트롤러로 업그레이드할 수 있습니다. <block ref="dd8a9320d133fc6bc4cebf159be26035" category="inline-link-macro-rx"></block>.</block>
   <block id="7fbeff1dd4b772a22c3163f4be820b9c" category="cell">ASA으로 구성된 AFF A220입니다</block>
   <block id="8b3182da28f8002496d5953dd474566c" category="cell">ASA A150 컨트롤러 모듈</block>
   <block id="ac8778c8e9d09a5fbedc8eed17a252ae" category="cell">ASA로 구성된 AFF A700</block>
@@ -4559,35 +4497,20 @@ FAS2720</block>
   <block id="0e096ce16590ab86950913510752010e" category="cell">ASA A900</block>
   <block id="0d1ed1043a9669e13b81f70da0ae56bb" category="list-text">ASA A150, AFF A150 또는 FAS2820 컨트롤러</block>
   <block id="4ab38fe544b152aed6d17891d6b4942f" category="list-text">ASA A900, AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈, 업그레이드에 필요한 부품</block>
-  <block id="eb33e3b941791062baa1b3c30813ebb4" category="list-text">ASA A900, AFF A900 또는 FAS9500 컨트롤러 모듈에서 실행 중인 노드 1이 부팅되고 아래와 같이 부팅 메뉴 옵션이 표시될 때까지 기다립니다.</block>
-  <block id="93f5e3175d1952ff3357d8c3f9f9ebcc" category="admonition">이 절차를 사용하여 ASA로 구성된 AFF A220을 대체할 수도 있습니다.</block>
-  <block id="fe86eeb48c828c1dfa6494efc6b765cd" category="admonition">이 절차를 사용하여 ASA로 구성된 AFF A700을 교체할 수도 있습니다.</block>
   <block id="23025a0dc68c759874f99e85d38e7ede" category="section-title">ASA A150, AFF A150 또는 FAS2820 컨트롤러 모듈을 설치합니다</block>
-  <block id="a75c1ab30ac0399f6d1308046a287763" category="paragraph">다음 절차를 사용하여 노드1에 ASA A150, AFF A150 또는 FAS2820 컨트롤러 모듈을 설치합니다.</block>
   <block id="d7a4c6633fbd09856927cf66880d4940" category="section-title">ASA A900, AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다</block>
-  <block id="8c93dbb7f81c4c2f4b51369fa9829a6f" category="paragraph">노드1에서 업그레이드를 위해 받은 ASA A900, AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다.</block>
   <block id="70b323769da32749c57798f0d8e782e5" category="list-text">AFF A700 NVRAM 모듈에서 ASA A900 또는 AFF A900 NVRAM 모듈로 코어 덤프 장치를 이동하지 마십시오.</block>
   <block id="74cfe385d1c40d7e412430b003bd358b" category="section-title">ASA A900, AFF A900 또는 FAS9500 NVRAM 모듈을 설치합니다</block>
-  <block id="ea5c1600c51a21564153c6355d751d45" category="paragraph">다음 절차를 사용하여 노드 1의 슬롯 6에 ASA A900, AFF A900 또는 FAS9500 NVRAM 모듈을 설치합니다.</block>
   <block id="ad6cf4baff2cddaf65f868a474f4ace2" category="section-title">노드1에 ASA A900, AFF A900 또는 FAS9500 컨트롤러 모듈을 설치합니다.</block>
   <block id="1e05d2a5422d862c8080573b0bffa1d7" category="paragraph">다음 절차를 사용하여 노드1에 ASA A900, AFA A900 또는 FAS9500 컨트롤러 모듈을 설치합니다.</block>
   <block id="d98f9591f3c1e658d83adfdac174718a" category="cell">ASA A900 컨트롤러 및 NVRAM 모듈 2</block>
   <block id="400a12b5c5627da96b0587ceaacabfa4" category="inline-xref">ASA A150, AFF A150 또는 FAS2820 컨트롤러 모듈을 노드2에 설치합니다</block>
-  <block id="6d3b42496d1ff908492db44e6a7a996a" category="list-text"><block ref="4e16cb21c83d577e1da9298c1d3d7001" category="inline-xref-macro-rx"></block></block>
   <block id="74cae3e1383e831697d2a89099232c43" category="inline-xref">ASA A900, AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 노드2에 설치합니다</block>
-  <block id="4f801783b3b54e6e155c8ba840a7984b" category="list-text"><block ref="090089409a807fc3646805d2e86db88d" category="inline-xref-macro-rx"></block></block>
-  <block id="abb999476ce6c21d1aa738091bf3cc58" category="section-title">노드2에 ASA A150, AFF A150 또는 FAS2820 컨트롤러 모듈을 설치합니다</block>
   <block id="78bd224431479d8d5cafd763cca39b7c" category="paragraph">업그레이드를 위해 받은 ASA A150, AFF A150 또는 FAS2820 컨트롤러 모듈을 노드2에 설치합니다. 노드2는 시스템 뒷면에서 컨트롤러를 볼 때 섀시 오른쪽에 있는 컨트롤러 B입니다.</block>
   <block id="a2f2586b0e85eb39267cb5c9d9e043d2" category="paragraph">노드2에서 업그레이드를 위해 받은 ASA A900, AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 설치합니다. 노드2는 시스템 뒷면에서 컨트롤러를 볼 때 섀시 오른쪽에 있는 컨트롤러 B입니다.</block>
-  <block id="5dc4e3a6479ea8cf51106f2ac874a145" category="paragraph">다음 절차를 사용하여 노드 2의 슬롯 6에 ASA A900, AFF A900 또는 FAS9500 NVRAM 모듈을 설치합니다.</block>
   <block id="f457531b113b8b894781ad94a1fa19d3" category="section-title">ASA A900, AFF A900 또는 FAS9500 컨트롤러 모듈을 노드2에 설치합니다</block>
-  <block id="839847d15e69edb34b89aa9634714fd2" category="paragraph">다음 절차를 사용하여 노드2에 ASA A900, AFF A900 또는 FAS9500 컨트롤러 모듈을 설치합니다.</block>
   <block id="86e722dcbc94e4ea341e26dd6af9f76a" category="cell">All SAN 어레이로 구성된 AFF A220(ASA)</block>
   <block id="4fdc3efb53d664a8ab709272358f7966" category="cell">9.13.1P1 이상</block>
-  <block id="184f38916b6639f5bdbf7619d90cebc3" category="paragraph">9.10.1P15, 9.11.1P11 이상</block>
-  <block id="d243c4c373219990c87996aba8af4741" category="paragraph">9.11.1P7(FAS2620)</block>
-  <block id="a4e58f4757b38ca2c59f5da9e90013a5" category="list-text">이전 컨트롤러의 각 노드에 있는 컨트롤러 모듈을 새 모듈로 바꿉니다. AFF A220, AFF A200, AFF C190, FAS2620 또는 FAS2720 시스템 업그레이드에 적용됩니다.</block>
-  <block id="15f948008082950e48724b1453dd6e11" category="list-text">이전 컨트롤러의 각 노드에 있는 컨트롤러와 NVRAM 모듈을 새 모듈로 바꿉니다. 이 내용은 AFF A700 또는 FAS9000 시스템 업그레이드에 적용됩니다.</block>
   <block id="6e43ae996b970f40321b42d34dd0b4b8" category="list-text">ASA A900, AFF A900 및 FAS9500 시스템은 하이 라인 전력(200V~240V)만 지원합니다. AFF A700 또는 FAS9000 시스템이 낮은 전력(100V에서 120V로)에서 실행되는 경우 이 절차를 사용하기 전에 AFF A700 또는 FAS9000 입력 전원을 변환해야 합니다.</block>
   <block id="97a6d360c94d9b7bc50b22cbefedff0a" category="cell">ASA A150에서 ASA로 구성된 AFF A220입니다</block>
   <block id="d6e2de75372db4a1d57d81d7f91749d1" category="cell">AFF A220, AFF A200 또는 AFF C190을 AFF A150으로 전환</block>
@@ -4653,7 +4576,6 @@ FAS2720</block>
   <block id="b40a504ccb3da532382333f0ef630e2d" category="list-text">iSCSI 호스트에서 SCSI 버스를 다시 검색합니다.</block>
   <block id="3ab536112aae2adb0154a97a03a97995" category="paragraph">제거된 경로는 이전 노드의 경로입니다.</block>
   <block id="5eb2f5a07f8114a82bfca62a5f95b81d" category="list-text">iSCSI 호스트에서 새 노드의 경로만 표시되는지 확인합니다.</block>
-  <block id="51cf3e0b9519e41f1200c5d24db755de" category="summary">애그리게이트 재배치, 볼륨 이동 또는 스토리지 이동을 통해 컨트롤러 하드웨어를 업그레이드합니다</block>
   <block id="a56ce7e82e6bd0d524ca8eadec0f388f" category="summary">새 iSCSI 연결을 생성하고 새 노드에 대한 iSCSI 경로를 다시 스캔하여 SAN 볼륨을 새 노드로 이동합니다.</block>
   <block id="74805bd861930fc25abc9a91446a2694" category="doc">Linux iSCSI 호스트를 새 노드로 이동합니다</block>
   <block id="c62a490dc179bcb1d44777cba5eb4845" category="paragraph">iSCSI SAN 볼륨을 새 노드로 이동하기 전에 새 iSCSI 연결을 생성하고 iSCSI 경로를 새 노드로 다시 스캔해야 합니다.</block>
@@ -4737,9 +4659,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="4a7fecfc06856645d10df298d5553ed7" category="paragraph">컨트롤러 하드웨어 업그레이드 절차에 대해 알아보십시오.</block>
   <block id="1f43d36a6bcfed2f5249ca5ba8e671ba" category="inline-link-macro">애그리게이트 재배치를 사용하여 업그레이드</block>
   <block id="8f9fb90f68730e000102778c18115044" category="list-text"><block ref="8f9fb90f68730e000102778c18115044" category="inline-link-macro-rx"></block></block>
-  <block id="51d3b2a6cd78fb20797c74bb50b689f5" category="paragraph">애그리게이트 재배치는 교체 절차입니다. 스위치가 없는 2노드 클러스터에 도움이 되는 새로운 노드로 클러스터를 확장하거나 축소할 필요가 없습니다. 애그리게이트 재배치를 통한 데이터 이동은 볼륨을 이동할 때 애그리게이트 간에 데이터를 복사하는 것보다 빠릅니다.</block>
-  <block id="73d856629c7408ec32b9b5ffa5af9ed6" category="list-text"><block ref="73d856629c7408ec32b9b5ffa5af9ed6" category="inline-link-macro-rx"></block></block>
-  <block id="8b9b2634fd898f04166a765851aba8f2" category="list-text"><block ref="8b9b2634fd898f04166a765851aba8f2" category="inline-link-macro-rx"></block></block>
   <block id="441e5e19c045de8820e45a5b22e45056" category="paragraph">* Note2 *: 무중단 업그레이드를 수행하려면 원래 시스템의 데이터를 저장할 수 있는 자체 스토리지와 셸프가 있는 새 시스템이 필요합니다.</block>
   <block id="272d55e2adea123757d8811eaaaebd88" category="paragraph">*Note3*: 볼륨을 이동하여 업그레이드할 때 새 노드에 가입하고 볼륨과 LIF를 새 노드로 이동한 다음 클러스터에서 제거할 노드의 연결을 해제합니다. 스위치가 없는 2노드 클러스터를 업그레이드하는 경우 새 노드를 추가하기 전에 클러스터 스위치 쌍을 사용하여 스위치 연결 클러스터로 변환합니다.</block>
   <block id="c024cf342a69d8b35b142333f2608aa5" category="sidebar">ONTAP 9.8 이상을 실행하는 시스템에서 애그리게이트를 재배치하여 업그레이드</block>
@@ -4910,4 +4829,371 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="ffcd2799f602c109648b4c27aba568da" category="list-text"><block ref="47a924df16a51eabe41998989d3e0fba" category="inline-link-rx"></block>.</block>
   <block id="1be12058e46f267981f165919be9807c" category="inline-link">새 시스템에서 지원하는 스토리지 디스크 수가 원래 시스템에서 지원하는 스토리지 디스크 수보다 크거나 같은지 확인합니다</block>
   <block id="d754882e684dd040085cc74dc3abd6e4" category="list-text"><block ref="40d68d018a02788fd741d99e7433a2dc" category="inline-link-rx"></block>.</block>
+  <block id="07538505561069fd5bcb91c73862236d" category="list-text">LOADER 프롬프트에서 시스템을 부팅합니다.</block>
+  <block id="11aad7411698d9a2a766f840bc4edcc3" category="paragraph">부팅 환경 프롬프트에서 Ctrl+C를 눌러 자동 부팅을 중단시킵니다.</block>
+  <block id="0d4005176e5e7e1fa879701f01da7baf" category="paragraph">또는 섹션 또는 두 섹션을 모두 완료해야 할 수도 <block ref="b22a2e603d310a795a7b59d2bdda39ee" category="inline-xref-macro-rx"></block> <block ref="5752cac0a470e06ffceef40fba1931c1" category="inline-xref-macro-rx"></block> 있습니다.</block>
+  <block id="7ed92f84948f4fe94d9e740b0e479a4e" category="paragraph-title">MetroCluster FC 구성</block>
+  <block id="5ffd3baa415444f7f3227edef43b10d9" category="paragraph">MetroCluster FC 구성에서는 재해 복구/페일오버 사이트 노드를 최대한 빨리 교체해야 합니다. 컨트롤러 모델이 일치하지 않을 경우 재해 복구 미러링이 오프라인 상태가 될 수 있으므로 MetroCluster 내의 컨트롤러 모델이 일치하지 않을 수 있습니다. 두 번째 사이트에서 노드를 교체할 때 명령을 사용하여<block ref="bf0b9d28548e0e53fb793faa9566bdc3" prefix=" " category="inline-code"></block> MetroCluster 검사를 생략합니다.</block>
+  <block id="df3d0238913361ab2420c20a053ba0d8" category="list-text">[[man_install4_step6]] node4의 전원을 켠 다음 Ctrl-C를 눌러 부팅 환경 프롬프트에 액세스하여 부팅을 중단합니다.</block>
+  <block id="5109ad8944e00ebd941b9f7cfd563728" category="list-text">Ctrl-C를 눌러 부팅 메뉴를 표시하고 유지보수 모드를 선택합니다.</block>
+  <block id="bded243b14f6ad1b4c632bdd333e5c2b" category="admonition">애그리게이트 재배치를 사용하여 AFF A800을 AFF A70 또는 AFF A90으로 업그레이드할 수도 있습니다. <block ref="d1dba95bc7d2bdf76ec2b452fc9b5611" category="inline-link-macro-rx"></block>..</block>
+  <block id="24a28632436fc3dd7e0e4fbde05fdf59" category="paragraph">애그리게이트 재배치는 교체 절차입니다. 스위치가 없는 2노드 클러스터에 도움이 되는, 새로운 노드로 클러스터를 확장하거나 축소할 필요가 없습니다. 애그리게이트 재배치를 통한 데이터 이동은 볼륨을 이동할 때 애그리게이트 간에 데이터를 복사하는 것보다 빠릅니다.</block>
+  <block id="21e5a4b07b3d917519fb1f0a2c21d347" category="list-text"><block ref="21e5a4b07b3d917519fb1f0a2c21d347" category="inline-link-macro-rx"></block></block>
+  <block id="2c4564f93114738d1a23cefcb9f1a209" category="paragraph">스토리지 이동을 통한 컨트롤러 하드웨어 업그레이드는 중단에 의한 절차입니다. 업그레이드를 시작하기 전에 일반적인 업그레이드 시나리오 및 업그레이드 고려 사항을 검토하십시오.</block>
+  <block id="7679a865afb03bdbcc1cbd8757f79d09" category="list-text"><block ref="7679a865afb03bdbcc1cbd8757f79d09" category="inline-link-macro-rx"></block></block>
+  <block id="70df8f2f5459940187f1edf7420f9c6b" category="paragraph">스토리지를 이동하여 업그레이드하려면 원래 노드를 준비하고 새 노드를 설정합니다. 일부 플랫폼 모델은 내부 스토리지를 새 노드로 전송하는 기능을 지원합니다. 디스크를 재할당하고 루트 볼륨 구성을 새 노드에 복원하고 네트워크 포트를 구성합니다.</block>
+  <block id="ffaf71c89815c9497697e87f8d77a27d" category="paragraph">볼륨 이동을 통한 컨트롤러 하드웨어 업그레이드는 중단 없이 진행됩니다. 업그레이드를 시작하기 전에 일반적인 업그레이드 시나리오 및 업그레이드 고려 사항을 검토하십시오.</block>
+  <block id="cf41c84e5298fdad396a8a0dd7eaf0f3" category="paragraph">볼륨을 이동하여 업그레이드하려면 원래 노드를 준비하고 새 노드를 클러스터에 가입해야 합니다. 볼륨을 새 노드로 이동하고 LIF를 구성한 다음 클러스터에서 원래 노드의 연결을 해제합니다.</block>
+  <block id="99a62a63bac74233e567cc3137cf29e8" category="paragraph">ONTAP 9.15.1에 도입된 AFF A70, AFF A90 또는 AFF A1K 시스템으로 업그레이드할 때 ONTAP는 스토리지 효율성을 사용하지 않는 볼륨을 포함하여 기존의 모든 씬 프로비저닝된 볼륨의 스토리지 효율성을 변환하고 하드웨어 오프로드 기능을 사용하는 새로운 스토리지 효율성 기능을 적용합니다. 이 프로세스는 자동 백그라운드 프로세스이며 시스템에 성능에 영향을 주지 않습니다.<block ref="7746afbac27a580f36b90211e9daf7d0" category="inline-link-rx"></block>..</block>
+  <block id="4b5907b5b5c704438991bdf09784779a" category="list-text">부팅 메뉴에서 8을 입력하여 노드를 재부팅하고 자동 부팅 중에 Ctrl-C를 눌러 LOADER 프롬프트에서 노드를 중지합니다.</block>
+  <block id="ee537959cbe6c4957342c94d3801abf7" category="doc">ARL 업그레이드 절차를 선택합니다</block>
+  <block id="7e077786789216bd7864197dde6da988" category="cell">9.15.1 이상</block>
+  <block id="abf9ebbea401affbe4640962b00393d7" category="inline-link-macro">"system controller replace" 명령을 사용하여 ONTAP 9.15.1에 도입된 컨트롤러 하드웨어를 업그레이드합니다</block>
+  <block id="a98caac8456398a760c308df55a83cb5" category="cell"><block ref="a98caac8456398a760c308df55a83cb5" category="inline-link-macro-rx"></block></block>
+  <block id="d406be867b5acefe539dcc5fb35b0d2f" category="cell"><block ref="257ce5671d801ab32735a8f227cd7f0b" category="inline-link-macro-rx"></block> 이 절차를 사용하여 ASA(All SAN Array)로 구성된 AFF 컨트롤러를 특정 모델 및 ONTAP 소프트웨어 버전의 ASA 컨트롤러로 업그레이드할 수 있습니다. <block ref="dd8a9320d133fc6bc4cebf159be26035" category="inline-link-macro-rx"></block>..</block>
+  <block id="3f050c809f63ade1d8b10bf424bb198a" category="list-text">[[auto_check_4_step17]] 자동 부팅 중에 Ctrl-C를 눌러 LOADER &gt; 프롬프트에서 노드를 중지합니다.</block>
+  <block id="e2de59a5a77b66213e7d85b56f1eb224" category="list-text">LOADER 프롬프트에서 유지보수 모드로 전환합니다.</block>
+  <block id="03052ce84c74abac0f8f7b511f002de5" category="list-text">[[auto_check_4_step22]] LOADER 프롬프트에서 부팅합니다.</block>
+  <block id="a6cb6b55dcfc4f7ab4204a180701bf3a" category="paragraph">교체할 클러스터 노드가 루트 볼륨 암호화를 사용하면 ONTAP가 디스크에서 볼륨 정보를 읽을 수 없습니다. 루트 볼륨에 대한 키를 복구합니다.</block>
+  <block id="eac6b735741ae2d06ec685407e7f5a0d" category="list-text">특수 부팅 메뉴로 돌아갑니다.</block>
+  <block id="a0c89c7f9eddb57bbf77129aeb1df2d7" category="paragraph"><block ref="16c75f7ad51c79b1cf539c94cd168367" prefix="" category="inline-code"></block></block>
+  <block id="4c170add63df84e26ead3004dbeeeef6" category="list-text">[[auto_check3_step17]] 자동 부팅 중에 Ctrl-C를 눌러 LOADER &gt; 프롬프트에서 노드를 중지합니다.</block>
+  <block id="d22b7f0c9d1f5dfcf90bd4605f1ab859" category="list-text">[[step18]] LOADER 프롬프트에서 유지보수 모드로 전환합니다.</block>
+  <block id="321edba91f1e895b1f937783de177539" category="list-text">[[auto_check3_step22]] LOADER 프롬프트에서 부팅합니다.</block>
+  <block id="5c525a63c83c5d59d27e24ad86c08a02" category="doc">1단계 개요</block>
+  <block id="f573bb3eeb9174dab03ceae86dd5037b" category="doc">2단계 개요</block>
+  <block id="b12602b93723852b1ef13eedb84bcc6f" category="doc">3단계 개요</block>
+  <block id="2d0e6e4fca95e7387b98cd7789993c98" category="doc">4단계 개요</block>
+  <block id="717cc6ee9a2432d4411971223dcae12c" category="doc">5단계 개요</block>
+  <block id="15438a4adb78575340e3c2af4f16d3f6" category="doc">6단계 개요</block>
+  <block id="d80af6498c25c8c11309c3ba8bd4d849" category="cell">기존 노드1 컨트롤러</block>
+  <block id="53270fbfda62583949b287e08ae3d063" category="cell">AFF A800 를 참조하십시오</block>
+  <block id="68b41ed58ede8c5f3328de603c819a2b" category="cell">AFF A90 또는 AFF A70</block>
+  <block id="dd567b5a706dd8ccfbd79a4b82d52fa2" category="paragraph">^1^ 컨트롤러 모듈을 교체할 때 이전의 모든 연결을 교체 컨트롤러 모듈로 이동합니다.</block>
+  <block id="be6260f05263e7a701717c2f0c220531" category="paragraph">^2^ 컨트롤러와 NVRAM 모듈을 교체할 때 콘솔 및 관리 연결만 이동합니다.</block>
+  <block id="f43d748a03c080b02dcaa50514cb9e0f" category="list-text">(AFF A800 업그레이드만 해당) LOADER 프롬프트에서 유지보수 모드로 전환:</block>
+  <block id="f0cb39a4312675573e21f25b336e9dbd" category="list-text">확인 프롬프트에 응답합니다<block ref="a6105c0a611b41b08f1209506350279e" prefix=" " category="inline-code"></block> .</block>
+  <block id="f45139b90206dbbff89f2b0840357906" category="paragraph"><block ref="90e0991b70398b08e4e3eb0ae46c4163" prefix="" category="inline-code"></block>..</block>
+  <block id="d7591586f5c58a0e1b99cc533ea31ad7" category="paragraph">NS224 쉘프 또는 스토리지 스위치에 연결된 모든 100GbE 포트는 아래 예제 출력에 표시된 대로 포트로 보고되어야<block ref="ddecebdea58b5f264d27f1f7909bab74" prefix=" " category="inline-code"></block> 합니다.</block>
+  <block id="8bb737d8073126f53335b15e29fca66e" category="list-text">에 나와 있는 스토리지 암호화 부트인수를 확인하고 <block ref="14be0e4972f39cec1df5e6dd8eddf776" category="inline-xref-macro-rx"></block>재설정합니다.</block>
+  <block id="1eff79a166c04d815203556b3432c819" category="list-text">LOADER 프롬프트에서 다음을 부팅합니다.</block>
+  <block id="2e1458abf9be810e3c1b32482a2fb654" category="cell">기존 노드2 컨트롤러</block>
+  <block id="1a68d75a6401790bda4f04fcd5250d89" category="cell">AFF A90 또는 AFF A70</block>
+  <block id="5f9fde3ed8fab53307d0d33e0b21555f" category="doc">공유 클러스터 - HA 및 스토리지를 위한 케이블 노드1(AFF A800 업그레이드만 해당)</block>
+  <block id="d7c50b232c0b6695dad67576c458f2b7" category="paragraph">이전에 AFF A800 노드 1에 연결되었던 모든 클러스터, HA, 스토리지 및 데이터 연결을 이제 새로 설치된 AFF A90 또는 AFF A70 노드1에 연결해야 합니다.</block>
+  <block id="3f96763067b8ef1bea6f3b7936e59b10" category="paragraph">다음 표에서는 스위치가 없는 2노드 클러스터 구성의 스위치 포트 사용량을 보여 줍니다.</block>
+  <block id="60aaf44d4b562252c04db7f98497e9aa" category="cell">포트</block>
+  <block id="ed062d9f9c55cc3a6f727877095b3f8a" category="cell">AFF A800 노드</block>
+  <block id="db1c84ab8d4c1301a2addd88287d311f" category="cell">AFF A90 노드</block>
+  <block id="69b189cd8b8f58096e01e64ab2755da3" category="cell">AFF A70 노드</block>
+  <block id="249694a485fc5d3289c38986b4f8e887" category="cell">클러스터</block>
+  <block id="922c556baf6272bffc4fa28b2e9a0bbc" category="cell">e0a를 참조하십시오</block>
+  <block id="9cb7b36b3f2bccc776862e6f2f494077" category="cell">e1a를 참조하십시오</block>
+  <block id="e0fed059ac14c8082f4d3e79dfb3795c" category="cell">e7a(e7a가 없는 경우 e1b 사용)</block>
+  <block id="e737b5ac24a63afc00e81377a906728d" category="cell">e1b를 참조하십시오</block>
+  <block id="594c16ca0695f6665d7cf4971707adf6" category="cell">HA</block>
+  <block id="22fe67c2e87caff18249cf1804bbeaad" category="cell">e0b를 참조하십시오</block>
+  <block id="25680572954453a95472a5eb91bda5fd" category="cell">연결하지 마십시오</block>
+  <block id="87a16f3e2cd128ff96898d9ebca2a173" category="cell">SAS 스토리지 포트(있고 사용되는 경우)</block>
+  <block id="c6d464573f83b68eae557ca5213c2dbe" category="cell">사용 가능한 모든 포트</block>
+  <block id="1106a2319bc9e3e60b2eb082fdf3e891" category="cell">NS224 쉘프용 이더넷 스토리지 포트</block>
+  <block id="bf88a79b7721bdcefd6f46ff3e6e823a" category="cell">이더넷 스토리지 접속 매핑을 참조하십시오</block>
+  <block id="98c565adb9d07742bd39f0d8f62a6a4a" category="paragraph">스위치가 연결된 클러스터의 경우 AFF A90 또는 AFF A70 노드의 동일한 클러스터 포트가 동일한 스위치에 있어야 합니다. 예를 들어, 업그레이드가 완료되면 노드1의 E1A와 노드2의 E1A가 하나의 클러스터 스위치에 연결되어야 합니다. 마찬가지로, 양쪽 노드의 두 번째 클러스터 포트를 두 번째 클러스터 스위치에 연결해야 합니다. 공유 클러스터 HA 포트의 교차 연결, 노드 1의 E1A가 스위치 A에 연결되고 노드 2의 E1A가 스위치 B에 연결되어 HA 통신 장애를 방지합니다.</block>
+  <block id="b6c0f97a30874aed966651e5abc3c11d" category="cell">AFF A70 및 AFF A90</block>
+  <block id="11c23a28b09e8dab4fd29659b5d908e1" category="list-text">업그레이드에 필요한 AFF A90 컨트롤러 2개 또는 AFF A70 컨트롤러 2개 및 모든 입출력 모듈 100GbE 케이블의 필요한 길이</block>
+  <block id="2c379faac9baae13e7fda4f15aafa273" category="list-text">AFF A800, AFF A700 또는 FAS9000 시스템에서 FlexArray 가상화 소프트웨어를 사용하고 있습니다.</block>
+  <block id="5c0e76f0393e88c4759906519a65389b" category="paragraph">AFF A800, AFF A700 또는 FAS9000 시스템에서 MetroCluster IP 구성을 업그레이드하려면 MetroCluster 업그레이드 및 expansion_content 링크에 대한 링크를 참조하십시오. <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block></block>
+  <block id="eecbe04600f481ed25c05128afed299a" category="paragraph">ARL(Aggregate Relocation)을 사용하고 기존 시스템을 교체 시스템으로 변환하여 기존 시스템 섀시 및 디스크를 유지하면서 HA 쌍에서 컨트롤러 하드웨어를 중단 없이 업그레이드할 수 있습니다.</block>
+  <block id="fae8c59d10192f0790e2e23a1d59782c" category="admonition">이 절차는 다음 업그레이드 구성에 엄격히 적용됩니다. 다른 시스템 조합 간 업그레이드를 수행하려면 * 이 절차를 사용하지 마십시오.</block>
+  <block id="d00efbc2d49af21156c8dcb9b8cb3a29" category="cell">기존 시스템</block>
+  <block id="ef0d9aeefdd01090b7d838fdbc756532" category="cell">AFF A800 1호</block>
+  <block id="120ae360daecd24b580b71f9f2766bbc" category="cell">9.15.1</block>
+  <block id="f60554150b9183af4229445611dee7e7" category="paragraph">9.10.1P15, 9.11.1P11 이상</block>
+  <block id="b7f5f3e815fc26505623dcbc51f6b401" category="paragraph">(2) (2) (2) (2</block>
+  <block id="de800e8602c1bb83b0bea67e9b57ae7d" category="paragraph">1. ONTAP 9.15.1에 도입된 시스템으로 업그레이드할 때 ONTAP는 스토리지 효율성을 사용하지 않는 볼륨을 포함하여 기존의 모든 씬 프로비저닝된 볼륨의 스토리지 효율성을 변환하고 하드웨어 오프로드 기능을 사용하는 새로운 스토리지 효율성 기능을 적용합니다. 이 프로세스는 자동 백그라운드 프로세스이며 시스템에 성능에 영향을 주지 않습니다.<block ref="7746afbac27a580f36b90211e9daf7d0" category="inline-link-rx"></block>..</block>
+  <block id="43d7379ace473361bbbcf942aef43f03" category="paragraph">AFF A200과 FAS2620 시스템은 9.11.1 이후 ONTAP 버전을 지원하지 않습니다.</block>
+  <block id="5cfd2d4152e78b9d89cbc6307d966fda" category="cell">기존 항목...</block>
+  <block id="592a3b45c9297fe905b909e9ac714fad" category="cell">다음을 수행합니다.</block>
+  <block id="c385101e398b6027b97391488af9e4ec" category="cell">2개의 AFF A800 컨트롤러, NVRAM 및 모든 I/O 모듈을 새로운 컨트롤러 및 I/O 모듈로 바꿉니다.</block>
+  <block id="1445b140af84df0e7f83e7c1a538e1ae" category="cell">AFF A220, AFF A200, AFF C190, FAS2620 또는 FAS2720</block>
+  <block id="5bf9fac506c2d5a50b8a1964e08bbbe2" category="cell">이전 컨트롤러의 각 노드에 있는 컨트롤러 모듈을 새 모듈로 바꿉니다. ^1^</block>
+  <block id="86c15a425269c6a2503b9871021e6df8" category="cell">AFF A700 또는 FAS9000</block>
+  <block id="ffb5803a40f7451a65b383c9c399ec42" category="cell">이전 컨트롤러의 각 노드에 있는 컨트롤러와 NVRAM 모듈을 새 모듈로 바꿉니다. ^1^</block>
+  <block id="24568fe495fa036bab259b92b51eb0ff" category="paragraph">1 I/O 카드, 데이터 케이블, 디스크 선반 및 디스크를 이동, 분리 또는 재연결할 필요가 없습니다.</block>
+  <block id="b4c00fa6a53f5505ba204001ed858b2f" category="paragraph">이 절차에서는 ARL(Aggregate Relocation)이라는 메서드를 사용합니다. ARL은 HA 구성 및 클러스터 인터커넥트 통신을 활용하여 루트가 아닌 애그리게이트의 소유권을 동일한 클러스터 내에서 공유하는 경우 노드 간에 이동할 수 있습니다.</block>
+  <block id="7f42c48311ba942f81d7a07c44c47d3b" category="admonition">node1 * 및 * node2 * 라는 용어는 이 문서의 노드 이름에 대한 참조용으로만 사용됩니다. 이 절차를 수행할 때는 노드의 실제 이름을 바꿔야 합니다.</block>
+  <block id="11d755457053a5ccf26802d64ffcf701" category="list-text">이 절차는 AFF A800, AFF A200, AFF A220, AFF C190, FAS2620, FAS2720, AFF A700 및 FAS9000 시스템 AFF A90, AFF A70, AFF A150, FAS2820, AFF A900으로 업그레이드해야 하는 다른 모든 컨트롤러 모델의 경우 또는 FAS9500 시스템의 경우, ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 업그레이드하려면 "system controller replace" 명령 사용 _ 및 _ aggregate relocation을 사용하여 ONTAP 9.8 이상 _content를 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드하려면 을 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> .</block>
+  <block id="64930981c9648be733916b3cd2ee7150" category="list-text">AFF A800, AFF A200, AFF A220, AFF C190, FAS2620, FAS2720, AFF A700 또는 FAS9000 시스템은 다운타임이 있는 경우 스토리지를 이동하거나 기술 지원에 문의하여 컨트롤러 하드웨어를 업그레이드할 수 있습니다. <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>볼륨 또는 스토리지를 이동하여 업그레이드 _ 링크를 참조하십시오.</block>
+  <block id="a06d68e350c79a17b1b36fae9ee9106c" category="doc">노드2에 AFF A90 또는 AFF A70 모듈을 설치합니다</block>
+  <block id="be3affc900cfc23554c8c8d7e7fb9b42" category="paragraph">노드2에서 업그레이드를 위해 받은 AFF A90 또는 AFF A70 컨트롤러 모듈을 설치합니다. 노드2는 시스템 뒷면에서 컨트롤러를 볼 때 섀시 오른쪽에 있는 컨트롤러 B입니다.</block>
+  <block id="011359cc38c137752e931fd997e519a7" category="image-alt">AFF A90 또는 AFF A70을 설치합니다</block>
+  <block id="b360374fb1c72b27ec9072588d678096" category="admonition">섀시의 전원이 이미 켜져 있기 때문에 노드1은 BIOS 초기화를 시작하고 완전히 장착되는 즉시 자동 부팅을 시작합니다. 노드1 부팅을 중단하려면 컨트롤러 모듈을 슬롯에 완전히 삽입하기 전에 직렬 콘솔 및 관리 케이블을 노드1 컨트롤러 모듈에 연결하는 것이 좋습니다.</block>
+  <block id="da7cf8ace467e07feef604bd9a07fa23" category="list-text">자동 부팅을 중단하고 나면 로더 프롬프트에서 노드 1이 중지됩니다. 자동 부팅을 중지하고 노드1의 부팅을 시작하는 경우, 프롬프트가 표시될 때까지 기다린 다음 Ctrl+C를 눌러 부팅 메뉴로 이동합니다. 부팅 메뉴에서 노드가 중지되면 옵션을 사용하여<block ref="c9f0f895fb98ab9159f51fd0297e236d" prefix=" " category="inline-code"></block> 노드를 재부팅하고 재부팅 중 자동 부팅을 중단합니다.</block>
+  <block id="611a9754cc853d659f10d0a1aabd961b" category="list-text">자동 부팅을 중단하고 나면 로더 프롬프트에서 노드 2가 중지됩니다. 자동 부팅을 중지하고 노드2의 부팅을 시작하는 경우, 프롬프트가 표시될 때까지 기다린 다음 Ctrl-C를 눌러 부팅 메뉴로 이동합니다. 부팅 메뉴에서 노드가 중지되면 옵션을 사용하여<block ref="c9f0f895fb98ab9159f51fd0297e236d" prefix=" " category="inline-code"></block> 노드를 재부팅하고 재부팅 중 자동 부팅을 중단합니다.</block>
+  <block id="1541d30bc97104d196a4b30a48265600" category="paragraph">ASA A900, AFF A900 또는 FAS9500 NVRAM 모듈을 노드 2의 슬롯 6에 설치합니다.</block>
+  <block id="ede80ab611f3725304fd9e964c65b970" category="paragraph">ASA A900, AFF A900 또는 FAS9500 컨트롤러 모듈을 노드2에 설치, 케이블 연결 및 연결합니다.</block>
+  <block id="390bace02cae43fa520a0786b6738598" category="list-text">AFF A70 또는 AFF A90으로 AFF A800을 업그레이드하는 경우 FCP SAN LIF를 재할당해야 합니다. 기타 모든 시스템 업그레이드의 경우 다음 단계를 <block ref="e18730a2be2b2c535fc1747e24865aa5" category="inline-xref-macro-rx"></block>수행하십시오.</block>
+  <block id="b9b8de16ec06ff60ede24d2818e0abab" category="list-text">FCP 또는 FC-NVMe 데이터 액세스에 사용되는 FCP SAN LIF를 올바른 홈 포트에 다시 할당합니다.</block>
+  <block id="a1e8ba06d77acad7fa970ba8e0f0e467" category="paragraph"><block ref="16135bd5b92713cfb36ebe367a4ca458" prefix="" category="inline-code"></block></block>
+  <block id="2de38c1e5aa6aa649940e819b4ebf8dd" category="list-text">업그레이드된 노드 1로 현재 노드가 있고 현재 포트에서 "status oper"를 "-"로 보고하는 LIF의 경우(AFF A800 노드에 포트가 있지만 AFF A90 노드에 존재하지 않음) 현재 포트를 수정하여 온라인으로 전환할 수 있습니다.</block>
+  <block id="dc7986d888f3be0cb2a2215b9580886d" category="paragraph">FC LIF를 이동해야 하는 FC 타겟 포트에 대한 물리적 연결이 설정되어 있는지 확인</block>
+  <block id="20aae0c682908a321c4cb1ad3ed45571" category="paragraph"><block ref="6c2cad085a4937044f2937a01cb285f3" prefix="" category="inline-code"></block></block>
+  <block id="b6257f5e9d4beab0291d2ae4dcfcbbd8" category="list-text">LIF의 홈 포트를 수정합니다.</block>
+  <block id="d354b1900f4972b1b49a933cfce61941" category="paragraph"><block ref="867b8ae03fe5d96f67794b8aa4dc8589" prefix="" category="inline-code"></block></block>
+  <block id="4dbb86eefaa0a209d0215f725cf0c953" category="list-text">LIF 상태를 "설정"으로 설정:</block>
+  <block id="461987576b6bc9795673a818ccac3663" category="paragraph"><block ref="c69d259c6c2cd4b5fceaec835bc7e8b1" prefix="" category="inline-code"></block></block>
+  <block id="5ed9b0adde6f557c682b59271b680376" category="paragraph">노드 1의 홈 페이지인 각 FC SAN LIF에 대해 하위 단계 a 및 b를 반복합니다.</block>
+  <block id="9948b60bcf24c5a577ac51ca46681211" category="list-text">[[RESUME_RELOCATION_STEP4]] 재배치 작업 재개:</block>
+  <block id="f46a9d31737ed0e6ae4b42c871a088aa" category="paragraph">교체 컨트롤러 모듈의 부팅 미디어에 설치된 ONTAP 버전은 섀시에 설치하고 전원을 켜지 않는 한 확인할 수 없습니다. 교체 시스템 부팅 미디어의 ONTAP 버전은 업그레이드할 이전 시스템에서 실행되는 ONTAP 버전과 동일해야 하며 부팅 미디어의 기본 부팅 이미지와 백업 부팅 이미지가 모두 일치해야 합니다. 업그레이드를 위해 지원되는 최소 ONTAP 버전을 확인하려면 을 참조하십시오 <block ref="8294b96e46ba28730c909aaac28da089" category="inline-link-macro-rx"></block>.</block>
+  <block id="c8d0afb25c26087738c4c8847b04be0f" category="list-text">교체 컨트롤러 모듈에서 실행 중인 노드1이 부팅될 때까지 기다렸다가 아래와 같이 부팅 메뉴 옵션을 표시합니다.</block>
+  <block id="604b621863a9a67dada3210a46ac0585" category="cell">10.9</block>
+  <block id="e958fa4ebf6cfd080461a2ab27108030" category="paragraph">다음 예제와 유사한 출력이 표시됩니다. 출력에는 클러스터에서 실행 중인 ONTAP 버전이 표시됩니다.</block>
+  <block id="3907a30ce94bbdb9a45c1eb9ed6f9c2f" category="paragraph">각 노드에 연결된 시리얼 포트에서 명령을 실행하고 명령의 출력을 개별적으로 실행하고 저장합니다.</block>
+  <block id="b47faa02412cc89f2b0f103844279e9f" category="list-text"><block ref="2a0ee6f2d3fcee518356895f7e962392" prefix="" category="inline-code"></block></block>
+  <block id="c42b01075c29ecf2009d164958ca98f5" category="list-text"><block ref="35b6841ae0a9776250da7cef0c9b1713" prefix="" category="inline-code"></block></block>
+  <block id="eb7ead4ebc1b8fb1973480e7ff4df23a" category="list-text"><block ref="dcb54aa5c6e1195dc43cf43c7130da89" prefix="" category="inline-code"></block></block>
+  <block id="9d5362e3cd7fb6dab4963fa3402a8946" category="list-text"><block ref="8a376dcd15839d79f652ba0bc6e1b6ce" prefix="" category="inline-code"></block></block>
+  <block id="21abd3e611a550d5b10a01fcf5ca52e4" category="list-text"><block ref="d0e63dc99f0f9ab0cd3804cc52f2f14d" prefix="" category="inline-code"></block></block>
+  <block id="0366a42f2fc03b6171f842157c923ac3" category="summary">ARL을 사용하여 같은 섀시에서 컨트롤러 모델을 업그레이드하는 경우 AFF A700 또는 FAS9000 노드1 시스템 모듈을 교체합니다.</block>
+  <block id="e61a8da38f14e94b700a22cac8ae4393" category="paragraph">노드1에서 AFF A700 또는 FAS9000 컨트롤러 모듈을 분리하여 제거합니다.</block>
+  <block id="a9d2e9a8e51c956ec73ca97b2f59618d" category="list-text">콘솔 케이블(있는 경우)과 관리 케이블을 노드1 컨트롤러 모듈에서 분리합니다.</block>
+  <block id="b7f982c550f1b3edd9e8d8d5b9eb50cd" category="paragraph">노드1에서 AFF A700 또는 FAS9000 NVRAM 모듈을 잠금 해제하고 제거합니다.</block>
+  <block id="ea1e71ef4fce4fbc966397450b8ecf3b" category="paragraph">ASA A900, AFF A900 또는 FAS9500 NVRAM 및 컨트롤러 모듈을 노드1에 설치, 케이블 연결 및 연결합니다.</block>
+  <block id="b79aee15f2c133859a90a1a37bf3949a" category="paragraph">ASA A900, AFF A900 또는 FAS9500 NVRAM 모듈을 노드 1의 슬롯 6에 설치합니다.</block>
+  <block id="9e0a1039504ca0408797903c8f8ca02d" category="summary">ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드하는 경우 AFF A220, AFF A200, AFF C190, FAS2620 또는 FAS2720 시스템 모듈 1을 교체합니다.</block>
+  <block id="1bea5ea0e73e228055c8e231e1075879" category="paragraph">컨트롤러 내부의 구성 요소에 접근하려면 시스템에서 컨트롤러 모듈을 분리한 다음 컨트롤러 모듈의 덮개를 분리합니다.</block>
+  <block id="3b59a6e4feb61a49bd8e07d1dc5ed44d" category="paragraph">ASA A150, AFF A150 또는 FAS2820 컨트롤러 모듈을 노드1에 설치, 케이블 연결, 연결합니다.</block>
+  <block id="9ef15eb6b24dfb01a128878f396a3704" category="summary">ARL을 사용하여 같은 섀시에서 컨트롤러 모델을 업그레이드하는 경우 AFF A800 노드 1 시스템 모듈을 교체합니다.</block>
+  <block id="d163a40aa74c14e8ec7bcd0aa77337c4" category="doc">AFF A800 컨트롤러 모듈을 교체합니다</block>
+  <block id="a8de3a247d51100047fd7c00c6a64e13" category="section-title">AFF A800 컨트롤러 모듈 제거를 준비합니다</block>
+  <block id="3cf0b39ddc0b0c6fbe705a62aacc7d3c" category="list-text">섀시 앞면에서 엄지 손가락으로 각 드라이브를 단단히 눌러 정지가 느껴질 때까지 밀어넣습니다. 이렇게 하면 드라이브가 섀시 중앙판에 단단히 고정됩니다.</block>
+  <block id="73ee2bd7f33c26664f94c379c6ab36d2" category="image-alt">드라이브를 밀어 섀시 중앙판에 단단히 장착합니다</block>
+  <block id="9bedcc9650ba1fe86ed7720eb975429e" category="list-text">섀시 후면으로 이동합니다.</block>
+  <block id="91ab0c72a3782320af6149a6965870c3" category="section-title">AFF A800 컨트롤러 모듈을 제거합니다</block>
+  <block id="4b71003a741729c102245e556742f79a" category="paragraph">AFF A800 컨트롤러 모듈에서 케이블 관리 장치를 제거하고 컨트롤러를 섀시 밖으로 약간 꺼냅니다.</block>
+  <block id="f138b6c2f3e77b4a7b2b9693f7102662" category="list-text">소스에서 node1 컨트롤러 모듈 전원 공급 장치를 분리합니다.</block>
+  <block id="e73f79c9112f5779897d8c0a650b3b99" category="list-text">전원 케이블 고정 장치를 분리한 다음 전원 공급 장치에서 케이블을 분리합니다.</block>
+  <block id="9bcb203190e45fed6ef1d56a224cc2de" category="list-text">케이블을 케이블 관리 장치에 연결하는 후크와 루프 스트랩을 푼 다음, 시스템 케이블과 SFP 및 QSFP 모듈(필요한 경우)을 컨트롤러 모듈에서 분리하여 케이블이 연결된 위치를 추적합니다.</block>
+  <block id="5501530668ccd4a98e422eaa9f70f55a" category="list-text">컨트롤러 모듈에서 케이블 관리 장치를 분리하여 한쪽에 둡니다.</block>
+  <block id="36d204b1be645d0aebb6ca849fa255f4" category="list-text">양쪽 잠금 래치를 아래로 누른 다음 두 래치를 동시에 아래로 돌립니다.</block>
+  <block id="ac24bf2266610a02dbe8c4e0abac3b09" category="paragraph">컨트롤러 모듈이 섀시에서 약간 꺼냅니다.</block>
+  <block id="28f415f726deccd1fbd194cf6d26050d" category="cell">잠금 래치</block>
+  <block id="0f0a79780676cf6ae8f3282e89437c68" category="cell">잠금 핀</block>
+  <block id="cfbce83e9fbc258d74e38609e18db38e" category="section-title">AFF A90 또는 AFF A70 컨트롤러 모듈을 설치합니다</block>
+  <block id="cc5fd1a1b540dfdf613905055fe0716c" category="paragraph">노드1에 AFF A90 또는 AFF A70 컨트롤러 모듈을 설치, 케이블 연결 및 연결합니다.</block>
+  <block id="3daf51d905ef8cf65eaf1306fdb7fc15" category="admonition">섀시의 전원이 이미 켜져 있기 때문에 node1은 새 컨트롤러 모듈을 삽입하자마자 BIOS 초기화를 시작한 후 autoboot를 실행합니다. 이러한 자동 부팅을 피하기 위해 NetApp에서는 컨트롤러 모듈을 삽입하기 전에 직렬 및 콘솔 케이블을 연결하는 것이 좋습니다.</block>
+  <block id="7d2ab27c4c0e5b47aef3114f5e958f70" category="list-text">자동 부팅을 중단하고 나면 로더 프롬프트에서 노드 1이 중지됩니다.</block>
+  <block id="8ee4b1e10410e2b66e0bf9d74a323ab7" category="paragraph">자동 부팅을 중지하고 노드1의 부팅을 시작하는 경우, 프롬프트가 표시될 때까지 기다린 다음 Ctrl+C를 눌러 부팅 메뉴로 이동합니다. 부팅 메뉴에서 노드가 중지되면 옵션을 사용하여<block ref="c9f0f895fb98ab9159f51fd0297e236d" prefix=" " category="inline-code"></block> 노드를 재부팅하고 재부팅 중 자동 부팅을 중단합니다.</block>
+  <block id="8ff82dc56b5a1d525adf2a33f9b0ef1e" category="paragraph">AFF A90 또는 AFF A70으로 AFF A800을 업그레이드하는 경우 100GbE 케이블의 길이가 최소 1m 이상인지 확인하십시오.</block>
+  <block id="b2c4dfddac0348387de841092df68337" category="list-text"><block ref="b2c4dfddac0348387de841092df68337" category="inline-link-macro-rx"></block></block>
+  <block id="c429a84792b7f178175fe7042dc6079f" category="paragraph">단계 3에서는 외부 셸프에 대한 공유 클러스터 HA 및 스토리지 접속을 연결하고, 노드 1을 업그레이드된 시스템 모듈로 부팅하고, 업그레이드된 노드1 설치를 확인합니다. NVE(NetApp Volume Encryption)를 사용하는 경우 키 관리자 구성을 복원합니다. 또한 노드 1의 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2에서 업그레이드된 노드 1로 재배치하고 노드 1에 SAN LIF가 있는지 확인합니다.</block>
+  <block id="a32c412771470f06fb06158c7df3b574" category="inline-link-macro">공유 클러스터-HA 스토리지의 케이블 노드1(AFF A800 업그레이드만 해당)</block>
+  <block id="6bb4ed1abcd1459d05109bde26729f2f" category="list-text"><block ref="6bb4ed1abcd1459d05109bde26729f2f" category="inline-link-macro-rx"></block></block>
+  <block id="cedfb81b49e57ea7915eddcc45d10715" category="list-text"><block ref="cedfb81b49e57ea7915eddcc45d10715" category="inline-link-macro-rx"></block></block>
+  <block id="7ff4b96911e899a2a78bfcbf4768a9d9" category="doc">7단계 개요</block>
+  <block id="2372d3e97a3ad6b559d0a6d0c020e688" category="paragraph">교체 컨트롤러 모듈로 노드1을 부팅한 후 올바르게 설치되었는지 확인합니다.</block>
+  <block id="6e849762169aa171c3e4ab9ca41ba9ee" category="paragraph">AFF A800 업그레이드만 해당, AFF A800과 AFF A90 또는 AFF A70 컨트롤러 간에 물리적 포트가 변경되기 때문에 물리적 포트를 기존 노드 1에서 교체 노드 1로 매핑합니다.</block>
+  <block id="63b684b6940bf2da107ca36086462ead" category="paragraph">다른 모든 업그레이드의 경우 물리적 포트는 변경되지 않으므로 이전 노드1에서 교체 노드1로 물리적 포트를 매핑할 필요가 없습니다.</block>
+  <block id="54688fc83f84e29fdf50e22c9b7c7ff5" category="paragraph">노드 1이 쿼럼에 참가할 때까지 기다린 다음 컨트롤러 교체 작업을 다시 시작해야 합니다.</block>
+  <block id="a9eb8ec1eda4c66975807357228a54c0" category="paragraph">부팅 후 node1이 quorum에 연결되지 않은 경우 5분 동안 기다렸다가 다시 확인하십시오. 클러스터 연결에 따라 포트 연결 검사가 완료되고 LIF를 해당 홈 포트로 이동하는 데 시간이 걸릴 수 있습니다.</block>
+  <block id="8be47a94049f932693bd5bb0d1c55118" category="paragraph">노드1이 5분 후에도 여전히 쿼럼에 있지 않으면 진단 권한 명령을 사용하여 새 노드의 클러스터 포트를 "클러스터 IPspace"에 배치하여 수정하는<block ref="0b8753823d9749bc3abd4a74891bf12d" prefix=" " category="inline-code"></block>것이 좋습니다.</block>
+  <block id="0fc8a34e3e62223851b8d7dd538994fc" category="paragraph">위의 예제에서 node1은 컨트롤러를 교체한 후 부팅되었습니다. "연결 불가"를 표시하는 포트는 물리적으로 연결되어 있지 않습니다. 연결 상태가 아닌 다른 모든 포트를 복구해야<block ref="444bcb3a3fcf8389296c49467f27e1d6" prefix=" " category="inline-code"></block>합니다.</block>
+  <block id="3d6d056a2b1f8e77fd95c4136621ded1" category="paragraph">업그레이드를 시작하기 전에 업그레이드에 적합한 하드웨어가 있는지 확인하십시오. 업그레이드 중에 업그레이드하는 각 HA 쌍에 대해 교체 시스템에 사용할 컨트롤러 모듈 2개 또는 컨트롤러 모듈 2개와 NVRAM 모듈 2개가 있어야 합니다. 부품이 없는 경우 기술 지원 부서 또는 NetApp 영업 담당자에게 지원을 요청하십시오.</block>
+  <block id="65f3496663601d293a0c2345f3b86b3d" category="cell">교체 시스템에 다음이 있어야 합니다.</block>
+  <block id="74e674d644580e69dff298a1089f2ae8" category="cell">2개의 컨트롤러 모듈, 2개의 NVRM 및 새로운 IO 모듈</block>
+  <block id="b8499c64cd399582a56bd38ef2f0b689" category="paragraph">교체할 클러스터 노드가 루트 볼륨 암호화를 사용하면 ONTAP가 디스크에서 볼륨 정보를 읽을 수 없습니다. 루트 볼륨의 키를 복원합니다.</block>
+  <block id="4671cfb012ae240f7ddc8f7aaa369dbf" category="admonition">루트 볼륨이 NetApp 볼륨 암호화를 사용하는 경우에만 적용됩니다.</block>
+  <block id="3730c91adaf9920ef1bbd83c941082d5" category="list-text">노드3에서 부팅 메뉴로 이동하여 22/7을 사용하여 숨김 옵션을 선택합니다<block ref="b4ab52f7185d092e3aa56aaa9905e7e1" prefix=" " category="inline-code"></block>. 다음 예에 따라 프롬프트에 node1을 입력하여 node3에 노드 1의 디스크를 재할당합니다.</block>
+  <block id="1868f9f2297be03938f9d37234c57a9d" category="summary">명령을 사용하여 ONTAP 9.15.1 이상을 실행 중인 컨트롤러를 업그레이드할 때 발생할 수 있는 애그리게이트 재배치 장애를<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 해결합니다.</block>
+  <block id="a275532e7dc5da455e7d0af51e44e26d" category="summary">ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드하려면 부분적으로 자동화된 ARL 절차를 사용하십시오.</block>
+  <block id="03b84140205de4279d7e7c6144f8a93a" category="paragraph">컨트롤러를 업그레이드하는 동안 컨트롤러는 새롭고 강력한 플랫폼을 실행하는 다른 컨트롤러로 교체됩니다. 이 컨텐츠는 부분적으로 자동화된 절차에 대한 단계를 제공하며, 자동 네트워크 포트 연결 검사를 활용하여 컨트롤러 업그레이드 환경을 더욱 단순화합니다.</block>
+  <block id="274d42025e97a78743f8d189528d662b" category="summary">명령을 사용하여 ARL을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할지 여부를<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 결정합니다.</block>
+  <block id="e0fe0bc347130dcd6241f7ed20bdb4c9" category="paragraph">이 절차에서는 기존 데이터 및 디스크를 유지하면서 HA 쌍의 스토리지 컨트롤러를 새 컨트롤러와 업그레이드하는 방법을 설명합니다. 이는 숙련된 관리자만 사용해야 하는 복잡한 절차입니다.</block>
+  <block id="6e1baa539c3af150885ac684b194ac4f" category="list-text">ONTAP 9.15.1 이상을 실행하고 있습니다.</block>
+  <block id="130b17a7d9d6b885bc86ff009f4db80c" category="list-text">새 컨트롤러를 클러스터에 새 HA 쌍으로 추가하고 볼륨 이동 절차에 따라 데이터를 마이그레이션하지는 않겠습니다.</block>
+  <block id="1315108a0d5dfd8b3882e2893a06b2ed" category="list-text">AFF A800을 AFF A70 또는 AFF A90으로 업그레이드하고 있습니다. 이 AFF A800 업그레이드를 수행하려면 "system controller replace" 명령을 사용하여 같은 섀시에 있는 컨트롤러 모델을 업그레이드하는 링크를 _ 참조하십시오. <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block></block>
+  <block id="acad6a5698df017a2cf573c822c7f7a8" category="list-text">백엔드 스토리지용 외부 어레이를 사용하여 V 시리즈 시스템 또는 FlexArray 가상화 스토리지 시스템을 업그레이드합니다. V-Series 또는 FlexArray 시스템의 업그레이드 옵션은 기술 지원 부서에 문의하십시오.</block>
+  <block id="d4b6fe12abba1b6202f6eaf9239109fe" category="list-text">MetroCluster FC 또는 IP 구성을 업그레이드합니다. MetroCluster 구성을 업그레이드하려면 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> _MetroCluster 업그레이드 및 확장 설명서_ 링크를 참조하십시오.</block>
+  <block id="11e69ee085d842ce1112f661ea99ca78" category="paragraph">[[sys_commands_9151_supported_systems]] 다음 표에는 컨트롤러 업그레이드에 지원되는 모델 매트릭스가 나와 있습니다.</block>
+  <block id="82a01e528bf5bf2b1b7172eddc250977" category="cell">기존 컨트롤러</block>
+  <block id="1a2f740f86d5113f5765d0c0064cc805" category="cell">AFF A70, AFF A90 및 AFF A1K의 약어입니다</block>
+  <block id="e6f9eb6f48a1c73f8869c3018d94ce49" category="cell">AFF A90 및 AFF A1K</block>
+  <block id="21f38ae66a0904e51060023ca6858959" category="paragraph">AFF A70 및 AFF A90은 온보드 디스크가 장착된 통합 시스템입니다. 2개의 컨트롤러와 디스크는 단일 섀시에 있습니다. 새 컨트롤러에 내부 드라이브가 있는 경우 기존 시스템을 업그레이드할 수 없습니다.</block>
+  <block id="4de11ced25f5990c0cc8fa95f739e66c" category="summary">NetApp에 명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드한 후 이전 시스템이 더 이상 작동하지 않음을<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 알려야 합니다.</block>
+  <block id="05182f39754b99e12a705e61572b4051" category="summary">명령을 사용하여 HA 쌍을 활성화하고, 노드3 및 노드4 스토리지 액세스를 확인하고, ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드한 후 애그리게이트 소유권을<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 확인합니다.</block>
+  <block id="570743d2305de7bd0a4e44c426b2db21" category="paragraph"><block ref="49166cc15e848fc049881c3de5e1d1f8" prefix="" category="inline-code"></block></block>
+  <block id="75cf0b763a8b4981f23b004d1b96a715" category="paragraph"><block ref="6d203e2c19155492a108b65377909131" prefix="" category="inline-code"></block></block>
+  <block id="498a7d30e002a0545e05d9bfce9c6fd7" category="paragraph"><block ref="365695b1d723adf070447422d9e8d907" prefix="" category="inline-code"></block></block>
+  <block id="26391f3798784439b28190a843ccb233" category="paragraph"><block ref="5db9f9801ff1015f8f0ec287f1a37e08" prefix="" category="inline-code"></block></block>
+  <block id="28f38d2621df64a3408634ed62310686" category="paragraph"><block ref="c1415a35d798d0e1bc89dfc239e96300" prefix="" category="inline-code"></block></block>
+  <block id="6d28d7f8af7f8c67023cf4d6764bc483" category="paragraph"><block ref="6433dd2d6e1d61b45476efecfcf7d13d" prefix="" category="inline-code"></block></block>
+  <block id="10c0851b91ac12edf49186d6d3d1f9e8" category="paragraph"><block ref="cad104e67eebc6460f05ee5386343340" prefix="" category="inline-code"></block></block>
+  <block id="fe067063882aa7bb9087ace330c94951" category="paragraph"><block ref="c1691ae4960273f7d983ed570ccc250a" prefix="" category="inline-code"></block></block>
+  <block id="ae1fd14d266df956140018dd0a7d3aee" category="paragraph"><block ref="66730ced80aced888a1e584b32aac885" prefix="" category="inline-code"></block></block>
+  <block id="4b228c28081e37b40f01923e3b61a64d" category="inline-link-macro">노드 4, 24단계를 설치 및 부팅합니다</block>
+  <block id="371bc655ee75c24461bd0840658f6e81" category="list-text">[[unset_maxwait_system_commands]] 자체 암호화 드라이브가 구성에 사용되고 있고 변수를 (예: 의) 로 설정한 경우<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block><block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> <block ref="bf7b37b3882ceac8551e83dc1b0a8a55" category="inline-link-macro-rx"></block>변수를 설정 해제해야 합니다.</block>
+  <block id="7ae7b85041346021fa869537081fa931" category="paragraph"><block ref="56c408bf8e8c75b155f67bfe9777b54e" prefix="" category="inline-code"></block></block>
+  <block id="dde01ffa3dbac07014347a80fbf42f2f" category="paragraph"><block ref="8560f41cfd3e5e6f662c16e0b3e08550" prefix="" category="inline-code"></block></block>
+  <block id="cf6dcc5bb2ee8722c621b409153f09e6" category="summary">명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 수 있는지<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 이해합니다.</block>
+  <block id="87e1a0313bed9d5fc988072dbc391f72" category="paragraph">ARL을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러 쌍을 업그레이드할 수 있는지 여부는 플랫폼과 원래 컨트롤러와 교체 컨트롤러 모두의 구성에 따라 달라집니다.</block>
+  <block id="e24cdbe8900a873d4a4ae11498411dbb" category="paragraph">이 ARL 절차를 사용하여 노드 쌍을 업그레이드하기 전에 다음 요구 사항을 검토하여 구성이 지원되는지 확인하십시오.</block>
+  <block id="118741e5081d0dbbcf22bf7a4070d75d" category="list-text">원래 컨트롤러와 교체 컨트롤러에서 ARL을 수행할 수 있는지 확인합니다.</block>
+  <block id="8f74efa09ac6cceb3303dcfa2174ecad" category="list-text">정의된 모든 애그리게이트의 크기와 원래 시스템에서 지원하는 디스크 수를 확인하십시오. 그런 다음 지원되는 애그리게이트 크기 및 디스크 수를 새로운 시스템에서 지원하는 애그리게이트 크기 및 디스크 수와 비교합니다. <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>이 정보를 볼 수 있는 _Hardware Universe_ 링크를 참조하십시오. 새 시스템에서 지원하는 디스크 수와 애그리게이트 크기는 원래 시스템에서 지원하는 디스크 수와 같거나 그보다 커야 합니다.</block>
+  <block id="5bfa896489ac5d834de13d49255cae5e" category="list-text">클러스터 혼합 규칙에서 원래 컨트롤러를 교체할 때 새 노드가 기존 노드와 클러스터의 일부가 될 수 있는지 여부를 확인합니다. 클러스터 혼합 규칙에 대한 자세한 내용은 _Hardware Universe_ 링크를 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> .</block>
+  <block id="b4d0ae6a1b586d1c02619f3e890563dc" category="list-text">AFF 700과 같은 시스템이 있는 경우, 다음 구성에 따라 클러스터 LIF를 노드당 두 개의 클러스터 포트로 마이그레이션한 후 다시 홈을 지정합니다.</block>
+  <block id="1b8a2a13165b2dd5a7f0f06a140b11fa" category="list-text">노드당 클러스터 포트가 3개 이상 있습니다</block>
+  <block id="b5a605f27acc8aaffa6429fb0bfc9200" category="list-text">포트 e4a, e4b, e4c, e4d 및 포트 e4e 를 생성하는 브레이크아웃 모드의 SLOT4의 클러스터 상호 연결 카드 e4f, e4g 및 e4h</block>
+  <block id="0dea230a78c283d95722337281001b83" category="admonition">노드당 클러스터 포트가 3개 이상인 컨트롤러 업그레이드를 수행하면 업그레이드 후 새 컨트롤러에서 클러스터 LIF가 누락될 수 있습니다.</block>
+  <block id="c2ee3e82d7653ec03d78864af94f8525" category="inline-link-macro">원치 않거나 불필요한 클러스터 LIF를 삭제하는 방법</block>
+  <block id="4e3a9eec0a039a8cea74f9155c4b5235" category="paragraph">자세한 내용은 기술 자료 문서를 <block ref="5f0dbd2b6c240cd9a16eeaba0b0fa49d" category="inline-link-macro-rx"></block>참조하십시오.</block>
+  <block id="e560338db69e68960d211b11b39e2476" category="paragraph">원래 컨트롤러에 연결된 디스크 쉘프를 지원하지 않는 교체 컨트롤러는 업그레이드할 수 없습니다.</block>
+  <block id="6977967d2257e2fdd1ba4bd5cf27e2a1" category="paragraph">내부 드라이브가 있는 엔트리 레벨 컨트롤러를 업그레이드하려면 볼륨 또는 스토리지를 이동하여 업그레이드 _ 를 참조하고 절차_volumes_를 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 이동하여 clustered Data ONTAP을 실행하는 노드 쌍 업그레이드 _ 로 이동하십시오.</block>
+  <block id="8208cc2f1ca87f6bbaeecfe793c772c1" category="paragraph">컨트롤러를 업그레이드하는 동안 문제가 발생하면 자세한 정보 및 가능한 해결 방법은 을 <block ref="8b711d7eff849b62a32d0b2d66f85a6c" category="inline-link-macro-rx"></block> 참조하십시오.</block>
+  <block id="c536cd195fbfb37bdf2674bf1ac1d143" category="summary">명령을 사용하여 루트 애그리게이트의 소유권을 재배치함으로써 ONTAP 9.15.1 이상을 실행하는 컨트롤러 하드웨어를 업그레이드할 수 있습니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> .</block>
+  <block id="1b08ae415c98e50a06c737f6f5215271" category="cell"><block ref="1b08ae415c98e50a06c737f6f5215271" category="inline-link-macro-rx"></block></block>
+  <block id="72bd776359ea368944b39895a73c96e1" category="admonition">다음 절차를 사용하여 MetroCluster FC 또는 IP 구성을 업그레이드할 수 없습니다. MetroCluster 구성을 업그레이드하려면 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> _MetroCluster 업그레이드 및 확장 설명서_ 링크를 참조하십시오.</block>
+  <block id="b9bdcf5de1c3f4a6551456e5f23faeca" category="paragraph">이 정보에서 원래 노드를 "node1"과 "node2"라고 하며 새 노드를 "node3"과 "node4"라고 합니다. 이 절차를 수행하는 동안 노드 1은 노드 3으로 대체되고 노드 2는 노드 4로 대체됩니다.</block>
+  <block id="eb107f95b8d7a04b228970d7c1bb0280" category="paragraph">"node1", "node2", "node3" 및 "node4"라는 용어는 원래 노드와 새 노드를 구별하는 데만 사용됩니다. 절차를 따를 때는 원래 노드와 새 노드의 실제 이름을 대체해야 합니다. 그러나 실제로 노드 이름은 변경되지 않습니다. node3에는 node1이라는 이름이 있고, node4에는 컨트롤러 하드웨어를 업그레이드한 후 node2라는 이름이 있습니다.</block>
+  <block id="33f171f425d31134499dbdc4558c3dc5" category="list-text">이 절차에서는 교체 컨트롤러 하드웨어가 새 하드웨어이며 사용되지 않은 것으로 가정합니다. 명령을 사용하여 사용한 컨트롤러를 준비하는 데 필요한 단계는<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block> 이 절차에 포함되지 않습니다. 교체 컨트롤러 하드웨어를 이전에 사용한 경우 기술 지원 부서에 문의해야 합니다.</block>
+  <block id="a59ed9adc69cdbf7878c995b225e9ba9" category="summary">명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 노드3를 설치 및 부팅하고 ONTAP 소프트웨어를<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 설치합니다.</block>
+  <block id="55ca78d77b2ed8c2abb447723f0a84f5" category="paragraph">랙에 node3을 설치하고, node1의 연결을 node3으로 전송하고, node3를 부팅하고, ONTAP를 설치합니다. 그런 다음 이 섹션에 설명된 대로 node1의 스페어 디스크, 루트 볼륨에 속한 디스크 및 프로세스 초기에 node2로 재배치되지 않은 루트가 아닌 애그리게이트를 재할당합니다.</block>
+  <block id="d06063b7ad97f050e53bf25e873e27a1" category="paragraph">이 단계를 시작할 때 재배치 작업이 일시 중지됩니다. 이 프로세스는 대부분 자동화되어 있으며 사용자가 상태를 확인할 수 있도록 작업이 일시 중지됩니다. 작업을 수동으로 재개해야 합니다. 또한 SAN LIF가 성공적으로 온라인 상태로 전환되었고 노드 3의 올바른 FC 물리적 포트에 할당되었는지 확인해야 합니다.</block>
+  <block id="2e19dadb770c8039f72729d7610ae70b" category="paragraph">새 노드의 공간 및 높이 요구 사항은 기존 노드와 다를 수 있습니다. 업그레이드 시나리오에 필요한 공간을 계획합니다.</block>
+  <block id="943732349380142aa38abab6bb1ac65a" category="paragraph">ONTAP 9.15.1부터 새로운 컨트롤러 모델에는 베이스보드 관리 컨트롤러(BMC) 및 관리 연결을 위한 "렌치" 포트가 하나만 있습니다. 그에 따라 케이블 변경 사항을 계획합니다.</block>
+  <block id="f9b42d279ca03438a53158ce12e9931b" category="list-text">클러스터와 HA 포트</block>
+  <block id="fe7fd8b6122e59d0a31f6aba277adfec" category="list-text">SAS(Serial-Attached SCSI) 및 이더넷 스토리지 포트</block>
+  <block id="32fdf2132eba643d668d9366c39d0ed6" category="list-text">SAN 구성: iSCSI 이더넷, FC 및 NVMe/FC 스위치 포트</block>
+  <block id="53f62bab15508ca4f42cb7ea3efabdb7" category="inline-link-macro">시스템 설치 절차</block>
+  <block id="030d0caaa6e28b6ea7a558c982620923" category="paragraph">다른 컨트롤러와 카드 모델 간의 상호 운용성을 위해 이전 컨트롤러와 새 컨트롤러 간의 상호 연결 케이블을 변경해야 할 수 있습니다. 시스템에 대한 이더넷 스토리지 쉘프의 케이블 연결 맵은 을 <block ref="3fd6c72f5e479fd672ff34faa10ab45c" category="inline-link-macro-rx"></block> 참조하십시오.</block>
+  <block id="c3b0f1837ddeacaf4f76674c0b4c1247" category="paragraph">ONTAP 9.15.1 이상 버전에서 도입된 컨트롤러의 경우, 클러스터 및 HA 인터커넥트에서 동일한 포트를 사용합니다. 스위치 연결 구성의 경우 유사한 포트를 동일한 클러스터 스위치에 연결해야 합니다. 예를 들어, 기존 컨트롤러에서 AFF A1K로 업그레이드할 경우 두 노드의 E1A 포트를 두 번째 스위치에 연결하고 두 노드의 e7a 포트를 두 번째 스위치에 연결해야 합니다.</block>
+  <block id="f2b6a24d2c745dda8d43b567bca2c023" category="list-text">컨트롤러 및 섀시가 ha로 구성되지 않은 경우 다음 명령을 사용하여 구성을 수정하십시오.</block>
+  <block id="9055b0dbc4492797312a9bb5cf273d2b" category="list-text">이더넷 셸프에 연결하는 데 사용되는 모든 이더넷 포트가 스토리지로 구성되었는지 확인합니다.</block>
+  <block id="8db5927c4a82bef57c464915c6908a34" category="paragraph">표시되는 출력은 시스템 구성에 따라 다릅니다. 다음 출력 예는 슬롯11에 단일 스토리지 카드가 있는 노드에 대한 것입니다. 시스템의 출력은 다를 수 있습니다.</block>
+  <block id="7085af5b9d6e34e858539e987b93343b" category="list-text">스토리지에 설정되지 않은 포트를 수정합니다.</block>
+  <block id="c09a10e8c8eb7df75bc1e7c71c068ce1" category="paragraph"><block ref="879197ca203f9b35caec5106d7e15b58" prefix="" category="inline-code"></block></block>
+  <block id="177a90784547d8e8a71e2f739ed9bbff" category="paragraph">디스크 및 셸프에 액세스할 수 있도록 스토리지 셸프에 연결된 모든 이더넷 포트를 스토리지로 구성해야 합니다.</block>
+  <block id="2ae60eb6d8ada692bd9d065da52c1af9" category="list-text">노드3에서 부팅 환경 프롬프트에서 다음 명령을 사용하여 날짜를 확인합니다.</block>
+  <block id="1fd9a800ae465d82e925057915beba4c" category="list-text">필요한 경우 노드3에 날짜를 설정합니다.</block>
+  <block id="833ce90830a0406f310191c0da1f76da" category="paragraph"><block ref="ce2b665b5815a9c7e13cdb6fc96a5a98" prefix="" category="inline-code"></block></block>
+  <block id="be6fd219b542001acebc6d5c38cf7f50" category="list-text">노드3에서 부팅 환경 프롬프트에서 다음 명령을 사용하여 시간을 확인합니다.</block>
+  <block id="796917d7c6ba599c40819437b7c2e43c" category="list-text">필요한 경우 node3에서 시간을 설정합니다.</block>
+  <block id="25a249a3cdba620e6eba67639be13589" category="paragraph"><block ref="aa979bf34f52b205295408bd829f28b6" prefix="" category="inline-code"></block></block>
+  <block id="3ede614b2861dd7a0548afd0b4e21bcf" category="list-text">부팅 로더에서 노드3에 파트너 시스템 ID를 설정합니다.</block>
+  <block id="9b0061842e9b4b978c7b1f439fbd5125" category="paragraph"><block ref="0a94bdecbd83c3f6cbe41c7cf35976fd" prefix="" category="inline-code"></block></block>
+  <block id="02d0d6456e5c942ac9127e8c48066890" category="list-text">시스템이 재부팅 루프에 들어가고 메시지가<block ref="bc1d3ad68c46835686e44d5c5c600a71" prefix=" " category="inline-code"></block>나타나면 디스크 재할당에 문제가 있음을 나타냅니다. 문제를 해결하려면 을 <block ref="8b711d7eff849b62a32d0b2d66f85a6c" category="inline-link-macro-rx"></block> 참조하십시오.</block>
+  <block id="1ef946adab62927bb74aa3d563d853b7" category="list-text">자동 부팅 중에 을<block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block> 눌러 프롬프트에서 노드를<block ref="b4e58ddfd75fec23180551a08c0e87c6" prefix=" " category="inline-code"></block> 중지합니다.</block>
+  <block id="65675a0cf14d62660f665d2417a5428e" category="list-text">디스크 연결, 컨트롤러 모델 문자열, HA 구성 및 기타 하드웨어 연결 관련 세부 정보를 확인합니다.</block>
+  <block id="3f5fca71654403bc4eb39336d9167c1b" category="list-text">[[auto_check3_step32]] LOADER 프롬프트에서 부팅합니다.</block>
+  <block id="01f408e94bd0887ce8a9faec6429d20d" category="inline-xref">32단계</block>
+  <block id="1b99f4c2deddbc39013ffcf98d84cc42" category="admonition">이 단계에서 오류가 발생할 수 있습니다. 오류가 발생하면 시스템이 정상적으로 부팅될 때까지 의 하위 단계를 <block ref="971923e94dc2d6df8020555aa8d21366" category="inline-xref-macro-rx"></block> 반복합니다.</block>
+  <block id="81ebb40678602d118beb4dc72537bcac" category="summary">명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 node4를 설치 및 부팅하고 ONTAP 소프트웨어를<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 설치합니다.</block>
+  <block id="9f3b5fde6efe97f3316b9fdf630f5307" category="paragraph">랙에 node4를 설치하고, node2의 연결을 node4로 전송하고, node4를 부팅하고, ONTAP를 설치합니다. 그런 다음 이 섹션에 설명된 대로 프로세스 초기에 노드 2의 스페어 디스크, 루트 볼륨에 속한 디스크 및 노드 3으로 재배치되지 않은 모든 비 루트 애그리게이트를 재할당합니다.</block>
+  <block id="eb91daa92a7cd6e3d0f28a92df381e46" category="paragraph"><block ref="0771d944db92b398d28d841edda85128" prefix="" category="inline-code"></block></block>
+  <block id="b7b6eb575f44421125712f552d3c6514" category="list-text">[[auto_install4_step24]] NSE(NetApp Storage Encryption) 드라이브가 설치되어 있으면 다음 단계를 수행하십시오.</block>
+  <block id="219b29f671a7863bb64b76a907b40424" category="list-text">[[auto_check_4_step11]] node4에서 부팅 메뉴로 이동한 다음 22/7을 사용하여 숨겨진 옵션을 선택합니다<block ref="b4ab52f7185d092e3aa56aaa9905e7e1" prefix=" " category="inline-code"></block>. 다음 예제와 같이 프롬프트에서 node2를 입력하여 node4에 노드 2의 디스크를 재할당합니다.</block>
+  <block id="f16197d10b85eccdd96c289850f6f9a4" category="list-text">[[auto_check_4_step27]] LOADER 프롬프트에서 부팅합니다.</block>
+  <block id="9fd0ed44498deb7ffb633dc1298bafef" category="paragraph">루트 볼륨이 암호화된 경우 시스템이 루트 볼륨을 찾을 수 있도록 온보드 키 관리 암호를 복구합니다.</block>
+  <block id="0df0b8c9a45c8c96a58c4a6a9c14d3ab" category="inline-xref">27단계</block>
+  <block id="a48904f34036044cc49f6c59e8c6e89d" category="admonition">이 단계에서 오류가 발생할 수 있습니다. 오류가 발생하면 시스템이 정상적으로 부팅될 때까지 의 하위 단계를 <block ref="0bc751c788418356c58952313677a63b" category="inline-xref-macro-rx"></block> 반복합니다.</block>
+  <block id="c23b8b78e98fecb522ab190805d122ac" category="summary">명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 발생할 수 있는 문제에 대한<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 정보입니다.</block>
+  <block id="b315405a73e9a516e55db0bae4a2f30d" category="summary">명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 단계 2, 단계 3 또는 단계 5에서 마이그레이션 후 LIF가 온라인 상태가 아닙니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> .</block>
+  <block id="3a883fa93ec857e5f51025a9f02707b2" category="summary">명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 스토리지 암호화를 구성 및 관리하고 인증 키를 관리하며 SnapMirror 관계를 중지하십시오.<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block></block>
+  <block id="78da491495094c46d3b88b817558b72f" category="paragraph">KMIP(Key Management Interoperability Protocol) 서버를 사용하여 인증 키를 관리할 수 있습니다.</block>
+  <block id="b8e0013cf4290f6c61761b7136a77620" category="summary">명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 노드 2의 노드1 NAS 데이터 LIF가 노드2에서 노드3로 재배치되는지 확인합니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> .</block>
+  <block id="5f6dcf2dc8c9275db98fa671806a2df2" category="list-text">iSCSI LIF는 내 성 검사를 통해 올바른 홈 포트를 자동으로 찾습니다. FC 및 NVMe/FC SAN LIF는 자동으로 이동하지 않습니다. 업그레이드 전에 홈 포트가 계속 표시됩니다.</block>
+  <block id="896fb328ef1870ab0c1426f849038173" category="paragraph">노드 3에서 SAN LIF 확인:</block>
+  <block id="986b69e60fa399c84378e8d8fdc4169e" category="list-text">"다운" 작업 상태를 새 데이터 포트로 보고하는 모든 iSCSI SAN LIF 수정:</block>
+  <block id="d9969d4bf831f15759b98f7f207624b0" category="paragraph"><block ref="10a9afb32a3e32e2f6c74223ba2ea3bf" prefix="" category="inline-code"></block></block>
+  <block id="6f1ad881dbf1eabf2024524fef9e1724" category="paragraph"><block ref="ef02172e95be012def2cc33ea87abf3b" prefix="" category="inline-code"></block></block>
+  <block id="4f79deb8615933038d14dd5ea648ed45" category="paragraph"><block ref="e880cca787f2bb3d426379f39b8412bb" prefix="" category="inline-code"></block></block>
+  <block id="d2106fca8a6ec5ee92267756d2ba5ed8" category="list-text">새 컨트롤러의 집에 있는 FC 및 NVMe/FC SAN LIF를 수정하고 새 컨트롤러의 FCP 포트에 "중단" 운영 상태를 보고합니다.</block>
+  <block id="374a3532b059f787794fea3a4eceed27" category="paragraph"><block ref="fd39e72aaaaed002f894920981daeb07" prefix="" category="inline-code"></block></block>
+  <block id="09d339146e9f1aea7c732982453d56de" category="paragraph"><block ref="b60b5b228661943ca32fb9e03105246b" prefix="" category="inline-code"></block></block>
+  <block id="844aa209b69b21c6b4ac8b353001bf6c" category="paragraph"><block ref="340db2fa4901e2bebbaa48beb251cc09" prefix="" category="inline-code"></block></block>
+  <block id="5041f3d5ede13a9dd794a52168aacdb3" category="summary">명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 노드 3에 있는 노드 2의 NAS 데이터 LIF가 노드 3에서 노드 4로 재배치되는지 확인합니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> .</block>
+  <block id="37795240818b6015e8cc10cd9fdd35e1" category="paragraph">노드 4의 SAN LIF 확인:</block>
+  <block id="b13a176ba8c67756fe909d3d869f8300" category="summary">명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러 업그레이드를 지원하는 데 필요한 참조 콘텐츠 및 웹 사이트<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block></block>
+  <block id="3c20dd08fd85a0df1a15ca4f18373b0f" category="inline-link-macro">ONTAP 9.13.1 명령: 수동 페이지 참조</block>
+  <block id="2b8c930369e367a3b3052f1cf2983b12" category="cell"><block ref="2b8c930369e367a3b3052f1cf2983b12" category="inline-link-macro-rx"></block></block>
+  <block id="28a36bac19a105a6c55917402b89e8de" category="cell">지원되는 ONTAP 9.13.1 명령에 대한 구문 및 사용법을 설명합니다.</block>
+  <block id="23eb0945f4d46d3f4d51a348a10dd82f" category="inline-link-macro">ONTAP 9.14.1 명령: 수동 페이지 참조</block>
+  <block id="88da6307f7bc93b816e681a7c65f4e44" category="cell"><block ref="88da6307f7bc93b816e681a7c65f4e44" category="inline-link-macro-rx"></block></block>
+  <block id="dee12845d94d6609f9426b120ddb5c22" category="cell">지원되는 ONTAP 9.14.1 명령에 대한 구문 및 사용법을 설명합니다.</block>
+  <block id="5c46a6f63b33b151855d1f9e68a36a49" category="inline-link-macro">ONTAP 9.15.1 명령: 수동 페이지 참조</block>
+  <block id="c9a8466d75c7ff0d183b3bad5f2e0b16" category="cell"><block ref="c9a8466d75c7ff0d183b3bad5f2e0b16" category="inline-link-macro-rx"></block></block>
+  <block id="9b30e04c2a3bf26ad6970f9de62054da" category="cell">지원되는 ONTAP 9.15.1 명령에 대한 구문 및 사용법을 설명합니다.</block>
+  <block id="5d1d09cdf9fe1ec2d0f41b2ba3b70572" category="summary">명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드하는 절차가 어떻게 작동하는지<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 이해합니다.</block>
+  <block id="1af790a1d1ba950a7e1da8d38c51c5be" category="paragraph">3단계에서는 노드 3을 설치 및 부팅하고 노드 1의 클러스터 및 노드 관리 포트가 노드 3에서 온라인 상태인지 확인한 다음 노드3 설치를 확인합니다. NVE(NetApp Volume Encryption)를 사용하는 경우 키 관리자 구성을 복원합니다. 또한 노드1 NAS 데이터 LIF 및 루트 이외의 애그리게이트를 노드 2에서 노드 3으로 재배치하고 노드 3에 SAN LIF가 있는지 확인합니다.</block>
+  <block id="49eaab9bcc3c0260e65bdd90701c7a34" category="paragraph">5단계에서는 노드 4를 설치 및 부팅하고 노드 2의 클러스터 및 노드 관리 포트가 노드 4에서 온라인 상태인지 확인한 다음 노드 4 설치를 확인합니다. NVE를 사용하는 경우 키 관리자 구성을 복원합니다. 또한 노드2 NAS 데이터 LIF 및 루트 이외의 애그리게이트를 노드 3에서 노드 4로 재배치하고 노드 4에 SAN LIF가 있는지 확인합니다.</block>
+  <block id="7f442cbfd762c75e0b1d1cfb8504c338" category="summary">명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 노드를 준비하고 일련의 사전 점검을<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 실행합니다.</block>
+  <block id="f65104a2552945130cb62829d56eac5e" category="paragraph"><block ref="42b6de3b1be21fa350d49af2e7daebb3" prefix="" category="inline-code"></block></block>
+  <block id="a782445fd2b20e4f7d28893401b7d2c1" category="admonition">system controller replace start 명령은 advanced 권한 수준에서만 실행할 수 있습니다.<block ref="0581d0d071ad835f74bf419081ce5d75" prefix=" " category="inline-code"></block></block>
+  <block id="9c0690c534d875fea406da924eb5155b" category="paragraph">AFF 700과 같은 시스템이 있는 경우, 업그레이드를 시작하기 전에 다음 구성으로 클러스터 LIF를 노드당 두 개의 클러스터 포트로 마이그레이션했다가 다시 집으로 되돌립니다.</block>
+  <block id="6475503c68c31e1b289728d5569f2154" category="list-text"><block ref="11626abfda40f40ee6d3e1b442aa8511" prefix="" category="inline-code"></block></block>
+  <block id="2ced80bebf7ea6acfc08de4ca669ad2c" category="list-text"><block ref="40b1530b36a13c1a14a32a23fe0ab5ea" prefix="" category="inline-code"></block></block>
+  <block id="2ca00583a1a36030737f63a3db12dc87" category="list-text"><block ref="e69f23b34f9bbe2a8339bac8fbc82cfc" prefix="" category="inline-code"></block></block>
+  <block id="aefd98482c53fa515e9d81991d72db96" category="list-text"><block ref="c51247ee7029a949bd1ee0b4eeb47115" prefix="" category="inline-code"></block></block>
+  <block id="bf0c52d65d5a9ce3a08a397b60f1ddfd" category="list-text"><block ref="18ec280866dbd6dea641c63869c4c1a2" prefix="" category="inline-code"></block></block>
+  <block id="483dba34417e9c3560c820a1c0ee5bda" category="list-text"><block ref="0eed0f4f603153cbeb3b1aba17179b0c" prefix="" category="inline-code"></block></block>
+  <block id="5d4d44b5f8928f1ead7d43fe2fab5feb" category="list-text"><block ref="80d0e28fb8e87cfdd0776bb5c325ff76" prefix="" category="inline-code"></block></block>
+  <block id="2f88d1e1249a0a016ccd79e3fd132c7a" category="list-text"><block ref="fc6bc78b4358040ec8297961bbde4459" prefix="" category="inline-code"></block></block>
+  <block id="cf2dd36e190836a4292a3ec01e91082d" category="list-text"><block ref="f6aa46ffe6facdfe93a6a2092c83252c" prefix="" category="inline-code"></block></block>
+  <block id="eced7fae9400585a99160d012aa1dc1d" category="list-text"><block ref="a3e9c82d2513815e45d4cfafb2baf4b5" prefix="" category="inline-code"></block></block>
+  <block id="e9fb1ccbd68c25a664d6da30131d2b39" category="list-text"><block ref="98d3eee791202c85ed8b5ed0f7b3e0b1" prefix="" category="inline-code"></block></block>
+  <block id="051a5ac106e7a944f99af2c8da45b42b" category="list-text"><block ref="52f89fbf0b3eec3638d853b4f3001f3d" prefix="" category="inline-code"></block></block>
+  <block id="a708619095926aab755444a042471757" category="inline-link">라이센스 관리</block>
+  <block id="a00358ba81263d0981cb0be275b2de59" category="paragraph">ONTAP 라이센스에 대한 자세한 내용은 을<block ref="c4c2447b404ea8605b7733ab11ccf24b" category="inline-link-rx"></block>참조하십시오.</block>
+  <block id="301cf3a06efdb459dfe6498f9ad64dfa" category="admonition">컨트롤러에서 라이센스가 없는 기능을 사용하면 라이센스 계약을 준수하지 못할 수 있습니다.</block>
+  <block id="e2d09f92ab6c7ffd6073273d5ac9f24e" category="summary">명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 서로 다른 단계에서 시스템이 충돌하거나, 패닉 또는, 전원을 껐다가 다시 켜는 등 시스템이 충돌할 수 있습니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> .</block>
+  <block id="9eb519370a855a625ae18bab03472164" category="summary">명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 장애가 발생하거나 거부된 애그리게이트를 수동으로 재배치합니다.<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block></block>
+  <block id="4a3168a934fbe49f2401eb2cd5d5d214" category="summary">명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 비루트 애그리게이트 및 NAS 데이터 LIF를 노드1에서 노드2로 이동하고 노드1의 리소스를 노드3로 이동합니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> .</block>
+  <block id="b3d6aec1ce754e8455c1b6b3cc346008" category="summary">명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 node2의 비 루트 애그리게이트를 node3으로 재배치합니다.<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block></block>
+  <block id="41d784112ab245c3a5a3845c5d0ddf06" category="summary">명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드하려면 특정 도구 및 설명서가 있어야<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 합니다.</block>
+  <block id="c46a03cfad2adbb52f35934a739008ad" category="summary">필요한 경우 명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 node4에서 키 관리자 구성을<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 복원합니다.</block>
+  <block id="ef1be506d6bbac4510402025ceb5fae4" category="summary">필요한 경우 명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 node3에서 키 관리자 구성을<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 복원합니다.</block>
+  <block id="82d5f28230d6cee1c8a5d3efc636c2c5" category="summary">명령을 사용하여 ONTAP 9.15.1 이상을 실행 중인 컨트롤러를 업그레이드할 때 SnapMirror 전송 및 관계를 다시<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 시작하십시오.</block>
+  <block id="e7cda9fa69f0a09140a07fdb502443e8" category="summary">명령을 사용하여 ONTAP 9.15.1 이상을 실행 중인 컨트롤러를 업그레이드할 때 노드2와 함께 HA 쌍을 비활성화하고 노드1을<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 종료합니다.</block>
+  <block id="ec0cce33fff0705777a61817d3c04c51" category="summary">명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 노드2를 종료하고 랙 또는 섀시에서 분리합니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> .</block>
+  <block id="0cac54c28fe0956468e2dcfaf1cbf3df" category="summary">필요한 경우 명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 NVE 또는 NAE에 맞게 새 컨트롤러 모듈을<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 구성하십시오.</block>
+  <block id="67501e10cb3fb2e8cf9b91e3c64f24e8" category="summary">필요한 경우 명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 저장소 암호화를 구성하고 SSL 인증서를 설치하고 키 관리 서버를<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 설정합니다.</block>
+  <block id="c6bac905b8cc6974196a88ae00a2b9bb" category="summary">ONTAP 9.15.1 이상을 실행하는 컨트롤러에서 명령을 사용하여 ARL 업그레이드를 위한 1단계 프로세스 순서<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block></block>
+  <block id="7d3e37276cabffdef0b897a6f5be4366" category="summary">ONTAP 9.15.1 이상을 실행하는 컨트롤러에서 명령을 사용하여 ARL 업그레이드를 위한 2단계 프로세스 순서<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block></block>
+  <block id="2837edac98f881ae4011b91c06004408" category="summary">ONTAP 9.15.1 이상을 실행하는 컨트롤러에서 명령을 사용하여 ARL 업그레이드를 위한 3단계 프로세스 순서<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block></block>
+  <block id="b3c6cd03be23d6b6360d0ede569c199f" category="summary">ONTAP 9.15.1 이상을 실행하는 컨트롤러에서 명령을 사용하여 ARL 업그레이드를 위한 4단계 프로세스 시퀀스<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> .</block>
+  <block id="2edf5fe030fec97bab5d1311b789403e" category="summary">ONTAP 9.15.1 이상을 실행하는 컨트롤러에서 명령을 사용하여 ARL 업그레이드를 위한 5단계 프로세스 시퀀스<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> .</block>
+  <block id="296a6e64409ffda509888d567bb00da4" category="summary">ONTAP 9.15.1 이상을 실행하는 컨트롤러에서 명령을 사용하여 ARL 업그레이드를 위한 6단계 프로세스 순서<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block></block>
+  <block id="97ce3d56fdb13b0c8d8e96e6eac5c64e" category="summary">명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 발생할 수 있는 오류를<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 해결합니다.</block>
+  <block id="9281ac90e9eaac4071b2c4565de73862" category="summary">명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 노드1 물리적 포트가 노드3에 올바르게 매핑되었는지 확인하고 노드3에서 네트워크 구성을<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 복원합니다.</block>
+  <block id="629c0519c8cad55ffc8d1dd07eed1872" category="list-text">업그레이드된 노드1에 있는 모든 물리적 포트(node3라고 함)를 나열합니다.</block>
+  <block id="0fbd6a074ce1ade089d8430823937324" category="list-text">노드3에 있는 모든 포트의 네트워크 포트 연결 가능성 나열:</block>
+  <block id="d8c7ef2c85a7a25537cac9242cffa1bd" category="paragraph"><block ref="db449c984bbf1e9facfe9fd1a8343fe9" prefix="" category="inline-code"></block></block>
+  <block id="a7f60658094ae5cd0040096989b61fd4" category="paragraph"><block ref="ab9fd7da881d0d25eaf16ef10e091a77" prefix="" category="inline-code"></block></block>
+  <block id="a3379da48ea49ab540d3d1280e1befdb" category="paragraph"><block ref="14b0d746fa69da837f599848e1cd79e4" prefix="" category="inline-code"></block></block>
+  <block id="d8f93cb99c84b71cefbdf673772842c8" category="paragraph"><block ref="31741a699f3d862562cd6c5b873e911d" prefix="" category="inline-code"></block></block>
+  <block id="39f16ed05d559ba39f10f8313fdbdbf7" category="paragraph"><block ref="c66634590325609b6b8009a565f11446" prefix="" category="inline-code"></block></block>
+  <block id="a1f794c27a81b33245cd8b0a81b4c628" category="list-text">다음 단계를 사용하여 브로드캐스트 도메인에 적절한 물리적 포트를<block ref="249694a485fc5d3289c38986b4f8e887" prefix=" " category="inline-code"></block> 할당합니다.</block>
+  <block id="9c0ec98274edaf49b54f8a682182e736" category="paragraph"><block ref="42648bb8b6a1d26009b7b744d239e064" prefix="" category="inline-code"></block></block>
+  <block id="2599561b277274943f3683cd23e2e672" category="paragraph">다음은 포트 "e9a"에서 'e9d'로 교체된 VLAN을 복원하는 예입니다.</block>
+  <block id="e200840cce3d89cb39fd811ba82a77d5" category="paragraph"><block ref="2a5af291ef24386c853e6cf746e464c3" prefix="" category="inline-code"></block></block>
+  <block id="dbab01f6e6b7bb76410506a5096b105b" category="paragraph"><block ref="48a6c73f1a549e44599ad131ac8a7586" prefix="" category="inline-code"></block></block>
+  <block id="d93f66fe51534a40f0833d1677d324bf" category="summary">명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 node2의 물리적 포트가 node4에 올바르게 매핑되는지 확인하고 node4에서 네트워크 구성을<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 복원합니다.</block>
+  <block id="d8f20787d5ec4fcacf599bd56be2bbd1" category="paragraph"><block ref="c322534c44813d5ec8b7bde6b1e135b5" prefix="" category="inline-code"></block></block>
+  <block id="e047fa40e589357c94de5b0e63b1c469" category="paragraph">다음은 포트 "e10a"에서 "e10b"로 교체된 VLAN을 복원하는 예입니다.</block>
+  <block id="d652f04b0c47ec3200904bc82c8d5ff7" category="paragraph"><block ref="0f64f457d55e8e27ee821e9df0561d32" prefix="" category="inline-code"></block></block>
+  <block id="b0d52e5491c54658a39bbef8e5dd30a6" category="sidebar">애그리게이트 재배치, 볼륨 이동 또는 스토리지 이동을 통해 컨트롤러 하드웨어를 업그레이드합니다.</block>
+  <block id="6015ba5fcef1f3caa77869608d6c2789" category="sidebar">ONTAP 하드웨어 시스템에 대한 스위치 설명서</block>
+  <block id="0aa489897873ed4f6cacbbccf44589ea" category="sidebar">ARL을 사용하여 업그레이드합니다</block>
+  <block id="37c71c6814f6c6da3ee8d0b203924be7" category="sidebar">AFF A800을 대체합니다</block>
+  <block id="ef62a5865ef10a9f98eab6ed7130657e" category="sidebar">AFF A220, AFF A200, AFF C190, FAS2620 또는 FAS2720을 교체합니다</block>
+  <block id="e7a797d163f1786c84029862d653fdb1" category="sidebar">AFF A700 또는 FAS9000를 교체합니다</block>
+  <block id="fe6c048ac188825e939c35497493825e" category="sidebar">AFF A90 또는 AFF A70을 설치합니다</block>
+  <block id="b2428a0f40b1f13f030d6799860c7cca" category="sidebar">ASA A150, AFF A150 또는 FAS2820를 설치합니다</block>
+  <block id="1571b9a3c2c5be276f508055478b60cb" category="sidebar">ASA A900, AFF A900 또는 FAS9500을 설치합니다</block>
+  <block id="2a80893b493b7ab0f3c726473a1b8a3e" category="sidebar">1단계. 업그레이드 준비(ONTAP 9.15.1 이상에서 '시스템 컨트롤러 교체'로 업그레이드)</block>
+  <block id="fd9953035d2e427fff5d261c7c0e28af" category="sidebar">2단계. 노드 재배치 및 폐기(ONTAP 9.15.1 이상에서 '시스템 컨트롤러 교체'로 업그레이드)</block>
+  <block id="e08f30fc0052987b4d3dd4b36c42592a" category="sidebar">3단계. node3 설치 및 부팅(ONTAP 9.15.1 이상에서 '시스템 컨트롤러 교체'로 업그레이드)</block>
+  <block id="78f93e58bfbcd8d8cfd8ede8a4455f0c" category="sidebar">4단계. 노드 재배치 및 폐기(ONTAP 9.15.1 이상에서 '시스템 컨트롤러 교체'로 업그레이드)</block>
+  <block id="e53c96ea4b74db1471d45fc6c84eef75" category="sidebar">5단계. node4 설치 및 부팅(ONTAP 9.15.1 이상에서 '시스템 컨트롤러 교체'로 업그레이드)</block>
+  <block id="fe9158ff831e80fc9361c4a06ba512f1" category="sidebar">6단계. 업그레이드 완료(ONTAP 9.15.1 이상에서 '시스템 컨트롤러 교체'로 업그레이드)</block>
+  <block id="1d2cec084b14c2bb8b27b81dee7eff45" category="sidebar">문제 해결(ONTAP 9.15.1 이상에서 '시스템 컨트롤러 교체'로 업그레이드)</block>
 </blocks>

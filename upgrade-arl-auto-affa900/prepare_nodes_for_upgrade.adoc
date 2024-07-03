@@ -30,6 +30,9 @@ summary: ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업�
 | 더 오래 된 컨트롤러 | SP 또는 BMC | 최소 펌웨어 버전입니다 
 
 
+| AFF A800 를 참조하십시오 | BMC | 10.9 
+
+
 | AFF A220 | BMC | 11.9P1 
 
 
@@ -52,18 +55,20 @@ summary: ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업�
 `system controller replace start -nodes _node_names_`
 
 +
-다음과 유사한 출력이 표시됩니다.
+다음 예제와 유사한 출력이 표시됩니다. 출력에는 클러스터에서 실행 중인 ONTAP 버전이 표시됩니다.
 
 +
 ....
 Warning:
-1. Current ONTAP version is 9.x
+1. Current ONTAP version is 9.15.1
 
 2. Verify that NVMEM or NVRAM batteries of the new nodes are charged, and charge them if they are not. You need to physically check the new nodes to see if the NVMEM or NVRAM  batteries are charged. You can check the battery status either by connecting to a serial console or using SSH, logging into the Service Processor (SP) or Baseboard Management Controller (BMC) for your system, and use the system sensors to see if the battery has a sufficient charge.
 
 Attention: Do not try to clear the NVRAM contents. If there is a need to clear the contents of NVRAM, contact NetApp technical support.
 
 3. If a controller was previously part of a different cluster, run wipeconfig before using it as the replacement controller.
+
+4. Note: This is not a MetroCluster configuration. Controller replacement supports only ARL based procedures.
 
 Do you want to continue? {y|n}: y
 ....
@@ -126,7 +131,7 @@ Controller replacement operation has been paused for user intervention.
 . 컨트롤러 교체 작업이 시작되고 사전 점검을 완료한 후 작업이 일시 중지되므로 나중에 컨트롤러 업그레이드 프로세스에서 필요할 수 있는 출력 정보를 수집할 수 있습니다.
 . 시스템 콘솔에서 컨트롤러 교체 절차의 지침에 따라 아래 명령 세트를 실행합니다.
 +
-각 노드에 연결된 시리얼 포트에서 다음 명령의 출력을 개별적으로 실행 및 저장합니다.
+각 노드에 연결된 시리얼 포트에서 명령을 실행하고 명령의 출력을 개별적으로 실행하고 저장합니다.
 
 +
 ** `vserver services name-service dns show`
@@ -137,6 +142,11 @@ Controller replacement operation has been paused for user intervention.
 ** `network port ifgrp show -node _local_`
 ** `system node show -instance -node _local_`
 ** `run -node _local_ sysconfig`
+** `run -node local sysconfig -ac`
+** `run -node local aggr status -r`
+** `vol show -fields type`
+** `run local aggr options _data_aggregate_name_`
+** `vol show -fields type , space-guarantee`
 ** `storage aggregate show -node _local_`
 ** `volume show -node _local_`
 ** `storage array config show -switch _switch_name_`
@@ -146,11 +156,11 @@ Controller replacement operation has been paused for user intervention.
 ** `security key-manager external show`
 ** `security key-manager external show-status`
 ** `network port reachability show -detail -node _local_`
-
-
 +
 
 NOTE: 온보드 키 관리자를 사용하여 NVE(NetApp Volume Encryption) 또는 NAE(NetApp Aggregate Encryption)를 사용 중인 경우, 키 관리자 암호를 준비하여 나중에 절차에서 키 관리자 재동기화를 완료하십시오.
+
+
 
 . 시스템에서 자체 암호화 드라이브를 사용하는 경우 기술 자료 문서를 참조하십시오 https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["드라이브가 FIPS 인증되었는지 확인하는 방법"^] 업그레이드하는 HA 쌍에서 사용 중인 자체 암호화 드라이브의 유형을 확인합니다. ONTAP 소프트웨어는 두 가지 유형의 자체 암호화 드라이브를 지원합니다.
 +

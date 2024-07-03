@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-app/stage_6_index.html
 keywords: complete upgrade, node, unified, target, storage, encryption, stage 6 
 summary: '를 사용하여 ARL 업그레이드를 위한 6단계 프로세스 시퀀스 `system controller replace` ONTAP 9.8 이상을 실행하는 컨트롤러의 명령입니다.' 
 ---
-= 개요
+= 6단계 개요
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -25,5 +25,5 @@ summary: '를 사용하여 ARL 업그레이드를 위한 6단계 프로세스 �
 . link:resume_snapmirror_operations.html["SnapMirror 작업을 재개합니다"]
 
 
-.MetroCluster FC 구성의 경우
-MetroCluster FC 구성의 경우 가능한 한 빨리 재해 복구/페일오버 사이트 노드를 교체해야 합니다. 컨트롤러 모델이 일치하지 않을 경우 재해 복구 미러링이 오프라인 상태가 될 수 있으므로 MetroCluster 내의 컨트롤러 모델이 일치하지 않을 수 있습니다. 명령을 사용합니다 -`skip-metrocluster-check true` 두 번째 사이트에서 노드를 교체할 때 MetroCluster 확인을 생략하는 옵션입니다.
+.MetroCluster FC 구성
+MetroCluster FC 구성에서는 재해 복구/페일오버 사이트 노드를 최대한 빨리 교체해야 합니다. 컨트롤러 모델이 일치하지 않을 경우 재해 복구 미러링이 오프라인 상태가 될 수 있으므로 MetroCluster 내의 컨트롤러 모델이 일치하지 않을 수 있습니다. 두 번째 사이트에서 노드를 교체할 때 명령을 사용하여 `-skip-metrocluster-check true` MetroCluster 검사를 생략합니다.

@@ -4,7 +4,7 @@ permalink: upgrade-arl-manual/stage_2_index.html
 keywords: relocate, retire, node1, steps,  stage 2 
 summary: ONTAP 9.7 이하를 실행하는 컨트롤러의 수동 ARL 업그레이드를 위한 2단계 프로세스 시퀀스. 
 ---
-= 개요
+= 2단계 개요
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

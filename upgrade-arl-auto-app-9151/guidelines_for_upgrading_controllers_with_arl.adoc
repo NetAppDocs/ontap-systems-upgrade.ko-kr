@@ -1,0 +1,64 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/guidelines_for_upgrading_controllers_with_arl.html 
+keywords: guidelines, upgrading, controllers, ARL 
+summary: '명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 수 있는지 `system controller replace` 이해합니다.' 
+---
+= ARL을 사용한 컨트롤러 업그레이드 지침
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ARL을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러 쌍을 업그레이드할 수 있는지 여부는 플랫폼과 원래 컨트롤러와 교체 컨트롤러 모두의 구성에 따라 달라집니다.
+
+
+
+== ARL에 대한 업그레이드가 지원됩니다
+
+이 ARL 절차를 사용하여 노드 쌍을 업그레이드하기 전에 다음 요구 사항을 검토하여 구성이 지원되는지 확인하십시오.
+
+* 원래 컨트롤러와 교체 컨트롤러에서 ARL을 수행할 수 있는지 확인합니다.
+* 정의된 모든 애그리게이트의 크기와 원래 시스템에서 지원하는 디스크 수를 확인하십시오. 그런 다음 지원되는 애그리게이트 크기 및 디스크 수를 새로운 시스템에서 지원하는 애그리게이트 크기 및 디스크 수와 비교합니다. link:other_references.html["참조"]이 정보를 볼 수 있는 _Hardware Universe_ 링크를 참조하십시오. 새 시스템에서 지원하는 디스크 수와 애그리게이트 크기는 원래 시스템에서 지원하는 디스크 수와 같거나 그보다 커야 합니다.
+* 클러스터 혼합 규칙에서 원래 컨트롤러를 교체할 때 새 노드가 기존 노드와 클러스터의 일부가 될 수 있는지 여부를 확인합니다. 클러스터 혼합 규칙에 대한 자세한 내용은 _Hardware Universe_ 링크를 참조하십시오 link:other_references.html["참조"] .
+* AFF 700과 같은 시스템이 있는 경우, 다음 구성에 따라 클러스터 LIF를 노드당 두 개의 클러스터 포트로 마이그레이션한 후 다시 홈을 지정합니다.
+* 노드당 클러스터 포트가 3개 이상 있습니다
+* 포트 e4a, e4b, e4c, e4d 및 포트 e4e 를 생성하는 브레이크아웃 모드의 SLOT4의 클러스터 상호 연결 카드 e4f, e4g 및 e4h
++
+
+NOTE: 노드당 클러스터 포트가 3개 이상인 컨트롤러 업그레이드를 수행하면 업그레이드 후 새 컨트롤러에서 클러스터 LIF가 누락될 수 있습니다.
+
++
+자세한 내용은 기술 자료 문서를 link:https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_delete_unwanted_or_unnecessary_cluster_LIFs["원치 않거나 불필요한 클러스터 LIF를 삭제하는 방법"^]참조하십시오.
+
+
+
+ARL을 사용한 컨트롤러 업그레이드는 SnapLock 엔터프라이즈 및 SnapLock 규정 준수 볼륨으로 구성된 시스템에서 지원됩니다.
+
+
+
+== 스위치가 없는 2노드 클러스터
+
+스위치가 없는 2노드 클러스터에서 노드를 업그레이드할 경우 업그레이드를 수행하는 동안 스위치가 없는 클러스터에 노드를 그대로 둘 수 있습니다. 이러한 LUN을 스위치 클러스터로 변환할 필요는 없습니다.
+
+
+
+== ARL에 대한 업그레이드가 지원되지 않습니다
+
+원래 컨트롤러에 연결된 디스크 쉘프를 지원하지 않는 교체 컨트롤러는 업그레이드할 수 없습니다.
+
+을 참조하십시오 link:other_references.html["참조"] 디스크 지원 정보를 위해 _Hardware Universe_에 연결하려면.
+
+내부 드라이브가 있는 엔트리 레벨 컨트롤러를 업그레이드하려면 볼륨 또는 스토리지를 이동하여 업그레이드 _ 를 참조하고 절차_volumes_를 link:other_references.html["참조"] 이동하여 clustered Data ONTAP을 실행하는 노드 쌍 업그레이드 _ 로 이동하십시오.
+
+
+
+== 문제 해결
+
+컨트롤러를 업그레이드하는 동안 문제가 발생하면 자세한 정보 및 가능한 해결 방법은 을 link:troubleshoot_index.html["문제 해결"] 참조하십시오.
+
+발생한 문제에 대한 해결책을 찾지 못한 경우 기술 지원 부서에 문의하십시오.

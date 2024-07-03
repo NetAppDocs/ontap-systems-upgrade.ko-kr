@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/relocate_failed_or_vetoed_aggr.html 
+keywords: relocating, failed, vetoed, aggregates, relocation, operation 
+summary: '명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 장애가 발생하거나 거부된 애그리게이트를 수동으로 재배치합니다. `system controller replace`' 
+---
+= 장애가 발생하거나 거부권을 행사한 Aggregate를 재배치합니다
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Aggregate가 재배치되지 않거나 거부되면 Aggregate를 수동으로 재이동하거나, 필요한 경우 거부권 또는 대상 검사를 오버라이드해야 합니다.
+
+.이 작업에 대해
+오류로 인해 재배치 작업이 일시 중지됩니다.
+
+.단계
+. EMS(이벤트 관리 시스템) 로그를 확인하여 Aggregate의 재배치 실패 또는 거부가 발생한 이유를 확인합니다.
+. 장애가 발생하거나 거부되는 애그리게이트를 재배치합니다.
++
+`storage aggregate relocation start -node _node1_ -destination _node2_ -aggregate-list _aggr_name_ -ndo-controller-upgrade true`
+
+. 메시지가 표시되면 를 입력합니다 `y`.
+. 다음 방법 중 하나를 사용하여 재배치를 수행할 수 있습니다.
++
+[cols="35,65"]
+|===
+| 옵션을 선택합니다 | 설명 
+
+
+| 거부권 확인 무시 | 다음 명령을 사용합니다.
+`storage aggregate relocation start -node node1 -destination node2 -aggregate-list _aggr_list_ -ndo-controller-upgrade true -override-vetoes true` 
+
+
+| 대상 확인을 재정의하는 중입니다 | 다음 명령을 사용합니다.
+`storage aggregate relocation start -node node1 -destination node2 -aggregate-list _aggr_list_ -ndo-controller-upgrade true -override-vetoes true -override-destination-checks true` 
+|===
+

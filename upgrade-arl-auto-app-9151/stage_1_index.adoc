@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/stage_1_index.html 
+keywords: upgrade, preparing, preparation, prepare, overview, stage 1 
+summary: 'ONTAP 9.15.1 이상을 실행하는 컨트롤러에서 명령을 사용하여 ARL 업그레이드를 위한 1단계 프로세스 순서 `system controller replace`' 
+---
+= 1단계 개요
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+1단계에서 사전 점검을 실행하고 필요한 경우 애그리게이트 소유권을 수정합니다. 또한 Onboard Key Manager를 사용하여 스토리지 암호화를 관리하는 경우 SnapMirror 관계를 중지하도록 선택할 수 있는 경우 특정 정보를 기록할 수도 있습니다.
+
+.단계
+. link:prepare_nodes_for_upgrade.html["업그레이드할 노드를 준비합니다"]
+. link:manage_storage_encryption_using_okm.html["Onboard Key Manager를 사용하여 스토리지 암호화를 관리합니다"]
+

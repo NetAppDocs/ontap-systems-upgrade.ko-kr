@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/retire_node2.html 
+keywords: retire, node2 
+summary: '명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 노드2를 종료하고 랙 또는 섀시에서 분리합니다 `system controller replace` .' 
+---
+= 노드2를 폐기합니다
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+노드 2를 폐기하려면 먼저 노드 2를 올바르게 종료하고 랙 또는 섀시에서 분리합니다.
+
+.단계
+. 작업을 다시 시작합니다.
++
+`system controller replace resume`
+
++
+노드가 자동으로 중단됩니다.
+
+
+
+.작업을 마친 후
+업그레이드가 완료된 후 노드 2를 사용 중단할 수 있습니다. 을 참조하십시오 link:decommission_old_system.html["기존 시스템을 폐기합니다"].

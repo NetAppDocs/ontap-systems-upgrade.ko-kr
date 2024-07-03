@@ -21,6 +21,10 @@ summary: '일반적으로 컨트롤러 하드웨어를 업그레이드하는 방
 
 * FAS2620, FAS2650, FAS2720 및 FAS2750를 참조하십시오
 * AFF A150, AFF A200, AFF A220, AFF A250, AFF A700s, 및 AFF A800을 받았습니다
++
+
+NOTE: 애그리게이트 재배치를 사용하여 AFF A800을 AFF A70 또는 AFF A90으로 업그레이드할 수도 있습니다. link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app-9151/index.html["자세한 정보"]..
+
 * AFF C190, AFF C250 및 AFF C800의 약어입니다
 * ASA A150, ASA A250, ASA A800 및 ASA AFF A220
 
@@ -50,10 +54,9 @@ image:workflow_external_drives.png["업그레이드 절차 선택을 위한 결�
 
 * link:upgrade-arl/index.html["애그리게이트 재배치를 사용하여 업그레이드"]
 +
-애그리게이트 재배치는 교체 절차입니다. 스위치가 없는 2노드 클러스터에 도움이 되는 새로운 노드로 클러스터를 확장하거나 축소할 필요가 없습니다. 애그리게이트 재배치를 통한 데이터 이동은 볼륨을 이동할 때 애그리게이트 간에 데이터를 복사하는 것보다 빠릅니다.
+애그리게이트 재배치는 교체 절차입니다. 스위치가 없는 2노드 클러스터에 도움이 되는, 새로운 노드로 클러스터를 확장하거나 축소할 필요가 없습니다. 애그리게이트 재배치를 통한 데이터 이동은 볼륨을 이동할 때 애그리게이트 간에 데이터를 복사하는 것보다 빠릅니다.
 
-* link:upgrade/upgrade-decide-to-use-this-guide.html["볼륨을 이동하여 업그레이드"]
-* link:upgrade/upgrade-decide-to-use-this-guide.html["스토리지를 이동하여 업그레이드"]
+* link:upgrade/upgrade-decide-to-use-this-guide.html["볼륨 또는 스토리지를 이동하여 업그레이드"]
 
 
 [NOTE]

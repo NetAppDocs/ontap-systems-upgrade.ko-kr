@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto/stage_5_index.html
 keywords: install, boot, node4, node2, node-management,  stage 5 
 summary: '를 사용하여 ARL 업그레이드를 위한 5단계 프로세스 시퀀스 `system controller replace` ONTAP 9.5 - 9.7을 실행하는 컨트롤러의 명령' 
 ---
-= 개요
+= 5단계 개요
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -1,5 +1,8 @@
 ---
 indexpage:
+  title: ONTAP 하드웨어 업그레이드 설명서
+  summary: 애그리게이트 재배치, 볼륨 이동 또는 스토리지 이동을 통해 컨트롤러 하드웨어를 업그레이드합니다.
+  keywords: aggregate, relocation, moving, manual, upgrade, relocate
   lead: 이 사이트에서는 AFF, FAS 및 ASA 스토리지 시스템의 업그레이드 절차를 제공합니다. 스토리지 시스템에 적합한 업그레이드 절차를
     선택합니다.
   tiles:
@@ -11,18 +14,20 @@ indexpage:
       url: "/choose_controller_upgrade_procedure.html"
   - title: ONTAP 9.8 이상을 실행하는 시스템에서 애그리게이트를 재배치하여 업그레이드
     links:
+    - title: '"system controller replace" 명령을 사용하여 ONTAP 9.15.1에 도입된 컨트롤러 하드웨어를 업그레이드합니다'
+      url: "/upgrade-arl-auto-app-9151/index.html"
     - title: '"system controller replace" 명령을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드합니다'
-      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/
+      url: "/upgrade-arl-auto-affa900/index.html"
     - title: '"시스템 컨트롤러 교체" 명령 사용(대부분의 시스템)'
-      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/
+      url: "/upgrade-arl-auto-app/index.html"
     - title: 수동 명령을 사용합니다
-      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/
+      url: "/upgrade-arl-manual-app/index.html"
   - title: ONTAP 9.7 이하를 실행하는 시스템에서 애그리게이트를 재배치하여 업그레이드
     links:
     - title: '"system controller replace" 명령을 사용합니다'
-      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/
+      url: "/upgrade-arl-auto/index.html"
     - title: 수동 명령을 사용합니다
-      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/
+      url: "/upgrade-arl-manual/index.html"
   - title: 스토리지 또는 볼륨을 이동하여 업그레이드
     links:
     - title: 컨트롤러 하드웨어를 업그레이드합니다
@@ -37,7 +42,7 @@ indexpage:
     links:
     - title: ONTAP 하드웨어 시스템 설명서
       url: https://docs.netapp.com/us-en/ontap-systems/index.html
-    - title: ONTAP 스위치 설명서
+    - title: ONTAP 하드웨어 시스템에 대한 스위치 설명서
       url: https://docs.netapp.com/us-en/ontap-systems-switches/index.html
     - title: ONTAP 소프트웨어 설명서
       url: https://docs.netapp.com/us-en/ontap/index.html

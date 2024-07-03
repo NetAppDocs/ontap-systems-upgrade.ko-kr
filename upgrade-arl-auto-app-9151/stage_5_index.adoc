@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/stage_5_index.html 
+keywords: install, boot, node4, node2, node-management, stage 5 
+summary: 'ONTAP 9.15.1 이상을 실행하는 컨트롤러에서 명령을 사용하여 ARL 업그레이드를 위한 5단계 프로세스 시퀀스 `system controller replace` .' 
+---
+= 5단계 개요
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+5단계에서는 노드 4를 설치 및 부팅하고 노드 2의 클러스터 및 노드 관리 포트가 노드 4에서 온라인 상태인지 확인한 다음 노드 4 설치를 확인합니다. NVE를 사용하는 경우 키 관리자 구성을 복원합니다. 또한 노드2 NAS 데이터 LIF 및 루트 이외의 애그리게이트를 노드 3에서 노드 4로 재배치하고 노드 4에 SAN LIF가 있는지 확인합니다.
+
+.단계
+. link:install_boot_node4.html["노드 4를 설치하고 부팅합니다"]
+. link:verify_node4_installation.html["노드 4 설치를 확인합니다"]
+. link:restore_key-manager_config_node4.html["노드 4의 키 관리자 구성을 복원합니다"]
+. link:move_non_root_aggr_and_nas_data_lifs_node2_from_node3_to_node4.html["노드 2가 소유한 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 3에서 노드 4로 이동합니다"]
+

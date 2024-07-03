@@ -15,8 +15,7 @@ Aggregate가 재배치되지 않거나 거부되면 Aggregate를 수동으로 �
 
 . 메시지가 표시되면 를 입력합니다 `y`.
 . 다음 방법 중 하나를 사용하여 재배치를 수행할 수 있습니다.
-
-
++
 [cols="35,65"]
 |===
 | 옵션을 선택합니다 | 설명 
@@ -29,3 +28,4 @@ Aggregate가 재배치되지 않거나 거부되면 Aggregate를 수동으로 �
 | 대상 확인을 재정의하는 중입니다 | 다음 명령을 사용합니다.
 `storage aggregate relocation start -node node1 -destination node2 -aggregate-list _aggr_list_ -ndo-controller-upgrade true -override-vetoes true -override-destination-checks true` 
 |===
+

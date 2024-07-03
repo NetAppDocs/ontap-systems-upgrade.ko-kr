@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-affa900/stage_5_index.html
 keywords: upgrade, install, netboot, node2, overview, stage 1 
 summary: '를 사용하여 ARL 업그레이드를 위한 5단계 프로세스 시퀀스 `system controller replace` 동일한 섀시에서 컨트롤러 모델을 업그레이드하는 데 필요한 명령입니다.' 
 ---
-= 개요
+= 5단계 개요
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -17,6 +17,6 @@ summary: '를 사용하여 ARL 업그레이드를 위한 5단계 프로세스 �
 5단계에서는 업그레이드된 노드 2에 대해 받은 새 시스템 모듈을 설치한 다음 netboot 노드 2를 설치합니다.
 
 .단계
-. link:install_replacement_system_modules_on_node2.html["노드 2에 교체 시스템 모듈을 설치합니다"]
+. link:install-affa90-affa70-on-node2.html["노드 2에 교체 시스템 모듈을 설치합니다"]
 . link:netboot_node2.html["netboot 노드2"]
 

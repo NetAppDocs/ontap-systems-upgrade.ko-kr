@@ -11,7 +11,13 @@ summary: 볼륨을 이동하여 업그레이드할 경우 원래 노드를 준�
 
 
 [role="lead"]
-볼륨을 이동하여 컨트롤러 하드웨어를 업그레이드할 경우 원래 노드를 준비하고 새 노드를 클러스터에 연결합니다. 볼륨을 새 노드로 이동하고 LIF를 구성한 다음 클러스터에서 원래 노드의 연결을 해제합니다. 볼륨을 이동하여 업그레이드하는 무중단 절차는 무중단 절차와 같습니다.
+볼륨 이동을 통한 컨트롤러 하드웨어 업그레이드는 중단 없이 진행됩니다. 업그레이드를 시작하기 전에 일반적인 업그레이드 시나리오 및 업그레이드 고려 사항을 검토하십시오.
+
+* link:upgrade-decide-to-use-this-guide.html["볼륨이나 스토리지를 이동하여 업그레이드 여부를 결정합니다"]
+* link:upgrade-considerations.html["컨트롤러 하드웨어 업그레이드에 대한 고려 사항"]
+
+
+볼륨을 이동하여 업그레이드하려면 원래 노드를 준비하고 새 노드를 클러스터에 가입해야 합니다. 볼륨을 새 노드로 이동하고 LIF를 구성한 다음 클러스터에서 원래 노드의 연결을 해제합니다.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1개"]link:upgrade-prepare-when-moving-volumes.html["볼륨을 이동할 때 업그레이드를 준비합니다"]
 [role="quick-margin-para"]

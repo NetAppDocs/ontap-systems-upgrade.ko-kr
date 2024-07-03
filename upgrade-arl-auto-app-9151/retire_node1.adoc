@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/retire_node1.html 
+keywords: retiring, node 
+summary: '명령을 사용하여 ONTAP 9.15.1 이상을 실행 중인 컨트롤러를 업그레이드할 때 노드2와 함께 HA 쌍을 비활성화하고 노드1을 `system controller replace` 종료합니다.' 
+---
+= 노드1을 폐기합니다
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+노드 1을 폐기하려면 자동화된 작업을 다시 시작하여 노드 2와 HA 쌍을 비활성화하고 노드 1을 올바르게 종료합니다. 이 절차의 뒷부분에서 랙 또는 섀시에서 노드 1을 분리합니다.
+
+.단계
+. 작업을 다시 시작합니다.
++
+`system controller replace resume`
+
+. 노드 1이 중지되었는지 확인합니다.
++
+`system controller replace show-details`
+
+
+
+.작업을 마친 후
+업그레이드가 완료된 후 노드 1을 사용 중단할 수 있습니다. 을 참조하십시오 link:decommission_old_system.html["기존 시스템을 폐기합니다"].

@@ -14,10 +14,14 @@ summary: ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업�
 
 
 [role="lead"]
-교체 시스템 모듈을 사용하여 node1 설치를 확인해야 합니다. 물리적 포트는 변경되지 않으므로 이전 노드 1에서 교체 노드 1로 물리적 포트를 매핑할 필요가 없습니다.
+교체 컨트롤러 모듈로 노드1을 부팅한 후 올바르게 설치되었는지 확인합니다.
+
+AFF A800 업그레이드만 해당, AFF A800과 AFF A90 또는 AFF A70 컨트롤러 간에 물리적 포트가 변경되기 때문에 물리적 포트를 기존 노드 1에서 교체 노드 1로 매핑합니다.
+
+다른 모든 업그레이드의 경우 물리적 포트는 변경되지 않으므로 이전 노드1에서 교체 노드1로 물리적 포트를 매핑할 필요가 없습니다.
 
 .이 작업에 대해
-교체 컨트롤러 모듈을 사용하여 노드 1을 부팅한 후 올바르게 설치되었는지 확인합니다. 노드 1이 쿼럼에 참가할 때까지 기다린 다음 컨트롤러 교체 작업을 다시 시작해야 합니다.
+노드 1이 쿼럼에 참가할 때까지 기다린 다음 컨트롤러 교체 작업을 다시 시작해야 합니다.
 
 절차의 이 시점에서 노드 1이 쿼럼 자동 연결을 시도할 때 컨트롤러 업그레이드 작업이 일시 중지되어야 합니다.
 
@@ -33,6 +37,14 @@ summary: ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업�
 +
 `cluster show`
 
++
+[NOTE]
+====
+부팅 후 node1이 quorum에 연결되지 않은 경우 5분 동안 기다렸다가 다시 확인하십시오. 클러스터 연결에 따라 포트 연결 검사가 완료되고 LIF를 해당 홈 포트로 이동하는 데 시간이 걸릴 수 있습니다.
+
+노드1이 5분 후에도 여전히 쿼럼에 있지 않으면 진단 권한 명령을 사용하여 새 노드의 클러스터 포트를 "클러스터 IPspace"에 배치하여 수정하는 `network port modify <port_name> -ipspace Cluster`것이 좋습니다.
+
+====
 . 고급 권한 모드로 전환:
 +
 `set advanced`
@@ -116,16 +128,14 @@ Node1
           a0a-822  Default:822                          ok
           a0a-823  Default:823                          ok
           e0M      Default:Mgmt                         ok
-          e11a     -                                    no-reachability
-          e11b     -                                    no-reachability
-          e11c     -                                    no-reachability
-          e11d     -                                    no-reachability
+          e1a      Cluster:Cluster                      ok
+          e1b      -                                    no-reachability
+          e2a      -                                    no-reachability
+          e2b      -                                    no-reachability
           e3a      -                                    no-reachability
           e3b      -                                    no-reachability
-          e4a      Cluster:Cluster                      ok
-          e4e      Cluster:Cluster                      ok
-          e5a      -                                    no-reachability
-          e7a      -                                    no-reachability
+          e7a      Cluster:Cluster                      ok
+          e7b      -                                    no-reachability
           e9a      Default:Default                      ok
           e9a-822  Default:822                          ok
           e9a-823  Default:823                          ok
@@ -134,10 +144,10 @@ Node1
           e9b-823  Default:823                          ok
           e9c      Default:Default                      ok
           e9d      Default:Default                      ok
-22 entries were displayed.
+20 entries were displayed.
 ----
 +
-앞의 예제에서 노드 1은 컨트롤러 교체 후 부팅되었습니다. 물리적 연결이 없기 때문에 일부 포트에는 연결 기능이 없습니다. 이외의 도달 가능 상태인 모든 포트는 복구해야 합니다 `ok`.
+위의 예제에서 node1은 컨트롤러를 교체한 후 부팅되었습니다. "연결 불가"를 표시하는 포트는 물리적으로 연결되어 있지 않습니다. 연결 상태가 아닌 다른 모든 포트를 복구해야 `ok`합니다.
 
 +
 
@@ -160,12 +170,12 @@ NOTE: 업그레이드 중에는 네트워크 포트와 해당 연결이 변경�
 +
 [listing]
 ----
-Cluster ::> reachability repair -node node1 -port e11b
+Cluster ::> reachability repair -node node1 -port e1b
 ----
 +
 [listing]
 ----
-Warning: Repairing port "node1:e11b" may cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
+Warning: Repairing port "node1:e1b" may cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
 ----
 +
 이전 예에 표시된 것처럼, 현재 위치한 브로드캐스트 도메인의 도달 가능성 상태와 다를 수 있는 도달 가능성 상태의 포트에 대해 경고 메시지가 표시될 것입니다. 포트의 연결을 검토하고 응답합니다 `y` 또는 `n` 있습니다.

@@ -25,6 +25,9 @@ summary: 동일한 섀시에서 컨트롤러 모델을 업그레이드하는 ARL
 | 더 오래 된 컨트롤러 | 교체 컨트롤러 
 
 
+| AFF A800 를 참조하십시오 | AFF A70 및 AFF A90 
+
+
 | ASA으로 구성된 AFF A220입니다 | ASA A150 
 
 
@@ -44,6 +47,7 @@ summary: 동일한 섀시에서 컨트롤러 모델을 업그레이드하는 ARL
 |===
 * NetApp 세일즈 담당자에게 컨트롤러 업그레이드용 하드웨어를 수령했는지 확인했습니다.
 +
+** 업그레이드에 필요한 AFF A90 컨트롤러 2개 또는 AFF A70 컨트롤러 2개 및 모든 입출력 모듈 100GbE 케이블의 필요한 길이
 ** ASA A150, AFF A150 또는 FAS2820 컨트롤러
 ** ASA A900, AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈, 업그레이드에 필요한 부품
 
@@ -55,11 +59,11 @@ summary: 동일한 섀시에서 컨트롤러 모델을 업그레이드하는 ARL
 
 다음과 같은 경우에는 이 절차를 사용할 수 없습니다.
 
-* AFF A700 또는 FAS9000 시스템에서 FlexArray 가상화 소프트웨어를 사용하고 있습니다.
+* AFF A800, AFF A700 또는 FAS9000 시스템에서 FlexArray 가상화 소프트웨어를 사용하고 있습니다.
 * 클러스터 인터커넥트 및 이더넷 연결 스토리지에 공유 스위치를 사용하고 있습니다.
 
 
-AFF A700 또는 FAS9000 시스템에서 패브릭 MetroCluster 또는 MetroCluster IP 구성을 업그레이드하려면 를 참조하십시오 link:other_references.html["참조"] MetroCluster 업그레이드 및 Expansion_content에 대한 링크
+AFF A800, AFF A700 또는 FAS9000 시스템에서 MetroCluster IP 구성을 업그레이드하려면 MetroCluster 업그레이드 및 expansion_content 링크에 대한 링크를 참조하십시오. link:other_references.html["참조"]
 
 
 NOTE: 이 절차를 통해 NetApp 스토리지 암호화(NSE), NetApp 볼륨 암호화(NVE), NetApp 애그리게이트 암호화(NAE)를 사용할 수 있습니다.
