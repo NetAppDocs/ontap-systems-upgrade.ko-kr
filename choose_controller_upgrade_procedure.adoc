@@ -23,7 +23,7 @@ summary: '일반적으로 컨트롤러 하드웨어를 업그레이드하는 방
 * AFF A150, AFF A200, AFF A220, AFF A250, AFF A700s, 및 AFF A800을 받았습니다
 +
 
-NOTE: 애그리게이트 재배치를 사용하여 AFF A800을 AFF A70 또는 AFF A90으로 업그레이드할 수도 있습니다. link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app-9151/index.html["자세한 정보"]..
+NOTE: 애그리게이트 재배치를 사용하여 AFF A800을 AFF A70 또는 AFF A90으로 업그레이드할 수도 있습니다. link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html["자세한 정보"]..
 
 * AFF C190, AFF C250 및 AFF C800의 약어입니다
 * ASA A150, ASA A250, ASA A800 및 ASA AFF A220
