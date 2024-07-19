@@ -4879,7 +4879,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="2e1458abf9be810e3c1b32482a2fb654" category="cell">기존 노드2 컨트롤러</block>
   <block id="1a68d75a6401790bda4f04fcd5250d89" category="cell">AFF A90 또는 AFF A70</block>
   <block id="5f9fde3ed8fab53307d0d33e0b21555f" category="doc">공유 클러스터 - HA 및 스토리지를 위한 케이블 노드1(AFF A800 업그레이드만 해당)</block>
-  <block id="d7c50b232c0b6695dad67576c458f2b7" category="paragraph">이전에 AFF A800 노드 1에 연결되었던 모든 클러스터, HA, 스토리지 및 데이터 연결을 이제 새로 설치된 AFF A90 또는 AFF A70 노드1에 연결해야 합니다.</block>
   <block id="3f96763067b8ef1bea6f3b7936e59b10" category="paragraph">다음 표에서는 스위치가 없는 2노드 클러스터 구성의 스위치 포트 사용량을 보여 줍니다.</block>
   <block id="60aaf44d4b562252c04db7f98497e9aa" category="cell">포트</block>
   <block id="ed062d9f9c55cc3a6f727877095b3f8a" category="cell">AFF A800 노드</block>
@@ -4897,7 +4896,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="c6d464573f83b68eae557ca5213c2dbe" category="cell">사용 가능한 모든 포트</block>
   <block id="1106a2319bc9e3e60b2eb082fdf3e891" category="cell">NS224 쉘프용 이더넷 스토리지 포트</block>
   <block id="bf88a79b7721bdcefd6f46ff3e6e823a" category="cell">이더넷 스토리지 접속 매핑을 참조하십시오</block>
-  <block id="98c565adb9d07742bd39f0d8f62a6a4a" category="paragraph">스위치가 연결된 클러스터의 경우 AFF A90 또는 AFF A70 노드의 동일한 클러스터 포트가 동일한 스위치에 있어야 합니다. 예를 들어, 업그레이드가 완료되면 노드1의 E1A와 노드2의 E1A가 하나의 클러스터 스위치에 연결되어야 합니다. 마찬가지로, 양쪽 노드의 두 번째 클러스터 포트를 두 번째 클러스터 스위치에 연결해야 합니다. 공유 클러스터 HA 포트의 교차 연결, 노드 1의 E1A가 스위치 A에 연결되고 노드 2의 E1A가 스위치 B에 연결되어 HA 통신 장애를 방지합니다.</block>
   <block id="b6c0f97a30874aed966651e5abc3c11d" category="cell">AFF A70 및 AFF A90</block>
   <block id="11c23a28b09e8dab4fd29659b5d908e1" category="list-text">업그레이드에 필요한 AFF A90 컨트롤러 2개 또는 AFF A70 컨트롤러 2개 및 모든 입출력 모듈 100GbE 케이블의 필요한 길이</block>
   <block id="2c379faac9baae13e7fda4f15aafa273" category="list-text">AFF A800, AFF A700 또는 FAS9000 시스템에서 FlexArray 가상화 소프트웨어를 사용하고 있습니다.</block>
@@ -5196,4 +5194,18 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="fe9158ff831e80fc9361c4a06ba512f1" category="sidebar">6단계. 업그레이드 완료(ONTAP 9.15.1 이상에서 '시스템 컨트롤러 교체'로 업그레이드)</block>
   <block id="1d2cec084b14c2bb8b27b81dee7eff45" category="sidebar">문제 해결(ONTAP 9.15.1 이상에서 '시스템 컨트롤러 교체'로 업그레이드)</block>
   <block id="f6450b8785035cd4f0854992330d2734" category="admonition">애그리게이트 재배치를 사용하여 AFF A800을 AFF A70 또는 AFF A90으로 업그레이드할 수도 있습니다. <block ref="dd8a9320d133fc6bc4cebf159be26035" category="inline-link-macro-rx"></block>..</block>
+  <block id="d7548e4333d6055e4cfe02fb476e8bb3" category="summary">이전에 AFF A800 노드 1에 연결되었던 클러스터, HA, 스토리지 및 데이터 연결을 새로 설치된 AFF A90 또는 AFF A70 노드1에 연결합니다</block>
+  <block id="0640a7d79562f0e5755e3f5b4337aaf0" category="paragraph">이전에 AFF A800 노드 1에 연결되었던 클러스터, HA, 스토리지, 데이터 및 관리 연결을 새로 설치된 AFF A90 또는 AFF A70 노드1에 연결합니다.</block>
+  <block id="e41a57de6846f0486a2837efec0a7735" category="section-title">e0M과 BMC 포트를 연결합니다</block>
+  <block id="83f9eada4a675baaeaa258974d454974" category="paragraph">AFF A800에는 관리 포트(e0M) 및 BMC 포트가 있습니다. AFF A90 및 AFF A70에서 e0M과 BMC 포트는 결합되고 "렌치" 포트를 통해 액세스됩니다. AFF A90 또는 AFF A70에 연결하기 전에 e0M 및 BMC 포트가 AFF A800의 동일한 스위치 및 서브넷에 연결되어 있는지 확인해야 합니다.</block>
+  <block id="71f7c95fc9a5b8a1a847fc0baf3f04a0" category="cell">만약...</block>
+  <block id="31a1d0c3f4eee8e89c1e85f3c2f53402" category="cell">e0M과 BMC IP 주소는 같은 IP 서브넷에 있습니다</block>
+  <block id="9fded7c0f0530a23a9a859ba516478e5" category="cell">AFF A800의 e0M 또는 BMC 포트를 AFF A90 또는 AFF A70의 "렌치" 포트에 연결합니다.</block>
+  <block id="6d317071220219966d4e9dcc83f3c48f" category="cell">e0M과 BMC IP 주소가 서로 다른 서브넷에 있습니다</block>
+  <block id="06ae0bb86db3eff96d5e95f8377d0658" category="list-text">e0M과 BMC IP 주소를 하나의 IP 서브넷으로 통합합니다.</block>
+  <block id="444178cd590abb095281389d276396fb" category="section-title">스위치가 없는 2노드 클러스터에 연결합니다</block>
+  <block id="17ff48b429522b181dd38c99ad361c90" category="section-title">스위치 연결 클러스터에 연결합니다</block>
+  <block id="642bccb8ea8bf1d5af20ff2b734c1972" category="paragraph">스위치 연결 클러스터의 경우 다음 요구사항을 충족하는지 확인하십시오.</block>
+  <block id="0bc65976ff133ee82e86f9a6d1241bd3" category="list-text">AFF A90 또는 AFF A70 노드의 동일한 클러스터 포트가 동일한 스위치에 있습니다. 예를 들어, 업그레이드가 완료되면 노드1의 E1A와 노드2의 E1A가 하나의 클러스터 스위치에 연결되어야 합니다. 마찬가지로, 양쪽 노드의 두 번째 클러스터 포트를 두 번째 클러스터 스위치에 연결해야 합니다. 공유 클러스터 HA 포트를 교차 연결하면 노드 1의 E1A가 스위치 A에 연결되고 노드 2의 E1A가 스위치 B에 연결되어 HA 통신 장애가 발생합니다.</block>
+  <block id="a8ddcf9ff72eca8d08263b606043e793" category="list-text">AFF A90 및 AFF A70 노드는 공유 클러스터 HA 이더넷 포트를 사용합니다. 클러스터 스위치가 공유 클러스터 HA 포트를 지원하는 RCF(Reference Configuration File)와 함께 설치되었는지 확인합니다.</block>
 </blocks>
