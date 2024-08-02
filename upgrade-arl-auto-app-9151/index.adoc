@@ -38,4 +38,16 @@ NOTE: 다음 절차를 사용하여 MetroCluster FC 또는 IP 구성을 업그�
 * 이 절차에서는 교체 컨트롤러 하드웨어가 새 하드웨어이며 사용되지 않은 것으로 가정합니다. 명령을 사용하여 사용한 컨트롤러를 준비하는 데 필요한 단계는 `wipeconfig` 이 절차에 포함되지 않습니다. 교체 컨트롤러 하드웨어를 이전에 사용한 경우 기술 지원 부서에 문의해야 합니다.
 * 이 절차를 사용하여 2개 이상의 노드가 있는 클러스터에서 컨트롤러 하드웨어를 업그레이드할 수 있습니다. 하지만 클러스터의 각 HA(고가용성) 쌍에 대해 이 절차를 별도로 수행해야 합니다.
 * ONTAP 9.15.1에 도입된 AFF A70, AFF A90 또는 AFF A1K 시스템으로 업그레이드할 때 ONTAP는 스토리지 효율성을 사용하지 않는 볼륨을 포함하여 기존의 모든 씬 프로비저닝된 볼륨의 스토리지 효율성을 변환하고 하드웨어 오프로드 기능을 사용하는 새로운 스토리지 효율성 기능을 적용합니다. 이 프로세스는 자동 백그라운드 프로세스이며 시스템에 성능에 영향을 주지 않습니다. https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-concept.html["자세한 정보"^]..
+* AFF A70, AFF A90, AFF A1K 시스템은 클러스터 및 HA 연결 모두에서 100GbE 네트워크 포트를 공유합니다. 이러한 시스템은 기존 클러스터 스위치에 대한 10GbE 또는 25GbE 클러스터 연결을 지원할 수 있습니다. 그러나 NetApp 10GbE 및 25GbE 스위치가 더 이상 필요하지 않은 경우 100GbE 클러스터 속도로 업데이트하는 것이 좋습니다. 자세한 내용은 다음 기술 문서를 참조하십시오.
++
+--
+** link:https://kb.netapp.com/?title=on-prem%2Fontap%2FOHW%2FOHW-KBs%2FHow_to_configure_10G_or_25G_cluster_ports_on_a_new_cluster_setup_on_AFF_A1K%252C_AFF_A90_or_AFF_A70["AFF A1K, AFF A90 또는 AFF A70의 새로운 클러스터 설정에서 10G 또는 25G 클러스터 포트를 구성하는 방법"^]
+** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/How_to_convert_an_existing_cluster_from_10G_or_25G_cluster_ports_to_40G_or_100G_cluster_ports_on_an_AFF_A1K_AFF_A90_or_AFF_A70["기존 클러스터를 AFF A1K, AFF A90 또는 AFF A70의 10G 또는 25G 클러스터 포트에서 40G 또는 100G 클러스터 포트로 변환하는 방법"^]
+
+
+--
++
+기존 노드의 e0a 또는 e0b 클러스터 포트를 새 노드의 클러스터 포트에 연결할 수 없는 경우 를 참조하십시오. link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/JiraNgage/CONTAP-166978["NetApp 버그 온라인 버그 ID CONTAP-166978"^]
+
+* AFF A70, AFF A90 또는 AFF A1K 시스템으로 업그레이드할 때 ONTAP은 스토리지 효율성을 사용하지 않는 볼륨을 포함하여 기존의 모든 씬 프로비저닝된 볼륨의 스토리지 효율성을 변환하고 하드웨어 오프로드 기능을 사용하는 새로운 스토리지 효율성 기능을 적용합니다. 이 프로세스는 자동 백그라운드 프로세스이며 시스템에 성능에 영향을 주지 않습니다. https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-concept.html["자세한 정보"^]..
 

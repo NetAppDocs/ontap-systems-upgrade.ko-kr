@@ -102,6 +102,17 @@ NOTE: node1 * 및 * node2 * 라는 용어는 이 문서의 노드 이름에 대�
 * 이 절차에서는 교체 컨트롤러 하드웨어가 새 하드웨어이며 다른 시스템에서 사용되지 않은 것으로 가정합니다. 중고 컨트롤러를 와 함께 준비하는 데 필요한 단계입니다 `wipeconfig` 이 절차에는 명령이 포함되어 있지 않습니다. 교체 컨트롤러 하드웨어를 이전에 다른 ONTAP 클러스터의 일부로 사용한 경우 또는 독립 실행형 단일 노드 시스템으로 사용한 경우에는 기술 지원 부서에 문의해야 합니다.
 * 이 절차를 사용하여 2개 이상의 노드가 있는 클러스터에서 컨트롤러 하드웨어를 업그레이드할 수 있습니다. 하지만 클러스터의 각 HA 2노드에 대해 절차를 별도로 수행해야 합니다.
 * ONTAP 버전에서 지원되지 않는 스위치와 업그레이드하려는 교체 시스템이 있는 경우 을 참조하십시오 link:other_references.html["참조"] Hardware Universe_에 대한 링크
+* AFF A70 및 AFF A90 시스템은 클러스터 및 HA 연결 모두에서 100GbE 네트워크 포트를 공유합니다. 이러한 시스템은 기존 클러스터 스위치에 대한 10GbE 또는 25GbE 클러스터 연결을 지원할 수 있습니다. 그러나 NetApp 10GbE 및 25GbE 스위치가 더 이상 필요하지 않은 경우 100GbE 클러스터 속도로 업데이트하는 것이 좋습니다. 자세한 내용은 다음 기술 문서를 참조하십시오.
++
+--
+** link:https://kb.netapp.com/?title=on-prem%2Fontap%2FOHW%2FOHW-KBs%2FHow_to_configure_10G_or_25G_cluster_ports_on_a_new_cluster_setup_on_AFF_A1K%252C_AFF_A90_or_AFF_A70["AFF A1K, AFF A90 또는 AFF A70의 새로운 클러스터 설정에서 10G 또는 25G 클러스터 포트를 구성하는 방법"^]
+** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/How_to_convert_an_existing_cluster_from_10G_or_25G_cluster_ports_to_40G_or_100G_cluster_ports_on_an_AFF_A1K_AFF_A90_or_AFF_A70["기존 클러스터를 AFF A1K, AFF A90 또는 AFF A70의 10G 또는 25G 클러스터 포트에서 40G 또는 100G 클러스터 포트로 변환하는 방법"^]
+
+
+--
++
+기존 노드의 e0a 또는 e0b 클러스터 포트를 새 노드의 클러스터 포트에 연결할 수 없는 경우 를 참조하십시오. link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/JiraNgage/CONTAP-166978["NetApp 버그 온라인 버그 ID CONTAP-166978"^]
+
 * 이 절차는 AFF A800, AFF A200, AFF A220, AFF C190, FAS2620, FAS2720, AFF A700 및 FAS9000 시스템 AFF A90, AFF A70, AFF A150, FAS2820, AFF A900으로 업그레이드해야 하는 다른 모든 컨트롤러 모델의 경우 또는 FAS9500 시스템의 경우, ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 업그레이드하려면 "system controller replace" 명령 사용 _ 및 _ aggregate relocation을 사용하여 ONTAP 9.8 이상 _content를 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드하려면 을 참조하십시오 link:other_references.html["참조"] .
 * ASA A900, AFF A900 및 FAS9500 시스템은 하이 라인 전력(200V~240V)만 지원합니다. AFF A700 또는 FAS9000 시스템이 낮은 전력(100V에서 120V로)에서 실행되는 경우 이 절차를 사용하기 전에 AFF A700 또는 FAS9000 입력 전원을 변환해야 합니다.
 * AFF A800, AFF A200, AFF A220, AFF C190, FAS2620, FAS2720, AFF A700 또는 FAS9000 시스템은 다운타임이 있는 경우 스토리지를 이동하거나 기술 지원에 문의하여 컨트롤러 하드웨어를 업그레이드할 수 있습니다. link:other_references.html["참조"]볼륨 또는 스토리지를 이동하여 업그레이드 _ 링크를 참조하십시오.
