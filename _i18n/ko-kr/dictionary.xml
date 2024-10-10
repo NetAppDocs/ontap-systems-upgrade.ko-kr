@@ -4843,7 +4843,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="70df8f2f5459940187f1edf7420f9c6b" category="paragraph">스토리지를 이동하여 업그레이드하려면 원래 노드를 준비하고 새 노드를 설정합니다. 일부 플랫폼 모델은 내부 스토리지를 새 노드로 전송하는 기능을 지원합니다. 디스크를 재할당하고 루트 볼륨 구성을 새 노드에 복원하고 네트워크 포트를 구성합니다.</block>
   <block id="ffaf71c89815c9497697e87f8d77a27d" category="paragraph">볼륨 이동을 통한 컨트롤러 하드웨어 업그레이드는 중단 없이 진행됩니다. 업그레이드를 시작하기 전에 일반적인 업그레이드 시나리오 및 업그레이드 고려 사항을 검토하십시오.</block>
   <block id="cf41c84e5298fdad396a8a0dd7eaf0f3" category="paragraph">볼륨을 이동하여 업그레이드하려면 원래 노드를 준비하고 새 노드를 클러스터에 가입해야 합니다. 볼륨을 새 노드로 이동하고 LIF를 구성한 다음 클러스터에서 원래 노드의 연결을 해제합니다.</block>
-  <block id="99a62a63bac74233e567cc3137cf29e8" category="paragraph">ONTAP 9.15.1에 도입된 AFF A70, AFF A90 또는 AFF A1K 시스템으로 업그레이드할 때 ONTAP는 스토리지 효율성을 사용하지 않는 볼륨을 포함하여 기존의 모든 씬 프로비저닝된 볼륨의 스토리지 효율성을 변환하고 하드웨어 오프로드 기능을 사용하는 새로운 스토리지 효율성 기능을 적용합니다. 이 프로세스는 자동 백그라운드 프로세스이며 시스템에 성능에 영향을 주지 않습니다.<block ref="7746afbac27a580f36b90211e9daf7d0" category="inline-link-rx"></block>..</block>
   <block id="4b5907b5b5c704438991bdf09784779a" category="list-text">부팅 메뉴에서 8을 입력하여 노드를 재부팅하고 자동 부팅 중에 Ctrl-C를 눌러 LOADER 프롬프트에서 노드를 중지합니다.</block>
   <block id="ee537959cbe6c4957342c94d3801abf7" category="doc">ARL 업그레이드 절차를 선택합니다</block>
   <block id="7e077786789216bd7864197dde6da988" category="cell">9.15.1 이상</block>
@@ -5013,9 +5012,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="d4b6fe12abba1b6202f6eaf9239109fe" category="list-text">MetroCluster FC 또는 IP 구성을 업그레이드합니다. MetroCluster 구성을 업그레이드하려면 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> _MetroCluster 업그레이드 및 확장 설명서_ 링크를 참조하십시오.</block>
   <block id="11e69ee085d842ce1112f661ea99ca78" category="paragraph">[[sys_commands_9151_supported_systems]] 다음 표에는 컨트롤러 업그레이드에 지원되는 모델 매트릭스가 나와 있습니다.</block>
   <block id="82a01e528bf5bf2b1b7172eddc250977" category="cell">기존 컨트롤러</block>
-  <block id="1a2f740f86d5113f5765d0c0064cc805" category="cell">AFF A70, AFF A90 및 AFF A1K의 약어입니다</block>
-  <block id="e6f9eb6f48a1c73f8869c3018d94ce49" category="cell">AFF A90 및 AFF A1K</block>
-  <block id="21f38ae66a0904e51060023ca6858959" category="paragraph">AFF A70 및 AFF A90은 온보드 디스크가 장착된 통합 시스템입니다. 2개의 컨트롤러와 디스크는 단일 섀시에 있습니다. 새 컨트롤러에 내부 드라이브가 있는 경우 기존 시스템을 업그레이드할 수 없습니다.</block>
   <block id="4de11ced25f5990c0cc8fa95f739e66c" category="summary">NetApp에 명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드한 후 이전 시스템이 더 이상 작동하지 않음을<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 알려야 합니다.</block>
   <block id="05182f39754b99e12a705e61572b4051" category="summary">명령을 사용하여 HA 쌍을 활성화하고, 노드3 및 노드4 스토리지 액세스를 확인하고, ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드한 후 애그리게이트 소유권을<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 확인합니다.</block>
   <block id="570743d2305de7bd0a4e44c426b2db21" category="paragraph"><block ref="49166cc15e848fc049881c3de5e1d1f8" prefix="" category="inline-code"></block></block>
@@ -5209,12 +5205,26 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="0bc65976ff133ee82e86f9a6d1241bd3" category="list-text">AFF A90 또는 AFF A70 노드의 동일한 클러스터 포트가 동일한 스위치에 있습니다. 예를 들어, 업그레이드가 완료되면 노드1의 E1A와 노드2의 E1A가 하나의 클러스터 스위치에 연결되어야 합니다. 마찬가지로, 양쪽 노드의 두 번째 클러스터 포트를 두 번째 클러스터 스위치에 연결해야 합니다. 공유 클러스터 HA 포트를 교차 연결하면 노드 1의 E1A가 스위치 A에 연결되고 노드 2의 E1A가 스위치 B에 연결되어 HA 통신 장애가 발생합니다.</block>
   <block id="a8ddcf9ff72eca8d08263b606043e793" category="list-text">AFF A90 및 AFF A70 노드는 공유 클러스터 HA 이더넷 포트를 사용합니다. 클러스터 스위치가 공유 클러스터 HA 포트를 지원하는 RCF(Reference Configuration File)와 함께 설치되었는지 확인합니다.</block>
   <block id="95aecbf4d4598d28238d33836d5f1d39" category="list-text">AFF A70 및 AFF A90 시스템은 클러스터 및 HA 연결 모두에서 100GbE 네트워크 포트를 공유합니다. 이러한 시스템은 기존 클러스터 스위치에 대한 10GbE 또는 25GbE 클러스터 연결을 지원할 수 있습니다. 그러나 NetApp 10GbE 및 25GbE 스위치가 더 이상 필요하지 않은 경우 100GbE 클러스터 속도로 업데이트하는 것이 좋습니다. 자세한 내용은 다음 기술 문서를 참조하십시오.</block>
-  <block id="46f6c35d9a23403b9b4475860494f7e1" category="inline-link-macro">AFF A1K, AFF A90 또는 AFF A70의 새로운 클러스터 설정에서 10G 또는 25G 클러스터 포트를 구성하는 방법</block>
-  <block id="d5262d5b7c57ddb8a1bce6f64f715cf1" category="list-text"><block ref="d5262d5b7c57ddb8a1bce6f64f715cf1" category="inline-link-macro-rx"></block></block>
-  <block id="ddafb8accea93e408c3e1081312cd023" category="inline-link-macro">기존 클러스터를 AFF A1K, AFF A90 또는 AFF A70의 10G 또는 25G 클러스터 포트에서 40G 또는 100G 클러스터 포트로 변환하는 방법</block>
-  <block id="441c3294ac36b4f16260ca4b44ff0ca4" category="list-text"><block ref="441c3294ac36b4f16260ca4b44ff0ca4" category="inline-link-macro-rx"></block></block>
   <block id="ac431d04c49bd36c09bfbc24a8f894f9" category="inline-link-macro">NetApp 버그 온라인 버그 ID CONTAP-166978</block>
   <block id="f24d3bbf01666420670f76d88d0728aa" category="paragraph">기존 노드의 e0a 또는 e0b 클러스터 포트를 새 노드의 클러스터 포트에 연결할 수 없는 경우 를 참조하십시오. <block ref="7be812dd65bbd3f39bbb06fd50caac76" category="inline-link-macro-rx"></block></block>
-  <block id="da56dddfadc94faded5adccdf08f341d" category="list-text">AFF A70, AFF A90, AFF A1K 시스템은 클러스터 및 HA 연결 모두에서 100GbE 네트워크 포트를 공유합니다. 이러한 시스템은 기존 클러스터 스위치에 대한 10GbE 또는 25GbE 클러스터 연결을 지원할 수 있습니다. 그러나 NetApp 10GbE 및 25GbE 스위치가 더 이상 필요하지 않은 경우 100GbE 클러스터 속도로 업데이트하는 것이 좋습니다. 자세한 내용은 다음 기술 문서를 참조하십시오.</block>
-  <block id="9224ff81582fe0027e574d0b62a2ff67" category="list-text">AFF A70, AFF A90 또는 AFF A1K 시스템으로 업그레이드할 때 ONTAP은 스토리지 효율성을 사용하지 않는 볼륨을 포함하여 기존의 모든 씬 프로비저닝된 볼륨의 스토리지 효율성을 변환하고 하드웨어 오프로드 기능을 사용하는 새로운 스토리지 효율성 기능을 적용합니다. 이 프로세스는 자동 백그라운드 프로세스이며 시스템에 성능에 영향을 주지 않습니다.<block ref="7746afbac27a580f36b90211e9daf7d0" category="inline-link-rx"></block>..</block>
+  <block id="894f2e2a32e68afb6c8779c4dd1b6061" category="list-text">ONTAP 9.15.1에 도입된 시스템으로 업그레이드할 때 ONTAP는 기존 볼륨의 스토리지 효율성을 변환하고 하드웨어 오프로드 기능을 사용하는 새로운 스토리지 효율성 기능을 적용합니다. 이 프로세스는 자동 백그라운드 프로세스이며 시스템에 성능에 영향을 주지 않습니다.</block>
+  <block id="20a50ea664dd251305adec2bcca06061" category="list-text">AFF A70, AFF A90 또는 AFF A1K 시스템의 경우 ONTAP는 스토리지 효율성을 사용하지 않는 볼륨을 포함하여 기존의 모든 씬 프로비저닝 볼륨의 스토리지 효율성을 변환합니다.</block>
+  <block id="c35161fa14384d510e021a3314063cc1" category="list-text">FAS70 및 FAS90 시스템의 경우, ONTAP는 업그레이드 전에 이미 스토리지 효율성이 활성화된 기존 씬 프로비저닝 볼륨의 스토리지 효율성만 변환합니다.</block>
+  <block id="33bb7bcaf48f0fdda36a26455a40a230" category="inline-link-macro">스토리지 효율성에 대해 자세히 알아보십시오</block>
+  <block id="6d6b534c9b53f9b5663ea4448a9c5c5a" category="paragraph"><block ref="7e7ac2ea54718abbfde88230c884c797" category="inline-link-macro-rx"></block>..</block>
+  <block id="0db06a4e73b14fd8cb249dd2487fa5a3" category="inline-link-macro">AFF/ASA A1K, A90, A70, FAS90, FAS70의 새로운 클러스터 설정에서 10G 또는 25G 클러스터 포트를 구성하는 방법</block>
+  <block id="4ffac300dc153b14bfe521f43fc61b31" category="list-text"><block ref="4ffac300dc153b14bfe521f43fc61b31" category="inline-link-macro-rx"></block></block>
+  <block id="aceb7b5bd7d7f40aa548f5d1aac76fd5" category="inline-link-macro">AFF/ASA A1K, A90, A70, FAS90, FAS70에서 10G 또는 25G 클러스터 포트에서 40G 또는 100G 클러스터 포트로 기존 클러스터를 변환하는 방법</block>
+  <block id="047ca982afd7eda65d342c9845174216" category="list-text"><block ref="047ca982afd7eda65d342c9845174216" category="inline-link-macro-rx"></block></block>
+  <block id="2b05a3de35946226b44f265788b807c9" category="cell">ONTAP부터 지원됨...</block>
+  <block id="8643f1ec20c68bd9122a5e9c431fe6fe" category="cell">FAS70, FAS90</block>
+  <block id="1a6c927dff2b4164c21b2d570f87ed5c" category="cell">9.15.1P3입니다</block>
+  <block id="649e9f4912bcf4af7efe489c6866eb1d" category="cell">FAS90</block>
+  <block id="f43de3716b79c8e43965aeacd1411a48" category="cell">AFF A300, AFF A400, AFF A700</block>
+  <block id="5fa70989a3e04b27c407da750f3d94fe" category="cell">AFF A70, AFF A90, AFF A1K</block>
+  <block id="ccf78fb30997636f483e58875cad308b" category="cell">AFF A90, AFF A1K</block>
+  <block id="fd63300d56f60b7a5ff6928593e24ff3" category="paragraph">AFF A70 및 AFF A90는 단일 섀시에 2개의 온보드 디스크와 2개의 컨트롤러가 있는 통합 시스템입니다.</block>
+  <block id="e0acd4a9bc97511cc024bf1c07dc8536" category="list-text">내부 드라이브가 있는 AFF A70 또는 AFF A90로 업그레이드하는 경우 업그레이드하기 전에 이러한 드라이브의 소유권을 제거해야 합니다. 업그레이드가 완료되면 내부 드라이브를 AFF A70 또는 AFF A90 노드에 할당하고 이 드라이브를 사용하여 데이터 애그리게이트를 생성할 수 있습니다. 루트 또는 데이터 애그리게이트를 내부 드라이브로 마이그레이션할 필요는 없습니다.</block>
+  <block id="9f63491a94b75b12a4f685455f82295c" category="list-text">내부 드라이브 없이 AFF A70 또는 AFF A90로 업그레이드하는 경우 업그레이드를 완료한 후 내부 드라이브를 할당할 필요가 없습니다.</block>
+  <block id="1c6b77da3506137a2164e23d95b49133" category="list-text">AFF A70, AFF A90, AFF A1K, FAS70, FAS90 시스템은 클러스터 및 HA 연결 모두에서 100GbE 네트워크 포트를 공유합니다. 이러한 시스템은 기존 클러스터 스위치에 대한 10GbE 또는 25GbE 클러스터 연결을 지원할 수 있습니다. 그러나 NetApp 10GbE 및 25GbE 스위치가 더 이상 필요하지 않은 경우 100GbE 클러스터 속도로 업데이트하는 것이 좋습니다. 자세한 내용은 다음 기술 문서를 참조하십시오.</block>
 </blocks>
