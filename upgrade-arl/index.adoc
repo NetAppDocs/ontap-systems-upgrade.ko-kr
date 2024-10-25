@@ -4,53 +4,177 @@ permalink: upgrade-arl/index.html
 keywords: aggregate, relocation, moving, manual, upgrade, relocate, hardware 
 summary: 애그리게이트 재배치를 사용하여 컨트롤러 하드웨어를 업그레이드합니다 
 ---
-= ARL 업그레이드 절차를 선택합니다
+= 여기서 시작: ARL 업그레이드 절차를 선택합니다
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
-이 내용은 ARL(Aggregate Relocation)을 사용하여 운영 중단 없이 컨트롤러 하드웨어를 업그레이드하는 방법을 설명합니다.
+ARL(Aggregate Relocation)을 사용하여 중단 없이 컨트롤러 하드웨어를 업그레이드할 수 있습니다. 컨트롤러 하드웨어를 업그레이드하는 다른 방법은 을 참조하십시오link:../upgrade/upgrade-decide-to-use-this-guide.html["볼륨 또는 스토리지를 이동하여 업그레이드"].
 
-컨트롤러 하드웨어를 업그레이드하는 다른 방법은 을 참조하십시오 link:../upgrade/upgrade-decide-to-use-this-guide.html["볼륨 또는 스토리지를 이동하여 업그레이드"].
+ARL을 사용하면 ONTAP을 실행하는 노드 쌍에서 루트가 아닌 애그리게이트를 동일한 클러스터의 새로운 노드로 마이그레이션하여 컨트롤러 하드웨어를 중단 없이 업그레이드할 수 있습니다. 업그레이드 중인 노드에서 호스팅되는 데이터에 액세스할 수 있습니다.
 
-ONTAP를 실행하는 노드 쌍에서 비 루트 애그리게이트를 동일한 클러스터의 새 노드로 마이그레이션하여 컨트롤러 하드웨어를 중단 없이 업그레이드할 수 있습니다. 업그레이드 중인 노드에서 호스팅되는 데이터에 액세스할 수 있습니다.
+ARL은 HA 구성을 활용하여 비루트 애그리게이트의 소유권을 같은 클러스터 내에서 공유하는 경우 한 노드에서 다른 노드로 이동할 수 있습니다.
 
-ARL은 HA 구성을 활용하여 동일한 클러스터 내에서 스토리지를 공유하는 경우 비루트 애그리게이트의 소유권을 한 노드에서 다른 노드로 이동할 수 있는 기능을 제공합니다.
+컨트롤러 하드웨어를 업그레이드하는 몇 가지 ARL 방법이 있습니다. 적절한 절차를 선택하려면 각 ARL 업그레이드 옵션에 대해 지원되는 시스템 및 ONTAP 버전에 대한 다음 정보를 검토하십시오.
 
-시스템 명령을 사용하거나 수동 업그레이드를 수행하는 등 컨트롤러 하드웨어를 업그레이드하기 위한 ARL 방법은 두 가지가 있습니다. 시작하기 전에 컨트롤러 하드웨어 업그레이드를 위한 올바른 콘텐츠를 선택했는지 확인해야 합니다.
 
-system 명령을 사용하여 업그레이드를 수행하는 경우 다음 표를 참조하십시오.
 
-[cols="30,70"]
+== "system controller replace" 명령을 ONTAP 9.15.1 이상으로 사용하십시오
+
+업그레이드 시나리오가 다음 지원되는 시스템 매트릭스에 나열되어 있는 경우 로 link:../upgrade-arl-auto-app-9151/index.html[""system controller replace" 명령을 사용하여 ONTAP 9.15.1에 도입된 컨트롤러 하드웨어를 업그레이드합니다"] 이동하여 업그레이드 절차를 시작합니다.
+
+.지원되는 시스템을 표시합니다
+[%collapsible]
+====
 |===
-| 이 ONTAP 버전을 실행 중인 경우… | 시스템 명령으로 업그레이드하려면… 
+| 기존 컨트롤러 | 교체 컨트롤러 | ONTAP부터 지원됨... 
 
 
-| 9.15.1 이상 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app-9151/index.html[""system controller replace" 명령을 사용하여 ONTAP 9.15.1에 도입된 컨트롤러 하드웨어를 업그레이드합니다"] 
+| FAS8200, FAS8300, FAS8700, FAS9000 | FAS70, FAS90 | 9.15.1P3입니다 
 
 
-| 9.10.1 이상 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html[""system controller replace" 명령을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드합니다"] 이 절차를 사용하여 ASA(All SAN Array)로 구성된 AFF 컨트롤러를 특정 모델 및 ONTAP 소프트웨어 버전의 ASA 컨트롤러로 업그레이드할 수 있습니다. link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html["자세한 정보"].. 
+| FAS9500 | FAS90 | 9.15.1P3입니다 
 
 
-| 9.8 이상 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/index.html[""시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 업그레이드합니다"] 
+| AFF A300, AFF A400, AFF A700 | AFF A70, AFF A90, AFF A1K | 9.15.1 
 
 
-| 9.5에서 9.7 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/index.html[""system controller replace" 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러 하드웨어를 ONTAP 9.7로 업그레이드하십시오"] 
+| AFF A900 | AFF A90, AFF A1K | 9.15.1 
 |===
-수동 업그레이드를 수행하는 경우 다음 표를 참조하십시오.
+====
 
-[cols="30,70"]
+
+== 동일한 섀시에서 컨트롤러 모델을 업그레이드합니다
+
+업그레이드 시나리오가 다음 지원되는 시스템 매트릭스에 나열되어 있는 경우 로 link:../upgrade-arl-auto-affa900/index.html[""system controller replace" 명령을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드합니다"] 이동하여 업그레이드 절차를 시작합니다.
+
+.지원되는 시스템을 표시합니다
+[%collapsible]
+====
+[cols="20,20,40"]
 |===
-| 이 ONTAP 버전을 실행 중인 경우… | 수동으로 업그레이드하려면… 
+| 더 이상 없습니다 | 교체 시스템 | 지원되는 ONTAP 버전 
 
 
-| 9.8 이상 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/index.html["ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드합니다"] 
+| AFF A800 를 참조하십시오 | AFF A70 또는 AFF A90 | 9.15.1 이상 
 
 
-| 9.0에서 9.7 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/index.html["ONTAP 9.7 이하를 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드합니다"] 
+| All SAN 어레이로 구성된 AFF A220(ASA) | ASA A150 | 9.13.1P1 이상 
+
+
+| AFF A220 | AFF A150 | 9.10.1P15, 9.11.1P11, 9.12.1P5 이상 
+
+
+| AFF A200 | AFF A150  a| 
+9.10.1P15, 9.11.1P11 이상
+
+*참고*: AFF A200는 9.11.1 이후의 ONTAP 버전을 지원하지 않습니다.
+
+
+
+| AFF C190 | AFF A150 | 9.10.1P15, 9.11.1P11, 9.12.1P5 이상 
+
+
+| FAS2620 | FAS2820  a| 
+9.11.1P7(FAS2620)
+
+*참고*: FAS2620는 9.11.1 이후의 ONTAP 버전을 지원하지 않습니다.
+
+9.13.1 이상(FAS2820)
+
+
+
+| FAS2720 | FAS2820 | 9.13.1 이상 
+
+
+| ASA로 구성된 AFF A700 | ASA A900 | 9.13.1P1 이상 
+
+
+| AFF A700 | AFF A900 | 9.10.1P10, 9.11.1P6 이상 
+
+
+| FAS9000 | FAS9500 | 9.10.1P10, 9.11.1P6 이상 
 |===
+====
+
+
+== "system controller replace" 명령을 ONTAP 9 .8 이상으로 사용하십시오
+
+업그레이드 시나리오가 다음 지원되는 시스템 매트릭스에 나열되어 있는 경우 로 link:../upgrade-arl-auto-app/index.html[""시스템 컨트롤러 교체" 명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 업그레이드합니다"] 이동하여 업그레이드 절차를 시작합니다.
+
+.지원되는 시스템을 표시합니다
+[%collapsible]
+====
+|===
+| 더 오래 된 컨트롤러 | 교체 컨트롤러 
+
+
+| FAS8020, FAS8040, FAS8060, FAS8080 | FAS8200, FAS8300, FAS8700, FAS9000 
+
+
+| FAS8060, FAS8080 | FAS9500 
+
+
+| AFF8020, AFF8040, AFF8060, AFF8080 | AFF A300, AFF A400, AFF A700, AFF A800의 약어입니다 
+
+
+| AFF8060, AFF8080 | AFF A900 
+
+
+| FAS8200 | FAS8300, FAS8700, FAS9000, FAS9500 
+
+
+| FAS8300, FAS8700, FAS9000 | FAS9500 
+
+
+| AFF A300 | AFF A400, AFF A700, AFF A800, AFF A900의 약어입니다 
+
+
+| AFF A320 | AFF A400 
+
+
+| AFF A400, AFF A700 | AFF A900 
+|===
+====
+
+
+== "system controller replace" 명령을 ONTAP 9 .5 ~ 9.7로 사용합니다
+
+업그레이드 시나리오가 다음 지원되는 시스템 매트릭스에 나열되어 있는 경우 로 link:../upgrade-arl-auto/index.html[""system controller replace" 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러 하드웨어를 9.7로 업그레이드하십시오"] 이동하여 업그레이드 절차를 시작합니다.
+
+.지원되는 시스템을 표시합니다
+[%collapsible]
+====
+[cols="50,50"]
+|===
+| 더 오래 된 컨트롤러 | 교체 컨트롤러 
+
+
+| FAS8020, FAS8040, FAS8060, FAS8080 | FAS8200, FAS8300, FAS8700, FAS9000 
+
+
+| AFF8020, AFF8040, AFF8060, AFF8080 | AFF A300, AFF A400, AFF A700, AFF A800의 약어입니다 
+
+
+| FAS8200 | FAS8700, FAS9000, FAS8300 
+
+
+| AFF A300 | AFF A700, AFF A800, AFF A400 
+|===
+====
+
+
+== 수동 ARL 명령을 사용합니다
+
+"시스템 명령"을 사용하여 업그레이드 시나리오가 지원되지 않는 경우 수동 명령을 사용하여 ARL 업그레이드를 수행할 수 있습니다.
+
+업그레이드를 시작하려면 ONTAP 버전에 대한 절차를 선택합니다.
+
+* link:../upgrade-arl-manual-app/index.html["ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드합니다"]
+* link:../upgrade-arl-manual/index.html["ONTAP 9.7 이하를 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드합니다"]
+

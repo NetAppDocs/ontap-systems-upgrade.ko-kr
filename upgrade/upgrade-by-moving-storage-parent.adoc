@@ -23,7 +23,7 @@ summary: 스토리지를 이동하여 업그레이드할 경우 원래 노드를
 ====
 스토리지를 이동하여 컨트롤러 하드웨어를 업그레이드하는 단계에서는 원래 노드를 node1과 node2라고 하며 새 노드를 node3과 node4라고 합니다. 이 절차를 수행하는 동안 노드 1은 노드 3으로 대체되고 노드 2는 노드 4로 대체됩니다.
 
-image::../upgrade/media/original_to_new_nodes.png[node3 및 node4를 node1 및 node2로 바꿉니다]
+image:original_to_new_nodes.png["node1 및 node2를 node3 및 node4로 바꿉니다"]
 
 node1, node2, node3 및 node4라는 용어는 원래 노드와 새 노드를 구별하는 데만 사용됩니다. 이 절차를 수행할 때 이러한 노드를 원래 노드 및 새 노드의 실제 이름으로 대체해야 합니다. 그러나 실제로 노드 이름은 변경되지 않습니다. node3에는 node1이라는 이름이 있고, node4에는 컨트롤러 하드웨어를 업그레이드한 후 node2라는 이름이 있습니다.
 

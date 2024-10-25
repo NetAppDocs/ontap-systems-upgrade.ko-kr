@@ -10,7 +10,7 @@ summary: Config Advisor 9.7 이하를 실행하는 컨트롤러에서 수동 ARL
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

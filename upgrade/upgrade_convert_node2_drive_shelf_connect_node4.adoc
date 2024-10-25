@@ -19,7 +19,7 @@ summary: '노드 2(AFF A250)를 NS224 드라이브 쉘프로 변환한 다음 �
 . 노드 2의 베이에 NVMe 쉘프 모듈(NSM)을 삽입합니다.
 . 노드 4 100GbE 포트 e0c를 NSM B 포트 e0a에 케이블로 연결하여 NSM을 노드 4에 연결합니다.
 +
-image::../upgrade/media/a400_with_ns224_shelf.PNG[하나의 NS224 쉘프로 AFF A400]
+image:a400_with_ns224_shelf.PNG["하나의 NS224 쉘프로 AFF A400"]
 
 . 노드4의 25GbE 온보드 포트(e0e, e0f, e0g 또는 e0h)에 노드2 포트 e0c 및 e0d의 25GbE 케이블 연결을 연결하여 임시 클러스터 연결을 생성합니다.
 +

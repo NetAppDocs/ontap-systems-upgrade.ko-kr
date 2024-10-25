@@ -10,7 +10,7 @@ summary: 업그레이드를 시작하기 전에 동일한 섀시에서 컨트롤
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

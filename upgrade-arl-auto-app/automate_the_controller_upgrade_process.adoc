@@ -10,7 +10,7 @@ summary: 부분적으로 자동화된 ARL 절차를 사용하여 ONTAP 9.8 이�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

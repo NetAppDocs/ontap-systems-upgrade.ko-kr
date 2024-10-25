@@ -10,7 +10,7 @@ summary: '을 사용하여 ONTAP 9.5에서 9.7로 컨트롤러 업그레이드�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -15,7 +15,7 @@ ONTAP 9.8 이상 또는 ONTAP 9.7 이전 버전에서 업그레이드를 완료�
 
 사용 중인 ONTAP 버전에 대한 절차를 사용해야 합니다.
 
-image::../upgrade/media/workflow_completing_upgrade_98_or_97x.png[업그레이드를 완료합니다]
+image:workflow_completing_upgrade_98_or_97x.png["업그레이드를 완료합니다"]
 
 * link:upgrade-complete-ontap-9-8.html["ONTAP 9.8 이상에서 업그레이드를 완료합니다"]
 * link:upgrade-complete-ontap-9-7-or-earlier.html["ONTAP 9.7 이전 버전에서 업그레이드를 완료하십시오"]

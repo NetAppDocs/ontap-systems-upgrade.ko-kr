@@ -10,7 +10,7 @@ summary: '명령을 사용하여 ARL을 사용하여 ONTAP 9.15.1 이상을 실�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

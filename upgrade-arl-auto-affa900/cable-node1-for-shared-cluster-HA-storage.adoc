@@ -10,7 +10,7 @@ summary: 이전에 AFF A800 노드 1에 연결되었던 클러스터, HA, 스토
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

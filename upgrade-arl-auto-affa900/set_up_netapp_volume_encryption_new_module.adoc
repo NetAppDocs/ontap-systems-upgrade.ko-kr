@@ -10,7 +10,7 @@ summary: '필요한 경우 ARL을 사용하여 동일한 섀시의 컨트롤러 
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

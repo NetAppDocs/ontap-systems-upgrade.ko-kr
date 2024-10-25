@@ -10,7 +10,7 @@ summary: 동일한 섀시에 있는 컨트롤러 모델의 ARL 업그레이드 �
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

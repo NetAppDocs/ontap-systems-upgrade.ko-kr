@@ -10,7 +10,7 @@ summary: ARL을 사용하여 같은 섀시에서 컨트롤러 모델을 업그�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -35,7 +35,7 @@ WARNING: 노드 1에서 작업할 때는 노드 1에서 콘솔 케이블과 e0M 
 +
 .. 캠 핸들의 주황색 버튼을 잠금 해제할 때까지 아래로 밉니다.
 +
-image::../media/drw_9500_remove_PCM.png[컨트롤러 모듈을 분리합니다]
+image:drw_9500_remove_PCM.png["컨트롤러 모듈을 분리합니다"]
 
 +
 [cols="20,80"]
@@ -43,12 +43,12 @@ image::../media/drw_9500_remove_PCM.png[컨트롤러 모듈을 분리합니다]
 
 
  a| 
-image::../media/black_circle_one.png[첫 번째]
+image:black_circle_one.png["첫 번째"]
 | 캠 핸들 해제 버튼 
 
 
  a| 
-image::../media/black_circle_two.png[두 번째]
+image:black_circle_two.png["두 번째"]
 | 캠 핸들 
 |===
 .. 캠 핸들을 돌려 컨트롤러 모듈을 섀시에서 완전히 분리한 다음 컨트롤러 모듈을 섀시 밖으로 밉니다.
@@ -81,7 +81,7 @@ NVRAM 모듈은 섀시에서 분리되어 몇 인치 정도 이동합니다.
 
 .. 모듈 면의 측면에 있는 당김 탭을 당겨 섀시에서 NVRAM 모듈을 분리합니다.
 +
-image::../media/drw_a900_move-remove_NVRAM_module.png[NVRAM 모듈을 분리합니다]
+image:drw_a900_move-remove_NVRAM_module.png["NVRAM 모듈을 분리합니다"]
 
 +
 [cols="20,80"]
@@ -89,12 +89,12 @@ image::../media/drw_a900_move-remove_NVRAM_module.png[NVRAM 모듈을 분리합�
 
 
  a| 
-image::../media/black_circle_one.png[첫 번째]
+image:black_circle_one.png["첫 번째"]
 | 문자 및 숫자 I/O 캠 래치 
 
 
  a| 
-image::../media/black_circle_two.png[두 번째]
+image:black_circle_two.png["두 번째"]
 | I/O 래치가 완전히 잠금 해제되었습니다 
 |===
 
@@ -127,7 +127,7 @@ ASA A900, AFF A900 또는 FAS9500 NVRAM 모듈을 노드 1의 슬롯 6에 설치
 . NVRAM 모듈을 슬롯 6의 섀시 입구 가장자리에 맞춥니다.
 . 글자가 새겨진 번호가 매겨진 I/O 캠 래치가 I/O 캠 핀과 맞물릴 때까지 NVRAM 모듈을 슬롯에 부드럽게 밀어 넣은 다음 I/O 캠 래치를 끝까지 밀어 NVRAM 모듈을 제자리에 고정시킵니다.
 +
-image::../media/drw_a900_move-remove_NVRAM_module.png[NVRAM 모듈을 설치합니다]
+image:drw_a900_move-remove_NVRAM_module.png["NVRAM 모듈을 설치합니다"]
 
 +
 [cols="20,80"]
@@ -135,12 +135,12 @@ image::../media/drw_a900_move-remove_NVRAM_module.png[NVRAM 모듈을 설치합�
 
 
  a| 
-image::../media/black_circle_one.png[첫 번째]
+image:black_circle_one.png["첫 번째"]
 | 문자 및 숫자 I/O 캠 래치 
 
 
  a| 
-image::../media/black_circle_two.png[두 번째]
+image:black_circle_two.png["두 번째"]
 | I/O 래치가 완전히 잠금 해제되었습니다 
 |===
 
@@ -171,7 +171,7 @@ NOTE: 섀시의 전원이 이미 켜져 있기 때문에 노드1은 BIOS 초기�
 WARNING: 커넥터의 손상을 방지하려면 컨트롤러 모듈을 섀시에 밀어 넣을 때 과도한 힘을 가하지 마십시오.
 
 +
-image::../media/drw_9500_remove_PCM.png[컨트롤러 모듈을 설치합니다]
+image:drw_9500_remove_PCM.png["컨트롤러 모듈을 설치합니다"]
 
 +
 [cols="20,80"]
@@ -179,12 +179,12 @@ image::../media/drw_9500_remove_PCM.png[컨트롤러 모듈을 설치합니다]
 
 
  a| 
-image::../media/black_circle_one.png[첫 번째]
+image:black_circle_one.png["첫 번째"]
 | 캠 핸들 잠금 래치 
 
 
  a| 
-image::../media/black_circle_two.png[두 번째]
+image:black_circle_two.png["두 번째"]
 | 캠 핸들이 잠금 해제 위치에 있습니다 
 |===
 . 모듈이 장착되면 즉시 직렬 콘솔을 연결하고 노드 1의 자동 부팅을 중단시킵니다.

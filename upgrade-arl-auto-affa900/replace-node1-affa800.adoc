@@ -10,7 +10,7 @@ summary: ARL을 사용하여 같은 섀시에서 컨트롤러 모델을 업그�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -26,7 +26,7 @@ summary: ARL을 사용하여 같은 섀시에서 컨트롤러 모델을 업그�
 .단계
 . 섀시 앞면에서 엄지 손가락으로 각 드라이브를 단단히 눌러 정지가 느껴질 때까지 밀어넣습니다. 이렇게 하면 드라이브가 섀시 중앙판에 단단히 고정됩니다.
 +
-image::../media/drw_a800_drive_seated_IEOPS-960.png[드라이브를 밀어 섀시 중앙판에 단단히 장착합니다]
+image:drw_a800_drive_seated_IEOPS-960.png["드라이브를 밀어 섀시 중앙판에 단단히 장착합니다"]
 
 . 섀시 후면으로 이동합니다.
 
@@ -50,7 +50,7 @@ AFF A800 컨트롤러 모듈에서 케이블 관리 장치를 제거하고 컨�
 컨트롤러 모듈이 섀시에서 약간 꺼냅니다.
 
 +
-image::../media/a800_cable_management.png[케이블 관리 ARM 분리]
+image:a800_cable_management.png["케이블 관리 ARM 분리"]
 
 +
 [cols="20,80"]
@@ -58,12 +58,12 @@ image::../media/a800_cable_management.png[케이블 관리 ARM 분리]
 
 
  a| 
-image::../media/black_circle_one.png[첫 번째]
+image:black_circle_one.png["첫 번째"]
 | 잠금 래치 
 
 
  a| 
-image::../media/black_circle_two.png[두 번째]
+image:black_circle_two.png["두 번째"]
 | 잠금 핀 
 |===
 
@@ -81,7 +81,7 @@ image::../media/black_circle_two.png[두 번째]
 NOTE: 절차의 뒷부분에서 지시가 있을 때까지 컨트롤러 모듈을 섀시에 완전히 삽입하지 마십시오.
 
 +
-image::../media/drw_A70-90_PCM_remove_replace_IEOPS-1365.PNG[AFF A90 또는 AFF A70을 설치합니다]
+image:drw_A70-90_PCM_remove_replace_IEOPS-1365.PNG["AFF A90 또는 AFF A70을 설치합니다"]
 
 . 관리 및 콘솔 포트를 노드1 컨트롤러 모듈에 케이블로 연결합니다.
 +

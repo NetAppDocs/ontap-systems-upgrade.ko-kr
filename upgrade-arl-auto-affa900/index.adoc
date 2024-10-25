@@ -10,7 +10,7 @@ summary: 이전 시스템 섀시 및 디스크를 유지하면서 이전 시스�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -10,7 +10,7 @@ summary: ONTAP 9.8 이상을 실행하는 한 쌍의 컨트롤러에 대한 수�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

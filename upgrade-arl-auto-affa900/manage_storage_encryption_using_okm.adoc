@@ -10,7 +10,7 @@ summary: 스토리지 암호화를 구성 및 관리하고 인증 키를 관리�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

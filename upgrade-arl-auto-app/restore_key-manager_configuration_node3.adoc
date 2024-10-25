@@ -10,7 +10,7 @@ summary: '필요한 경우 를 사용하여 ONTAP 9.8 이상을 실행하는 컨
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

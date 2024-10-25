@@ -10,7 +10,7 @@ summary: '5단계 동안 을 사용하여 ONTAP 9.5를 실행하는 컨트롤러
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

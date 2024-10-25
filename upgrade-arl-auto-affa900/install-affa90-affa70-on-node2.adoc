@@ -10,7 +10,7 @@ summary: 동일한 섀시에 있는 컨트롤러 모델의 ARL 업그레이드 �
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -23,7 +23,7 @@ summary: 동일한 섀시에 있는 컨트롤러 모델의 ARL 업그레이드 �
 NOTE: 절차의 뒷부분에서 지시가 있을 때까지 컨트롤러 모듈을 섀시에 완전히 삽입하지 마십시오.
 
 +
-image::../media/drw_A70-90_PCM_remove_replace_IEOPS-1365.PNG[AFF A90 또는 AFF A70을 설치합니다]
+image:drw_A70-90_PCM_remove_replace_IEOPS-1365.PNG["AFF A90 또는 AFF A70을 설치합니다"]
 
 . 관리 및 콘솔 포트를 노드1 컨트롤러 모듈에 케이블로 연결합니다.
 +

@@ -10,7 +10,7 @@ summary: 패브릭에서 Brocade 및 Cisco 스위치를 비활성화하고 ONTAP
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

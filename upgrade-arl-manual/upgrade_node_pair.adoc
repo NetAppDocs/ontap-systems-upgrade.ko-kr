@@ -10,7 +10,7 @@ summary: 원래 노드와 새 노드에서 작업을 수행하여 원래 노드�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

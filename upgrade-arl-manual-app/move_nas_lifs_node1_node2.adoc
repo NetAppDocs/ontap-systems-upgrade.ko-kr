@@ -10,7 +10,7 @@ summary: 2노드 클러스터가 있는 경우 노드1 데이터 LIF를 노드 2
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

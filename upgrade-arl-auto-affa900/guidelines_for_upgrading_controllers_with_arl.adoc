@@ -10,7 +10,7 @@ summary: 업그레이드 구성을 위해 기존 시스템 섀시 및 디스크�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

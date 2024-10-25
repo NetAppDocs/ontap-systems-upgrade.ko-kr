@@ -10,7 +10,7 @@ summary: '를 사용하여 ARL 업그레이드를 위한 3단계 프로세스 �
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

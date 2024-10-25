@@ -10,7 +10,7 @@ summary: HA 쌍이 설정되었는지 확인하고, 동일한 섀시에서 컨�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

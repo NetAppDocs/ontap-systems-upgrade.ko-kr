@@ -10,7 +10,7 @@ summary: 루트 이외의 애그리게이트를 노드 1에서 노드 2로 이�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

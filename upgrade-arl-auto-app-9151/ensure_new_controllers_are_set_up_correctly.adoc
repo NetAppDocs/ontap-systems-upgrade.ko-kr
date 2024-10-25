@@ -10,7 +10,7 @@ summary: '명령을 사용하여 HA 쌍을 활성화하고, 노드3 및 노드4 
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

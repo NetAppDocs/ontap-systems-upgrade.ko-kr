@@ -2031,7 +2031,6 @@
   <block id="d85bd4eac4ae2ba50be5c03b292af8f8" category="cell">9.9.1 이상</block>
   <block id="94869c0e3d68936a54ce1ef1d7459f3e" category="cell">AFF8060</block>
   <block id="a07a923eb6b740023890d052b6fb6e9a" category="cell">9.8P13 이상 패치</block>
-  <block id="2275b38e5279b78660b012808a4cb08e" category="cell">9.10.1 이상</block>
   <block id="23ec9249d03285a513eaaf182a7bcd49" category="cell">AFF8080</block>
   <block id="728152178b0535e4c7e93f53223fbfff" category="cell">9.8P10 이상 패치</block>
   <block id="edbeb952c4054f67ce1836afbda00903" category="cell">FAS8060</block>
@@ -2910,22 +2909,8 @@
   <block id="d06e5a4b4321a973665eb5bf9239cbfa" category="cell"><block ref="d06e5a4b4321a973665eb5bf9239cbfa" category="inline-link-macro-rx"></block></block>
   <block id="767ebec2859c7f997386a7679698edb4" category="summary">을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 netboot node3 및 node4를 준비합니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="83e3abbe2d4f63155eff798e62e1a616" category="inline-link-macro">3단계 노드 설치 및 부팅3</block>
-  <block id="6e58652b4dc76659a9eeef1a0ccc6daf" category="paragraph">이 내용은 ARL(Aggregate Relocation)을 사용하여 운영 중단 없이 컨트롤러 하드웨어를 업그레이드하는 방법을 설명합니다.</block>
-  <block id="645b41b640376c487d825f5296fcae9d" category="paragraph">ONTAP를 실행하는 노드 쌍에서 비 루트 애그리게이트를 동일한 클러스터의 새 노드로 마이그레이션하여 컨트롤러 하드웨어를 중단 없이 업그레이드할 수 있습니다. 업그레이드 중인 노드에서 호스팅되는 데이터에 액세스할 수 있습니다.</block>
-  <block id="f7a0874d2fe18058d08d01fb0120a9d9" category="paragraph">ARL은 HA 구성을 활용하여 동일한 클러스터 내에서 스토리지를 공유하는 경우 비루트 애그리게이트의 소유권을 한 노드에서 다른 노드로 이동할 수 있는 기능을 제공합니다.</block>
-  <block id="baf4103e3ee1058b17cd4da23c15704b" category="paragraph">시스템 명령을 사용하거나 수동 업그레이드를 수행하는 등 컨트롤러 하드웨어를 업그레이드하기 위한 ARL 방법은 두 가지가 있습니다. 시작하기 전에 컨트롤러 하드웨어 업그레이드를 위한 올바른 콘텐츠를 선택했는지 확인해야 합니다.</block>
-  <block id="757f3d0794e578256e35f77de45e53d1" category="paragraph">system 명령을 사용하여 업그레이드를 수행하는 경우 다음 표를 참조하십시오.</block>
-  <block id="6e6a93e1bc39df87c56313cbfd41fa2c" category="cell">이 ONTAP 버전을 실행 중인 경우…</block>
-  <block id="c8148f766ec78479f303b8e902e9099b" category="cell">시스템 명령으로 업그레이드하려면…</block>
-  <block id="9485cc727d9d60c0c782449790411372" category="cell"><block ref="9485cc727d9d60c0c782449790411372" category="inline-link-macro-rx"></block></block>
-  <block id="a80362d8850ea6131db54e8994d7ece8" category="cell"><block ref="a80362d8850ea6131db54e8994d7ece8" category="inline-link-macro-rx"></block></block>
-  <block id="f205bf1a1b77ff86829c2c9003e57d32" category="paragraph">수동 업그레이드를 수행하는 경우 다음 표를 참조하십시오.</block>
-  <block id="6af074e0669e408e576b460f5c34b89b" category="cell">수동으로 업그레이드하려면…</block>
   <block id="987d908c963b953e34ffd0bc33ebfd50" category="inline-link-macro">ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드합니다</block>
-  <block id="4a5512afba1f93dd83104eaac4237453" category="cell"><block ref="4a5512afba1f93dd83104eaac4237453" category="inline-link-macro-rx"></block></block>
-  <block id="4c41f3a2ec168af1924a7c5a884bdc37" category="cell">9.0에서 9.7</block>
   <block id="9732e7498adc911676ddbf1eb96c90f1" category="inline-link-macro">ONTAP 9.7 이하를 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드합니다</block>
-  <block id="c96cad4c802036afa3176e87bcda336b" category="cell"><block ref="c96cad4c802036afa3176e87bcda336b" category="inline-link-macro-rx"></block></block>
   <block id="8ccdb707cd31c1e478505a54dfa90f7a" category="paragraph">이 문서에서는 애그리게이트 재배치를 사용하여 운영 중단 없이 컨트롤러 하드웨어를 업그레이드하는 방법에 대해 설명합니다.</block>
   <block id="fd6616fb43f706cbccb578942fa320ab" category="paragraph">ONTAP 9를 실행하는 노드 쌍에서 비 루트 애그리게이트를 동일한 클러스터의 새 노드로 마이그레이션하여 컨트롤러 하드웨어를 중단 없이 업그레이드할 수 있습니다. 업그레이드 중인 노드에서 호스팅되는 데이터에 액세스할 수 있습니다.</block>
   <block id="60b36970c08352c3c476769f29561cf4" category="paragraph">이 절차에서는 HA 구성을 활용하는 ARL(Aggregate Relocation) 방법을 사용하여 동일한 클러스터 내에서 스토리지를 공유하는 경우 비루트 애그리게이트의 소유권을 다른 노드로 이동할 수 있습니다.</block>
@@ -3810,11 +3795,7 @@
   <block id="94c614d182457fbc97ae1deaaabd5813" category="paragraph">스위치가 없는 2노드 클러스터에서 노드를 업그레이드할 경우 업그레이드를 수행하는 동안 스위치가 없는 클러스터에 노드를 그대로 둘 수 있습니다. 이러한 LUN을 스위치 클러스터로 변환할 필요는 없습니다</block>
   <block id="c0ff48676f87627f73474db6b1018a88" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 netboot node3 및 node4를 준비합니다.</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">시작하십시오</block>
-  <block id="6c54fdf57ce13c518f1cc0d9d5f32820" category="sidebar">컨트롤러 하드웨어를 업그레이드합니다</block>
-  <block id="194cc1951d00be469039af6dbda275d0" category="sidebar">"시스템 컨트롤러 교체" 명령 사용(대부분의 시스템)</block>
-  <block id="b4d25e7f066e6393a7e3a6a7115b4f94" category="sidebar">수동 명령을 사용합니다</block>
   <block id="7d94daad2b6e9d77a6320a64c21fbc4a" category="sidebar">MetroCluster 구성에서 시스템을 업그레이드합니다</block>
-  <block id="c6bb96cc8b84319277f00b15adc71d75" category="sidebar">MetroCluster 구성에 대한 업그레이드 절차를 선택합니다</block>
   <block id="dfcc398099d6a64026e51ab282e16253" category="sidebar">더 많은 리소스</block>
   <block id="dd032435fa83549d8bf3928550409a3e" category="sidebar">ONTAP 소프트웨어 설명서</block>
   <block id="519131237f79eadb2dc6a1e003a087bc" category="sidebar">NetApp Active IQ Config Advisor를 참조하십시오</block>
@@ -4661,14 +4642,10 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="8f9fb90f68730e000102778c18115044" category="list-text"><block ref="8f9fb90f68730e000102778c18115044" category="inline-link-macro-rx"></block></block>
   <block id="441e5e19c045de8820e45a5b22e45056" category="paragraph">* Note2 *: 무중단 업그레이드를 수행하려면 원래 시스템의 데이터를 저장할 수 있는 자체 스토리지와 셸프가 있는 새 시스템이 필요합니다.</block>
   <block id="272d55e2adea123757d8811eaaaebd88" category="paragraph">*Note3*: 볼륨을 이동하여 업그레이드할 때 새 노드에 가입하고 볼륨과 LIF를 새 노드로 이동한 다음 클러스터에서 제거할 노드의 연결을 해제합니다. 스위치가 없는 2노드 클러스터를 업그레이드하는 경우 새 노드를 추가하기 전에 클러스터 스위치 쌍을 사용하여 스위치 연결 클러스터로 변환합니다.</block>
-  <block id="c024cf342a69d8b35b142333f2608aa5" category="sidebar">ONTAP 9.8 이상을 실행하는 시스템에서 애그리게이트를 재배치하여 업그레이드</block>
-  <block id="5d3c4b59db4a991b7c6450c61662dc60" category="sidebar">ONTAP 9.7 이하를 실행하는 시스템에서 애그리게이트를 재배치하여 업그레이드</block>
-  <block id="d58d42ec84ab0189beb36da55893f387" category="sidebar">스토리지 또는 볼륨을 이동하여 업그레이드</block>
   <block id="ef69680bc1ee7b1fd5e0950d56699d33" category="list-text">이 절차는 ONTAP 9.5 이전 버전을 실행하는 MetroCluster 4노드 및 8노드 구성에 적용됩니다. ONTAP 9.6 이상을 실행하는 MetroCluster 구성의 경우 로 이동하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> "system controller replace" 명령을 사용하여 ONTAP 9.5를 실행하는 컨트롤러 하드웨어를 ONTAP 9.7_로 업그레이드하려면</block>
   <block id="187aa569481ce25a564facc34217dda3" category="list-text">호스트 명령과 예는 Linux 운영 체제에만 해당됩니다.</block>
   <block id="fcbf56c541d4d283030e94ff96a44848" category="paragraph">USB 부팅 옵션을 사용하여 NetBoot을 수행할 수도 있습니다. 기술 자료 문서를 참조하십시오 <block ref="184f8f7294797efad8be0da4fb907563" category="inline-link-macro-rx"></block>.</block>
   <block id="626a7cbe056796bcb1c158b143866230" category="sidebar">ONTAP 릴리즈 노트</block>
-  <block id="806e982f94b5ab4054aa07ccb047ecdb" category="sidebar">"system controller replace" 명령을 사용합니다</block>
   <block id="32d8f219b2e3b24132bd4923c34c4dc6" category="list-text">포트 7700에서 수신 대기하지 않는 각 클러스터 LIF에 대해 LIF의 관리 상태를 로 설정합니다<block ref="74e8333ad11685ff3bdae589c8f6e34d" prefix=" " category="inline-code"></block> 그리고 나서<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block>:</block>
   <block id="0f072cf75dad23e085e6786bbfa15ee3" category="list-text">업그레이드하는 HA 쌍에서 실행 중인 ONTAP 버전에 따라 다음 작업 중 하나를 수행합니다.</block>
   <block id="3b7bc6da810fcf3db2d0ac3faf0d4699" category="cell">ONTAP 버전이...</block>
@@ -4778,7 +4755,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="3f22ff9f0de0ae158372929690ccd37d" category="list-text"><block ref="7a22ca21c86b9e16042b418efc302d00" category="inline-link-macro-rx"></block> (중단 절차).</block>
   <block id="50ae6167d8a0516c8e8cb720a6888cf9" category="list-text"><block ref="50ae6167d8a0516c8e8cb720a6888cf9" category="inline-link-macro-rx"></block></block>
   <block id="54e45682922af9929fbc5d361d7c0b49" category="list-text"><block ref="54e45682922af9929fbc5d361d7c0b49" category="inline-link-macro-rx"></block></block>
-  <block id="1b70cbc4d15cd633d93e8057d460d873" category="image-alt">node3 및 node4를 node1 및 node2로 바꿉니다</block>
   <block id="3ca57071250bef466a089a9c6c848bd5" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="964fb2d7d8e53060676c08185881a5ae" category="inline-link-macro-rx"></block></block>
   <block id="413dcaed8881bfe244a4fc03bcf787a2" category="paragraph">스토리지를 이동하여 업그레이드하기 전에 원래 노드에서 라이센스 정보를 수집하고, 네트워크 구성을 계획하고, 시스템 ID를 기록하고, NetBoot에 필요한 파일을 준비합니다.</block>
   <block id="d108a972a08fb1ea74a0d36841ffcc4e" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="6fb98438a67f401b75e7e2b4323d24af" category="inline-link-macro-rx"></block></block>
@@ -4824,7 +4800,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="c1f694580637b3e597cbb094a01e4f0b" category="list-text">전원 공급 장치 및 쉘프의 물리적 연결을 확인합니다.</block>
   <block id="ed55776ebd74bfbd9eb16e468efd309c" category="paragraph">다음과 같은 상황에서 이 절차를 사용할 수 있습니다.</block>
   <block id="3767c7624c68d0c29496b5a31369dec4" category="paragraph">다음과 같은 경우에는 이 절차를 사용할 수 없습니다.</block>
-  <block id="30fe187542d0301b8cde168dff779374" category="paragraph">컨트롤러 하드웨어를 업그레이드하는 다른 방법은 을 참조하십시오 <block ref="9f3bef3f6be14e6a346fc21a2929c802" category="inline-link-macro-rx"></block>.</block>
   <block id="e6ade1c19be2f8809c4d245c0dd36ffb" category="inline-link">현재 루트 애그리게이트 크기와 루트 애그리게이트의 디스크 수가 새 시스템에 대한 사양을 충족하거나 초과하는지 확인합니다</block>
   <block id="ffcd2799f602c109648b4c27aba568da" category="list-text"><block ref="47a924df16a51eabe41998989d3e0fba" category="inline-link-rx"></block>.</block>
   <block id="1be12058e46f267981f165919be9807c" category="inline-link">새 시스템에서 지원하는 스토리지 디스크 수가 원래 시스템에서 지원하는 스토리지 디스크 수보다 크거나 같은지 확인합니다</block>
@@ -4847,8 +4822,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="ee537959cbe6c4957342c94d3801abf7" category="doc">ARL 업그레이드 절차를 선택합니다</block>
   <block id="7e077786789216bd7864197dde6da988" category="cell">9.15.1 이상</block>
   <block id="abf9ebbea401affbe4640962b00393d7" category="inline-link-macro">"system controller replace" 명령을 사용하여 ONTAP 9.15.1에 도입된 컨트롤러 하드웨어를 업그레이드합니다</block>
-  <block id="a98caac8456398a760c308df55a83cb5" category="cell"><block ref="a98caac8456398a760c308df55a83cb5" category="inline-link-macro-rx"></block></block>
-  <block id="d406be867b5acefe539dcc5fb35b0d2f" category="cell"><block ref="257ce5671d801ab32735a8f227cd7f0b" category="inline-link-macro-rx"></block> 이 절차를 사용하여 ASA(All SAN Array)로 구성된 AFF 컨트롤러를 특정 모델 및 ONTAP 소프트웨어 버전의 ASA 컨트롤러로 업그레이드할 수 있습니다. <block ref="dd8a9320d133fc6bc4cebf159be26035" category="inline-link-macro-rx"></block>..</block>
   <block id="3f050c809f63ade1d8b10bf424bb198a" category="list-text">[[auto_check_4_step17]] 자동 부팅 중에 Ctrl-C를 눌러 LOADER &gt; 프롬프트에서 노드를 중지합니다.</block>
   <block id="e2de59a5a77b66213e7d85b56f1eb224" category="list-text">LOADER 프롬프트에서 유지보수 모드로 전환합니다.</block>
   <block id="03052ce84c74abac0f8f7b511f002de5" category="list-text">[[auto_check_4_step22]] LOADER 프롬프트에서 부팅합니다.</block>
@@ -5174,7 +5147,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="e047fa40e589357c94de5b0e63b1c469" category="paragraph">다음은 포트 "e10a"에서 "e10b"로 교체된 VLAN을 복원하는 예입니다.</block>
   <block id="d652f04b0c47ec3200904bc82c8d5ff7" category="paragraph"><block ref="0f64f457d55e8e27ee821e9df0561d32" prefix="" category="inline-code"></block></block>
   <block id="b0d52e5491c54658a39bbef8e5dd30a6" category="sidebar">애그리게이트 재배치, 볼륨 이동 또는 스토리지 이동을 통해 컨트롤러 하드웨어를 업그레이드합니다.</block>
-  <block id="6015ba5fcef1f3caa77869608d6c2789" category="sidebar">ONTAP 하드웨어 시스템에 대한 스위치 설명서</block>
   <block id="0aa489897873ed4f6cacbbccf44589ea" category="sidebar">ARL을 사용하여 업그레이드합니다</block>
   <block id="37c71c6814f6c6da3ee8d0b203924be7" category="sidebar">AFF A800을 대체합니다</block>
   <block id="ef62a5865ef10a9f98eab6ed7130657e" category="sidebar">AFF A220, AFF A200, AFF C190, FAS2620 또는 FAS2720을 교체합니다</block>
@@ -5209,7 +5181,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="f24d3bbf01666420670f76d88d0728aa" category="paragraph">기존 노드의 e0a 또는 e0b 클러스터 포트를 새 노드의 클러스터 포트에 연결할 수 없는 경우 를 참조하십시오. <block ref="7be812dd65bbd3f39bbb06fd50caac76" category="inline-link-macro-rx"></block></block>
   <block id="894f2e2a32e68afb6c8779c4dd1b6061" category="list-text">ONTAP 9.15.1에 도입된 시스템으로 업그레이드할 때 ONTAP는 기존 볼륨의 스토리지 효율성을 변환하고 하드웨어 오프로드 기능을 사용하는 새로운 스토리지 효율성 기능을 적용합니다. 이 프로세스는 자동 백그라운드 프로세스이며 시스템에 성능에 영향을 주지 않습니다.</block>
   <block id="20a50ea664dd251305adec2bcca06061" category="list-text">AFF A70, AFF A90 또는 AFF A1K 시스템의 경우 ONTAP는 스토리지 효율성을 사용하지 않는 볼륨을 포함하여 기존의 모든 씬 프로비저닝 볼륨의 스토리지 효율성을 변환합니다.</block>
-  <block id="c35161fa14384d510e021a3314063cc1" category="list-text">FAS70 및 FAS90 시스템의 경우, ONTAP는 업그레이드 전에 이미 스토리지 효율성이 활성화된 기존 씬 프로비저닝 볼륨의 스토리지 효율성만 변환합니다.</block>
   <block id="33bb7bcaf48f0fdda36a26455a40a230" category="inline-link-macro">스토리지 효율성에 대해 자세히 알아보십시오</block>
   <block id="6d6b534c9b53f9b5663ea4448a9c5c5a" category="paragraph"><block ref="7e7ac2ea54718abbfde88230c884c797" category="inline-link-macro-rx"></block>..</block>
   <block id="0db06a4e73b14fd8cb249dd2487fa5a3" category="inline-link-macro">AFF/ASA A1K, A90, A70, FAS90, FAS70의 새로운 클러스터 설정에서 10G 또는 25G 클러스터 포트를 구성하는 방법</block>
@@ -5227,4 +5198,56 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="e0acd4a9bc97511cc024bf1c07dc8536" category="list-text">내부 드라이브가 있는 AFF A70 또는 AFF A90로 업그레이드하는 경우 업그레이드하기 전에 이러한 드라이브의 소유권을 제거해야 합니다. 업그레이드가 완료되면 내부 드라이브를 AFF A70 또는 AFF A90 노드에 할당하고 이 드라이브를 사용하여 데이터 애그리게이트를 생성할 수 있습니다. 루트 또는 데이터 애그리게이트를 내부 드라이브로 마이그레이션할 필요는 없습니다.</block>
   <block id="9f63491a94b75b12a4f685455f82295c" category="list-text">내부 드라이브 없이 AFF A70 또는 AFF A90로 업그레이드하는 경우 업그레이드를 완료한 후 내부 드라이브를 할당할 필요가 없습니다.</block>
   <block id="1c6b77da3506137a2164e23d95b49133" category="list-text">AFF A70, AFF A90, AFF A1K, FAS70, FAS90 시스템은 클러스터 및 HA 연결 모두에서 100GbE 네트워크 포트를 공유합니다. 이러한 시스템은 기존 클러스터 스위치에 대한 10GbE 또는 25GbE 클러스터 연결을 지원할 수 있습니다. 그러나 NetApp 10GbE 및 25GbE 스위치가 더 이상 필요하지 않은 경우 100GbE 클러스터 속도로 업데이트하는 것이 좋습니다. 자세한 내용은 다음 기술 문서를 참조하십시오.</block>
+  <block id="6a171bc0a83fdc8cf2cad914f26e60f7" category="inline-image-macro">node1 및 node2를 node3 및 node4로 바꿉니다</block>
+  <block id="3aaf8e09b00062e6ef2a6306db035456" category="paragraph"><block ref="3aaf8e09b00062e6ef2a6306db035456" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ab209cb8d12b2f480578b4949df8aaa0" category="paragraph"><block ref="ab209cb8d12b2f480578b4949df8aaa0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="75b20a9dfdabc84f9f91512eb8cfbda8" category="list-text">FAS70 및 FAS90 시스템의 경우 ONTAP는 업그레이드 전에 스토리지 효율성이 구현된 기존 씬 프로비저닝 볼륨의 스토리지 효율성만 변환합니다.</block>
+  <block id="062789e6044bfae1e66a58c85ebf5281" category="paragraph"><block ref="062789e6044bfae1e66a58c85ebf5281" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f52cbea23351114ee0b3b28c1c53db00" category="paragraph"><block ref="f52cbea23351114ee0b3b28c1c53db00" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fb53938953a64ed1298a3856f8bb8679" category="doc">여기서 시작: ARL 업그레이드 절차를 선택합니다</block>
+  <block id="d42c7018dcc284c2db31a4a24d2b3b3c" category="paragraph">ARL(Aggregate Relocation)을 사용하여 중단 없이 컨트롤러 하드웨어를 업그레이드할 수 있습니다. 컨트롤러 하드웨어를 업그레이드하는 다른 방법은 을 참조하십시오<block ref="9f3bef3f6be14e6a346fc21a2929c802" category="inline-link-macro-rx"></block>.</block>
+  <block id="52c65abc1d4cdef95969c778420220da" category="paragraph">ARL을 사용하면 ONTAP을 실행하는 노드 쌍에서 루트가 아닌 애그리게이트를 동일한 클러스터의 새로운 노드로 마이그레이션하여 컨트롤러 하드웨어를 중단 없이 업그레이드할 수 있습니다. 업그레이드 중인 노드에서 호스팅되는 데이터에 액세스할 수 있습니다.</block>
+  <block id="dc32b0faeda54116d50282dbfa24dda7" category="paragraph">ARL은 HA 구성을 활용하여 비루트 애그리게이트의 소유권을 같은 클러스터 내에서 공유하는 경우 한 노드에서 다른 노드로 이동할 수 있습니다.</block>
+  <block id="72e1bba43ca452b38bc94d7f96d04f68" category="paragraph">컨트롤러 하드웨어를 업그레이드하는 몇 가지 ARL 방법이 있습니다. 적절한 절차를 선택하려면 각 ARL 업그레이드 옵션에 대해 지원되는 시스템 및 ONTAP 버전에 대한 다음 정보를 검토하십시오.</block>
+  <block id="cd9547b52fda0ee4b09ec2df334b7b51" category="section-title">"system controller replace" 명령을 ONTAP 9.15.1 이상으로 사용하십시오</block>
+  <block id="788596adaaaec6cd405246037f06d6f8" category="paragraph">업그레이드 시나리오가 다음 지원되는 시스템 매트릭스에 나열되어 있는 경우 로 <block ref="f609a3e8782c2c2c1207c1ab8bc1092e" category="inline-link-macro-rx"></block> 이동하여 업그레이드 절차를 시작합니다.</block>
+  <block id="83606cabd222d0d058cfae8874f35382" category="example-title">지원되는 시스템을 표시합니다</block>
+  <block id="37b7186b6ae7b3227f80bbe1da693be7" category="section-title">동일한 섀시에서 컨트롤러 모델을 업그레이드합니다</block>
+  <block id="34cc21c16ca659d7ddb97f634ed86150" category="paragraph">업그레이드 시나리오가 다음 지원되는 시스템 매트릭스에 나열되어 있는 경우 로 <block ref="8e6a41e8fa329b194a3382ccde9289cd" category="inline-link-macro-rx"></block> 이동하여 업그레이드 절차를 시작합니다.</block>
+  <block id="3fe507461c708cfe67db6ed39b069266" category="cell">더 이상 없습니다</block>
+  <block id="7a3b05b130c9ce12ac95ac076b53bfcf" category="cell">AFF A70 또는 AFF A90</block>
+  <block id="3e44bbb802d299056c9839f8bdfc777a" category="cell">9.15.1 이상</block>
+  <block id="184f38916b6639f5bdbf7619d90cebc3" category="paragraph">9.10.1P15, 9.11.1P11 이상</block>
+  <block id="45b09eba6fe8095ae38635150e57152a" category="paragraph">*참고*: AFF A200는 9.11.1 이후의 ONTAP 버전을 지원하지 않습니다.</block>
+  <block id="d243c4c373219990c87996aba8af4741" category="paragraph">9.11.1P7(FAS2620)</block>
+  <block id="26ed1ff6e78b37e572170171b4fabc0f" category="paragraph">*참고*: FAS2620는 9.11.1 이후의 ONTAP 버전을 지원하지 않습니다.</block>
+  <block id="074a728bac13ce0b2d079bed92780d8d" category="section-title">"system controller replace" 명령을 ONTAP 9 .8 이상으로 사용하십시오</block>
+  <block id="bf2f20b69fe364bf3a76fbb262d9c675" category="paragraph">업그레이드 시나리오가 다음 지원되는 시스템 매트릭스에 나열되어 있는 경우 로 <block ref="f597d5199c2cdfe3f660f286188248d5" category="inline-link-macro-rx"></block> 이동하여 업그레이드 절차를 시작합니다.</block>
+  <block id="1694aa2f0754e25d2950e8f0248979e6" category="cell">FAS8060, FAS8080</block>
+  <block id="36b18d9d2f8a0181d8d87c7486c8a653" category="cell">AFF A300, AFF A400, AFF A700, AFF A800의 약어입니다</block>
+  <block id="a8391478850ce78247234468f8498486" category="cell">AFF8060, AFF8080</block>
+  <block id="0ee1a7b779294c0ac023c9c91408c895" category="cell">FAS8300, FAS8700, FAS9000, FAS9500</block>
+  <block id="acacda5e23fb3293e9c45233209f315e" category="cell">AFF A400, AFF A700, AFF A800, AFF A900의 약어입니다</block>
+  <block id="03b6470644df0355779fa63281baa419" category="section-title">"system controller replace" 명령을 ONTAP 9 .5 ~ 9.7로 사용합니다</block>
+  <block id="c1d3524ca04e13df3d78b13f4fa1729f" category="paragraph">업그레이드 시나리오가 다음 지원되는 시스템 매트릭스에 나열되어 있는 경우 로 <block ref="7c59c4699adc4b75b7233df7fb60de9b" category="inline-link-macro-rx"></block> 이동하여 업그레이드 절차를 시작합니다.</block>
+  <block id="33f30bea35826525ddc350a931a3e60e" category="cell">FAS8700, FAS9000, FAS8300</block>
+  <block id="b412f16da28f14611d953df7ec9b215a" category="cell">AFF A700, AFF A800, AFF A400</block>
+  <block id="c57c038bdb2b903ef67865f743dfc52e" category="section-title">수동 ARL 명령을 사용합니다</block>
+  <block id="114c547b8e01b5b1d0aff42924c30c8c" category="paragraph">"시스템 명령"을 사용하여 업그레이드 시나리오가 지원되지 않는 경우 수동 명령을 사용하여 ARL 업그레이드를 수행할 수 있습니다.</block>
+  <block id="f3fc96e9b0f9e7ce8cc79384852e3e25" category="paragraph">업그레이드를 시작하려면 ONTAP 버전에 대한 절차를 선택합니다.</block>
+  <block id="a58e3cec27f318019d650117009a9a1c" category="list-text"><block ref="a58e3cec27f318019d650117009a9a1c" category="inline-link-macro-rx"></block></block>
+  <block id="4928666bac61f347373a03116de25bb3" category="list-text"><block ref="4928666bac61f347373a03116de25bb3" category="inline-link-macro-rx"></block></block>
+  <block id="261856aec998b0985aebf71d4d5b7db7" category="paragraph"><block ref="261856aec998b0985aebf71d4d5b7db7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cbc19247d1bcf806abfae9b8ac144851" category="paragraph"><block ref="cbc19247d1bcf806abfae9b8ac144851" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6589bb9996d43753910401a792dad35f" category="paragraph"><block ref="6589bb9996d43753910401a792dad35f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="105e1829dde2a37d92ad8310c27aeb64" category="paragraph"><block ref="105e1829dde2a37d92ad8310c27aeb64" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fc1e19fb7bebdbd1fe84af4aa27b74b7" category="paragraph"><block ref="fc1e19fb7bebdbd1fe84af4aa27b74b7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6f066e6d94e620ac8fd90616927ffe5a" category="paragraph"><block ref="6f066e6d94e620ac8fd90616927ffe5a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d921f56d2d436f5a0c085db02c0735ab" category="paragraph"><block ref="d921f56d2d436f5a0c085db02c0735ab" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d183b68f24aed33d51e0d78492187ce4" category="paragraph"><block ref="d183b68f24aed33d51e0d78492187ce4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="be14b840c0e67a106966f6782397b832" category="paragraph"><block ref="be14b840c0e67a106966f6782397b832" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2981e1a4efec06a6c78b3734024a96a1" category="paragraph"><block ref="2981e1a4efec06a6c78b3734024a96a1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a8146cc42b0ac83dacd0c674c2e19baa" category="paragraph"><block ref="a8146cc42b0ac83dacd0c674c2e19baa" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fd4a2232b0a4fad7f2f7a5207ee94001" category="sidebar">ONTAP 시스템 및 소프트웨어에 대해 알아보십시오</block>
+  <block id="743b2bde29eae11996923323c6b89672" category="sidebar">ONTAP 스위치 설명서</block>
 </blocks>

@@ -10,7 +10,7 @@ summary: ONTAP 9.7 이하를 실행하는 한 쌍의 컨트롤러에 수동 ARL 
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
