@@ -5194,7 +5194,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="f43de3716b79c8e43965aeacd1411a48" category="cell">AFF A300, AFF A400, AFF A700</block>
   <block id="5fa70989a3e04b27c407da750f3d94fe" category="cell">AFF A70, AFF A90, AFF A1K</block>
   <block id="ccf78fb30997636f483e58875cad308b" category="cell">AFF A90, AFF A1K</block>
-  <block id="fd63300d56f60b7a5ff6928593e24ff3" category="paragraph">AFF A70 및 AFF A90는 단일 섀시에 2개의 온보드 디스크와 2개의 컨트롤러가 있는 통합 시스템입니다.</block>
   <block id="e0acd4a9bc97511cc024bf1c07dc8536" category="list-text">내부 드라이브가 있는 AFF A70 또는 AFF A90로 업그레이드하는 경우 업그레이드하기 전에 이러한 드라이브의 소유권을 제거해야 합니다. 업그레이드가 완료되면 내부 드라이브를 AFF A70 또는 AFF A90 노드에 할당하고 이 드라이브를 사용하여 데이터 애그리게이트를 생성할 수 있습니다. 루트 또는 데이터 애그리게이트를 내부 드라이브로 마이그레이션할 필요는 없습니다.</block>
   <block id="9f63491a94b75b12a4f685455f82295c" category="list-text">내부 드라이브 없이 AFF A70 또는 AFF A90로 업그레이드하는 경우 업그레이드를 완료한 후 내부 드라이브를 할당할 필요가 없습니다.</block>
   <block id="1c6b77da3506137a2164e23d95b49133" category="list-text">AFF A70, AFF A90, AFF A1K, FAS70, FAS90 시스템은 클러스터 및 HA 연결 모두에서 100GbE 네트워크 포트를 공유합니다. 이러한 시스템은 기존 클러스터 스위치에 대한 10GbE 또는 25GbE 클러스터 연결을 지원할 수 있습니다. 그러나 NetApp 10GbE 및 25GbE 스위치가 더 이상 필요하지 않은 경우 100GbE 클러스터 속도로 업데이트하는 것이 좋습니다. 자세한 내용은 다음 기술 문서를 참조하십시오.</block>
@@ -5250,4 +5249,5 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="a8146cc42b0ac83dacd0c674c2e19baa" category="paragraph"><block ref="a8146cc42b0ac83dacd0c674c2e19baa" category="inline-image-macro-rx" type="image"></block></block>
   <block id="fd4a2232b0a4fad7f2f7a5207ee94001" category="sidebar">ONTAP 시스템 및 소프트웨어에 대해 알아보십시오</block>
   <block id="743b2bde29eae11996923323c6b89672" category="sidebar">ONTAP 스위치 설명서</block>
+  <block id="91c8d030b7d32b838af9bb14f227c952" category="paragraph">AFF A70와 AFF A90는 HA 구성에서 2개의 컨트롤러가 장착된 통합 시스템이며 단일 섀시에 온보드 디스크가 있습니다.</block>
 </blocks>
