@@ -46,7 +46,7 @@ summary: ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레�
 | link:https://docs.netapp.com/us-en/ontap-flexarray/install/index.html["FlexArray 가상화 설치 요구 사항 및 참조 자료"^] | FlexArray 가상화 시스템에 대한 케이블 연결 지침 및 기타 정보를 제공합니다. 
 
 
-| link:https://docs.netapp.com/us-en/ontap/high-availability/index.html["고가용성 관리"^] | 에서는 스토리지 페일오버 및 테이크오버/반환을 비롯하여 고가용성 클러스터 구성을 설치 및 관리하는 방법에 대해 설명합니다. 
+| link:https://docs.netapp.com/us-en/ontap/high-availability/index.html["HA 쌍 관리"^] | 에서는 스토리지 페일오버 및 테이크오버/반환을 비롯하여 고가용성 클러스터 구성을 설치 및 관리하는 방법에 대해 설명합니다. 
 
 
 | link:https://docs.netapp.com/us-en/ontap/volumes/index.html["CLI를 통한 논리적 스토리지 관리"^] | 볼륨, FlexClone 볼륨, 파일 및 LUN을 사용하여 논리적 스토리지 리소스를 효율적으로 관리하는 방법에 대해 설명합니다. FlexCache 볼륨, 중복제거, 압축, Qtree, 할당량 

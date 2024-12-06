@@ -17,10 +17,10 @@
 . 노드 모델의 _설치 및 설치 지침_ 에 나온 지침에 따라 랙에 노드 4를 설치합니다.
 . 노드 4를 케이블로 연결하고 노드 2에서 노드 4로 연결합니다.
 +
-node4 플랫폼의 _설치 및 설정 지침_ 또는 _FlexArray 가상화 설치 요구 사항 및 참조_에 나와 있는 지침, 해당 디스크 쉘프 문서 및 _High Availability 관리_의 지침에 따라 다음 연결을 케이블로 연결합니다.
+노드4 플랫폼의 _ 설치 및 설정 지침 _ 또는 _ FlexArray 가상화 설치 요구사항 및 참조 _ 의 지침, 적절한 디스크 쉘프 문서 및 _ HA 쌍 관리 _ 의 지침을 사용하여 다음 연결을 케이블로 연결합니다.
 
 +
-을 참조하십시오 link:other_references.html["참조"] FlexArray 가상화 설치 요구 사항 및 Reference_and_High Availability 관리 _ 에 대한 링크를 제공합니다.
+link:other_references.html["참조"]FlexArray 가상화 설치 요구 사항 및 Reference_and_HA PAIR 관리 _ 에 대한 링크를 참조하십시오.
 
 +
 ** 콘솔(원격 관리 포트)

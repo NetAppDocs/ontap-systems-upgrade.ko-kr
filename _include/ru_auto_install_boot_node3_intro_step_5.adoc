@@ -26,10 +26,10 @@ NOTE: 동일한 섀시에 두 노드가 있는 시스템으로 업그레이드�
 
 . [[auto_install3_step3]] 노드 3을 케이블로 연결하여 노드 1에서 노드 3으로 연결을 이동합니다.
 +
-노드 3 플랫폼의 _설치 및 설정 지침_ 또는 _FlexArray 가상화 설치 요구 사항 및 참조_를 사용하여 다음 연결을 케이블로 연결하십시오. 해당 디스크 쉘프 문서 및 _고가용성 관리_.
+다음 연결을 케이블로 연결합니다. node3 플랫폼의 _설치 및 설정 지침_ 또는 _FlexArray 가상화 설치 요구사항 및 참조_, 해당 디스크 쉘프 문서 및 _HA Pair 관리_ 를 참조하십시오.
 
 +
-을 참조하십시오 link:other_references.html["참조"] FlexArray 가상화 설치 요구 사항 및 Reference_and_High Availability 관리 _ 에 대한 링크를 제공합니다.
+link:other_references.html["참조"]FlexArray 가상화 설치 요구 사항 및 Reference_and_HA PAIR 관리 _ 에 대한 링크를 참조하십시오.
 
 +
 ** 콘솔(원격 관리 포트)

@@ -25,6 +25,26 @@ summary: 수동 ARL 업그레이드 절차를 사용하여 ONTAP 9.8 이상을 �
 * FAS 시스템에서 FAS 시스템으로
 * FlexArray 가상화 소프트웨어 또는 V-Series 시스템을 사용하는 시스템에 FAS 시스템 구축
 * AFF 시스템에서 AFF 시스템으로
++
+동일한 시리즈의 교체 시스템으로만 업그레이드할 수 있습니다.
+
++
+** AFF A-Series 시스템에서 AFF A-Series 시스템으로 마이그레이션합니다
+** AFF C-Series 시스템에서 AFF C-Series 시스템으로 전환
+
+
+* ASA 시스템에서 ASA 시스템으로
++
+ASA R2 교체 시스템으로의 ASA 업그레이드는 지원되지 않습니다. ASA에서 ASA R2로 데이터를 마이그레이션하는 방법에 대한 자세한 내용은 를 참조하십시오link:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html["SAN 호스트에서 ASA R2 스토리지 시스템으로의 데이터 액세스가 가능합니다"^].
+
++
+동일한 시리즈의 교체 시스템으로만 업그레이드할 수 있습니다.
+
++
+** ASA A-Series 시스템에서 ASA A-Series 시스템으로 마이그레이션합니다
+** ASA C-Series 시스템에서 ASA C-Series 시스템으로 전환
+
+
 * FlexArray 가상화 소프트웨어 또는 V 시리즈 시스템이 포함된 시스템에 어레이 LUN이 없는 경우 FlexArray 가상화 소프트웨어 또는 V-Series 시스템이 있는 시스템에서 FAS 시스템으로.
 * V-Series 시스템을 FlexArray 가상화 소프트웨어 또는 V-Series 시스템이 포함된 시스템으로 관리
 
