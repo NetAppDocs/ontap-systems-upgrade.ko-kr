@@ -16,40 +16,19 @@ summary: 동일한 섀시에서 컨트롤러 모델을 업그레이드하는 ARL
 [role="lead"]
 이 내용은 기존 데이터 및 디스크를 모두 유지하면서 HA 쌍에서 스토리지 컨트롤러를 업그레이드하는 방법을 설명합니다. 이는 숙련된 관리자만 사용해야 하는 복잡한 절차입니다.
 
+
+
+== ARL 업그레이드가 지원됩니다
+
 다음과 같은 상황에서 이 절차를 사용할 수 있습니다.
 
-* 다음 컨트롤러 업그레이드 중 하나를 수행 중입니다.
+* 컨트롤러 업그레이드가 에 나와 link:index.html#supported-systems,["지원되는 시스템 매트릭스"]있습니다.
+* 컨트롤러 업그레이드에 필요한 하드웨어를 수령했음을 NetApp 세일즈 담당자에게 확인했습니다.
 +
-[cols="50,50"]
-|===
-| 더 오래 된 컨트롤러 | 교체 컨트롤러 
-
-
-| AFF A800 를 참조하십시오 | AFF A70 및 AFF A90 
-
-
-| ASA으로 구성된 AFF A220입니다 | ASA A150 
-
-
-| AFF A220, AFF A200 또는 AFF C190 | AFF A150 
-
-
-| FAS2620 또는 FAS2720 | FAS2820 
-
-
-| ASA로 구성된 AFF A700 | ASA A900 
-
-
-| AFF A700 | AFF A900 
-
-
-| FAS9000 | FAS9500 
-|===
-* NetApp 세일즈 담당자에게 컨트롤러 업그레이드용 하드웨어를 수령했는지 확인했습니다.
-+
-** 업그레이드에 필요한 AFF A90 컨트롤러 2개 또는 AFF A70 컨트롤러 2개 및 모든 입출력 모듈 100GbE 케이블의 필요한 길이
+** AFF A90, AFF A70 또는 AFF C80 컨트롤러 2개와 모든 I/O 모듈 100GbE 케이블의 필요한 길이
+** AFF A50, AFF A30, AFF C30 또는 AFF C60 컨트롤러 및 I/O 모듈 2개 필요한 케이블
 ** ASA A150, AFF A150 또는 FAS2820 컨트롤러
-** ASA A900, AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈, 업그레이드에 필요한 부품
+** ASA A900, AFF A900 또는 FAS9500 컨트롤러와 NVRAM 모듈 및 부품
 
 
 * 업그레이드를 위한 최소 ONTAP 버전을 실행하고 있습니다. 자세한 내용은 을 참조하십시오 link:index.html["개요"].
@@ -58,12 +37,18 @@ summary: 동일한 섀시에서 컨트롤러 모델을 업그레이드하는 ARL
 * 시스템에서 ONTAP 9.15.1 이상을 실행하고 있으며 이더넷 스위치를 사용하여 이더넷 연결 스토리지에 연결합니다.
 
 
+
+
+== ARL 업그레이드는 지원되지 않습니다
+
 다음과 같은 경우에는 이 절차를 사용할 수 없습니다.
 
-* AFF A800, AFF A700 또는 FAS9000 시스템에서 FlexArray 가상화 소프트웨어를 사용하고 있습니다.
+* 업그레이드하려는 기존 시스템에서 FlexArray 가상화 소프트웨어를 사용하고 있습니다.
+* MetroCluster IP 구성을 업그레이드하는 중입니다.
++
+MetroCluster IP 구성을 업그레이드하려면 _MetroCluster 업그레이드 및 확장_컨텐츠 링크를 참조하십시오.link:other_references.html["참조"]
 
 
-AFF A800, AFF A700 또는 FAS9000 시스템에서 MetroCluster IP 구성을 업그레이드하려면 MetroCluster 업그레이드 및 expansion_content 링크에 대한 링크를 참조하십시오. link:other_references.html["참조"]
 
 
 NOTE: 이 절차를 통해 NetApp 스토리지 암호화(NSE), NetApp 볼륨 암호화(NVE), NetApp 애그리게이트 암호화(NAE)를 사용할 수 있습니다.

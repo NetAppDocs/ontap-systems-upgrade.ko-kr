@@ -23,13 +23,17 @@ summary: '일반적으로 컨트롤러 하드웨어를 업그레이드하는 방
 * AFF A150, AFF A200, AFF A220, AFF A250, AFF A700s, 및 AFF A800을 받았습니다
 +
 
-NOTE: 애그리게이트 재배치를 사용하여 AFF A800을 AFF A70 또는 AFF A90으로 업그레이드할 수도 있습니다. link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html["자세한 정보"]..
+NOTE: 애그리게이트 재배치를 사용하여 AFF A800을 AFF A70 또는 AFF A90으로 업그레이드할 수도 있습니다. link:upgrade-arl-auto-affa900/index.html["자세한 정보"]..
 
 * AFF C190, AFF C250 및 AFF C800의 약어입니다
++
+
+NOTE: Aggregate 재배치를 사용하여 AFF A250 및 AFF C250를 업그레이드할 수도 있습니다. link:upgrade-arl-auto-affa900/index.html["자세한 정보"]..
+
 * ASA A150, ASA A250, ASA A800 및 ASA AFF A220
 +
 
-NOTE: ASA R2 교체 시스템으로의 ASA 업그레이드는 지원되지 않습니다. ASA에서 ASA R2로 데이터를 마이그레이션하는 방법에 대한 자세한 내용은 를 참조하십시오link:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html["SAN 호스트에서 ASA R2 스토리지 시스템으로의 데이터 액세스가 가능합니다"^].
+NOTE: ASA R2 교체 시스템으로의 ASA 업그레이드는 지원되지 않습니다. ASA에서 ASA R2 시스템으로 데이터를 마이그레이션하는 방법에 대한 자세한 내용은 을 참조하십시오link:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html["SAN 호스트에서 ASA R2 스토리지 시스템으로의 데이터 액세스가 가능합니다"^].
 
 
 

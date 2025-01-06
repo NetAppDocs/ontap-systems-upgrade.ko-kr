@@ -35,6 +35,8 @@ entries:
     url: "/upgrade-arl-auto-affa900/retire_node1.html"
   - title: 노드1 시스템 모듈을 교체합니다
     entries:
+    - title: AFF A250 또는 AFF C250를 교체합니다
+      url: "/upgrade-arl-auto-affa900/replace-node1-affa250-affc250.html"
     - title: AFF A800을 대체합니다
       url: "/upgrade-arl-auto-affa900/replace-node1-affa800.html"
     - title: AFF A220, AFF A200, AFF C190, FAS2620 또는 FAS2720을 교체합니다
@@ -47,7 +49,7 @@ entries:
   entries:
   - title: 개요
     url: "/upgrade-arl-auto-affa900/stage_3_index.html"
-  - title: 공유 클러스터-HA 스토리지의 케이블 노드1(AFF A800 업그레이드만 해당)
+  - title: 공유 클러스터-HA 스토리지의 노드1를 케이블로 연결합니다
     url: "/upgrade-arl-auto-affa900/cable-node1-for-shared-cluster-HA-storage.html"
   - title: 교체 시스템 모듈을 사용하여 노드1을 부팅합니다
     url: "/upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html"
@@ -71,6 +73,8 @@ entries:
     url: "/upgrade-arl-auto-affa900/stage_5_index.html"
   - title: 노드 2에 교체 시스템 모듈을 설치합니다
     entries:
+    - title: AFF A30, AFF A50, AFF C30 또는 AFF C60을 설치합니다
+      url: "/upgrade-arl-auto-affa900/install-aff-a30-a50-c30-c50-node2.html"
     - title: AFF A90 또는 AFF A70을 설치합니다
       url: "/upgrade-arl-auto-affa900/install-affa90-affa70-on-node2.html"
     - title: ASA A150, AFF A150 또는 FAS2820를 설치합니다

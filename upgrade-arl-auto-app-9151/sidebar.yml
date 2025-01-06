@@ -1,6 +1,6 @@
 ---
 section: upgrade-arl-auto-app-9151
-title: '"system controller replace" 명령을 사용하여 ONTAP 9.15.1에 도입된 컨트롤러 하드웨어를 업그레이드합니다'
+title: '"system controller replace" 명령을 사용하여 ONTAP 9.15.1 이상에 도입된 컨트롤러 하드웨어를 업그레이드합니다'
 entries:
 - title: 개요
   url: "/upgrade-arl-auto-app-9151/index.html"
