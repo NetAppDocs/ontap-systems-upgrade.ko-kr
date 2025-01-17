@@ -21,7 +21,7 @@ ARL은 HA 구성과 클러스터 인터커넥트 통신을 활용합니다. 따�
 다음 표는 컨트롤러 업그레이드에 대해 지원되는 시스템 매트릭스를 보여줍니다.
 
 
-CAUTION: 이 절차는 다음 업그레이드 구성에 엄격히 적용됩니다. 이 절차를 사용하여 다른 시스템 조합 간에 업그레이드를 수행하지 마십시오. 다른 모든 컨트롤러 모델의 경우 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 업그레이드하려면 _ "system controller replace" 명령 사용 및 _ aggregate relocation을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드하려면 _ 을(를link:other_references.html["참조"]) 참조하십시오.
+CAUTION: 이 절차는 다음 업그레이드 구성에 엄격히 적용됩니다. 이 절차를 사용하여 다른 시스템 조합 간에 업그레이드를 수행하지 마십시오. 다른 모든 컨트롤러 모델의 경우, ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 업그레이드하려면 " system controller replace " 명령 링크 및 _ aggregate relocation을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드하려면 _ 을(를) 참조하십시오link:other_references.html["참조"].
 
 [cols="20,20,40"]
 |===
@@ -37,7 +37,7 @@ CAUTION: 이 절차는 다음 업그레이드 구성에 엄격히 적용됩니�
 | AFF C800 1호 | AFF C80 를 참조하십시오 | 9.16.1 
 
 
-| AFF A800 1호 | AFF A90 또는 AFF A70 | 9.15.1 
+| AFF A800 1호 | AFF A90 또는 AFF A70 | 9.15.1 이상 
 
 
 | All SAN 어레이로 구성된 AFF A220(ASA) | ASA A150 | 9.13.1P1 이상 
@@ -101,10 +101,8 @@ NetApp는 가능하면 이전 시스템과 교체 시스템에 동일한 ONTAP �
 | AFF A220, AFF A200, AFF C190, FAS2620 또는 FAS2720 | 이전 컨트롤러의 각 노드에 있는 컨트롤러 모듈을 새 모듈로 바꿉니다. 
 
 
-| AFF A700 또는 FAS9000 | 이전 컨트롤러의 각 노드에 있는 컨트롤러와 NVRAM 모듈을 새 모듈로 바꿉니다. ^1^ 
+| AFF A700 또는 FAS9000 | 이전 컨트롤러의 각 노드에 있는 컨트롤러와 NVRAM 모듈을 새 모듈로 바꿉니다. * 참고 *: I/O 카드, 데이터 케이블, 디스크 선반 및 디스크를 이동, 분리 또는 재연결할 필요가 없습니다. 
 |===
-I/O 카드, 데이터 케이블, 디스크 선반 및 디스크를 이동, 분리 또는 재연결할 필요가 없습니다.
-
 
 NOTE: node1 * 및 * node2 * 라는 용어는 이 문서의 노드 이름에 대한 참조용으로만 사용됩니다. 이 절차를 수행할 때는 노드의 실제 이름을 바꿔야 합니다.
 
@@ -116,8 +114,8 @@ NOTE: node1 * 및 * node2 * 라는 용어는 이 문서의 노드 이름에 대�
 * AFF A30, AFF A50, AFF A70, AFF A90, AFF A1K, AFF C30, AFF C60, AFF C80, FAS70, FAS90 시스템은 클러스터 및 HA 연결 모두에서 100GbE 네트워크 포트를 공유합니다. 이러한 시스템은 기존 클러스터 스위치에 대한 10GbE 또는 25GbE 클러스터 연결을 지원할 수 있습니다. 그러나 NetApp 10GbE 및 25GbE 스위치가 더 이상 필요하지 않은 경우 100GbE 클러스터 속도로 업데이트하는 것이 좋습니다. 자세한 내용은 다음 기술 문서를 참조하십시오.
 +
 --
-** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/How_to_configure_10G_or_25G_cluster_ports_on_a_new_cluster_setup_on_AFF_ASA_A1K_A90_A70_FAS90_FAS70["AFF/ASA A1K, A90, A70, FAS90, FAS70의 새로운 클러스터 설정에서 10G 또는 25G 클러스터 포트를 구성하는 방법"^]
-** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/How_to_convert_an_existing_cluster_from_10G_or_25G_cluster_ports_to_40G_or_100G_cluster_ports_on_an_AFF_ASA_A1K_A90_A70_FAS90_FAS70["AFF/ASA A1K, A90, A70, FAS90, FAS70에서 10G 또는 25G 클러스터 포트에서 40G 또는 100G 클러스터 포트로 기존 클러스터를 변환하는 방법"^]
+** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/How_to_configure_10G_or_25G_cluster_ports_on_a_new_cluster_setup["새로운 클러스터 설정에서 10G 또는 25G 클러스터 포트를 구성하는 방법"^]
+** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/How_to_convert_existing_10G_or_25G_cluster_ports_to_40G_or_100G_cluster_ports["기존 10G 또는 25G 클러스터 포트를 40G 또는 100G 클러스터 포트로 변환하는 방법"^]
 
 
 --

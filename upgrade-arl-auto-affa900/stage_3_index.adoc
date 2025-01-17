@@ -21,5 +21,5 @@ summary: '를 사용하여 ARL 업그레이드를 위한 3단계 프로세스 �
 . link:boot_node1_with_a900_controller_and_nvs.html["교체 시스템 모듈을 사용하여 노드1을 부팅합니다"]
 . link:verify_node1_installation.html["노드1 설치를 확인합니다"]
 . link:restore_key_manager_config_upgraded_node1.html["업그레이드된 노드1에서 키 관리자 구성을 복원합니다"]
-. link:move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html["노드 1이 소유하는 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2에서 업그레이드된 노드 1로 이동합니다"]
+. link:move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html["노드1 비루트 애그리게이트 및 NAS 데이터 LIF를 노드2에서 업그레이드된 노드1로 이동합니다"]
 

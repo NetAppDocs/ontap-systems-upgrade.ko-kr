@@ -1990,9 +1990,6 @@
   <block id="fbd55aa6c7d3ee9ec90836dfa01b62d2" category="paragraph"><block ref="193eef8b7a973eaffb22d4a23f7536d9" prefix="" category="inline-code"></block></block>
   <block id="422d8952c3ec01e2b6b65ff004556457" category="summary">ARL을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할지 여부를 로 결정합니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="bb670325b6c95abf4f99a4e0d18f7d94" category="paragraph">다음과 같은 상황에서 이 콘텐츠를 사용할 수 있습니다.</block>
-  <block id="fdf5cd6af4cb356df1504c2897e0d9f2" category="list-text">ONTAP 9.8 이상을 실행하고 있습니다.</block>
-  <block id="6068cafb9274839f4dfb371ae190757e" category="list-text">MetroCluster 구성을 업그레이드할 경우 4노드 이상의 FC 구성이며 모든 노드에서 ONTAP 9.8 이상을 실행합니다.</block>
-  <block id="4c9c9eda5f5430e91b4aed6f35a5e99d" category="paragraph">MetroCluster IP 구성을 업그레이드하려면 를 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> MetroCluster 업그레이드 및 Expansion_content에 대한 링크</block>
   <block id="875c64b3c2a29ed26843ae23dac3007b" category="paragraph">[[sys_commands_98_supported_systems]] 다음 표에는 컨트롤러 업그레이드에 지원되는 모델 매트릭스가 나와 있습니다.</block>
   <block id="f37bbd4cc778d5861294352bef9c1c7f" category="cell">더 오래 된 컨트롤러</block>
   <block id="cfdade9e474e805958704ec0836f18ac" category="cell">교체 컨트롤러</block>
@@ -2015,7 +2012,6 @@
   <block id="4852954d031f57b417813707e91dd5bd" category="admonition">컨트롤러 업그레이드 모델 조합이 위 표에 없는 경우 기술 지원 부서에 문의하십시오.</block>
   <block id="f02eccb3076760465f52e896d2649983" category="inline-link-macro">노드3, 23단계에서 UTA/UTA2 포트를 확인하고 구성합니다</block>
   <block id="51de0f52809b4037608dba4b84c411b1" category="inline-link-macro">노드 4, 23단계에서 UTA/UTA2 포트를 확인하고 구성합니다</block>
-  <block id="41c1636eb5024bf8b152d1ca09286521" category="paragraph">^2^ AFF A300에서 AFF A400 또는 FAS8200으로 2노드 스위치가 없는 클러스터 구성의 FAS8300 시스템으로 업그레이드하는 경우 컨트롤러 업그레이드를 위한 임시 클러스터 포트를 선택해야 합니다. AFF A400 및 FAS8300 시스템은 2개의 구성으로 제공됩니다. 메자닌 카드 포트는 이더넷 유형이고 메자닌 포트가 FC 유형인 FC 번들입니다.</block>
   <block id="3ea026f4657fa31414c8a7e80af567b7" category="list-text">이더넷 유형 구성이 있는 AFF A400 또는 FAS8300 의 경우 두 메자닌 포트 중 하나를 임시 클러스터 포트로 사용할 수 있습니다.</block>
   <block id="c9ee572a8e71e6ba4e03747ac09a21a8" category="list-text">FC 유형 구성을 사용하는 AFF A400 또는 FAS8300 의 경우 임시 클러스터 포트를 제공하려면 4포트 10GbE 네트워크 인터페이스 카드(부품 번호 X1147A)를 추가해야 합니다.</block>
   <block id="652f24bc7c2d2709481afa47ee0f81bf" category="list-text">임시 클러스터 포트를 사용하여 컨트롤러 업그레이드를 완료한 후에는 FAS8300 시스템의 e3a 및 e3b, AFF A400 시스템의 100GbE 포트, e0c 및 e0d, 100GbE 포트로 클러스터 LIF를 중단 없이 마이그레이션할 수 있습니다.</block>
@@ -2921,14 +2917,10 @@
   <block id="8ae18c4ca2d925d74bcd4990d28f04f0" category="paragraph">를 클릭합니다<block ref="fdc5993cea55cf39ae9a94e684fd2141" prefix=" " category="inline-code"></block> 이 명령과 함께 사용하려면 이전 의 출력에서 찾을 수 있습니다<block ref="0c5606ed319753bb2d86a485f23c8f6d" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="5062794872bed9f85f36826d260cf264" category="paragraph"><block ref="4d2bcfc2a8ce7f0b0764212a3317a799" prefix="" category="inline-code"></block></block>
   <block id="6e13fc9d1e75c160461788f1b750083d" category="list-text">다음 명령을 사용하여 출력을 검사하여 노드 2에 남아 있는 데이터 LIF가 없는지 확인합니다.</block>
-  <block id="1c962f08f92ca556b5f958f512421f7b" category="cell">AFF A700에서 AFF A900으로</block>
-  <block id="3029eeb5ee6e861b02eb2a1ffd3d3b8e" category="cell">FAS9000에 FAS9000을 FAS9000으로</block>
   <block id="addb9e70976c2f94b8ccfc3736a31888" category="list-title">중요 정보</block>
   <block id="4ed758f1326f5379f7dc30fe674ce726" category="inline-link-macro">컨트롤러 업그레이드 지침</block>
   <block id="61bb0e064fd915427168b2e72e080eff" category="list-text">이 절차는 복잡하고 고급 ONTAP 관리 기술이 있다고 가정합니다. 또한 을 읽고 이해해야 합니다 <block ref="937d04c1dac5501bcacf105e8700fe45" category="inline-link-macro-rx"></block> 및 <block ref="57e14e08755134bb6fef9ad899bb58ee" category="inline-link-macro-rx"></block> 섹션을 참조하십시오.</block>
   <block id="51108f40a613018fdc6b3ad89f42122e" category="list-text">이 절차에서는 교체 컨트롤러 하드웨어가 새 하드웨어이며 다른 시스템에서 사용되지 않은 것으로 가정합니다. 중고 컨트롤러를 와 함께 준비하는 데 필요한 단계입니다<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block> 이 절차에는 명령이 포함되어 있지 않습니다. 교체 컨트롤러 하드웨어를 이전에 다른 ONTAP 클러스터의 일부로 사용한 경우 또는 독립 실행형 단일 노드 시스템으로 사용한 경우에는 기술 지원 부서에 문의해야 합니다.</block>
-  <block id="eb51502469d00e14522e17bfff4124ad" category="list-text">새 컨트롤러를 새 HA 쌍으로 클러스터에 추가하고 볼륨 이동을 사용하여 데이터를 마이그레이션하지 않으려는 경우</block>
-  <block id="a3bad37bbfc8cbb39ebdfc42ccfa6bec" category="list-text">ONTAP 관리에 대한 경험이 있으며 진단 권한 모드에서 작업할 때 발생할 수 있는 위험에 대해 잘 알 수 있습니다.</block>
   <block id="2ed045fa4ee3544c7e5a632a26d55b9f" category="paragraph">ONTAP 9.10.1부터 KMIP(Key Management Interoperability Protocol) 서버를 사용하여 인증 키를 관리할 수 있습니다.</block>
   <block id="5077f34346404c6e6b1972588ad2c047" category="list-text">ONTAP 명령줄의 고급 권한 모드에서 다음 명령을 입력하여 컨트롤러 교체 프로세스를 시작합니다.</block>
   <block id="8a4f2711fdfcfeea79b7fe0124a6d453" category="list-text">를 선택합니다<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>. 다음과 같은 출력이 표시됩니다.</block>
@@ -2991,7 +2983,6 @@
   <block id="da2b45cbcbfabc951a211d4aed4ae9d5" category="doc">노드 2에서 키 관리자 구성을 복원합니다</block>
   <block id="253fd57a6c2965ca518ebbfc6bf1e7cc" category="paragraph">컨트롤러를 업그레이드하는 동안 문제가 발생하면 을 참조하십시오 <block ref="8b711d7eff849b62a32d0b2d66f85a6c" category="inline-link-macro-rx"></block> 자세한 내용 및 가능한 해결 방법은 절차 끝 부분의 섹션을 참조하십시오.</block>
   <block id="0c28f03f85d0a7cc4b82f95fce4d86da" category="doc">업그레이드 하드웨어를 확인합니다</block>
-  <block id="e1275af58e555e9cc3d59dc17d1d1ab1" category="doc">노드 1이 소유하는 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2에서 업그레이드된 노드 1로 이동합니다</block>
   <block id="6224b74d5b0b8d2ad6d1e4b341f1fa19" category="paragraph">원격 LIF는 업그레이드 절차 중에 SAN LUN의 트래픽을 처리합니다. 업그레이드 중에 클러스터 또는 서비스 상태를 위해 SAN LIF를 이동할 필요가 없습니다. SAN LIF는 새 포트에 매핑되지 않으면 이동하지 않습니다. 노드 1을 온라인으로 전환하는 경우 LIF가 정상 작동하는지, 해당 포트에 있는지 확인해야 합니다.</block>
   <block id="0bff73dcb819ba800842aebfbaa1ea03" category="list-text">네트워크 연결 상태 확인 수행:</block>
   <block id="22754bd796837dc212cb05d513ad94cb" category="paragraph">인터페이스 그룹 및 VLAN 포트를 포함하여 연결된 모든 포트의 상태가 로 표시되는지 확인합니다<block ref="e0aa021e21dddbd6d8cecec71e9cf564" prefix=" " category="inline-code"></block>.</block>
@@ -3848,9 +3839,7 @@
   <block id="b8e707d2be1c734648eb91b029352369" category="cell">9.10.1 ~ 9.12.1</block>
   <block id="4f0b48e1f65ca4ae15a6720f28d58824" category="cell">9.10.1P3 ~ 9.12.1</block>
   <block id="04d01679d16bbccad3f9da82789a187b" category="paragraph">위 표에 표시된 업그레이드 조합의 경우:</block>
-  <block id="1c328c36316a518e9532ed77177daa6c" category="list-text">기존 및 교체 컨트롤러에서 동일한 ONTAP 버전을 사용할 필요는 없습니다. ONTAP 소프트웨어 업그레이드는 컨트롤러 업그레이드로 수행됩니다.</block>
   <block id="da74cb1ad73d862a786d9f20938d9c7a" category="list-text">업그레이드할 때 지원되는 ONTAP 버전 및 패치 레벨로 교체 컨트롤러를 설치해야 합니다.</block>
-  <block id="dee716592bbae6fdba2b32d2854360ba" category="list-text">절차를 시작하고 첫 번째 노드를 업그레이드한 후에는 컨트롤러 업그레이드를 취소하거나 다시 취소할 수 없습니다.</block>
   <block id="d9e40d62315bfc8bad4f1329f7f9b867" category="paragraph">설치를 수행할 때 다음 사항에 주의해야 합니다.</block>
   <block id="342f3ca2519e4e92f56675a89236fce6" category="list-text">슬롯 6-1과 6-2의 빈 필러 모듈을 모두 이전 NVRAM 모듈에서 새 NVRAM 모듈로 이동합니다.</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">이 작업에 대해</block>
@@ -3995,7 +3984,6 @@
   <block id="fb13f8b167e25a81b898b43d42165d58" category="paragraph">7단계에서는 새 노드가 올바르게 설정되었는지 확인하고, 새 노드가 암호화를 사용하도록 설정된 경우 Storage Encryption 또는 NVE를 구성하고 설정합니다. 또한 이전 노드의 사용을 중지하고 SnapMirror 작업을 다시 시작해야 합니다.</block>
   <block id="35ab088951b060d49693e4d4c692e7a5" category="list-text"><block ref="35ab088951b060d49693e4d4c692e7a5" category="inline-link-macro-rx"></block></block>
   <block id="3fa5ba29343ba59361bba0ce2fdcdb9e" category="list-text"><block ref="3fa5ba29343ba59361bba0ce2fdcdb9e" category="inline-link-macro-rx"></block></block>
-  <block id="c9a4b38a782d53b773352b69a5dcb3f0" category="list-text"><block ref="c9a4b38a782d53b773352b69a5dcb3f0" category="inline-link-macro-rx"></block></block>
   <block id="7b26385705fc74d2f47a9aff876bdf41" category="list-text"><block ref="7b26385705fc74d2f47a9aff876bdf41" category="inline-link-macro-rx"></block></block>
   <block id="4716a557a98944472ebf4f49b8aadb3a" category="paragraph">7단계에서는 새 노드가 올바르게 설정되었는지 확인하고, 새 노드가 암호화를 사용하도록 설정된 경우 스토리지 암호화 또는 NetApp 볼륨 암호화를 구성하고 설정합니다. 또한 이전 노드의 사용을 중지하고 SnapMirror 작업을 다시 시작해야 합니다.</block>
   <block id="9de185adfdd7642791839ee7a21f58be" category="list-text"><block ref="9de185adfdd7642791839ee7a21f58be" category="inline-link-macro-rx"></block></block>
@@ -4273,7 +4261,6 @@
   <block id="dac682111bd9fb848c7dd788758b33fc" category="paragraph">이 내용은 기존 데이터 및 디스크를 모두 유지하면서 HA 쌍에서 스토리지 컨트롤러를 업그레이드하는 방법을 설명합니다. 이는 숙련된 관리자만 사용해야 하는 복잡한 절차입니다.</block>
   <block id="8a1d06fd27bf0bfc6535b6a49185e591" category="cell">AFF A150</block>
   <block id="cac76ada4fbfca68ed190eb21810e1af" category="cell">FAS2820</block>
-  <block id="798f018ee352fb079a57a34119747a3b" category="list-text">업그레이드를 위한 최소 ONTAP 버전을 실행하고 있습니다. 자세한 내용은 을 참조하십시오 <block ref="8294b96e46ba28730c909aaac28da089" category="inline-link-macro-rx"></block>.</block>
   <block id="0ad9e0a8a319618923e172d4571038eb" category="summary">필요한 경우 ARL을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드할 때 업그레이드된 노드1에서 Key-manager 구성을 복원합니다.</block>
   <block id="f41084761f1192d11c824e139538a13d" category="summary">필요한 경우 ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드할 때 스토리지 암호화를 구성하고, SSL 인증서를 설치하고, 키 관리 서버를 설정합니다.</block>
   <block id="9d5a4ff5c4d356c12c02e3a7f81a2ad1" category="summary">를 사용하여 ARL 업그레이드를 위한 2단계 프로세스 시퀀스<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 동일한 섀시에서 컨트롤러 모델을 업그레이드하는 데 필요한 명령입니다.</block>
@@ -4812,7 +4799,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="43d7379ace473361bbbcf942aef43f03" category="paragraph">AFF A200과 FAS2620 시스템은 9.11.1 이후 ONTAP 버전을 지원하지 않습니다.</block>
   <block id="1445b140af84df0e7f83e7c1a538e1ae" category="cell">AFF A220, AFF A200, AFF C190, FAS2620 또는 FAS2720</block>
   <block id="86c15a425269c6a2503b9871021e6df8" category="cell">AFF A700 또는 FAS9000</block>
-  <block id="ffb5803a40f7451a65b383c9c399ec42" category="cell">이전 컨트롤러의 각 노드에 있는 컨트롤러와 NVRAM 모듈을 새 모듈로 바꿉니다. ^1^</block>
   <block id="7f42c48311ba942f81d7a07c44c47d3b" category="admonition">node1 * 및 * node2 * 라는 용어는 이 문서의 노드 이름에 대한 참조용으로만 사용됩니다. 이 절차를 수행할 때는 노드의 실제 이름을 바꿔야 합니다.</block>
   <block id="a06d68e350c79a17b1b36fae9ee9106c" category="doc">노드2에 AFF A90 또는 AFF A70 모듈을 설치합니다</block>
   <block id="be3affc900cfc23554c8c8d7e7fb9b42" category="paragraph">노드2에서 업그레이드를 위해 받은 AFF A90 또는 AFF A70 컨트롤러 모듈을 설치합니다. 노드2는 시스템 뒷면에서 컨트롤러를 볼 때 섀시 오른쪽에 있는 컨트롤러 B입니다.</block>
@@ -4886,10 +4872,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="03b84140205de4279d7e7c6144f8a93a" category="paragraph">컨트롤러를 업그레이드하는 동안 컨트롤러는 새롭고 강력한 플랫폼을 실행하는 다른 컨트롤러로 교체됩니다. 이 컨텐츠는 부분적으로 자동화된 절차에 대한 단계를 제공하며, 자동 네트워크 포트 연결 검사를 활용하여 컨트롤러 업그레이드 환경을 더욱 단순화합니다.</block>
   <block id="274d42025e97a78743f8d189528d662b" category="summary">명령을 사용하여 ARL을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할지 여부를<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 결정합니다.</block>
   <block id="e0fe0bc347130dcd6241f7ed20bdb4c9" category="paragraph">이 절차에서는 기존 데이터 및 디스크를 유지하면서 HA 쌍의 스토리지 컨트롤러를 새 컨트롤러와 업그레이드하는 방법을 설명합니다. 이는 숙련된 관리자만 사용해야 하는 복잡한 절차입니다.</block>
-  <block id="6e1baa539c3af150885ac684b194ac4f" category="list-text">ONTAP 9.15.1 이상을 실행하고 있습니다.</block>
-  <block id="130b17a7d9d6b885bc86ff009f4db80c" category="list-text">새 컨트롤러를 클러스터에 새 HA 쌍으로 추가하고 볼륨 이동 절차에 따라 데이터를 마이그레이션하지는 않겠습니다.</block>
-  <block id="acad6a5698df017a2cf573c822c7f7a8" category="list-text">백엔드 스토리지용 외부 어레이를 사용하여 V 시리즈 시스템 또는 FlexArray 가상화 스토리지 시스템을 업그레이드합니다. V-Series 또는 FlexArray 시스템의 업그레이드 옵션은 기술 지원 부서에 문의하십시오.</block>
-  <block id="d4b6fe12abba1b6202f6eaf9239109fe" category="list-text">MetroCluster FC 또는 IP 구성을 업그레이드합니다. MetroCluster 구성을 업그레이드하려면 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> _MetroCluster 업그레이드 및 확장 설명서_ 링크를 참조하십시오.</block>
   <block id="11e69ee085d842ce1112f661ea99ca78" category="paragraph">[[sys_commands_9151_supported_systems]] 다음 표에는 컨트롤러 업그레이드에 지원되는 모델 매트릭스가 나와 있습니다.</block>
   <block id="82a01e528bf5bf2b1b7172eddc250977" category="cell">기존 컨트롤러</block>
   <block id="4de11ced25f5990c0cc8fa95f739e66c" category="summary">NetApp에 명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드한 후 이전 시스템이 더 이상 작동하지 않음을<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 알려야 합니다.</block>
@@ -5055,7 +5037,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="d652f04b0c47ec3200904bc82c8d5ff7" category="paragraph"><block ref="0f64f457d55e8e27ee821e9df0561d32" prefix="" category="inline-code"></block></block>
   <block id="b0d52e5491c54658a39bbef8e5dd30a6" category="sidebar">애그리게이트 재배치, 볼륨 이동 또는 스토리지 이동을 통해 컨트롤러 하드웨어를 업그레이드합니다.</block>
   <block id="0aa489897873ed4f6cacbbccf44589ea" category="sidebar">ARL을 사용하여 업그레이드합니다</block>
-  <block id="37c71c6814f6c6da3ee8d0b203924be7" category="sidebar">AFF A800을 대체합니다</block>
   <block id="ef62a5865ef10a9f98eab6ed7130657e" category="sidebar">AFF A220, AFF A200, AFF C190, FAS2620 또는 FAS2720을 교체합니다</block>
   <block id="e7a797d163f1786c84029862d653fdb1" category="sidebar">AFF A700 또는 FAS9000를 교체합니다</block>
   <block id="fe6c048ac188825e939c35497493825e" category="sidebar">AFF A90 또는 AFF A70을 설치합니다</block>
@@ -5080,10 +5061,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="f24d3bbf01666420670f76d88d0728aa" category="paragraph">기존 노드의 e0a 또는 e0b 클러스터 포트를 새 노드의 클러스터 포트에 연결할 수 없는 경우 를 참조하십시오. <block ref="7be812dd65bbd3f39bbb06fd50caac76" category="inline-link-macro-rx"></block></block>
   <block id="33bb7bcaf48f0fdda36a26455a40a230" category="inline-link-macro">스토리지 효율성에 대해 자세히 알아보십시오</block>
   <block id="6d6b534c9b53f9b5663ea4448a9c5c5a" category="paragraph"><block ref="7e7ac2ea54718abbfde88230c884c797" category="inline-link-macro-rx"></block>..</block>
-  <block id="0db06a4e73b14fd8cb249dd2487fa5a3" category="inline-link-macro">AFF/ASA A1K, A90, A70, FAS90, FAS70의 새로운 클러스터 설정에서 10G 또는 25G 클러스터 포트를 구성하는 방법</block>
-  <block id="4ffac300dc153b14bfe521f43fc61b31" category="list-text"><block ref="4ffac300dc153b14bfe521f43fc61b31" category="inline-link-macro-rx"></block></block>
-  <block id="aceb7b5bd7d7f40aa548f5d1aac76fd5" category="inline-link-macro">AFF/ASA A1K, A90, A70, FAS90, FAS70에서 10G 또는 25G 클러스터 포트에서 40G 또는 100G 클러스터 포트로 기존 클러스터를 변환하는 방법</block>
-  <block id="047ca982afd7eda65d342c9845174216" category="list-text"><block ref="047ca982afd7eda65d342c9845174216" category="inline-link-macro-rx"></block></block>
   <block id="2b05a3de35946226b44f265788b807c9" category="cell">ONTAP부터 지원됨...</block>
   <block id="8643f1ec20c68bd9122a5e9c431fe6fe" category="cell">FAS70, FAS90</block>
   <block id="1a6c927dff2b4164c21b2d570f87ed5c" category="cell">9.15.1P3입니다</block>
@@ -5194,7 +5171,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="ece7ccdab4b9cd808ab8bec964f41023" category="admonition">시스템 모듈을 바꿔 업그레이드할 때만 콘솔 및 관리 연결을 이동할 수 있습니다.</block>
   <block id="0f4936acdcce8b5de52c6526de01d25c" category="doc">공유 클러스터-HA 및 스토리지의 경우 노드 1을 케이블로 연결합니다</block>
   <block id="8bb57e3374049ebdebba3212782683e5" category="paragraph">다음 업그레이드 중 하나를 수행하는 경우 기존 시스템의 노드1에 이전에 연결되었던 클러스터, HA, 스토리지, 데이터 및 관리 연결을 교체 시스템의 새로 설치된 노드1에 연결해야 합니다.</block>
-  <block id="024da3626da12fa995f8d1a3fb07ce08" category="paragraph">기존 시스템에 관리 포트(e0M) 및 BMC 포트가 있는 경우 교체 시스템에서 e0M과 BMC 포트가 결합되고 "렌치" 포트를 통해 액세스됩니다. 교체 시스템에 연결하기 전에 e0M과 BMC 포트가 기존 시스템의 동일한 스위치 및 서브넷에 연결되어 있는지 확인해야 합니다.</block>
   <block id="e7ce52a30e7433f39e30c116e52301e0" category="cell">기존 시스템의 e0M 또는 BMC 포트를 교체 시스템의 "렌치" 포트에 연결합니다.</block>
   <block id="6969dcd136606aa6e90d53d2c4679e06" category="paragraph">다음 표에서는 스위치가 없는 2노드 클러스터 구성에 대한 스위치 포트 사용량을 보여 줍니다.</block>
   <block id="4aa636d0c8e798111a1395c5cf44abef" category="cell">AFF A800, AFF C800</block>
@@ -5217,17 +5193,10 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="1cc3f304d5e589c069f5fc5ecdc865d1" category="section-title">ARL 업그레이드가 지원됩니다</block>
   <block id="26c0488d57efd7721cdf50179d2776e0" category="list-text">컨트롤러 업그레이드가 에 나와 <block ref="8badcb7c18eeb5ec98f79dc01581f13d" category="inline-link-macro-rx"></block>있습니다.</block>
   <block id="4e793111a4193c7c02d75b240754c4f7" category="list-text">컨트롤러 업그레이드에 필요한 하드웨어를 수령했음을 NetApp 세일즈 담당자에게 확인했습니다.</block>
-  <block id="ecc4562d26dfb82931daa969dc923569" category="list-text">AFF A90, AFF A70 또는 AFF C80 컨트롤러 2개와 모든 I/O 모듈 100GbE 케이블의 필요한 길이</block>
-  <block id="38310793ef0f75102433fd7dbf9c6ec8" category="list-text">AFF A50, AFF A30, AFF C30 또는 AFF C60 컨트롤러 및 I/O 모듈 2개 필요한 케이블</block>
-  <block id="ea48cdfe157266c76e965b8ff62da5dc" category="list-text">ASA A900, AFF A900 또는 FAS9500 컨트롤러와 NVRAM 모듈 및 부품</block>
   <block id="9b8b036242c93dafa68b08b4105159fb" category="section-title">ARL 업그레이드는 지원되지 않습니다</block>
-  <block id="41e08886386b21a1694179f773ca292b" category="list-text">업그레이드하려는 기존 시스템에서 FlexArray 가상화 소프트웨어를 사용하고 있습니다.</block>
-  <block id="aa8965ccc6abd19c8d18d676ece688ec" category="list-text">MetroCluster IP 구성을 업그레이드하는 중입니다.</block>
   <block id="7207607ea77567d4712946c334eafd47" category="paragraph">MetroCluster IP 구성을 업그레이드하려면 _MetroCluster 업그레이드 및 확장_컨텐츠 링크를 참조하십시오.<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block></block>
-  <block id="3e0cce8ef62a8f5269e20e66d34061a8" category="paragraph">새 섀시를 포함한 전체 시스템으로 새 AFF A30, AFF A150 A50, AFF A900, AFF, AFF, AFF A70, AFF A90 C30, AFF C60, AFF C80, FAS2820 또는 FAS9500를 받은 경우 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>" system controller replace" 명령 사용 링크를 참조하여 ONTAP 9.8 이상 _content를 실행하는 컨트롤러 하드웨어를 업그레이드합니다.</block>
   <block id="4bad7c056d5c6e34cee7056db82cb367" category="paragraph">ARL은 HA 구성과 클러스터 인터커넥트 통신을 활용합니다. 따라서 동일한 클러스터 내에서 스토리지를 공유하는 경우 비 루트 애그리게이트의 소유권을 다른 노드로 이동할 수 있습니다.</block>
   <block id="5793b4c06950953efd1e5f1aa3d75745" category="paragraph">다음 표는 컨트롤러 업그레이드에 대해 지원되는 시스템 매트릭스를 보여줍니다.</block>
-  <block id="4fb022221f1d6d6d14d2479c2e6d605a" category="admonition">이 절차는 다음 업그레이드 구성에 엄격히 적용됩니다. 이 절차를 사용하여 다른 시스템 조합 간에 업그레이드를 수행하지 마십시오. 다른 모든 컨트롤러 모델의 경우 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 업그레이드하려면 _ "system controller replace" 명령 사용 및 _ aggregate relocation을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드하려면 _ 을(를<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>) 참조하십시오.</block>
   <block id="272a450c6ea3defcd086653ca258b1fa" category="cell">AFF C250 1호</block>
   <block id="97e088aeca6a3e2a2bc17350f34b7218" category="cell">AFF A250 1호</block>
   <block id="b2814657dfac1dabde77f882a020a961" category="cell">AFF C800 1호</block>
@@ -5239,7 +5208,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="e66f12f06949cd192730b8331efe6ab3" category="cell">AFF A250 또는 AFF C250 컨트롤러 2개를 새로운 컨트롤러 및 I/O 모듈로 바꿉니다.</block>
   <block id="82b13c0e71f107eb6397178e54be355d" category="cell">AFF A800 또는 AFF C800 컨트롤러 2개를 새로운 컨트롤러 및 I/O 모듈로 바꿉니다.</block>
   <block id="28b77473f12e589523a161e5e0f003ec" category="cell">이전 컨트롤러의 각 노드에 있는 컨트롤러 모듈을 새 모듈로 바꿉니다.</block>
-  <block id="140b18a16cc26655ccc617a3436498fc" category="paragraph">I/O 카드, 데이터 케이블, 디스크 선반 및 디스크를 이동, 분리 또는 재연결할 필요가 없습니다.</block>
   <block id="bbfb6f23ad67b8404ce492f83073f098" category="list-text">AFF A30, AFF A50, AFF A70, AFF A90, AFF A1K, AFF C30, AFF C60, AFF C80, FAS70, FAS90 시스템은 클러스터 및 HA 연결 모두에서 100GbE 네트워크 포트를 공유합니다. 이러한 시스템은 기존 클러스터 스위치에 대한 10GbE 또는 25GbE 클러스터 연결을 지원할 수 있습니다. 그러나 NetApp 10GbE 및 25GbE 스위치가 더 이상 필요하지 않은 경우 100GbE 클러스터 속도로 업데이트하는 것이 좋습니다. 자세한 내용은 다음 기술 문서를 참조하십시오.</block>
   <block id="819e946ca0f77ece0fff2d25778c1dc0" category="paragraph">기존 노드의 e0a 또는 e0b 클러스터 포트를 새 노드의 클러스터 포트에 연결할 수 없는 경우 다음을 참조하여 자세한 정보를 확인하십시오.</block>
   <block id="7be812dd65bbd3f39bbb06fd50caac76" category="list-text"><block ref="7be812dd65bbd3f39bbb06fd50caac76" category="inline-link-macro-rx"></block></block>
@@ -5254,11 +5222,8 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="e25849e5932768f4a8b1b0c21f2be1d8" category="admonition">절차의 뒷부분에서 지시가 있을 때까지 컨트롤러 모듈을 섀시에 완전히 삽입하지 마십시오.</block>
   <block id="c56412eac7d334669336f82f2c84ca6d" category="list-text">다음 업그레이드를 위해 FCP SAN LIF를 재할당해야 합니다.</block>
   <block id="4956a46ef6d1b165fac88b0d154c16ed" category="paragraph">다른 모든 시스템 업그레이드의 경우 로 <block ref="e18730a2be2b2c535fc1747e24865aa5" category="inline-xref-macro-rx"></block>진행합니다.</block>
-  <block id="891b36f6a8139875b415965afe748740" category="list-text">(AFF A250 및 AFF C250 업그레이드만 해당) 교체 컨트롤러 모듈의 노드1이 부팅되면 다음 경고가 표시됩니다.</block>
   <block id="3899ab552d14e256c9ae8bd440cc25b5" category="paragraph">답변<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>.</block>
-  <block id="d5a2fcfa584204acc1ab428345100446" category="paragraph">이 경고는 구성에 기존 컨트롤러에 대한 노드 2가 포함되어 있기 때문에 표시됩니다. 노드2를 업그레이드할 때까지 모든 시스템 부팅에 대해 표시됩니다. 이는 정상적인 동작입니다.</block>
   <block id="6d25c71e79b9f8280c5a17b473c08b82" category="paragraph">이 단계에서는 노드 1이 중단되며 모든 데이터를 노드 2에서 제공합니다. 노드1 컨트롤러 모듈과 노드1 NVRAM 모듈만 조심스럽게 분리해야 합니다. 일반적으로 노드 1은 시스템 뒷면에서 컨트롤러를 볼 때 섀시 왼쪽에 있는 컨트롤러 A입니다. 컨트롤러 레이블은 컨트롤러 모듈 바로 위의 섀시에 있습니다.</block>
-  <block id="58dc683661359f4c90a5eed5b71479ae" category="admonition">노드1과 노드2가 동일한 섀시에 있고 동일한 전원 공급 장치로 전원을 공급하므로 섀시 전원을 끄지 마십시오.</block>
   <block id="accf85406d8f852aec80eff93db683c2" category="paragraph">이 단계에서는 노드 1이 중단되며 모든 데이터를 노드 2에서 제공합니다. 노드1 컨트롤러 모듈만 조심스럽게 분리해야 합니다. 일반적으로 노드 1은 시스템 뒷면에서 컨트롤러를 볼 때 섀시 왼쪽에 있는 컨트롤러 A입니다. 컨트롤러 레이블은 컨트롤러 모듈 바로 위의 섀시에 있습니다.</block>
   <block id="1519b2b4ff3e01880d93809dab9f313f" category="summary">ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드하는 경우 AFF A250 또는 AFF C250 노드1 시스템 모듈을 교체합니다.</block>
   <block id="eab9dfa8a69e88f238fb25a87fa387df" category="doc">AFF A250 또는 AFF C250 컨트롤러 모듈을 교체합니다</block>
@@ -5278,21 +5243,16 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="9e602ed6376aabcfeb78f35f1ed4b314" category="paragraph">노드1에 교체 모듈을 설치하고, 케이블을 연결하고, 연결합니다.</block>
   <block id="5577eee5ab487d69261df7fcdd77d00e" category="summary">ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드하는 경우 AFF A800 또는 AFF C800 노드1 시스템 모듈을 교체합니다.</block>
   <block id="e0646aaa208b06f2b9c991f8d1d06277" category="doc">AFF A800 또는 AFF C800 컨트롤러 모듈을 교체합니다</block>
-  <block id="992f4af947f0d32d70cb8a1e30650913" category="section-title">AFF A800 또는 AFF C800 컨트롤러 모듈을 분리할 준비를 합니다</block>
   <block id="b9f8db0a3b83103e79c00296ab293002" category="section-title">AFF A800 또는 AFF C800 컨트롤러 모듈을 분리합니다</block>
   <block id="84a1bd056cdf96c5313ffeb160884063" category="paragraph">기존 모듈에서 케이블 관리 장치를 분리하고 컨트롤러를 섀시에서 약간 꺼냅니다.</block>
   <block id="9377ce9760d2e42c9e31f172d37994a5" category="section-title">AFF A90, AFF A70 또는 AFF C80 컨트롤러 모듈을 설치합니다</block>
   <block id="1c11a10891fa20f98660572f553b2716" category="paragraph">노드1에 AFF A90, AFF A70 또는 AFF C80 컨트롤러 모듈을 설치, 케이블 연결 및 연결합니다.</block>
   <block id="926ad995a4473bdc3af6ace9d9cbf459" category="list-text"><block ref="926ad995a4473bdc3af6ace9d9cbf459" category="inline-link-macro-rx"></block></block>
   <block id="64bbe6275df69dab7d699c435b8f639d" category="list-text"><block ref="64bbe6275df69dab7d699c435b8f639d" category="inline-link-macro-rx"></block></block>
-  <block id="5be1ed9a23f3f3194bb0f4fca8c6d150" category="paragraph">AFF A250, AFF C250, AFF A800 또는 AFF C800 업그레이드의 경우 물리적 포트가 기존 컨트롤러와 교체 컨트롤러 간에 변경되기 때문에 물리적 포트를 기존 노드1에서 교체 노드1로 매핑할 수 있습니다.</block>
-  <block id="7ca3b096a6742fe3032309437338bd49" category="paragraph">다른 모든 업그레이드의 경우 기존 노드1의 물리적 포트를 교체 노드1에 매핑할 필요가 없습니다.</block>
   <block id="95699993f4e4282e1516a59b8f8b3a24" category="paragraph">업그레이드를 시작하기 전에 교체 시스템에 맞는 모듈이 있는지 확인하십시오. 부품이 없는 경우 기술 지원 부서 또는 NetApp 영업 담당자에게 지원을 요청하십시오.</block>
-  <block id="42ea76e013b46d58fcaa649767ebd60d" category="cell">업그레이드할 서버...</block>
   <block id="fbe8d8aaa2d545f1170258a5901312fe" category="cell">2개의 컨트롤러 모듈 및 새로운 IO 모듈</block>
   <block id="ce648a37807e4da2fbd09030fea537d2" category="list-text">AFF A220, AFF A200, AFF C190</block>
   <block id="d1f22cb8be0e35eaa5bd981b3ed3aff1" category="list-text">FAS2620, FAS2720</block>
-  <block id="d50e0568237bb58766953ee05d6a90f5" category="paragraph">기존 시스템을 다른 시스템에 연결할 수 있도록 스토리지 셸프로 변환하는 경우 교체 시스템에 입출력 모듈이 두 개 있어야 합니다.</block>
   <block id="6a0a4cd1600d3367bd718fb6c8be3695" category="paragraph">다음과 같은 상황에서 노드 쌍을 업그레이드할 수 있습니다.</block>
   <block id="07b9e93852420845af85b9ed0748ad7d" category="cell">AFF A50(2부</block>
   <block id="346f76cc112ce09c4367b3884ceb7400" category="cell">AFF A20(2부</block>
@@ -5301,8 +5261,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="d095e2073d2e2c221b7b6c3f39407169" category="cell">AFF A90 (미국) 2, AFF A1K (미국</block>
   <block id="2102d82fe428d3bed4a9ceb68e9e0f82" category="paragraph">AFF A20으로 업그레이드하려면 먼저 컨트롤러 모듈을 IOM12 모듈과 교체하여 AFF A150 또는 AFF A220를 DS224C 쉘프로 변환해야 합니다. 을 <block ref="171f0c02e855777efc31bfbf778d3eb2" category="inline-link-macro-rx"></block>참조하십시오.</block>
   <block id="db5b0d637083aecc613ebcf8c6de30c8" category="paragraph">AFF A20, AFF A50, AFF A70 및 AFF A90는 HA 구성의 컨트롤러 2개와 단일 섀시에 온보드 디스크가 있는 통합 시스템입니다.</block>
-  <block id="7b447d3c16c08c1b732aadd3713fcc97" category="list-text">내부 드라이브가 있는 AFF A20, AFF A70 또는 AFF A90로 업그레이드하는 경우 업그레이드하기 전에 이러한 내부 드라이브의 소유권을 제거해야 합니다. 업그레이드가 완료되면 내부 드라이브를 AFF A20, AFF A70 또는 AFF A90 노드에 할당하고 이 노드를 사용하여 데이터 애그리게이트를 생성할 수 있습니다. 루트 또는 데이터 애그리게이트를 내부 드라이브로 마이그레이션할 필요는 없습니다.</block>
-  <block id="452c72b0dfe1a06365c19c938224d325" category="list-text">내부 드라이브 없이 AFF A20, AFF A70 또는 AFF A90로 업그레이드하는 경우 업그레이드를 완료한 후 내부 드라이브를 할당할 필요가 없습니다.</block>
   <block id="ad98b7b574e0827581ad838156fb45ac" category="paragraph">다음과 같은 경우에는 ARL을 사용하여 업그레이드를 수행할 수 없습니다.</block>
   <block id="378260d1609d9b96d53d9fcd976221f0" category="list-text">다음 업그레이드 중 하나를 수행하고 있습니다.</block>
   <block id="73d4d3fa3405d52da3ec862673be2659" category="paragraph">위의 표에 나열된 업그레이드를 수행하려면 "system controller replace" 명령을 사용하여 동일한 섀시에 있는 컨트롤러 모델을 업그레이드하는 방법(_)을 참조하십시오.<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block></block>
@@ -5312,4 +5270,47 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="1e08e52a85eb1ffb2284468e3498db1d" category="sidebar">AFF A250 또는 AFF C250를 교체합니다</block>
   <block id="5b69734effb16f16b86998a01f8978c5" category="sidebar">공유 클러스터-HA 스토리지의 노드1를 케이블로 연결합니다</block>
   <block id="a6b8e7f67087d00695547f0599a662d0" category="sidebar">AFF A30, AFF A50, AFF C30 또는 AFF C60을 설치합니다</block>
+  <block id="ec31fc0bcc9399c68ce1eaa960489026" category="cell"><block ref="ec31fc0bcc9399c68ce1eaa960489026" category="inline-link-macro-rx"></block></block>
+  <block id="b107ac189af2e98fbe02dd9c5a1028e3" category="cell">"system controller replace" 명령을 사용하여 ONTAP 9.15.1 이상에서 도입된 컨트롤러를 중단 없이 업그레이드하는 데 필요한 Aggregate Relocation 절차에 대해 설명합니다.</block>
+  <block id="f95e2ee7384d545a3847f594109d4a3a" category="paragraph">기존 시스템에 관리 포트(e0M)와 BMC 포트가 있을 경우 e0M 및 BMC 포트가 결합되고 교체 시스템의 "렌치" 포트를 통해 액세스됩니다. 교체 시스템에 연결하기 전에 e0M과 BMC 포트가 기존 시스템의 동일한 스위치 및 서브넷에 연결되어 있는지 확인해야 합니다.</block>
+  <block id="dcf5631a58d49795e852d9f64f9e3b18" category="list-text">AFF A90, AFF A70 또는 AFF C80 컨트롤러 2개와 모든 I/O 모듈 필요한 길이 100GbE 케이블</block>
+  <block id="cf0d162b5d3ef31459631a2f0f0e0c2b" category="list-text">AFF A50, AFF A30, AFF C30 또는 AFF C60 컨트롤러 2개와 I/O 모듈 및 필요한 케이블</block>
+  <block id="f14c29a2d4657e0d20bb6c436555ab0a" category="list-text">ASA A900, AFF A900 또는 FAS9500 컨트롤러와 NVRAM 모듈 및 부품</block>
+  <block id="d2b8d7f7268d1f7664d6ffa10314e202" category="list-text">업그레이드를 위해 최소 ONTAP 버전을 실행하고 있습니다. 자세한 내용은 을 <block ref="8294b96e46ba28730c909aaac28da089" category="inline-link-macro-rx"></block>참조하십시오.</block>
+  <block id="7f3a77f47a750d11ea0b8dcef1b075f0" category="list-text">ONTAP 관리 경험이 있으며 진단 권한 모드에서 작업할 때의 위험에 익숙합니다.</block>
+  <block id="edc69b05de587e21933630d809693320" category="list-text">새 컨트롤러를 클러스터에 새 HA 쌍으로 추가하고 볼륨 이동을 사용하여 데이터를 마이그레이션하려고 합니다.</block>
+  <block id="6538e30381f93431fff8cf0335edca69" category="list-text">업그레이드되는 기존 시스템에서 FlexArray 가상화 소프트웨어를 사용하고 있습니다.</block>
+  <block id="448247c62e342441af5c3c7e3b49c977" category="list-text">MetroCluster IP 구성을 업그레이드하는 중입니다.</block>
+  <block id="8884732b6a8d41b619d86cb386681073" category="paragraph">새 섀시를 포함한 전체 시스템으로 새 AFF A30, AFF A150 A50, AFF A900, AFF, AFF, AFF A70, AFF A90 C30, AFF C60, AFF C80, FAS2820 또는 FAS9500를 받은 경우 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>" system controller replace" 명령 사용 링크를 참조하여 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 업그레이드합니다_.</block>
+  <block id="9d6b5ac201fed9ad7c34e292b0ad5101" category="admonition">이 절차는 다음 업그레이드 구성에 엄격히 적용됩니다. 이 절차를 사용하여 다른 시스템 조합 간에 업그레이드를 수행하지 마십시오. 다른 모든 컨트롤러 모델의 경우, ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 업그레이드하려면 " system controller replace " 명령 링크 및 _ aggregate relocation을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드하려면 _ 을(를) 참조하십시오<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>.</block>
+  <block id="36017c45cd868cfcb521c14c63e32456" category="cell">이전 컨트롤러의 각 노드에 있는 컨트롤러와 NVRAM 모듈을 새 모듈로 바꿉니다. * 참고 *: I/O 카드, 데이터 케이블, 디스크 선반 및 디스크를 이동, 분리 또는 재연결할 필요가 없습니다.</block>
+  <block id="2cb43a11f690e5acbdeaa147eab95913" category="inline-link-macro">새로운 클러스터 설정에서 10G 또는 25G 클러스터 포트를 구성하는 방법</block>
+  <block id="49e716d1b1ba5e51779e50fa0e3e3b0d" category="list-text"><block ref="49e716d1b1ba5e51779e50fa0e3e3b0d" category="inline-link-macro-rx"></block></block>
+  <block id="dcf16a92ec6e20773f185de9fcb7077b" category="inline-link-macro">기존 10G 또는 25G 클러스터 포트를 40G 또는 100G 클러스터 포트로 변환하는 방법</block>
+  <block id="f85d56c0a23e4e6d4e8044a5a359c05e" category="list-text"><block ref="f85d56c0a23e4e6d4e8044a5a359c05e" category="inline-link-macro-rx"></block></block>
+  <block id="0658e6d0ad9373aea2588eb13988105e" category="doc">노드1 비루트 애그리게이트 및 NAS 데이터 LIF를 노드2에서 업그레이드된 노드1로 이동합니다</block>
+  <block id="692e04ae1166a86924090f14f4f93566" category="list-text">(AFF A250 및 AFF C250 업그레이드만 해당) 교체 컨트롤러 모듈의 노드1이 부팅될 때 구성에 기존 컨트롤러에 대한 노드2가 포함되기 때문에 다음 경고가 표시됩니다.</block>
+  <block id="152549dbd6808b54153763cfb3171438" category="paragraph">이 경고는 노드2를 업그레이드할 때까지 모든 시스템 부팅에 대해 표시됩니다. 이는 정상적인 동작입니다.</block>
+  <block id="a7ab3451afab886103e41daa71b744af" category="admonition">노드1과 노드2가 동일한 섀시에 있고 동일한 전원 공급 장치에 연결되어 있으므로 섀시 전원을 끄지 마십시오.</block>
+  <block id="4d4099b1bdb89d3aa1931527e516237a" category="list-text">컨트롤러 모듈을 분리할 준비를 합니다.</block>
+  <block id="299723a6ef3c5d3a7c311e175240d16e" category="list-text"><block ref="299723a6ef3c5d3a7c311e175240d16e" category="inline-link-macro-rx"></block></block>
+  <block id="2c0bd9fe8fca68ffe959dec538d18418" category="paragraph">AFF A250, AFF C250, AFF A800 또는 AFF C800 업그레이드의 경우 물리적 포트가 기존 컨트롤러와 교체 컨트롤러 간에 변경되기 때문에 물리적 포트를 기존 노드1에서 교체 노드1로 매핑할 수 있습니다. 물리적 포트는 이 업그레이드 절차에서 지원하는 다른 시스템에 대해 변경되지 않습니다.</block>
+  <block id="d0c49c66359eda6530916c4391cb9ccc" category="cell">업그레이드할 서버...</block>
+  <block id="cba6e2dc3c149c3c6f2e38d8209942ad" category="paragraph">기존 시스템을 다른 시스템에 연결할 수 있도록 스토리지 셸프로 변환하는 경우 교체 시스템에 입출력 모듈이 두 개 있어야 합니다.</block>
+  <block id="285d50b51b9979a21c3f8ad931e7d4e7" category="list-text">ONTAP 9.8 이상을 실행하고 있습니다.</block>
+  <block id="183b0d119d3900a12aa43813123f6c77" category="list-text">새 컨트롤러를 클러스터에 새 HA 쌍으로 추가하고 볼륨 이동을 사용하여 데이터를 마이그레이션하기를 원하지 않을 것입니다.</block>
+  <block id="787ceb738298fbf0c0d9177615135a74" category="list-text">ONTAP 관리 경험이 있으며 진단 권한 모드에서 작업할 때의 위험에 익숙합니다.</block>
+  <block id="95957bddc80fdaf9d354b8fa848e4541" category="list-text">MetroCluster 구성을 업그레이드하는 경우 4노드 이상의 FC 구성을 사용하며 모든 노드에서 ONTAP 9.8 이상을 실행하고 있습니다.</block>
+  <block id="335f21471f36b48762884d7fd0ca198d" category="paragraph">MetroCluster IP 구성을 업그레이드하려면 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>_MetroCluster 업그레이드 및 확장_ 링크를 참조하십시오.</block>
+  <block id="5f108ece5c84070567bbccd585dc8760" category="admonition">컨트롤러 업그레이드 모델 조합이 위 표에 없는 경우 기술 지원 팀에 문의하십시오.</block>
+  <block id="d8c654ee0e2ed22491ccbbe62125fe3b" category="paragraph">(2) 스위치 없는 2노드 클러스터 구성에서 AFF A300에서 AFF A400로 또는 FAS8200에서 FAS8300 시스템으로 업그레이드하는 경우 컨트롤러를 업그레이드할 때 임시 클러스터 포트를 선택해야 합니다. AFF A400 및 FAS8300 시스템은 2개의 구성으로 제공됩니다. 메자닌 카드 포트는 이더넷 유형이고 메자닌 포트가 FC 유형인 FC 번들입니다.</block>
+  <block id="b7ad07bde4916842d48a351371021c38" category="list-text">기존 컨트롤러와 교체 컨트롤러에서 동일한 ONTAP 버전을 사용할 필요가 없습니다. ONTAP 소프트웨어 업그레이드는 컨트롤러 업그레이드로 수행됩니다.</block>
+  <block id="3ce524daf7c7a462720f07ffe80b1e82" category="list-text">절차를 시작하고 첫 번째 노드를 업그레이드한 후에는 컨트롤러 업그레이드를 취소하거나 되돌릴 수 없습니다.</block>
+  <block id="ce8932055faee80499a682eed0006014" category="list-text">ONTAP 9.15.1 이상을 실행하고 있습니다.</block>
+  <block id="6c95aebccb5899bde2beeb8d5d4de872" category="list-text">새 컨트롤러를 클러스터에 새 HA 쌍으로 추가하고 볼륨 이동 절차를 사용하여 데이터를 마이그레이션하지는 않겠습니다.</block>
+  <block id="7f05849af35fe562fdc67050fdcd14e0" category="list-text">내부 드라이브가 있는 AFF A20, AFF A70 또는 AFF A90로 업그레이드하는 경우 업그레이드하기 전에 이러한 내부 드라이브의 소유권을 제거해야 합니다. 업그레이드가 완료되면 내부 드라이브를 AFF A20, AFF A70 또는 AFF A90 노드에 할당하고 이 노드를 사용하여 데이터 애그리게이트를 생성할 수 있습니다. 루트 또는 데이터 애그리게이트를 내부 드라이브로 마이그레이션할 필요가 없습니다.</block>
+  <block id="2ee4c5e5378d113fa5c2a1b5e73082ed" category="list-text">내부 드라이브 없이 AFF A20, AFF A70 또는 AFF A90로 업그레이드하는 경우 업그레이드를 완료한 후 내부 드라이브를 할당할 필요가 없습니다.</block>
+  <block id="ea168cafe9d6c1f639359b30e7152b3d" category="list-text">백엔드 스토리지용 외부 어레이를 사용하여 V 시리즈 시스템 또는 FlexArray 가상화 스토리지 시스템을 업그레이드합니다. V-Series 또는 FlexArray 시스템의 업그레이드 옵션은 기술 지원 부서에 문의하십시오.</block>
+  <block id="3f0336dfa0e5a25ff8e8c549a2b18cef" category="list-text">MetroCluster FC 또는 IP 구성을 업그레이드합니다. MetroCluster 구성을 업그레이드하려면 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> _MetroCluster 업그레이드 및 확장 설명서_ 링크를 참조하십시오.</block>
+  <block id="ebf1d57729bed03eb5fd256caca2fe3f" category="sidebar">AFF A800 또는 AFF C800를 교체합니다</block>
 </blocks>

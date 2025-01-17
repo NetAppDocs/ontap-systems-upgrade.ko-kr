@@ -37,7 +37,7 @@ entries:
     entries:
     - title: AFF A250 또는 AFF C250를 교체합니다
       url: "/upgrade-arl-auto-affa900/replace-node1-affa250-affc250.html"
-    - title: AFF A800을 대체합니다
+    - title: AFF A800 또는 AFF C800를 교체합니다
       url: "/upgrade-arl-auto-affa900/replace-node1-affa800.html"
     - title: AFF A220, AFF A200, AFF C190, FAS2620 또는 FAS2720을 교체합니다
       url: "/upgrade-arl-auto-affa900/replace-node1-affa220-affa200-affc190-fas2620-fas2720.html"
@@ -57,7 +57,7 @@ entries:
     url: "/upgrade-arl-auto-affa900/verify_node1_installation.html"
   - title: 업그레이드된 노드1에서 키 관리자 구성을 복원합니다
     url: "/upgrade-arl-auto-affa900/restore_key_manager_config_upgraded_node1.html"
-  - title: 노드 1이 소유하는 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2에서 업그레이드된 노드 1로 이동합니다
+  - title: 노드1 비루트 애그리게이트 및 NAS 데이터 LIF를 노드2에서 업그레이드된 노드1로 이동합니다
     url: "/upgrade-arl-auto-affa900/move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html"
 - title: 4단계. 리소스를 재배치하고 노드2를 폐기합니다
   entries:
