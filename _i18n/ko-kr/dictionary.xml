@@ -5313,4 +5313,8 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="ea168cafe9d6c1f639359b30e7152b3d" category="list-text">백엔드 스토리지용 외부 어레이를 사용하여 V 시리즈 시스템 또는 FlexArray 가상화 스토리지 시스템을 업그레이드합니다. V-Series 또는 FlexArray 시스템의 업그레이드 옵션은 기술 지원 부서에 문의하십시오.</block>
   <block id="3f0336dfa0e5a25ff8e8c549a2b18cef" category="list-text">MetroCluster FC 또는 IP 구성을 업그레이드합니다. MetroCluster 구성을 업그레이드하려면 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> _MetroCluster 업그레이드 및 확장 설명서_ 링크를 참조하십시오.</block>
   <block id="ebf1d57729bed03eb5fd256caca2fe3f" category="sidebar">AFF A800 또는 AFF C800를 교체합니다</block>
+  <block id="761e2863e356e8bb23f79549fde56e25" category="cell">FAS8200, FAS8300, FAS9000</block>
+  <block id="5631dfc64a5dfd9535518e48f79b6c93" category="cell">FAS70, FAS90, FAS50</block>
+  <block id="179f979e0b97fa0abce7d9de4a3dcf35" category="cell">FAS70의 경우 9.15.1P3, FAS50의 경우 FAS90 9.16.1P2</block>
+  <block id="0588c4f1b58eac9f5062dc1da6e8435a" category="cell">FAS8700를 참조하십시오</block>
 </blocks>
