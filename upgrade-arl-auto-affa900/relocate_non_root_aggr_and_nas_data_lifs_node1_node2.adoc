@@ -50,7 +50,7 @@ NOTE: Aggregate 및 LIF의 홈 소유자는 수정되지 않으며 현재 소유
 +
 [listing]
 ----
-cluster::> storage aggregate show -node node2 state online -root false
+cluster::> storage aggregate show -node node2 -state online -root false
 
 Aggregate  Size     Available  Used%  State  #Vols  Nodes  RAID Status
 ---------  -------  ---------  -----  ------ -----  ------ --------------

@@ -247,7 +247,7 @@ MetroCluster 구성이 있는 경우 다음 명령을 사용하여 컨트롤러 
 | 시스템이... | 그러면... 
 
 
-| 디스크 및 백엔드 스토리지가 없습니다 | 로 이동합니다 <<auto_install4_step23,23단계>>. 
+| 디스크 및 백엔드 스토리지가 없습니다 | 로 이동합니다. <<auto_install4_step27,27단계>> 
 
 
 | 는 스토리지 어레이에 연결된 FlexArray 가상화 소프트웨어가 설치된 V-Series 시스템 또는 시스템입니다  a| 
@@ -308,7 +308,7 @@ NOTE: 절차의 앞부분에서 아직 수행하지 않은 경우 기술 자료 
 `boot_ontap menu`
 
 +
-FC 또는 UTA/UTA2 구성이 없는 경우, 를 수행하십시오 link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step15["노드 4, 15단계에서 UTA/UTA2 포트를 확인하고 구성합니다"] 따라서 노드 4는 노드 2의 디스크를 인식할 수 있습니다.
+FC 또는 UTA/UTA2 구성이 없는 경우 노드 4에서 노드 2의 디스크를 인식할 수 있도록 하십시오.link:reassign-node2-disks-to-node4.html#reassign-node2-node4-step1["노드2 디스크를 노드4, 1단계에 재할당합니다"]
 
-. [[29단계]] MetroCluster 구성, V-Series 시스템 및 FlexArray 가상화 소프트웨어가 스토리지 어레이에 연결된 시스템에 대해서는 link:set_fc_or_uta2_config_node4.html#auto_check_4_step15 [노드4에서 UTA/UTA2 포트 확인 및 구성, 15단계] 로 이동합니다.
+. [[29단계]] 스토리지 어레이에 연결된 MetroCluster 구성, V-Series 시스템 및 FlexArray 가상화 소프트웨어가 있는 시스템은 로 이동하십시오.link:reassign-node2-disks-to-node4.html#reassign-node2-node4-step1["노드2 디스크를 노드4, 1단계에 재할당합니다"]
 

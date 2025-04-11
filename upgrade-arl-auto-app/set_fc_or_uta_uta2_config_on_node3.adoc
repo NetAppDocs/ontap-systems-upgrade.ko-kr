@@ -22,13 +22,8 @@ summary: '을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업�
 
 NOTE: NetApp 마케팅 자료에서는 UTA2 라는 용어를 사용하여 통합 네트워크 어댑터(CNA) 어댑터 및 포트를 참조할 수 있습니다. 그러나 CLI에서는 CNA라는 용어를 사용합니다.
 
-* 노드 3에 온보드 FC 포트, 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드가 없는 경우 스토리지 디스크를 사용하여 시스템을 업그레이드하는 경우 로 건너뛸 수 있습니다 link:verify_node3_installation.html["노드3 설치를 확인합니다"] 섹션을 참조하십시오.
-* 하지만 스토리지 어레이가 있는 FlexArray 가상화 소프트웨어를 사용하는 V 시리즈 시스템이나 시스템이 있고 노드 3에 온보드 FC 포트, 온보드 UTA/UTA 포트 또는 UTA/UTA2 카드가 없는 경우, _Install and boot node3_섹션으로 돌아가서 섹션을 다시 시작하십시오 link:install_boot_node3.html#auto_install3_step23["23단계"].
-
-
-.선택
-* <<노드 3에서 FC 포트를 구성합니다>>
-* <<노드 3의 UTA/UTA2 포트를 확인하고 구성합니다>>
+* 노드 3에 온보드 FC 포트, 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드가 없는 경우 스토리지 디스크로 시스템을 업그레이드하려면 으로 건너뛸 수 있습니다.link:reassign-node1-disks-to-node3.html["노드1 디스크를 노드3에 재할당합니다"]
+* 그러나 V-Series 시스템 또는 스토리지 어레이가 포함된 FlexArray 가상화 소프트웨어를 사용하는 시스템이 있고 노드 3에 온보드 FC 포트, 온보드 UTA/UTA 포트 또는 UTA/UTA2 카드가 없는 경우 _ 설치 및 부팅 노드3_로 돌아가서 에서 절차를 재개합니다.link:install_boot_node3.html#auto_install3_step23["23단계"]
 
 
 
@@ -115,15 +110,15 @@ NOTE: FC 포트는 이니시에이터로 프로그래밍해야 합니다.
 
 
 | 스토리지 디스크가 있습니다  a| 
-** 노드 3에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 있는 경우 섹션으로 이동하십시오 <<노드 3의 UTA/UTA2 포트를 확인하고 구성합니다>>.
-** 노드 3에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우 섹션을 건너뛰십시오 <<노드 3의 UTA/UTA2 포트를 확인하고 구성합니다>> 섹션으로 이동합니다 link:verify_node3_installation.html["노드3 설치를 확인합니다"].
+** 노드 3에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 있는 경우 로 이동하십시오 <<노드 3의 UTA/UTA2 포트를 확인하고 구성합니다>>.
+** 노드 3에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우, skip_check 및 node3_에서 UTA/UTA2 포트를 구성하고 로 이동합니다.link:reassign-node1-disks-to-node3.html["노드1 디스크를 노드3에 재할당합니다"]
 
 
 
 
 | V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다  a| 
-** 노드 3에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 있는 경우 섹션으로 이동하십시오 <<노드 3의 UTA/UTA2 포트를 확인하고 구성합니다>>.
-** 노드 3에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우 섹션을 건너뛰십시오 <<노드 3의 UTA/UTA2 포트를 확인하고 구성합니다>> 그런 다음, _Install and boot node3_ 섹션으로 돌아가서 에서 다시 시작합니다 link:install_boot_node3.html#auto_install3_step23["23단계"].
+** 노드 3에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 있는 경우 로 이동하십시오 <<노드 3의 UTA/UTA2 포트를 확인하고 구성합니다>>.
+** 노드3에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우, 노드3_에서 UTA/UTA2 포트를 건너뛰고 구성한 후 _설치 및 노드3_로 돌아가서 의 절차를 재개하십시오.link:install_boot_node3.html#auto_install3_step23["23단계"]
 
 
 |===
@@ -305,269 +300,14 @@ Adapter  Mode       Type        Mode     Type        Status
 | 시스템이... | 그러면... 
 
 
-| 스토리지 디스크가 있습니다 | 로 이동합니다 link:verify_node3_installation.html["노드3 설치를 확인합니다"]. 
+| 스토리지 디스크가 있습니다 | 로 이동합니다. link:reassign-node1-disks-to-node3.html["노드1 디스크를 노드3에 재할당합니다"] 
 
 
-| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | Install and boot node3_ 섹션으로 돌아가서 에서 다시 시작합니다 link:install_boot_node3.html#auto_install3_step23["23단계"]. 
+| V-Series 시스템이거나 FlexArray 가상화 소프트웨어가 있으며 스토리지 어레이에 연결되어 있습니다 | 설치 및 부팅 노드3_로 돌아가서 절차를 다시 link:install_boot_node3.html#auto_install3_step23["23단계"]시작합니다. 
 |===
 . [[auto_check3_step13]]유지보수 모드 종료:
 +
 `halt`
 
-. [[step14]]을(를) 실행하여 부팅 메뉴로 노드를 부팅합니다 `boot_ontap menu`. A800으로 업그레이드할 경우 으로 이동하십시오 <<auto_check3_step23,23단계>>.
-
-
-. 노드3에서 부팅 메뉴로 이동하여 22/7을 사용하여 숨김 옵션을 선택합니다 `boot_after_controller_replacement`. 다음 예에 따라 프롬프트에 node1을 입력하여 node3에 노드 1의 디스크를 재할당합니다.
-+
-.콘솔 출력 예를 확장합니다
-[%collapsible]
-====
-....
-LOADER-A> boot_ontap menu
-.
-<output truncated>
-.
-All rights reserved.
-*******************************
-*                             *
-* Press Ctrl-C for Boot Menu. *
-*                             *
-*******************************
-.
-<output truncated>
-.
-Please choose one of the following:
-(1)  Normal Boot.
-(2)  Boot without /etc/rc.
-(3)  Change password.
-(4)  Clean configuration and initialize all disks.
-(5)  Maintenance mode boot.
-(6)  Update flash from backup config.
-(7)  Install new software first.
-(8)  Reboot node.
-(9)  Configure Advanced Drive Partitioning.
-(10) Set Onboard Key Manager recovery secrets.
-(11) Configure node for external key management.
-Selection (1-11)? 22/7
-(22/7) Print this secret List
-(25/6) Force boot with multiple filesystem disks missing.
-(25/7) Boot w/ disk labels forced to clean.
-(29/7) Bypass media errors.
-(44/4a) Zero disks if needed and create new flexible root volume.
-(44/7) Assign all disks, Initialize all disks as SPARE, write DDR labels
-.
-<output truncated>
-.
-(wipeconfig)                        Clean all configuration on boot device
-(boot_after_controller_replacement) Boot after controller upgrade
-(boot_after_mcc_transition)         Boot after MCC transition
-(9a)                                Unpartition all disks and remove their ownership information.
-(9b)                                Clean configuration and initialize node with partitioned disks.
-(9c)                                Clean configuration and initialize node with whole disks.
-(9d)                                Reboot the node.
-(9e)                                Return to main boot menu.
-The boot device has changed. System configuration information could be lost. Use option (6) to restore the system configuration, or option (4) to initialize all disks and setup a new system.
-Normal Boot is prohibited.
-Please choose one of the following:
-(1)  Normal Boot.
-(2)  Boot without /etc/rc.
-(3)  Change password.
-(4)  Clean configuration and initialize all disks.
-(5)  Maintenance mode boot.
-(6)  Update flash from backup config.
-(7)  Install new software first.
-(8)  Reboot node.
-(9)  Configure Advanced Drive Partitioning.
-(10) Set Onboard Key Manager recovery secrets.
-(11) Configure node for external key management.
-Selection (1-11)? boot_after_controller_replacement
-This will replace all flash-based configuration with the last backup to disks. Are you sure you want to continue?: yes
-.
-<output truncated>
-.
-Controller Replacement: Provide name of the node you would like to replace:<nodename of the node being replaced>
-Changing sysid of node node1 disks.
-Fetched sanown old_owner_sysid = 536940063 and calculated old sys id = 536940063
-Partner sysid = 4294967295, owner sysid = 536940063
-.
-<output truncated>
-.
-varfs_backup_restore: restore using /mroot/etc/varfs.tgz
-varfs_backup_restore: attempting to restore /var/kmip to the boot device
-varfs_backup_restore: failed to restore /var/kmip to the boot device
-varfs_backup_restore: attempting to restore env file to the boot device
-varfs_backup_restore: successfully restored env file to the boot device wrote key file "/tmp/rndc.key"
-varfs_backup_restore: timeout waiting for login
-varfs_backup_restore: Rebooting to load the new varfs
-Terminated
-<node reboots>
-System rebooting...
-.
-Restoring env file from boot media...
-copy_env_file:scenario = head upgrade
-Successfully restored env file from boot media...
-Rebooting to load the restored env file...
-.
-System rebooting...
-.
-<output truncated>
-.
-WARNING: System ID mismatch. This usually occurs when replacing a boot device or NVRAM cards!
-Override system ID? {y|n} y
-.
-Login:
-....
-====
-+
-
-NOTE: 위의 콘솔 출력 예에서 시스템이 ADP(고급 디스크 파티셔닝) 디스크를 사용하는 경우 ONTAP에서 파트너 노드 이름을 묻는 메시지를 표시합니다.
-
-. 시스템이 메시지와 함께 재부팅 루프에 들어갈 경우 `no disks found`은 시스템이 FC 또는 UTA/UTA2 포트를 타겟 모드로 다시 설정했으므로 디스크를 볼 수 없음을 나타냅니다. 이 문제를 해결하려면 을 계속 진행합니다 <<auto_check3_step17,17단계>> 를 선택합니다 <<auto_check3_step22,22단계>>또는 섹션으로 이동합니다 link:verify_node3_installation.html["노드3 설치를 확인합니다"].
-. [[auto_check3_step17]] 자동 부팅 중에 Ctrl-C를 눌러 LOADER > 프롬프트에서 노드를 중지합니다.
-. [[step18]] LOADER 프롬프트에서 유지보수 모드로 전환합니다.
-+
-`boot_ontap maint`
-
-. [[19단계]] 유지보수 모드에서 현재 타겟 모드에 있는 이전에 설정된 이니시에이터 포트를 모두 표시합니다.
-+
-`ucadmin show`
-
-+
-포트를 다시 이니시에이터 모드로 변경합니다.
-
-+
-`ucadmin modify -m fc -t initiator -f _adapter name_`
-
-. [[step20]] 포트가 이니시에이터 모드로 변경되었는지 확인합니다.
-+
-`ucadmin show`
-
-. [[step21]]유지보수 모드 종료:
-+
-`halt`
-
-+
-[NOTE]
-====
-외부 디스크를 지원하는 시스템에서 외부 디스크도 지원하는 시스템으로 업그레이드하는 경우 로 이동합니다 <<auto_check3_step22,22단계>>.
-
-외부 디스크를 지원하는 시스템에서 AFF A800 시스템과 같은 내부 디스크와 외부 디스크를 모두 지원하는 시스템으로 업그레이드하는 경우 로 이동하십시오 <<auto_check3_step23,23단계>>.
-
-====
-. [[auto_check3_step22]] LOADER 프롬프트에서 부팅합니다.
-+
-`boot_ontap menu`
-
-+
-이제 부팅 시 노드에서 이전에 할당되었으며 예상대로 부팅할 수 있는 모든 디스크를 감지할 수 있습니다.
-
-+
-교체할 클러스터 노드가 루트 볼륨 암호화를 사용하면 ONTAP가 디스크에서 볼륨 정보를 읽을 수 없습니다. 루트 볼륨의 키를 복원합니다.
-
-+
-
-NOTE: 루트 볼륨이 NetApp 볼륨 암호화를 사용하는 경우에만 적용됩니다.
-
-+
-.. 특수 부팅 메뉴로 돌아갑니다.
-+
-`LOADER> boot_ontap menu`
-
-+
-[listing]
-----
-Please choose one of the following:
-(1) Normal Boot.
-(2) Boot without /etc/rc.
-(3) Change password.
-(4) Clean configuration and initialize all disks.
-(5) Maintenance mode boot.
-(6) Update flash from backup config.
-(7) Install new software first.
-(8) Reboot node.
-(9) Configure Advanced Drive Partitioning.
-(10) Set Onboard Key Manager recovery secrets.
-(11) Configure node for external key management.
-
-Selection (1-11)? 10
-----
-.. Onboard Key Manager 복구 비밀 설정 * 을 선택합니다
-.. 를 입력합니다 `y` 다음 프롬프트에서 다음을 수행합니다.
-+
-`This option must be used only in disaster recovery procedures. Are you sure? (y or n): y`
-
-.. 프롬프트에서 키 관리자 암호를 입력합니다.
-.. 메시지가 표시되면 백업 데이터를 입력합니다.
-+
-
-NOTE: 에서 암호 및 백업 데이터를 가져야만 합니다 link:prepare_nodes_for_upgrade.html["업그레이드할 노드를 준비합니다"] 섹션을 참조하십시오.
-
-.. 시스템이 특수 부팅 메뉴로 다시 부팅된 후 옵션 * (1) Normal Boot * 를 실행합니다
-+
-
-NOTE: 이 단계에서 오류가 발생할 수 있습니다. 오류가 발생하면 의 하위 단계를 반복합니다 <<auto_check3_step22,22단계>> 시스템이 정상적으로 부팅될 때까지 기다립니다.
-
-
-
-. [[auto_check3_step23] 외부 디스크가 있는 시스템에서 내부 및 외부 디스크를 지원하는 시스템(예: AFF A800 시스템)으로 업그레이드하는 경우 node1 애그리게이트를 루트 애그리게이트로 설정하여 node3이 node1의 루트 애그리게이트에서 부팅되는지 확인하십시오. 루트 애그리게이트를 설정하려면 부팅 메뉴로 이동하여 옵션을 선택합니다 `5` 를 눌러 유지보수 모드로 전환합니다.
-+
-
-CAUTION: * 표시된 정확한 순서대로 다음 하위 단계를 수행해야 합니다. 그렇지 않으면 운영 중단이나 데이터 손실이 발생할 수 있습니다. *
-
-+
-다음 절차에서는 노드 3이 노드 1의 루트 애그리게이트에서 부팅되도록 설정합니다.
-
-+
-.. 유지보수 모드로 전환:
-+
-`boot_ontap maint`
-
-.. 노드 1 애그리게이트에 대한 RAID, plex 및 체크섬 정보를 확인합니다.
-+
-`aggr status -r`
-
-.. node1 애그리게이트의 상태를 확인합니다.
-+
-`aggr status`
-
-.. 필요한 경우 node1 애그리게이트를 온라인 상태로 전환합니다.
-+
-`aggr_online root_aggr_from___node1__`
-
-.. 노드 3이 원래 루트 애그리게이트로부터 부팅하지 않도록 합니다.
-+
-`aggr offline _root_aggr_on_node3_`
-
-.. 노드 1의 루트 애그리게이트를 노드 3의 새 루트 애그리게이트로 설정합니다.
-+
-`aggr options aggr_from___node1__ root`
-
-.. 노드 3의 루트 애그리게이트가 오프라인 상태이고 노드 1에서 가져온 디스크의 루트 애그리게이트가 온라인 상태이고 루트:
-+
-`aggr status`
-
-+
-
-NOTE: 이전 하위 단계를 수행하지 않으면 노드 3이 내부 루트 애그리게이트에서 부팅되거나 시스템에서 새 클러스터 구성이 있다고 가정하거나 클러스터 구성을 확인하라는 메시지가 표시될 수 있습니다.
-
-+
-다음은 명령 출력의 예입니다.
-
-+
-[listing]
-----
- -----------------------------------------------------------------
- Aggr                 State    Status             Options
-
- aggr0_nst_fas8080_15 online   raid_dp, aggr      root, nosnap=on
-                               fast zeroed
-                               64-bit
-
- aggr0                offline  raid_dp, aggr      diskroot
-                               fast zeroed
-                               64-bit
- -----------------------------------------------------------------
-----
-
-
+. [[step14]] 를 실행하여 노드를 부팅 메뉴로 부팅합니다. `boot_ontap menu` A800으로 업그레이드하는 경우 로 link:reassign-node1-disks-to-node3.html#reassign-node1-node3-app-step9["노드1 디스크를 노드3, 9단계에 재할당합니다"]이동하십시오.
 

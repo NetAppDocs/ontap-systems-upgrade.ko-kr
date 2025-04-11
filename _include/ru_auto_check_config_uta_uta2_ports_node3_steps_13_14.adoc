@@ -6,5 +6,5 @@
 +
 `halt`
 
-. [[step14]]을(를) 실행하여 부팅 메뉴로 노드를 부팅합니다 `boot_ontap menu`. A800으로 업그레이드할 경우 으로 이동하십시오 <<auto_check3_step23,23단계>>.
+. [[step14]] 를 실행하여 노드를 부팅 메뉴로 부팅합니다. `boot_ontap menu` A800으로 업그레이드하는 경우 로 link:reassign-node1-disks-to-node3.html#reassign-node1-node3-app-step9["노드1 디스크를 노드3, 9단계에 재할당합니다"]이동하십시오.
 

@@ -81,7 +81,7 @@ NOTE: Aggregate를 생성하는 데 사용되는 장치는 물리적 디스크�
 
 . 두 컨트롤러 모두에 대해 다음 명령을 입력합니다.
 +
-`aggr status -y`
+`aggr status -v`
 
 +
 다음 예제의 부분 출력에 표시된 것처럼 시스템은 Aggregate의 볼륨에 대한 정보를 표시합니다.

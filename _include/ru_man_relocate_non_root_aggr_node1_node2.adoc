@@ -76,7 +76,7 @@ NOTE: 노드 1이 소유한 모든 비루트 애그리게이트가 노드 2로 �
 +
 [listing]
 ----
-cluster::> storage aggregate show -node node2 state online -root false
+cluster::> storage aggregate show -node node2 -state online -root false
 Aggregate     Size Available Used% State   #Vols  Nodes            RAID Status
 --------- -------- --------- ----- ------- ------ ---------------- ------------
 aggr_1
