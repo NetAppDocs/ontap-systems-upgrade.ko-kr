@@ -20,7 +20,7 @@ node3 설치를 확인하기 전에 node1에 속한 디스크를 node3에 재할
 노드3에서 이 섹션의 단계를 수행합니다.
 
 .단계
-. 부팅 메뉴로 이동하여 22/7을 사용하여 숨겨진 옵션을 `boot_after_controller_replacement`선택합니다. 다음 예에 따라 프롬프트에 node1을 입력하여 node3에 노드 1의 디스크를 재할당합니다.
+. [[RESALOCATE-node1-node3-app-step1]] 부팅 메뉴로 이동하여 22/7을 사용하여 숨겨진 옵션을 `boot_after_controller_replacement`선택합니다. 다음 예에 따라 프롬프트에 node1을 입력하여 node3에 노드 1의 디스크를 재할당합니다.
 +
 .콘솔 출력 예를 확장합니다
 [%collapsible]

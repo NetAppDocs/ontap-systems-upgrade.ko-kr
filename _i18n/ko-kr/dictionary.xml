@@ -13,22 +13,18 @@
   <block id="ffd0deb022240e6349d0ad6c700b5228" category="summary">ONTAP 9.7 이하를 실행하는 컨트롤러에서 수동 ARL 업그레이드 중에 node2에 대한 AutoSupport 메시지를 보내고 node2의 비루트 애그리게이트를 노드 3으로 재배치합니다.</block>
   <block id="fae986fa29654ebe6966932d05eb132d" category="doc">노드 2에서 노드 3으로 비루트 애그리게이트를 재배치합니다</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">단계</block>
-  <block id="d22419a850c185721a903c07372ae503" category="paragraph"><block ref="2e33e39ed4849c5a9083e6258c35f18b" prefix="" category="inline-code"></block></block>
   <block id="fb876532a1278ecbe2a9e2aa30ef59c2" category="list-text">AutoSupport 메시지가 전송되었는지 확인합니다.</block>
-  <block id="0035b3ff85f938e9dcfa6e01d00bacb3" category="paragraph"><block ref="f9577d86eb6f17a22dfa3cd7acc747dd" prefix="" category="inline-code"></block></block>
   <block id="632ce4fa5102cfac495b3c1490de0513" category="paragraph">"마지막으로 보낸 제목:" 및 "마지막 보낸 시간:" 필드에는 마지막으로 보낸 메시지의 메시지 제목과 메시지를 보낸 시간이 포함됩니다.</block>
   <block id="b5c6fde8816eb583a49b6c0314b82928" category="list-text">권한 수준을 고급으로 설정합니다.</block>
   <block id="5fd1bcc8472b38442961eb87ca3f844a" category="paragraph"><block ref="0581d0d071ad835f74bf419081ce5d75" prefix="" category="inline-code"></block></block>
   <block id="33cfec7231d81810ac482a09c5b69c00" category="list-text">노드 2가 소유한 애그리게이트 나열:</block>
   <block id="9fb768ad6510fe46b2016783cac8eadb" category="paragraph"><block ref="c08c30e4082dbfc350c98d8e8dbf2fe0" prefix="" category="inline-code"></block></block>
   <block id="e5d22039d8dff591d18701d62fb4083d" category="list-text">애그리게이트 재배치 시작:</block>
-  <block id="340e64569e9690b05ee5812624d5a313" category="paragraph"><block ref="9605998a02420e2b776b3848f7e4693a" prefix="" category="inline-code"></block></block>
   <block id="cba3015195e189328dd15ef19c0cdcff" category="admonition">이 명령은 비루트 애그리게이트만 찾습니다.</block>
   <block id="4f6da995dc4a823a0d6529c9d724b695" category="list-text">메시지가 표시되면 를 입력합니다<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>.</block>
   <block id="00bfced11707df12b7beabc9cb1854c6" category="list-text">관리자 권한 레벨로 돌아갑니다.</block>
   <block id="d260c71f1d73fe6dce24fae82cd28aca" category="paragraph"><block ref="0a654c13d63710f829bc02c4cbec79ee" prefix="" category="inline-code"></block></block>
   <block id="6b5ba31b334c119525a36a4c654c79fc" category="list-text">노드 2의 재배치 상태를 확인합니다.</block>
-  <block id="f161887b8a8315e1921bdd784254366b" category="paragraph"><block ref="d494b14e9a67873e448f1e941becd174" prefix="" category="inline-code"></block></block>
   <block id="5f99044f7fd5dd98c2e83408099900a7" category="admonition">다음 단계로 진행하기 전에 노드 2가 소유한 모든 애그리게이트를 노드 3으로 재배치할 때까지 기다려야 합니다.</block>
   <block id="4d65ef8cf84d37cbb99560183afc8431" category="list-text">다음 작업 중 하나를 수행합니다.</block>
   <block id="b81c90895c008292ba5de518bf5f82a3" category="cell">재배치 대상...</block>
@@ -43,21 +39,17 @@
   <block id="cde8cf801e542566f503970c16a89b61" category="admonition">를 클릭합니다<block ref="54f01f9cb59194d96776e609d0e47dd1" prefix=" " category="inline-code"></block> 명령은 발생한 모든 오류를 나열합니다.</block>
   <block id="434233acf6409db55ccbef4618a05f4c" category="list-text">수정 조치를 수행합니다.</block>
   <block id="f5bf9910c32ce3468dc3a0f80ee2e47a" category="list-text">장애가 발생하거나 거부되는 애그리게이트를 재배치합니다.</block>
-  <block id="9ef5127a85127a11a229ac4b55fc672f" category="paragraph"><block ref="2d3ca6bfc21988194320d6531ca5cfb8" prefix="" category="inline-code"></block></block>
   <block id="856f354dcadb2aef2f73a7a610300d05" category="paragraph">필요한 경우 다음 방법 중 하나를 사용하여 재배치를 강제 실행할 수 있습니다.</block>
   <block id="6abaecd9da93fcc5260d726fe8a8fa56" category="list-text">거부권 확인을 무시함으로써:</block>
   <block id="b62638cdb7e1a6240698379b6c81d35b" category="paragraph"><block ref="704cec64b6f25012c1114e540afc20bc" prefix="" category="inline-code"></block></block>
   <block id="230cd704f9f55647ecfe8129ed941e8e" category="list-text">목적지 확인을 무시함으로써:</block>
   <block id="35df77bf8b92d76c3b871148e8c46c51" category="paragraph"><block ref="7f8ac4f99d49aa709588b130a984ff42" prefix="" category="inline-code"></block></block>
   <block id="2c075b61ab1e5a7bc43a337e5b594a77" category="paragraph">스토리지 애그리게이트 재배치 명령에 대한 자세한 내용은 로 이동하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> CLI_ 및 _ONTAP 9 명령을 사용하여 _ 디스크 및 애그리게이트 관리를 링크하려면 수동 페이지 참조 _.</block>
-  <block id="841745404f0f5f47ea2e369557646743" category="paragraph"><block ref="443b6d8dc33c21e7ed55a16a24960291" prefix="" category="inline-code"></block></block>
   <block id="ecc3f3e0b2ef3c70a30fe8be1af81d75" category="paragraph">애그리게이트가 오프라인 상태가 되거나 외부 애그리게이트로 전환된 경우, 각 애그리게이트에 대해 한 번씩 온라인 상태를 유지해야 합니다.</block>
   <block id="7a4b65a92ad0461916e64e86d4469810" category="paragraph"><block ref="782f23052d9b99c107b9fc383ca6a390" prefix="" category="inline-code"></block></block>
   <block id="1dc7145853b865022c2423c0562bf7ed" category="list-text">노드 3에서 모든 볼륨이 온라인 상태인지 확인합니다.</block>
   <block id="9768bc676d49dbda7bf856a2930c4b52" category="paragraph"><block ref="e3a438e4ea5a16cab1f093e0d1ef458f" prefix="" category="inline-code"></block></block>
   <block id="8526a5587200c78144bc2d1fabd13d3a" category="paragraph">노드 3에서 오프라인 상태인 볼륨이 있는 경우 각 볼륨에 대해 한 번씩 온라인 상태로 전환해야 합니다.</block>
-  <block id="091a8eb2e46c040b097f97a81745c527" category="paragraph"><block ref="2aacef8596201940c4e6d7f5cec52fd6" prefix="" category="inline-code"></block></block>
-  <block id="b69d240b40718da8e6f1771cc452c580" category="paragraph"><block ref="812f32e123ca829c08b7e38a36ebf2af" prefix="" category="inline-code"></block></block>
   <block id="232cf0d45bdcae298c19689d1bf05bea" category="paragraph">루트가 아닌 모든 온라인 애그리게이트가 이미 노드 3에 재배치되었기 때문에 명령 출력에 루트가 아닌 온라인 애그리게이트를 표시할 수 없습니다.</block>
   <block id="a971a57f0ab6432a971f405b5096ea03" category="summary">ONTAP 9.7 이하를 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 전환, 복구 및 스위치백 작업을 확인합니다.</block>
   <block id="9759ad3dfabdb9631ec5fba47d71c313" category="doc">전환, 복구, 스위치백을 확인합니다</block>
@@ -1697,7 +1689,6 @@
   <block id="05743303a73462ef6d9bbfd30ac4d38e" category="summary">ONTAP 9.7 이하를 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 node1의 물리적 포트가 node3에 올바르게 매핑되는지 확인합니다.</block>
   <block id="9207f0d2f15feec52f0acba2d7786a53" category="paragraph">노드 1의 물리적 포트가 노드 3의 물리적 포트에 올바르게 매핑되는지 확인해야 합니다. 이렇게 하면 노드 3이 클러스터의 다른 노드 및 업그레이드 후 네트워크와 통신할 수 있습니다.</block>
   <block id="d22f146c49d95d305653bf62234fdbc9" category="paragraph">_Hardware Universe_의 새 노드에 있는 포트에 대한 정보가 이미 있어야 합니다. (로 이동합니다 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> Hardware Universe_)에 연결합니다. 이 정보는 이 섹션의 뒷부분 및 에서 사용합니다 <block ref="fface1ac702bde6d72ceb6e55eb8b2b6" category="inline-link-macro-rx"></block>.</block>
-  <block id="770687a6c0857c42712724895dde4f94" category="paragraph">노드 3의 소프트웨어 구성은 노드 3의 물리적 연결과 일치해야 하며, 업그레이드를 계속하기 전에 IP 연결을 복원해야 합니다.</block>
   <block id="7ae38f6d8449bab135d62e112d801780" category="paragraph">포트 설정은 노드 모델에 따라 다를 수 있습니다.</block>
   <block id="516641dccf4c70d4db12878e058ae756" category="paragraph">원래 노드의 포트 및 LIF 구성이 새 노드의 구성을 계획할 시스템과 호환되도록 해야 합니다. 이는 새 노드가 부팅될 때 동일한 구성을 재생하므로 노드 3을 부팅할 때 ONTAP은 노드 1에서 사용된 동일한 포트에 LIF를 호스팅하려고 하기 때문입니다.</block>
   <block id="a7e55a2eda4d6d9856ad9438d37fbed0" category="paragraph">따라서 노드 1의 물리적 포트가 노드 3의 물리적 포트에 직접 매핑되지 않으면 부팅 후 클러스터, 관리 및 네트워크 연결을 복원하기 위해 소프트웨어 구성을 변경해야 합니다. 또한 노드 1의 클러스터 포트가 노드 3의 클러스터 포트에 직접 매핑되지 않는 경우, 노드 3은 재부팅 시 올바른 물리적 포트에서 클러스터 LIF를 호스팅하도록 소프트웨어 구성을 변경하기 전까지는 쿼럼에 자동으로 다시 참가하지 않을 수 있습니다.</block>
@@ -2375,7 +2366,6 @@
   <block id="f1f401fda84803d54fb9ed083d0ebefa" category="list-text">[[auto_install4_step23]] 새 노드의 FC 이니시에이터 포트를 스위치 영역에 추가합니다.</block>
   <block id="2a1ffcfd9b3fe851dbeca2f509c1f7a3" category="paragraph">시스템에 테이프 SAN이 있는 경우 이니시에이터에 대해 조닝이 필요합니다. 필요한 경우 을 참조하여 온보드 포트를 이니시에이터로 수정합니다 <block ref="1d789633b45165b05bf13f9838060fe6" category="inline-link-macro-rx"></block>. 조닝에 대한 자세한 내용은 스토리지 어레이 및 조닝 설명서를 참조하십시오.</block>
   <block id="20285adb42be1ddc0c2df8f7a2de7595" category="list-text">스토리지 어레이의 어레이 LUN과 연결된 호스트 또는 볼륨 그룹에서 WWPN(Worldwide Port Name) 값을 수정합니다.</block>
-  <block id="d1cffd7fada9f21315c30db304bb2ca9" category="list-text">부팅 메뉴로 노드 부팅:</block>
   <block id="9f6c1c59e595c7b6b493f92b24930c14" category="inline-link-macro">노드 4에 FC 또는 UTA/UT2 구성을 설정합니다</block>
   <block id="cbe290335ddc7c966d9c148980b1ddd5" category="list-text">[[29단계] MetroCluster 구성의 경우, 스토리지 어레이에 연결된 FlexArray 가상화 소프트웨어가 있는 V-Series 시스템 및 시스템의 경우 노드에 연결된 디스크를 검색하려면 노드 4의 FC 또는 UTA/UTA2 포트를 설정하고 구성해야 합니다. 이 작업을 완료하려면 섹션으로 이동하십시오 <block ref="39202fc611c1fcac2f1575fc00cb55d3" category="inline-link-macro-rx"></block>.</block>
   <block id="1565fea61c4b7c7821ea0d9a5ab00d22" category="summary">을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 Config Advisor 도구를 사용하여 일반적인 구성 오류를 확인하십시오<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
@@ -2429,7 +2419,6 @@
   <block id="b50635aa317c4f94943cbad3bf2ffdf2" category="list-text">포트에 케이블을 연결합니다.</block>
   <block id="8eeb6ccf00d6f27741c5b734b3130459" category="list-text">[[12단계]] 다음 작업 중 하나를 수행합니다.</block>
   <block id="4a137bad34f46785824a8100e1c6cba6" category="list-text">[[auto_check_4_step13] 유지보수 모드 종료:</block>
-  <block id="479951d6e509fddf053f700071fd43a4" category="list-text">[[step14]] 부트 메뉴의 부트 노드:</block>
   <block id="204783b1ca658239a7b205df8e2d83dd" category="paragraph"><block ref="d20d8416248acf69156e4b7875cc4868" prefix="" category="inline-code"></block>.</block>
   <block id="82b61383829ad9f7c791ca9adcbe4b1f" category="list-text">유지보수 모드에서 현재 타겟 모드에 있는 이전에 설정된 이니시에이터 포트를 모두 표시합니다.</block>
   <block id="7dca1ec13f028b73f4170b0124cf9d45" category="list-text">포트가 이니시에이터 모드로 변경되었는지 확인합니다.</block>
@@ -5249,23 +5238,14 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="179f979e0b97fa0abce7d9de4a3dcf35" category="cell">FAS70의 경우 9.15.1P3, FAS50의 경우 FAS90 9.16.1P2</block>
   <block id="0588c4f1b58eac9f5062dc1da6e8435a" category="cell">FAS8700를 참조하십시오</block>
   <block id="5ea464078a881a86e75acbaa27ab0f3f" category="inline-link-macro">노드1 디스크를 노드3, 9단계에 재할당합니다</block>
-  <block id="94832ce088252ec835bf30c1c169417f" category="list-text">[[step14]] 를 실행하여 노드를 부팅 메뉴로 부팅합니다.<block ref="d20d8416248acf69156e4b7875cc4868" prefix=" " category="inline-code"></block> A800으로 업그레이드하는 경우 로 <block ref="c6817bbcae6fe5893644f9e570310aab" category="inline-link-macro-rx"></block>이동하십시오.</block>
   <block id="fb5a9693a9865f2503ac1d604da7e6f1" category="cell">로 이동합니다. <block ref="9a2314147e61384dcda537891c3f470c" category="inline-xref-macro-rx"></block></block>
   <block id="2fdbbb745e51610452548329a23e078d" category="cell">로 이동합니다 <block ref="cc5cb3430eee3043fed71981b076513b" category="inline-xref-macro-rx"></block></block>
   <block id="c66431825370525b71d1cf42669b4ad1" category="paragraph"><block ref="03d492bafa8bfc48b6d8087b415cb7c8" prefix="" category="inline-code"></block></block>
   <block id="cbf9a76a9a31fb5d20cbab55c42d6eb4" category="paragraph">node2를 node4로 교체하려면 먼저 node2에 대한 AutoSupport 메시지를 보낸 다음 node2가 소유하는 루트가 아닌 애그리게이트를 node3로 재배치해야 합니다.</block>
-  <block id="889a8a9b669ca02a5d0afd548c8a5bc9" category="list-text">파트너 시스템 ID가 노드2 및 노드3에 올바르게 설정되어 있는지 확인합니다.</block>
-  <block id="04ad9370712a8951b033d3e79d288b91" category="list-text"><block ref="c4d3ac59e356b264f6335ae353d7f8cf" prefix="" category="inline-code"></block></block>
-  <block id="ae719a4d0999ee899d139c043e1dfb31" category="list-text"><block ref="9651ad056b06027f0f8a09826553c095" prefix="" category="inline-code"></block></block>
-  <block id="331474910fd513c32a8b5468be64110b" category="paragraph">노드2 또는 노드3에 대해 "파트너 ID"가 잘못된 경우:</block>
-  <block id="1157ffd8c7e3127247707fa870245090" category="list-text">잘못된 값으로 노드를 재부팅합니다.</block>
-  <block id="20f3e479666bab0a0edd9ed3b561912d" category="list-text">의 명령을 다시 실행하고 <block ref="0ddf3aeb918097d937dd4c17e43bb51f" category="inline-xref-macro-rx"></block>"파트너 ID"가 올바른 값으로 변경되었는지 확인합니다.</block>
   <block id="a2f8774c7412a03482b475c596da177f" category="list-text">노드2에 대해 NetApp로 AutoSupport 메시지 보내기:</block>
   <block id="726243540d365dca09b0baa8a651d18b" category="list-text">비루트 애그리게이트 재배치:</block>
   <block id="4b183b97df2f1d6ce9c112a7ed3e980c" category="paragraph">재배치가 백그라운드에서 실행됩니다. Aggregate를 재배치하는 데 몇 초에서 몇 분 정도 걸릴 수 있습니다. 여기에는 클라이언트 중단 및 무중단 부분 이 모두 포함됩니다. 이 명령을 실행하면 오프라인 또는 제한된 애그리게이트가 재배치되지 않습니다.</block>
   <block id="ce3a9a61e80721a6fb4afa31a98b6267" category="paragraph">재배치된 집계에 대해 출력에 "완료"가 표시됩니다.</block>
-  <block id="85208ba1bad4c7dc925a1c2728862db6" category="cell">로 이동합니다. <block ref="08ddf4558683f30c17772ca15a6fb932" category="inline-xref-macro-rx"></block></block>
-  <block id="f626c2e9002d46ebfc63c95da060d00a" category="list-text">[[man_relocate_2_3_step7]]루트가 아닌 모든 애그리게이트가 노드 3에서 온라인 상태인지 확인:</block>
   <block id="d8a4c81968f4b397fdbe83d1475d852c" category="list-text">노드 2에서 루트가 아닌 온라인 애그리게이트를 소유하지 않는지 확인:</block>
   <block id="6eb24316934652e1e079aaa905d2761d" category="inline-link-macro">노드1 디스크를 노드3, 1단계에 재할당합니다</block>
   <block id="694da05c353b1b646b03401140a4677f" category="paragraph">FC 또는 UTA/UTA2 구성이 없는 경우 노드 3에서 노드 1의 디스크를 인식할 수 있도록 하십시오.<block ref="7b43b3c87e448bde55a855b04c4928b3" category="inline-link-macro-rx"></block></block>
@@ -5305,7 +5285,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="fc62ebdcdad1c598fd567dcc92127be3" category="cell">로 이동합니다. <block ref="eaad59cad2124997123e3f040ef5cb96" category="inline-link-macro-rx"></block></block>
   <block id="39ec961403963bac4327f37c3a91e53d" category="cell">설치(_Install)로 돌아가서 node4_를 부팅하고 에서 다시 시작합니다<block ref="2365e31070f1c277afd5c68b5793121e" category="inline-link-macro-rx"></block>.</block>
   <block id="328a7a0648a6342a4e5d9762596df977" category="inline-link-macro">노드2 디스크를 노드4, 9단계에 재할당합니다</block>
-  <block id="aa35d8be17402f68d91e5a22894b1a0d" category="paragraph">A800으로 업그레이드하는 경우 로 <block ref="e81929257c1b77de68576a8a37b1e464" category="inline-link-macro-rx"></block>이동하십시오.</block>
   <block id="b08503fa695caa40c403fd4b0a68ee5a" category="list-text">노드3에 온보드 FC 포트, 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드가 없는 경우 스토리지 디스크로 시스템을 업그레이드하려면 으로 건너뛸 수 있습니다.<block ref="ac081fdc0801ea4a4f23475143090cfa" category="inline-link-macro-rx"></block></block>
   <block id="bc6f0afd18b3a2600b507899a377b115" category="list-text">하지만 V-Series 시스템 또는 스토리지 어레이가 포함된 FlexArray 가상화 소프트웨어 시스템이 있고 노드3에 온보드 FC 포트, 온보드 UTA/UTA 포트 또는 UTA/UTA2 카드가 없는 경우 _ 설치 및 부팅 노드3_로 돌아가서 에서 재개할 수 있습니다.<block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block></block>
   <block id="fc1748891fee59e7ee68e749f479c431" category="list-text">노드 3에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우 를 건너뛰고 로 이동합니다.<block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block><block ref="ac081fdc0801ea4a4f23475143090cfa" category="inline-link-macro-rx"></block></block>
@@ -5315,13 +5294,11 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="eaad59cad2124997123e3f040ef5cb96" category="list-text"><block ref="eaad59cad2124997123e3f040ef5cb96" category="inline-link-macro-rx"></block></block>
   <block id="7578581e3a33edeb6b72193b779ff242" category="paragraph">AFF A800 시스템에 필요한 추가 단계는<block ref="c6817bbcae6fe5893644f9e570310aab" category="inline-link-macro-rx"></block>, 또는 섹션의 A800을 참조하는 단계로 이동합니다<block ref="a9b70e5969497a28f737eb804f3061d5" category="inline-link-macro-rx"></block>.</block>
   <block id="ca05d8f8894d6ff273a92135000e282c" category="admonition">관리 포트와 IP를 netboot 연결로 사용해야 합니다. 업그레이드를 수행하는 동안 데이터 LIF IP를 사용하지 마십시오. 데이터 중단이 발생할 수 있습니다.</block>
-  <block id="913c3a812733a4774d27054bc2740e5e" category="paragraph">FC 또는 UTA/UTA2 구성이 없는 경우 노드 3에서 노드 1의 디스크를 인식할 수 있도록 수행하십시오.<block ref="3ca6a7fd02b3e66a513c8eda309bc152" category="inline-link-macro-rx"></block></block>
   <block id="187e2c8014ea1f526c1b4abd904abf74" category="paragraph">FC 또는 UTA/UTA2 구성이 없는 경우 노드 4에서 노드 2의 디스크를 인식할 수 있도록 사전 폼을 <block ref="197c7e9b993124512db50edc55b3520e" category="inline-link-macro-rx"></block>만듭니다.</block>
   <block id="6ce2823803aa2f6a15c6368e9054699b" category="paragraph">단계 3에서는 node3를 설치 및 부팅하고, node1의 클러스터 및 노드 관리 포트가 node3에서 온라인 상태가 되는지 확인하고, node1 디스크를 node3에 재할당하고, node3 설치를 확인합니다. NVE(NetApp Volume Encryption)를 사용하는 경우 키 관리자 구성을 복원합니다. 필요한 경우 노드 3에 FC 또는 UTA/UTA2 구성을 설정합니다. 또한 노드1 NAS 데이터 LIF 및 루트 이외의 애그리게이트를 노드 2에서 노드 3으로 재배치하고 노드 3에 SAN LIF가 있는지 확인합니다.</block>
   <block id="9603a3cc81e2986384f6025c38748416" category="paragraph">단계 5에서는 node4를 설치 및 부팅하고, node2의 클러스터 및 노드 관리 포트가 node4에서 온라인 상태가 되는지 확인하고, node2 디스크를 node4에 재할당하고, node4 설치를 확인합니다. NVE를 사용하는 경우 키 관리자 구성을 복원합니다. 필요한 경우 노드 4에 FC 또는 UTA/UTA2 구성을 설정합니다. 또한 노드2 NAS 데이터 LIF 및 루트 이외의 애그리게이트를 노드 3에서 노드 4로 재배치하고 노드 4에 SAN LIF가 있는지 확인합니다.</block>
   <block id="11f7f4fd840cd198a2f280c91b7faacb" category="list-text">명령은 advanced 권한 수준에서만 실행할 수<block ref="2b4e2bfd3f993678e0b6870d28304a76" prefix=" " category="inline-code"></block> 있습니다.</block>
   <block id="b3936429fa1be4b517a86a16e2b7e505" category="summary">명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 node1에 속한 디스크를 node3에 재할당해야<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 합니다.</block>
-  <block id="d39e1430bb5637c814347c6472b72c52" category="list-text">부팅 메뉴로 이동하여 22/7을 사용하여 숨겨진 옵션을<block ref="b4ab52f7185d092e3aa56aaa9905e7e1" prefix=" " category="inline-code"></block>선택합니다. 다음 예에 따라 프롬프트에 node1을 입력하여 node3에 노드 1의 디스크를 재할당합니다.</block>
   <block id="19c333b88ee80d0b1ae8ba1bdf9e539f" category="list-text">시스템이 재부팅 루프에 메시지가<block ref="bc1d3ad68c46835686e44d5c5c600a71" prefix=" " category="inline-code"></block>표시되면 시스템에서 FC 또는 UTA/UTA2 포트를 다시 타겟 모드로 재설정했으므로 디스크를 볼 수 없는 것입니다. 이 문제를 해결하려면 <block ref="8266acaa2ec393b5b0120a81f114e7db" category="inline-xref-macro-rx"></block>로 <block ref="0faed76141a6cb4a723aa66a5d852e5d" category="inline-xref-macro-rx"></block>이동하거나 섹션으로 <block ref="35ed01fca1dde6c35ca197b89d2bbfc7" category="inline-link-macro-rx"></block>이동하십시오.</block>
   <block id="bb109c63fb1855fdc41065496c4b5cbc" category="list-text">[[reassign-node1-node3-app-step3]] 자동 부팅 시 Ctrl-C를 눌러 Loader에서 노드를 중지합니다.</block>
   <block id="54e3eea9d71b7c4f02d2688c4e6f949e" category="paragraph">외부 디스크를 지원하는 시스템에서 외부 디스크도 지원하는 시스템으로 업그레이드하려면 로 이동하십시오<block ref="0faed76141a6cb4a723aa66a5d852e5d" category="inline-xref-macro-rx"></block>.</block>
@@ -5342,10 +5319,41 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="ce329eb9bee0d5646d8763528bd98e7e" category="list-text">이 섹션을 건너뛰고 노드 4에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우 로 이동하십시오<block ref="eaad59cad2124997123e3f040ef5cb96" category="inline-link-macro-rx"></block>.</block>
   <block id="ec5c95c32056d74d6a1bcfef9db57ed5" category="list-text">node4 에서 UTA/UTA2 포트를 skip_check 및 구성합니다. node4에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우 _Install 및 node4_로 돌아가서 에서 절차를 재개합니다.<block ref="2365e31070f1c277afd5c68b5793121e" category="inline-link-macro-rx"></block></block>
   <block id="09fd616bd129dbb6b064a8d755638ea6" category="inline-link-macro">노드 2 디스크를 노드 4의 9단계에 재할당합니다</block>
-  <block id="86fee9536c0b4315d9e50668d2a3d7ae" category="paragraph">A800으로 업그레이드하는 경우 로 <block ref="4f039e99f80cf2a7b8236bb5590e739b" category="inline-link-macro-rx"></block>이동하십시오.</block>
   <block id="03cfdc59281567bffdff0dbb6def2026" category="list-text">노드 3에 온보드 FC 포트, 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드가 없는 경우 스토리지 디스크로 시스템을 업그레이드하려면 으로 건너뛸 수 있습니다.<block ref="ac081fdc0801ea4a4f23475143090cfa" category="inline-link-macro-rx"></block></block>
   <block id="9444c5a2921797201ef65c5f6bae3196" category="list-text">그러나 V-Series 시스템 또는 스토리지 어레이가 포함된 FlexArray 가상화 소프트웨어를 사용하는 시스템이 있고 노드 3에 온보드 FC 포트, 온보드 UTA/UTA 포트 또는 UTA/UTA2 카드가 없는 경우 _ 설치 및 부팅 노드3_로 돌아가서 에서 절차를 재개합니다.<block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block></block>
   <block id="812ad699d52f740e9c44459a956e3f62" category="list-text">노드 3에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우, skip_check 및 node3_에서 UTA/UTA2 포트를 구성하고 로 이동합니다.<block ref="ac081fdc0801ea4a4f23475143090cfa" category="inline-link-macro-rx"></block></block>
   <block id="bd450dc25cacad31613a3b3330c2ed64" category="list-text">노드3에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우, 노드3_에서 UTA/UTA2 포트를 건너뛰고 구성한 후 _설치 및 노드3_로 돌아가서 의 절차를 재개하십시오.<block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block></block>
   <block id="3a5beba976b4dab80c814dbb93201e2d" category="cell">설치 및 부팅 노드3_로 돌아가서 절차를 다시 <block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block>시작합니다.</block>
+  <block id="efbbd979af9db0d702ab6a5273480e16" category="paragraph">node3의 소프트웨어 구성은 node3의 물리적 연결과 일치해야 하며 업그레이드를 계속하기 전에 네트워크 연결을 복원해야 합니다.</block>
+  <block id="0750b6fd70b5c02e0dc63a82e8430e4a" category="admonition">이 절차 중에 애그리게이트를 노드 3에서 노드 2로 재배치하지 마십시오. 이렇게 하면 애그리게이트가 오프라인 상태로 전환되고 재배치된 애그리게이트의 데이터 중단이 발생합니다.</block>
+  <block id="569f02d62115823f4fea09e43e09614c" category="list-text">파트너 시스템 ID가 노드3에 올바르게 설정되어 있는지 확인합니다.</block>
+  <block id="fb0111f9cd842757d08889f0a7863a8b" category="list-text">노드3에 파트너 시스템 ID 표시:</block>
+  <block id="5a17539dbeea2e1642b36b86ee06822c" category="paragraph"><block ref="089ce08d08dd1b75c3f614830a776a5d" prefix="" category="inline-code"></block></block>
+  <block id="6015ee0c3c4dbc37f534783a65239e72" category="example-title">예제 보기</block>
+  <block id="48ceab9868a32c98e5a4a3c1c644f968" category="list-text">노드 3에 대해 "파트너 시스템 ID"가 잘못된 경우:</block>
+  <block id="881c5e320a45f042e678d4b161772fce" category="list-text">노드3 중지:</block>
+  <block id="7800007d1254bb704e4ae7dfd07804b7" category="list-text">Loader 프롬프트에서 올바른 "partner-sysid" 값을 설정합니다.</block>
+  <block id="a9de4ba6ab2c96c6e675e4aa27ae5f99" category="paragraph">node3 "partner-sysid"는 node2의 시스템 ID로<block ref="bf7db627e57d537d277701b30eb920fb" category="inline-xref-macro-rx"></block>, 의 출력에서 찾을 수<block ref="02dc63281e3f95993aa2bd3cbf6cbaaa" prefix=" " category="inline-code"></block> 있습니다.</block>
+  <block id="dd3d0d406209c2954b2e2784db94b97b" category="list-text">Loader 프롬프트에서 노드3을 부팅 메뉴로 부팅합니다.</block>
+  <block id="d3ddde6e7673239ed55bc11b0d0eb088" category="list-text">노드3에 로그인합니다.</block>
+  <block id="088fc05a96b10d26c3f25411385117f2" category="paragraph"><block ref="25337ccb7c73e802f2aa2e84f9657883" prefix="" category="inline-code"></block></block>
+  <block id="2e7bb8e758be89869c95ab23b96089a8" category="paragraph"><block ref="e8bddc5e75bda9e006a7808627e02c60" prefix="" category="inline-code"></block></block>
+  <block id="ceb3b4f875043e902ad0c2c7df540ac4" category="paragraph"><block ref="5f763a2ed6c527c7a7c8cdb44b2ef9a1" prefix="" category="inline-code"></block></block>
+  <block id="2a2be3ec611dd374f220ea53bd3e0758" category="paragraph"><block ref="17cc86d87f4cf199b09f90bd5a6c15dc" prefix="" category="inline-code"></block></block>
+  <block id="a6f10385b3e5082eca317137f25e29be" category="paragraph"><block ref="5b8fa3cd936d1ea49819298759fb9f1b" prefix="" category="inline-code"></block></block>
+  <block id="38044567d84e20ec724f63db53b11f1e" category="cell">로 이동합니다. <block ref="e688aae16bc9e29159c8c5dbe9e1ced4" category="inline-xref-macro-rx"></block></block>
+  <block id="3f8dbc42a73ae9a6487e0757b393d2fb" category="paragraph"><block ref="9156be96f14f90b77022cc089e705729" prefix="" category="inline-code"></block></block>
+  <block id="6c434ec98af520797c570f40db8c4a28" category="list-text">[[man_relocate_2_3_step8]]루트가 아닌 모든 애그리게이트가 노드 3에서 온라인 상태인지 확인:</block>
+  <block id="ef54d8b76027ced4d5a36092399b0849" category="paragraph"><block ref="3084412280b7ab74d58fde7f7ea5dcb7" prefix="" category="inline-code"></block></block>
+  <block id="8e3deaabd41a6198e56a6285ff5c48bc" category="paragraph"><block ref="6081a3855c6bc35b60d38be817747a5c" prefix="" category="inline-code"></block></block>
+  <block id="7adac7d8af549857f31077a908e21bf4" category="paragraph"><block ref="9d8096e1c24df88a36631f9f43c1b889" prefix="" category="inline-code"></block></block>
+  <block id="dcc422920951416bc8ad4e66178b7556" category="paragraph"><block ref="5262be8683d7b15cd5f469e52a116209" prefix="" category="inline-code"></block></block>
+  <block id="71b6de83a4e8abd455d17a4d6af4374a" category="list-text">노드를 부팅 메뉴로 부팅합니다.</block>
+  <block id="2177cbe7b3a717ce6d53713b3fc10bd9" category="list-text">[[14단계]] 노드를 부팅 메뉴로 부팅합니다.</block>
+  <block id="a4767f09ed98441b185563427dd0a442" category="paragraph">AFF A800 시스템으로 업그레이드하려면 로 이동하십시오<block ref="e81929257c1b77de68576a8a37b1e464" category="inline-link-macro-rx"></block>.</block>
+  <block id="5a7f7aa2acda9d8cf0b886b9d97aa6d5" category="list-text">[[14단계]] 를 실행하여 노드를 부팅 메뉴로 부팅합니다.<block ref="d20d8416248acf69156e4b7875cc4868" prefix=" " category="inline-code"></block> AFF A800 시스템으로 업그레이드하려면 로 이동하십시오<block ref="13193a83e6d1d3a0ad7f7d39140ab8c7" category="inline-link-macro-rx"></block>.</block>
+  <block id="798d18731b87565ff109b6fed67d6b99" category="paragraph">FC 또는 UTA/UTA2 구성이 없는 경우 노드 3에서 노드 1의 디스크를 인식할 수 있도록 수행하십시오.<block ref="b7ef417e87a2f1cf82b2e7cf12272083" category="inline-link-macro-rx"></block></block>
+  <block id="c8adb5c5421d34e18d5b9558706c9208" category="list-text">[[RESALOCATE-node1-node3-app-step1]] 부팅 메뉴로 이동하여 22/7을 사용하여 숨겨진 옵션을<block ref="b4ab52f7185d092e3aa56aaa9905e7e1" prefix=" " category="inline-code"></block>선택합니다. 다음 예에 따라 프롬프트에 node1을 입력하여 node3에 노드 1의 디스크를 재할당합니다.</block>
+  <block id="4ac432efd1d6ca8f4e73f5783d4f90e6" category="paragraph">AFF A800 시스템으로 업그레이드하려면 로 이동하십시오<block ref="4f039e99f80cf2a7b8236bb5590e739b" category="inline-link-macro-rx"></block>.</block>
+  <block id="8f9ee542e52933f0e31b07c6ca5316b2" category="list-text">[[14단계]] 를 실행하여 노드를 부팅 메뉴로 부팅합니다.<block ref="d20d8416248acf69156e4b7875cc4868" prefix=" " category="inline-code"></block> AFF A800 시스템으로 업그레이드하려면 로 이동하십시오<block ref="c6817bbcae6fe5893644f9e570310aab" category="inline-link-macro-rx"></block>.</block>
 </blocks>

@@ -16,41 +16,76 @@ summary: ONTAP 9.7 이하를 실행하는 컨트롤러에서 수동 ARL 업그�
 [role="lead"]
 node2를 node4로 교체하려면 먼저 node2에 대한 AutoSupport 메시지를 보낸 다음 node2가 소유하는 루트가 아닌 애그리게이트를 node3로 재배치해야 합니다.
 
-[[sysconfig-a-command]]
+
+CAUTION: 이 절차 중에 애그리게이트를 노드 3에서 노드 2로 재배치하지 마십시오. 이렇게 하면 애그리게이트가 오프라인 상태로 전환되고 재배치된 애그리게이트의 데이터 중단이 발생합니다.
+
+[[verify-partner-sys-id]]
 .단계
-. 파트너 시스템 ID가 노드2 및 노드3에 올바르게 설정되어 있는지 확인합니다.
+. 파트너 시스템 ID가 노드3에 올바르게 설정되어 있는지 확인합니다.
 +
-** `system node run -node _node2_ -command sysconfig -a`
-** `system node run -node _node3_ -command sysconfig -a`
+.. 고급 권한 수준 입력:
++
+`set -privilege advanced`
+
+.. 노드3에 파트너 시스템 ID 표시:
++
+`ha interconnect config show -node <node3-node1>`
+
 +
 다음 예와 유사한 출력이 표시됩니다.
 
 +
-[listing, subs="+quotes"]
+.예제 보기
+[%collapsible]
+====
+[listing]
 ----
-NetApp Release 9.16.1: Mon Feb 10 07:55:45 EST 2025
-System ID: _system-ID_; *partner ID: _partner-system-ID_*
-System Serial Number: _system-serial-number_
-System Rev: A0
-System Storage Configuration: Mixed-Path HA
+cluster::*> ha interconnect config show -node <node>
+  (system ha interconnect config show)
+
+                       Node: node3-node1
+          Interconnect Type: RoCE
+            Local System ID: <node3-system-id>
+          Partner System ID: <node2-system-id>
+       Connection Initiator: local
+                  Interface: external
+
+Port   IP Address
+----   -----------------
+e4a-17   0.0.0.0
+e4b-18   0.0.0.0
 ----
+====
+
+
+. 노드 3에 대해 "파트너 시스템 ID"가 잘못된 경우:
 +
-노드2 또는 노드3에 대해 "파트너 ID"가 잘못된 경우:
-
+.. 노드3 중지:
 +
-... 잘못된 값으로 노드를 재부팅합니다.
-... 의 명령을 다시 실행하고 <<sysconfig-a-command,1단계>>"파트너 ID"가 올바른 값으로 변경되었는지 확인합니다.
+`halt`
 
+.. Loader 프롬프트에서 올바른 "partner-sysid" 값을 설정합니다.
++
+node3 "partner-sysid"는 node2의 시스템 ID로<<verify-partner-sys-id,1단계>>, 의 출력에서 찾을 수 `ha interconnect config show` 있습니다.
 
+.. 설정을 저장합니다.
++
+`saveenv`
+
+.. Loader 프롬프트에서 노드3을 부팅 메뉴로 부팅합니다.
++
+`boot_ontap menu`
+
+.. 노드3에 로그인합니다.
 
 
 . 노드2에 대해 NetApp로 AutoSupport 메시지 보내기:
 +
-`system node autosupport invoke -node _node2_ -type all -message "Upgrading _node2_ from _platform_old_ to _platform_new_"`
+`system node autosupport invoke -node <node2> -type all -message "Upgrading <node2> from <platform_old> to <platform_new>"`
 
 . AutoSupport 메시지가 전송되었는지 확인합니다.
 +
-`system node autosupport show -node _node2_ -instance`
+`system node autosupport show -node <node2> -instance`
 
 +
 "마지막으로 보낸 제목:" 및 "마지막 보낸 시간:" 필드에는 마지막으로 보낸 메시지의 메시지 제목과 메시지를 보낸 시간이 포함됩니다.
@@ -63,11 +98,11 @@ System Storage Configuration: Mixed-Path HA
 
 .. 노드 2가 소유한 애그리게이트 나열:
 +
-`storage aggregate show -owner-name _node2_`
+`storage aggregate show -owner-name <node2>`
 
 .. 애그리게이트 재배치 시작:
 +
-`storage aggregate relocation start -node _node2_ -destination _node3_ -aggregate-list * -ndo-controller-upgrade true`
+`storage aggregate relocation start -node <node2> -destination <node3> -aggregate-list * -ndo-controller-upgrade true`
 
 +
 
@@ -85,7 +120,7 @@ NOTE: 이 명령은 비루트 애그리게이트만 찾습니다.
 
 . 노드 2의 재배치 상태를 확인합니다.
 +
-`storage aggregate relocation show -node _node2_`
+`storage aggregate relocation show -node <node2>`
 
 +
 재배치된 집계에 대해 출력에 "완료"가 표시됩니다.
@@ -101,7 +136,7 @@ NOTE: 다음 단계로 진행하기 전에 노드 2가 소유한 모든 애그�
 | 재배치 대상... | 그러면... 
 
 
-| 모든 애그리게이트가 성공했습니다 | 로 이동합니다. <<man_relocate_2_3_step7,7단계>> 
+| 모든 애그리게이트가 성공했습니다 | 로 이동합니다. <<man_relocate_2_3_step8,8단계>> 
 
 
 | 모든 애그리게이트가 실패했거나 거부권을 행사한 경우  a| 
@@ -123,7 +158,7 @@ NOTE: 를 클릭합니다 `event log show` 명령은 발생한 모든 오류를 
 
 .. 장애가 발생하거나 거부되는 애그리게이트를 재배치합니다.
 +
-`storage aggregate relocation start -node _node2_ -destination _node3_ -aggregate-list * -ndo-controllerupgrade true`
+`storage aggregate relocation start -node <node2> -destination <node3> -aggregate-list * -ndo-controllerupgrade true`
 
 .. 메시지가 표시되면 를 입력합니다 `y`.
 .. 관리자 권한 레벨로 돌아갑니다.
@@ -147,29 +182,29 @@ NOTE: 를 클릭합니다 `event log show` 명령은 발생한 모든 오류를 
 스토리지 애그리게이트 재배치 명령에 대한 자세한 내용은 로 이동하십시오 link:other_references.html["참조"] CLI_ 및 _ONTAP 9 명령을 사용하여 _ 디스크 및 애그리게이트 관리를 링크하려면 수동 페이지 참조 _.
 
 |===
-. [[man_relocate_2_3_step7]]루트가 아닌 모든 애그리게이트가 노드 3에서 온라인 상태인지 확인:
+. [[man_relocate_2_3_step8]]루트가 아닌 모든 애그리게이트가 노드 3에서 온라인 상태인지 확인:
 +
-`storage aggregate show -node _node3_ -state offline -root false`
+`storage aggregate show -node <node3> -state offline -root false`
 
 +
 애그리게이트가 오프라인 상태가 되거나 외부 애그리게이트로 전환된 경우, 각 애그리게이트에 대해 한 번씩 온라인 상태를 유지해야 합니다.
 
 +
-`storage aggregate online -aggregate _aggr_name_`
+`storage aggregate online -aggregate <aggregate_name>`
 
 . 노드 3에서 모든 볼륨이 온라인 상태인지 확인합니다.
 +
-`volume show -node _node3_ -state offline`
+`volume show -node <node3> -state offline`
 
 +
 노드 3에서 오프라인 상태인 볼륨이 있는 경우 각 볼륨에 대해 한 번씩 온라인 상태로 전환해야 합니다.
 
 +
-`volume online -vserver _Vserver-name_ -volume _volume-name_`
+`volume online -vserver <Vserver-name> -volume <volume-name>`
 
 . 노드 2에서 루트가 아닌 온라인 애그리게이트를 소유하지 않는지 확인:
 +
-`storage aggregate show -owner-name _node2_ -ha-policy sfo -state online`
+`storage aggregate show -owner-name <node2> -ha-policy sfo -state online`
 
 +
 루트가 아닌 모든 온라인 애그리게이트가 이미 노드 3에 재배치되었기 때문에 명령 출력에 루트가 아닌 온라인 애그리게이트를 표시할 수 없습니다.

@@ -311,5 +311,5 @@ Adapter  Mode       Type        Mode     Type        Status
 +
 `halt`
 
-. [[step14]] 를 실행하여 노드를 부팅 메뉴로 부팅합니다. `boot_ontap menu` A800으로 업그레이드하는 경우 로 link:reassign-node1-disks-to-node3.html#reassign-node1-node3-app-step9["노드1 디스크를 노드3, 9단계에 재할당합니다"]이동하십시오.
+. [[14단계]] 를 실행하여 노드를 부팅 메뉴로 부팅합니다. `boot_ontap menu` AFF A800 시스템으로 업그레이드하려면 로 이동하십시오link:reassign-node1-disks-to-node3.html#auto_check3_step9["노드1 디스크를 노드3, 9단계에 재할당합니다"].
 

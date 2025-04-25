@@ -298,11 +298,11 @@ f-a   2b       fc             target       cna           -             online
 +
 `halt`
 
-. [[step14]] 부트 메뉴의 부트 노드:
+. [[14단계]] 노드를 부팅 메뉴로 부팅합니다.
 +
 `boot_ontap menu`.
 
 +
-A800으로 업그레이드하는 경우 로 link:reassign-node2-disks-to-node4.html#reassign-node2-node4-app-step9["노드 2 디스크를 노드 4의 9단계에 재할당합니다"]이동하십시오.
+AFF A800 시스템으로 업그레이드하려면 로 이동하십시오link:reassign-node2-disks-to-node4.html#reassign-node2-node4-app-step9["노드 2 디스크를 노드 4의 9단계에 재할당합니다"].
 
 
