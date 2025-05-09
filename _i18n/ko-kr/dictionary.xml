@@ -4219,7 +4219,6 @@
   <block id="95144cfdd742178c38add09e40185465" category="paragraph">기존 시스템 섀시 및 디스크를 유지하면서 ARL(Aggregate Relocation)을 사용할 수 있는지 알아보려면 시스템 업그레이드 구성 및 ONTAP 버전에 따라 달라집니다.</block>
   <block id="af8278e543c162c1ee0f858b0715d01e" category="paragraph">컨트롤러 업그레이드는 특정 시스템 구성에 대해 지원됩니다. 지원되는 시스템 및 최소 ONTAP 버전 목록을 보려면 를 참조하십시오 <block ref="8294b96e46ba28730c909aaac28da089" category="inline-link-macro-rx"></block>.</block>
   <block id="5b29cd0b8848fbfc7c43edd22b16cf04" category="section-title">연결된 클러스터 전환</block>
-  <block id="4f071a09d7910b1c963c0cf11fa85985" category="paragraph">클러스터 스위치에 연결된 클러스터에서 노드를 업그레이드할 경우 스위치에서 실행 중인 make, model, 펌웨어 버전, RCF 및 ONTAP 버전이 업그레이드 후 교체 컨트롤러에서 실행 중인 버전과 동일한지 확인해야 합니다. 필요한 경우 이 설명서에 설명된 ARL 절차를 사용하여 컨트롤러를 업그레이드하기 전에 스위치 업그레이드를 수행해야 합니다.</block>
   <block id="38622c9aae2baa5dfb1bdeeb2c31c5a3" category="summary">ARL을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드할 때 노드 1에 있는 node2의 NAS 데이터 LIF가 노드 1에서 노드 2로 재배치되는지 확인합니다.</block>
   <block id="25c0a64ebb3d4dec1d638d209b3b73a2" category="paragraph">이러한 확인을 수행한 후 시스템에서는 루트가 아닌 애그리게이트와 NAS 데이터 LIF를 노드 2로 재배치하고 현재 교체 컨트롤러에서 실행되고 있습니다.</block>
   <block id="038a1f98f287c3e58631ad2264c784b5" category="summary">동일한 섀시에 있는 컨트롤러 모델의 ARL 업그레이드 중에 노드 2에 교체 시스템 모듈을 설치합니다.</block>
@@ -5109,7 +5108,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="cdce5e983821273e4c7e3414b8097d4e" category="cell">3A, 3b입니다</block>
   <block id="a789c48b3b7fe1b603ce142ae362e5ae" category="paragraph">스위치 연결 클러스터의 경우 AFF A30, AFF A50, AFF A70, AFF A90, AFF C30, AFF C60 또는 AFF C80(교체) 노드에 대해 다음 요구사항을 충족하는지 확인하십시오.</block>
   <block id="403ccec6840b96b7b18ce39b52e40ae4" category="list-text">교체 노드의 동일한 클러스터 포트가 동일한 스위치에 있습니다. 예를 들어, 업그레이드가 완료되면 노드1의 E1A와 노드2의 E1A가 하나의 클러스터 스위치에 연결되어야 합니다. 마찬가지로, 양쪽 노드의 두 번째 클러스터 포트를 두 번째 클러스터 스위치에 연결해야 합니다. 공유 클러스터 HA 포트의 교차 연결, 노드 1의 E1A가 스위치 A에 연결되고 노드 2의 E1A가 스위치 B에 연결되어 HA 통신 장애가 발생합니다.</block>
-  <block id="b5bcf41de93d90fbeb1ad872fa73f5f9" category="list-text">교체 노드는 공유 클러스터 HA 이더넷 포트를 사용합니다. 클러스터 스위치가 공유 클러스터 HA 포트를 지원하는 RCF(Reference Configuration File)와 함께 설치되었는지 확인합니다.</block>
   <block id="1cc3f304d5e589c069f5fc5ecdc865d1" category="section-title">ARL 업그레이드가 지원됩니다</block>
   <block id="26c0488d57efd7721cdf50179d2776e0" category="list-text">컨트롤러 업그레이드가 에 나와 <block ref="8badcb7c18eeb5ec98f79dc01581f13d" category="inline-link-macro-rx"></block>있습니다.</block>
   <block id="4e793111a4193c7c02d75b240754c4f7" category="list-text">컨트롤러 업그레이드에 필요한 하드웨어를 수령했음을 NetApp 세일즈 담당자에게 확인했습니다.</block>
@@ -5356,4 +5354,27 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="c8adb5c5421d34e18d5b9558706c9208" category="list-text">[[RESALOCATE-node1-node3-app-step1]] 부팅 메뉴로 이동하여 22/7을 사용하여 숨겨진 옵션을<block ref="b4ab52f7185d092e3aa56aaa9905e7e1" prefix=" " category="inline-code"></block>선택합니다. 다음 예에 따라 프롬프트에 node1을 입력하여 node3에 노드 1의 디스크를 재할당합니다.</block>
   <block id="4ac432efd1d6ca8f4e73f5783d4f90e6" category="paragraph">AFF A800 시스템으로 업그레이드하려면 로 이동하십시오<block ref="4f039e99f80cf2a7b8236bb5590e739b" category="inline-link-macro-rx"></block>.</block>
   <block id="8f9ee542e52933f0e31b07c6ca5316b2" category="list-text">[[14단계]] 를 실행하여 노드를 부팅 메뉴로 부팅합니다.<block ref="d20d8416248acf69156e4b7875cc4868" prefix=" " category="inline-code"></block> AFF A800 시스템으로 업그레이드하려면 로 이동하십시오<block ref="c6817bbcae6fe5893644f9e570310aab" category="inline-link-macro-rx"></block>.</block>
+  <block id="007afae70e6899ccd5a02bd1b8e30413" category="list-text">교체 노드는 공유 클러스터 HA 이더넷 포트를 사용합니다.</block>
+  <block id="96a4f5b30dbe8d55de9aa12c4b2e6602" category="list-text">클러스터 스위치가 공유 클러스터 HA 포트를 지원하는 RCF(Reference Configuration File)와 함께 설치되었는지 확인합니다.</block>
+  <block id="1ef8dca5df94c49347909211a3845f3f" category="list-text">스위치에서 기존 구성을 제거합니다.</block>
+  <block id="ec959032169391b64e7918c7b1c9a04b" category="cell">스위치 모델이 다음과 같은 경우...</block>
+  <block id="ec434af0a2786fa23b468584c5622fe1" category="cell">이동...</block>
+  <block id="48def1be7a1b40b720ff1892a761e8c8" category="cell">Cisco Nexus를 참조하십시오</block>
+  <block id="ce8d24a452c1c94c4680d7ce098325a9" category="inline-link-macro">원격 연결을 유지하면서 Cisco 상호 연결 스위치의 구성을 지우는 방법</block>
+  <block id="f79602808677d4d116b317e4c44a8ee5" category="cell">기술 자료 문서 <block ref="862bab57a4acfb616afcae48c16f2cfe" category="inline-link-macro-rx"></block></block>
+  <block id="4dd13a124f96d89e0fd6c36f6d82e131" category="cell">Broadcom BES-53248</block>
+  <block id="3a6a9877fc8c73a9267914b786517ca9" category="inline-link-macro">원격 연결을 유지하면서 Broadcom 상호 연결 스위치의 구성을 지우는 방법</block>
+  <block id="363e3bb9e22f2f2472a215233919dbf7" category="cell">기술 자료 문서 <block ref="4eb512d9e9a489effcea6ab616ebb791" category="inline-link-macro-rx"></block></block>
+  <block id="b0a38d8703521c30e6e97aed4cde98e8" category="list-text">스위치 설정을 구성하고 확인합니다.</block>
+  <block id="5aec304982416461faa5bf9b3a0b2cf3" category="cell">Cisco Nexus 9336C-FX2</block>
+  <block id="b0411eb90c7d5ca211940fcb5d8f219a" category="inline-link-macro">RCF(Reference Configuration File) 업그레이드</block>
+  <block id="0b62f732d6ce50a66f369a7af44d4f34" category="cell"><block ref="0b62f732d6ce50a66f369a7af44d4f34" category="inline-link-macro-rx"></block></block>
+  <block id="f14d39745f2925af01d4497aa53d6677" category="inline-link-macro">RCF(Reference Configuration File) 업그레이드</block>
+  <block id="1223d69b197fdd4739792e2757e36426" category="cell"><block ref="1223d69b197fdd4739792e2757e36426" category="inline-link-macro-rx"></block></block>
+  <block id="94f92369bb57ec3cd50af356ac87615d" category="cell">NVIDIA SN2100</block>
+  <block id="ec65012ad6ac37ed9d5b425acfa4cdea" category="inline-link-macro">RCF(Reference Configuration File) 스크립트를 설치하거나 업그레이드합니다</block>
+  <block id="c18748e2481d76fb9941a180443193c9" category="cell"><block ref="c18748e2481d76fb9941a180443193c9" category="inline-link-macro-rx"></block></block>
+  <block id="4cd0d55ba9459c2dab2de91b9c03814c" category="paragraph">스위치가 없는 2노드 클러스터에서 노드를 업그레이드할 경우 업그레이드를 수행하는 동안 스위치가 없는 클러스터에 노드를 그대로 둘 수 있습니다. 스위치 클러스터로 변환할 필요가 없습니다.</block>
+  <block id="8582dce1fa70b49f5e69ba957a35fc82" category="paragraph">클러스터 스위치에 연결된 클러스터에서 노드를 업그레이드할 경우 스위치에서 실행 중인 make, model, 펌웨어 버전, RCF 및 ONTAP 버전이 업그레이드 후 교체 컨트롤러에서 실행 중인 버전과 동일한지 확인해야 합니다. 필요한 경우 ARL을 사용하여 컨트롤러를 업그레이드하기 전에 스위치 업그레이드를 수행해야 합니다.</block>
+  <block id="c508e07c7b7e3a7f9abffdab705049ba" category="paragraph">자세한 내용은 을 <block ref="896b35cb78c99b0406f2809b80c7854f" category="inline-link-macro-rx"></block>참조하십시오.</block>
 </blocks>
