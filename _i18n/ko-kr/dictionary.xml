@@ -5226,8 +5226,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="3ce524daf7c7a462720f07ffe80b1e82" category="list-text">절차를 시작하고 첫 번째 노드를 업그레이드한 후에는 컨트롤러 업그레이드를 취소하거나 되돌릴 수 없습니다.</block>
   <block id="ce8932055faee80499a682eed0006014" category="list-text">ONTAP 9.15.1 이상을 실행하고 있습니다.</block>
   <block id="6c95aebccb5899bde2beeb8d5d4de872" category="list-text">새 컨트롤러를 클러스터에 새 HA 쌍으로 추가하고 볼륨 이동 절차를 사용하여 데이터를 마이그레이션하지는 않겠습니다.</block>
-  <block id="7f05849af35fe562fdc67050fdcd14e0" category="list-text">내부 드라이브가 있는 AFF A20, AFF A70 또는 AFF A90로 업그레이드하는 경우 업그레이드하기 전에 이러한 내부 드라이브의 소유권을 제거해야 합니다. 업그레이드가 완료되면 내부 드라이브를 AFF A20, AFF A70 또는 AFF A90 노드에 할당하고 이 노드를 사용하여 데이터 애그리게이트를 생성할 수 있습니다. 루트 또는 데이터 애그리게이트를 내부 드라이브로 마이그레이션할 필요가 없습니다.</block>
-  <block id="2ee4c5e5378d113fa5c2a1b5e73082ed" category="list-text">내부 드라이브 없이 AFF A20, AFF A70 또는 AFF A90로 업그레이드하는 경우 업그레이드를 완료한 후 내부 드라이브를 할당할 필요가 없습니다.</block>
   <block id="ea168cafe9d6c1f639359b30e7152b3d" category="list-text">백엔드 스토리지용 외부 어레이를 사용하여 V 시리즈 시스템 또는 FlexArray 가상화 스토리지 시스템을 업그레이드합니다. V-Series 또는 FlexArray 시스템의 업그레이드 옵션은 기술 지원 부서에 문의하십시오.</block>
   <block id="3f0336dfa0e5a25ff8e8c549a2b18cef" category="list-text">MetroCluster FC 또는 IP 구성을 업그레이드합니다. MetroCluster 구성을 업그레이드하려면 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> _MetroCluster 업그레이드 및 확장 설명서_ 링크를 참조하십시오.</block>
   <block id="ebf1d57729bed03eb5fd256caca2fe3f" category="sidebar">AFF A800 또는 AFF C800를 교체합니다</block>
@@ -5376,5 +5374,7 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="c18748e2481d76fb9941a180443193c9" category="cell"><block ref="c18748e2481d76fb9941a180443193c9" category="inline-link-macro-rx"></block></block>
   <block id="4cd0d55ba9459c2dab2de91b9c03814c" category="paragraph">스위치가 없는 2노드 클러스터에서 노드를 업그레이드할 경우 업그레이드를 수행하는 동안 스위치가 없는 클러스터에 노드를 그대로 둘 수 있습니다. 스위치 클러스터로 변환할 필요가 없습니다.</block>
   <block id="8582dce1fa70b49f5e69ba957a35fc82" category="paragraph">클러스터 스위치에 연결된 클러스터에서 노드를 업그레이드할 경우 스위치에서 실행 중인 make, model, 펌웨어 버전, RCF 및 ONTAP 버전이 업그레이드 후 교체 컨트롤러에서 실행 중인 버전과 동일한지 확인해야 합니다. 필요한 경우 ARL을 사용하여 컨트롤러를 업그레이드하기 전에 스위치 업그레이드를 수행해야 합니다.</block>
-  <block id="c508e07c7b7e3a7f9abffdab705049ba" category="paragraph">자세한 내용은 을 <block ref="896b35cb78c99b0406f2809b80c7854f" category="inline-link-macro-rx"></block>참조하십시오.</block>
+  <block id="2f89251c5a06d3bb8bdca830855eca15" category="paragraph">자세한 내용은 을 <block ref="e5c6d05601e4c63290544337ac7eb325" category="inline-link-macro-rx"></block>참조하십시오.</block>
+  <block id="8bb38dc1d7700b6a074ec367f4dc7c3c" category="list-text">내부 드라이브가 있는 AFF A20, AFF A50, AFF A70 또는 AFF A90로 업그레이드하는 경우 업그레이드하기 전에 이러한 내부 드라이브의 소유권을 제거해야 합니다. 업그레이드를 완료한 후 내부 드라이브를 AFF A20, AFF A50, AFF A70 또는 AFF A90 노드에 할당하고 이 노드를 사용하여 데이터 애그리게이트를 생성할 수 있습니다. 루트 또는 데이터 애그리게이트를 내부 드라이브로 마이그레이션할 필요가 없습니다.</block>
+  <block id="04c6529852defdb9c41c0abd42af4189" category="list-text">내부 드라이브 없이 AFF A20, AFF A50, AFF A70 또는 AFF A90로 업그레이드하는 경우 업그레이드를 완료한 후 내부 드라이브를 할당할 필요가 없습니다.</block>
 </blocks>

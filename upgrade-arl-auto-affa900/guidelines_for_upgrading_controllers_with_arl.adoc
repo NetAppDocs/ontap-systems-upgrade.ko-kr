@@ -38,7 +38,7 @@ ARL을 사용한 컨트롤러 업그레이드는 SnapLock 엔터프라이즈 및
 
 클러스터 스위치에 연결된 클러스터에서 노드를 업그레이드할 경우 스위치에서 실행 중인 make, model, 펌웨어 버전, RCF 및 ONTAP 버전이 업그레이드 후 교체 컨트롤러에서 실행 중인 버전과 동일한지 확인해야 합니다. 필요한 경우 ARL을 사용하여 컨트롤러를 업그레이드하기 전에 스위치 업그레이드를 수행해야 합니다.
 
-자세한 내용은 을 link:upgrade-arl-auto-affa900/cable-node1-for-shared-cluster-HA-storage.html#connect-switch-attached-cluster["스위치 연결 클러스터에 연결합니다"]참조하십시오.
+자세한 내용은 을 link:cable-node1-for-shared-cluster-HA-storage.html#connect-switch-attached-cluster["스위치 연결 클러스터에 연결합니다"]참조하십시오.
 
 
 
