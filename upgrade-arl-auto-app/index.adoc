@@ -4,20 +4,18 @@ permalink: upgrade-arl-auto-app/index.html
 keywords: aggregate, relocation, controller, hardware, aggregates, flexarray, metrocluster, terminology 
 summary: 'ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어는 를 사용하여 업그레이드할 수 있습니다 `system controller replace` 명령을 실행하여 루트 이외의 애그리게이트에 대한 소유권을 재배치하십시오.' 
 ---
-= 개요
+= ARL 업그레이드 절차에 대해 알아보세요
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]
-이 절차에서는 다음 시스템 구성에 대해 ARL(Aggregate Relocation)을 사용하여 컨트롤러 하드웨어를 업그레이드하는 방법에 대해 설명합니다.
+컨트롤러 하드웨어를 업그레이드하는 데에는 여러 가지 집계 재배치(ARL) 방법이 있습니다. 이 절차에서는 ONTAP 9.8 이상을 실행하는 시스템에서 "시스템 컨트롤러 교체 명령"을 사용하여 집계 재배치(ARL)를 사용하여 컨트롤러 하드웨어를 업그레이드하는 방법을 설명합니다.
 
-[cols="40,20,40"]
-|===
-| 방법 | ONTAP 버전입니다 | 지원되는 시스템 
-
-
-| 사용 `system controller replace` 명령 | 9.8 이상 | link:decide_to_use_the_aggregate_relocation_guide.html#sys_commands_98_supported_systems["지원되는 시스템 매트릭스에 대한 링크"] 
-|===
 이 절차를 진행하는 동안 원래 컨트롤러 하드웨어를 교체 컨트롤러 하드웨어로 업그레이드하여 비 루트 애그리게이트를 재배치할 수 있습니다. 업그레이드 절차를 진행하는 동안 노드에서 노드로 애그리게이트를 여러 번 마이그레이션하여 적어도 하나의 노드에서 애그리게이트에서 데이터를 처리하고 있는지 확인할 수 있습니다. 또한 LIF(데이터 논리 인터페이스)를 마이그레이션하고 계속 진행할 때 새 컨트롤러의 네트워크 포트를 인터페이스 그룹에 할당합니다.
 
 .이 정보에 사용된 용어
@@ -26,7 +24,7 @@ summary: 'ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어는 를 사�
 이 정보 전반에 걸쳐 "FlexArray 가상화 소프트웨어가 설치된 시스템"이란 용어는 이러한 새 플랫폼에 속하는 시스템을 의미합니다. "V 시리즈 시스템"이란 스토리지 어레이에 연결할 수 있는 개별 하드웨어 시스템을 의미합니다.
 
 .중요 정보:
-* 이 절차는 복잡하고 고급 ONTAP 관리 기술이 있다고 가정합니다. 또한 를 읽고 이해해야 합니다 link:guidelines_for_upgrading_controllers_with_arl.html["ARL을 사용한 컨트롤러 업그레이드 지침"] 및 link:overview_of_the_arl_upgrade.html["ARL 업그레이드 개요"] 섹션을 참조하십시오.
+* 이 절차는 복잡하고 고급 ONTAP 관리 기술이 있다고 가정합니다. 또한 다음을 읽고 이해해야 합니다. link:guidelines_for_upgrading_controllers_with_arl.html["ARL을 사용한 컨트롤러 업그레이드 지침"] 그리고 link:overview_of_the_arl_upgrade.html["ARL 업그레이드 시퀀스"] 업그레이드를 시작하기 전에.
 * 이 절차에서는 교체 컨트롤러 하드웨어가 새 하드웨어이며 사용되지 않은 것으로 가정합니다. 중고 컨트롤러를 와 함께 준비하는 데 필요한 단계입니다 `wipeconfig` 이 절차에는 명령이 포함되어 있지 않습니다. 교체 컨트롤러 하드웨어를 이전에 사용한 경우, 특히 컨트롤러가 7-Mode에서 Data ONTAP를 실행 중인 경우 기술 지원 부서에 문의해야 합니다.
 * ARL을 사용하여 업그레이드할 클러스터에서 실행 중인 버전보다 더 높은 ONTAP 버전을 실행 중인 새 컨트롤러로 중단 없이 단순한 컨트롤러 업그레이드를 수행할 수 있습니다. 기존 및 새 컨트롤러의 ONTAP 버전 조합은 ONTAP 소프트웨어 릴리즈 NDU Cadence 모델에 의해 결정됩니다. 예를 들어, ONTAP 9.8을 실행하는 컨트롤러가 있고 해당 컨트롤러에 대해 마지막으로 지원되는 버전인 경우, ONTAP 9.8 이후 버전의 ONTAP를 실행하는 새로운 컨트롤러로 업그레이드할 수 있습니다.
 +

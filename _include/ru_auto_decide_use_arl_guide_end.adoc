@@ -1,8 +1,0 @@
-= 
-:allow-uri-read: 
-
-
-컨트롤러 하드웨어를 업그레이드하는 다른 방법을 선호하고 볼륨 이동을 원할 경우 을 참조하십시오 link:other_references.html["참조"] 볼륨 또는 스토리지 _ 을(를) 이동하여 _ 업그레이드 에 연결합니다.
-
-.관련 정보
-을 참조하십시오 link:other_references.html["참조"] ONTAP 9 제품 설명서에 액세스할 수 있는 _ONTAP 9 문서 센터_에 연결합니다.

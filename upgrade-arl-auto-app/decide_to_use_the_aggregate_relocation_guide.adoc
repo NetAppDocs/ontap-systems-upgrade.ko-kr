@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-app/decide_to_use_the_aggregate_relocation_guide.htm
 keywords: deciding, aggregate, relocation, content, storage, controllers, administrators, ontap, ha, high, availability 
 summary: 'ARL을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할지 여부를 로 결정합니다 `system controller replace` 명령.' 
 ---
-= 집계 재배치 절차를 사용할지 여부를 결정합니다
+= 이 집계 이전 절차를 사용할지 결정하십시오.
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,9 +14,9 @@ summary: 'ARL을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 �
 
 
 [role="lead"]
-이 내용은 기존 데이터 및 디스크를 유지하면서 HA 쌍의 스토리지 컨트롤러를 새로운 컨트롤러로 업그레이드하는 방법을 설명합니다. 이는 숙련된 관리자만 사용해야 하는 복잡한 절차입니다.
+컨트롤러 하드웨어를 업그레이드하는 데에는 여러 가지 집계 재배치(ARL) 방법이 있습니다. 이 절차에서는 ONTAP 9.8 이상을 실행하는 시스템에서 "시스템 컨트롤러 교체 명령"을 사용하여 집계 재배치(ARL)를 사용하여 컨트롤러 하드웨어를 업그레이드하는 방법을 설명합니다. 숙련된 ONTAP 관리자만 이 복잡한 절차를 사용해야 합니다.
 
-다음과 같은 상황에서 이 콘텐츠를 사용할 수 있습니다.
+이 ARL 절차가 컨트롤러 하드웨어 업그레이드에 적합한지 결정하는 데 도움이 되도록 지원되는 업그레이드에 대한 다음 모든 상황을 검토해야 합니다.
 
 * ONTAP 9.8 이상을 실행하고 있습니다.
 * 새 컨트롤러를 클러스터에 새 HA 쌍으로 추가하고 볼륨 이동을 사용하여 데이터를 마이그레이션하기를 원하지 않을 것입니다.
@@ -27,10 +27,21 @@ MetroCluster IP 구성을 업그레이드하려면 link:other_references.html["�
 
 
 
+[NOTE]
+====
+* . 이 ARL 절차에는 업그레이드 절차 중에 컨트롤러를 제거하고 설치할 때 내부 디스크가 섀시에 안전하게 고정되도록 하는 단계가 포함되어 있습니다
++
+link:../upgrade-arl-auto-affa900/decide_to_use_the_aggregate_relocation_guide.html#supported-systems-in-chassis["기존 시스템 섀시와 디스크를 유지하면서 ARL을 사용하여 지원되는 시스템 업그레이드 조합에 대해 알아보세요."]..
 
-NOTE: 이 절차를 통해 NetApp 스토리지 암호화(NSE), NetApp 볼륨 암호화(NVE), NetApp 애그리게이트 암호화(NAE)를 사용할 수 있습니다.
+* 이 절차를 통해 NetApp 스토리지 암호화(NSE), NetApp 볼륨 암호화(NVE), NetApp 애그리게이트 암호화(NAE)를 사용할 수 있습니다.
 
-[[sys_commands_98_supported_systems]] 다음 표에는 컨트롤러 업그레이드에 지원되는 모델 매트릭스가 나와 있습니다.
+
+====
+
+
+== 지원되는 시스템 업그레이드 조합
+
+다음 표는 이 ARL 절차를 사용하여 컨트롤러 업그레이드를 수행하기 위한 지원되는 시스템 매트릭스를 보여줍니다.
 
 |===
 | 더 오래 된 컨트롤러 | 교체 컨트롤러 
@@ -110,7 +121,13 @@ AFF A800 시스템에 필요한 추가 단계는link:reassign-node1-disks-to-nod
 
 
 ====
-컨트롤러 하드웨어를 업그레이드하는 다른 방법을 선호하고 볼륨 이동을 원할 경우 을 참조하십시오 link:other_references.html["참조"] 볼륨 또는 스토리지 _ 을(를) 이동하여 _ 업그레이드 에 연결합니다.
+
+
+== 다른 하드웨어 업그레이드 절차를 선택하세요
+
+* link:../upgrade-arl/index.html["컨트롤러 하드웨어 업그레이드에 사용 가능한 대체 ARL 방법을 검토하세요."]..
+* 컨트롤러 하드웨어를 업그레이드하는 다른 방법을 선호하고 볼륨 이동을 원할 경우 을 참조하십시오 link:other_references.html["참조"] 볼륨 또는 스토리지 _ 을(를) 이동하여 _ 업그레이드 에 연결합니다.
+
 
 .관련 정보
-을 참조하십시오 link:other_references.html["참조"] ONTAP 9 제품 설명서에 액세스할 수 있는 _ONTAP 9 문서 센터_에 연결합니다.
+참조하다 link:other_references.html["참조"] _ONTAP 9 문서_에 링크합니다.

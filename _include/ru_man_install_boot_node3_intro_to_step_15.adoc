@@ -5,15 +5,16 @@
 랙에 노드 3을 설치하고, 노드 1의 연결을 노드 3으로 전송하고, 노드 3을 부팅하고, ONTAP를 설치해야 합니다. 또한 노드 1의 스페어 디스크, 루트 볼륨에 속한 디스크 및 이전에 노드 2로 재배치되지 않은 모든 비루트 애그리게이트를 재할당해야 합니다.
 
 .이 작업에 대해
-노드 1에 설치된 ONTAP 9의 버전이 같지 않으면 netboot node3을 사용해야 합니다. 노드3을 설치한 후 웹 서버에 저장된 ONTAP 9 이미지에서 부팅합니다. 그런 다음 부팅 미디어 장치에 올바른 파일을 다운로드하여 나중에 시스템을 부팅할 수 있습니다. 을 참조하십시오 link:prepare_for_netboot.html["netboot를 준비합니다"].
+node1에 설치된 것과 동일한 버전의 ONTAP 9가 없는 경우 node3을 네트워크 부팅해야 합니다. 노드3을 설치한 후 웹 서버에 저장된 ONTAP 9 이미지에서 부팅합니다. 그런 다음 부팅 미디어 장치에 올바른 파일을 다운로드하여 나중에 시스템을 부팅할 수 있습니다. 을 link:prepare_for_netboot.html["netboot를 준비합니다"]참조하십시오.
 
-그러나 노드 1에 설치된 ONTAP 9의 이후 버전이 같거나 동일한 경우에는 노드 3을 netboot 할 필요가 없습니다.
+하지만 node1에 설치된 ONTAP 9와 동일하거나 그 이후 버전이 있는 경우 node3을 네트워크 부팅할 필요는 없습니다.
 
 [IMPORTANT]
 ====
-스토리지 어레이에 연결된 V-Series 시스템이나 스토리지 어레이에 연결된 FlexArray 가상화 소프트웨어를 사용하여 시스템을 업그레이드하려면 시스템을 완료해야 합니다 <<man_install3_step1,1단계>> 부터 까지 <<man_install3_step5,5단계>>에서 이 섹션을 그대로 둡니다 <<man_install3_step6,6단계>> 및 의 지침을 따릅니다 link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["노드 3에서 FC 포트를 구성합니다"] 및 link:set_fc_uta_uta2_config_node3.html#uta-ports-node3["노드 3의 UTA/UTA2 포트를 확인하고 구성합니다"] 필요에 따라 유지보수 모드에서 명령을 입력합니다. 그런 다음 이 섹션으로 돌아가서 을(를) 다시 시작해야 합니다 <<man_install3_step7,7단계>>.
+* AFF A800 또는 AFF C800 컨트롤러를 업그레이드하는 경우, 노드1을 제거하기 전에 섀시의 모든 드라이브가 미드플레인에 단단히 고정되어 있는지 확인해야 합니다. 자세한 내용은 을 link:../upgrade-arl-auto-affa900/replace-node1-affa800.html["AFF A800 또는 AFF C800 컨트롤러 모듈을 교체합니다"]참조하십시오.
+* 스토리지 어레이에 연결된 V-Series 시스템이나 스토리지 어레이에 연결된 FlexArray 가상화 소프트웨어를 사용하여 시스템을 업그레이드하려면 시스템을 완료해야 합니다 <<man_install3_step1,1단계>> 부터 까지 <<man_install3_step5,5단계>>에서 이 섹션을 그대로 둡니다 <<man_install3_step6,6단계>> 및 의 지침을 따릅니다 link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["노드 3에서 FC 포트를 구성합니다"] 및 link:set_fc_uta_uta2_config_node3.html#uta-ports-node3["노드 3의 UTA/UTA2 포트를 확인하고 구성합니다"] 필요에 따라 유지보수 모드에서 명령을 입력합니다. 그런 다음 이 섹션으로 돌아가서 을(를) 다시 시작해야 합니다 <<man_install3_step7,7단계>>.
+* 저장 디스크가 있는 시스템을 업그레이드하는 경우 이 섹션 전체를 완료한 다음 다음으로 이동해야 합니다. link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["노드 3에서 FC 포트를 구성합니다"] 그리고 link:set_fc_uta_uta2_config_node3.html#uta-ports-node3["노드 3의 UTA/UTA2 포트를 확인하고 구성합니다"] 클러스터 프롬프트에서 명령을 입력합니다.
 
-그러나 스토리지 디스크가 있는 시스템을 업그레이드하는 경우 이 전체 섹션을 완료한 다음 로 이동해야 합니다 link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["노드 3에서 FC 포트를 구성합니다"] 및 link:set_fc_uta_uta2_config_node3.html#uta-ports-node3["노드 3의 UTA/UTA2 포트를 확인하고 구성합니다"], 클러스터 프롬프트에서 명령 입력
 
 ====
 .단계

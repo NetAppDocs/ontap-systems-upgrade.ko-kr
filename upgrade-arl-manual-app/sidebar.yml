@@ -2,9 +2,9 @@
 section: upgrade-arl-manual-app
 title: ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드합니다
 entries:
-- title: 개요
+- title: 이 ARL 절차에 대해 알아보세요
   url: "/upgrade-arl-manual-app/index.html"
-- title: 집계 재배치 컨텐츠의 사용 여부를 결정합니다
+- title: 이 ARL 절차를 사용할지 결정하세요
   url: "/upgrade-arl-manual-app/decide_to_use_arl_guide.html"
 - title: ARL 업그레이드 워크플로
   url: "/upgrade-arl-manual-app/arl_upgrade_workflow.html"
@@ -17,8 +17,6 @@ entries:
 - title: 1단계. 업그레이드를 준비합니다
   pdf-filename: 1단계. 업그레이드 준비(ONTAP 9.8 이상에서 수동 업그레이드)
   entries:
-  - title: 개요
-    url: "/upgrade-arl-manual-app/stage_1_index.html"
   - title: 컨트롤러에 내부 디스크 드라이브에 Aggregate가 있는지 확인합니다
     url: "/upgrade-arl-manual-app/determine_aggregates_on_internal_drives.html"
   - title: 업그레이드할 노드를 준비합니다
@@ -32,8 +30,6 @@ entries:
 - title: 2단계. 노드1을 재배치하거나 폐기합니다
   pdf-filename: 2단계. 노드1 재배치 및 폐기(ONTAP 9.8 이상에서 수동 업그레이드)
   entries:
-  - title: 개요
-    url: "/upgrade-arl-manual-app/stage_2_index.html"
   - title: 노드 1에서 노드 2로 비루트 애그리게이트를 재배치합니다
     url: "/upgrade-arl-manual-app/relocate_non_root_aggr_node1_node2.html"
   - title: 노드 1이 소유한 NAS 데이터 LIF를 노드 2로 이동합니다
@@ -45,8 +41,6 @@ entries:
 - title: 3단계. 노드3을 설치하고 부팅합니다
   pdf-filename: 3단계. 노드3 설치 및 부팅(ONTAP 9.8 이상에서 수동 업그레이드)
   entries:
-  - title: 개요
-    url: "/upgrade-arl-manual-app/stage_3_index.html"
   - title: 노드3을 설치하고 부팅합니다
     url: "/upgrade-arl-manual-app/install_boot_node3.html"
   - title: 노드 3에 FC 또는 UTA/UTA2 구성을 설정합니다
@@ -64,8 +58,6 @@ entries:
 - title: 4단계. 정보를 기록하고 노드2를 폐기합니다
   pdf-filename: 4단계. 노드2 기록 및 폐기(ONTAP 9.8 이상에서 수동 업그레이드)
   entries:
-  - title: 개요
-    url: "/upgrade-arl-manual-app/stage_4_index.html"
   - title: 노드2 정보를 기록합니다
     url: "/upgrade-arl-manual-app/record_node2_information.html"
   - title: 노드2를 폐기합니다
@@ -73,8 +65,6 @@ entries:
 - title: 5단계. 노드 4를 설치하고 부팅합니다
   pdf-filename: 5단계. 노드 4 설치 및 부팅(ONTAP 9.8 이상에서 수동 업그레이드)
   entries:
-  - title: 개요
-    url: "/upgrade-arl-manual-app/stage_5_index.html"
   - title: 노드 4를 설치하고 부팅합니다
     url: "/upgrade-arl-manual-app/install_boot_node4.html"
   - title: 노드 4에 FC 또는 UTA/UTA2 구성을 설정합니다
@@ -90,8 +80,6 @@ entries:
 - title: 6단계. 업그레이드를 완료합니다
   pdf-filename: 6단계. 업그레이드 완료(ONTAP 9.8 이상에서 수동 업그레이드)
   entries:
-  - title: 개요
-    url: "/upgrade-arl-manual-app/stage_6_index.html"
   - title: KMIP 서버를 사용하여 인증 관리
     url: "/upgrade-arl-manual-app/manage_authentication_kmip.html"
   - title: 새 컨트롤러가 올바르게 설정되었는지 확인합니다
@@ -107,8 +95,6 @@ entries:
 - title: 문제 해결
   pdf-filename: 문제 해결(ONTAP 9.8 이상에서 수동 업그레이드)
   entries:
-  - title: 개요
-    url: "/upgrade-arl-manual-app/troubleshoot_index.html"
   - title: 애그리게이트 재배치 실패
     url: "/upgrade-arl-manual-app/aggregate_relocation_failures.html"
   - title: 재부팅, 패닉 또는 전원 껐다 켜기

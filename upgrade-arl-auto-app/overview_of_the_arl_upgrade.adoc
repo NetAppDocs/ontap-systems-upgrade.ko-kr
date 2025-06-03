@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-app/overview_of_the_arl_upgrade.html
 keywords: overview, arl, upgrade, owner, controller, hardware 
 summary: '을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드하는 절차를 이해합니다 `system controller replace` 명령이 작동합니다.' 
 ---
-= ARL 업그레이드 개요
+= ARL 업그레이드 순서에 대해 알아보세요
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -37,7 +37,7 @@ ARL을 사용하여 노드를 업그레이드하기 전에 절차가 어떻게 �
 | 단계 | 설명 
 
 
-| link:stage_1_index.html["1단계. 업그레이드를 준비합니다"]  a| 
+| link:prepare_nodes_for_upgrade.html["1단계. 업그레이드를 준비합니다"]  a| 
 1단계에서 사전 점검을 실행하고 필요한 경우 애그리게이트 소유권을 수정합니다. OKM을 사용하여 스토리지 암호화를 관리하는 경우 특정 정보를 기록하고 SnapMirror 관계를 중지하도록 선택할 수 있습니다.
 
 1단계 종료 시 소유권 집계:
@@ -48,7 +48,7 @@ ARL을 사용하여 노드를 업그레이드하기 전에 절차가 어떻게 �
 
 
 
-| link:stage_2_index.html["2단계. 노드1을 재배치하거나 폐기합니다"]  a| 
+| link:relocate_non_root_aggr_nas_data_lifs_node1_node2.html["2단계. 노드1을 재배치하거나 폐기합니다"]  a| 
 2단계에서는 노드 1이 아닌 Aggregate 및 NAS 데이터 LIF를 노드 2로 이동합니다. 이 프로세스는 대부분 자동화되어 있으며 사용자가 상태를 확인할 수 있도록 작업이 일시 중지됩니다. 작업을 수동으로 재개해야 합니다. 필요한 경우 장애가 발생한 애그리게이트를 재이동하거나 거부권을 행사합니다. 노드 1을 폐기하기 전에 프로시저에서 나중에 사용할 수 있도록 노드1 정보를 기록합니다. 나중에 프로시저에서 netboot node3 및 node4를 준비할 수도 있습니다.
 
 2단계 종료 시 소유권 집계:
@@ -59,7 +59,7 @@ ARL을 사용하여 노드를 업그레이드하기 전에 절차가 어떻게 �
 
 
 
-| link:stage_3_index.html["3단계. 노드3을 설치하고 부팅합니다"]  a| 
+| link:install_boot_node3.html["3단계. 노드3을 설치하고 부팅합니다"]  a| 
 단계 3에서는 node3를 설치 및 부팅하고, node1의 클러스터 및 노드 관리 포트가 node3에서 온라인 상태가 되는지 확인하고, node1 디스크를 node3에 재할당하고, node3 설치를 확인합니다. NVE(NetApp Volume Encryption)를 사용하는 경우 키 관리자 구성을 복원합니다. 필요한 경우 노드 3에 FC 또는 UTA/UTA2 구성을 설정합니다. 또한 노드1 NAS 데이터 LIF 및 루트 이외의 애그리게이트를 노드 2에서 노드 3으로 재배치하고 노드 3에 SAN LIF가 있는지 확인합니다.
 
 3단계 종료 시 소유권 집계:
@@ -70,7 +70,7 @@ ARL을 사용하여 노드를 업그레이드하기 전에 절차가 어떻게 �
 
 
 
-| link:stage_4_index.html["4단계. 노드 2를 재배치하거나 폐기합니다"]  a| 
+| link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["4단계. 노드 2를 재배치하거나 폐기합니다"]  a| 
 4단계에서는 비루트 애그리게이트 및 NAS 데이터 LIF를 노드 2에서 노드 3으로 재배치합니다. 노드2를 폐기하기 전에 프로시저에서 나중에 사용할 수 있도록 노드2 정보도 기록합니다.
 
 4단계 종료 시 소유권 집계:
@@ -82,7 +82,7 @@ ARL을 사용하여 노드를 업그레이드하기 전에 절차가 어떻게 �
 
 
 
-| link:stage_5_index.html["5단계. 노드 4를 설치하고 부팅합니다"]  a| 
+| link:install_boot_node4.html["5단계. 노드 4를 설치하고 부팅합니다"]  a| 
 단계 5에서는 node4를 설치 및 부팅하고, node2의 클러스터 및 노드 관리 포트가 node4에서 온라인 상태가 되는지 확인하고, node2 디스크를 node4에 재할당하고, node4 설치를 확인합니다. NVE를 사용하는 경우 키 관리자 구성을 복원합니다. 필요한 경우 노드 4에 FC 또는 UTA/UTA2 구성을 설정합니다. 또한 노드2 NAS 데이터 LIF 및 루트 이외의 애그리게이트를 노드 3에서 노드 4로 재배치하고 노드 4에 SAN LIF가 있는지 확인합니다.
 
 5단계 종료 시 소유권 집계:
@@ -93,7 +93,7 @@ ARL을 사용하여 노드를 업그레이드하기 전에 절차가 어떻게 �
 
 
 
-| link:stage_6_index.html["6단계. 업그레이드를 완료합니다"]  a| 
+| link:manage-authentication-using-kmip-servers.html["6단계. 업그레이드를 완료합니다"]  a| 
 6단계에서는 새 노드가 올바르게 설정되었는지 확인하고, 새 노드가 암호화를 사용하도록 설정된 경우 Storage Encryption 또는 NVE를 구성하고 설정합니다. 또한 이전 노드의 사용을 중지하고 SnapMirror 작업을 다시 시작해야 합니다.
 
 |===

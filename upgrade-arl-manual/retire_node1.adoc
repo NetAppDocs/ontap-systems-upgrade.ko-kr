@@ -90,7 +90,7 @@ WARNING: 스토리지 페일오버를 해제하지 않으면 컨트롤러 업그
 `network interface show -role data -curr-node _node2_ -home-node _node1_`
 
 +
-LIF가 다운되었는지 확인하려면 * Status Admin/Oper * 열을 확인하십시오. LIF가 다운된 경우 에 문의하십시오 link:troubleshoot_index.html["그을음 문제"] 섹션을 참조하십시오.
+LIF가 다운되었는지 확인하려면 * Status Admin/Oper * 열을 확인하십시오. LIF가 다운된 경우 다음을 참조하세요. link:aggregate_relocation_failures.html["그을음 문제"] 부분.
 
 . 다음 작업 중 하나를 수행합니다.
 +
@@ -135,7 +135,7 @@ High Availability Configured: false
 ====
 4노드 클러스터가 있는 경우 epsilon은 클러스터의 다른 HA 쌍의 노드에 있을 수 있습니다.
 
-여러 HA 쌍이 있는 클러스터에서 HA 쌍을 업그레이드하는 경우, epsilon을 컨트롤러 업그레이드를 받지 않는 HA 쌍의 노드로 이동해야 합니다. 예를 들어 HA 쌍 구성 NodeA/NodeB 및 nodeC/noded를 사용하여 클러스터의 NodeA/NodeB를 업그레이드하는 경우 epsilon을 노드 C 또는 noded로 이동해야 합니다.
+여러 HA 쌍이 있는 클러스터에서 HA 쌍을 업그레이드하는 경우 컨트롤러 업그레이드가 진행되지 않는 HA 쌍의 노드로 epsilon을 이동해야 합니다. 예를 들어 HA 쌍 구성 NodeA/NodeB 및 nodeC/noded를 사용하여 클러스터의 NodeA/NodeB를 업그레이드하는 경우 epsilon을 노드 C 또는 noded로 이동해야 합니다.
 
 ====
 +

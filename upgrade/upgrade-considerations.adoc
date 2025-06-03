@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: plan, upgrade, consideration, contact, technical, support, recommendation, guidance, cluster, considerations for upgrading controller hardware 
 summary: 업그레이드를 계획하려면 일반적인 업그레이드 고려 사항을 숙지해야 합니다. 필요한 경우 기술 지원 팀에 문의하여 클러스터 구성과 관련된 권장사항과 지침을 확인하십시오. 
 ---
-= 컨트롤러 하드웨어 업그레이드에 대한 고려 사항
+= 볼륨 또는 스토리지를 이동하여 컨트롤러 하드웨어를 업그레이드할 때의 고려 사항
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -30,7 +30,7 @@ NOTE: 컨트롤러 업그레이드 절차를 시작하기 전에 아래 표에 �
 | 클러스터에서 서로 다른 컨트롤러 플랫폼 모델을 결합하고 있는가?  a| 
 link:https://hwu.netapp.com["스토리지 플랫폼 혼합 규칙을 따르고 있는지 확인합니다"^].
 
-HA 2노드의 컨트롤러는 AFF, FAS 또는 ASA 모델 2개여야 합니다.
+HA 쌍의 컨트롤러는 두 개의 AFF, FAS 또는 ASA 모델이어야 합니다.
 
 
 
@@ -67,7 +67,7 @@ NOTE: FCP, iSCSI 또는 FCoE와 같은 블록 프로토콜을 지원하는 8노�
 
 
 
-| 여러 HA 쌍이 있는 클러스터에서 HA 쌍을 업그레이드합니까? | 컨트롤러 업그레이드가 진행되고 있지 않은 HA 2노드의 노드로 epsilon을 이동합니다. 예를 들어 HA 쌍 구성 NodeA/NodeB 및 nodeC/noded를 사용하여 클러스터의 NodeA/NodeB를 업그레이드하는 경우 epsilon을 노드 C 또는 noded로 이동해야 합니다. 
+| 여러 HA 쌍이 있는 클러스터에서 HA 쌍을 업그레이드하고 있나요? | 컨트롤러 업그레이드를 진행하지 않는 HA 쌍의 노드로 epsilon을 이동합니다. 예를 들어 HA 쌍 구성 NodeA/NodeB 및 nodeC/noded를 사용하여 클러스터의 NodeA/NodeB를 업그레이드하는 경우 epsilon을 노드 C 또는 noded로 이동해야 합니다. 
 
 
 | ONTAP 9.6P11, 9.7P8 이상 릴리즈를 실행하고 있습니까? | NetApp에서는 특정 노드 장애가 발생할 때 클러스터를 quorum으로 반환하도록 Connectivity, liveliness 및 clam(가용성 모니터) 인수를 사용하도록 설정하는 것이 좋습니다. 를 클릭합니다 `kernel-service` 명령에 고급 권한 레벨 액세스가 필요합니다. 자세한 내용은 NetApp 기술 자료 문서 를 참조하십시오 https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU436["Clam Takeover 기본 구성이 변경되었습니다"^].

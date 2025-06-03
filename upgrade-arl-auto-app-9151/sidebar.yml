@@ -2,23 +2,21 @@
 section: upgrade-arl-auto-app-9151
 title: '"system controller replace" 명령을 사용하여 ONTAP 9.15.1 이상에 도입된 컨트롤러 하드웨어를 업그레이드합니다'
 entries:
-- title: 개요
+- title: 이 ARL 절차에 대해 알아보세요
   url: "/upgrade-arl-auto-app-9151/index.html"
 - title: 컨트롤러 업그레이드 프로세스를 자동화합니다
   url: "/upgrade-arl-auto-app-9151/automate_the_controller_upgrade_process.html"
-- title: 집계 재배치 컨텐츠의 사용 여부를 결정합니다
+- title: 이 ARL 절차를 사용할지 결정하세요
   url: "/upgrade-arl-auto-app-9151/decide_to_use_the_aggregate_relocation_guide.html"
 - title: 필요한 도구 및 문서
   url: "/upgrade-arl-auto-app-9151/required_tools_and_documentation.html"
 - title: ARL을 사용한 컨트롤러 업그레이드 지침
   url: "/upgrade-arl-auto-app-9151/guidelines_for_upgrading_controllers_with_arl.html"
-- title: ARL 업그레이드 개요
+- title: ARL 업그레이드 순서에 대해 알아보세요
   url: "/upgrade-arl-auto-app-9151/overview_of_the_arl_upgrade.html"
 - title: 1단계. 업그레이드를 준비합니다
   pdf-filename: 1단계. 업그레이드 준비(ONTAP 9.15.1 이상에서 '시스템 컨트롤러 교체'로 업그레이드)
   entries:
-  - title: 개요
-    url: "/upgrade-arl-auto-app-9151/stage_1_index.html"
   - title: 업그레이드할 노드를 준비합니다
     url: "/upgrade-arl-auto-app-9151/prepare_nodes_for_upgrade.html"
   - title: Onboard Key Manager를 사용하여 스토리지 암호화를 관리합니다
@@ -26,8 +24,6 @@ entries:
 - title: 2단계. 노드1을 재배치하거나 폐기합니다
   pdf-filename: 2단계. 노드 재배치 및 폐기(ONTAP 9.15.1 이상에서 '시스템 컨트롤러 교체'로 업그레이드)
   entries:
-  - title: 개요
-    url: "/upgrade-arl-auto-app-9151/stage_2_index.html"
   - title: 노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치합니다
     url: "/upgrade-arl-auto-app-9151/relocate_non_root_aggr_nas_data_lifs_node1_node2.html"
   - title: 장애가 발생하거나 거부권을 행사한 Aggregate를 재배치합니다
@@ -39,8 +35,6 @@ entries:
 - title: 3단계. 노드3을 설치하고 부팅합니다
   pdf-filename: 3단계. node3 설치 및 부팅(ONTAP 9.15.1 이상에서 '시스템 컨트롤러 교체'로 업그레이드)
   entries:
-  - title: 개요
-    url: "/upgrade-arl-auto-app-9151/stage_3_index.html"
   - title: 노드3을 설치하고 부팅합니다
     url: "/upgrade-arl-auto-app-9151/install_boot_node3.html"
   - title: 노드3 설치를 확인합니다
@@ -52,8 +46,6 @@ entries:
 - title: 4단계. 노드 2를 재배치하거나 폐기합니다
   pdf-filename: 4단계. 노드 재배치 및 폐기(ONTAP 9.15.1 이상에서 '시스템 컨트롤러 교체'로 업그레이드)
   entries:
-  - title: 개요
-    url: "/upgrade-arl-auto-app-9151/stage_4_index.html"
   - title: 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 2에서 노드 3으로 재배치합니다
     url: "/upgrade-arl-auto-app-9151/relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html"
   - title: 노드2를 폐기합니다
@@ -61,8 +53,6 @@ entries:
 - title: 5단계. 노드 4를 설치하고 부팅합니다
   pdf-filename: 5단계. node4 설치 및 부팅(ONTAP 9.15.1 이상에서 '시스템 컨트롤러 교체'로 업그레이드)
   entries:
-  - title: 개요
-    url: "/upgrade-arl-auto-app-9151/stage_5_index.html"
   - title: 노드 4를 설치하고 부팅합니다
     url: "/upgrade-arl-auto-app-9151/install_boot_node4.html"
   - title: 노드 4 설치를 확인합니다
@@ -74,8 +64,6 @@ entries:
 - title: 6단계. 업그레이드를 완료합니다
   pdf-filename: 6단계. 업그레이드 완료(ONTAP 9.15.1 이상에서 '시스템 컨트롤러 교체'로 업그레이드)
   entries:
-  - title: 개요
-    url: "/upgrade-arl-auto-app-9151/stage_6_index.html"
   - title: KMIP 서버를 사용하여 인증 관리
     url: "/upgrade-arl-auto-app-9151/manage-authentication-using-kmip-servers.html"
   - title: 새 컨트롤러가 올바르게 설정되었는지 확인합니다
@@ -91,8 +79,6 @@ entries:
 - title: 문제 해결
   pdf-filename: 문제 해결(ONTAP 9.15.1 이상에서 '시스템 컨트롤러 교체'로 업그레이드)
   entries:
-  - title: 개요
-    url: "/upgrade-arl-auto-app-9151/troubleshoot_index.html"
   - title: 애그리게이트 재배치 실패
     url: "/upgrade-arl-auto-app-9151/aggregate_relocation_failures.html"
   - title: 재부팅, 패닉 또는 전원 껐다 켜기

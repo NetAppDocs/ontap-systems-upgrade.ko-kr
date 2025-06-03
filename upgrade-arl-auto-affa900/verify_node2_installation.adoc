@@ -29,7 +29,36 @@ summary: ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업�
 +
 의 출력입니다 `health` 필드는 이어야 합니다 `true`.
 
-. 노드 2가 노드 1과 동일한 클러스터의 일부이고 정상 상태인지 확인합니다.
+. 이 단계는 다음 업그레이드 구성에 적용됩니다. 다른 모든 시스템 업그레이드의 경우 이 단계를 건너뛰고 다음으로 이동하세요. <<verify-node2-step3,3단계>> :
++
+** 2노드 스위치리스 클러스터
+** AFF A250 또는 AFF C250 시스템에 연결된 스위치를 AFF A50, AFF A30, AFF C30 또는 AFF C60 시스템으로 업그레이드합니다.
+
+
++
+--
+node2가 자동으로 쿼럼에 가입하지 않는 경우:
+
+.. e1a 및 e1b 포트의 IP 공간을 확인하세요.
++
+`network port show`
+
+.. IPspace가 "클러스터"가 아닌 경우 e1a 및 e1b에서 IPspace를 "클러스터"로 변경합니다.
++
+`network port modify -node <node_name> -port <port> -ipspace Cluster`
+
+.. 포트 e1a 및 e1b의 IP 공간이 "클러스터"인지 확인하세요.
++
+`network port show`
+
+.. node2 클러스터 LIF를 e1a 및 e1b로 마이그레이션:
++
+`network interface migrate -vserver Cluster -lif <cluster_lif1> -destination-node <node2_name> -destination-port <port_name`
+
+
+
+--
+. [[verify-node2-step3]]node2와 node1이 동일한 클러스터에 속해 있고 클러스터가 정상인지 확인합니다.
 +
 `cluster show`
 
@@ -37,7 +66,46 @@ summary: ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업�
 +
 `set advanced`
 
-. 컨트롤러 교체 작업의 상태를 확인하고 해당 상태가 노드 2가 중지되기 전의 일시 중지 상태와 동일한지 확인하여 새 컨트롤러 설치 및 케이블 이동에 대한 물리적 작업을 수행합니다.
+. 이 단계는 AFF A250 또는 AFF C250에서 AFF A50, AFF A30, AFF C60 또는 AFF C30으로의 2노드 스위치리스 구성 업그레이드에만 적용됩니다. 다른 모든 시스템 업그레이드의 경우 이 단계를 건너뛰고 다음으로 이동하십시오. <<verify-node2-step6,6단계>> :
++
+"클러스터" 브로드캐스트 도메인의 클러스터 포트가 e4a, e2a, e1a, e1b 포트 또는 e4a, e4b, e1a, e1b 포트인지 확인하세요.
+
++
+AFF A50, AFF A30, AFF C30 및 AFF C60 시스템은 클러스터 및 HA 포트를 공유합니다. 모든 클러스터 LIF를 node1과 node2의 e4a, e4b 또는 e4a, e2a로 안전하게 마이그레이션할 수 있습니다.
+
++
+.. 모든 클러스터 LIF에 대한 홈 포트와 현재 포트를 나열합니다.
++
+`network interface show -role Cluster -fields home-port,curr-port`
+
+.. [[migrate-cluster-lif-step-4b]]node1과 node2에서 e1a를 홈 포트로 사용하는 클러스터 LIF를 e4a로 마이그레이션합니다.
++
+`network interface migrate -vserver Cluster -lif <cluster_lif1> -destination-node <node> -destination-port e4a`
+
+.. node1 및 node2에서 마이그레이션된 클러스터 LIF를 수정합니다. <<migrate-cluster-lif-step-4b,하위 단계 b>> e4a를 홈 포트로 사용하려면:
++
+`network  interface modify -vserver Cluster -lif <cluster_lif> -home-port e4a`
+
+.. 클러스터가 쿼럼에 있는지 확인하세요.
++
+`cluster show`
+
+.. 반복하다 <<migrate-cluster-lif-step-4b,하위 단계 b와 하위 단계 c>> 각 노드의 두 번째 클러스터 LIF를 e2a 또는 e4b로 마이그레이션하고 수정하려면:
++
+e2a가 있고 100GbE 네트워크 포트인 경우, 이는 기본 두 번째 클러스터 포트입니다. e2a가 100GbE 네트워크 포트가 아닌 경우, ONTAP은 e4b를 두 번째 클러스터 및 HA 포트로 사용합니다.
+
+.. "클러스터" 브로드캐스트 도메인에서 e1a 및 e1b를 제거합니다.
++
+`broadcast-domain remove-ports -broadcast-domain Cluster -ipspace Cluster -ports <node_name>:e1a`
+
+.. "클러스터" 브로드캐스트 도메인에 클러스터 포트 e4a, e2a 또는 e4a, e4b만 있는지 확인하십시오.
++
+`broadcast domain show`
+
+.. e1a node1과 e1a node2, e1b node1과 e1b node2 사이의 케이블 연결을 제거하여 유효한 클러스터 HA 연결만 사용되고 중복 연결이 없는지 확인합니다.
+
+
+. [[verify-node2-step6]]컨트롤러 교체 작업의 상태를 확인하고 일시 정지 상태이며 노드2가 새 컨트롤러 설치 및 케이블 이동과 같은 물리적 작업을 수행하기 위해 중단되기 전 상태와 동일한지 확인합니다.
 +
 `system controller replace show`
 

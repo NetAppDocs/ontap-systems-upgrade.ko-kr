@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: complete, procedure, upgrading, upgrade, move, moving, volume, configure, service, processor, sp, license, autosupport, storage, encryption, fc, nca, port, complete the upgrade 
 summary: '볼륨을 이동하여 업그레이드 절차를 완료하려면 서비스 프로세서\(SP\)를 구성하고 새 라이센스를 설치한 다음 AutoSupport를 설정해야 합니다. 스토리지 또는 볼륨 암호화를 설정하고 FC 또는 NCA 포트를 구성해야 할 수도 있습니다.' 
 ---
-= 업그레이드를 완료합니다
+= 볼륨 이동 업그레이드를 완료하세요
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -38,7 +38,7 @@ summary: '볼륨을 이동하여 업그레이드 절차를 완료하려면 서�
 ** "'외부 키 관리 암호화 키 복원'"
 
 
-. 새 노드에 FC 포트(온보드 또는 FC 어댑터), 온보드 CNA 포트 또는 CNA 카드가 있는 경우, FC 또는 CNA 포트를 구성하고 스토리지 시스템 프롬프트에서 다음 명령을 입력합니다.
+. 새 노드에 FC 포트(온보드 또는 FC 어댑터), 온보드 CNA 포트 또는 CNA 카드가 있는 경우 스토리지 시스템 프롬프트에서 다음 명령을 입력하여 FC 또는 CNA 포트를 구성합니다.
 +
 `system node hardware unified-connect modify -node node-name -adapter adapter-name -mode {fc|cna} -type {target|initiator}`
 

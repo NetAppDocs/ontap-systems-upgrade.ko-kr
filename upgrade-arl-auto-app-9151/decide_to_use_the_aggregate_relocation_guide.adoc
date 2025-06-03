@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-app-9151/decide_to_use_the_aggregate_relocation_guid
 keywords: deciding, aggregate, relocation, content, storage, controllers, administrators, ontap, ha, high, availability 
 summary: '명령을 사용하여 ARL을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할지 여부를 `system controller replace` 결정합니다.' 
 ---
-= 집계 재배치 절차를 사용할지 여부를 결정합니다
+= 이 집계 이전 절차를 사용할지 결정하십시오.
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,23 +14,60 @@ summary: '명령을 사용하여 ARL을 사용하여 ONTAP 9.15.1 이상을 실�
 
 
 [role="lead"]
-이 절차에서는 기존 데이터 및 디스크를 유지하면서 HA 쌍의 스토리지 컨트롤러를 새 컨트롤러와 업그레이드하는 방법을 설명합니다. 이는 숙련된 관리자만 사용해야 하는 복잡한 절차입니다.
+컨트롤러 하드웨어를 업그레이드하는 데에는 여러 가지 집계 재배치(ARL) 방법이 있습니다. 이 ARL 절차는 ONTAP 9.15.1 이상에 도입된 AFF 및 FAS 스토리지 시스템에서 기존 데이터와 디스크를 유지하면서 새 컨트롤러로 HA 컨트롤러 쌍을 업그레이드하는 방법을 설명합니다. 이 절차는 복잡하므로 숙련된 ONTAP 관리자만 사용해야 합니다.
+
+이 ARL 절차가 컨트롤러 하드웨어 업그레이드에 적합한지 결정하는 데 도움이 되도록 지원되는 업그레이드와 지원되지 않는 업그레이드에 대한 다음 모든 상황을 검토해야 합니다.
 
 
 
-== ARL에 대한 업그레이드가 지원됩니다
+== 이 ARL 절차에 지원되는 업그레이드
 
-다음과 같은 상황에서 노드 쌍을 업그레이드할 수 있습니다.
+다음과 같은 상황에서 이 ARL 절차를 사용하여 노드 쌍을 업그레이드할 수 있습니다.
 
 * ONTAP 9.15.1 이상을 실행하고 있습니다.
 * 새 컨트롤러를 클러스터에 새 HA 쌍으로 추가하고 볼륨 이동 절차를 사용하여 데이터를 마이그레이션하지는 않겠습니다.
 * ONTAP 관리 경험이 있으며 진단 권한 모드에서 작업할 때의 위험에 익숙합니다.
+* 귀하의 하드웨어 업그레이드 조합은 다음에 나열되어 있습니다. <<sys_commands_9151_supported_systems,지원되는 모델 매트릭스>> .
 
 
 
 NOTE: 이 절차를 통해 NetApp 스토리지 암호화(NSE), NetApp 볼륨 암호화(NVE), NetApp 애그리게이트 암호화(NAE)를 사용할 수 있습니다.
 
-[[sys_commands_9151_supported_systems]] 다음 표에는 컨트롤러 업그레이드에 지원되는 모델 매트릭스가 나와 있습니다.
+
+
+== 이 ARL 절차에는 업그레이드가 지원되지 않습니다.
+
+다음과 같은 상황에서는 이 ARL 절차를 사용하여 노드 쌍을 업그레이드할 수 없습니다.
+
+* 다음 업그레이드 중 하나를 수행하고 있습니다.
++
+|===
+| 기존 컨트롤러 | 교체 컨트롤러 
+
+
+| AFF A250 를 참조하십시오 | AFF A50, AFF A30 
+
+
+| AFF A800 를 참조하십시오 | AFF A70, AFF A90 
+
+
+| AFF C250 를 참조하십시오 | AFF C30, AFF C60 
+
+
+| AFF C800 를 참조하십시오 | AFF C80 를 참조하십시오 
+|===
++
+위의 표에 나열된 업그레이드를 수행하려면 "system controller replace" 명령을 사용하여 동일한 섀시에 있는 컨트롤러 모델을 업그레이드하는 방법(_)을 참조하십시오.link:other_references.html["참조"]
+
+* 백엔드 스토리지용 외부 어레이를 사용하여 V 시리즈 시스템 또는 FlexArray 가상화 스토리지 시스템을 업그레이드합니다. V-Series 또는 FlexArray 시스템의 업그레이드 옵션은 기술 지원 부서에 문의하십시오.
+* MetroCluster FC 또는 IP 구성을 업그레이드합니다. MetroCluster 구성을 업그레이드하려면 link:other_references.html["참조"] _MetroCluster 업그레이드 및 확장 설명서_ 링크를 참조하십시오.
+
+
+
+
+== 지원되는 시스템 업그레이드 조합
+
+다음 표는 ONTAP 9.15.1 이상에서 도입된 AFF 및 FAS 시스템에 대해 ARL을 사용하여 지원되는 컨트롤러 업그레이드 조합을 보여줍니다. 원하는 컨트롤러 업그레이드 조합이 목록에 없는 경우 기술 지원팀에 문의하십시오.
 
 |===
 | 기존 컨트롤러 | 교체 컨트롤러 | ONTAP부터 지원됨... 
@@ -67,39 +104,13 @@ AFF A20, AFF A50, AFF A70 및 AFF A90는 HA 구성의 컨트롤러 2개와 단�
 * 내부 드라이브 없이 AFF A20, AFF A50, AFF A70 또는 AFF A90로 업그레이드하는 경우 업그레이드를 완료한 후 내부 드라이브를 할당할 필요가 없습니다.
 
 
-컨트롤러 업그레이드 모델 조합이 위 표에 없는 경우 기술 지원 부서에 문의하십시오.
 
 
+== 다른 하드웨어 업그레이드 절차를 선택하세요
 
-== ARL에 대한 업그레이드가 지원되지 않습니다
+* link:../upgrade-arl/index.html["컨트롤러 하드웨어 업그레이드에 사용 가능한 대체 ARL 방법을 검토하세요."]..
+* 컨트롤러 하드웨어를 업그레이드하는 다른 방법을 선호하고 볼륨 이동을 원할 경우 을 참조하십시오 link:other_references.html["참조"] 볼륨 또는 스토리지 _ 을(를) 이동하여 _ 업그레이드 에 연결합니다.
 
-다음과 같은 경우에는 ARL을 사용하여 업그레이드를 수행할 수 없습니다.
-
-* 다음 업그레이드 중 하나를 수행하고 있습니다.
-+
-|===
-| 기존 컨트롤러 | 교체 컨트롤러 
-
-
-| AFF A250 를 참조하십시오 | AFF A50, AFF A30 
-
-
-| AFF A800 를 참조하십시오 | AFF A70, AFF A90 
-
-
-| AFF C250 를 참조하십시오 | AFF C30, AFF C60 
-
-
-| AFF C800 를 참조하십시오 | AFF C80 를 참조하십시오 
-|===
-+
-위의 표에 나열된 업그레이드를 수행하려면 "system controller replace" 명령을 사용하여 동일한 섀시에 있는 컨트롤러 모델을 업그레이드하는 방법(_)을 참조하십시오.link:other_references.html["참조"]
-
-* 백엔드 스토리지용 외부 어레이를 사용하여 V 시리즈 시스템 또는 FlexArray 가상화 스토리지 시스템을 업그레이드합니다. V-Series 또는 FlexArray 시스템의 업그레이드 옵션은 기술 지원 부서에 문의하십시오.
-* MetroCluster FC 또는 IP 구성을 업그레이드합니다. MetroCluster 구성을 업그레이드하려면 link:other_references.html["참조"] _MetroCluster 업그레이드 및 확장 설명서_ 링크를 참조하십시오.
-
-
-컨트롤러 하드웨어를 업그레이드하는 다른 방법을 선호하고 볼륨 이동을 원할 경우 을 참조하십시오 link:other_references.html["참조"] 볼륨 또는 스토리지 _ 을(를) 이동하여 _ 업그레이드 에 연결합니다.
 
 .관련 정보
-을 참조하십시오 link:other_references.html["참조"] ONTAP 9 제품 설명서에 액세스할 수 있는 _ONTAP 9 문서 센터_에 연결합니다.
+참조하다 link:other_references.html["참조"] _ONTAP 9 문서_에 링크합니다.

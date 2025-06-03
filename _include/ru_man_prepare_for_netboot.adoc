@@ -41,6 +41,6 @@ NOTE: Windows에서 내용을 추출하는 경우 7-Zip 또는 WinRAR을 사용�
 | 기타 모든 시스템 | 디렉토리 목록에는 다음 파일이 포함되어야 합니다. `<ontap_version>_image.tgz`참고: 의 내용을 추출할 필요는 없습니다 `<ontap_version>_image.tgz` 파일. 
 |===
 +
-의 디렉토리에 있는 정보를 사용합니다 link:stage_3_index.html["3단계"].
+디렉토리의 정보를 사용하게 됩니다. link:install_boot_node3.html["3단계"] .
 
 

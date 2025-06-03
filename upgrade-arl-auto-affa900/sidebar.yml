@@ -2,21 +2,19 @@
 section: upgrade-arl-auto-affa900
 title: '"system controller replace" 명령을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드합니다'
 entries:
-- title: 개요
+- title: 이 ARL 절차에 대해 알아보세요
   url: "/upgrade-arl-auto-affa900/index.html"
-- title: 집계 재배치 컨텐츠의 사용 여부를 결정합니다
+- title: 이 ARL 절차를 사용할지 결정하세요
   url: "/upgrade-arl-auto-affa900/decide_to_use_the_aggregate_relocation_guide.html"
 - title: 필요한 도구 및 문서
   url: "/upgrade-arl-auto-affa900/required_tools_and_documentation.html"
 - title: 컨트롤러 업그레이드 지침
   url: "/upgrade-arl-auto-affa900/guidelines_for_upgrading_controllers_with_arl.html"
-- title: ARL 업그레이드 개요
+- title: ARL 업그레이드 순서에 대해 알아보세요
   url: "/upgrade-arl-auto-affa900/overview_of_the_arl_upgrade.html"
 - title: 1단계. 업그레이드를 준비합니다
   pdf-filename: 1단계. 업그레이드 준비(AFF A900 또는 FAS9500으로 업그레이드)
   entries:
-  - title: 개요
-    url: "/upgrade-arl-auto-affa900/stage_1_index.html"
   - title: 업그레이드 하드웨어를 확인합니다
     url: "/upgrade-arl-auto-affa900/verify_upgrade_hardware.html"
   - title: 업그레이드할 노드를 준비합니다
@@ -25,8 +23,6 @@ entries:
     url: "/upgrade-arl-auto-affa900/manage_storage_encryption_using_okm.html"
 - title: 2단계. 리소스를 재배치하고 노드1을 폐기합니다
   entries:
-  - title: 개요
-    url: "/upgrade-arl-auto-affa900/stage_2_index.html"
   - title: 노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치합니다
     url: "/upgrade-arl-auto-affa900/relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html"
   - title: 장애가 발생하거나 거부권을 행사한 Aggregate를 재배치합니다
@@ -47,8 +43,6 @@ entries:
     url: "/upgrade-arl-auto-affa900/netboot_node1.html"
 - title: 3단계. 교체 시스템 모듈을 사용하여 노드1을 부팅합니다
   entries:
-  - title: 개요
-    url: "/upgrade-arl-auto-affa900/stage_3_index.html"
   - title: 공유 클러스터-HA 스토리지의 노드1를 케이블로 연결합니다
     url: "/upgrade-arl-auto-affa900/cable-node1-for-shared-cluster-HA-storage.html"
   - title: 교체 시스템 모듈을 사용하여 노드1을 부팅합니다
@@ -61,16 +55,12 @@ entries:
     url: "/upgrade-arl-auto-affa900/move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html"
 - title: 4단계. 리소스를 재배치하고 노드2를 폐기합니다
   entries:
-  - title: 개요
-    url: "/upgrade-arl-auto-affa900/stage_4_index.html"
   - title: 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 2에서 노드 1로 재배치합니다
     url: "/upgrade-arl-auto-affa900/relocate_non_root_aggr_nas_lifs_from_node2_to_node1.html"
   - title: 노드2를 폐기합니다
     url: "/upgrade-arl-auto-affa900/retire_node2.html"
 - title: 5단계. 노드 2에 교체 시스템 모듈을 설치합니다
   entries:
-  - title: 개요
-    url: "/upgrade-arl-auto-affa900/stage_5_index.html"
   - title: 노드 2에 교체 시스템 모듈을 설치합니다
     entries:
     - title: AFF A30, AFF A50, AFF C30 또는 AFF C60을 설치합니다
@@ -85,8 +75,8 @@ entries:
     url: "/upgrade-arl-auto-affa900/netboot_node2.html"
 - title: 6단계. 교체 시스템 모듈을 사용하여 노드2를 부팅합니다
   entries:
-  - title: 개요
-    url: "/upgrade-arl-auto-affa900/stage_6_index.html"
+  - title: 공유 클러스터 HA 스토리지를 위한 케이블 노드2
+    url: "/upgrade-arl-auto-affa900/cable-node2-for-shared-cluster-HA-storage.html"
   - title: 교체 시스템 모듈을 사용하여 노드2를 부팅합니다
     url: "/upgrade-arl-auto-affa900/boot_node2_with_a900_controller_and_nvs.html"
   - title: 노드2 설치를 확인합니다
@@ -97,8 +87,6 @@ entries:
     url: "/upgrade-arl-auto-affa900/move_non_root_aggr_and_nas_data_lifs_back_to_node2.html"
 - title: 7단계. 업그레이드를 완료합니다
   entries:
-  - title: 개요
-    url: "/upgrade-arl-auto-affa900/stage_7_index.html"
   - title: KMIP 서버를 사용하여 인증 관리
     url: "/upgrade-arl-auto-affa900/manage-authentication-using-kmip-servers.html"
   - title: 새 컨트롤러가 올바르게 설정되었는지 확인합니다
@@ -114,8 +102,6 @@ entries:
 - title: 문제 해결
   pdf-filename: 문제 해결(AFF A900 또는 FAS9500으로 업그레이드)
   entries:
-  - title: 개요
-    url: "/upgrade-arl-auto-affa900/troubleshoot_index.html"
   - title: 애그리게이트 재배치 실패
     url: "/upgrade-arl-auto-affa900/aggregate_relocation_failures.html"
   - title: 재부팅, 패닉 또는 전원 껐다 켜기

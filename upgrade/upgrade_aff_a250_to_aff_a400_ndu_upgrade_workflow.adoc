@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ndu, nondisruptive, upgrade, AFF, FAS, systems, entry, level 
 summary: 스토리지 및 클러스터 스위치를 추가로 구매하지 않고도 엔트리 레벨 NetApp AFF 및 FAS 시스템으로 NDU를 수행하십시오. 
 ---
-= 워크플로우
+= 드라이브 셸프 워크플로로 변환하여 AFF A250을 AFF A400으로 업그레이드
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

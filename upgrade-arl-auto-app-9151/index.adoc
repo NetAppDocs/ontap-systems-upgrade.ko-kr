@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-app-9151/index.html
 keywords: aggregate, relocation, controller, hardware, aggregates, flexarray, metrocluster, terminology 
 summary: '명령을 사용하여 루트 애그리게이트의 소유권을 재배치함으로써 ONTAP 9.15.1 이상을 실행하는 컨트롤러 하드웨어를 업그레이드할 수 있습니다 `system controller replace` .' 
 ---
-= 개요
+= ARL 업그레이드 절차에 대해 알아보세요
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,15 +14,8 @@ summary: '명령을 사용하여 루트 애그리게이트의 소유권을 재�
 
 
 [role="lead"]
-이 절차에서는 다음 시스템 구성에 대해 ARL(Aggregate Relocation)을 사용하여 컨트롤러 하드웨어를 업그레이드하는 방법에 대해 설명합니다.
+컨트롤러 하드웨어를 업그레이드하는 데에는 여러 가지 집계 재배치(ARL) 방법이 있습니다. 이 ARL 절차는 ONTAP 9.15.1 이상에 도입된 AFF 및 FAS 스토리지 시스템에서 기존 데이터와 디스크를 유지하면서 새 컨트롤러로 HA 컨트롤러 쌍을 업그레이드하는 방법을 설명합니다.
 
-[cols="40,20,40"]
-|===
-| 방법 | ONTAP 버전입니다 | 지원되는 시스템 
-
-
-| 사용 `system controller replace` 명령 | 9.15.1 이상 | link:decide_to_use_the_aggregate_relocation_guide.html#sys_commands_9151_supported_systems["지원되는 시스템 매트릭스에 대한 링크"] 
-|===
 
 NOTE: 다음 절차를 사용하여 MetroCluster FC 또는 IP 구성을 업그레이드할 수 없습니다. MetroCluster 구성을 업그레이드하려면 link:other_references.html["참조"] _MetroCluster 업그레이드 및 확장 설명서_ 링크를 참조하십시오.
 
@@ -34,7 +27,7 @@ NOTE: 다음 절차를 사용하여 MetroCluster FC 또는 IP 구성을 업그�
 "node1", "node2", "node3" 및 "node4"라는 용어는 원래 노드와 새 노드를 구별하는 데만 사용됩니다. 절차를 따를 때는 원래 노드와 새 노드의 실제 이름을 대체해야 합니다. 그러나 실제로 노드 이름은 변경되지 않습니다. node3에는 node1이라는 이름이 있고, node4에는 컨트롤러 하드웨어를 업그레이드한 후 node2라는 이름이 있습니다.
 
 .중요 정보:
-* 이 절차는 복잡하고 고급 ONTAP 관리 기술이 있다고 가정합니다. 또한 를 읽고 이해해야 합니다 link:guidelines_for_upgrading_controllers_with_arl.html["ARL을 사용한 컨트롤러 업그레이드 지침"] 및 link:overview_of_the_arl_upgrade.html["ARL 업그레이드 개요"] 섹션을 참조하십시오.
+* 이 절차는 복잡하고 고급 ONTAP 관리 기술이 있다고 가정합니다. 또한 다음을 읽고 이해해야 합니다. link:guidelines_for_upgrading_controllers_with_arl.html["ARL을 사용한 컨트롤러 업그레이드 지침"] 그리고 link:overview_of_the_arl_upgrade.html["ARL 업그레이드 시퀀스"] 업그레이드를 시작하기 전에.
 * 이 절차에서는 교체 컨트롤러 하드웨어가 새 하드웨어이며 사용되지 않은 것으로 가정합니다. 명령을 사용하여 사용한 컨트롤러를 준비하는 데 필요한 단계는 `wipeconfig` 이 절차에 포함되지 않습니다. 교체 컨트롤러 하드웨어를 이전에 사용한 경우 기술 지원 부서에 문의해야 합니다.
 * 이 절차를 사용하여 2개 이상의 노드가 있는 클러스터에서 컨트롤러 하드웨어를 업그레이드할 수 있습니다. 하지만 클러스터의 각 HA(고가용성) 쌍에 대해 이 절차를 별도로 수행해야 합니다.
 * ONTAP 9.15.1 이상 버전에 도입된 시스템으로 업그레이드할 때 ONTAP는 기존 볼륨의 스토리지 효율성을 변환하고 하드웨어 오프로드 기능을 사용하는 새로운 스토리지 효율성 기능을 적용합니다. 이 프로세스는 자동 백그라운드 프로세스이며 시스템에 성능에 영향을 주지 않습니다.
