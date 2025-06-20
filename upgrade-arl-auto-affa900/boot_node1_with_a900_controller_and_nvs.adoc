@@ -55,7 +55,7 @@ e11b ENET storage 100 Gb/s    enabled  online  30
 
 
 
-. [[A900_BOOT_NODE1]] NSE(NetApp 스토리지 암호화) 드라이브를 설치한 경우 다음 단계를 수행하십시오.
+. [[A900_boot_node1]]NetApp Storage Encryption(NSE) 드라이브가 설치되어 있는 경우 다음 단계를 수행하세요.
 +
 
 NOTE: 절차의 앞부분에서 아직 수행하지 않은 경우 기술 자료 문서를 참조하십시오 https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["드라이브가 FIPS 인증되었는지 확인하는 방법"^] 사용 중인 자체 암호화 드라이브의 유형을 확인합니다.

@@ -54,25 +54,25 @@ node4    node3    true       Connected to node3
 
 . 노드 3이 노드 1의 애그리게이트를 소유하고 있고 노드 4가 노드 2의 애그리게이트를 소유하고 있는지 확인합니다.
 +
-`storage aggregate show -owner-name _node3_`
+`storage aggregate show -owner-name <node3>`
 
 +
-`storage aggregate show -owner-name _node4_`
+`storage aggregate show -owner-name <node4>`
 
 . 볼륨이 오프라인 상태인지 확인합니다.
 +
-`volume show -node _node3_ -state offline`
+`volume show -node <node3> -state offline`
 
 +
-`volume show -node _node4_ -state offline`
+`volume show -node <node4> -state offline`
 
 . 오프라인 상태인 볼륨이 있으면 섹션에서 캡처한 오프라인 볼륨 목록과 비교합니다 link:prepare_nodes_for_upgrade.html["업그레이드할 노드를 준비합니다"]을 사용하여 각 볼륨에 대해 다음 명령을 사용하여 필요에 따라 오프라인 볼륨을 온라인으로 전환합니다.
 +
-`volume online -vserver _vserver_name_ -volume _volume_name_`
+`volume online -vserver <vserver_name> -volume <volume_name>`
 
 . 각 노드에 대해 다음 명령을 사용하여 새 노드에 대한 새 라이센스를 설치합니다.
 +
-`system license add -license-code _license_code,license_code,license_code…_`
+`system license add -license-code <license_code,license_code,license_code…>`
 
 +
 license-code 매개변수는 28개의 대문자 알파벳 문자 키 목록을 허용합니다. 한 번에 하나의 라이센스를 추가하거나 한 번에 여러 라이센스를 추가하여 각 라이센스 키를 쉼표로 분리할 수 있습니다.
@@ -82,7 +82,7 @@ license-code 매개변수는 28개의 대문자 알파벳 문자 키 목록을 �
 `system license clean-up -unused -expired`
 
 +
-`system license delete -serial-number _node_serial_number_ -package _licensable_package_`
+`system license delete -serial-number <node_serial_number> -package <licensable_package>`
 
 +
 --
@@ -96,10 +96,10 @@ license-code 매개변수는 28개의 대문자 알파벳 문자 키 목록을 �
 
 ** 노드에서 다음 명령을 사용하여 클러스터에서 특정 라이센스를 삭제합니다.
 +
-`system license delete -serial-number _node1_serial_number_ -package *`
+`system license delete -serial-number <node1_serial_number> -package *`
 
 +
-`system license delete -serial-number _node2_serial_number_ -package *`
+`system license delete -serial-number <node2_serial_number> -package *`
 
 
 

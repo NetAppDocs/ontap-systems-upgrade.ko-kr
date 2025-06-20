@@ -14,7 +14,6 @@
   <block id="b5c6fde8816eb583a49b6c0314b82928" category="list-text">권한 수준을 고급으로 설정합니다.</block>
   <block id="5fd1bcc8472b38442961eb87ca3f844a" category="paragraph"><block ref="0581d0d071ad835f74bf419081ce5d75" prefix="" category="inline-code"></block></block>
   <block id="33cfec7231d81810ac482a09c5b69c00" category="list-text">노드 2가 소유한 애그리게이트 나열:</block>
-  <block id="9fb768ad6510fe46b2016783cac8eadb" category="paragraph"><block ref="c08c30e4082dbfc350c98d8e8dbf2fe0" prefix="" category="inline-code"></block></block>
   <block id="e5d22039d8dff591d18701d62fb4083d" category="list-text">애그리게이트 재배치 시작:</block>
   <block id="cba3015195e189328dd15ef19c0cdcff" category="admonition">이 명령은 비루트 애그리게이트만 찾습니다.</block>
   <block id="4f6da995dc4a823a0d6529c9d724b695" category="list-text">메시지가 표시되면 를 입력합니다<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>.</block>
@@ -44,7 +43,6 @@
   <block id="ecc3f3e0b2ef3c70a30fe8be1af81d75" category="paragraph">애그리게이트가 오프라인 상태가 되거나 외부 애그리게이트로 전환된 경우, 각 애그리게이트에 대해 한 번씩 온라인 상태를 유지해야 합니다.</block>
   <block id="7a4b65a92ad0461916e64e86d4469810" category="paragraph"><block ref="782f23052d9b99c107b9fc383ca6a390" prefix="" category="inline-code"></block></block>
   <block id="1dc7145853b865022c2423c0562bf7ed" category="list-text">노드 3에서 모든 볼륨이 온라인 상태인지 확인합니다.</block>
-  <block id="9768bc676d49dbda7bf856a2930c4b52" category="paragraph"><block ref="e3a438e4ea5a16cab1f093e0d1ef458f" prefix="" category="inline-code"></block></block>
   <block id="8526a5587200c78144bc2d1fabd13d3a" category="paragraph">노드 3에서 오프라인 상태인 볼륨이 있는 경우 각 볼륨에 대해 한 번씩 온라인 상태로 전환해야 합니다.</block>
   <block id="232cf0d45bdcae298c19689d1bf05bea" category="paragraph">루트가 아닌 모든 온라인 애그리게이트가 이미 노드 3에 재배치되었기 때문에 명령 출력에 루트가 아닌 온라인 애그리게이트를 표시할 수 없습니다.</block>
   <block id="a971a57f0ab6432a971f405b5096ea03" category="summary">ONTAP 9.7 이하를 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 전환, 복구 및 스위치백 작업을 확인합니다.</block>
@@ -330,7 +328,6 @@
   <block id="72a91a015e8c747a5a63794308310840" category="cell">SP의 IP 주소입니다</block>
   <block id="c685ef92ee54cacdd0c225fa2bb12fbe" category="cell">6단계: _ 새 컨트롤러가 올바르게 설정되었는지 확인합니다</block>
   <block id="e3d8433cfe5569460492707086339074" category="cell">라이센스 키</block>
-  <block id="bb2a59fbd20fec79ac114c7a9f22ead2" category="cell">외부 키 관리 서버의 IP 주소입니다</block>
   <block id="234cfc2e3636ba2a3e5d47da84d5bd32" category="cell">1단계: _ 스토리지 암호화 _ 의 디스크 키를 다시 누릅니다</block>
   <block id="a6bab46fa807f06174c4873c5331a9b2" category="cell">6단계: _ 새 노드에서 스토리지 암호화 설정 _</block>
   <block id="09c90f884edd2efc00874f9fc863daeb" category="cell">노드를 netboot 하기 위해 파일을 다운로드할 수 있는 웹 액세스 가능 디렉토리의 이름과 경로입니다</block>
@@ -1421,7 +1418,6 @@
   <block id="679aeab1d22d4d8240be92e911cb16a4" category="doc">새 컨트롤러가 올바르게 설정되었는지 확인합니다</block>
   <block id="90b3509f7da0bd37fd6636cace1d2404" category="paragraph">올바른 설정을 확인하려면 HA 쌍을 활성화해야 합니다. 또한 노드 3과 노드 4가 서로의 스토리지에 액세스할 수 있고 클러스터의 다른 노드에 속하는 데이터 LIF가 소유하지 않는지 확인해야 합니다. 또한 노드 3이 노드 1의 애그리게이트를 소유하고 있고 노드 4가 노드 2의 애그리게이트를 소유하고 있으며, 두 노드의 볼륨이 온라인 상태인지 확인해야 합니다.</block>
   <block id="9049f1bbc92896381d7b5ffdc386e3b2" category="list-text">노드 중 하나에 다음 명령을 입력하여 스토리지 페일오버를 설정합니다.</block>
-  <block id="7ad7509ea03580dbba4ac42f8a0e9061" category="paragraph"><block ref="b898635d799dd6a81c6b745b154e6961" prefix="" category="inline-code"></block></block>
   <block id="9d070d121ee26abdb5d314d6fff4c15c" category="list-text">스토리지 페일오버가 설정되었는지 확인합니다.</block>
   <block id="715940e961cf53af2ba53d695b5bdb37" category="paragraph">다음 예에서는 스토리지 페일오버가 설정된 경우의 명령 출력을 보여 줍니다.</block>
   <block id="44b65ecdfbcd9fda48c21d17aae6347e" category="cell">클러스터가 인 경우...</block>
@@ -1435,23 +1431,17 @@
   <block id="6485b14c0e329aebda0c4dcd7d09dbd0" category="paragraph"><block ref="16fdd92def5a71313d6535c74ef67b81" prefix="" category="inline-code"></block></block>
   <block id="2a6d96821a4ce6866da866e48a1ece2a" category="paragraph">노드 3이나 노드 4에서 클러스터의 다른 노드가 소유한 데이터 LIF가 있으면 를 사용합니다<block ref="d1e4afa40f7e9718bdad64b4f5db9abb" prefix=" " category="inline-code"></block> 명령을 사용하여 데이터 LIF를 홈 소유자에게 되돌릴 수 있습니다.</block>
   <block id="f67d0a54b752ca4f669625b9f2eba648" category="list-text">노드 3이 노드 1의 애그리게이트를 소유하고 있고 노드 4가 노드 2의 애그리게이트를 소유하고 있는지 확인합니다.</block>
-  <block id="f95d062b8f3dd313f851677720fd47c0" category="paragraph"><block ref="2e0f160afbc7b4f9eb65f066ae05be09" prefix="" category="inline-code"></block><block ref="c036fbb1757e7375750eb9108a1ef69a" prefix=" " category="inline-code"></block></block>
   <block id="862da4c0b3b19ba62c050373943cd909" category="list-text">볼륨이 오프라인 상태인지 확인합니다.</block>
-  <block id="68c05b65b923848aa186ea69ee9487d7" category="paragraph"><block ref="e3a438e4ea5a16cab1f093e0d1ef458f" prefix="" category="inline-code"></block><block ref="ef010c4877b307761f92dfee774f7025" prefix=" " category="inline-code"></block></block>
   <block id="183048ad5f29710efbac355627777865" category="inline-link-macro">19단계(d)</block>
-  <block id="113d7e75ab71ebd9bcdd1155228482fc" category="paragraph"><block ref="c0158aac7761d0859a618e28877616c4" prefix="" category="inline-code"></block></block>
   <block id="5d41e09cfbf05ac79dc026cd1e32857c" category="list-text">각 노드에 대해 다음 명령을 입력하여 새 노드에 대한 새 라이센스를 설치합니다.</block>
-  <block id="d5538e0d48b9561003d2506ab100c330" category="paragraph"><block ref="18a5bd82f1a3af65ac694296ca5e36f9" prefix="" category="inline-code"></block></block>
   <block id="65d93c0f2eae68c69877f67ce3781996" category="paragraph">license-code 매개변수는 28개의 대문자 알파벳 문자 키 목록을 허용합니다. 한 번에 하나의 라이센스를 추가하거나, 각 라이센스 키를 쉼표로 구분하여 한 번에 여러 라이센스를 추가할 수 있습니다.</block>
   <block id="1f6c8829a415beddc4ce10181f20094a" category="inline-link-macro">16단계</block>
   <block id="c13dda3e4975b286bfb62f3d9aa8cfa5" category="list-text">원래 노드에서 이전 라이센스를 모두 제거하려면 다음 명령 중 하나를 입력합니다.</block>
-  <block id="f8bb98c031da24e788f5f02332ac5bb8" category="paragraph"><block ref="2599180db5e07a38b13f33bacd678ed0" prefix="" category="inline-code"></block><block ref="5f8d40fbb728439b62ece506540b12e9" prefix=" " category="inline-code"></block></block>
   <block id="f1645d1878d86f7024812da747846642" category="list-text">만료된 라이센스를 모두 삭제하려면 다음을 입력합니다.</block>
   <block id="df1e7bcee84d26ba3ee0e0f129bf90c0" category="paragraph"><block ref="6ecc7d4a6049e214abb4813df2a0fb97" prefix="" category="inline-code"></block></block>
   <block id="fd6db757e3a6fb12f04139c8f48aab93" category="list-text">사용하지 않는 라이선스를 모두 삭제하려면 다음을 입력합니다.</block>
   <block id="32be9f537283877b6e62fd279a4f5513" category="paragraph"><block ref="e56b897971c1862f9a06367a997d01fb" prefix="" category="inline-code"></block></block>
   <block id="0fae8f5a8ab68238375deb31e474111d" category="list-text">클러스터에서 특정 라이센스를 삭제하려면 노드에서 다음 명령을 입력합니다.</block>
-  <block id="e4c31b5f2905d746c57c1b1f1e038eac" category="paragraph"><block ref="1be8f02cdba9bf5598de6a762fffb848" prefix="" category="inline-code"></block><block ref="ba201afcea187bc27dccd739c1239ccc" prefix=" " category="inline-code"></block></block>
   <block id="9a940b51cdd2b2d508cffc6eecff9e32" category="paragraph">다음 출력이 표시됩니다.</block>
   <block id="0b0ab53ca7ce0880a8c5c074d260f0ab" category="paragraph">를 입력합니다<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> 모든 패키지를 제거합니다.</block>
   <block id="4883a9a9fced202f6b61720c6c0446a2" category="list-text">다음 명령을 입력하고 출력을 확인하여 라이센스가 올바르게 설치되었는지 확인합니다.</block>
@@ -2065,7 +2055,6 @@
   <block id="f1e1b94ce2ba7179506b74127da77af2" category="paragraph"><block ref="63d16b8fc2c8a4a0516d9f30bda63167" prefix="" category="inline-code"></block></block>
   <block id="af443ed1e514e063894af87e3e0e83a6" category="list-text">작업이 여전히 일시 중지된 상태에서 루트가 아닌 모든 애그리게이트가 노드 2의 해당 상태에 대해 온라인 상태인지 확인합니다.</block>
   <block id="f999b6b276f2c64e10bfb3630f92f94c" category="list-text">node2에서 다음 명령을 사용하고 해당 출력을 검사하여 node2에서 모든 볼륨이 온라인 상태인지 확인합니다.</block>
-  <block id="592033840c276a690ab8f96c3c733525" category="paragraph">를 클릭합니다<block ref="09548cfd61d58408d5f9cae24ffcb217" prefix=" " category="inline-code"></block> 이 명령과 함께 사용하려면 이전 의 출력에서 찾을 수 있습니다<block ref="0c5606ed319753bb2d86a485f23c8f6d" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="fa39e98dea804607ace91ae82c9543d7" category="list-text">[[5단계]] LIF가 다운된 경우 LIF의 관리 상태를 로 설정하십시오<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block> 다음 명령을 각 LIF에 대해 한 번씩 사용합니다.</block>
   <block id="717690eebe56c458e0ffa4bc5f0d6525" category="paragraph"><block ref="5c3eea1ace74fe37ea01ad6c14faca89" prefix="" category="inline-code"></block></block>
   <block id="5e668aadf3c84d39f49c47f9c74523b2" category="summary">을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 발생할 수 있는 문제에 대한 정보<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
@@ -2287,12 +2276,10 @@
   <block id="b3fb9233a2435df292df205ef05e46db" category="paragraph">원격 LIF는 업그레이드 절차 중에 SAN LUN의 트래픽을 처리합니다. 업그레이드 중에 클러스터 또는 서비스 상태를 위해 SAN LIF를 이동할 필요가 없습니다.</block>
   <block id="0569dcac35411678d2e9cbd8034fea69" category="admonition">Aggregate 및 LIF의 홈 소유자는 수정되지 않으며 현재 소유자만 수정됩니다.</block>
   <block id="03c6c2c179dec70c786bc644e02b16df" category="list-text">루트가 아닌 모든 애그리게이트가 온라인 상태이고 노드 3의 상태가 온라인인지 확인합니다.</block>
-  <block id="b552b2e6a2a24270da2f85599d5289a0" category="paragraph"><block ref="b6ac94bf4a2cff0d2edd415ae82af346" prefix="" category="inline-code"></block></block>
   <block id="6702bf0268c295c6d30a4dc2db82d427" category="paragraph">노드 3에서 애그리게이트가 오프라인 상태가 되거나 노드 3에서 외부 상태가 된 경우, 각 애그리게이트에 대해 노드 3의 다음 명령을 사용하여 애그리게이트를 온라인 상태로 전환합니다.</block>
   <block id="809bea68dee4e68249aea4396bafacd3" category="list-text">노드 3에서 다음 명령을 사용하고 출력을 검사하여 노드 3에서 모든 볼륨이 온라인 상태인지 확인합니다.</block>
   <block id="b830851aa263bbc0b84c68604beef993" category="paragraph">노드 3에서 오프라인 상태인 볼륨이 있는 경우 각 볼륨에 대해 한 번씩 노드 3에서 다음 명령을 사용하여 온라인으로 전환합니다.</block>
   <block id="b8520ff69f6b8ffe5e588c1f7ce8e9be" category="list-text">LIF가 올바른 포트로 이동되었으며 상태가 인지 확인합니다<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block>. LIF가 하나라도 다운되면 LIF의 관리 상태를 로 설정합니다<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block> 다음 명령을 각 LIF에 대해 한 번 입력합니다.</block>
-  <block id="5ae519d56c0326f582652e283c3ea809" category="paragraph"><block ref="bb38227bc42eeb48dc64d95c860db409" prefix="" category="inline-code"></block></block>
   <block id="e2172c82191a506ba37c37e48f854d2a" category="list-text">현재 데이터 LIF를 호스팅하는 포트가 새 하드웨어에 없으면 브로드캐스트 도메인에서 제거합니다.</block>
   <block id="99988efb9efcf982f67af1157e609379" category="list-text">[[5단계]] 다음 명령을 입력하고 출력을 검사하여 노드 2에 남아 있는 데이터 LIF가 없는지 확인합니다.</block>
   <block id="11f09c937d4460ab0e473a33da9b1ab8" category="paragraph"><block ref="9fc6a8d48604ea2c908eabf6718d63a0" prefix="" category="inline-code"></block></block>
@@ -2394,20 +2381,14 @@
   <block id="ed63866964a059112ba504e1f09aa077" category="list-text">다음 명령을 사용하여 노드 3과 노드 4에서 클러스터의 다른 노드가 소유한 데이터 LIF를 확인하고 출력을 확인합니다.</block>
   <block id="dc85e26538718b459bdf2a353367f497" category="paragraph">노드 3이나 노드 4에서 클러스터의 다른 노드가 소유한 데이터 LIF가 홈 소유자에게 있는 경우 데이터 LIF를 다음과 같이 되돌립니다.</block>
   <block id="98ab56275ed98fed50530abdb3a97ee7" category="paragraph"><block ref="d1e4afa40f7e9718bdad64b4f5db9abb" prefix="" category="inline-code"></block></block>
-  <block id="0d12a6e9cec4647b5d9b5253b4073e2b" category="paragraph"><block ref="2e0f160afbc7b4f9eb65f066ae05be09" prefix="" category="inline-code"></block></block>
-  <block id="0e71c4af1c9d433ba1aca904b40b449e" category="paragraph"><block ref="c036fbb1757e7375750eb9108a1ef69a" prefix="" category="inline-code"></block></block>
   <block id="b2ec89d698c3bc26ab79d7bad283a953" category="list-text">오프라인 상태인 볼륨이 있으면 섹션에서 캡처한 오프라인 볼륨 목록과 비교합니다 <block ref="cd8ad1809865824065fe011b80800cd6" category="inline-link-macro-rx"></block>을 사용하여 각 볼륨에 대해 다음 명령을 사용하여 필요에 따라 오프라인 볼륨을 온라인으로 전환합니다.</block>
   <block id="8b2ba35c1767c4b484add2236c0ffa6c" category="list-text">각 노드에 대해 다음 명령을 사용하여 새 노드에 대한 새 라이센스를 설치합니다.</block>
-  <block id="6041278c5d25ed9c37ecc9a4ba73306b" category="paragraph"><block ref="4084c061074fa6fd9b5bf2d140424605" prefix="" category="inline-code"></block></block>
   <block id="539b1b58f1be38076506f35eb15e4340" category="paragraph">license-code 매개변수는 28개의 대문자 알파벳 문자 키 목록을 허용합니다. 한 번에 하나의 라이센스를 추가하거나 한 번에 여러 라이센스를 추가하여 각 라이센스 키를 쉼표로 분리할 수 있습니다.</block>
   <block id="8fb49e1f692fe82fa4072e7f3b3adc5d" category="list-text">다음 명령 중 하나를 사용하여 원래 노드에서 이전 라이센스를 모두 제거합니다.</block>
   <block id="3ce96f90e07aec61f73d0c41634c6aa1" category="paragraph"><block ref="2599180db5e07a38b13f33bacd678ed0" prefix="" category="inline-code"></block></block>
-  <block id="ee58b8665fc7b6cbed254e1253d5deb9" category="paragraph"><block ref="5f8d40fbb728439b62ece506540b12e9" prefix="" category="inline-code"></block></block>
   <block id="b71fdf79c90ac84b34d2470620eeaa18" category="list-text">만료된 모든 라이센스 삭제:</block>
   <block id="b162df50db538c8339d7ad30f407e32f" category="list-text">사용하지 않는 모든 라이센스 삭제:</block>
   <block id="9501cf64d3b2dae298a8bc24331bd5f4" category="list-text">노드에서 다음 명령을 사용하여 클러스터에서 특정 라이센스를 삭제합니다.</block>
-  <block id="bcacb0089032ec901277a70c73c0ec1b" category="paragraph"><block ref="1be8f02cdba9bf5598de6a762fffb848" prefix="" category="inline-code"></block></block>
-  <block id="4a472f5ad7101a303b004c96117957a1" category="paragraph"><block ref="ba201afcea187bc27dccd739c1239ccc" prefix="" category="inline-code"></block></block>
   <block id="bfacc8eef0b077fb7822880dd6814cc1" category="list-text">다음 명령을 사용하여 출력을 검사하여 라이센스가 올바르게 설치되었는지 확인합니다.</block>
   <block id="20d8c464d7ec22352c6b329b84051301" category="paragraph">출력을 섹션에서 캡처한 출력과 비교할 수 있습니다 <block ref="cd8ad1809865824065fe011b80800cd6" category="inline-link-macro-rx"></block>.</block>
   <block id="9dabc4c6addd92ab1be1dd1cd49038f7" category="inline-link-macro">노드 4, 27단계를 설치 및 부팅합니다</block>
@@ -2533,7 +2514,6 @@
   <block id="5ec824db325209d322c6c40d3388ca3f" category="list-text">LIF의 홈 포트 수정:<block ref="d4e37e6b2137daa08a46c3f427b8291d" prefix=" " category="inline-code"></block> 필요한 경우 인터클러스터 브로드캐스트 도메인을 조정하고 인터클러스터 LIF를 마이그레이션합니다. 데이터 LIF는 그대로 유지됩니다.</block>
   <block id="d2b3e4b0ae30abdd31414891613ecac2" category="list-text">외부 키 관리자에 대한 인증 복원:</block>
   <block id="eed577fe70cdcd6a422d81d49e0f94ca" category="paragraph">이 명령을 실행하면 Onboard Key Manager(OKM) 암호가 필요합니다.</block>
-  <block id="f52de228b93a6f965c1879aa97b007d6" category="paragraph">인증 키를 사용할 수 없거나 외부 키 관리 서버에 연결할 수 없어 오프라인 상태인 볼륨이 있는지 확인합니다. 를 사용하여 해당 볼륨을 다시 온라인 상태로 전환합니다<block ref="fcc46ad208d53e4021ecddc4ee333dc3" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="1351d313beb812092d972c23cec0b57c" category="summary">를 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드한 후 이전 시스템이 더 이상 작동하지 않는다는 사실을 NetApp에 알려주십시오<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="00c13e2880f6565acea9eb7b236ffe2a" category="summary">을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 node2의 물리적 포트가 node4에 올바르게 매핑되는지 확인합니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="964ab85547edd708f3257e13df3d6e86" category="paragraph">노드 2의 물리적 포트가 노드 4의 물리적 포트에 올바르게 매핑되는지 확인해야 합니다. 이렇게 하면 노드 4가 클러스터의 다른 노드 및 업그레이드 후 네트워크와 통신할 수 있습니다.</block>
@@ -2927,8 +2907,6 @@
   <block id="0fe6701c2bd4920c5d453b5ee906eed1" category="list-text">다음 명령을 사용하여 노드 1과 노드 2가 클러스터의 다른 노드에 의해 소유된 데이터 LIF를 소유 및 확인하지 않습니다.</block>
   <block id="6a4e3b384743506a60b9d8b065cd9569" category="paragraph">노드 1이나 노드 2가 클러스터의 다른 노드에 의해 소유된 데이터 LIF를 소유하지 않은 경우 데이터 LIF를 홈 소유자에게 되돌리십시오.</block>
   <block id="539dfd2d954ae3879b62b16e5593152b" category="list-text">애그리게이트가 해당 홈 노드에 의해 소유되는지 확인합니다.</block>
-  <block id="c2acdfddae4bd8e19301f3c9da97795f" category="paragraph"><block ref="1ed8c6113a55c562cd993e5ff15a5bd5" prefix="" category="inline-code"></block></block>
-  <block id="782650bc65c7f77fc89c4076c7b6450d" category="paragraph"><block ref="324c5af6f18284f9492a99bc1b6d033c" prefix="" category="inline-code"></block></block>
   <block id="8f3c31fbc98a55b30d3c8c6b6ba60ad1" category="list-text">다음 명령을 사용하여 출력을 검사하여 라이센스가 올바르게 설치되었는지 확인합니다.</block>
   <block id="6e7e19ae8357eafafb5df9d5e403d692" category="paragraph">출력을 에서 캡처한 출력과 비교할 수 있습니다 <block ref="cd8ad1809865824065fe011b80800cd6" category="inline-link-macro-rx"></block> 섹션을 참조하십시오.</block>
   <block id="83384f48b367d39b20d627f5230807a9" category="list-text">두 노드에서 다음 명령을 사용하여 SP를 구성합니다.</block>
@@ -2961,11 +2939,6 @@
   <block id="844ad6e55c95a4328e37b5e065b5ff4a" category="paragraph"><block ref="30d261248bcb99132d9386622293364b" prefix="" category="inline-code"></block></block>
   <block id="e31a23cd4ecc24fce8358862c8b9bae7" category="list-text">각 새 노드에서 업그레이드 후 AutoSupport 메시지를 기술 지원 팀에 보냅니다.</block>
   <block id="d01decedde31fd5fc9aee34a816e3a84" category="paragraph"><block ref="6ee9e615e9449987b2b09472dc1b4d86" prefix="" category="inline-code"></block></block>
-  <block id="579f7a458ea3f243e9743154fab94bfb" category="inline-link">CLI를 사용하여 암호화를 관리합니다</block>
-  <block id="6aee45ea83745bd29b2b86870d2afe83" category="list-text">의 적절한 절차를 사용하여 스토리지 또는 볼륨 암호화 기능을 복원합니다<block ref="713156fa56254a04d458a101e174aa50" category="inline-link-rx"></block> 콘텐츠.</block>
-  <block id="e68c8836280fba147b04a2b14b196600" category="paragraph">온보드 키 관리를 사용하는지 또는 외부 키 관리를 사용하는지 여부에 따라 다음 절차 중 하나를 사용하십시오.</block>
-  <block id="0ba3cc03b09a456d5100379e45dfaaba" category="list-text">"'온보드 키 관리 암호화 키 복원'"</block>
-  <block id="a96d0d7d353c649cc2f1612f3100f861" category="list-text">"'외부 키 관리 암호화 키 복원'"</block>
   <block id="7334dc04c7292582343d824254e622ce" category="paragraph"><block ref="14786d25360b0dd4ae80425c9d5ef6bd" prefix="" category="inline-code"></block></block>
   <block id="b50a05f2d30350b2ea8e112696c796d0" category="paragraph">CNA 어댑터가 오프라인 상태인 경우에만 CNA 구성을 수정할 수 있습니다.</block>
   <block id="55c24359193cebab5cdb49b7cf7d04b5" category="list-text">필요한 경우 새 노드에서 스위치가 없는 클러스터를 설정합니다.</block>
@@ -3248,7 +3221,6 @@
   <block id="0bde8f7cae6f7006cf8059b9d923c0a4" category="inline-xref-macro">ONTAP 9.7 이전 버전에서 최종 업그레이드 단계 수행</block>
   <block id="602dfb74c3c65622a6e81f6da6da5716" category="paragraph">고가용성 재활성화:<block ref="acc3b99f812f210de5147296e269009d" prefix=" " category="inline-code"></block></block>
   <block id="68e75079cb8b3e7a53d47ecb9c69a59e" category="paragraph">스토리지 페일오버 다시 설정:<block ref="d1cccee3a49795b9594a03c793e6456b" prefix=" " category="inline-code"></block></block>
-  <block id="fb466db54f62bed3a97d8ba7d3ed2c8e" category="list-text">의 적절한 절차를 사용하여 스토리지 또는 볼륨 암호화 기능을 복원합니다<block ref="9dcdd70dc160b50ece72ebdfa01ae45b" category="inline-link-rx"></block> 콘텐츠.</block>
   <block id="9cd94a0a224271a5cd21acb271cdd506" category="summary">각 새 노드에 하나 이상의 애그리게이트를 만들어 원래 노드에서 이동하려는 볼륨을 저장합니다. 각 볼륨의 애그리게이트를 파악하고 각 볼륨을 개별적으로 이동해야 합니다.</block>
   <block id="b256175cc88e3f891053e44ca8855b5d" category="paragraph">볼륨을 이동하려면 먼저 데이터 보호 미러 관계를 초기화해야 합니다.</block>
   <block id="05a828bdf3e9eb5eb73dbd8f32fc87ba" category="inline-link">필요한 데이터 보호 절차를 찾습니다</block>
@@ -3783,7 +3755,6 @@
   <block id="93cbc4495a566db3a58548f326fa221c" category="paragraph">시스템을 부팅하기 전에 모든 SnapMirror 관계가 중지되었는지 확인해야 합니다. SnapMirror 관계가 중지되면 재부팅 및 페일오버 시에도 계속 정지됩니다.</block>
   <block id="1cf6b38ccce07c615f777e8d49040349" category="inline-link">ONTAP 부팅 메뉴에서 외부 키 관리자 서버 구성을 복원하는 방법</block>
   <block id="a9021e1b94f8e36032c1a900148d17bf" category="paragraph">자세한 내용은 기술 자료 문서를 참조하십시오<block ref="d55f681383ef8cdbd5ac64000ea6e309" category="inline-link-rx"></block>.</block>
-  <block id="3e735cdc84f6fab485c4ddb66b026489" category="paragraph">인증 키를 사용할 수 없거나 외부 키 관리 서버에 연결할 수 없어 오프라인 상태인 볼륨이 있는지 확인합니다. 를 사용하여 해당 볼륨을 다시 온라인 상태로 전환합니다<block ref="fcc46ad208d53e4021ecddc4ee333dc3" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="595e785894184e8832420129093393c7" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 인증 키를 관리하려면 온보드 키 관리자를 사용하십시오.</block>
   <block id="7de07b30845475194f5305d135dd504b" category="paragraph">Onboard Key Manager(OKM)를 사용하여 인증 키를 관리할 수 있습니다. OKM을 설정한 경우 업그레이드를 시작하기 전에 암호문과 백업 자료를 기록해야 합니다.</block>
   <block id="b57235dcd9249f0e9bf6001eecd99ce5" category="list-text">클러스터 전체 암호를 기록합니다.</block>
@@ -3791,7 +3762,6 @@
   <block id="8cada82213a4eb50c1f0cba46389bd44" category="list-text">를 실행하여 키 관리자 정보를 백업합니다<block ref="32ba7af89b7557f6e3e6d80a922080ce" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="219d5a10054a3daaa60cc6dc3881a506" category="paragraph">노드 1과 노드 2가 별도의 섀시에 있는 경우 노드 1과 동일한 랙 위치에 노드 3을 배치할 수 있습니다. 그러나 노드 1이 노드 2가 있는 동일한 섀시에 있는 경우 노드 3을 노드 1의 위치에 가까운 자체 랙 공간에 넣어야 합니다.</block>
   <block id="7abb4d22dfb96ceb2a52ebfc5cef2026" category="admonition">대부분의 플랫폼 모델에는 고유한 상호 연결 카드 모델이 있으므로 상호 연결 카드 또는 클러스터 인터커넥트 케이블 연결을 노드 1에서 노드 3으로 이동할 필요가 없습니다. MetroCluster 구성의 경우 FC-VI 케이블 연결을 노드 1에서 노드 3으로 이동해야 합니다. 새 호스트에 FC-VI 카드가 없는 경우 FC-VI 카드를 이동해야 할 수 있습니다.</block>
-  <block id="215bdc272bd2e7402000e545b699610b" category="list-text">[[man_install3_step16]] NSE(NetApp 스토리지 암호화) 드라이브가 설치되어 있는 경우 다음 단계를 수행하십시오.</block>
   <block id="28fabaf13c83a39f567169d484c2bdb7" category="admonition">절차의 앞부분에서 아직 수행하지 않은 경우 기술 자료 문서를 참조하십시오<block ref="99bc6507ac71bae6bc6755b2bf68f73a" category="inline-link-rx"></block> 사용 중인 자체 암호화 드라이브의 유형을 확인합니다.</block>
   <block id="c31ef72d8e3bd3a09ff6ce8b371d8d63" category="list-text">설정<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 를 선택합니다<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> 또는<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>:</block>
   <block id="f0b1dfc1f82eec89fa61235553e2e4d0" category="cell">NSE 드라이브가 FIPS 140-2 레벨 2 자체 암호화 요구사항을 충족합니다</block>
@@ -3913,7 +3883,6 @@
   <block id="eedfdc7d9365a1f9e29964c35c82e348" category="paragraph"><block ref="8cf81755f02bee986a80060b929f2335" prefix="" category="inline-code"></block></block>
   <block id="c8e281db9c8a31e8da74e7ff6bc12115" category="summary">ONTAP 9.7 이하를 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 인증 키를 관리하려면 OKM을 사용하십시오.</block>
   <block id="20c4be209ec6c65b4221fa6f09f2df42" category="inline-link-macro">Onboard Key Manager를 사용하여 스토리지 암호화를 관리합니다</block>
-  <block id="73d106cd4da3fdbd0b8a8317db146c37" category="list-text">[[boot_node2_step1]] NSE(NetApp 스토리지 암호화) 드라이브가 설치되어 있는 경우 다음 단계를 수행하십시오.</block>
   <block id="04f24e11b658105f38ef40a82c24839e" category="paragraph">* 참고: * 스토리지 시스템을 처음 구성할 때 AutoSupport는 기본적으로 사용하도록 설정됩니다. AutoSupport는 언제든지 비활성화할 수 있지만 활성화 상태를 유지해야 합니다. AutoSupport를 활성화하면 스토리지 시스템에서 문제가 발생할 경우 문제 및 솔루션을 쉽게 식별할 수 있습니다.</block>
   <block id="cb6bc72e3e387b19e4fbc2f28ecc2940" category="list-text">설정<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 를 선택합니다<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> 또는<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>.</block>
   <block id="e147253c0010bdd5968cb9b4b9ddf7dc" category="cell">외부 키 관리자</block>
@@ -4321,11 +4290,9 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="5dac5a25730948f28ff49739852d7be9" category="list-text">NetApp은 가능한 경우 원본 노드와 새 노드에서 동일한 ONTAP 버전을 실행할 것을 권장합니다. 이것이 불가능한 경우, <block ref="9fa2b66114da266713b82d418ec229cf" category="inline-link-macro-rx"></block> 원래 노드와 새 노드 간의 버전 차이가 4보다 크지 않도록 원래 노드에서 지원되는 최대 버전으로 설정합니다. 예를 들어 ONTAP 9.8 및 9.12.1이 지원되지만 ONTAP 9.8 및 9.13.1은 지원되지 않습니다.</block>
   <block id="d9bec0f0ae398cfc3abbf7091d735c22" category="paragraph">*참고1*: 원래 노드에서 실행되는 ONTAP 버전은 새 노드에서 지원해야 합니다. 필요한 경우 <block ref="9fa2b66114da266713b82d418ec229cf" category="inline-link-macro-rx"></block> 원래 노드에서 지원되는 최대 버전으로. 원래 노드와 새 노드 간의 버전 차이는 4보다 클 수 없습니다. 예를 들어 ONTAP 9.8 및 9.12.1이 지원되지만 ONTAP 9.8 및 9.13.1은 지원되지 않습니다.<block ref="ce537934e178c1610dae82a1b82553bf" category="inline-link-rx"></block>.</block>
   <block id="ebf27722a719cbdcb3983568ea50ef42" category="cell">에서 _Install 및 boot node3_로 돌아가서 섹션을 다시 시작합니다 <block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block>.</block>
-  <block id="06497c4478fee55f8a0ff3319fb722a8" category="list-text">[[auto_install4_step27]] NSE(NetApp Storage Encryption) 드라이브가 설치되어 있으면 다음 단계를 수행하십시오.</block>
   <block id="1e4625a567102c02db411f8ac4403956" category="list-text">[[unset_maxwait_system_commands]] 구성에 자체 암호화 드라이브가 사용되고 있고 를 설정한 경우<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 변수 대상<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> (예: 에서 <block ref="e646557bd849df21a23243b7031e90bc" category="inline-link-macro-rx"></block>), 변수를 설정 해제해야 합니다.</block>
   <block id="b0da566a6b16767a9a4f6a9815cc8a8c" category="image-alt">케이블 관리 ARM 분리</block>
   <block id="df4c49d6d7d92d1a3dd7d374cec6fe02" category="image-alt">캠 핸들 열기</block>
-  <block id="ab8dc73b82108799ac3b6894e5efe57e" category="list-text">[[A900_BOOT_NODE1]] NSE(NetApp 스토리지 암호화) 드라이브를 설치한 경우 다음 단계를 수행하십시오.</block>
   <block id="401ec6649ed8fe314eef631a190858b3" category="list-text">에서 설명한 스토리지 암호화 boots를 확인하고 재설정합니다 <block ref="d1353daad078803f11ba1627582281b9" category="inline-xref-macro-rx"></block>.</block>
   <block id="e807a193ac5d601655295b7da3f1b093" category="paragraph">하지만 V 시리즈 시스템이 있거나 FlexArray 가상화 소프트웨어가 있고 스토리지 어레이에 연결되어 있는 경우, 노드 4에 온보드 FC 포트, 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드가 없는 경우, _Install and boot node4_ 섹션으로 돌아가서 에서 다시 시작해야 합니다 <block ref="dc87380ee6757ad7d02cae49ae9cdab7" category="inline-link-macro-rx"></block>. 노드 4에 충분한 랙 공간이 있는지 확인합니다. 노드 4가 노드 2와 다른 섀시에 있는 경우 노드 4를 노드 3과 같은 위치에 배치할 수 있습니다. 노드 2와 노드 4가 동일한 섀시에 있는 경우 노드 4는 이미 해당 랙 위치에 있습니다.</block>
   <block id="1e46f02c6c16752b68ae9ed5650557a7" category="list-text">node4에 UTA/UTA2 카드 또는 UTA/UTA2 온보드 포트가 없는 경우 section_Check 및 UTA/UTA2 포트를 구성하고, node4에서 UTA/UTA2 포트 또는 UTA/UTA2 온보드 포트를 사용하지 않도록 설정한 다음, 에서 섹션을 다시 시작하십시오 <block ref="dc87380ee6757ad7d02cae49ae9cdab7" category="inline-link-macro-rx"></block>.</block>
@@ -5297,4 +5264,30 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="8f7d8cd660c3a1288b48778ea72e58a5" category="sidebar">이 ARL 절차를 사용할지 결정하세요</block>
   <block id="8f921903953b3b6717329ab7de1391c1" category="sidebar">공유 클러스터 HA 스토리지를 위한 케이블 노드2</block>
   <block id="76751896989d28875a4eeddf2995da8d" category="sidebar">스위치 레이아웃 재구성을 준비하세요</block>
+  <block id="9c328071e0321bfbe1d164cac2c22ebd" category="paragraph"><block ref="e6b811afaa94951aac008a53e383ff23" prefix="" category="inline-code"></block></block>
+  <block id="b3b5d42abc670ac795f4b90cfc221655" category="paragraph"><block ref="cb38fc2887221a0ca6581f1d73b29ec5" prefix="" category="inline-code"></block></block>
+  <block id="028c6aaad70991eeba5c4bb66ea88329" category="paragraph">그만큼 <block ref="d6d2e75e827fff3babc66bc7cd4d2c4b" prefix=" " category="inline-code"></block> 이 명령과 함께 사용할 내용은 이전 명령의 출력에서 찾을 수 있습니다. <block ref="0c5606ed319753bb2d86a485f23c8f6d" prefix=" " category="inline-code"></block> 명령.</block>
+  <block id="7edece7677f8bef06093b6be08879c67" category="paragraph"><block ref="b79a4da2e325c3015ed2f7afe206a96b" prefix="" category="inline-code"></block></block>
+  <block id="a29df3ccd4c80ed70466ab7e616060db" category="paragraph"><block ref="c1415a35d798d0e1bc89dfc239e96300" prefix="" category="inline-code"></block> &lt; 그 <block ref="d6d2e75e827fff3babc66bc7cd4d2c4b" prefix=" " category="inline-code"></block> 이 명령과 함께 사용할 내용은 이전 명령의 출력에서 찾을 수 있습니다. <block ref="0c5606ed319753bb2d86a485f23c8f6d" prefix=" " category="inline-code"></block> 명령.</block>
+  <block id="316bb78c78d8c5d743c44432528cc2c4" category="paragraph"><block ref="4221e144bb878e9d4c97a49eaf2eb814" prefix="" category="inline-code"></block></block>
+  <block id="4d090b6b4178c6d326829a98b05a4cd7" category="paragraph"><block ref="534a01a4ca515955efe8376e84615e84" prefix="" category="inline-code"></block></block>
+  <block id="b7836a7a1972d5f8803e2f44bd3cb658" category="paragraph"><block ref="49166cc15e848fc049881c3de5e1d1f8" prefix="" category="inline-code"></block><block ref="6d203e2c19155492a108b65377909131" prefix=" " category="inline-code"></block></block>
+  <block id="4655a1857691d25ac0c12a710dad5454" category="paragraph"><block ref="365695b1d723adf070447422d9e8d907" prefix="" category="inline-code"></block><block ref="5db9f9801ff1015f8f0ec287f1a37e08" prefix=" " category="inline-code"></block></block>
+  <block id="8502756d136a7fbd63f0576ce096751b" category="paragraph"><block ref="e0dd455af4d681c74ccfc9dc72ac81da" prefix="" category="inline-code"></block></block>
+  <block id="a0cc12382dcdc36e42046d83b6c7e109" category="paragraph"><block ref="2599180db5e07a38b13f33bacd678ed0" prefix="" category="inline-code"></block><block ref="cad104e67eebc6460f05ee5386343340" prefix=" " category="inline-code"></block></block>
+  <block id="29d22afc321b012279dd6e65d63787dd" category="paragraph"><block ref="c1691ae4960273f7d983ed570ccc250a" prefix="" category="inline-code"></block><block ref="66730ced80aced888a1e584b32aac885" prefix=" " category="inline-code"></block></block>
+  <block id="dce88c7c89a608000baa31d7f41aafe5" category="cell">외부 키 관리 서버의 IP 주소</block>
+  <block id="f861760a9e4b91d9c15f4ed6899c8a67" category="list-text">온보드 또는 외부 키 관리를 사용하는지 여부에 따라 다음 절차 중 하나를 사용하여 저장소 또는 볼륨 암호화 기능을 복원합니다.</block>
+  <block id="7b5b637cc082477a9dd4c129c225152e" category="inline-link-macro">온보드 키 관리 암호화 키를 복원합니다</block>
+  <block id="43a39f2ab9e3339214d6fda05936d597" category="list-text"><block ref="43a39f2ab9e3339214d6fda05936d597" category="inline-link-macro-rx"></block></block>
+  <block id="1ee623098df2f7856a034824be882999" category="inline-link-macro">외부 키 관리 암호화 키를 복원합니다</block>
+  <block id="116698f9b98f4e456ff27e95e38fccf3" category="list-text"><block ref="116698f9b98f4e456ff27e95e38fccf3" category="inline-link-macro-rx"></block></block>
+  <block id="18b86b85ac7e74bdaf460ba1e2f65f0e" category="list-text">[[auto_install4_step27]]NetApp Storage Encryption(NSE) 드라이브가 설치되어 있는 경우 다음 단계를 수행하세요.</block>
+  <block id="bdac4e49f25f09fd22688c1a0aaf704a" category="paragraph">인증 키를 사용할 수 없거나 외부 키 관리 서버에 연결할 수 없어 오프라인 상태인 볼륨이 있는지 확인합니다. 다음을 사용하여 해당 볼륨을 다시 온라인으로 전환합니다. <block ref="fcc46ad208d53e4021ecddc4ee333dc3" prefix=" " category="inline-code"></block> 명령.</block>
+  <block id="0095109d5b66e24afe910457a637e763" category="list-text">[[A900_boot_node1]]NetApp Storage Encryption(NSE) 드라이브가 설치되어 있는 경우 다음 단계를 수행하세요.</block>
+  <block id="c79e58170822a59a6dd931336ca868ed" category="list-text">[[boot_node2_step1]]NetApp Storage Encryption(NSE) 드라이브가 설치되어 있는 경우 다음 단계를 수행하세요.</block>
+  <block id="78afe52f3d782a64e711de589b4df3d3" category="paragraph"><block ref="346db28706192c9274da330f004e695a" prefix="" category="inline-code"></block></block>
+  <block id="ee003f27b169d76d97322f42ff3b1684" category="paragraph"><block ref="fa9973ef8cb7c81f6e65cb1c4e0c12f2" prefix="" category="inline-code"></block></block>
+  <block id="4dfbd3112f049daa92b3b9620a0a23b4" category="list-text">NetApp 스토리지 암호화(NSE) 드라이브가 설치된 경우 다음 단계를 수행하세요.</block>
+  <block id="780d3ce82c06a7096f3d7b6381f35cf4" category="list-text">[[man_install3_step16]]NetApp Storage Encryption(NSE) 드라이브가 설치되어 있는 경우 다음 단계를 수행하세요.</block>
 </blocks>

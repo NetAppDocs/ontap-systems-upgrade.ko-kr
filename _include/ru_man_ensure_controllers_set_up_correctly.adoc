@@ -7,7 +7,7 @@
 .단계
 . 노드 중 하나에 다음 명령을 입력하여 스토리지 페일오버를 설정합니다.
 +
-`storage failover modify -enabled true -node _node3_`
+`storage failover modify -enabled true -node <node3>`
 
 . 스토리지 페일오버가 설정되었는지 확인합니다.
 +
@@ -55,21 +55,21 @@ node4          node3          true     Connected to node3
 
 . 노드 3이 노드 1의 애그리게이트를 소유하고 있고 노드 4가 노드 2의 애그리게이트를 소유하고 있는지 확인합니다.
 +
-`storage aggregate show -owner-name _node3_`
-`storage aggregate show -owner-name _node4_`
+`storage aggregate show -owner-name <node3>`
+`storage aggregate show -owner-name <node4>`
 
 . 볼륨이 오프라인 상태인지 확인합니다.
 +
-`volume show -node _node3_ -state offline`
-`volume show -node _node4_ -state offline`
+`volume show -node <node3> -state offline`
+`volume show -node <node4> -state offline`
 
 . 오프라인 상태인 볼륨이 있으면 에서 캡처한 오프라인 볼륨 목록과 비교합니다  link:prepare_nodes_for_upgrade.html#man_prepare_nodes_step19["19단계(d)"] 에서 업그레이드할 노드를 준비하고 필요에 따라 각 볼륨에 대해 다음 명령을 한 번 입력하여 오프라인 볼륨을 온라인 상태로 전환합니다.
 +
-`volume online -vserver _vserver_name_ -volume _volume_name_`
+`volume online -vserver <vserver_name> -volume <volume_name>`
 
 . 각 노드에 대해 다음 명령을 입력하여 새 노드에 대한 새 라이센스를 설치합니다.
 +
-`system license add -license-code _license_code,license_code,license_code..._`
+`system license add -license-code <license_code,license_code,license_code...>`
 
 +
 license-code 매개변수는 28개의 대문자 알파벳 문자 키 목록을 허용합니다. 한 번에 하나의 라이센스를 추가하거나, 각 라이센스 키를 쉼표로 구분하여 한 번에 여러 라이센스를 추가할 수 있습니다.
@@ -81,7 +81,7 @@ license-code 매개변수는 28개의 대문자 알파벳 문자 키 목록을 �
 . 원래 노드에서 이전 라이센스를 모두 제거하려면 다음 명령 중 하나를 입력합니다.
 +
 `system license clean-up -unused -expired`
-`system license delete -serial-number _node_serial_number_ -package _licensable_package_`
+`system license delete -serial-number <node_serial_number> -package <licensable_package>`
 
 +
 ** 만료된 라이센스를 모두 삭제하려면 다음을 입력합니다.
@@ -94,8 +94,8 @@ license-code 매개변수는 28개의 대문자 알파벳 문자 키 목록을 �
 
 ** 클러스터에서 특정 라이센스를 삭제하려면 노드에서 다음 명령을 입력합니다.
 +
-`system license delete -serial-number _node1_serial_number_ -package *`
-`system license delete -serial-number _node2_serial_number_ -package *`
+`system license delete -serial-number <node1_serial_number> -package *`
+`system license delete -serial-number <node2_serial_number> -package *`
 
 +
 다음 출력이 표시됩니다.
@@ -121,7 +121,7 @@ Do you want to continue? {y|n}: y
 
 . 두 노드에서 다음 명령을 수행하여 SP를 구성합니다.
 +
-`system service-processor network modify -node _node_name_`
+`system service-processor network modify -node <node_name>`
 
 +
 로 이동합니다 link:other_references.html["참조"] SP 및 _ONTAP 9 명령에 대한 자세한 내용은 _시스템 관리 참조_에 대한 링크를 참조하십시오. 에 대한 자세한 내용은 수동 페이지 참조_를 참조하십시오 `system service- processor network modify` 명령.

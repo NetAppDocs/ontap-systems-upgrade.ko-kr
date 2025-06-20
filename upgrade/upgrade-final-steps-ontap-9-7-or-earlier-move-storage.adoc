@@ -72,13 +72,10 @@ summary: '스토리지를 이동하여 업그레이드 절차를 완료하려면
 +
 `system node autosupport invoke -node node_name -type all -message "MAINT=END node_name successfully upgraded from platform_old to platform_new"`
 
-. 의 적절한 절차를 사용하여 스토리지 또는 볼륨 암호화 기능을 복원합니다https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["CLI를 사용하여 암호화를 관리합니다"^] 콘텐츠.
+. 온보드 또는 외부 키 관리를 사용하는지 여부에 따라 다음 절차 중 하나를 사용하여 저장소 또는 볼륨 암호화 기능을 복원합니다.
 +
-온보드 키 관리를 사용하는지 또는 외부 키 관리를 사용하는지 여부에 따라 다음 절차 중 하나를 사용하십시오.
-
-+
-** "'온보드 키 관리 암호화 키 복원'"
-** "'외부 키 관리 암호화 키 복원'"
+** link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-onboard-key-management-encryption-keys-task.html["온보드 키 관리 암호화 키를 복원합니다"^]
+** link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/restore-external-encryption-keys-93-later-task.html["외부 키 관리 암호화 키를 복원합니다"^]
 
 
 . 새 노드에 FC 포트(온보드 또는 FC 어댑터), 온보드 CNA 포트 또는 CNA 카드가 있는 경우 스토리지 시스템 프롬프트에 다음 명령을 입력하여 FC 또는 CNA 포트를 구성합니다.

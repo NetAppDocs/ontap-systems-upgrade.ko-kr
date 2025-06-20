@@ -30,7 +30,7 @@ NOTE: Aggregate 및 LIF의 홈 소유자는 수정되지 않으며 현재 소유
 .단계
 . 루트가 아닌 모든 애그리게이트가 온라인 상태이고 노드 3의 상태가 온라인인지 확인합니다.
 +
-`storage aggregate show -node _node3_ -state online -root false`
+`storage aggregate show -node <node3> -state online -root false`
 
 +
 다음 예제에서는 노드 2의 루트 이외의 애그리게이트가 온라인 상태인 것을 보여 줍니다.
@@ -49,24 +49,21 @@ aggr_2         825.0GB      825.0GB      0%     online  1      node2  raid_dp  n
 노드 3에서 애그리게이트가 오프라인 상태가 되거나 노드 3에서 외부 상태가 된 경우, 각 애그리게이트에 대해 노드 3의 다음 명령을 사용하여 애그리게이트를 온라인 상태로 전환합니다.
 
 +
-`storage aggregate online -aggregate _aggr_name_`
+`storage aggregate online -aggregate <aggregate_name>`
 
 . 노드 3에서 다음 명령을 사용하고 출력을 검사하여 노드 3에서 모든 볼륨이 온라인 상태인지 확인합니다.
 +
-`volume show -node _node3_ -state offline`
+`volume show -node <node3> -state offline`
 
 +
 노드 3에서 오프라인 상태인 볼륨이 있는 경우 각 볼륨에 대해 한 번씩 노드 3에서 다음 명령을 사용하여 온라인으로 전환합니다.
 
 +
-`volume online -vserver _vserver_name_ -volume _volume_name_`
-
-+
-를 클릭합니다 `_vserver_name_` 이 명령과 함께 사용하려면 이전 의 출력에서 찾을 수 있습니다 `volume show` 명령.
+`volume online -vserver <vserver_name> -volume <volume_name>` < 그  `vserver_name` 이 명령과 함께 사용할 내용은 이전 명령의 출력에서 찾을 수 있습니다.  `volume show` 명령.
 
 . LIF가 올바른 포트로 이동되었으며 상태가 인지 확인합니다 `up`. LIF가 하나라도 다운되면 LIF의 관리 상태를 로 설정합니다 `up` 다음 명령을 각 LIF에 대해 한 번 입력합니다.
 +
-`network interface modify -vserver _vserver_name_ -lif _LIF_name_ -home-node _node_name_ -status-admin up`
+`network interface modify -vserver <vserver_name> -lif <LIF_name> -home-node <node_name> -status-admin up`
 
 . 현재 데이터 LIF를 호스팅하는 포트가 새 하드웨어에 없으면 브로드캐스트 도메인에서 제거합니다.
 +
