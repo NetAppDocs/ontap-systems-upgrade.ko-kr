@@ -83,6 +83,8 @@ entries:
     url: "/upgrade-arl-auto-affa900/verify_node2_installation.html"
   - title: 노드 2에서 키 관리자 구성을 복원합니다
     url: "/upgrade-arl-auto-affa900/restore_key_manager_config_node2.html"
+  - title: 클러스터 스위치에서 RCF 구성을 확인하세요
+    url: "/upgrade-arl-auto-affa900/verify-rcf-configuration.html"
   - title: 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 2로 다시 이동합니다
     url: "/upgrade-arl-auto-affa900/move_non_root_aggr_and_nas_data_lifs_back_to_node2.html"
 - title: 7단계. 업그레이드를 완료합니다
