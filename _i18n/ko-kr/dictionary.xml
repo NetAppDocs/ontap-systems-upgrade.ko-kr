@@ -4448,7 +4448,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="86c15a425269c6a2503b9871021e6df8" category="cell">AFF A700 또는 FAS9000</block>
   <block id="7f42c48311ba942f81d7a07c44c47d3b" category="admonition">node1 * 및 * node2 * 라는 용어는 이 문서의 노드 이름에 대한 참조용으로만 사용됩니다. 이 절차를 수행할 때는 노드의 실제 이름을 바꿔야 합니다.</block>
   <block id="a06d68e350c79a17b1b36fae9ee9106c" category="doc">노드2에 AFF A90 또는 AFF A70 모듈을 설치합니다</block>
-  <block id="be3affc900cfc23554c8c8d7e7fb9b42" category="paragraph">노드2에서 업그레이드를 위해 받은 AFF A90 또는 AFF A70 컨트롤러 모듈을 설치합니다. 노드2는 시스템 뒷면에서 컨트롤러를 볼 때 섀시 오른쪽에 있는 컨트롤러 B입니다.</block>
   <block id="011359cc38c137752e931fd997e519a7" category="image-alt">AFF A90 또는 AFF A70을 설치합니다</block>
   <block id="b360374fb1c72b27ec9072588d678096" category="admonition">섀시의 전원이 이미 켜져 있기 때문에 노드1은 BIOS 초기화를 시작하고 완전히 장착되는 즉시 자동 부팅을 시작합니다. 노드1 부팅을 중단하려면 컨트롤러 모듈을 슬롯에 완전히 삽입하기 전에 직렬 콘솔 및 관리 케이블을 노드1 컨트롤러 모듈에 연결하는 것이 좋습니다.</block>
   <block id="da7cf8ace467e07feef604bd9a07fa23" category="list-text">자동 부팅을 중단하고 나면 로더 프롬프트에서 노드 1이 중지됩니다. 자동 부팅을 중지하고 노드1의 부팅을 시작하는 경우, 프롬프트가 표시될 때까지 기다린 다음 Ctrl+C를 눌러 부팅 메뉴로 이동합니다. 부팅 메뉴에서 노드가 중지되면 옵션을 사용하여<block ref="c9f0f895fb98ab9159f51fd0297e236d" prefix=" " category="inline-code"></block> 노드를 재부팅하고 재부팅 중 자동 부팅을 중단합니다.</block>
@@ -4484,7 +4483,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="9e0a1039504ca0408797903c8f8ca02d" category="summary">ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드하는 경우 AFF A220, AFF A200, AFF C190, FAS2620 또는 FAS2720 시스템 모듈 1을 교체합니다.</block>
   <block id="1bea5ea0e73e228055c8e231e1075879" category="paragraph">컨트롤러 내부의 구성 요소에 접근하려면 시스템에서 컨트롤러 모듈을 분리한 다음 컨트롤러 모듈의 덮개를 분리합니다.</block>
   <block id="3b59a6e4feb61a49bd8e07d1dc5ed44d" category="paragraph">ASA A150, AFF A150 또는 FAS2820 컨트롤러 모듈을 노드1에 설치, 케이블 연결, 연결합니다.</block>
-  <block id="3cf0b39ddc0b0c6fbe705a62aacc7d3c" category="list-text">섀시 앞면에서 엄지 손가락으로 각 드라이브를 단단히 눌러 정지가 느껴질 때까지 밀어넣습니다. 이렇게 하면 드라이브가 섀시 중앙판에 단단히 고정됩니다.</block>
   <block id="73ee2bd7f33c26664f94c379c6ab36d2" category="image-alt">드라이브를 밀어 섀시 중앙판에 단단히 장착합니다</block>
   <block id="9bedcc9650ba1fe86ed7720eb975429e" category="list-text">섀시 후면으로 이동합니다.</block>
   <block id="f138b6c2f3e77b4a7b2b9693f7102662" category="list-text">소스에서 node1 컨트롤러 모듈 전원 공급 장치를 분리합니다.</block>
@@ -5309,4 +5307,10 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="48b45c4448ac737e7cd5110c5c5ab986" category="paragraph">node1을 폐기하려면 node2에서 HA 쌍을 비활성화하는 자동화된 작업을 재개하고 node1을 올바르게 종료합니다.  절차의 후반부에서는 랙이나 섀시에서 node1을 제거합니다.</block>
   <block id="fdece49a53b4d22867330bbf853edcbb" category="paragraph">node1을 폐기한 후 전원이 꺼져 있고 네트워크에 연결되어 있지 않은지 확인합니다.  node1과 node2 모두의 업그레이드가 완료될 때까지 node1의 기존 하드웨어를 이 상태로 두세요.  그런 다음 node1을 해제할 수 있습니다.<block ref="0f82d37b39d321fc9b25cdd372b37e32" category="inline-link-macro-rx"></block> .</block>
   <block id="9385d14007f76e744745739d94bc306a" category="paragraph">node2를 폐기한 후 전원이 꺼져 있고 네트워크에 연결되어 있지 않은지 확인합니다.  node1과 node2 모두의 업그레이드가 완료될 때까지 node2의 기존 하드웨어를 이 상태로 두세요.  그런 다음 노드2를 해제할 수 있습니다.<block ref="0f82d37b39d321fc9b25cdd372b37e32" category="inline-link-macro-rx"></block> .</block>
+  <block id="3df2e25dd62a653c7cb81686296e66ad" category="admonition">섀시의 전원이 이미 켜져 있으므로, 노드2는 BIOS 초기화를 시작한 후 완전히 장착되자마자 AUTOBOOT를 시작합니다.  노드2 부팅을 중단하려면 컨트롤러 모듈을 슬롯에 완전히 삽입하기 전에 직렬 콘솔과 관리 케이블을 노드2 컨트롤러 모듈에 연결하는 것이 좋습니다.</block>
+  <block id="0c1a4b73743825276f6a94f00753ae1c" category="list-text">모듈이 장착되면 즉시 직렬 콘솔을 연결하고 node2의 AUTOBOOT를 중단할 준비를 하세요.</block>
+  <block id="b83800b3bdc2a5eef7a8fe97664b1121" category="paragraph">업그레이드를 위해 받은 AFF A90 또는 AFF A70 컨트롤러 모듈을 node2에 설치합니다.  노드 2는 시스템 후면에서 컨트롤러를 볼 때 섀시의 아래쪽 베이에 위치한 컨트롤러 B입니다.</block>
+  <block id="4e0d7c1abfb8de7fd56ae6e56c1b7b4b" category="list-text">섀시 전면에서 엄지손가락을 사용하여 각 드라이브를 위쪽과 아래쪽 디스크 베이에 단단히 밀어 넣어 확실하게 멈추는 느낌이 들 때까지 밀어 넣습니다.  이렇게 하면 드라이브가 섀시 중앙판에 단단히 고정됩니다.</block>
+  <block id="a3fa441608c8038d19e72ef43c8108bc" category="section-title">시스템 컨트롤러 교체 작업 재개</block>
+  <block id="20d8255eb490088576c2cdeea2fb6e2a" category="list-text">노드2 컨트롤러 모듈 전원 공급 장치를 소스에서 분리합니다.</block>
 </blocks>
