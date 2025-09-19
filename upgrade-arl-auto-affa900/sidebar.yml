@@ -26,7 +26,7 @@ entries:
   - title: 노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치합니다
     url: "/upgrade-arl-auto-affa900/relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html"
   - title: 장애가 발생하거나 거부권을 행사한 Aggregate를 재배치합니다
-    url: "/upgrade-arl-auto-affa900/relocate_failed_or_vetoed_aggr.html"
+    url: "/upgrade-arl-auto-affa900/relocate-failed-or-vetoed-aggr-node2.html"
   - title: 노드1을 폐기합니다
     url: "/upgrade-arl-auto-affa900/retire_node1.html"
   - title: 노드1 시스템 모듈을 교체합니다
@@ -57,6 +57,8 @@ entries:
   entries:
   - title: 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 2에서 노드 1로 재배치합니다
     url: "/upgrade-arl-auto-affa900/relocate_non_root_aggr_nas_lifs_from_node2_to_node1.html"
+  - title: 장애가 발생하거나 거부권을 행사한 Aggregate를 재배치합니다
+    url: "/upgrade-arl-auto-affa900/relocate-failed-or-vetoed-aggr-node1.html"
   - title: 노드2를 폐기합니다
     url: "/upgrade-arl-auto-affa900/retire_node2.html"
 - title: 5단계. 노드 2에 교체 시스템 모듈을 설치합니다

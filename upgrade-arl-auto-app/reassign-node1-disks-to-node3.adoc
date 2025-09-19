@@ -16,11 +16,17 @@ summary: '명령을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러�
 [role="lead"]
 node3 설치를 확인하기 전에 node1에 속한 디스크를 node3에 재할당해야 합니다.
 
-.이 작업에 대해
-노드3에서 이 섹션의 단계를 수행합니다.
-
 .단계
-. [[RESALOCATE-node1-node3-app-step1]] 부팅 메뉴로 이동하여 22/7을 사용하여 숨겨진 옵션을 `boot_after_controller_replacement`선택합니다. 다음 예에 따라 프롬프트에 node1을 입력하여 node3에 노드 1의 디스크를 재할당합니다.
+. [[reassign-node1-node3-app-step1]]node1이 부팅 메뉴에서 중지되었는지 확인합니다.  node1의 디스크를 node3에 다시 할당합니다.
++
+`boot_after_controller_replacement`
+
++
+잠시 후에 교체되는 노드의 이름을 입력하라는 메시지가 표시됩니다. 공유 디스크(ADP(고급 디스크 파티셔닝) 또는 분할된 디스크라고도 함)가 있는 경우 HA 파트너의 노드 이름을 입력하라는 메시지가 표시됩니다.
+
++
+이러한 프롬프트는 콘솔 메시지에 묻힐 수 있습니다. 노드 이름을 입력하지 않거나 잘못된 이름을 입력하면 이름을 다시 입력하라는 메시지가 표시됩니다.
+
 +
 .콘솔 출력 예를 확장합니다
 [%collapsible]
@@ -89,6 +95,7 @@ This will replace all flash-based configuration with the last backup to disks. A
 <output truncated>
 .
 Controller Replacement: Provide name of the node you would like to replace:<nodename of the node being replaced>
+Controller Replacement: Provide High Availability partner of node1: <nodename of the partner of the node being replaced>
 Changing sysid of node node1 disks.
 Fetched sanown old_owner_sysid = 536940063 and calculated old sys id = 536940063
 Partner sysid = 4294967295, owner sysid = 536940063
@@ -125,7 +132,12 @@ Login:
 
 NOTE: 위의 콘솔 출력 예에서 시스템이 ADP(고급 디스크 파티셔닝) 디스크를 사용하는 경우 ONTAP에서 파트너 노드 이름을 묻는 메시지를 표시합니다.
 
-. 시스템이 재부팅 루프에 메시지가 `no disks found`표시되면 시스템에서 FC 또는 UTA/UTA2 포트를 다시 타겟 모드로 재설정했으므로 디스크를 볼 수 없는 것입니다. 이 문제를 해결하려면 <<reassign-node1-node3-app-step3,3단계>>로 <<reassign-node1-node3-app-step8,8단계>>이동하거나 섹션으로 link:verify_node3_installation.html["노드3 설치를 확인합니다"]이동하십시오.
+. 시스템이 다음 메시지와 함께 재부팅 루프에 빠지면 `no disks found` 이는 시스템이 FC 또는 UTA/UTA2 포트를 대상 모드로 재설정했기 때문에 디스크를 볼 수 없음을 나타냅니다.  이 문제를 해결하려면 다음 작업 중 하나를 선택하세요.
++
+** 공연하다<<reassign-node1-node3-app-step3,3단계>> 에게<<reassign-node1-node3-app-step8,8단계>> 노드3에서
+** 섹션으로 이동link:verify_node3_installation.html["노드3 설치를 확인합니다"]
+
+
 . [[reassign-node1-node3-app-step3]] 자동 부팅 시 Ctrl-C를 눌러 Loader에서 노드를 중지합니다.
 . LOADER 프롬프트에서 유지보수 모드로 전환합니다.
 +

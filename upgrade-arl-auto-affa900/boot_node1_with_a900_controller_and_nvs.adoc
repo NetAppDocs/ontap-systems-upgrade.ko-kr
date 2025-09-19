@@ -29,7 +29,7 @@ summary: ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업�
 `boot_ontap maint`
 
 +
-..  `y`혼합 플랫폼 확인 프롬프트로 이동합니다.
+.. 답변 `y` 혼합 플랫폼 확인 프롬프트로 이동합니다.
 .. 확인 프롬프트에 응답합니다 `yes` .
 .. 100GbE 인터페이스의 상태를 표시합니다.
 +
@@ -89,7 +89,10 @@ NOTE: 절차의 앞부분에서 아직 수행하지 않은 경우 기술 자료 
 +
 `boot_ontap menu`
 
-. "22/7"을 입력하고 숨겨진 옵션을 선택하여 이전 노드1 디스크를 교체 노드1에 재할당합니다 `boot_after_controller_replacement` 부팅 메뉴에서 노드가 중지되면
+. 노드가 부팅 메뉴에서 멈추면 다음 명령을 node1에서 실행하여 이전 node1 디스크를 교체 node1에 다시 할당합니다.
++
+`boot_after_controller_replacement`
+
 +
 잠시 후에 교체되는 노드의 이름을 입력하라는 메시지가 표시됩니다. 공유 디스크(ADP(고급 디스크 파티셔닝) 또는 분할된 디스크라고도 함)가 있는 경우 HA 파트너의 노드 이름을 입력하라는 메시지가 표시됩니다.
 
@@ -196,6 +199,7 @@ This will replace all flash-based configuration with the last backup to disks. A
 .
 .
 Controller Replacement: Provide name of the node you would like to replace:<nodename of the node being replaced>
+Controller Replacement: Provide High Availability partner of node1: <nodename of the partner of the node being replaced>
 Changing sysid of node node1 disks.
 Fetched sanown old_owner_sysid = 536940063 and calculated old sys id = 536940063
 Partner sysid = 4294967295, owner sysid = 536940063

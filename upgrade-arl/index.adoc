@@ -194,8 +194,53 @@ ARL은 HA 구성을 활용하여 비루트 애그리게이트의 소유권을 �
 
 "시스템 명령"을 사용하여 업그레이드 시나리오가 지원되지 않는 경우 수동 명령을 사용하여 ARL 업그레이드를 수행할 수 있습니다.
 
-업그레이드를 시작하려면 ONTAP 버전에 대한 절차를 선택합니다.
+.지원되는 시스템을 표시합니다
+[%collapsible]
+====
+[role="tabbed-block"]
+=====
+.ONTAP 9.8 이상
+--
+다음 시스템에서는 ONTAP 9.8 이상을 실행하며 수동 ARL 업그레이드가 지원됩니다.
 
-* link:../upgrade-arl-manual-app/index.html["ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드합니다"]
-* link:../upgrade-arl-manual/index.html["ONTAP 9.7 이하를 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드합니다"]
+* FAS 시스템에서 FAS 시스템으로
+* AFF 시스템에서 AFF 시스템으로
++
+동일한 시리즈의 교체 시스템으로만 업그레이드할 수 있습니다.
 
++
+** AFF A-Series 시스템에서 AFF A-Series 시스템으로 마이그레이션합니다
+** AFF C-Series 시스템에서 AFF C-Series 시스템으로 전환
+
+
+* ASA 시스템에서 ASA 시스템으로
++
+
+NOTE: ASA R2 교체 시스템으로의 ASA 업그레이드는 지원되지 않습니다. ASA에서 ASA R2로 데이터를 마이그레이션하는 방법에 대한 자세한 내용은 를 참조하십시오link:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html["SAN 호스트에서 ASA R2 스토리지 시스템으로의 데이터 액세스가 가능합니다"^].
+
++
+동일한 시리즈의 교체 시스템으로만 업그레이드할 수 있습니다.
+
++
+** ASA A-Series 시스템에서 ASA A-Series 시스템으로 마이그레이션합니다
+** ASA C-Series 시스템에서 ASA C-Series 시스템으로 전환
+
+
+
+
+link:../upgrade-arl-manual-app/index.html["ONTAP 9.8 이상을 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드합니다"]
+
+--
+.ONTAP 9.7 또는 이전 버전
+--
+다음 시스템에서는 ONTAP 9.7 이하 버전을 실행하며 수동 ARL 업그레이드가 지원됩니다.
+
+* FAS 시스템에서 FAS 시스템으로
+* AFF 시스템에서 AFF 시스템으로
+
+
+link:../upgrade-arl-manual/index.html["ONTAP 9.7 이하를 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드합니다"]
+
+--
+=====
+====
