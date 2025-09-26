@@ -1,0 +1,201 @@
+---
+permalink: upgrade/migrate-fas2820-node4-lIfs-aggregates.html 
+sidebar: sidebar 
+keywords: fas2820, ndu, nondisruptive, upgrade, node3, node4, migrate, aggregates, lif 
+summary: '업그레이드를 완료하려면 FAS2820node3을 node4에 연결한 다음, node4의 데이터 논리 인터페이스(LIF)와 데이터 집계를 node3으로 마이그레이션합니다.' 
+---
+= FAS2820 노드4에서 노드3으로 LIF 및 데이터 집계 마이그레이션
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+업그레이드를 완료하려면 FAS2820 노드3을 노드4에 연결한 다음 노드4의 데이터 논리 인터페이스(LIF)와 데이터 집계를 노드3으로 마이그레이션합니다.
+
+.이 작업에 대해
+node3에서 다음 단계를 수행합니다.
+
+.단계
+. 노드 3의 로더 프롬프트에서 노드를 부팅 메뉴로 부팅합니다.
++
+[source, cli]
+----
+boot_ontap menu
+----
+. 옵션을 선택합니다 `6 Update flash from backup config` /var 파일 시스템을 node3으로 복구합니다.
++
+그러면 모든 플래시 기반 구성이 디스크에 대한 마지막 백업으로 대체됩니다.
+
+. 를 입력합니다 `y` 를 눌러 계속합니다.
+. 노드가 정상적으로 부팅되도록 합니다.
++
+[NOTE]
+====
+노드가 자동으로 재부팅되어 /var 파일 시스템의 새 복사본이 로드됩니다.
+
+노드가 시스템 ID 불일치가 있다는 경고를 보고합니다. 를 입력합니다 `y` 시스템 ID를 무시하려면
+
+====
+. 클러스터와 HA 포트가 node3과 node4 사이에 연결되어 있는지 확인하세요.
+. node3 및 node4에서 클러스터 및 HA 포트를 표시합니다.
++
+[source, cli]
+----
+set -privilege advanced
+----
++
+[source, cli]
+----
+network port show
+----
+. 원하는 클러스터 포트를 포함하도록 클러스터 브로드캐스트 도메인 수정:
++
+[source, cli]
+----
+network port broadcast-domain remove-ports -broadcast-domain <broadcast_domain_name> -ports <port_names>
+----
++
+[source, cli]
+----
+network port broadcast-domain add-ports -broadcast-domain Cluster -ports <port_names>
+----
++
+
+NOTE: ONTAP 9.8부터 새로운 IPspace와 하나 이상의 브로드캐스트 도메인을 클러스터 연결용 기존 물리적 포트에 지정할 수 있습니다.
+
+. 원하는 클러스터 포트를 포함하도록 클러스터 IPspace를 수정하고 아직 설정되지 않은 경우 최대 전송 단위를 9000으로 설정합니다.
++
+[source, cli]
+----
+network port modify -node <node_name> -port <port_name> -mtu 9000 -ipspace Cluster
+----
+. 모든 클러스터 네트워크 LIF 표시:
++
+[source, cli]
+----
+network interface show -role cluster
+----
+. 두 노드의 모든 클러스터 네트워크 LIF를 계획된 홈 포트로 마이그레이션합니다.
++
+[source, cli]
+----
+network interface migrate -vserver <vserver_name> -lif <lif_name> -destination-node <node_name> -destination-port <port_name>
+----
+. 모든 클러스터 네트워크 LIF 표시:
++
+[source, cli]
+----
+network interface show -role cluster
+----
+. 클러스터 네트워크 LIF에 대한 홈 포트를 구성합니다.
++
+[source, cli]
+----
+network interface modify -vserver <vserver_name> -lif <lif_name> -home-port <port_name>
+----
+. node3에 대한 모든 데이터 LIF를 node3으로 다시 마이그레이션합니다.
++
+[source, cli]
+----
+network interface migrate -vserver <vserver_name> -lif <lif_name> -destination-node <node3> -destination-port <port_name>
+----
+. 모든 데이터 네트워크 LIF 표시:
++
+[source, cli]
+----
+network interface show -role data
+----
+. 모든 데이터 LIF에 대한 홈 노드와 홈 포트를 구성합니다.  LIF가 다운된 경우 관리 상태를 다음으로 설정하세요. `up` 각 LIF에 대해 다음 명령을 한 번씩 입력하세요.
++
+[source, cli]
+----
+network interface modify -vserver <vserver_name> -lif <lif_name> -home-node <node_name> -home-port <port_name> -status-admin up
+----
+. 클러스터 관리 LIF 마이그레이션:
++
+[source, cli]
+----
+network interface migrate -vserver <vserver_name> -lif <cluster_mgmt_lif> -destination-node <node3> -destination-port <port_name>
+----
+. 클러스터 관리 LIF의 상태를 표시합니다.
++
+[source, cli]
+----
+network interface show -role cluster-mgmt
+----
+. 클러스터의 모든 데이터 애그리게이트 상태 표시:
++
+[source, cli]
+----
+storage aggregate show
+----
+. 2노드 클러스터에서 클러스터 고가용성을 활성화합니다.
++
+[source, cli]
+----
+cluster ha modify -configured true
+----
+. node3 및 node4에 대한 스토리지 장애 조치를 활성화하고 확인합니다.
++
+[source, cli]
+----
+storage failover modify -node <node3> -enabled true
+----
++
+[source, cli]
+----
+storage failover modify -node <node4> -enabled true
+----
++
+[source, cli]
+----
+storage failover show
+----
+. node3이 소유해야 하는 node4가 소유한 데이터 집계를 마이그레이션합니다.
++
+[source, cli]
+----
+storage aggregate relocation start -aggregate <aggregate_name> -node <node4> -destination <node3>
+----
+. 클러스터의 모든 데이터 애그리게이트 상태 표시:
++
+[source, cli]
+----
+storage aggregate show
+----
+. 노드에서 네트워크 LIF 자동 되돌리기 사용:
++
+[source, cli]
+----
+network interface modify -lif * -auto-revert true
+----
+. 스토리지 페일오버 자동 반환 설정:
++
+[source, cli]
+----
+storage failover modify -node * -auto-giveback true
+----
+. 클러스터 상태 표시:
++
+[source, cli]
+----
+cluster show
+----
+. 페일오버 자격 표시:
++
+[source, cli]
+----
+storage failover show
+----
++
+
+NOTE: 클러스터 보고서 출력에서 노드가 다른 노드에 속한 집계를 잘못 소유할 수 있습니다.  이런 일이 발생하면 클러스터 양쪽에서 인수 및 반환을 수행합니다.
+
+. 클러스터의 모든 데이터 애그리게이트 상태 표시:
++
+[source, cli]
+----
+storage aggregate show
+----
+

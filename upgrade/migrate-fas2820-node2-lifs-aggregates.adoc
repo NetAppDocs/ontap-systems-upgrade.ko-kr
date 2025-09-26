@@ -1,0 +1,147 @@
+---
+permalink: upgrade/migrate-fas2820-node2-lifs-aggregates.html 
+sidebar: sidebar 
+keywords: fas2820, ndu, nondisruptive, upgrade, node1, node2, migrate, aggregates, lifs 
+summary: '노드2를 드라이브 쉘프로 변환하기 전에 FAS2820 노드2의 논리 인터페이스(LIF)와 데이터 집계를 노드1로 마이그레이션합니다.' 
+---
+= FAS2820 노드2의 LIF 및 데이터 집계를 노드1로 마이그레이션합니다.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+노드2를 드라이브 쉘프로 변환하기 전에 FAS2820 노드2의 논리 인터페이스(LIF)와 데이터 집계를 노드1로 마이그레이션합니다.
+
+.시작하기 전에
+다음 요구 사항을 충족하는지 확인합니다.
+
+* 가능한 경우 FAS2820 과 교체 컨트롤러는 동일한 ONTAP 릴리스 및 패치 버전을 사용합니다.  를 참조하세요 https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^] 지원되는 ONTAP 릴리스에 대해.
+
+
+[NOTE]
+====
+* FAS2820 시스템의 ONTAP 버전과 일치하도록 노드3과 노드4에 네트워크 부팅을 하고 ONTAP 버전을 설치해야 합니다.  Node3과 node4는 대체 컨트롤러입니다.
+* node3 및 node4 컨트롤러의 기본 부트 이미지와 백업 부트 이미지는 모두 동일한 ONTAP 버전을 가져야 합니다.
+* 다음을 수행하여 node3 및 node4에서 잔여 클러스터 구성을 지워야 합니다. `wipeconfig` 부팅 메뉴에서.
+
+
+====
+* 두 교체 컨트롤러 모두 LOADER 프롬프트에서 대기 중입니다.
+* 필요한 케이블은 모두 준비되어 있습니다.
+
+
+.이 작업에 대해
+다음 단계는 FAS2820 노드1에서 수행됩니다.
+
+.단계
+. 고급 권한 수준 액세스:
++
+[source, cli]
+----
+set -privilege advanced
+----
+. 스토리지 페일오버 자동 반환 비활성화:
++
+[source, cli]
+----
+storage failover modify -node node1 -auto-giveback false
+----
+. HA 쌍의 두 노드에서 LIF 자동 되돌리기 기능 해제:
++
+[source, cli]
+----
+network interface modify -lif * -auto-revert false
+----
+. 모든 데이터 네트워크 LIF의 상태를 표시합니다.
++
+[source, cli]
+----
+network interface show -role data
+----
+. 클러스터 관리 LIF의 상태를 표시합니다.
++
+[source, cli]
+----
+network interface show -role cluster-mgmt
+----
+. 노드 2에 호스팅된 스토리지 가상 머신에서 모든 데이터 LIF 마이그레이션:
++
+[source, cli]
+----
+network interface migrate -vserver <vserver_name> -lif <lif_name> -destination-node <node1> -destination-port <port_name>
+----
++
+
+NOTE: 이 명령은 비 SAN LIF만 마이그레이션합니다. iSCSI 및 FCP LIF를 마이그레이션할 때는 사용할 수 없습니다.
+
+. 클러스터에 있는 모든 데이터 LIF의 상태를 표시합니다.
++
+[source, cli]
+----
+network interface show -role data
+----
+. LIF가 다운된 경우 관리 상태를 다음으로 설정하세요. `up` 각 LIF에 대해 다음 명령을 한 번씩 입력하세요.
++
+[source, cli]
+----
+network interface modify -vserver <vserver_name> -lif <lif_name> -status-admin up
+----
+. 클러스터의 모든 데이터 애그리게이트 상태 표시:
++
+[source, cli]
+----
+storage aggregate show
+----
+. 페일오버 자격 표시:
++
+[source, cli]
+----
+storage failover show
+----
+. 노드 2의 데이터 애그리게이트를 노드 1로 마이그레이션:
++
+[source, cli]
+----
+storage aggregate relocation start -aggregate <aggregate_name> -node <node2> -destination <node1>
+----
+. 클러스터의 모든 데이터 애그리게이트 상태 표시:
++
+[source, cli]
+----
+storage aggregate show
+----
+. 클러스터의 모든 데이터 볼륨 상태를 표시합니다.
++
+[source, cli]
+----
+volume show
+----
+. 를 표시합니다 `ha` epsilon의 상태 및 소유권:
++
+[source, cli]
+----
+cluster show
+----
+. 클러스터 ha 비활성화:
++
+[source, cli]
+----
+cluster ha modify -configured false
+----
+. 를 표시합니다 `ha` epsilon의 상태 및 소유권:
++
+[source, cli]
+----
+cluster show
+----
+. 노드2 중단:
++
+[source, cli]
+----
+halt -node <node2> -inhibit-takeover true -ignore-quorum-warnings true
+----
+
+
+.다음 단계
+link:convert-fas2820-node2-drive-shelf.html["노드 2를 드라이브 쉘프로 변환한 후 노드 4에 연결합니다"]

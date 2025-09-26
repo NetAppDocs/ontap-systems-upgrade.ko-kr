@@ -69,5 +69,6 @@ node1 및 node2에 속한 디스크를 node3 및 node4에 각각 재할당합니
 ONTAP 9.8 이상 또는 ONTAP 9.7 이전 버전에서 업그레이드를 완료하십시오.
 
 .관련 정보
-* link:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html["드라이브 쉘프로 전환하여 AFF A250을 AFF A400으로 업그레이드합니다"] (중단 절차).
+* link:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html["드라이브 쉘프로 전환하여 AFF A250을 AFF A400으로 업그레이드합니다"](비파괴적 절차)
+* link:convert-fas2820-to-drive-shelf.html["드라이브 쉘프로 변환하여 FAS2820 에서 업그레이드"](비파괴적 절차)
 

@@ -1,0 +1,211 @@
+---
+permalink: upgrade/migrate-fas2820-aggregates-epsilon-lifs.html 
+sidebar: sidebar 
+keywords: fas2820, ndu, nondisruptive, upgrade, node1, node4, migrate, aggregates, lifs 
+summary: 'node1의 데이터 집계, epsilon, 논리 인터페이스(LIF)를 node4로 마이그레이션합니다.' 
+---
+= FAS2820 node1에서 node4로 데이터 집계, epsilon 및 LIF 마이그레이션
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FAS2820 노드1의 데이터 집계, 엡실론, 논리 인터페이스(LIF)를 노드4로 마이그레이션합니다.
+
+.이 작업에 대해
+node4에서 다음 단계를 수행하세요.
+
+.단계
+. node4의 LOADER 프롬프트에서 파트너 시스템 ID를 설정합니다.
++
+[source, cli]
+----
+setenv partner-sysid <system_ID_of_node1>
+----
+. 파트너 시스템 ID를 확인하세요:
++
+[source, cli]
+----
+printenv partner-sysid
+----
+. 변경 사항을 저장합니다.
++
+[source, cli]
+----
+saveenv
+----
+. 노드를 부팅 메뉴로 부팅합니다.
++
+[source, cli]
+----
+boot_ontap menu
+----
+. 부팅 메뉴에서 옵션을 선택하세요 `6 Update flash from backup config` /var 파일 시스템을 node4로 복원합니다.
++
+그러면 모든 플래시 기반 구성이 디스크에 대한 마지막 백업으로 대체됩니다.
+
+. 를 입력합니다 `y` 를 눌러 계속합니다.
++
+[NOTE]
+====
+노드가 자동으로 재부팅되어 /var 파일 시스템의 새 복사본이 로드됩니다.
+
+노드가 시스템 ID 불일치 경고를 보고합니다. 를 입력합니다 `y` 시스템 ID를 무시하려면
+
+====
+. 클러스터 LIF 마이그레이션:
++
+[source, cli]
+----
+set -privilege advanced
+----
++
+[source, cli]
+----
+network port show
+----
++
+[NOTE]
+====
+FAS2820 교체 컨트롤러로 업그레이드할 때 시스템 클러스터 포트가 유사하지 않으면 노드 4의 인터페이스를 임시로 클러스터 포트로 변경해야 할 수 있습니다.
+
+[source, cli]
+----
+network port modify -node <node4> -port <port_name> -mtu 9000 -ipspace Cluster
+----
+====
++
+[source, cli]
+----
+network interface migrate -vserver Cluster -lif <cluster_LIF>  -destination-node <node4> -destination-port <port_name>
+----
+. 클러스터가 쿼럼에 도달할 때까지 기다린 다음 클러스터 노드가 정상인지 확인합니다.
++
+[source, cli]
+----
+– cluster show
+----
++
+
+NOTE: HA Pair 및 스토리지 페일오버는 현재 상태에서 비활성 상태로 유지됩니다.
+
+. 클러스터 LIF를 노드 4의 임시 25G 클러스터 포트로 이동합니다.
++
+[source, cli]
+----
+network interface modify -vserver Cluster -lif <cluster_LIF> -home-node <node4> -home-port <port_name>
+----
+. 업그레이드하는 FAS2820 클러스터에서 인터페이스 그룹과 데이터 VLAN을 사용하는 경우에만 이 단계를 완료하세요. 그렇지 않으면 다음으로 이동하세요<<migrate_node1_nod4,11단계>> .
++
+교체 컨트롤러의 물리적 네트워크 포트 이름은 FAS2820 의 이름과 다릅니다.  이로 인해 노드 4에서 VLAN이 변위되고 인터페이스 그룹이 잘못 구성될 수 있습니다.
+
++
+.. 이동된 VLAN을 표시합니다.
++
+[source, cli]
+----
+cluster controller-replacement network displaced-vlans show
+----
+.. 이동된 VLAN을 복원합니다.
++
+[source, cli]
+----
+cluster controller-replacement network displaced-vlans restore
+----
+.. 잘못 구성된 인터페이스 그룹을 수정합니다.  FAS2820 과 업그레이드 중인 컨트롤러 간의 포트 이름이 다를 수 있습니다.  올바른 멤버 포트로 인터페이스 그룹을 업데이트합니다.
++
+[source, cli]
+----
+ifgrp remove-port -node <node2> -ifgrp <ifgrp_name> -port <port_name>
+----
++
+[source, cli]
+----
+ifgrp add-port -node <node2> -ifgrp <ifgrp_name> -port <port_name>
+----
+
+
+
+
+[[migrate_node1_nod4]]
+. 노드 1의 데이터 애그리게이트를 노드 4로 마이그레이션:
++
+[source, cli]
+----
+storage aggregate relocation start -aggregate-list <aggregate_list_name> -node <node1> -destination <node4> -ndo-controller-upgrade true -override-destination-checks true
+----
+. 데이터 집계 상태 표시:
++
+[source, cli]
+----
+storage aggregate show
+----
+. epsilon을 node1에서 제거하고 node4로 옮겨서 마이그레이션합니다.
++
+.. 노드 1에서 epsilon 제거:
++
+[source, cli]
+----
+cluster modify -epsilon false -node <node1>
+----
+.. epsilon을 node4로 이동:
++
+[source, cli]
+----
+cluster modify -epsilon true -node <node4>
+----
+
+
+. 엡실론 변경 사항을 확인하려면 클러스터 상태를 표시합니다.
++
+[source, cli]
+----
+cluster show
+----
+. 모든 데이터 네트워크 LIF 표시:
++
+[source, cli]
+----
+network interface show -role data
+----
+. 모든 데이터 LIF를 노드 4로 마이그레이션:
++
+[source, cli]
+----
+network interface migrate -vserver <vserver_name> -lif <lif_name> -destination-node <node4> -destination-port <port_name>
+----
+. 클러스터에 있는 모든 데이터 LIF의 상태를 표시합니다.
++
+[source, cli]
+----
+network interface show -role data
+----
+. LIF가 다운된 경우 관리 상태를 다음으로 설정하세요. `up` 각 LIF에 대해 다음 명령을 한 번씩 입력하세요.
++
+[source, cli]
+----
+network interface modify -vserver <vserver_name> -lif <lif_name> -status-admin up
+----
+. 클러스터 관리 LIF 마이그레이션:
++
+[source, cli]
+----
+network interface migrate -vserver <vserver_name> -lif <cluster_mgmt_lif> -destination-node <node4> -destination-port <port_name>
+----
+. 클러스터 관리 LIF의 상태를 표시합니다.
++
+[source, cli]
+----
+network interface show -role cluster-mgmt
+----
+. 노드1 중지:
++
+[source, cli]
+----
+halt -node <node1> -inhibit-takeover true -ignore-quorum-warnings true
+----
+
+
+.다음 단계
+link:convert-fas2820-node1-drive-shelf.html["노드 1을 드라이브 쉘프로 변환한 후 노드 3에 연결합니다"]

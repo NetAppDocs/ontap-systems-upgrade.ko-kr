@@ -1,0 +1,29 @@
+---
+permalink: upgrade/convert-fas2820-node2-drive-shelf.html 
+sidebar: sidebar 
+keywords: fas8280, ndu, nondisruptive, upgrade, node2, node4, reassign, drives 
+summary: '노드 2(FAS2820)를 DS212C 드라이브 쉘프로 변환한 다음 노드 4에 연결합니다.' 
+---
+= FAS2820 node2를 드라이브 쉘프로 변환하고 node4에 연결합니다.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FAS2820 노드2를 DS212C 드라이브 선반으로 변환합니다.  드라이브를 노드2에서 노드4로 다시 할당하기 전에 노드4에 연결합니다.  Node1과 node2는 DS212C 선반 내부의 컨트롤러입니다.
+
+.단계
+. 노드 2에서 모든 네트워크 케이블을 분리합니다.
+. FAS2820 섀시에서 node2를 제거합니다.
+. IOM12 또는 IOM12B 모듈을 node2의 베이에 삽입합니다.
+. node4 직렬 연결 SCSI(SAS) 포트를 IOM12 또는 IOM12B 모듈의 사용 가능한 포트에 케이블로 연결합니다.  를 참조하십시오link:https://hwu.netapp.com["Hardware Universe"^] 시스템의 SAS 포트를 확인하세요.
+. 노드1 포트 e0a와 e0b를 노드4의 두 25GbE 포트에 연결하여 임시 클러스터 연결을 만듭니다.
++
+
+NOTE: 노드4가 10GbE 클러스터 연결만 지원하는 경우 임시 클러스터 연결을 생성하려면 10GbE 케이블이 필요합니다.
+
+
+
+.다음 단계
+link:reassign-fas2820-node2-drives.html["노드 2에서 노드 4로 드라이브를 재할당합니다"]

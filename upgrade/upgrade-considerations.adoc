@@ -110,7 +110,6 @@ NOTE: AFF A700s, AFF A800, AFF C800 또는 ASA A800 시스템은 드라이브 �
 
 == 추가 단계가 필요한 경우
 
-* link:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html["AFF A250에서 AFF A400으로 업그레이드하는 중입니다"] (중단 절차).
 * 새 시스템의 슬롯 수가 원래 시스템보다 적거나 포트 유형이 적거나 다른 경우 새 시스템에 어댑터를 추가해야 할 수 있습니다. 를 참조하십시오 https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^].
 * 원래 노드 또는 새 노드에서 FlexArray 가상화 소프트웨어를 사용하는 경우 기술 자료 문서를 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/V_Series/What_are_the_specific_steps_involved_in_FlexArray_for_NetApp_controller_upgrades%2F%2Freplacements%3F["FlexArray for NetApp 컨트롤러 업그레이드 및 교체와 관련된 구체적인 단계는 무엇입니까"^].
 * 클러스터에 SAN 호스트가 있는 경우 LUN 일련 번호 변경 문제를 해결하기 위한 단계를 수행해야 할 수 있습니다. 기술 자료 문서를 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FlexPod_with_Infrastructure_Automation/resolve_issues_during_storage_controller_motherboard_replacement_and_head_upgrades_with_iSCSI_and_FCP["스토리지 컨트롤러 마더보드를 교체하는 동안 문제를 해결하는 방법 및 iSCSI 및 FCP로 헤드 업그레이드"^].
@@ -118,6 +117,8 @@ NOTE: AFF A700s, AFF A800, AFF C800 또는 ASA A800 시스템은 드라이브 �
 
 
 .관련 정보
+* link:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html["AFF A250 드라이브 쉘프로 변환하고 AFF A400 으로 업그레이드하세요"](비파괴적 절차)
+* link:convert-fas2820-to-drive-shelf.html["드라이브 쉘프로 변환하여 FAS2820 에서 업그레이드"](비파괴적 절차)
 * link:../choose_controller_upgrade_procedure.html["컨트롤러 하드웨어를 업그레이드하는 방법을 선택합니다"]
 * link:upgrade-by-moving-storage-parent.html["스토리지를 이동하여 컨트롤러 하드웨어 업그레이드"]
 * link:upgrade-by-moving-volumes-parent.html["볼륨을 이동하여 컨트롤러 하드웨어 업그레이드"]

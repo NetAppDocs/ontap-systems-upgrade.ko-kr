@@ -1,0 +1,45 @@
+---
+permalink: upgrade/convert-fas2820-to-drive-shelf.html 
+sidebar: sidebar 
+keywords: fas2820,  ndu, nondisruptive, upgrade, FAS, systems, entry, level 
+summary: 각 노드를 DS212C 드라이브 셸프로 변환한 다음 교체 노드에 연결하여 FAS2820 에 대한 비중단 업그레이드를 수행합니다. 
+---
+= DS212C 드라이브 선반으로 변환하여 FAS2820 에서 업그레이드
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+각 노드를 DS212C 드라이브 선반으로 변환한 다음 교체 노드에 연결하여 NetApp FAS2820 의 비중단 업그레이드를 수행할 수 있습니다.
+
+.이 작업에 대해
+이 절차에서 FAS2820 고가용성(HA) 쌍 컨트롤러는 node1과 node2라고 하며, 교체용 HA 쌍 컨트롤러는 node3과 node4라고 합니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1개"]xref:migrate-fas2820-node2-lifs-aggregates.adoc[노드 2의 LIF 및 데이터 애그리게이트를 노드 1로 마이그레이션합니다]
+[role="quick-margin-para"]
+FAS2820 노드2를 드라이브 쉘프로 변환하기 전에 노드2의 논리 인터페이스(LIF)와 데이터 집계를 노드1로 마이그레이션합니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2개"]xref:convert-fas2820-node2-drive-shelf.adoc[노드 2를 드라이브 쉘프로 변환한 후 노드 4에 연결합니다]
+[role="quick-margin-para"]
+FAS8280 노드2를 DS212C 드라이브 쉘프로 변환한 다음 노드4에 연결한 후 노드2에서 노드4로 드라이브를 다시 할당합니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["세 가지"]xref:reassign-fas2820-node2-drives.adoc[노드 2에서 노드 4로 드라이브를 재할당합니다]
+[role="quick-margin-para"]
+FAS2820 노드2를 DS212C 드라이브 쉘프로 변환하고 노드4에 연결한 후, 이전에 노드2에 속했던 드라이브를 노드4에 다시 할당합니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["네"]xref:migrate-fas2820-aggregates-epsilon-lifs.adoc[노드 1의 데이터 애그리게이트, epsilon 및 LIF를 노드 4로 마이그레이션합니다]
+[role="quick-margin-para"]
+FAS2820 node1을 드라이브 쉘프로 변환하기 전에 node1의 데이터 집계, epsilon, LIF를 node4로 마이그레이션합니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["다섯"]xref:convert-fas2820-node1-drive-shelf.html[노드 1을 드라이브 쉘프로 변환한 후 노드 3에 연결합니다]
+[role="quick-margin-para"]
+FAS2820 노드1을 DS212C 드라이브 쉘프로 변환하고 노드3에 연결한 후 노드1에서 노드3으로 드라이브를 재할당합니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["6개"]xref:reassign-fas2820-node1-drives.adoc[노드 1에서 노드 3으로 드라이브를 재할당합니다]
+[role="quick-margin-para"]
+FAS2820 node1을 DS212C 드라이브로 변환하고 node3에 연결한 후, 이전에 node1에 속했던 드라이브를 node3에 다시 할당합니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["7번"]xref:migrate-fas2820-node4-lIfs-aggregates.adoc[노드 4의 LIF 및 데이터 애그리게이트를 노드 3으로 마이그레이션]
+[role="quick-margin-para"]
+업그레이드를 완료하려면 노드3을 노드4에 연결한 다음, 노드4의 데이터 LIF 및 데이터 애그리게이트를 노드3로 마이그레이션합니다.
