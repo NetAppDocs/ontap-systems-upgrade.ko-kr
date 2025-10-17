@@ -48,7 +48,6 @@ NOTE: 이 절차를 통해 NetApp 스토리지 암호화(NSE), NetApp 볼륨 암
 다음과 같은 상황에서는 이 ARL 절차를 사용할 수 없습니다.
 
 * 새 컨트롤러를 클러스터에 새 HA 쌍으로 추가하고 볼륨 이동을 사용하여 데이터를 마이그레이션하려고 합니다.
-* 업그레이드되는 기존 시스템에서 FlexArray 가상화 소프트웨어를 사용하고 있습니다.
 * MetroCluster IP 구성을 업그레이드하는 중입니다.
 +
 MetroCluster IP 구성을 업그레이드하려면 _MetroCluster 업그레이드 및 확장_컨텐츠 링크를 참조하십시오.link:other_references.html["참조"]

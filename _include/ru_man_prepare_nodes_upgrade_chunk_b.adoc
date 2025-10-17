@@ -16,7 +16,7 @@ NOTE: 이 정보를 사용하여 디스크를 재할당하고 원래 노드의 �
 
 +
 
-NOTE: 이 정보를 사용하여 노드3 또는 노드4로 전송할 부품 또는 액세서리를 식별할 수 있습니다. 노드가 V-Series 시스템인지 또는 FlexArray 가상화 소프트웨어가 있는지 모르는 경우 출력에서 해당 정보를 확인할 수 있습니다.
+NOTE: 이 정보를 사용하면 노드3 또는 노드4로 옮기고 싶은 부품이나 액세서리를 식별할 수 있습니다.
 
 . 노드 1과 노드 2 모두에 대해 다음 명령을 입력하고 두 노드에서 온라인 상태인 애그리게이트를 기록합니다.
 +
@@ -246,32 +246,7 @@ node2   0d      fc      initiator -       -         online
 +
 업그레이드 후 정보를 사용하여 새 노드의 FC 포트 구성을 설정할 수 있습니다.
 
-.. V 시리즈 시스템이나 FlexArray 가상화 소프트웨어를 사용하여 시스템을 업그레이드하는 경우 다음 명령을 입력하고 출력을 기록하여 원래 노드의 토폴로지에 대한 정보를 캡처합니다.
-+
-`storage array config show -switch`
-
-+
-다음 예에서와 같이 토폴로지 정보가 표시됩니다.
-
-+
-....
-cluster::> storage array config show -switch
-
-      LUN LUN                                  Target Side Initiator Side Initi-
-Node  Grp Cnt Array Name    Array Target Port  Switch Port Switch Port    ator
------ --- --- ------------- ------------------ ----------- -------------- ------
-node1 0   50  I_1818FAStT_1
-                            205700a0b84772da   vgbr6510a:5  vgbr6510s164:3  0d
-                            206700a0b84772da   vgbr6510a:6  vgbr6510s164:4  2b
-                            207600a0b84772da   vgbr6510b:6  vgbr6510s163:1  0c
-node2 0   50  I_1818FAStT_1
-                            205700a0b84772da   vgbr6510a:5  vgbr6510s164:1  0d
-                            206700a0b84772da   vgbr6510a:6  vgbr6510s164:2  2b
-                            207600a0b84772da   vgbr6510b:6  vgbr6510s163:3  0c
-                            208600a0b84772da   vgbr6510b:5  vgbr6510s163:4  2a
-7 entries were displayed.
-....
-.. [[man_prepare_nodes_step29]]다음 하위 단계를 완료합니다.
+.. [[man_prepare_nodes_step28]]다음 하위 단계를 완료하세요.
 
 
 . 원래 노드 중 하나에 다음 명령을 입력하고 출력을 기록합니다.
@@ -288,7 +263,7 @@ node2 0   50  I_1818FAStT_1
 원격 관리 디바이스의 네트워크 매개 변수를 다시 사용할 수 있습니다. 이 경우 SP는 새 노드의 SP에 대해 원래 시스템에서 재사용해야 합니다. SP에 대한 자세한 내용은 를 참조하십시오 link:other_references.html["참조"] _시스템 관리 참조_ 및 _ONTAP 9 명령에 연결하려면 수동 페이지 참조 _.
 
 +
-.. [[man_prepare_nodes_step30]] 새 노드가 원래 노드와 라이센스가 부여된 기능을 동일하게 사용하려면 다음 명령을 입력하여 원래 시스템에서 클러스터 라이센스를 확인합니다.
+.. [[man_prepare_nodes_step29]]새 노드가 원래 노드와 동일한 라이선스 기능을 갖도록 하려면 다음 명령을 입력하여 원래 시스템의 클러스터 라이선스를 확인하세요.
 +
 `system license show -owner *`
 

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto/reassign-node1-disks-to-node3.html 
-keywords: FC, UTA, UTA2, configure, node3, CNA adapters, onboard ports, FlexArray Virtualization 
+keywords: FC, UTA, UTA2, configure, node3, CNA adapters, onboard ports 
 summary: '을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 업그레이드할 때 노드 3 온보드 FC 포트, UTA/UTA2 포트 또는 UTA/UTA2 카드를 구성하십시오 `system controller replace` 명령.' 
 ---
 = 노드1 디스크를 노드3에 재할당합니다

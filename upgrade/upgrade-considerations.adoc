@@ -111,7 +111,6 @@ NOTE: AFF A700s, AFF A800, AFF C800 또는 ASA A800 시스템은 드라이브 �
 == 추가 단계가 필요한 경우
 
 * 새 시스템의 슬롯 수가 원래 시스템보다 적거나 포트 유형이 적거나 다른 경우 새 시스템에 어댑터를 추가해야 할 수 있습니다. 를 참조하십시오 https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^].
-* 원래 노드 또는 새 노드에서 FlexArray 가상화 소프트웨어를 사용하는 경우 기술 자료 문서를 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/V_Series/What_are_the_specific_steps_involved_in_FlexArray_for_NetApp_controller_upgrades%2F%2Freplacements%3F["FlexArray for NetApp 컨트롤러 업그레이드 및 교체와 관련된 구체적인 단계는 무엇입니까"^].
 * 클러스터에 SAN 호스트가 있는 경우 LUN 일련 번호 변경 문제를 해결하기 위한 단계를 수행해야 할 수 있습니다. 기술 자료 문서를 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FlexPod_with_Infrastructure_Automation/resolve_issues_during_storage_controller_motherboard_replacement_and_head_upgrades_with_iSCSI_and_FCP["스토리지 컨트롤러 마더보드를 교체하는 동안 문제를 해결하는 방법 및 iSCSI 및 FCP로 헤드 업그레이드"^].
 * 아웃오브밴드 ACP를 사용하는 시스템의 경우, 아웃오브밴드 ACP에서 인밴드 ACP로 마이그레이션해야 할 수 있습니다. 기술 자료 문서를 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/In-Band_ACP_Setup_and_Support["대역 내 ACP 설정 및 지원"^]
 

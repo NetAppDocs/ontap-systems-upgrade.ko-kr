@@ -7,7 +7,6 @@
 [IMPORTANT]
 ====
 * AFF A800 또는 AFF C800 컨트롤러를 업그레이드하는 경우, 노드2를 제거하기 전에 섀시의 모든 드라이브가 중앙판에 단단히 고정되어 있는지 확인해야 합니다. 자세한 내용은 을 link:../upgrade-arl-auto-affa900/replace-node1-affa800.html["AFF A800 또는 AFF C800 컨트롤러 모듈을 교체합니다"]참조하십시오.
-* 스토리지 어레이에 연결된 V-Series 시스템이나 스토리지 어레이에 연결된 FlexArray 가상화 소프트웨어를 사용하여 시스템을 업그레이드하려면 시스템을 완료해야 합니다 <<auto_install4_step1,1단계>> 부터 까지 <<auto_install4_step21,21단계>>그런 다음 이 섹션을 그대로 두고 의 지침을 따릅니다 link:set_fc_or_uta_uta2_config_node4.html#configure-fc-ports-on-node4["노드 4에서 FC 포트를 구성합니다"] 및 를 참조하십시오 link:set_fc_or_uta_uta2_config_node4.html#check-and-configure-utauta2-ports-on-node4["노드 4의 UTA/UTA2 포트를 확인하고 구성합니다"], 유지보수 모드에서 명령 입력 그런 다음 이 섹션으로 돌아가서 을(를) 다시 시작해야 합니다 <<auto_install4_step23,23단계>>.
 * 저장 디스크가 있는 시스템을 업그레이드하는 경우 이 섹션 전체를 완료한 다음 다음으로 진행해야 합니다. link:set_fc_or_uta_uta2_config_node4.html["노드 4에 FC 또는 UTA/UTA2 구성을 설정합니다"] 클러스터 프롬프트에서 명령을 입력합니다.
 
 
@@ -20,10 +19,10 @@
 . 노드 모델의 _설치 및 설치 지침_ 에 나온 지침에 따라 랙에 노드 4를 설치합니다.
 . 노드 4를 케이블로 연결하고 노드 2에서 노드 4로 연결합니다.
 +
-노드4 플랫폼의 _ 설치 및 설정 지침 _ 또는 _ FlexArray 가상화 설치 요구사항 및 참조 _ 의 지침, 적절한 디스크 쉘프 문서 및 _ HA 쌍 관리 _ 의 지침을 사용하여 다음 연결을 케이블로 연결합니다.
+node4 플랫폼의 _설치 및 설정 지침_, 해당 디스크 쉘프 문서, _HA 쌍 관리_ 문서를 사용하여 다음 연결을 케이블로 연결합니다.
 
 +
-link:other_references.html["참조"]FlexArray 가상화 설치 요구 사항 및 Reference_and_HA PAIR 관리 _ 에 대한 링크를 참조하십시오.
+참조하다link:other_references.html["참조"] _HA 쌍 관리_에 연결합니다.
 
 +
 ** 콘솔(원격 관리 포트)
@@ -58,7 +57,7 @@ WARNING: The battery is unfit to retain data during a power outage. This is like
 .. 배터리가 충전되고 부팅 프로세스가 완료될 때까지 기다립니다.
 +
 
-WARNING: * 주의: 지연을 무시하지 마십시오. 배터리를 충전하지 않으면 데이터가 손실될 수 있습니다. *
+WARNING: *지연 시간을 무시하지 마세요. 배터리 충전을 허용하지 않으면 데이터가 손실될 수 있습니다.*
 
 +
 

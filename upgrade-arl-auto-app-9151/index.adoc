@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/index.html 
-keywords: aggregate, relocation, controller, hardware, aggregates, flexarray, metrocluster, terminology 
+keywords: aggregate, relocation, controller, hardware, aggregates, metrocluster, terminology 
 summary: '명령을 사용하여 루트 애그리게이트의 소유권을 재배치함으로써 ONTAP 9.15.1 이상을 실행하는 컨트롤러 하드웨어를 업그레이드할 수 있습니다 `system controller replace` .' 
 ---
 = ARL 업그레이드 절차에 대해 알아보세요

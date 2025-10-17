@@ -10,7 +10,7 @@
 
 WARNING: 이 새 노드를 다른 클러스터 또는 HA 쌍에서 사용한 적이 있다면 를 실행해야 합니다 `wipeconfig` 계속 진행하기 전에 그렇지 않으면 서비스 운영 중단이나 데이터 손실이 발생할 수 있습니다. 교체 컨트롤러가 이전에 사용된 경우, 특히 7-Mode에서 ONTAP를 실행 중인 컨트롤러의 경우 기술 지원 부서에 문의하십시오.
 
-. [[man_install3_step18]] Ctrl-C를 눌러 부팅 메뉴를 표시합니다.
+. CTRL-C를 눌러 부팅 메뉴를 표시합니다.
 . [[man_install3_step19]] 다음 작업 중 하나를 수행합니다.
 +
 [cols="35,65"]
@@ -18,12 +18,12 @@ WARNING: 이 새 노드를 다른 클러스터 또는 HA 쌍에서 사용한 적
 | 업그레이드 중인 시스템의 경우... | 그러면... 
 
 
-| node3의 올바른 또는 현재 ONTAP 버전이 _NOT_에 있지 않습니다 | 로 이동합니다 <<man_install3_step20,20단계>>. 
+| node3의 올바른 또는 현재 ONTAP 버전이 _NOT_에 있지 않습니다 | 로 가다<<man_install3_step13,13단계>> . 
 
 
-| 노드 3의 ONTAP 버전이 올바르고 현재 버전입니다 | 로 이동합니다 <<man_install3_step25,25단계>>. 
+| 노드 3의 ONTAP 버전이 올바르고 현재 버전입니다 | 로 가다<<man_install3_step18,18단계>> . 
 |===
-. [[man_install3_step20]] 다음 작업 중 하나를 선택하여 netboot 연결을 구성합니다.
+. [[man_install3_step13]]다음 작업 중 하나를 선택하여 네트워크 부팅 연결을 구성합니다.
 +
 
 NOTE: 관리 포트와 IP를 netboot 연결로 사용해야 합니다. 데이터 LIF IP를 사용하지 마십시오. 업그레이드를 수행하는 동안 데이터 중단이 발생할 수 있습니다.
@@ -52,7 +52,7 @@ NOTE: 관리 포트와 IP를 netboot 연결로 사용해야 합니다. 데이터
 NOTE: 인터페이스에 다른 매개 변수가 필요할 수 있습니다. 를 입력합니다 `help ifconfig` 펌웨어 프롬프트에서 세부 정보를 확인합니다.
 
 |===
-. [[man_install3_step21]] 노드 3에서 netboot 수행:
+. node3에서 netboot를 수행합니다.
 +
 [cols="35,65"]
 |===
@@ -71,7 +71,7 @@ NOTE: 인터페이스에 다른 매개 변수가 필요할 수 있습니다. 를
 
 NOTE: 부팅을 중단하지 마십시오.
 
-. [[man_install3_step22]] 부팅 메뉴에서 옵션 * (7) 새 소프트웨어 설치 * 를 먼저 선택합니다.
+. 부팅 메뉴에서 먼저 *(7) 새 소프트웨어 설치* 옵션을 선택하세요.
 +
 이 메뉴 옵션은 새 ONTAP 이미지를 다운로드하여 부팅 장치에 설치합니다.
 
@@ -88,11 +88,11 @@ NOTE: 부팅을 중단하지 마십시오.
 
 NOTE: 항상 netboot를 사용하여 새 노드를 원하는 이미지로 업데이트합니다. 다른 방법을 사용하여 새 컨트롤러에 이미지를 설치할 경우 잘못된 이미지가 설치될 수 있습니다. 이 문제는 모든 ONTAP 릴리스에 적용됩니다. 옵션과 결합된 netboot 절차 `(7) Install new software` 부팅 미디어를 지우고 두 이미지 파티션 모두에 동일한 ONTAP 버전 ONTAP를 배치합니다.
 
-. [[man_install3_step23]] 절차를 계속하라는 메시지가 나타나면 를 입력합니다 `y`, 패키지를 입력하라는 메시지가 나타나면 다음 URL을 입력합니다.
+. 절차를 계속하라는 메시지가 표시되면 다음을 입력하십시오. `y` , 패키지를 입력하라는 메시지가 나타나면 다음 URL을 입력하세요.
 +
 `\http://<web_server_ip>/<path_to_web-accessible_directory>/<ontap_version_image>.tgz`
 
-. [[man_install3_step24]] 다음 하위 단계를 완료합니다.
+. 다음 하위 단계를 완료합니다.
 +
 .. 를 입력합니다 `n` 다음 프롬프트가 표시될 때 백업 복구를 건너뛰려면 다음을 수행합니다.
 +
@@ -111,12 +111,12 @@ The node must be rebooted to start using the newly installed software. Do you wa
 
 
 
-. [[man_install3_step25]]로 진입하여 * (5) 유지보수 모드 부트 * 를 선택합니다 `5`를 입력한 다음 를 입력합니다 `y` 부팅 계속 메시지가 표시되면
+. [[man_install3_step18]]*(5) 유지 관리 모드 부팅*을 입력하여 선택하십시오. `5` , 그리고 입력하세요 `y` 부팅을 계속할지 묻는 메시지가 표시됩니다.
 . [[man_install3_step26]] 계속하기 전에 로 이동하십시오 link:set_fc_uta_uta2_config_node3.html["노드 3에 FC 또는 UTA/UTA2 구성을 설정합니다"] 노드의 FC 또는 UTA/UTA2 포트를 필요에 따라 변경합니다.
 +
 이 섹션에서 권장한 대로 변경하고 노드를 재부팅한 다음 유지보수 모드로 전환합니다.
 
-. [[man_install3_step27]] 노드 3의 시스템 ID를 찾습니다.
+. node3의 시스템 ID를 찾으세요:
 +
 `disk show -a`
 
@@ -142,7 +142,7 @@ The node must be rebooted to start using the newly installed software. Do you wa
 
 NOTE: 메시지가 표시될 수 있습니다 `disk show: No disks match option -a.` 명령을 입력한 후 이 메시지는 오류 메시지가 아니므로 절차를 계속할 수 있습니다.
 
-. [[man_install3_step28]]에서 노드 1의 스페어, 루트에 속한 디스크 및 이전에 노드 2로 재배치되지 않은 모든 비루트 애그리게이트를 다시 할당합니다 link:relocate_non_root_aggr_node1_node2.html["노드 1에서 노드 2로 비루트 애그리게이트를 재배치합니다"].
+. [[man_install3_step21]]node1의 예비 디스크, 루트에 속하는 모든 디스크 및 이전에 node2로 재배치되지 않은 모든 비루트 집계를 다시 할당합니다.link:relocate_non_root_aggr_node1_node2.html["노드 1에서 노드 2로 비루트 애그리게이트를 재배치합니다"] .
 +
 의 적절한 양식을 입력합니다 `disk reassign` 시스템에 공유 디스크가 있는지 여부에 따른 명령:
 
@@ -331,7 +331,7 @@ Destroying mailboxes forces a node to create new empty mailboxes, which clears a
 +
 `set time _hh:mm:ss_`
 
-. [[man_install3_step42]]에 설명된 대로 파트너 시스템 ID가 올바르게 설정되었는지 확인합니다 <<man_install3_step28,28단계>> 언더-p 스위치:
+. [[man_install3_step42]]파트너 시스템 ID가 다음에서 언급한 대로 올바르게 설정되었는지 확인하십시오.<<man_install3_step21,21단계>> -p 스위치에서:
 +
 `printenv partner-sysid`
 

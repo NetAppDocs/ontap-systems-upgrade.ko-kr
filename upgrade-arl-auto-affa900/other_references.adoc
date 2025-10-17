@@ -40,12 +40,6 @@ summary: ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업�
 | link:https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["CLI를 통한 디스크 및 애그리게이트 관리"^] | 에서는 CLI를 사용하여 ONTAP 물리적 스토리지를 관리하는 방법에 대해 설명합니다. 이 장에서는 Aggregate를 생성, 확장 및 관리하는 방법, Flash Pool Aggregate를 사용하는 방법, 디스크 관리 방법 및 RAID 정책 관리 방법을 보여 줍니다. 
 
 
-| link:https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["패브릭 연결 MetroCluster 설치 및 구성"^] | 패브릭 구성에서 MetroCluster 하드웨어 및 소프트웨어 구성 요소를 설치하고 구성하는 방법에 대해 설명합니다. 
-
-
-| link:https://docs.netapp.com/us-en/ontap-flexarray/install/index.html["FlexArray 가상화 설치 요구 사항 및 참조 자료"^] | FlexArray 가상화 시스템에 대한 케이블 연결 지침 및 기타 정보를 제공합니다. 
-
-
 | link:https://docs.netapp.com/us-en/ontap/high-availability/index.html["HA 쌍 관리"^] | 에서는 스토리지 페일오버 및 테이크오버/반환을 비롯하여 고가용성 클러스터 구성을 설치 및 관리하는 방법에 대해 설명합니다. 
 
 

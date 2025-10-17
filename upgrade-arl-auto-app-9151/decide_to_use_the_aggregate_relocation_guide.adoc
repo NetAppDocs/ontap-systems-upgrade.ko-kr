@@ -59,7 +59,6 @@ NOTE: 이 절차를 통해 NetApp 스토리지 암호화(NSE), NetApp 볼륨 암
 +
 위의 표에 나열된 업그레이드를 수행하려면 "system controller replace" 명령을 사용하여 동일한 섀시에 있는 컨트롤러 모델을 업그레이드하는 방법(_)을 참조하십시오.link:other_references.html["참조"]
 
-* 백엔드 스토리지용 외부 어레이를 사용하여 V 시리즈 시스템 또는 FlexArray 가상화 스토리지 시스템을 업그레이드합니다. V-Series 또는 FlexArray 시스템의 업그레이드 옵션은 기술 지원 부서에 문의하십시오.
 * MetroCluster FC 또는 IP 구성을 업그레이드합니다. MetroCluster 구성을 업그레이드하려면 link:other_references.html["참조"] _MetroCluster 업그레이드 및 확장 설명서_ 링크를 참조하십시오.
 
 
