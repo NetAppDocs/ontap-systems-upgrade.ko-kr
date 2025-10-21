@@ -1,0 +1,272 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-in-chassis/netboot-node1.html 
+keywords: preparing, prepare, netboot, ontap, node1 
+summary: ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드할 때 해당 교체 시스템 모듈을 교체한 후 node1을 netboot 해야 합니다. 
+---
+= netboot 노드1
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+해당 교체 시스템 모듈을 교체한 후 netboot node1을 입력해야 합니다. netboot라는 용어는 원격 서버에 저장된 ONTAP 이미지에서 부팅한다는 것을 의미합니다. netboot를 준비할 때 시스템이 액세스할 수 있는 웹 서버에 ONTAP 9 부트 이미지 사본을 추가합니다.
+
+교체 컨트롤러 모듈의 부트 미디어에 설치된 ONTAP 버전은 섀시에 설치되고 전원이 켜져 있지 않으면 확인할 수 없습니다. 교체 시스템 부팅 미디어의 ONTAP 버전은 업그레이드할 이전 시스템에서 실행되는 ONTAP 버전과 동일해야 하며 부팅 미디어의 기본 부팅 이미지와 백업 부팅 이미지가 모두 일치해야 합니다. 업그레이드에 지원되는 최소 ONTAP 버전을 확인하려면 다음을 참조하십시오. link:decide_to_use_the_aggregate_relocation_guide.html#supported-systems,["지원되는 시스템 업그레이드 조합"] .
+
+netboot에 이어 를 수행하여 이미지를 구성할 수 있습니다 `wipeconfig` 명령을 입력합니다. 이전에 컨트롤러 모듈을 다른 클러스터에서 사용한 경우, 를 참조하십시오 `wipeconfig` 명령은 부팅 미디어의 나머지 구성을 지웁니다.
+
+USB 부팅 옵션을 사용하여 netboot를 수행할 수도 있습니다. 기술 자료 문서를 참조하십시오 link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_use_the_boot_recovery_LOADER_command_for_installing_ONTAP_for_initial_setup_of_a_system["시스템의 초기 설정을 위해 ONTAP를 설치하는 데 boot_recovery Loader 명령을 사용하는 방법"^].
+
+.시작하기 전에
+* 시스템에서 HTTP 서버에 액세스할 수 있는지 확인합니다.
+* 시스템에 필요한 시스템 파일과 올바른 버전의 ONTAP를 _NetApp Support 사이트_에서 다운로드하십시오. 을 참조하십시오 link:other_references.html["참조"] 를 눌러 _NetApp Support 사이트_에 연결합니다.
+
+
+.이 작업에 대해
+원래 컨트롤러에 설치된 것과 동일한 버전의 ONTAP 9가 없는 경우 새 컨트롤러를 netboot 해야 합니다. 각각의 새 컨트롤러를 설치한 후 웹 서버에 저장된 ONTAP 9 이미지에서 시스템을 부팅합니다. 그런 다음 부팅 미디어 장치에 올바른 파일을 다운로드하여 나중에 시스템을 부팅할 수 있습니다.
+
+.단계
+. 을 참조하십시오 link:other_references.html["참조"] NetApp Support 사이트 _ 에 연결하여 시스템의 netboot 수행에 사용되는 파일을 다운로드합니다.
+. [[netboot_node1_step2] _NetApp Support 사이트_의 소프트웨어 다운로드 섹션에서 해당 ONTAP 소프트웨어를 다운로드하여 를 저장합니다 `<ontap_version>_image.tgz` 웹 액세스 가능 디렉터리에 있는 파일입니다.
+. 웹 액세스 가능 디렉토리로 변경하고 필요한 파일을 사용할 수 있는지 확인합니다.
+. 디렉토리 목록에는 가 포함되어야 합니다 `<ontap_version>_image.tgz`.
+. 다음 작업 중 하나를 선택하여 netboot 연결을 구성합니다.
++
+
+NOTE: 관리 포트와 IP를 netboot 연결로 사용해야 합니다. 업그레이드를 수행하는 동안 데이터 LIF IP를 사용하지 않거나 데이터 중단이 발생할 수 있습니다.
+
++
+[cols="35,65"]
+|===
+| DHCP(Dynamic Host Configuration Protocol)가 다음과 같은 경우 | 그러면... 
+
+
+| 실행 중입니다 | 부팅 환경 프롬프트에서 다음 명령을 사용하여 연결을 자동으로 구성합니다.
+`ifconfig e0M -auto` 
+
+
+| 실행 중이 아닙니다  a| 
+부팅 환경 프롬프트에서 다음 명령을 사용하여 연결을 수동으로 구성합니다.
+`ifconfig e0M -addr=_filer_addr_ -mask=_netmask_ -gw=_gateway_ -dns=_dns_addr_ -domain=_dns_domain_`
+
+`_filer_addr_` 스토리지 시스템의 IP 주소입니다(필수).
+`_netmask_` 스토리지 시스템의 네트워크 마스크입니다(필수).
+`_gateway_` 는 스토리지 시스템의 게이트웨이입니다(필수).
+`_dns_addr_` 네트워크에 있는 이름 서버의 IP 주소입니다(선택 사항).
+`_dns_domain_` DNS(Domain Name Service) 도메인 이름입니다(선택 사항).
+
+
+NOTE: 인터페이스에 다른 매개 변수가 필요할 수 있습니다. 를 입력합니다 `help ifconfig` 펌웨어 프롬프트에서 세부 정보를 확인합니다.
+
+|===
+. 노드 1에서 netboot 수행:
++
+`netboot \http://<web_server_ip/path_to_web_accessible_directory>/netboot/kernel`
+
++
+
+NOTE: 부팅을 중단하지 마십시오.
+
+. (AFF A250 및 AFF C250 업그레이드만 해당) 교체 컨트롤러 모듈의 노드1이 부팅될 때 구성에 기존 컨트롤러에 대한 노드2가 포함되기 때문에 다음 경고가 표시됩니다.
++
+[listing]
+----
+*****************************************************
+* WARNING: Partner is not of the same family/model. *
+* Mixing is only allowed when upgrading the system. *
+* The system will shut down in 24 hours.            *
+*****************************************************
+Do you want to continue (y/n):
+----
++
+답변 `y`.
+
++
+이 경고는 노드2를 업그레이드할 때까지 모든 시스템 부팅에 대해 표시됩니다. 이는 정상적인 동작입니다.
+
+. 교체 컨트롤러 모듈에서 실행 중인 노드1이 부팅될 때까지 기다렸다가 아래와 같이 부팅 메뉴 옵션을 표시합니다.
++
+[listing]
+----
+Please choose one of the following:
+
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)?
+----
+. 부팅 메뉴에서 옵션을 선택합니다 `(7) Install new software first`.
++
+이 메뉴 옵션은 새 ONTAP 이미지를 다운로드하여 부팅 장치에 설치합니다.
+
++
+다음 메시지는 무시하십시오.
+
++
+`This procedure is not supported for Non-Disruptive Upgrade on an HA pair`
+
++
+이 노트는 컨트롤러 업그레이드가 아닌 무중단 ONTAP 소프트웨어 업그레이드에 적용됩니다.
+
++
+
+NOTE: 항상 netboot를 사용하여 새 노드를 원하는 이미지로 업데이트합니다. 다른 방법을 사용하여 새 컨트롤러에 이미지를 설치할 경우 잘못된 이미지가 설치될 수 있습니다. 이 문제는 모든 ONTAP 릴리스에 적용됩니다. 옵션과 결합된 netboot 절차 `(7) Install new software` 부팅 미디어를 지우고 두 이미지 파티션에 동일한 ONTAP 버전을 배치합니다.
+
+. 절차를 계속하라는 메시지가 나타나면 를 입력합니다 `y`, 패키지를 입력하라는 메시지가 나타나면 URL을 입력합니다.
+`\http://<web_server_ip/path_to_web-accessible_directory>/<ontap_version>_image.tgz`
++
+를 클릭합니다 `<path_to_the_web-accessible_directory>` 에서 다운로드한 위치로 이동합니다 `<ontap_version>_image.tgz` 인치 <<netboot_node1_step2,2단계>>.
+
+. 컨트롤러 모듈을 재부팅하려면 다음 하위 단계를 완료하십시오.
++
+.. 를 입력합니다 `n` 다음 프롬프트가 표시될 때 백업 복구를 건너뛰려면 다음을 수행합니다.
++
+[listing]
+----
+Do you want to restore the backup configuration now? {y|n}
+----
+.. 를 입력합니다 `y` 다음 메시지가 표시될 때 재부팅하려면 다음을 수행하십시오.
++
+[listing]
+----
+The node must be rebooted to start using the newly installed software. Do you want to reboot now? {y|n}
+----
++
+부팅 장치가 다시 포맷되어 구성 데이터가 복원되어야 하므로 컨트롤러 모듈이 재부팅되지만 부팅 메뉴에서 중지됩니다.
+
+
+
+. 부팅 미디어에서 이전 구성을 모두 지웁니다.
++
+.. 다음 프롬프트에서 다음을 실행하세요.  `wipeconfig` 명령을 입력하고 Enter 키를 누르세요:
++
+[listing]
+----
+Please choose one of the following:
+
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? wipeconfig
+----
+.. 아래 메시지가 표시되면 응답합니다 `yes`:
++
+[listing]
+----
+This will delete critical system configuration, including cluster membership.
+Warning: do not run this option on a HA node that has been taken over.
+Are you sure you want to continue?:
+----
+.. 노드가 재부팅되어 가 완료됩니다 `wipeconfig` 그런 다음 부팅 메뉴에서 를 중지합니다.
++
+
+NOTE: 부팅 메뉴에서 노드가 멈출 때까지 기다리십시오.  `wipeconfig` 작업.
+
+
+
+. 옵션을 선택합니다 `5` 를 눌러 부팅 메뉴에서 유지보수 모드로 이동합니다. 답변 `yes` 메시지가 표시되면 를 클릭하여 노드가 유지보수 모드에서 중지되고 명령 프롬프트가 표시됩니다 `*>`.
+. 컨트롤러 및 섀시가 으로 구성되어 있는지 확인합니다 `ha`:
++
+`ha-config show`
+
++
+다음 예제는 의 출력을 보여 줍니다 `ha-config show` 명령:
+
++
+[listing]
+----
+Chassis HA configuration: ha
+Controller HA configuration: ha
+----
+. 컨트롤러 및 섀시가 으로 구성되지 않은 경우 `ha`에서 다음 명령을 사용하여 구성을 수정하십시오.
++
+`ha-config modify controller ha`
+
++
+`ha-config modify chassis ha`
+
+. 를 확인합니다 `ha-config` 설정:
++
+`ha-config show`
+
++
+[listing]
+----
+Chassis HA configuration: ha
+Controller HA configuration: ha
+----
+. 노드1 중지:
++
+`halt`
+
++
+LOADER 프롬프트에서 node1이 중지됩니다.
+
+. 노드 2에서 시스템 날짜, 시간 및 시간대를 확인합니다.
++
+`date`
+
+. 노드 1의 부팅 환경 프롬프트에서 다음 명령을 사용하여 날짜를 확인합니다.
++
+`show date`
+
+. 필요한 경우 노드 1의 날짜를 설정합니다.
++
+`set date _mm/dd/yyyy_`
+
++
+
+NOTE: node1에서 해당 UTC 날짜를 설정합니다.
+
+. 노드 1의 부팅 환경 프롬프트에서 다음 명령을 사용하여 시간을 확인합니다.
++
+`show time`
+
+. 필요한 경우 node1의 시간을 설정합니다.
++
+`set time _hh:mm:ss_`
+
++
+
+NOTE: node1에서 해당 UTC 시간을 설정합니다.
+
+. 노드 1의 파트너 시스템 ID 설정:
++
+`setenv partner-sysid _node2_sysid_`
+
++
+노드 1의 경우, 를 참조하십시오 `partner-sysid` 노드 2의 것이어야 합니다. 에서 node2 시스템 ID를 가져올 수 있습니다 `node show -node _node2_` 노드 2의 명령 출력
+
++
+.. 설정을 저장합니다.
++
+`saveenv`
+
+
+
+. 노드 1의 로더 프롬프트에서 를 확인합니다 `partner-sysid` 노드 1의 경우:
++
+`printenv partner-sysid`
+
+

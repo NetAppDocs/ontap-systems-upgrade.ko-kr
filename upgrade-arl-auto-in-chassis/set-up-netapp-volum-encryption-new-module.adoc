@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-in-chassis/set-up-netapp-volum-encryption-new-module.html 
+keywords: set up, netapp volume encryption, controller, module, nve, node 
+summary: '필요한 경우 ARL을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드할 때 NVE 또는 NAE에 대한 새 컨트롤러 모듈을 구성하십시오."' 
+---
+= 새 컨트롤러 모듈에 NetApp 볼륨 또는 애그리게이트 암호화를 설정합니다
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+새 컨트롤러의 교체된 컨트롤러 또는 고가용성(HA) 파트너가 NetApp Volume Encryption(NVE) 또는 NetApp Aggregate Encryption(NAE)을 사용하는 경우, NVE 또는 NAE에 새 컨트롤러 모듈을 구성해야 합니다.
+
+.이 작업에 대해
+이 절차에는 새 컨트롤러 모듈에서 수행되는 단계가 포함됩니다. 올바른 노드에 명령을 입력해야 합니다.
+
+[role="tabbed-block"]
+====
+.Onboard Key Manager(온보드 키 관리자
+--
+Onboard Key Manager를 사용하여 NVE 또는 NAE를 구성합니다.
+
+.단계
+. 연결된 모든 키 관리 서버에서 새 노드로 인증 키 복원:
++
+`security key-manager onboard sync`
+
+
+
+--
+.외부 키 관리
+--
+External Key Management를 사용하여 NVE 또는 NAE를 구성합니다.
+
+.단계
+. 키 관리 서버를 계속 사용할 수 있는지, 해당 상태 및 인증 키 정보를 확인합니다.
++
+`security key-manager key query -node node`
+
+. 이전 단계에 나열된 키 관리 서버를 새 컨트롤러의 키 관리 서버 목록에 추가합니다.
++
+.. 키 관리 서버를 추가합니다.
++
+`security key-manager external add-servers -key-servers _key_management_server_ip_address_`
+
+.. 나열된 각 키 관리 서버에 대해 이전 단계를 반복합니다. 최대 4개의 키 관리 서버를 연결할 수 있습니다.
+.. 키 관리 서버가 성공적으로 추가되었는지 확인합니다.
++
+`security key-manager external show`
+
+
+
+. 새 컨트롤러 모듈에서 키 관리 설정 마법사를 실행하여 키 관리 서버를 설정하고 설치합니다.
++
+기존 컨트롤러 모듈에 설치된 것과 동일한 키 관리 서버를 설치해야 합니다.
+
++
+.. 새 노드에서 키 관리 서버 설정 마법사를 시작합니다.
++
+`security key-manager external enable`
+
+.. 마법사의 단계를 완료하여 키 관리 서버를 구성합니다.
+
+
+. 연결된 모든 키 관리 서버에서 새 노드로 인증 키 복원:
++
+`security key-manager external restore`
+
++
+이 명령을 실행하면 OKM 암호가 필요합니다
+
++
+자세한 내용은 기술 자료 문서를 참조하십시오 https://kb.netapp.com/onprem/ontap/dm/Encryption/How_to_restore_external_key_manager_server_configuration_from_the_ONTAP_boot_menu["ONTAP 부팅 메뉴에서 외부 키 관리자 서버 구성을 복원하는 방법"^].
+
+
+
+--
+====
+.작업을 마친 후
+인증 키를 사용할 수 없거나 EKM 서버에 연결할 수 없어 볼륨이 오프라인 상태가 되었는지 확인합니다. 를 사용하여 해당 볼륨을 다시 온라인 상태로 전환합니다 `volume online` 명령.
+
+.작업을 마친 후
+인증 키를 사용할 수 없거나 외부 키 관리 서버에 연결할 수 없어 오프라인 상태인 볼륨이 있는지 확인합니다. 다음을 사용하여 해당 볼륨을 다시 온라인으로 전환합니다.  `volume online` 명령.

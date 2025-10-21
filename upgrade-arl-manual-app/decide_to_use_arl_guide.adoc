@@ -27,9 +27,9 @@ summary: ONTAP 9.8 이상을 실행하는 새 컨트롤러가 있는 HA 쌍의 �
 
 [NOTE]
 ====
-* . 이 ARL 절차에는 업그레이드 절차 중에 컨트롤러를 제거하고 설치할 때 내부 디스크가 섀시에 안전하게 고정되도록 하는 단계가 포함되어 있습니다
+* AFF A800 또는 AFF C800 과 같이 동일한 섀시에서 컨트롤러 모듈을 교체하여 시스템을 업그레이드하는 경우 NetApp 다음 업그레이드 절차를 사용하는 것이 좋습니다.link:../upgrade-arl-auto-in-chassis/index.html["ARL을 사용하여 기존 시스템 섀시 및 디스크를 유지하면서 컨트롤러 모델을 업그레이드합니다."] .  이 ARL 절차에는 업그레이드 절차 중에 컨트롤러를 제거하고 설치할 때 내부 디스크가 섀시에 안전하게 고정되도록 하는 단계가 포함되어 있습니다.
 +
-link:../upgrade-arl-auto-affa900/decide_to_use_the_aggregate_relocation_guide.html#supported-systems-in-chassis["기존 시스템 섀시와 디스크를 유지하면서 ARL을 사용하여 지원되는 시스템 업그레이드 조합에 대해 알아보세요."]..
+link:../upgrade-arl-auto-in-chassis/decide-to-use-the-aggregate-relocation-guide.html#supported-systems-in-chassis["기존 시스템 섀시와 디스크를 유지하면서 ARL을 사용하여 지원되는 시스템 업그레이드 조합에 대해 알아보세요."].
 
 * 이 절차를 통해 NetApp 스토리지 암호화(NSE), NetApp 볼륨 암호화(NVE), NetApp 애그리게이트 암호화(NAE)를 사용할 수 있습니다.
 

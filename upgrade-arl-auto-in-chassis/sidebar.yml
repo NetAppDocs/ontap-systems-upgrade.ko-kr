@@ -1,0 +1,116 @@
+---
+section: upgrade-arl-auto-in-chassis
+title: '"system controller replace" 명령을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드합니다'
+entries:
+- title: 이 ARL 절차에 대해 알아보세요
+  url: "/upgrade-arl-auto-in-chassis/index.html"
+- title: 이 ARL 절차를 사용할지 결정하세요
+  url: "/upgrade-arl-auto-in-chassis/decide-to-use-the-aggregate-relocation-guide.html"
+- title: 필요한 도구 및 문서
+  url: "/upgrade-arl-auto-in-chassis/required-tools-and-documentation.html"
+- title: 컨트롤러 업그레이드 지침
+  url: "/upgrade-arl-auto-in-chassis/guidelines-for-upgrading-controllers-with-arl.html"
+- title: ARL 업그레이드 순서에 대해 알아보세요
+  url: "/upgrade-arl-auto-in-chassis/overview-of-the-arl-upgrade.html"
+- title: 1단계. 업그레이드를 준비합니다
+  pdf-filename: 1단계. 업그레이드 준비(AFF A900 또는 FAS9500으로 업그레이드)
+  entries:
+  - title: 업그레이드 하드웨어를 확인합니다
+    url: "/upgrade-arl-auto-in-chassis/verify-upgrade-hardware.html"
+  - title: 업그레이드할 노드를 준비합니다
+    url: "/upgrade-arl-auto-in-chassis/prepare-nodes-for-upgrade.html"
+  - title: Onboard Key Manager를 사용하여 스토리지 암호화를 관리합니다
+    url: "/upgrade-arl-auto-in-chassis/manage-storage-encryption-using-okm.html"
+- title: 2단계. 리소스를 재배치하고 노드1을 폐기합니다
+  entries:
+  - title: 노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치합니다
+    url: "/upgrade-arl-auto-in-chassis/relocate-non-root-aggr-and-nas-data-lifs-node1-node2.html"
+  - title: 장애가 발생하거나 거부권을 행사한 Aggregate를 재배치합니다
+    url: "/upgrade-arl-auto-in-chassis/relocate-failed-or-vetoed-aggr-node1.html"
+  - title: 노드1을 폐기합니다
+    url: "/upgrade-arl-auto-in-chassis/retire-node1.html"
+  - title: 노드1 시스템 모듈을 교체합니다
+    entries:
+    - title: AFF A250 또는 AFF C250를 교체합니다
+      url: "/upgrade-arl-auto-in-chassis/replace-node1-affa250-affc250.html"
+    - title: AFF A800 또는 AFF C800를 교체합니다
+      url: "/upgrade-arl-auto-in-chassis/replace-node1-affa800.html"
+    - title: AFF A220, AFF A200, AFF C190, FAS2620 또는 FAS2720을 교체합니다
+      url: "/upgrade-arl-auto-in-chassis/replace-node1-affa220-affa200-affc190-fas2620-fas2720.html"
+    - title: AFF A700 또는 FAS9000를 교체합니다
+      url: "/upgrade-arl-auto-in-chassis/replace-node1-aff700-fas900.html"
+  - title: netboot 노드1
+    url: "/upgrade-arl-auto-in-chassis/netboot-node1.html"
+- title: 3단계. 교체 시스템 모듈을 사용하여 노드1을 부팅합니다
+  entries:
+  - title: 공유 클러스터-HA 스토리지의 노드1를 케이블로 연결합니다
+    url: "/upgrade-arl-auto-in-chassis/cable-node1-for-shared-cluster-HA-storage.html"
+  - title: 교체 시스템 모듈을 사용하여 노드1을 부팅합니다
+    url: "/upgrade-arl-auto-in-chassis/boot-node1-with-a900-controller-and-nvs.html"
+  - title: 노드1 설치를 확인합니다
+    url: "/upgrade-arl-auto-in-chassis/verify-node1-installation.html"
+  - title: 업그레이드된 노드1에서 키 관리자 구성을 복원합니다
+    url: "/upgrade-arl-auto-in-chassis/restore-key-manager-config-upgraded-node1.html"
+  - title: 노드1 비루트 애그리게이트 및 NAS 데이터 LIF를 노드2에서 업그레이드된 노드1로 이동합니다
+    url: "/upgrade-arl-auto-in-chassis/move-non-root-aggr-nas-lifs-node1-from-node2-to-upgraded-node1.html"
+- title: 4단계. 리소스를 재배치하고 노드2를 폐기합니다
+  entries:
+  - title: 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 2에서 노드 1로 재배치합니다
+    url: "/upgrade-arl-auto-in-chassis/relocate-non-root-aggr-nas-lifs-from-node2-to-node1.html"
+  - title: 노드2를 폐기합니다
+    url: "/upgrade-arl-auto-in-chassis/retire-node2.html"
+- title: 5단계. 노드 2에 교체 시스템 모듈을 설치합니다
+  entries:
+  - title: 노드 2에 교체 시스템 모듈을 설치합니다
+    entries:
+    - title: AFF A30, AFF A50, AFF C30 또는 AFF C60을 설치합니다
+      url: "/upgrade-arl-auto-in-chassis/install-aff-a30-a50-c30-c50-node2.html"
+    - title: AFF A90 또는 AFF A70을 설치합니다
+      url: "/upgrade-arl-auto-in-chassis/install-affa90-affa70-on-node2.html"
+    - title: ASA A150, AFF A150 또는 FAS2820를 설치합니다
+      url: "/upgrade-arl-auto-in-chassis/install-asa150-affa150-fas2820-on-node2.html"
+    - title: ASA A900, AFF A900 또는 FAS9500을 설치합니다
+      url: "/upgrade-arl-auto-in-chassis/install-asa900-affa900-fas9500-on-node2.html"
+  - title: netboot 노드2
+    url: "/upgrade-arl-auto-in-chassis/netboot-node2.html"
+- title: 6단계. 교체 시스템 모듈을 사용하여 노드2를 부팅합니다
+  entries:
+  - title: 공유 클러스터 HA 스토리지를 위한 케이블 노드2
+    url: "/upgrade-arl-auto-in-chassis/cable-node2-for-shared-cluster-HA-storage.html"
+  - title: 교체 시스템 모듈을 사용하여 노드2를 부팅합니다
+    url: "/upgrade-arl-auto-in-chassis/boot-node2-with-a900-controller-and-nvs.html"
+  - title: 노드2 설치를 확인합니다
+    url: "/upgrade-arl-auto-in-chassis/verify-node2-installation.html"
+  - title: 노드 2에서 키 관리자 구성을 복원합니다
+    url: "/upgrade-arl-auto-in-chassis/restore-key-manager-config-node2.html"
+  - title: 클러스터 스위치에서 RCF 구성을 확인하세요
+    url: "/upgrade-arl-auto-in-chassis/verify-rcf-configuration.html"
+  - title: 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 2로 다시 이동합니다
+    url: "/upgrade-arl-auto-in-chassis/move-non-root-aggr-and-nas-data-lifs-back-to-node2.html"
+- title: 7단계. 업그레이드를 완료합니다
+  entries:
+  - title: KMIP 서버를 사용하여 인증 관리
+    url: "/upgrade-arl-auto-in-chassis/manage-authentication-using-kmip-servers.html"
+  - title: 새 컨트롤러가 올바르게 설정되었는지 확인합니다
+    url: "/upgrade-arl-auto-in-chassis/ensure-new-controllers-are-set-up-correctly.html"
+  - title: 새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다
+    url: "/upgrade-arl-auto-in-chassis/set-up-storage-encryption-new-module.html"
+  - title: 새 컨트롤러 모듈에 NetApp 볼륨 또는 애그리게이트 암호화를 설정합니다
+    url: "/upgrade-arl-auto-in-chassis/set-up-netapp-volum-encryption-new-module.html"
+  - title: 기존 시스템을 폐기합니다
+    url: "/upgrade-arl-auto-in-chassis/decommission-old-system.html"
+  - title: SnapMirror 작업을 재개합니다
+    url: "/upgrade-arl-auto-in-chassis/resume-snapmirror-operations.html"
+- title: 문제 해결
+  pdf-filename: 문제 해결(AFF A900 또는 FAS9500으로 업그레이드)
+  entries:
+  - title: 애그리게이트 재배치 실패
+    url: "/upgrade-arl-auto-in-chassis/aggregate-relocation-failures.html"
+  - title: 재부팅, 패닉 또는 전원 껐다 켜기
+    url: "/upgrade-arl-auto-in-chassis/reboots-panics-or-power-cycles.html"
+  - title: 절차의 여러 단계에서 발생할 수 있는 문제입니다
+    url: "/upgrade-arl-auto-in-chassis/issues-in-multiple-stages-of-procedure.html"
+  - title: LIF 마이그레이션 실패
+    url: "/upgrade-arl-auto-in-chassis/lif-migration-failure.html"
+- title: 참조
+  url: "/upgrade-arl-auto-in-chassis/other-references.html"

@@ -63,7 +63,7 @@ ARL은 HA 구성을 활용하여 비루트 애그리게이트의 소유권을 �
 
 == 동일한 섀시에서 컨트롤러 모델을 업그레이드합니다
 
-업그레이드 시나리오가 다음 지원되는 시스템 매트릭스에 나열되어 있는 경우 로 link:../upgrade-arl-auto-affa900/index.html[""system controller replace" 명령을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드합니다"] 이동하여 업그레이드 절차를 시작합니다.
+업그레이드 시나리오가 다음 지원 시스템 매트릭스에 나열되어 있는 경우 다음으로 이동하세요.link:../upgrade-arl-auto-in-chassis/index.html[""system controller replace" 명령을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드합니다"] 업그레이드 절차를 시작하려면.
 
 .지원되는 시스템을 표시합니다
 [%collapsible]

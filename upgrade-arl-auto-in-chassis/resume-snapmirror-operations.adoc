@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-in-chassis/resume-snapmirror-operations.html 
+keywords: resuming, snapmirror, operations, transfer, relationship, updates, schedule, complete 
+summary: ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드할 때 SnapMirror 전송 및 관계를 다시 시작합니다. 
+---
+= SnapMirror 작업을 재개합니다
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+업그레이드하기 전에 중지된 SnapMirror 전송을 다시 시작하고 SnapMirror 관계를 다시 시작할 수 있습니다. 업그레이드가 완료된 후 업데이트가 일정에 따라 진행되고 있습니다.
+
+.단계
+. 대상에서 SnapMirror 상태를 확인합니다.
++
+`snapmirror show`
+
+. SnapMirror 관계 재개:
++
+`snapmirror resume -destination–vserver _vserver_name_`
+
+

@@ -11,7 +11,7 @@
 
 [IMPORTANT]
 ====
-* AFF A800 또는 AFF C800 컨트롤러를 업그레이드하는 경우, 노드1을 제거하기 전에 섀시의 모든 드라이브가 미드플레인에 단단히 고정되어 있는지 확인해야 합니다. 자세한 내용은 을 link:../upgrade-arl-auto-affa900/replace-node1-affa800.html["AFF A800 또는 AFF C800 컨트롤러 모듈을 교체합니다"]참조하십시오.
+* AFF A800 또는 AFF C800 컨트롤러를 업그레이드하는 경우, 노드1을 제거하기 전에 섀시의 모든 드라이브가 미드플레인에 단단히 고정되어 있는지 확인해야 합니다. 자세한 내용은 다음을 참조하세요. link:../upgrade-arl-auto-in-chassis/replace-node1-affa800.html["AFF A800 또는 AFF C800 컨트롤러 모듈을 교체합니다"].
 * 스토리지 디스크가 있는 시스템을 업그레이드하는 경우 이 전체 섹션을 완료한 다음 로 이동하십시오 link:set_fc_or_uta_uta2_config_on_node3.html#configure-fc-ports-on-node3["노드 3에서 FC 포트를 구성합니다"] 및 link:set_fc_or_uta_uta2_config_on_node3.html#check-and-configure-utauta2-ports-on-node3["노드 3의 UTA/UTA2 포트를 확인하고 구성합니다"] 섹션에서 클러스터 프롬프트에 명령 입력
 
 

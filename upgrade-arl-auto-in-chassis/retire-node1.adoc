@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-in-chassis/retire-node1.html 
+keywords: retiring, node1, node, retire 
+summary: ARL을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드할 때 노드 2와 HA 쌍을 비활성화하고 노드 1을 종료합니다. 
+---
+= 노드1을 폐기합니다
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+노드 1을 폐기하려면 자동화된 작업을 다시 시작하여 노드 2와 HA 쌍을 비활성화하고 노드 1을 올바르게 종료합니다.
+
+.단계
+. 작업을 다시 시작합니다.
++
+`system controller replace resume`
+
+. 노드 1이 중지되었는지 확인합니다.
++
+`system controller replace show-details`
+
++
+노드 1이 완전히 중단되면 노드 1이 LOADER> 프롬프트에 있어야 합니다. LOADER> 프롬프트를 표시하려면 node1의 직렬 콘솔에 연결합니다.
+
+

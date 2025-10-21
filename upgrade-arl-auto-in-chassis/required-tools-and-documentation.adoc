@@ -1,0 +1,21 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-in-chassis/required-tools-and-documentation.html 
+keywords: required, tools, documentation, install, worksheet, ontap 
+summary: ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드하려면 특정 도구와 문서가 있어야 합니다. 
+---
+= 필요한 도구 및 문서
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+업그레이드를 수행하려면 접지 스트랩이 있어야 하며 업그레이드 프로세스 중에 다른 문서를 참조해야 합니다.
+
+AFF A90 또는 AFF A70으로 AFF A800을 업그레이드하는 경우 100GbE 케이블의 길이가 최소 1m 이상인지 확인하십시오.
+
+을 참조하십시오 link:other_references.html["참조"] 이 업그레이드에 필요한 참조 문서 및 참조 사이트 목록에 액세스합니다.

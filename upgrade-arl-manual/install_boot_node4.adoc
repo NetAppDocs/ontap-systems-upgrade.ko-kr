@@ -23,7 +23,7 @@ summary: ONTAP 9.7 이하를 실행하는 컨트롤러에서 수동 ARL 업그�
 
 [IMPORTANT]
 ====
-* AFF A800 또는 AFF C800 컨트롤러를 업그레이드하는 경우, 노드2를 제거하기 전에 섀시의 모든 드라이브가 중앙판에 단단히 고정되어 있는지 확인해야 합니다. 자세한 내용은 을 link:../upgrade-arl-auto-affa900/replace-node1-affa800.html["AFF A800 또는 AFF C800 컨트롤러 모듈을 교체합니다"]참조하십시오.
+* AFF A800 또는 AFF C800 컨트롤러를 업그레이드하는 경우, 노드2를 제거하기 전에 섀시의 모든 드라이브가 미드플레인에 단단히 고정되어 있는지 확인해야 합니다. 자세한 내용은 다음을 참조하세요. link:../upgrade-arl-auto-in-chassis/replace-node1-affa800.html["AFF A800 또는 AFF C800 컨트롤러 모듈을 교체합니다"].
 * 저장 디스크가 있는 시스템을 업그레이드하는 경우 이 섹션 전체를 완료한 다음 섹션으로 진행해야 합니다. link:set_fc_uta_uta2_config_node4.html["노드 4에 FC 또는 UTA/UTA2 구성을 설정합니다"] 클러스터 프롬프트에서 명령을 입력합니다.
 
 

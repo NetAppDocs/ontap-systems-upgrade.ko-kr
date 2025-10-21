@@ -1,0 +1,141 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-in-chassis/ensure-new-controllers-are-set-up-correctly.html 
+keywords: ensure, controllers, new, setup, ha, pair, node1, node2, lif, cluster, high, availability 
+summary: HA 쌍이 설정되었는지 확인하고, 동일한 섀시에서 컨트롤러 모델을 업그레이드한 후 노드 1과 노드 2 스토리지 액세스 및 LIF를 확인하고, 애그리게이트 소유권을 확인합니다. 
+---
+= 새 컨트롤러가 올바르게 설정되었는지 확인합니다
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+올바른 설정을 확인하려면 HA 쌍이 설정되었는지 확인합니다. 또한 노드 1과 노드 2가 서로의 스토리지에 액세스할 수 있고 클러스터의 다른 노드에 속하는 데이터 LIF가 소유하지 않는지 확인합니다. 또한 모든 데이터 애그리게이트가 올바른 홈 노드에 있고 두 노드의 볼륨이 온라인 상태인지 확인합니다. 새 노드 중 하나에 통합 대상 어댑터가 있는 경우 포트 구성을 복원해야 하며 어댑터 사용을 변경해야 할 수도 있습니다.
+
+.단계
+. 노드 2의 사후 검사를 수행한 후 노드 2 클러스터에 대한 스토리지 페일오버 및 클러스터 HA 쌍이 설정됩니다. 작업이 완료되면 두 노드가 완료된 것으로 표시되고 시스템에서 일부 정리 작업을 수행합니다.
+. 스토리지 페일오버가 설정되었는지 확인합니다.
++
+`storage failover show`
+
++
+다음 예에서는 스토리지 페일오버가 설정된 경우의 명령 출력을 보여 줍니다.
+
++
+[listing]
+----
+cluster::> storage failover show
+                          Takeover
+Node	    Partner       Possible      State Description
+----------  -----------   ------------  ------------------
+node1	    node2         true	        Connected to node2
+node2	    node1         true	        Connected to node1
+----
+. 다음 명령을 사용하여 출력을 검사하여 node1과 node2가 같은 클러스터에 속해 있는지 확인합니다.
++
+`cluster show`
+
+. 다음 명령을 사용하여 출력을 검사하여 node1과 node2가 서로의 스토리지에 액세스할 수 있는지 확인합니다.
++
+`storage failover show -fields local-missing-disks,partner-missing-disks`
+
+. 다음 명령을 사용하여 노드 1과 노드 2가 클러스터의 다른 노드에 의해 소유된 데이터 LIF를 소유 및 확인하지 않습니다.
++
+`network interface show`
+
++
+노드 1이나 노드 2가 클러스터의 다른 노드에 의해 소유된 데이터 LIF를 소유하지 않은 경우 데이터 LIF를 홈 소유자에게 되돌리십시오.
+
++
+`network interface revert`
+
+. 애그리게이트가 해당 홈 노드에 의해 소유되는지 확인합니다.
++
+`storage aggregate show -owner-name <node1>`
+
++
+`storage aggregate show -owner-name <node2>`
+
+. 볼륨이 오프라인 상태인지 확인합니다.
++
+`volume show -node <node1> -state offline`
+
++
+`volume show -node <node2> -state offline`
+
+. 오프라인 상태인 볼륨이 있으면 섹션에서 캡처한 오프라인 볼륨 목록과 비교합니다 link:prepare_nodes_for_upgrade.html["업그레이드할 노드를 준비합니다"]을 사용하여 각 볼륨에 대해 다음 명령을 사용하여 필요에 따라 오프라인 볼륨을 온라인으로 전환합니다.
++
+`volume online -vserver <vserver_name> -volume <volume_name>`
+
+. 각 노드에 대해 다음 명령을 사용하여 새 노드에 대한 새 라이센스를 설치합니다.
++
+`system license add -license-code <license_code,license_code,license_code...>`
+
++
+license-code 매개변수는 28개의 대문자 알파벳 문자 키 목록을 허용합니다. 한 번에 하나의 라이센스를 추가하거나 한 번에 여러 라이센스를 추가하여 각 라이센스 키를 쉼표로 분리할 수 있습니다.
+
+. 다음 명령 중 하나를 사용하여 원래 노드에서 이전 라이센스를 모두 제거합니다.
++
+`system license clean-up -unused -expired`
+
++
+`system license delete -serial-number <node_serial_number> -package <licensable_package>`
+
++
+--
+** 만료된 모든 라이센스 삭제:
++
+`system license clean-up -expired`
+
+** 사용하지 않는 모든 라이센스 삭제:
++
+`system license clean-up -unused`
+
+** 노드에서 다음 명령을 사용하여 클러스터에서 특정 라이센스를 삭제합니다.
++
+`system license delete -serial-number <node1_serial_number> -package *`
+`system license delete -serial-number <node2_serial_number> -package *`
+
+
+
+--
++
+다음 출력이 표시됩니다.
+
++
+[listing]
+----
+Warning: The following licenses will be removed:
+<list of each installed package>
+Do you want to continue? {y|n}: y
+----
++
+를 입력합니다 `y` 모든 패키지를 제거합니다.
+
+. 다음 명령을 사용하여 출력을 검사하여 라이센스가 올바르게 설치되었는지 확인합니다.
++
+`system license show`
+
++
+출력을 에서 캡처한 출력과 비교할 수 있습니다 link:prepare_nodes_for_upgrade.html["업그레이드할 노드를 준비합니다"] 섹션을 참조하십시오.
+
+. [[unset_maxwait]] 구성에 자체 암호화 드라이브가 사용되고 있고 를 설정한 경우 `kmip.init.maxwait` 변수 대상 `off` (예: 교체 시스템 모듈이 있는 _Boot node2에서 _, link:boot_node2_with_a900_controller_and_nvs.html#boot_node2_step1["1단계"]), 변수를 설정 해제해야 합니다.
++
+`set diag; systemshell -node <node_name> -command sudo kenv -u -p kmip.init.maxwait`
+
+. 두 노드에서 다음 명령을 사용하여 SP를 구성합니다.
++
+`system service-processor network modify -node <node_name>`
+
++
+을 참조하십시오 link:other_references.html["참조"] SP 및 _ONTAP 9 명령에 대한 자세한 내용은 _시스템 관리 참조_에 대한 링크를 참조하십시오. 시스템에 대한 자세한 내용은 수동 페이지 참조_를 참조하십시오 `service-processor network modify` 명령.
+
+. 새 노드에서 스위치가 없는 클러스터를 설정하려면 을 참조하십시오 link:other_references.html["참조"] _NetApp Support 사이트_에 연결하고 스위치가 없는 2노드 클러스터로 전환 _ 의 지침을 따르십시오.
+
+
+.작업을 마친 후
+노드 1과 노드 2에서 스토리지 암호화가 설정된 경우 섹션을 완료합니다 link:set_up_storage_encryption_new_module.html["새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다"]. 그렇지 않으면 섹션을 완료합니다 link:decommission_old_system.html["기존 시스템을 폐기합니다"].

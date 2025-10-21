@@ -1,0 +1,142 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-in-chassis/cable-node1-for-shared-cluster-HA-storage.html 
+keywords: cluster, ha, aff, a800, shared, storage, data, management 
+summary: 이전에 AFF A800 노드 1에 연결되었던 클러스터, HA, 스토리지 및 데이터 연결을 새로 설치된 AFF A90 또는 AFF A70 노드1에 연결합니다 
+---
+= 공유 클러스터-HA 및 스토리지의 경우 노드 1을 케이블로 연결합니다
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+다음 업그레이드 중 하나를 수행하는 경우 기존 시스템의 노드1에 이전에 연결되었던 클러스터, HA, 스토리지, 데이터 및 관리 연결을 교체 시스템의 새로 설치된 노드1에 연결해야 합니다.
+
+[cols="35,65"]
+|===
+| 기존 시스템 | 교체 시스템 
+
+
+| AFF A250 를 참조하십시오 | AFF A30, AFF A50 
+
+
+| AFF C250 를 참조하십시오 | AFF C30, AFF C60 
+
+
+| AFF A800 를 참조하십시오 | AFF A70, AFF A90 
+
+
+| AFF C800 를 참조하십시오 | AFF C80 를 참조하십시오 
+|===
+
+
+== e0M과 BMC 포트를 연결합니다
+
+기존 시스템에 관리 포트(e0M)와 BMC 포트가 있을 경우 e0M 및 BMC 포트가 결합되고 교체 시스템의 "렌치" 포트를 통해 액세스됩니다. 교체 시스템에 연결하기 전에 e0M과 BMC 포트가 기존 시스템의 동일한 스위치 및 서브넷에 연결되어 있는지 확인해야 합니다.
+
+[cols="35,65"]
+|===
+| 만약... | 그러면... 
+
+
+| e0M과 BMC IP 주소는 같은 IP 서브넷에 있습니다 | 기존 시스템의 e0M 또는 BMC 포트를 교체 시스템의 "렌치" 포트에 연결합니다. 
+
+
+| e0M과 BMC IP 주소가 서로 다른 서브넷에 있습니다  a| 
+. e0M과 BMC IP 주소를 하나의 IP 서브넷으로 통합합니다.
+. 기존 시스템의 e0M 또는 BMC 포트를 교체 시스템의 "렌치" 포트에 연결합니다.
+
+
+|===
+
+
+== 스위치가 없는 2노드 클러스터에 연결합니다
+
+다음 표에서는 스위치가 없는 2노드 클러스터 구성에 대한 스위치 포트 사용량을 보여 줍니다.
+
+|===
+| 포트 유형입니다 | AFF A800, AFF C800 | AFF A90 를 참조하십시오 | AFF A70, AFF C80 
+
+
+| 클러스터 | e0a를 참조하십시오 | e1a를 참조하십시오 | e1a를 참조하십시오 
+
+
+| 클러스터 | e1a를 참조하십시오 | e7a(e7a가 없는 경우 e1b 사용) | e1b를 참조하십시오 
+
+
+| HA | e0b를 참조하십시오 | 연결하지 마세요 | 연결하지 마세요 
+
+
+| HA | e1b를 참조하십시오 | 연결하지 마세요 | 연결하지 마세요 
+
+
+| SAS 스토리지 포트(있고 사용되는 경우) | 사용 가능한 모든 포트 | 사용 가능한 모든 포트 | 사용 가능한 모든 포트 
+
+
+| NS224 쉘프용 이더넷 스토리지 포트 | 사용 가능한 모든 포트 | 이더넷 스토리지 접속 매핑을 참조하십시오 | 이더넷 스토리지 접속 매핑을 참조하십시오 
+|===
+|===
+| 포트 | AFF A250, AFF C250 | AFF A30, AFF C30, AFF C60 | AFF A50 를 참조하십시오 
+
+
+| 클러스터 | e0c를 참조하십시오 | e1a(임시 클러스터 상호 연결에 e1a 사용) | e1a(임시 클러스터 상호 연결에 e1a 사용) 
+
+
+| 클러스터 | e0d를 참조하십시오 | e1b(임시 클러스터 상호 연결에 e1b 사용) | e1b(임시 클러스터 상호 연결에 e1b 사용) 
+
+
+| HA | 필요하지 않습니다 | 노드1 업그레이드에는 HA 포트가 필요하지 않습니다. | 노드1 업그레이드에는 HA 포트가 필요하지 않습니다. 
+
+
+| 이더넷 스토리지 포트 | 사용 가능한 모든 포트 | e3a, e3b | e3a, e3b 
+
+
+| SAS 스토리지 포트 | 사용 가능한 모든 포트 | 3A, 3b입니다 | 3A, 3b입니다 
+|===
+
+
+== 스위치 연결 클러스터에 연결합니다
+
+스위치 연결 클러스터의 경우 AFF A30, AFF A50, AFF A70, AFF A90, AFF C30, AFF C60 또는 AFF C80(교체) 노드에 대해 다음 요구사항을 충족하는지 확인하십시오.
+
+* 교체 노드의 동일한 클러스터 포트가 동일한 스위치에 있습니다. 예를 들어, 업그레이드가 완료되면 노드1의 E1A와 노드2의 E1A가 하나의 클러스터 스위치에 연결되어야 합니다. 마찬가지로, 양쪽 노드의 두 번째 클러스터 포트를 두 번째 클러스터 스위치에 연결해야 합니다. 공유 클러스터 HA 포트의 교차 연결, 노드 1의 E1A가 스위치 A에 연결되고 노드 2의 E1A가 스위치 B에 연결되어 HA 통신 장애가 발생합니다.
+* 교체 노드는 공유 클러스터 HA 이더넷 포트를 사용합니다.
+* 클러스터 스위치가 공유 클러스터 HA 포트를 지원하는 RCF(Reference Configuration File)와 함께 설치되었는지 확인합니다.
++
+.. 스위치에서 기존 구성을 제거합니다.
++
+[cols="30,70"]
+|===
+| 스위치 모델이 다음과 같은 경우... | 이동... 
+
+
+| Cisco Nexus를 참조하십시오 | 기술 자료 문서 link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["원격 연결을 유지하면서 Cisco 상호 연결 스위치의 구성을 지우는 방법"^] 
+
+
+| Broadcom BES-53248 | 기술 자료 문서 link:https://kb.netapp.com/on-prem/Switches/Broadcom-KBs/How_to_clear_configuration_on_a_Broadcom_interconnect_switch_while_retaining_remote_connectivity["원격 연결을 유지하면서 Broadcom 상호 연결 스위치의 구성을 지우는 방법"^] 
+|===
+.. 스위치 설정을 구성하고 확인합니다.
++
+[cols="30,70"]
+|===
+| 스위치 모델이 다음과 같은 경우... | 이동... 
+
+
+| Cisco Nexus 9336C-FX2 | link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/upgrade-rcf-software-9336c-cluster.html["RCF(Reference Configuration File) 업그레이드"^] 
+
+
+| Broadcom BES-53248 | link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/upgrade-rcf.html["RCF(Reference Configuration File) 업그레이드"^] 
+
+
+| NVIDIA SN2100 | link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/install-rcf-sn2100-cluster.html["RCF(Reference Configuration File) 스크립트를 설치하거나 업그레이드합니다"^] 
+|===
+
+
+
+
+
+NOTE: 클러스터 스위치가 10/25GbE 속도만 지원하는 경우 클러스터 상호 연결을 위해 교체 시스템의 슬롯1 또는 슬롯2에 X60130A, 4포트 10/25GbE 카드를 사용해야 합니다.

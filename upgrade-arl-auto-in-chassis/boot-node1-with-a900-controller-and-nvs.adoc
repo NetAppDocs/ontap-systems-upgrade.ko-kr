@@ -1,0 +1,256 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-in-chassis/boot-node1-with-a900-controller-and-nvs.html 
+keywords: boot, NVRAM, controller, module, node1, replacement 
+summary: ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드할 때 교체 컨트롤러 모듈로 노드1을 부팅합니다. 
+---
+= 교체 시스템 모듈을 사용하여 노드1을 부팅합니다
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+교체 모듈이 있는 노드 1을 부팅할 준비가 되었습니다. 지원되는 교체 모듈은 에 나열되어 link:index.html#supported-systems,["지원되는 시스템 매트릭스"]있습니다.
+
+[NOTE]
+====
+컨트롤러 모듈을 교체할 때 모든 연결을 이전 컨트롤러 모듈에서 교체 컨트롤러 모듈로 이동합니다.
+
+컨트롤러 및 NVRAM 모듈을 교체할 경우 콘솔 및 관리 연결만 이동합니다.
+
+====
+.단계
+. (AFF A250, AFF C250, AFF A800 또는 AFF C800 업그레이드만 해당) Loader 프롬프트에서 유지보수 모드로 전환:
++
+`boot_ontap maint`
+
++
+.. 답변 `y` 혼합 플랫폼 확인 프롬프트로 이동합니다.
+.. 확인 프롬프트에 응답합니다 `yes` .
+.. 100GbE 인터페이스의 상태를 표시합니다.
++
+`storage port show`..
+
++
+NS224 쉘프 또는 스토리지 스위치에 연결된 모든 100GbE 포트는 아래 예제 출력에 표시된 대로 포트로 보고되어야 `storage` 합니다.
+
++
+[listing]
+----
+*> storage port show
+Port Type Mode    Speed(Gb/s) State    Status  VLAN ID
+---- ---- ------- ----------- -------- ------- -------
+e8a  ENET storage 100 Gb/s    enabled  online  30
+e8b  ENET storage 100 Gb/s    enabled  online  30
+e11a ENET storage 100 Gb/s    enabled  online  30
+e11b ENET storage 100 Gb/s    enabled  online  30
+----
+.. 유지보수 모드 종료:
++
+`halt`
+
+
+
+. [[A900_boot_node1]]NetApp Storage Encryption(NSE) 드라이브가 설치되어 있는 경우 다음 단계를 수행하세요.
++
+
+NOTE: 절차의 앞부분에서 아직 수행하지 않은 경우 기술 자료 문서를 참조하십시오 https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["드라이브가 FIPS 인증되었는지 확인하는 방법"^] 사용 중인 자체 암호화 드라이브의 유형을 확인합니다.
+
++
+.. 설정 `bootarg.storageencryption.support` 를 선택합니다 `true` 또는 `false`:
++
+[cols="35,65"]
+|===
+| 다음 드라이브를 사용 중인 경우… | 그러면... 
+
+
+| NSE 드라이브가 FIPS 140-2 레벨 2 자체 암호화 요구사항을 충족합니다 | `setenv bootarg.storageencryption.support *true*` 
+
+
+| NetApp 비 FIPS SED | `setenv bootarg.storageencryption.support *false*` 
+|===
++
+[NOTE]
+====
+동일한 노드 또는 HA 쌍에서 다른 유형의 드라이브와 FIPS 드라이브를 혼합할 수 없습니다. 동일한 노드 또는 HA 쌍에서 SED를 비암호화 드라이브와 혼합할 수 있습니다.
+
+====
+.. 특수 부팅 메뉴로 이동하여 옵션을 선택합니다 `(10) Set Onboard Key Manager recovery secrets`.
++
+이전 절차에서 기록한 암호 및 백업 정보를 입력합니다. 을 참조하십시오 link:manage_storage_encryption_using_okm.html["Onboard Key Manager를 사용하여 스토리지 암호화를 관리합니다"].
+
+
+
+. 노드를 부팅 메뉴로 부팅합니다.
++
+`boot_ontap menu`
+
+. 노드가 부팅 메뉴에서 멈추면 다음 명령을 node1에서 실행하여 이전 node1 디스크를 교체 node1에 다시 할당합니다.
++
+`boot_after_controller_replacement`
+
++
+잠시 후에 교체되는 노드의 이름을 입력하라는 메시지가 표시됩니다. 공유 디스크(ADP(고급 디스크 파티셔닝) 또는 분할된 디스크라고도 함)가 있는 경우 HA 파트너의 노드 이름을 입력하라는 메시지가 표시됩니다.
+
++
+이러한 프롬프트는 콘솔 메시지에 묻힐 수 있습니다. 노드 이름을 입력하지 않거나 잘못된 이름을 입력하면 이름을 다시 입력하라는 메시지가 표시됩니다.
+
++
+[NOTE]
+====
+If(경우 `[localhost:disk.encryptNoSupport:ALERT]: Detected FIPS-certified encrypting drive` 그리고, 또는, `[localhost:diskown.errorDuringIO:error]: error 3 (disk failed) on disk` 오류가 발생하면 다음 단계를 수행하십시오.
+
+.. LOADER 프롬프트에서 노드를 중단합니다.
+.. 에 나와 있는 스토리지 암호화 부트인수를 확인하고 <<A900_boot_node1,2단계>>재설정합니다.
+.. LOADER 프롬프트에서 다음을 부팅합니다.
++
+`boot_ontap`
+
+
+
+====
++
+다음 예제를 참조로 사용할 수 있습니다.
+
++
+.콘솔 출력 예를 확장합니다
+[%collapsible]
+====
+[listing]
+----
+LOADER-A> boot_ontap menu
+.
+.
+<output truncated>
+.
+All rights reserved.
+*******************************
+*                             *
+* Press Ctrl-C for Boot Menu. *
+*                             *
+*******************************
+.
+<output truncated>
+.
+Please choose one of the following:
+
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? 22/7
+
+(22/7)                          Print this secret List
+(25/6)                          Force boot with multiple filesystem disks missing.
+(25/7)                          Boot w/ disk labels forced to clean.
+(29/7)                          Bypass media errors.
+(44/4a)                         Zero disks if needed and create new flexible root volume.
+(44/7)                          Assign all disks, Initialize all disks as SPARE, write DDR labels
+.
+.
+<output truncated>
+.
+.
+(wipeconfig)                        Clean all configuration on boot device
+(boot_after_controller_replacement) Boot after controller upgrade
+(boot_after_mcc_transition)         Boot after MCC transition
+(9a)                                Unpartition all disks and remove their ownership information.
+(9b)                                Clean configuration and initialize node with partitioned disks.
+(9c)                                Clean configuration and initialize node with whole disks.
+(9d)                                Reboot the node.
+(9e)                                Return to main boot menu.
+
+
+
+The boot device has changed. System configuration information could be lost. Use option (6) to restore the system configuration, or option (4) to initialize all disks and setup a new system.
+Normal Boot is prohibited.
+
+Please choose one of the following:
+
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? boot_after_controller_replacement
+
+This will replace all flash-based configuration with the last backup to disks. Are you sure you want to continue?: yes
+
+.
+.
+<output truncated>
+.
+.
+Controller Replacement: Provide name of the node you would like to replace:<nodename of the node being replaced>
+Controller Replacement: Provide High Availability partner of node1: <nodename of the partner of the node being replaced>
+Changing sysid of node node1 disks.
+Fetched sanown old_owner_sysid = 536940063 and calculated old sys id = 536940063
+Partner sysid = 4294967295, owner sysid = 536940063
+.
+.
+<output truncated>
+.
+.
+varfs_backup_restore: restore using /mroot/etc/varfs.tgz
+varfs_backup_restore: attempting to restore /var/kmip to the boot device
+varfs_backup_restore: failed to restore /var/kmip to the boot device
+varfs_backup_restore: attempting to restore env file to the boot device
+varfs_backup_restore: successfully restored env file to the boot device wrote key file "/tmp/rndc.key"
+varfs_backup_restore: timeout waiting for login
+varfs_backup_restore: Rebooting to load the new varfs
+Terminated
+<node reboots>
+
+System rebooting...
+
+.
+.
+Restoring env file from boot media...
+copy_env_file:scenario = head upgrade
+Successfully restored env file from boot media...
+Rebooting to load the restored env file...
+.
+System rebooting...
+.
+.
+.
+<output truncated>
+.
+.
+.
+.
+WARNING: System ID mismatch. This usually occurs when replacing a boot device or NVRAM cards!
+Override system ID? {y|n} y
+.
+.
+.
+.
+Login:
+----
+====
++
+[NOTE]
+====
+위의 예에 표시된 시스템 ID는 ID의 예입니다. 업그레이드할 노드의 실제 시스템 ID는 다릅니다.
+
+프롬프트에 노드 이름을 입력하고 로그인 프롬프트에서 노드 이름을 입력하는 사이에 노드는 몇 번 재부팅하여 환경 변수를 복원하고, 시스템의 카드의 펌웨어를 업데이트하고, 다른 ONTAP 업데이트를 수행합니다.
+
+====
+
