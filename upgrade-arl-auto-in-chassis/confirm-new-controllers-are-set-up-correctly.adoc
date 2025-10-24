@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: upgrade-arl-auto-in-chassis/ensure-new-controllers-are-set-up-correctly.html 
+permalink: upgrade-arl-auto-in-chassis/confirm-new-controllers-are-set-up-correctly.html 
 keywords: ensure, controllers, new, setup, ha, pair, node1, node2, lif, cluster, high, availability 
 summary: HA 쌍이 설정되었는지 확인하고, 동일한 섀시에서 컨트롤러 모델을 업그레이드한 후 노드 1과 노드 2 스토리지 액세스 및 LIF를 확인하고, 애그리게이트 소유권을 확인합니다. 
 ---

@@ -57,6 +57,8 @@ entries:
   entries:
   - title: 루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 2에서 노드 1로 재배치합니다
     url: "/upgrade-arl-auto-in-chassis/relocate-non-root-aggr-nas-lifs-from-node2-to-node1.html"
+  - title: 장애가 발생하거나 거부권을 행사한 Aggregate를 재배치합니다
+    url: "/upgrade-arl-auto-in-chassis/relocate-failed-or-vetoed-aggr-node2.html"
   - title: 노드2를 폐기합니다
     url: "/upgrade-arl-auto-in-chassis/retire-node2.html"
 - title: 5단계. 노드 2에 교체 시스템 모듈을 설치합니다
@@ -92,7 +94,7 @@ entries:
   - title: KMIP 서버를 사용하여 인증 관리
     url: "/upgrade-arl-auto-in-chassis/manage-authentication-using-kmip-servers.html"
   - title: 새 컨트롤러가 올바르게 설정되었는지 확인합니다
-    url: "/upgrade-arl-auto-in-chassis/ensure-new-controllers-are-set-up-correctly.html"
+    url: "/upgrade-arl-auto-in-chassis/confirm-new-controllers-are-set-up-correctly.html"
   - title: 새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다
     url: "/upgrade-arl-auto-in-chassis/set-up-storage-encryption-new-module.html"
   - title: 새 컨트롤러 모듈에 NetApp 볼륨 또는 애그리게이트 암호화를 설정합니다
