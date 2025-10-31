@@ -16,7 +16,7 @@ summary: ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업�
 [role="lead"]
 해당 교체 시스템 모듈을 교체한 후 netboot node1을 입력해야 합니다. netboot라는 용어는 원격 서버에 저장된 ONTAP 이미지에서 부팅한다는 것을 의미합니다. netboot를 준비할 때 시스템이 액세스할 수 있는 웹 서버에 ONTAP 9 부트 이미지 사본을 추가합니다.
 
-교체 컨트롤러 모듈의 부트 미디어에 설치된 ONTAP 버전은 섀시에 설치되고 전원이 켜져 있지 않으면 확인할 수 없습니다. 교체 시스템 부팅 미디어의 ONTAP 버전은 업그레이드할 이전 시스템에서 실행되는 ONTAP 버전과 동일해야 하며 부팅 미디어의 기본 부팅 이미지와 백업 부팅 이미지가 모두 일치해야 합니다. 업그레이드에 지원되는 최소 ONTAP 버전을 확인하려면 다음을 참조하십시오. link:decide_to_use_the_aggregate_relocation_guide.html#supported-systems,["지원되는 시스템 업그레이드 조합"] .
+교체 컨트롤러 모듈의 부트 미디어에 설치된 ONTAP 버전을 확인하려면 해당 컨트롤러 모듈이 섀시에 설치되어 전원이 켜져 있어야 합니다.  교체 시스템 부팅 미디어의 ONTAP 버전은 업그레이드하는 기존 시스템에서 실행 중인 ONTAP 버전과 동일해야 하며, 부팅 미디어의 기본 부팅 이미지와 백업 부팅 이미지가 모두 일치해야 합니다.  업그레이드에 지원되는 최소 ONTAP 버전을 확인하려면 다음을 참조하세요.link:decide_to_use_the_aggregate_relocation_guide.html#supported-systems-in-chassis["지원되는 시스템 매트릭스"] .
 
 netboot에 이어 를 수행하여 이미지를 구성할 수 있습니다 `wipeconfig` 명령을 입력합니다. 이전에 컨트롤러 모듈을 다른 클러스터에서 사용한 경우, 를 참조하십시오 `wipeconfig` 명령은 부팅 미디어의 나머지 구성을 지웁니다.
 

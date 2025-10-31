@@ -41,7 +41,7 @@ summary: 스위치에 연결된 클러스터 업그레이드를 위한 새로운
 
 | `Down` | 로 가다<<verify-rcf-step3,3단계>> . 
 |===
-. 클러스터 포트와 스위치 RCF를 확인하세요.
+. [[verify-rcf-step3]]클러스터 포트와 스위치 RCF를 확인하세요.
 +
 자세한 내용은 을 link:cable-node1-for-shared-cluster-HA-storage.html#connect-switch-attached-cluster["스위치 연결 클러스터에 연결합니다"]참조하십시오.
 

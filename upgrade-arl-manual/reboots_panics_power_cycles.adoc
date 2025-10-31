@@ -46,7 +46,7 @@ summary: 'ONTAP 9.7 이하를 실행하는 컨트롤러에서 수동 ARL 업그�
 재배치된 애그리게이트의 소유권은 홈 소유자가 변경되지 않았기 때문에 페일오버된 비루트 애그리게이트의 소유권과 동일합니다. 노드 1이 에 들어갈 때 `waiting for giveback state`노드 2는 모든 노드 1 비루트 애그리게이트를 다시 제공합니다.
 
 .단계
-. 완료 link:relocate_non_root_aggr_node1_node2.html#step1["1단계"] section_Relocate node1에서 node2_again으로 비루트 애그리게이트를 재배치합니다.
+. 완벽한link:relocate_non_root_aggr_node1_node2.html#relocate-step1["1단계"] _node1에서 node2로 루트가 아닌 집계를 다시 배치_ 섹션에서.
 . 노드 쌍 업그레이드 절차를 계속 진행합니다.
 
 
@@ -74,7 +74,7 @@ summary: 'ONTAP 9.7 이하를 실행하는 컨트롤러에서 수동 ARL 업그�
 노드 1은 노드 2에 재배치된 자체 애그리게이트뿐만 아니라 노드 2에 모두 테이크오버됩니다. 노드 2가 에 들어갈 때 `Waiting for Giveback` 노드 1은 노드 2의 모든 애그리게이트를 제공합니다.
 
 .단계
-. 완료 link:relocate_non_root_aggr_node1_node2.html#step1["1단계"] section_Relocate node1에서 node2_again으로 비루트 애그리게이트를 재배치합니다.
+. 완벽한link:relocate_non_root_aggr_node1_node2.html#relocate-step1["1단계"] _node1에서 node2로 루트가 아닌 집계를 다시 배치_ 섹션에서.
 . 노드 쌍 업그레이드 절차를 계속 진행합니다.
 
 
@@ -123,7 +123,7 @@ HA가 이미 비활성화되어 있기 때문에 노드 3이 노드 2 충돌 후
 
 .단계
 . 노드2를 위로 올립니다.
-. 를 완료하여 나머지 애그리게이트를 재배치합니다 link:relocate_non_root_aggr_node2_node3.html#step1["1단계"] 부터 까지 link:relocate_non_root_aggr_node2_node3.html#step3["3단계"] section_Relocate node2에서 node3_로 비루트 애그리게이트를 이동합니다.
+. 나머지 집계를 완료하여 이전합니다.link:relocate_non_root_aggr_node2_node3.html#verify-partner-sys-id["1단계"] ~을 통해link:relocate_non_root_aggr_node2_node3.html#relocate-step5["5단계"] _node2에서 node3으로 루트가 아닌 집계를 재배치_ 섹션에서.
 . 노드 쌍 업그레이드 절차를 계속 진행합니다.
 
 
@@ -149,7 +149,7 @@ HA가 이미 비활성화되어 있기 때문에 노드 3이 노드 2 충돌 후
 
 .단계
 . 노드3을 불러옵니다.
-. 완료 link:relocate_non_root_aggr_node2_node3.html#step3["3단계"] section_Relocate node2에서 node3_로 비루트 애그리게이트를 이동합니다.
+. 완벽한link:relocate_non_root_aggr_node2_node3.html#relocate-step5["5단계"] 다시 _node2에서 node3으로 루트가 아닌 집계를 재배치_ 섹션에서.
 . 노드 쌍 업그레이드 절차를 계속 진행합니다.
 
 
@@ -220,6 +220,6 @@ Node3는 노드 2의 일부 또는 전부를 노드 4로 재배치했습니다. 
 
 .단계
 . 노드4를 위로 올립니다.
-. 를 다시 완료하여 노드 2에 속한 나머지 애그리게이트를 재배치합니다 link:relocate_node2_non_root_aggr_node3_node4.html#Step1["1단계"] 부터 까지 link:relocate_node2_non_root_aggr_node3_node4.html#step3["3단계"] in_Relocate node3에서 node4_로 node2의 비루트 애그리게이트를 이동합니다.
+. 다시 완료하여 node2에 속한 나머지 집계를 다시 배치합니다.link:relocate_node2_non_root_aggr_node3_node4.html#man_relocate_3_4_Step1["1단계"] ~을 통해link:relocate_node2_non_root_aggr_node3_node4.html#step3["3단계"] _node2의 루트가 아닌 집계를 node3에서 node4로 재배치_합니다.
 . 노드 쌍 업그레이드 절차를 계속 진행합니다.
 

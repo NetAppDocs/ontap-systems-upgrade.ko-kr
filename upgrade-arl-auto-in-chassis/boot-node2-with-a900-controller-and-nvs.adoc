@@ -14,7 +14,7 @@ summary: ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업�
 
 
 [role="lead"]
-교체 모듈이 있는 노드2를 부팅할 준비가 되었습니다. 지원되는 교체 모듈은 에 나열되어 link:index.html#supported-systems,["지원되는 시스템 매트릭스"]있습니다.
+이제 교체 모듈이 포함된 Node2를 부팅할 준비가 되었습니다.  지원되는 교체 모듈은 다음에 나열되어 있습니다.link:decide_to_use_the_aggregate_relocation_guide.html#supported-systems-in-chassis["지원되는 시스템 매트릭스"] .
 
 
 NOTE: 시스템 모듈을 바꿔 업그레이드할 때만 콘솔 및 관리 연결을 이동할 수 있습니다.

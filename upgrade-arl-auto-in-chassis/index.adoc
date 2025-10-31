@@ -72,7 +72,7 @@ NOTE: 업그레이드 절차를 시작하기 전에 다음의 모든 중요 정�
 
 
 * ASA A900, AFF A900 및 FAS9500 시스템은 하이 라인 전력(200V~240V)만 지원합니다. AFF A700 또는 FAS9000 시스템이 낮은 전력(100V에서 120V로)에서 실행되는 경우 이 절차를 사용하기 전에 AFF A700 또는 FAS9000 입력 전원을 변환해야 합니다.
-* 에 포함된 다운타임이 있는 기존 시스템에서 업그레이드하는 <<supported-systems-in-chassis,지원되는 시스템 매트릭스>>경우, 스토리지를 이동하거나 기술 지원 부서에 문의하여 컨트롤러 하드웨어를 업그레이드할 수 있습니다. link:other_references.html["참조"]볼륨 또는 스토리지를 이동하여 업그레이드 _ 링크를 참조하십시오.
+* 다운타임이 포함된 기존 시스템에서 업그레이드하는 경우link:decide_to_use_the_aggregate_relocation_guide.html#supported-systems-in-chassis["지원되는 시스템 매트릭스"] 저장소를 이동하거나 기술 지원팀에 문의하여 컨트롤러 하드웨어를 업그레이드할 수 있습니다.  참조하다link:other_references.html["참조"] _볼륨이나 저장소를 이동하여 업그레이드_에 연결합니다.
 
 
 

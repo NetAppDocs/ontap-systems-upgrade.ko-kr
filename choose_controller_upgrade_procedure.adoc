@@ -13,68 +13,97 @@ summary: '일반적으로 컨트롤러 하드웨어를 업그레이드하는 방
 [role="lead"]
 일반적으로 컨트롤러 하드웨어를 업그레이드하는 방법은 원래 노드의 플랫폼 모델에 따라 다릅니다. 애그리게이트를 재배치하거나 볼륨을 이동하는 방법(두 가지 무중단 절차 모두) 또는 스토리지를 이동하는 방법(중단이 필요한 절차)으로 업그레이드할 수 있습니다. 원래 노드와 새 노드에서 서로 다른 ONTAP 버전을 실행하는 경우 하드웨어 업그레이드를 시작하기 전에 소프트웨어 업그레이드를 수행해야 할 수 있습니다.
 
-[role="tabbed-block"]
-====
-.시스템의 내부 드라이브
---
-내부 드라이브가 있는 시스템의 업그레이드 절차를 선택합니다. 아래 목록은 다음과 같습니다.
-
-* FAS2620, FAS2650, FAS2720 및 FAS2750를 참조하십시오
-* AFF A150, AFF A200, AFF A220, AFF A250, AFF A700s, 및 AFF A800을 받았습니다
-* AFF C190, AFF C250 및 AFF C800의 약어입니다
-* ASA A150, ASA A250, ASA A800 및 ASA AFF A220
-+
 
 NOTE: ASA R2 교체 시스템으로의 ASA 업그레이드는 지원되지 않습니다. ASA에서 ASA R2 시스템으로 데이터를 마이그레이션하는 방법에 대한 자세한 내용은 을 참조하십시오link:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html["SAN 호스트에서 ASA R2 스토리지 시스템으로의 데이터 액세스가 가능합니다"^].
 
 
 
+== 어떤 업그레이드 절차를 사용해야 합니까?
 
-NOTE: 특정 컨트롤러 업그레이드의 경우 집계 재배치를 사용하여 내부 드라이브가 있는 시스템을 업그레이드할 수 있습니다. link:upgrade-arl/index.html["자세한 정보"]..
+적절한 업그레이드 절차를 선택하려면 아래 표에 나열된 모든 질문을 검토하세요.
 
-시스템이 목록에 없으면 를 참조하십시오 https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^] 내부 드라이브가 있는지 확인합니다.
+[cols="30,70"]
+|===
+| 자신에게 물어보세요… | 만약 당신의 대답이 '예'라면, 당신은 이렇게 할 수 있습니다... 
 
-image:workflow_internal_drives.png["업그레이드 절차 선택을 위한 결정 워크플로우"]
 
---
-.외부 드라이브만 있는 시스템
---
-외부 드라이브만 있는 시스템의 업그레이드 절차를 선택합니다. 이 절차는 다음과 같습니다.
+| 원래 노드와 새 노드에서 서로 다른 소프트웨어 버전을 실행하고 있나요? | 원래 노드의 ONTAP 버전을 지원되는 가장 높은 버전으로 업그레이드합니다.  가능하다면 새로운 노드는 원래 노드에서 실행되는 ONTAP 버전을 지원해야 합니다.  이것이 가능하지 않다면,link:https://docs.netapp.com/us-en/ontap/upgrade/prepare.html["ONTAP 버전을 업그레이드합니다"^] 원래 노드에서 지원되는 가장 높은 버전으로.  원본 노드와 새 노드의 버전 차이는 4를 초과할 수 없습니다.  예를 들어, ONTAP 9.8 및 9.12.1은 지원되지만 ONTAP 9.8 및 9.13.1은 지원되지 않습니다. link:https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html["혼합 버전 ONTAP 클러스터에 대해 자세히 알아보십시오"^]. 
 
-* FAS8200, FAS8300, FAS8700, FAS9000 및 FAS9500
-* AFF A300, AFF A320, AFF A400, AFF A700 및 AFF A900
-* AFF C400
-* ASA A400, ASA A900 및 ASA AFF A700
+
+| 방해가 되는 업그레이드를 하고 싶은가요? | link:upgrade/upgrade-decide-to-use-this-guide.html["스토리지를 이동하여 업그레이드"]. 이를 위해서는 원래 시스템의 데이터를 저장할 자체 저장소와 선반이 있는 새로운 시스템이 필요합니다.  일부 업그레이드의 경우 컨트롤러 선반에서 변환이 가능합니다. 
+
+
+| 중단 없는 업그레이드를 수행하시겠습니까?  a| 
+다음 방법 중 하나를 사용하여 업그레이드하세요.
+
+* link:upgrade/upgrade-decide-to-use-this-guide.html["볼륨 이동"]
 +
+이렇게 하려면 새 노드를 조인하고, 볼륨과 LIF를 새 노드로 옮기고, 클러스터에서 제거하려는 노드의 조인을 해제해야 합니다.  2노드 스위치리스 클러스터를 업그레이드하는 경우, 새로운 노드를 추가하기 전에 클러스터 스위치 쌍을 사용하여 스위치 연결 클러스터로 변환합니다.
 
-NOTE: ASA R2 교체 시스템으로의 ASA 업그레이드는 지원되지 않습니다. ASA에서 ASA R2로 데이터를 마이그레이션하는 방법에 대한 자세한 내용은 를 참조하십시오link:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html["SAN 호스트에서 ASA R2 스토리지 시스템으로의 데이터 액세스가 가능합니다"^].
-
-
-
-시스템이 목록에 없으면 를 참조하십시오 https://hwu.netapp.com["NetApp Hardware Universe를 참조하십시오"^] 외장 드라이브만 있는지 확인합니다.
-
-image:workflow_external_drives.png["업그레이드 절차 선택을 위한 결정 워크플로우"]
-
---
-====
-컨트롤러 하드웨어 업그레이드 절차에 대해 알아보십시오.
-
-* link:upgrade-arl/index.html["애그리게이트 재배치를 사용하여 업그레이드"]
+* link:upgrade-arl/index.html["집계 이전 사용"]
 +
-애그리게이트 재배치는 교체 절차입니다. 스위치가 없는 2노드 클러스터에 도움이 되는, 새로운 노드로 클러스터를 확장하거나 축소할 필요가 없습니다. 애그리게이트 재배치를 통한 데이터 이동은 볼륨을 이동할 때 애그리게이트 간에 데이터를 복사하는 것보다 빠릅니다.
-
-* link:upgrade/upgrade-decide-to-use-this-guide.html["볼륨 또는 스토리지를 이동하여 업그레이드"]
+ARL은 대체 시술입니다.  새로운 노드로 클러스터를 확장하거나 축소할 필요가 없으므로 2노드 스위치리스 클러스터에 유용합니다.  볼륨을 이동할 때 집계를 재배치하여 데이터를 이동하는 것이 집계 간에 데이터를 복사하는 것보다 빠릅니다.
 
 
-[NOTE]
-====
-*참고1*: 원래 노드에서 실행되는 ONTAP 버전은 새 노드에서 지원해야 합니다. 필요한 경우 link:https://docs.netapp.com/us-en/ontap/upgrade/prepare.html["ONTAP 버전을 업그레이드합니다"^] 원래 노드에서 지원되는 최대 버전으로. 원래 노드와 새 노드 간의 버전 차이는 4보다 클 수 없습니다. 예를 들어 ONTAP 9.8 및 9.12.1이 지원되지만 ONTAP 9.8 및 9.13.1은 지원되지 않습니다. https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html["혼합 버전 ONTAP 클러스터에 대해 자세히 알아보십시오"^].
 
-* Note2 *: 무중단 업그레이드를 수행하려면 원래 시스템의 데이터를 저장할 수 있는 자체 스토리지와 셸프가 있는 새 시스템이 필요합니다.
 
-*Note3*: 볼륨을 이동하여 업그레이드할 때 새 노드에 가입하고 볼륨과 LIF를 새 노드로 이동한 다음 클러스터에서 제거할 노드의 연결을 해제합니다. 스위치가 없는 2노드 클러스터를 업그레이드하는 경우 새 노드를 추가하기 전에 클러스터 스위치 쌍을 사용하여 스위치 연결 클러스터로 변환합니다.
 
-====
-MetroCluster 구성을 업그레이드하는 경우 를 참조하십시오 https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["MetroCluster 구성을 업그레이드, 새로 고침 또는 확장합니다"^].
+| 모듈식 시스템이 있나요?  *참고*: 모듈형 시스템에서는 컨트롤러에 내부 디스크가 없으며 모든 저장 장치는 외부에 부착된 선반에 있습니다. | link:upgrade-arl/index.html["애그리게이트 재배치를 사용하여 업그레이드"]. 
 
-개별 부품을 교체하는 경우 을 참조하십시오 https://docs.netapp.com/us-en/ontap-systems/index.html["ONTAP 하드웨어 시스템 설명서"^] 해당 구성요소의 현장 교체 장치(FRU) 전단을 찾으십시오.
+
+| 통합 시스템이 있고 볼륨을 이동하여 업그레이드하고 싶습니까?  *참고*: 통합 시스템에서는 컨트롤러에 내부 디스크가 있고, 스토리지는 컨트롤러 섀시와 외부에 부착된 선반에 들어 있습니다.  외부 선반은 저장 공간 확장을 위한 것이므로 모든 시스템 구성에 포함되지 않을 수 있습니다.  a| 
+. link:https://hwu.netapp.com/DetailViews/Home.aspx["시스템이 지원되는지 확인하세요"^].
+. link:upgrade/upgrade-decide-to-use-this-guide.html["볼륨을 이동하여 업그레이드"].
+
+
+
+
+| 통합 시스템이 있는데, 기존 섀시와 디스크는 그대로 두고 컨트롤러 모듈만 교체하여 업그레이드하고 싶습니까? | link:upgrade-arl-auto-affa900/index.html["동일한 섀시와 디스크를 유지하면서 ARL을 사용하여 업그레이드합니다."]. 
+
+
+| SVM을 이전하나요? | 참조하다link:https://docs.netapp.com/us-en/ontap/svm-migrate/index.html#svm-migration-workflow["SVM 데이터 이동성 개요"^] . 
+
+
+| MetroCluster 구성을 업그레이드하고 있나요? | 참조하다link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["MetroCluster 구성을 업그레이드, 새로 고침 또는 확장합니다"^] . 
+
+
+| 개별 구성 요소를 교체하는 건가요? | 를 참조하세요link:https://docs.netapp.com/us-en/ontap-systems/index.html["ONTAP 하드웨어 시스템 설명서"^] 해당 구성 요소의 현장 교체 가능 장치(FRU) 전단지를 찾으세요. 
+|===
+
+
+== 예: FAS9500 에서 FAS90으로 업그레이드
+
+이 예에서는 FAS9500 에서 FAS90 컨트롤러로 업그레이드할 때 가능한 답변을 보여줍니다.
+
+[cols="30,70"]
+|===
+| 질문 | 예시 답변 
+
+
+| 원래 노드와 새 노드에서 서로 다른 소프트웨어 버전을 실행하고 있나요? | 아니요. FAS9500 과 FAS90은 모두 ONTAP 9.15.1을 실행합니다. 
+
+
+| 중단을 초래하는 업그레이드를 수행하고 싶습니까? | 아니요. 업그레이드하는 동안 프로덕션 환경을 온라인 상태로 유지하고 싶습니다. 
+
+
+| 중단 없는 업그레이드를 수행하시겠습니까? | 네. 시스템이 모듈식인지 통합형인지에 따라 볼륨을 이동하거나 ARL(집계 재배치)을 사용하여 업그레이드할 수 있습니다. 
+
+
+| 모듈식 시스템이 있나요? | 네. FAS9500 은 외부 보관 선반이 있는 모듈식 시스템입니다.  ARL을 사용하여 업그레이드할 수 있습니다. 
+
+
+| 통합 시스템이 있고 볼륨을 이동하여 업그레이드하고 싶습니까? | 아니요. FAS9500 은 모듈식 시스템이므로 해당 사항이 없습니다. 
+
+
+| 통합 시스템이 있는데, 기존 섀시와 디스크는 그대로 두고 컨트롤러 모듈만 교체하여 업그레이드하고 싶습니까? | 아니요. FAS9500 은 모듈식 시스템이므로 해당 사항이 없습니다. 
+
+
+| SVM을 이전하나요? | 아니요. SVM은 그대로 유지하면서 하드웨어를 업그레이드하고 있습니다. 
+
+
+| MetroCluster 구성을 업그레이드하고 있나요? | 아니요. 이것은 표준 HA 쌍 클러스터입니다. 
+
+
+| 개별 구성 요소를 교체하는 건가요? | 아니요. 전체 컨트롤러 시스템을 업그레이드하고 있습니다. 
+|===
+*이 예제에 권장되는 업그레이드 경로:*link:upgrade-arl/index.html["ARL을 사용하여 업그레이드합니다"] FAS9500 은 모듈식 시스템이고 ARL은 중단 없는 업그레이드 방법을 제공하기 때문입니다.
