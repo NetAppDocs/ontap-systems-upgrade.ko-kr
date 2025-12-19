@@ -2725,22 +2725,10 @@
   <block id="f08f2281e0941651d12c9d63e01b3a7e" category="paragraph">AutoSupport가 활성화되지 않았습니다</block>
   <block id="8ba4d456a3db9d62662e21be8c9d6a65" category="paragraph">NetApp Support에 문의하여 일련 번호를 등록하십시오.</block>
   <block id="073b364a34edc88074c1df13d44748dc" category="list-text">자동 반환이 비활성화된 경우 다시 활성화하십시오.<block ref="6f0c6616b99fea33a3020e0e0dcbe3c6" prefix=" " category="inline-code"></block></block>
-  <block id="be560856af220999f45b0e64a842465a" category="summary">볼륨을 새 노드로 이동한 후에는 클러스터의 원래 노드를 연결 해제합니다. 노드의 연결을 해제하면 노드의 구성이 지워지고 모든 디스크가 초기화됩니다.</block>
-  <block id="cf9dafa4aad7081e3241e5bc4acb350f" category="doc">클러스터에서 원래 노드의 연결을 해제합니다</block>
-  <block id="f61d9690213fcb44fc551adab505eb85" category="paragraph">볼륨을 새 노드로 이동한 후에는 클러스터의 원래 노드를 연결 해제합니다. 노드의 연결을 해제하면 노드의 구성이 지워지고 모든 디스크가 초기화됩니다.</block>
-  <block id="59e7cb89beb0d9c0f35ba87b5c4549e3" category="list-text">원래 노드에서 고가용성 구성을 사용하지 않도록 설정:<block ref="f539b9f8648f5ff69608de63350373ce" prefix=" " category="inline-code"></block></block>
   <block id="72992cc1c16f1dbbbcb7cc77a55977d9" category="list-text">고급 권한 수준 액세스:</block>
   <block id="dc4a67b269dfaba9479198e3f11a2a68" category="list-text">epsilon이 있는 노드를 식별합니다.</block>
   <block id="9f964a34bab4b3112781e0b28258f5bb" category="paragraph">다음 예에서 "Node0"은 현재 epsilon을 보유합니다.</block>
-  <block id="c66d0d8c1fe1605513edaaeec7a73d16" category="list-text">원래 노드 중 하나에 epsilon가 있으면 epsilon을 다른 노드로 이동합니다.</block>
-  <block id="787149e64a0bc37710b15cd205977d92" category="list-text">원본 노드에서 epsilon을 제거합니다: +<block ref="35cf8faa9e6e7d3108a26b5e7ed20f31" prefix=" " category="inline-code"></block></block>
-  <block id="cbb7de31a52f2a91eb5415ac80ca9da6" category="list-text">epsilon을 다른 노드(+)에 할당합니다<block ref="555a9ad5c66d2c298b70afba796395ef" prefix=" " category="inline-code"></block></block>
-  <block id="91ab806eca55f1234d360a9bf96615a0" category="list-text">클러스터에 남아 있는 노드에서 클러스터의 각 원래 노드 연결을 해제합니다(고급 권한 레벨).</block>
-  <block id="01d317947cf0fa7c03a1243dac797c57" category="paragraph"><block ref="2dd02e1a799ef2ee9fc64b2c82df2222" prefix="" category="inline-code"></block></block>
   <block id="7f616e8c743e57f3b11fac3e3bd7ffb1" category="paragraph">다음과 유사한 메시지가 표시됩니다.</block>
-  <block id="a38cfcfcdebdf9c05a1cd632c11918b8" category="paragraph">연결되지 않은 노드는 자동으로 재부팅되고 부팅 메뉴에서 중지됩니다.</block>
-  <block id="7ab0d0bb58501cb25dab62cdcffddfb5" category="list-text">연결되지 않은 노드의 부팅 메뉴에서 * (4) Clean configuration and initialize all disks * 옵션을 선택하여 노드 구성을 지우고 모든 디스크를 초기화합니다.</block>
-  <block id="35c0226d4e8a9cad1a873c648504d626" category="list-text">를 입력합니다<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> 메시지가 표시됩니다.</block>
   <block id="7f1e916ec0aa6a4296149be58ba61a1b" category="list-text">클러스터에 노드가 2개만 남아 있는 경우 2노드 클러스터의 고가용성을 구성합니다.</block>
   <block id="c1f192f6d626bc5f27fc74b0848a1250" category="paragraph"><block ref="acc3b99f812f210de5147296e269009d" prefix="" category="inline-code"></block></block>
   <block id="25f08d7b61860ee1109108f6e40dfa08" category="doc">SAN LIF 이동을 위한 고려 사항</block>
@@ -2924,7 +2912,6 @@
   <block id="2e4156d3cca76c6a7c2a2eb02d8fcbd2" category="paragraph"><block ref="3228bf0ed1beb4334260c2b6f61a7bc8" prefix="" category="inline-code"></block></block>
   <block id="6074c781af342d278c2cc2ce1cf3994c" category="list-text">노드 1의 루트 애그리게이트가 으로 설정되어 있는지 확인합니다<block ref="63a9f0ea7bb98050796b649e85481845" prefix=" " category="inline-code"></block> 옵션 필드와 다른 애그리게이트는 온라인 상태입니다.</block>
   <block id="d0848afd8553c34945705222a97a4553" category="paragraph">다음과 유사한 출력이 표시됩니다.</block>
-  <block id="94e9d0bee98aefbd97c04b1401f6c790" category="paragraph">클러스터가 SAN 환경에 있을 경우 원래 노드의 연결을 해제하려면 먼저 원래 노드에서 더 이상 필요하지 않은 SAN LIF를 삭제해야 합니다.</block>
   <block id="94a76ebba8e86706797afe6001140741" category="list-text">iSCSI 이니시에이터가 있는 경우 다음 단계를 완료합니다.</block>
   <block id="d8a3e002e1fe8c2f25656a36ddbfbeba" category="list-text">원래 노드의 SVM에 현재 연결되어 있는 활성 이니시에이터 목록을 이전의 각 LIF에 대해 한 번씩 표시합니다. +<block ref="e3b82ab0dd1a8daf0e10586e7dcbd3a9" prefix=" " category="inline-code"></block></block>
   <block id="9882b7407728c4a51f28a203651b752e" category="paragraph">다음 예에서는 SVM VS1 에 연결된 활성 이니시에이터와 함께 명령의 출력을 보여 줍니다.</block>
@@ -3323,7 +3310,6 @@
   <block id="51e0a0afc4d011a307d3419bfe742eba" category="sidebar">볼륨을 이동하여 업그레이드</block>
   <block id="ff56b4f5944c3419d2cbe4a5a19eb150" category="sidebar">새 노드를 설치하고 연결합니다</block>
   <block id="f86f16f11e093ddd1a9acafc8ee58e6f" category="sidebar">SAN이 아닌 데이터 LIF 및 클러스터 관리 LIF를 이동합니다</block>
-  <block id="d2e2f3320c4d610d0815b1405859a98b" category="sidebar">원래 노드의 연결을 해제합니다</block>
   <block id="e2cfe3f2f5162bd48bbb5fff263ee435" category="sidebar">1단계. 업그레이드 준비(ONTAP 9.8 이상에서 수동 업그레이드)</block>
   <block id="9ad50bf57a679f1360d84fb707885cdc" category="sidebar">2단계. 노드1 재배치 및 폐기(ONTAP 9.8 이상에서 수동 업그레이드)</block>
   <block id="553bd54dfad85955aae7dae67c2e3916" category="sidebar">3단계. 노드3 설치 및 부팅(ONTAP 9.8 이상에서 수동 업그레이드)</block>
@@ -4021,7 +4007,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="66686106038dcdf0e7037a2679e6be2b" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block><block ref="a931a68d44bca92701e3cc2575cb8e58" category="inline-link-macro-rx"></block></block>
   <block id="2431d8b533362d8472db79a8849836be" category="paragraph">클러스터 콘텐츠 및 클러스터 환경에 따라 SAN LIF를 이동, 삭제 또는 생성하거나 삭제된 SAN LIF를 다시 생성합니다.</block>
   <block id="12e67aac3e7f9227cc35f8f047d7dc74" category="inline-image-macro">7번</block>
-  <block id="3c49f3e0113334d7428d508b5d1dba98" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block><block ref="a6976dfe70e597796c77b019f33f6b95" category="inline-link-macro-rx"></block></block>
   <block id="baca0ca6729684fd54206793ae4b5bd5" category="inline-image-macro">8개</block>
   <block id="266c2a634fcfab43713325017c0d1fc1" category="paragraph-title"><block ref="430057c670c01688e904ed2ba129a0b5" category="inline-image-macro-rx" type="image"></block><block ref="25f018c3ca0d5083cf0a96e5a5daf8b3" category="inline-link-macro-rx"></block></block>
   <block id="55388932978c50267bc31e99b8d1d4d9" category="paragraph">볼륨을 이동하여 업그레이드 절차를 완료하려면 서비스 프로세서(SP)를 구성하고, 새 라이센스를 설치하고, AutoSupport를 설정해야 합니다. 저장소 또는 볼륨 암호화를 설정하고 FC 또는 NCA 포트를 구성해야 할 수도 있습니다.</block>
@@ -4101,7 +4086,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="7679a865afb03bdbcc1cbd8757f79d09" category="list-text"><block ref="7679a865afb03bdbcc1cbd8757f79d09" category="inline-link-macro-rx"></block></block>
   <block id="70df8f2f5459940187f1edf7420f9c6b" category="paragraph">스토리지를 이동하여 업그레이드하려면 원래 노드를 준비하고 새 노드를 설정합니다. 일부 플랫폼 모델은 내부 스토리지를 새 노드로 전송하는 기능을 지원합니다. 디스크를 재할당하고 루트 볼륨 구성을 새 노드에 복원하고 네트워크 포트를 구성합니다.</block>
   <block id="ffaf71c89815c9497697e87f8d77a27d" category="paragraph">볼륨 이동을 통한 컨트롤러 하드웨어 업그레이드는 중단 없이 진행됩니다. 업그레이드를 시작하기 전에 일반적인 업그레이드 시나리오 및 업그레이드 고려 사항을 검토하십시오.</block>
-  <block id="cf41c84e5298fdad396a8a0dd7eaf0f3" category="paragraph">볼륨을 이동하여 업그레이드하려면 원래 노드를 준비하고 새 노드를 클러스터에 가입해야 합니다. 볼륨을 새 노드로 이동하고 LIF를 구성한 다음 클러스터에서 원래 노드의 연결을 해제합니다.</block>
   <block id="4b5907b5b5c704438991bdf09784779a" category="list-text">부팅 메뉴에서 8을 입력하여 노드를 재부팅하고 자동 부팅 중에 Ctrl-C를 눌러 LOADER 프롬프트에서 노드를 중지합니다.</block>
   <block id="ee537959cbe6c4957342c94d3801abf7" category="doc">ARL 업그레이드 절차를 선택합니다</block>
   <block id="e2de59a5a77b66213e7d85b56f1eb224" category="list-text">LOADER 프롬프트에서 유지보수 모드로 전환합니다.</block>
@@ -5266,7 +5250,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="2f5546c2bb23945783cbdb6d6e128cdf" category="paragraph">다음 방법 중 하나를 사용하여 업그레이드하세요.</block>
   <block id="0678555704a75d8c6ba937ca89e44347" category="inline-link-macro">볼륨 이동</block>
   <block id="7a5d9d481746c5a733396a92b9fa9ad9" category="list-text"><block ref="7a5d9d481746c5a733396a92b9fa9ad9" category="inline-link-macro-rx"></block></block>
-  <block id="7c15b3f4f4497023a45b26abfbd34fa1" category="paragraph">이렇게 하려면 새 노드를 조인하고, 볼륨과 LIF를 새 노드로 옮기고, 클러스터에서 제거하려는 노드의 조인을 해제해야 합니다.  2노드 스위치리스 클러스터를 업그레이드하는 경우, 새로운 노드를 추가하기 전에 클러스터 스위치 쌍을 사용하여 스위치 연결 클러스터로 변환합니다.</block>
   <block id="6de3b933715f67f0e1503dadf7be11b5" category="inline-link-macro">집계 이전 사용</block>
   <block id="1326c781e22221bcfee09723f0a2bfc2" category="list-text"><block ref="1326c781e22221bcfee09723f0a2bfc2" category="inline-link-macro-rx"></block></block>
   <block id="af07e0611bc43f9c7f0e394b682e76a9" category="paragraph">ARL은 대체 시술입니다.  새로운 노드로 클러스터를 확장하거나 축소할 필요가 없으므로 2노드 스위치리스 클러스터에 유용합니다.  볼륨을 이동할 때 집계를 재배치하여 데이터를 이동하는 것이 집계 간에 데이터를 복사하는 것보다 빠릅니다.</block>
@@ -5314,4 +5297,56 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="b2cf47c2f8de48c91a2658d1bae42ab8" category="admonition">섀시의 전원이 이미 켜져 있으므로, 노드2는 완전히 장착되자마자 부팅을 시작합니다.  노드2가 부팅되지 않도록 하려면 컨트롤러 모듈을 완전히 삽입하기 전에 콘솔과 관리 케이블을 연결하세요.</block>
   <block id="914a76ca2b7f6ddaae8d7322d8dfd459" category="paragraph">교체 컨트롤러 모듈의 부트 미디어에 설치된 ONTAP 버전을 확인하려면 해당 컨트롤러 모듈이 섀시에 설치되어 전원이 켜져 있어야 합니다.  교체 시스템 부팅 미디어의 ONTAP 버전은 업그레이드하는 기존 시스템에서 실행 중인 ONTAP 버전과 동일해야 하며, 부팅 미디어의 기본 부팅 이미지와 백업 부팅 이미지가 모두 일치해야 합니다.  업그레이드에 지원되는 최소 ONTAP 버전을 확인하려면 다음을 참조하세요.<block ref="f48bb6f7501a6484670164b41fb968ae" category="inline-link-macro-rx"></block> .</block>
   <block id="fa25f8cd417cf37165c34fcb9720ffe3" category="list-text">[[verify-rcf-step3]]클러스터 포트와 스위치 RCF를 확인하세요.</block>
+  <block id="2138fe46f5a4636fa20671bcd5e370b9" category="paragraph">이렇게 하려면 새 노드를 조인하고, 볼륨과 LIF를 새 노드로 옮기고, 클러스터에서 제거하려는 노드의 조인을 해제해야 합니다. 2노드 스위치리스 클러스터를 업그레이드하는 경우, 새로운 노드를 추가하기 전에 클러스터 스위치 쌍을 사용하여 스위치 연결 클러스터로 변환합니다.</block>
+  <block id="1e7b20b34e3e14bc87b5019115ef6319" category="paragraph">볼륨을 이동하여 업그레이드하려면 기존 노드를 준비하고 새 노드를 클러스터에 추가합니다. 볼륨을 새 노드로 이동하고, LIF를 구성한 다음, 클러스터에서 기존 노드를 제거합니다.</block>
+  <block id="febd744aeea49809fb1302b73fa6bd8c" category="inline-link-macro">클러스터에서 기존 노드를 제거합니다.</block>
+  <block id="5f9dcd9884f9526b20b37705a8075dc7" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block><block ref="de2c8f88da32b208ab4a1bf0c1405c32" category="inline-link-macro-rx"></block></block>
+  <block id="04c0dc0ac08f266118ef312b94f34222" category="paragraph">볼륨을 새 노드로 이동한 후에는 클러스터에서 원래 노드를 제거합니다. 노드를 제거하면 해당 노드의 구성이 지워지고 모든 디스크가 초기화됩니다.</block>
+  <block id="1411918bbf69ad4104cdc56864b603a3" category="paragraph"><block ref="1411918bbf69ad4104cdc56864b603a3" category="inline-link-macro-rx"></block></block>
+  <block id="cbbd4da8364a1dcf2593c3eec92abe27" category="paragraph"><block ref="cbbd4da8364a1dcf2593c3eec92abe27" category="inline-link-macro-rx"></block></block>
+  <block id="cf954e9acfd74a54fe766c2c130222c6" category="paragraph"><block ref="cf954e9acfd74a54fe766c2c130222c6" category="inline-link-macro-rx"></block></block>
+  <block id="638758de43a31bd2903f659581f78fa7" category="paragraph"><block ref="638758de43a31bd2903f659581f78fa7" category="inline-link-macro-rx"></block></block>
+  <block id="d350fa659f98e0153758612c202e6a04" category="summary">볼륨을 새 노드로 이동한 후에는 클러스터에서 원래 노드를 제거합니다. 노드를 제거하면 해당 노드의 구성이 지워지고 모든 디스크가 초기화됩니다.</block>
+  <block id="174d5560f210e4b4b5a29f385b2c8035" category="paragraph">원본 노드에서 새 노드로 볼륨을 이동하고 데이터 LIF를 이동하거나 삭제한 후에는 클러스터에서 원본 노드를 제거합니다. 노드를 제거하면 해당 노드의 구성이 지워지고 모든 디스크가 초기화됩니다.</block>
+  <block id="fcd2352296590a0e2accae2dd13e31d6" category="list-text">[[disable-ha]]원본 노드에서 고가용성(HA) 구성을 비활성화합니다.</block>
+  <block id="2c1e3c1177e032883dd8cedb7237369c" category="paragraph"><block ref="cfb56c7a6f1b3b0505ee17fb92209fba" prefix="" category="inline-code"></block></block>
+  <block id="bf80321073982fe86a71c1af9fac0650" category="list-text">[[epsilon-true]]원래 노드 중 하나가 epsilon을 보유하고 있는 경우, epsilon을 클러스터에서 제거하지 않는 노드로 이동합니다.</block>
+  <block id="4b839279170b4ba0703853fb5c2cb9da" category="list-text">원래 노드에서 엡실론을 제거합니다.</block>
+  <block id="222406298d9a2f2c033dca8a74afd55c" category="paragraph"><block ref="de7321e59bd990ec3ef09ca78116a7b0" prefix="" category="inline-code"></block></block>
+  <block id="7a788eb6946d9ba1aaad7df7bfb5f5b2" category="list-text">엡실론 값을 다른 노드에 할당합니다.</block>
+  <block id="b0c1e0271345231f93266b65411815c2" category="paragraph"><block ref="45f47d97caec3e0967eb10311176b1bb" prefix="" category="inline-code"></block></block>
+  <block id="14f47a56746d8dd06d7152a27fa22219" category="list-text">현재 마스터 노드를 식별하십시오.</block>
+  <block id="e477c0774c6014b5173ffa6810d512ab" category="paragraph"><block ref="484f24f8e4da80a1185aa63fa1d5fc08" prefix="" category="inline-code"></block></block>
+  <block id="f56d76980d50ef81b1a4f2246dbcf0da" category="paragraph">마스터 노드는 다음과 같은 프로세스를 관리하는 노드입니다.<block ref="d724f231a9a7b89757c4394d6622bc47" prefix=" " category="inline-code"></block>,<block ref="7b588256fbdc51b849239cf8988219ff" prefix=" " category="inline-code"></block>,<block ref="4855d47f82dd3929173aadd191f2a0ee" prefix=" " category="inline-code"></block>,<block ref="1ed70af3fcff64fcd6c818d86b6e6150" prefix=" " category="inline-code"></block>, 그리고<block ref="29fa19e764c47fa898f697bf7bb940db" prefix=" " category="inline-code"></block>.</block>
+  <block id="b799370e99c40124bdcc44e4ed7a5704" category="list-text">제거하려는 노드가 현재 마스터 노드인 경우, 클러스터에 남아 있는 노드 중 하나가 마스터 노드로 선출될 수 있도록 설정하십시오.</block>
+  <block id="ac13fc86d8d30a4abbb50425385fe453" category="list-text">현재 마스터 노드가 클러스터에 참여할 수 없도록 설정합니다.</block>
+  <block id="7021c105080628669b133405100efc63" category="paragraph"><block ref="f2b8f9d3d7fb27d37deaaf84ee69a072" prefix="" category="inline-code"></block></block>
+  <block id="84023f697c3d7f175eb48d9e7f81fe97" category="paragraph">적격성이 회복될 때까지 해당 노드는 비정상으로 표시됩니다. 마스터 노드가 부적격 상태가 되면 나머지 노드 중 하나가 클러스터 쿼럼에 의해 새로운 마스터로 선출됩니다.</block>
+  <block id="834ca6428bef51142e4d70a6c409829e" category="paragraph">HA 쌍의 첫 번째 노드에서 이 단계를 수행하는 경우 해당 노드만 부적격으로 표시해야 합니다. HA 파트너의 상태를 수정하지 마세요.</block>
+  <block id="c45a4c98c59ca383859dc9ca2d7b3243" category="paragraph">파트너 노드가 새로운 마스터로 선택된 경우, 해당 노드가 엡실론 값을 보유하고 있는지 확인해야 합니다. 파트너 노드가 엡실론을 보유하고 있는 경우, 해당 노드를 사용 불가 상태로 만들기 전에 엡실론을 클러스터에 남아 있는 다른 노드로 이동해야 합니다. 파트너 노드를 제거하기 위해 이러한 단계를 반복할 때 이 작업을 수행합니다.</block>
+  <block id="fa46d2d3d8cfe760c5a42ee99c2bb479" category="list-text">이전 마스터 노드가 클러스터에 다시 참여할 수 있도록 자격을 부여합니다.</block>
+  <block id="c1f0c4bf4b8a0d924276f97311b2b56c" category="paragraph"><block ref="14dcae85a302a6e4089a3c2a5636ff04" prefix="" category="inline-code"></block></block>
+  <block id="342dbc3880ef101e1ed2b5b78347d7d3" category="list-text">클러스터에 남아 있는 노드의 원격 노드 관리 LIF 또는 클러스터 관리 LIF에 로그인하여 클러스터에서 각 기존 노드를 제거합니다(고급 권한 수준 필요).</block>
+  <block id="eb1f2131641f5195e8a8d9b93f797562" category="paragraph">노드 이름 포함:</block>
+  <block id="9900c92f7c4f327f3d129fcdb88c5a95" category="paragraph">노드 IP 포함:</block>
+  <block id="e1b2dd8ee5d4a8767f514f7140d3b5b7" category="paragraph">여러 버전이 혼합된 클러스터에서 마지막으로 남은 하위 버전 노드를 제거하려는 경우 다음을 사용하십시오.<block ref="980f71817e3a06bee87bd061faeb423d" prefix=" " category="inline-code"></block> 이 명령들을 사용하여 매개변수를 설정하세요.</block>
+  <block id="76732b147c5a72422d23da150a4c5434" category="paragraph">시스템에서 다음과 같은 내용을 알려드립니다.</block>
+  <block id="f80f10147ba45bd1fef6e3c0af2ad9b6" category="list-text">또한 해당 노드의 페일오버 파트너를 클러스터에서 제거해야 합니다.</block>
+  <block id="f8794e0f00d445cfe92a1a1eeb5fdb7d" category="list-text">노드가 제거된 후 클러스터에 다시 참여하기 전에 노드의 구성을 지우고 모든 디스크를 초기화하려면 부팅 메뉴 옵션 *(4) 구성 정리 및 모든 디스크 초기화* 또는 옵션 *(9) 고급 드라이브 파티셔닝 구성*을 사용해야 합니다.</block>
+  <block id="4fcbf7b91c2fe0247f60ee2199672575" category="paragraph">노드를 제거하기 전에 해결해야 할 조건이 있는 경우 오류 메시지가 생성됩니다. 예를 들어, 해당 메시지는 노드에 제거해야 하는 공유 리소스가 있거나, 비활성화해야 하는 클러스터 HA 구성 또는 스토리지 페일오버 구성이 노드에 적용되어 있음을 나타낼 수 있습니다.</block>
+  <block id="39e6f8500af6b07f2903990336145751" category="paragraph">해당 노드가 쿼럼 마스터인 경우, 클러스터는 잠시 쿼럼 상태를 잃었다가 다시 회복합니다. 이번 쿼럼 손실은 일시적인 현상이며 데이터 작업에는 영향을 미치지 않습니다.</block>
+  <block id="5b04742f17c701ff3b58fe32667cc471" category="list-text">오류 메시지에 오류 조건이 표시되면 해당 조건을 해결하고 다시 실행하십시오.<block ref="b592ef8b0e17ac31ab55e93e7c1d10e1" prefix=" " category="inline-code"></block> 또는<block ref="5d16191a3b7abaee7967de5fd82cd336" prefix=" " category="inline-code"></block> 명령.</block>
+  <block id="bb73c71d58dba4f68bd9a8e3fa5709b6" category="paragraph">클러스터에서 노드가 성공적으로 제거되면 자동으로 재부팅됩니다.</block>
+  <block id="b16b992bede9cd61adafd05ccfa8b5db" category="list-text">노드를 다른 용도로 사용하려면 노드 구성을 지우고 모든 디스크를 초기화하십시오.</block>
+  <block id="f68297d08c23f1c81caf07d193fce59a" category="list-text">부팅 과정 중 메시지가 나타나면 Ctrl-C를 눌러 부팅 메뉴를 표시하십시오.</block>
+  <block id="5b43d3aa91abf75fd24c44f1341b2f06" category="list-text">부팅 메뉴 옵션 *(4) 구성 정리 및 모든 디스크 초기화*를 선택합니다.</block>
+  <block id="82049266f76a1c9f2f0a3be4c999f4d2" category="list-text">[[return-admin]]클러스터의 새 노드 중 하나에서 관리자 권한 수준으로 돌아갑니다.</block>
+  <block id="c4ca4238a0b923820dcc509a6f75849b" category="inline-xref">1</block>
+  <block id="d3d9446802a44259755d38e6d163e820" category="inline-xref">10</block>
+  <block id="d189cecc16115f8a1464438558157df4" category="list-text">단계를 반복하세요 <block ref="ad03471bc3c3d3a60bb07d8e505cecf8" category="inline-xref-macro-rx"></block> 에게 <block ref="0b50026eb51fd5abcc3f6c551ad9a731" category="inline-xref-macro-rx"></block> 클러스터에서 페일오버 파트너를 제거합니다.</block>
+  <block id="168c92437cbc3465963cce1942e62338" category="paragraph"><block ref="168c92437cbc3465963cce1942e62338" category="inline-link-macro-rx"></block></block>
+  <block id="b442cda004fcb2b77f9a06066859253e" category="paragraph">클러스터가 SAN 환경에 있는 경우, 클러스터에서 원래 노드를 제거하기 전에 더 이상 필요하지 않은 SAN LIF를 원래 노드에서 삭제해야 합니다.</block>
+  <block id="de2c8f88da32b208ab4a1bf0c1405c32" category="paragraph"><block ref="de2c8f88da32b208ab4a1bf0c1405c32" category="inline-link-macro-rx"></block></block>
+  <block id="0187590ed6627836f657d0d4157f4bd9" category="paragraph"><block ref="0187590ed6627836f657d0d4157f4bd9" category="inline-link-macro-rx"></block></block>
+  <block id="9cab58d086b1e90a5b2f49ae6b194edb" category="sidebar">기존 노드를 제거합니다.</block>
 </blocks>

@@ -64,8 +64,8 @@ entries:
     url: "/upgrade/upgrade-move-lifs-to-new-nodes.html"
   - title: SAN LIFS를 이동, 삭제 또는 생성합니다
     url: "/upgrade/upgrade_move_delete_recreate_san_lifs.html"
-  - title: 원래 노드의 연결을 해제합니다
-    url: "/upgrade/upgrade-unjoin-original-nodes-move-volumes.html"
+  - title: 기존 노드를 제거합니다.
+    url: "/upgrade/upgrade-remove-original-nodes.html"
   - title: 업그레이드를 완료합니다
     url: "/upgrade/upgrade-complete-move-volumes.html"
 - title: AFF A250 AFF A400 으로 업그레이드

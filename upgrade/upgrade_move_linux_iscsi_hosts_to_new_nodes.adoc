@@ -493,3 +493,6 @@ sanlun lun show -p
 multipath -ll -d
 ----
 
+
+.다음 단계
+link:upgrade-create-aggregate-move-volumes.html["애그리게이트를 생성하고 볼륨을 새 노드로 이동합니다"]

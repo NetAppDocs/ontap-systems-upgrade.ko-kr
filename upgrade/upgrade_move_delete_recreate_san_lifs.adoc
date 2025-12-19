@@ -35,7 +35,7 @@ LIF 이동 중에 다음 작업을 중단 없이 수행할 수 있습니다.
 
 == 더 이상 필요하지 않은 SAN LIF 삭제
 
-클러스터가 SAN 환경에 있을 경우 원래 노드의 연결을 해제하려면 먼저 원래 노드에서 더 이상 필요하지 않은 SAN LIF를 삭제해야 합니다.
+클러스터가 SAN 환경에 있는 경우, 클러스터에서 원래 노드를 제거하기 전에 더 이상 필요하지 않은 SAN LIF를 원래 노드에서 삭제해야 합니다.
 
 .단계
 . iSCSI 이니시에이터가 있는 경우 다음 단계를 완료합니다.
@@ -92,3 +92,6 @@ js11      ps0          mixed    LIF1,                   igroup1
 == 새로운 SAN LIF를 생성하거나 삭제된 SAN LIF를 다시 생성하십시오
 
 클러스터 환경 요구사항에 따라 이 절차 이전에 삭제한 SAN LIF를 새로 생성하거나 SAN LIF를 다시 생성할 수 있습니다. 를 사용하여 SAN LIF를 생성하거나 재생성할 수 있습니다 https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/task_creating_network_interfaces.html["네트워크 인터페이스 생성"^] OnCommand ® System Manager_documentation을 사용한 _Cluster 관리 절차
+
+.다음 단계
+link:upgrade-remove-original-nodes.html["클러스터에서 기존 노드를 제거합니다."]

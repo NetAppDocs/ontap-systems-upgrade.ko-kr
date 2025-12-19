@@ -1,0 +1,143 @@
+---
+permalink: upgrade/upgrade-remove-original-nodes.html 
+sidebar: sidebar 
+keywords: volume, move, node, remove, original, cluster, configuration, disk, initialize, remove the original nodes from the cluster 
+summary: 볼륨을 새 노드로 이동한 후에는 클러스터에서 원래 노드를 제거합니다. 노드를 제거하면 해당 노드의 구성이 지워지고 모든 디스크가 초기화됩니다. 
+---
+= 클러스터에서 기존 노드를 제거합니다.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+원본 노드에서 새 노드로 볼륨을 이동하고 데이터 LIF를 이동하거나 삭제한 후에는 클러스터에서 원본 노드를 제거합니다. 노드를 제거하면 해당 노드의 구성이 지워지고 모든 디스크가 초기화됩니다.
+
+.단계
+. [[disable-ha]]원본 노드에서 고가용성(HA) 구성을 비활성화합니다.
++
+`storage failover modify -node <original_node_name> -enabled false`
+
+. 고급 권한 수준 액세스:
++
+`set -privilege advanced`
+
+. epsilon이 있는 노드를 식별합니다.
++
+`cluster show`
+
++
+다음 예에서 "Node0"은 현재 epsilon을 보유합니다.
+
++
+[listing]
+----
+cluster::*>
+Node                 Health  Eligibility  Epsilon
+-------------------- ------- ------------ ------------
+node0                true    true         true
+node1                true    true         false
+node2                true    true         false
+node3                true    true         false
+----
+. [[epsilon-true]]원래 노드 중 하나가 epsilon을 보유하고 있는 경우, epsilon을 클러스터에서 제거하지 않는 노드로 이동합니다.
++
+.. 원래 노드에서 엡실론을 제거합니다.
++
+`cluster modify -node <original_node_name> -epsilon false`
+
+.. 엡실론 값을 다른 노드에 할당합니다.
++
+`cluster modify -node <new_node_name> -epsilon true`
+
+
+
+. 현재 마스터 노드를 식별하십시오.
++
+`cluster ring show`
+
++
+마스터 노드는 다음과 같은 프로세스를 관리하는 노드입니다. `mgmt`, `vldb`, `vifmgr`, `bcomd`, 그리고 `crs`.
+
+. 제거하려는 노드가 현재 마스터 노드인 경우, 클러스터에 남아 있는 노드 중 하나가 마스터 노드로 선출될 수 있도록 설정하십시오.
++
+.. 현재 마스터 노드가 클러스터에 참여할 수 없도록 설정합니다.
++
+`cluster modify -node <original_node_name> -eligibility false`
+
++
+적격성이 회복될 때까지 해당 노드는 비정상으로 표시됩니다. 마스터 노드가 부적격 상태가 되면 나머지 노드 중 하나가 클러스터 쿼럼에 의해 새로운 마스터로 선출됩니다.
+
++
+[NOTE]
+====
+HA 쌍의 첫 번째 노드에서 이 단계를 수행하는 경우 해당 노드만 부적격으로 표시해야 합니다. HA 파트너의 상태를 수정하지 마세요.
+
+파트너 노드가 새로운 마스터로 선택된 경우, 해당 노드가 엡실론 값을 보유하고 있는지 확인해야 합니다. 파트너 노드가 엡실론을 보유하고 있는 경우, 해당 노드를 사용 불가 상태로 만들기 전에 엡실론을 클러스터에 남아 있는 다른 노드로 이동해야 합니다. 파트너 노드를 제거하기 위해 이러한 단계를 반복할 때 이 작업을 수행합니다.
+
+====
+.. 이전 마스터 노드가 클러스터에 다시 참여할 수 있도록 자격을 부여합니다.
++
+`cluster modify -node <node_name> -eligibility true`
+
+
+
+. 클러스터에 남아 있는 노드의 원격 노드 관리 LIF 또는 클러스터 관리 LIF에 로그인하여 클러스터에서 각 기존 노드를 제거합니다(고급 권한 수준 필요).
++
+노드 이름 포함:
+
++
+[source, cli]
+----
+cluster remove-node -node <original_node_name>
+----
++
+노드 IP 포함:
+
++
+[source, cli]
+----
+cluster remove-node -cluster_ip <original_node_ip>
+----
++
+여러 버전이 혼합된 클러스터에서 마지막으로 남은 하위 버전 노드를 제거하려는 경우 다음을 사용하십시오. `-skip-last-low-version-node-check` 이 명령들을 사용하여 매개변수를 설정하세요.
+
++
+시스템에서 다음과 같은 내용을 알려드립니다.
+
++
+** 또한 해당 노드의 페일오버 파트너를 클러스터에서 제거해야 합니다.
+** 노드가 제거된 후 클러스터에 다시 참여하기 전에 노드의 구성을 지우고 모든 디스크를 초기화하려면 부팅 메뉴 옵션 *(4) 구성 정리 및 모든 디스크 초기화* 또는 옵션 *(9) 고급 드라이브 파티셔닝 구성*을 사용해야 합니다.
++
+노드를 제거하기 전에 해결해야 할 조건이 있는 경우 오류 메시지가 생성됩니다. 예를 들어, 해당 메시지는 노드에 제거해야 하는 공유 리소스가 있거나, 비활성화해야 하는 클러스터 HA 구성 또는 스토리지 페일오버 구성이 노드에 적용되어 있음을 나타낼 수 있습니다.
+
++
+해당 노드가 쿼럼 마스터인 경우, 클러스터는 잠시 쿼럼 상태를 잃었다가 다시 회복합니다. 이번 쿼럼 손실은 일시적인 현상이며 데이터 작업에는 영향을 미치지 않습니다.
+
+
+
+. 오류 메시지에 오류 조건이 표시되면 해당 조건을 해결하고 다시 실행하십시오. `cluster remove-node` 또는 `cluster unjoin` 명령.
++
+클러스터에서 노드가 성공적으로 제거되면 자동으로 재부팅됩니다.
+
+. 노드를 다른 용도로 사용하려면 노드 구성을 지우고 모든 디스크를 초기화하십시오.
++
+.. 부팅 과정 중 메시지가 나타나면 Ctrl-C를 눌러 부팅 메뉴를 표시하십시오.
+.. 부팅 메뉴 옵션 *(4) 구성 정리 및 모든 디스크 초기화*를 선택합니다.
+
+
+. [[return-admin]]클러스터의 새 노드 중 하나에서 관리자 권한 수준으로 돌아갑니다.
++
+[source, cli]
+----
+set -privilege admin
+----
+. 단계를 반복하세요 <<disable-ha,1>> 에게 <<return-admin,10>> 클러스터에서 페일오버 파트너를 제거합니다.
+. 클러스터에 노드가 2개만 남아 있는 경우 2노드 클러스터의 고가용성을 구성합니다.
++
+`cluster ha modify -configured true`
+
+
+
+.다음 단계
+link:upgrade-complete-move-volumes.html["볼륨 이동 업그레이드를 완료하세요"]

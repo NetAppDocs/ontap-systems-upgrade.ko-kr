@@ -38,3 +38,6 @@ http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30
 
 |===
 
+
+.다음 단계
+link:upgrade_move_linux_iscsi_hosts_to_new_nodes.html["Linux iSCSI 호스트를 새 노드로 이동합니다"]

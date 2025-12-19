@@ -92,3 +92,6 @@ network interface migrate -vserver <vserver_name> -lif cluster-mgmt -destination
 
 
 
+
+.다음 단계
+link:upgrade_move_delete_recreate_san_lifs.html["SAN LIF를 이동, 삭제 또는 생성합니다."]
