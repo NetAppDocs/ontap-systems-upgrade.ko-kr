@@ -413,7 +413,6 @@
   <block id="1b5474698e4bc6bfa928589ed23b1571" category="list-text">[[man_install3_step1]] 노드 3의 랙 공간이 있는지 확인합니다.</block>
   <block id="2c6541bc32b15b7aae8bab68f0ca5874" category="paragraph">노드 1과 노드 2가 별도의 섀시에 있는 경우 노드 1과 동일한 랙 위치에 노드 3을 배치할 수 있습니다. 그러나 노드 1이 노드 2가 있는 동일한 섀시에 있는 경우 노드 3을 노드 1의 위치와 가까운 자체 랙 공간에 넣어야 합니다.</block>
   <block id="773d119bfcf7806a94138f5cf32996fe" category="list-text">[[step2]] 노드 모델의 _설치 및 설치 지침_ 에 따라 랙에 노드 3을 설치합니다.</block>
-  <block id="e642674ff2b68ba9c6309b786d87c4f9" category="admonition">동일한 섀시에 두 노드가 있는 시스템으로 업그레이드하는 경우 노드 3뿐만 아니라 섀시에 노드 4를 설치합니다. 그렇지 않으면 노드 3을 부팅할 때 노드는 이중 섀시 구성에 있는 것처럼 작동하며 노드 4를 부팅할 때 노드 간의 상호 연결이 나타나지 않습니다.</block>
   <block id="5528857f98fded77afccd9d97a9a0711" category="list-text">[[step3]] 노드 3을 케이블로 연결하고 노드 1에서 노드 3으로 연결을 이동합니다.</block>
   <block id="9f13bb9f267a0b057f115598b95b4a04" category="paragraph">다음 참조는 올바른 케이블 연결에 도움이 됩니다. 로 이동합니다 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 링크를 클릭합니다.</block>
   <block id="72860e73833a237fd9811df9152c9a7a" category="list-text">디스크 쉘프 관련 절차</block>
@@ -1886,10 +1885,7 @@
   <block id="8ea7886b35c3e44ad6fcf3a1535ab9e7" category="list-text">클러스터 LIF 상태 점검</block>
   <block id="545969fcc9e42f8cf5ca0598e1ec25f6" category="paragraph">이러한 확인을 수행한 후 시스템은 노드 2가 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 4의 새 컨트롤러로 재배치합니다. 리소스 재배치가 완료된 후 컨트롤러 교체 작업이 일시 중지됩니다.</block>
   <block id="ff23473696232fd91c1e2dcb460109e4" category="paragraph">컨트롤러 교체 절차가 일시 중지된 경우 오류를 확인하고 수정한 다음 문제를 해결하십시오<block ref="69f2afc2390cec954f7c208b07212d39" prefix=" " category="inline-code"></block> 를 눌러 작업을 계속합니다.</block>
-  <block id="b5cd09b90221c700e1c2cf9d6253d6a1" category="list-text">필요한 경우 교체된 LIF를 복원하여 되돌리십시오. 교체된 LIF 나열:</block>
-  <block id="0b66eef739f727e3f877d8fd0e6b8862" category="paragraph"><block ref="9110205f9f8c1526eb8bd14d06559d11" prefix="" category="inline-code"></block></block>
   <block id="e288d72d848472060faab52648a13f10" category="paragraph">LIF가 대체된 경우 홈 노드를 노드 4로 복구합니다.</block>
-  <block id="26490175c6a9bb3f68c33041e7c3bd2e" category="paragraph"><block ref="85df5ed4631a4bc71421318adceade09" prefix="" category="inline-code"></block></block>
   <block id="6def760ec3a422405912b1de335c67db" category="list-text">작업을 재개하여 시스템에서 필요한 사후 검사를 수행하도록 합니다.</block>
   <block id="f3bf2563f63e5f2af4793dec3cbb4411" category="paragraph">시스템은 다음과 같은 사후 검사를 수행합니다.</block>
   <block id="9e9f6a103b5a748cadf8dfd54b8e29ac" category="list-text">재구성 검사를 집계합니다</block>
@@ -2011,7 +2007,6 @@
   <block id="334aac8182abb9ed5a53014b66433691" category="summary">을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 node4를 설치 및 부팅하고 ONTAP 소프트웨어를 설치합니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="75586863c552442d574a9bbfc3a0d408" category="paragraph">랙에 노드 4를 설치하고, 노드 2의 연결을 노드 4로 전송하고, 노드 4를 부팅하고, ONTAP를 설치해야 합니다. 그런 다음 이 섹션에 설명된 대로 노드 2의 스페어 디스크, 루트 볼륨에 속한 디스크 및 프로세스 초기에 노드 3에 재배치되지 않은 모든 비루트 애그리게이트를 재할당해야 합니다.</block>
   <block id="dc97d8a31027159f1cd8fddd5b4c5dab" category="paragraph">이 단계를 시작할 때 재배치 작업이 일시 중지됩니다. 이 프로세스는 대부분 자동화되어 있으며 사용자가 상태를 확인할 수 있도록 작업이 일시 중지됩니다. 작업을 수동으로 재개해야 합니다.</block>
-  <block id="cdb3662e6ecd47991de3008672ab3eb8" category="paragraph">노드 2에 설치된 ONTAP 9의 버전이 같지 않으면 노드 4를 netboot 해야 합니다. 노드 4를 설치한 후 웹 서버에 저장된 ONTAP 9 이미지에서 부팅합니다. 그런 다음 의 지침에 따라 부팅 미디어 장치에 올바른 파일을 다운로드하여 나중에 시스템을 부팅할 수 있습니다 <block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block>.</block>
   <block id="c7009662ac7e20dc02b0e7d7e2ed8804" category="list-text">[[auto_install4_step1]] 노드 4에 충분한 랙 공간이 있는지 확인합니다.</block>
   <block id="82952c70726b36a56f0651368cd2be05" category="paragraph">노드 4가 노드 2와 다른 섀시에 있는 경우 노드 4를 노드 3과 같은 위치에 배치할 수 있습니다. 노드 2와 노드 4가 동일한 섀시에 있는 경우 노드 4는 이미 해당 랙 위치에 있습니다.</block>
   <block id="179ba8fe173567627d42a1a9fc1e6948" category="list-text">노드 4를 케이블로 연결하고 노드 2에서 노드 4로 연결합니다.</block>
@@ -2447,7 +2442,6 @@
   <block id="fd6616fb43f706cbccb578942fa320ab" category="paragraph">ONTAP 9를 실행하는 노드 쌍에서 비 루트 애그리게이트를 동일한 클러스터의 새 노드로 마이그레이션하여 컨트롤러 하드웨어를 중단 없이 업그레이드할 수 있습니다. 업그레이드 중인 노드에서 호스팅되는 데이터에 액세스할 수 있습니다.</block>
   <block id="60b36970c08352c3c476769f29561cf4" category="paragraph">이 절차에서는 HA 구성을 활용하는 ARL(Aggregate Relocation) 방법을 사용하여 동일한 클러스터 내에서 스토리지를 공유하는 경우 비루트 애그리게이트의 소유권을 다른 노드로 이동할 수 있습니다.</block>
   <block id="cf76afd058516dd90fe89aedbec6904e" category="doc">루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 2로 다시 이동합니다</block>
-  <block id="ee2ce060961db1c7ec1f363acef87d91" category="paragraph">원격 LIF는 업그레이드 절차 중에 SAN LUN의 트래픽을 처리합니다. 업그레이드 중에 클러스터 또는 서비스 상태를 위해 SAN LIF를 이동할 필요가 없습니다. SAN LIF는 새 포트에 매핑되지 않으면 이동하지 않습니다. 노드2를 온라인으로 전환하는 경우 LIF가 정상 작동하는지, 해당 포트에 있는지 확인해야 합니다.</block>
   <block id="7d7b11f14dacd1dc55ecbacf79121ab1" category="paragraph">리소스 재배치가 완료된 후 컨트롤러 교체 작업이 일시 중지됩니다.</block>
   <block id="371a52c6bb799f6fb34f1a8ac8617b35" category="paragraph">컨트롤러 교체 절차가 일시 중지된 경우 오류를 확인하고 수정한 다음 문제를 해결하십시오<block ref="69f2afc2390cec954f7c208b07212d39" prefix=" " category="inline-code"></block> 를 눌러 작업을 계속합니다.</block>
   <block id="b990f6960d7072e815b8e4d805f92035" category="paragraph">LIF가 대체된 경우 홈 노드를 노드 2로 다시 복원합니다.</block>
@@ -2525,7 +2519,6 @@
   <block id="7e3345ca183a02251269d1034b280331" category="list-text">노드 1의 로더 프롬프트에서 를 확인합니다<block ref="d18fd3db938a26ebbd3f74de41f0b73f" prefix=" " category="inline-code"></block> 노드 1의 경우:</block>
   <block id="da2b45cbcbfabc951a211d4aed4ae9d5" category="doc">노드 2에서 키 관리자 구성을 복원합니다</block>
   <block id="0c28f03f85d0a7cc4b82f95fce4d86da" category="doc">업그레이드 하드웨어를 확인합니다</block>
-  <block id="6224b74d5b0b8d2ad6d1e4b341f1fa19" category="paragraph">원격 LIF는 업그레이드 절차 중에 SAN LUN의 트래픽을 처리합니다. 업그레이드 중에 클러스터 또는 서비스 상태를 위해 SAN LIF를 이동할 필요가 없습니다. SAN LIF는 새 포트에 매핑되지 않으면 이동하지 않습니다. 노드 1을 온라인으로 전환하는 경우 LIF가 정상 작동하는지, 해당 포트에 있는지 확인해야 합니다.</block>
   <block id="0bff73dcb819ba800842aebfbaa1ea03" category="list-text">네트워크 연결 상태 확인 수행:</block>
   <block id="22754bd796837dc212cb05d513ad94cb" category="paragraph">인터페이스 그룹 및 VLAN 포트를 포함하여 연결된 모든 포트의 상태가 로 표시되는지 확인합니다<block ref="e0aa021e21dddbd6d8cecec71e9cf564" prefix=" " category="inline-code"></block>.</block>
   <block id="d22abe120efea253d7c808e8381ed917" category="paragraph">이러한 확인을 수행한 후 시스템은 노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 새 노드 1로 재배치합니다.</block>
@@ -3785,9 +3778,7 @@
   <block id="fcff81c7528d1100eb58e37ad90535bd" category="admonition">온보드 키 관리자를 사용하여 NVE(NetApp Volume Encryption) 또는 NAE(NetApp Aggregate Encryption)를 사용 중인 경우, 키 관리자 암호를 준비하여 나중에 절차에서 키 관리자 재동기화를 완료하십시오.</block>
   <block id="1cb0cfe1b06273ad55b3f7189d138bb6" category="paragraph">이 절차는 자동 디스크 할당 및 네트워크 포트 도달 가능성 검사를 사용하여 컨트롤러 업그레이드 환경을 단순화하는 자동화된 절차를 단계별로 설명합니다.</block>
   <block id="7903419bce057c444e1bce59010158ec" category="paragraph">해당 교체 시스템 모듈을 교체한 후 netboot node1을 입력해야 합니다. netboot라는 용어는 원격 서버에 저장된 ONTAP 이미지에서 부팅한다는 것을 의미합니다. netboot를 준비할 때 시스템이 액세스할 수 있는 웹 서버에 ONTAP 9 부트 이미지 사본을 추가합니다.</block>
-  <block id="4524533c84ef78e7e46b023d69fd771f" category="paragraph">노드 2의 네트워크 구성을 확인하고 노드 1에서 노드 2로 애그리게이트를 재배치된 후에는 노드 1에 있는 노드 2에 속하는 NAS 데이터 LIF가 노드 1에서 노드 2로 재배치되어 있는지 확인합니다. 또한 노드 2에 SAN LIF가 존재하는지 확인해야 합니다.</block>
   <block id="aeadb581bc234293016c883a2bc49cc9" category="paragraph">노드 1을 폐기하려면 자동화된 작업을 다시 시작하여 노드 2와 HA 쌍을 비활성화하고 노드 1을 올바르게 종료합니다.</block>
-  <block id="374c76f74637c44ca649d6a92a52de14" category="paragraph">노드 1의 네트워크 구성을 확인한 후 노드 2에서 노드 1로 애그리게이트를 재배치할 경우, 현재 노드 2에 있는 노드 1에 속하는 NAS 데이터 LIF가 노드 2에서 노드 1로 재배치되어 있는지 확인합니다. 또한 SAN LIF가 노드 1에 존재하는지 확인해야 합니다.</block>
   <block id="656030f2bc1d7ad32243a38c007d0770" category="paragraph">교체 시스템 모듈을 사용하여 노드 1을 부팅한 후 올바르게 설치되었는지 확인합니다. 노드 2가 쿼럼에 참가할 때까지 기다린 다음 컨트롤러 교체 작업을 다시 시작해야 합니다.</block>
   <block id="fc654fff4abe048148189ff6fa5e3c9c" category="paragraph">올바른 설정을 확인하려면 HA 쌍이 설정되었는지 확인합니다. 또한 노드 1과 노드 2가 서로의 스토리지에 액세스할 수 있고 클러스터의 다른 노드에 속하는 데이터 LIF가 소유하지 않는지 확인합니다. 또한 모든 데이터 애그리게이트가 올바른 홈 노드에 있고 두 노드의 볼륨이 온라인 상태인지 확인합니다. 새 노드 중 하나에 통합 대상 어댑터가 있는 경우 포트 구성을 복원해야 하며 어댑터 사용을 변경해야 할 수도 있습니다.</block>
   <block id="37e06fbb743ab1c1935f7d96672ee924" category="paragraph">해당 교체 노드2 시스템 모듈을 교체한 후 해당 모듈을 netboot 해야 할 수 있습니다. netboot라는 용어는 원격 서버에 저장된 ONTAP 이미지에서 부팅한다는 것을 의미합니다. netboot를 준비할 때 시스템이 액세스할 수 있는 웹 서버에 ONTAP 9 부트 이미지 사본을 넣습니다.</block>
@@ -4127,14 +4118,10 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="1541d30bc97104d196a4b30a48265600" category="paragraph">ASA A900, AFF A900 또는 FAS9500 NVRAM 모듈을 노드 2의 슬롯 6에 설치합니다.</block>
   <block id="ede80ab611f3725304fd9e964c65b970" category="paragraph">ASA A900, AFF A900 또는 FAS9500 컨트롤러 모듈을 노드2에 설치, 케이블 연결 및 연결합니다.</block>
   <block id="b9b8de16ec06ff60ede24d2818e0abab" category="list-text">FCP 또는 FC-NVMe 데이터 액세스에 사용되는 FCP SAN LIF를 올바른 홈 포트에 다시 할당합니다.</block>
-  <block id="a1e8ba06d77acad7fa970ba8e0f0e467" category="paragraph"><block ref="16135bd5b92713cfb36ebe367a4ca458" prefix="" category="inline-code"></block></block>
   <block id="2de38c1e5aa6aa649940e819b4ebf8dd" category="list-text">업그레이드된 노드 1로 현재 노드가 있고 현재 포트에서 "status oper"를 "-"로 보고하는 LIF의 경우(AFF A800 노드에 포트가 있지만 AFF A90 노드에 존재하지 않음) 현재 포트를 수정하여 온라인으로 전환할 수 있습니다.</block>
   <block id="dc7986d888f3be0cb2a2215b9580886d" category="paragraph">FC LIF를 이동해야 하는 FC 타겟 포트에 대한 물리적 연결이 설정되어 있는지 확인</block>
-  <block id="20aae0c682908a321c4cb1ad3ed45571" category="paragraph"><block ref="6c2cad085a4937044f2937a01cb285f3" prefix="" category="inline-code"></block></block>
   <block id="b6257f5e9d4beab0291d2ae4dcfcbbd8" category="list-text">LIF의 홈 포트를 수정합니다.</block>
-  <block id="d354b1900f4972b1b49a933cfce61941" category="paragraph"><block ref="867b8ae03fe5d96f67794b8aa4dc8589" prefix="" category="inline-code"></block></block>
   <block id="4dbb86eefaa0a209d0215f725cf0c953" category="list-text">LIF 상태를 "설정"으로 설정:</block>
-  <block id="461987576b6bc9795673a818ccac3663" category="paragraph"><block ref="c69d259c6c2cd4b5fceaec835bc7e8b1" prefix="" category="inline-code"></block></block>
   <block id="5ed9b0adde6f557c682b59271b680376" category="paragraph">노드 1의 홈 페이지인 각 FC SAN LIF에 대해 하위 단계 a 및 b를 반복합니다.</block>
   <block id="9948b60bcf24c5a577ac51ca46681211" category="list-text">[[RESUME_RELOCATION_STEP4]] 재배치 작업 재개:</block>
   <block id="c8d0afb25c26087738c4c8847b04be0f" category="list-text">교체 컨트롤러 모듈에서 실행 중인 노드1이 부팅될 때까지 기다렸다가 아래와 같이 부팅 메뉴 옵션을 표시합니다.</block>
@@ -4263,13 +4250,7 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="5f6dcf2dc8c9275db98fa671806a2df2" category="list-text">iSCSI LIF는 내 성 검사를 통해 올바른 홈 포트를 자동으로 찾습니다. FC 및 NVMe/FC SAN LIF는 자동으로 이동하지 않습니다. 업그레이드 전에 홈 포트가 계속 표시됩니다.</block>
   <block id="896fb328ef1870ab0c1426f849038173" category="paragraph">노드 3에서 SAN LIF 확인:</block>
   <block id="986b69e60fa399c84378e8d8fdc4169e" category="list-text">"다운" 작업 상태를 새 데이터 포트로 보고하는 모든 iSCSI SAN LIF 수정:</block>
-  <block id="d9969d4bf831f15759b98f7f207624b0" category="paragraph"><block ref="10a9afb32a3e32e2f6c74223ba2ea3bf" prefix="" category="inline-code"></block></block>
-  <block id="6f1ad881dbf1eabf2024524fef9e1724" category="paragraph"><block ref="ef02172e95be012def2cc33ea87abf3b" prefix="" category="inline-code"></block></block>
-  <block id="4f79deb8615933038d14dd5ea648ed45" category="paragraph"><block ref="e880cca787f2bb3d426379f39b8412bb" prefix="" category="inline-code"></block></block>
   <block id="d2106fca8a6ec5ee92267756d2ba5ed8" category="list-text">새 컨트롤러의 집에 있는 FC 및 NVMe/FC SAN LIF를 수정하고 새 컨트롤러의 FCP 포트에 "중단" 운영 상태를 보고합니다.</block>
-  <block id="374a3532b059f787794fea3a4eceed27" category="paragraph"><block ref="fd39e72aaaaed002f894920981daeb07" prefix="" category="inline-code"></block></block>
-  <block id="09d339146e9f1aea7c732982453d56de" category="paragraph"><block ref="b60b5b228661943ca32fb9e03105246b" prefix="" category="inline-code"></block></block>
-  <block id="844aa209b69b21c6b4ac8b353001bf6c" category="paragraph"><block ref="340db2fa4901e2bebbaa48beb251cc09" prefix="" category="inline-code"></block></block>
   <block id="5041f3d5ede13a9dd794a52168aacdb3" category="summary">명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 노드 3에 있는 노드 2의 NAS 데이터 LIF가 노드 3에서 노드 4로 재배치되는지 확인합니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> .</block>
   <block id="37795240818b6015e8cc10cd9fdd35e1" category="paragraph">노드 4의 SAN LIF 확인:</block>
   <block id="b13a176ba8c67756fe909d3d869f8300" category="summary">명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러 업그레이드를 지원하는 데 필요한 참조 콘텐츠 및 웹 사이트<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block></block>
@@ -4691,14 +4672,11 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="e891c1eb94e2ca8bb3b7b8dadb898400" category="list-text"><block ref="6bdc44b5c51cc632715ca157799c6ae3" category="inline-link-macro-rx"></block>..</block>
   <block id="4ae096e0267d8683306cc7a7a6a39a64" category="paragraph">참조하다 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> _ONTAP 9 문서_에 링크합니다.</block>
   <block id="e9b64afb92831f1198d95f80d156d793" category="list-text">저장 디스크가 있는 시스템을 업그레이드하는 경우 이 섹션 전체를 완료한 다음 다음으로 진행해야 합니다. <block ref="a6d322e902b744ff3a11f02b5c6d9496" category="inline-link-macro-rx"></block> 클러스터 프롬프트에서 명령을 입력합니다.</block>
-  <block id="5bd058344f8aec8219e043cff27b0f39" category="admonition">동일한 섀시에 두 노드가 있는 시스템으로 업그레이드하는 경우 노드 3뿐만 아니라 섀시에 노드 4를 설치합니다. 그렇지 않으면, 노드 3을 부팅할 때 노드가 듀얼 섀시 구성인 것처럼 동작하고, 노드 4를 부팅할 때 노드 간의 상호 연결이 이루어지지 않습니다.</block>
   <block id="dce5ed79f31a7baa48db39721ab1ead2" category="inline-link-macro">ARL을 사용하여 기존 시스템 섀시 및 디스크를 유지하면서 컨트롤러 모델을 업그레이드합니다.</block>
   <block id="744c8ae51567237f1e51aca67e4478ec" category="inline-link-macro">기존 시스템 섀시와 디스크를 유지하면서 ARL을 사용하여 지원되는 시스템 업그레이드 조합에 대해 알아보세요.</block>
   <block id="8b53acd1242404623585fa614cf7d039" category="paragraph">node1에 설치된 것과 동일한 버전의 ONTAP 9가 없는 경우 node3을 네트워크 부팅해야 합니다. 노드3을 설치한 후 웹 서버에 저장된 ONTAP 9 이미지에서 부팅합니다. 그런 다음 부팅 미디어 장치에 올바른 파일을 다운로드하여 나중에 시스템을 부팅할 수 있습니다. 을 <block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block>참조하십시오.</block>
   <block id="756d35654041df32f1be206cb5d73d40" category="paragraph">하지만 node1에 설치된 ONTAP 9와 동일하거나 그 이후 버전이 있는 경우 node3을 네트워크 부팅할 필요는 없습니다.</block>
   <block id="e9e731a9f4962a1d8b683234f1b71e92" category="list-text">저장 디스크가 있는 시스템을 업그레이드하는 경우 이 섹션 전체를 완료한 다음 다음으로 이동해야 합니다. <block ref="b874d68563e926f19d0f15015f15f190" category="inline-link-macro-rx"></block> 그리고 <block ref="65c0a9634aad86b4a452ae0da56bfb85" category="inline-link-macro-rx"></block> 클러스터 프롬프트에서 명령을 입력합니다.</block>
-  <block id="077a3792f816c368d84f9a714136be02" category="paragraph">노드 2에 설치된 것과 동일한 ONTAP 9 버전이 노드 4에 설치되어 있지 않으면 네트워크 부팅을 해야 합니다. 노드 4를 설치한 후 웹 서버에 저장된 ONTAP 9 이미지에서 부팅합니다. 그런 다음 다음 지침에 따라 부팅 미디어 장치에 올바른 파일을 다운로드하여 다음 시스템 부팅에 사용할 수 있습니다. <block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block> .</block>
-  <block id="b4f090990739dcde90138932f4f42a92" category="paragraph">하지만 node2에 설치된 ONTAP 9와 동일하거나 그 이후 버전이 있는 경우 node4를 네트워크 부팅할 필요는 없습니다.</block>
   <block id="92909e480346a929ed3538f8fb727042" category="list-text">저장 디스크가 있는 시스템을 업그레이드하는 경우 이 섹션 전체를 완료한 다음 섹션으로 진행해야 합니다. <block ref="488c6e462745f03d8c1dfb3ba61f7258" category="inline-link-macro-rx"></block> 클러스터 프롬프트에서 명령을 입력합니다.</block>
   <block id="13f6606372b0497bd7d8f495e2c93873" category="paragraph">디렉토리의 정보를 사용하게 됩니다. <block ref="ab6acaf1648b65fe7eff652317a95a17" category="inline-link-macro-rx"></block> .</block>
   <block id="ab58313074490a46c5f45119c9303e60" category="paragraph">LIF가 다운되었는지 확인하려면 * Status Admin/Oper * 열을 확인하십시오. LIF가 다운된 경우 다음을 참조하세요. <block ref="103588ef7fbd849a8c4b92e24d1fe01e" category="inline-link-macro-rx"></block> 부분.</block>
@@ -5349,4 +5327,30 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="de2c8f88da32b208ab4a1bf0c1405c32" category="paragraph"><block ref="de2c8f88da32b208ab4a1bf0c1405c32" category="inline-link-macro-rx"></block></block>
   <block id="0187590ed6627836f657d0d4157f4bd9" category="paragraph"><block ref="0187590ed6627836f657d0d4157f4bd9" category="inline-link-macro-rx"></block></block>
   <block id="9cab58d086b1e90a5b2f49ae6b194edb" category="sidebar">기존 노드를 제거합니다.</block>
+  <block id="ebcb74e1716134fe203a42a8cd428baa" category="paragraph">노드4의 ONTAP 버전이 노드2의 ONTAP 버전과 다른 경우 노드4를 네트워크 부팅해야 합니다. node4를 설치한 후에는 웹 서버에 저장된 ONTAP 9 이미지로 부팅하십시오. 그런 다음 안내에 따라 올바른 파일을 부팅 미디어 장치에 다운로드하여 이후 시스템 부팅에 사용할 수 있습니다. <block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block>.</block>
+  <block id="f9e30dbcc8818a264a749f4e39bc4fab" category="admonition">두 노드가 동일한 섀시에 있는 시스템으로 업그레이드하는 경우, 노드4와 노드3을 섀시에 설치하십시오. 두 노드를 동일한 섀시에 설치하지 않으면 노드 3을 부팅할 때 듀얼 섀시 구성인 것처럼 동작하고, 노드 4를 부팅할 때 노드 간 상호 연결이 활성화되지 않습니다.</block>
+  <block id="37fe0d7aeb22bd42f48b3712743c4b39" category="paragraph">노드4의 ONTAP 버전이 노드2의 ONTAP 버전과 다른 경우 노드4를 네트워크 부팅해야 합니다. node4를 설치한 후에는 웹 서버에 저장된 ONTAP 9 이미지로 부팅하십시오. 그런 다음 안내에 따라 올바른 파일을 부팅 미디어 장치에 다운로드하여 이후 시스템 부팅에 사용할 수 있습니다. <block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block></block>
+  <block id="e8b6b737376aeb606702dc2af5d474cd" category="paragraph">하지만 노드4의 ONTAP 버전이 노드2의 ONTAP 버전과 같거나 그 이상인 경우에는 노드4를 네트워크 부팅할 필요가 없습니다.</block>
+  <block id="abe51e27581a803d580b27106c8fbcc9" category="list-text">필요한 경우, 위치가 변경된 LIF를 복원 및 되돌리거나, 자동으로 노드3으로 재배치되지 못한 노드1의 LIF를 수동으로 마이그레이션하고 수정하십시오.</block>
+  <block id="fa9a7ae0c5e4e008996b0538541864c2" category="open-title">위치가 어긋난 LIF를 복원하고 되돌립니다.</block>
+  <block id="a576509acad193e321ac9d885bc9528e" category="list-text">위치가 변경된 LIF를 모두 나열하십시오:</block>
+  <block id="0ea61c0cbfb23f5c46127b958ce17c92" category="open-title">LIF를 수동으로 마이그레이션하고 수정합니다.</block>
+  <block id="8d89c65969f1e32bf8b6c9fb92b19f08" category="list-text">자동으로 재배치되지 못한 LIF를 노드3으로 마이그레이션합니다.</block>
+  <block id="3a062c1f7aa95f546bf6583c39ceb2fd" category="list-text">마이그레이션된 LIF의 홈 노드와 홈 포트를 수정합니다.</block>
+  <block id="064dc3dc8b7fdd4f038fd92a236f9b83" category="paragraph">노드4의 네트워크 구성을 확인한 후, 노드2가 소유한 NAS 데이터 LIF를 노드3에서 노드4로 이동하고 노드4에 SAN LIF가 존재하는지 확인해야 합니다.</block>
+  <block id="ed77334ffc92a501bf542c2f2d717f14" category="paragraph">원격 LIF는 업그레이드 절차 중에 SAN LUN으로의 트래픽을 처리합니다. 업그레이드 중 클러스터 또는 서비스 상태를 유지하기 위해 SAN LIF를 이동하는 것은 필요하지 않습니다. SAN LIF는 새 포트에 매핑해야 하는 경우를 제외하고는 이동되지 않습니다.</block>
+  <block id="738a28f5784910fea735841a7a946127" category="paragraph">노드 4를 온라인 상태로 전환한 후 LIF가 정상 작동 중이고 올바른 포트에 있는지 확인합니다.</block>
+  <block id="f5ddff38abc8c1b895f6621c588d31b9" category="paragraph">시스템은 네트워크 연결 가능성 확인 단계에서 작업을 일시 중지합니다.</block>
+  <block id="3d2471dd6cc645b6dc421dfb8f23f60f" category="list-text">필요한 경우, 위치가 변경된 LIF를 복원 및 되돌리거나, 자동으로 노드4로 재배치되지 못한 노드2의 LIF를 수동으로 마이그레이션하고 수정하십시오.</block>
+  <block id="ca2db2e739635d249ad481bb473976e7" category="list-text">자동으로 재배치되지 못한 LIF를 노드 4로 마이그레이션합니다.</block>
+  <block id="ba5c068e6cda04378d720403021dfbd4" category="paragraph">노드4의 ONTAP 버전이 노드2의 ONTAP 버전과 다른 경우 노드4를 네트워크 부팅해야 합니다. node4를 설치한 후에는 웹 서버에 저장된 ONTAP 9 이미지로 부팅하십시오. 그런 다음 안내에 따라 올바른 파일을 부팅 미디어 장치에 다운로드하여 이후 시스템 부팅에 사용할 수 있습니다. <block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block>.</block>
+  <block id="9121a5ed9235664a166062eb989f8200" category="paragraph">노드2의 네트워크 구성을 확인한 후, 노드2가 소유한 NAS 데이터 LIF를 노드1에서 노드2로 이전하고 SAN LIF가 노드2에 존재하는지 확인해야 합니다.</block>
+  <block id="1055c88411bbfa6c3eba01720acdc22a" category="paragraph">노드 2를 온라인 상태로 전환한 후 LIF가 정상 작동하고 올바른 포트에 있는지 확인합니다.</block>
+  <block id="acad873850f7dfac35785963df3cc61f" category="paragraph">시스템은 네트워크 연결 가능성 확인 단계에서 작업을 일시 중지합니다.</block>
+  <block id="781572d7ed485284c30a93586bc8b92a" category="list-text">필요한 경우, 위치가 변경된 LIF를 복원 및 되돌리거나, 자동으로 노드2로 재배치되지 못한 노드2의 LIF를 수동으로 마이그레이션하고 수정하십시오.</block>
+  <block id="f64bf283d31880054e5afd8aaefe6a39" category="list-text">자동으로 재배치되지 못한 LIF를 노드2로 마이그레이션합니다.</block>
+  <block id="ea32bdbc38b1afc744063f63942db19d" category="paragraph">노드1의 네트워크 구성을 확인한 후, 노드1이 소유한 NAS 데이터 LIF를 노드2에서 노드1로 이동시키고 노드1에 SAN LIF가 존재하는지 확인해야 합니다.</block>
+  <block id="e1bbac43e553387c297781314d0b0a41" category="paragraph">노드 1을 온라인 상태로 전환한 후 LIF가 정상 작동하고 올바른 포트에 있는지 확인합니다.</block>
+  <block id="62a56d2b56c0cc31edabe0668b713cd8" category="list-text">필요한 경우, 위치가 변경된 LIF를 복원 및 되돌리거나, 자동으로 노드1으로 재배치되지 못한 노드1의 LIF를 수동으로 마이그레이션하고 수정하십시오.</block>
+  <block id="619e87d98142a98df53ed32236cf583d" category="list-text">자동으로 재배치되지 못한 LIF를 노드1로 마이그레이션합니다.</block>
 </blocks>
