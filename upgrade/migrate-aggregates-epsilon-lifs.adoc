@@ -1,22 +1,21 @@
 ---
-permalink: upgrade/migrate-fas2820-aggregates-epsilon-lifs.html 
+permalink: upgrade/migrate-aggregates-epsilon-lifs.html 
 sidebar: sidebar 
-keywords: fas2820, ndu, nondisruptive, upgrade, node1, node4, migrate, aggregates, lifs 
+keywords: fas2820, aff a150, aff a220, ndu, nondisruptive, upgrade, node1, node4, migrate, aggregates, lifs 
 summary: 'node1의 데이터 집계, epsilon, 논리 인터페이스(LIF)를 node4로 마이그레이션합니다.' 
 ---
-= FAS2820 node1에서 node4로 데이터 집계, epsilon 및 LIF 마이그레이션
+= 노드 1의 데이터 애그리게이트, epsilon 및 LIF를 노드 4로 마이그레이션합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-FAS2820 노드1의 데이터 집계, 엡실론, 논리 인터페이스(LIF)를 노드4로 마이그레이션합니다.
-
-.이 작업에 대해
-node4에서 다음 단계를 수행하세요.
+node1의 데이터 집계, epsilon, 논리 인터페이스(LIF)를 node4로 마이그레이션합니다.
 
 .단계
+node4에서 다음 단계를 수행하십시오.
+
 . node4의 LOADER 프롬프트에서 파트너 시스템 ID를 설정합니다.
 +
 [source, cli]
@@ -208,4 +207,4 @@ halt -node <node1> -inhibit-takeover true -ignore-quorum-warnings true
 
 
 .다음 단계
-link:convert-fas2820-node1-drive-shelf.html["노드 1을 드라이브 쉘프로 변환한 후 노드 3에 연결합니다"]
+link:convert-node1-to-drive-shelf.html["노드 1을 드라이브 쉘프로 변환한 후 노드 3에 연결합니다"]

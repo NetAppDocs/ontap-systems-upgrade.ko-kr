@@ -1,22 +1,21 @@
 ---
-permalink: upgrade/reassign-fas2820-node1-drives.html 
+permalink: upgrade/reassign-node1-drives.html 
 sidebar: sidebar 
-keywords: fas2820, ndu, nondisruptive, upgrade, node3, node1, reassign, drives 
-summary: FAS2820 node1을 DS212C 드라이브로 변환하고 node3에 연결한 후, 이전에 node1에 속했던 드라이브를 node3에 다시 할당합니다. 
+keywords: fas2820, aff a150, aff a220, ndu, nondisruptive, upgrade, node3, node1, reassign, drives 
+summary: node1을 드라이브 쉘프로 변환하고 node3에 연결한 후 이전에 node1에 속했던 드라이브를 node3에 재할당합니다. 
 ---
-= FAS2820 노드1에서 노드3으로 드라이브를 재할당합니다.
+= 노드 1에서 노드 3으로 드라이브를 재할당합니다
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-이전에 FAS2820 노드1에 할당되었던 드라이브를 노드3으로 다시 할당합니다.
-
-.이 작업에 대해
-node3에서 다음 단계를 수행합니다.
+이전에 node1에 할당되었던 드라이브를 node3에 재할당하십시오.
 
 .단계
+node3에서 다음 단계를 수행하십시오.
+
 . LOADER 프롬프트에서 node3을 Maintenance Mode로 부팅합니다.
 +
 [source, cli]
@@ -75,4 +74,4 @@ halt
 
 
 .다음 단계
-link:migrate-fas2820-node4-lIfs-aggregates.html["노드 4의 LIF 및 데이터 애그리게이트를 노드 3으로 마이그레이션"]
+link:migrate-node4-lifs-aggregates.html["노드 4의 LIF 및 데이터 애그리게이트를 노드 3으로 마이그레이션"]

@@ -48,7 +48,7 @@ image:drw_2240_x_opening_cam_latch.png["캠 핸들 열기"]
 
 
 
-== ASA A150, AFF A150 또는 FAS2820 컨트롤러 모듈을 설치합니다
+== 2단계: ASA A150, AFF A150 또는 FAS2820 컨트롤러 모듈을 설치합니다
 
 ASA A150, AFF A150 또는 FAS2820 컨트롤러 모듈을 노드1에 설치, 케이블 연결, 연결합니다.
 
