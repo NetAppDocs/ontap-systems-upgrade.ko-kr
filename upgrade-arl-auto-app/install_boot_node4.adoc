@@ -275,7 +275,7 @@ NOTE: 절차의 앞부분에서 아직 수행하지 않은 경우 기술 자료 
 ====
 .. 특수 부팅 메뉴로 이동하여 옵션을 선택합니다 `(10) Set Onboard Key Manager recovery secrets`.
 +
-이전 절차에서 기록한 암호 및 백업 정보를 입력합니다. 을 참조하십시오 link:manage_storage_encryption_using_okm.html["Onboard Key Manager를 사용하여 스토리지 암호화를 관리합니다"].
+절차 초반에 기록해 둔 암호와 백업 정보를 입력하십시오. link:manage_storage_encryption_using_okm.html["Onboard Key Manager를 사용하여 스토리지 암호화를 관리합니다"]을 참조하십시오.
 
 
 

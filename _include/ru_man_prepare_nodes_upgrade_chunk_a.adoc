@@ -315,7 +315,7 @@ vs0
 `network interface revert -vserver * -lif *`
 
 +
-에 대한 자세한 내용은 를 참조하십시오 `network interface revert` 명령, 을 참조하십시오 link:other_references.html["참조"] _ONTAP 9 명령에 연결하려면 수동 페이지 참조 _.
+ `network interface revert` 명령에 대한 자세한 내용은 link:other_references.html["참조"]를 참조하여 _ONTAP 9 Command reference_에 연결하십시오.
 
 . 노드 1이나 노드 2에 장애가 발생한 디스크가 있는지 확인합니다.
 +

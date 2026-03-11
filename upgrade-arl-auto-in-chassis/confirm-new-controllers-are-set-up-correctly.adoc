@@ -67,7 +67,7 @@ node2	    node1         true	        Connected to node1
 +
 `volume show -node <node2> -state offline`
 
-. 오프라인 상태인 볼륨이 있으면 섹션에서 캡처한 오프라인 볼륨 목록과 비교합니다 link:prepare_nodes_for_upgrade.html["업그레이드할 노드를 준비합니다"]을 사용하여 각 볼륨에 대해 다음 명령을 사용하여 필요에 따라 오프라인 볼륨을 온라인으로 전환합니다.
+. 오프라인 상태인 볼륨이 있는 경우, 해당 볼륨을 link:prepare-nodes-for-upgrade.html["업그레이드할 노드를 준비합니다"] 섹션에서 캡처한 오프라인 볼륨 목록과 비교하고, 필요에 따라 다음 명령을 각 볼륨에 대해 한 번씩 사용하여 오프라인 볼륨을 온라인 상태로 전환하십시오:
 +
 `volume online -vserver <vserver_name> -volume <volume_name>`
 
@@ -121,9 +121,9 @@ Do you want to continue? {y|n}: y
 `system license show`
 
 +
-출력을 에서 캡처한 출력과 비교할 수 있습니다 link:prepare_nodes_for_upgrade.html["업그레이드할 노드를 준비합니다"] 섹션을 참조하십시오.
+link:prepare-nodes-for-upgrade.html["업그레이드할 노드를 준비합니다"] 섹션에서 캡처한 출력과 출력을 비교할 수 있습니다.
 
-. [[unset_maxwait]] 구성에 자체 암호화 드라이브가 사용되고 있고 를 설정한 경우 `kmip.init.maxwait` 변수 대상 `off` (예: 교체 시스템 모듈이 있는 _Boot node2에서 _, link:boot_node2_with_a900_controller_and_nvs.html#boot_node2_step1["1단계"]), 변수를 설정 해제해야 합니다.
+. [[unset_maxwait]] 구성에서 자체 암호화 드라이브를 사용하고 있고  `kmip.init.maxwait` 변수를  `off`(예: _교체 시스템 모듈로 node2 부팅_에서 link:boot-node2-with-a900-controller-and-nvs.html#boot_node2_step1["1단계"])로 설정한 경우, 해당 변수를 해제해야 합니다.
 +
 `set diag; systemshell -node <node_name> -command sudo kenv -u -p kmip.init.maxwait`
 
@@ -132,10 +132,10 @@ Do you want to continue? {y|n}: y
 `system service-processor network modify -node <node_name>`
 
 +
-을 참조하십시오 link:other_references.html["참조"] SP 및 _ONTAP 9 명령에 대한 자세한 내용은 _시스템 관리 참조_에 대한 링크를 참조하십시오. 시스템에 대한 자세한 내용은 수동 페이지 참조_를 참조하십시오 `service-processor network modify` 명령.
+SP에 대한 정보는 link:other-references.html["참조"]_System Administration Reference_를 참조하고 system `service-processor network modify` 명령에 대한 자세한 정보는 _ONTAP 9 Command reference_를 참조하십시오.
 
-. 새 노드에서 스위치가 없는 클러스터를 설정하려면 을 참조하십시오 link:other_references.html["참조"] _NetApp Support 사이트_에 연결하고 스위치가 없는 2노드 클러스터로 전환 _ 의 지침을 따르십시오.
+. 새 노드에 스위치가 없는 클러스터를 설정하려면 link:other-references.html["참조"]를 참조하여 _NetApp Support Site_에 연결하고 _Transitioning to a two-node switchless cluster_의 지침을 따르십시오.
 
 
 .작업을 마친 후
-노드 1과 노드 2에서 스토리지 암호화가 설정된 경우 섹션을 완료합니다 link:set_up_storage_encryption_new_module.html["새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다"]. 그렇지 않으면 섹션을 완료합니다 link:decommission_old_system.html["기존 시스템을 폐기합니다"].
+node1과 node2에서 Storage Encryption이 활성화된 경우 link:set-up-storage-encryption-new-module.html["새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다"] 섹션을 완료하십시오. 그렇지 않은 경우 link:decommission-old-system.html["기존 시스템을 폐기합니다"] 섹션을 완료하십시오.

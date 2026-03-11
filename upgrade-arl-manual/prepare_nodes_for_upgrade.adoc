@@ -327,7 +327,7 @@ vs0
 `network interface revert -vserver * -lif *`
 
 +
-에 대한 자세한 내용은 를 참조하십시오 `network interface revert` 명령, 을 참조하십시오 link:other_references.html["참조"] _ONTAP 9 명령에 연결하려면 수동 페이지 참조 _.
+ `network interface revert` 명령에 대한 자세한 내용은 link:other_references.html["참조"]를 참조하여 _ONTAP 9 Command reference_에 연결하십시오.
 
 . 노드 1이나 노드 2에 장애가 발생한 디스크가 있는지 확인합니다.
 +
@@ -600,7 +600,7 @@ node2   0d      fc      initiator -       -         online
 .. SP 네트워크가 구성되었는지 확인합니다.
 .. SP에 대한 IP 주소 및 기타 정보를 기록합니다.
 +
-원격 관리 디바이스의 네트워크 매개 변수를 다시 사용할 수 있습니다. 이 경우 SP는 새 노드의 SP에 대해 원래 시스템에서 재사용해야 합니다. SP에 대한 자세한 내용은 를 참조하십시오 link:other_references.html["참조"] _시스템 관리 참조_ 및 _ONTAP 9 명령에 연결하려면 수동 페이지 참조 _.
+원격 관리 장치(이 경우 SP)의 네트워크 매개변수를 기존 시스템에서 새 노드의 SP에 재사용할 수 있습니다. SP에 대한 자세한 내용은 link:other_references.html["참조"]를 참조하여 _System Administration Reference_ 및 _ONTAP 9 Command reference_에 연결하십시오.
 
 
 
@@ -672,7 +672,7 @@ node2            enable    Postmaster    -                 mailhost
 `system node autosupport show -node node_name -instance`
 
 +
-AutoSupport에 대한 자세한 내용은 을 참조하십시오 link:other_references.html["참조"] _시스템 관리 참조_ 및 _ONTAP 9 명령에 연결하려면 수동 페이지 참조 _.
+AutoSupport에 대한 자세한 내용은 link:other_references.html["참조"]를 참조하여 _System Administration Reference_ 및 _ONTAP 9 Command reference_에 연결하십시오.
 
 . [[man_prepare_nodes_step35, 35단계]]다음 명령을 입력하여 node1에 대한 AutoSupport 메시지를 NetApp에 보냅니다.
 +

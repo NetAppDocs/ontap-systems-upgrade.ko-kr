@@ -11,7 +11,7 @@ summary: 'node1의 데이터 집계, epsilon, 논리 인터페이스(LIF)를 nod
 
 
 [role="lead"]
-node1의 데이터 집계, epsilon, 논리 인터페이스(LIF)를 node4로 마이그레이션합니다.
+AFF A150, AFF A220 또는 FAS2820 node1의 데이터 애그리게이트, epsilon 및 논리 인터페이스(LIF)를 node4로 마이그레이션합니다.
 
 .단계
 node4에서 다음 단계를 수행하십시오.

@@ -136,7 +136,7 @@ Do you want to continue? {y|n}: y
 `system service-processor network modify -node <node_name>`
 
 +
-로 이동합니다 link:other_references.html["참조"] SP 및 _ONTAP 9 명령에 대한 자세한 내용은 _시스템 관리 참조_에 대한 링크를 참조하십시오. 에 대한 자세한 내용은 수동 페이지 참조_를 참조하십시오 `system service- processor network modify` 명령.
+link:other_references.html["참조"]로 이동하여 SP에 대한 정보는 _System Administration Reference_를 참조하고  `system service- processor network modify` 명령에 대한 자세한 정보는 _ONTAP 9 Command reference_를 참조하십시오.
 
 . 새 노드에서 스위치가 없는 클러스터를 설정하려면 로 이동하십시오 link:other_references.html["참조"] _Network Support 사이트_에 연결하고 스위치가 없는 2노드 클러스터_로 전환 의 지침을 따르십시오.
 

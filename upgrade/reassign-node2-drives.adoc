@@ -2,7 +2,7 @@
 permalink: upgrade/reassign-node2-drives.html 
 sidebar: sidebar 
 keywords: fas2820, aff a150, aff a220, ndu, nondisruptive, upgrade, node2, node4, reassign, drives 
-summary: node2를 드라이브 셸프로 변환하고 node4에 연결한 후 이전에 node2에 속해 있던 드라이브를 node4에 재할당합니다. 
+summary: AFF A150, AFF A220 또는 FAS2820 node2를 드라이브 셸프로 변환하고 node4에 연결한 후에는 이전에 node2에 속했던 드라이브를 node4에 다시 할당해야 합니다. 
 ---
 = 노드 2에서 노드 4로 드라이브를 재할당합니다
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: node2를 드라이브 셸프로 변환하고 node4에 연결한 후 이
 
 
 [role="lead"]
-이전에 node2에 속해 있던 드라이브를 node4에 다시 할당합니다.
+이전에 AFF A150, AFF A220 또는 FAS2820 node2에 속했던 드라이브를 node4로 재할당합니다.
 
 .시작하기 전에
 LOADER 프롬프트에서 node3과 node4가 모두 대기 상태인지 확인합니다.

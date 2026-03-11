@@ -151,7 +151,7 @@ NOTE: 이 절차에서 section_re-creating vLANs, ifgrp, broadcast domain_이 no
 노드 2가 쿼럼에 있고 노드 1과 통신할 수 있는지 확인한 후 노드 1의 VLAN, 인터페이스 그룹 및 브로드캐스트 도메인이 노드 2에 표시되는지 확인합니다. 또한 모든 node2 네트워크 포트가 올바른 브로드캐스트 도메인에 구성되어 있는지 확인합니다.
 
 .이 작업에 대해
-VLAN, 인터페이스 그룹 및 브로드캐스트 도메인을 만들고 다시 만드는 방법에 대한 자세한 내용은 을 참조하십시오 link:other_references.html["참조"] 를 눌러 _Network Management_content에 연결합니다.
+VLAN, 인터페이스 그룹 및 브로드캐스트 도메인 생성 및 재생성에 대한 자세한 내용은 link:other-references.html["참조"] _Network Management_ 콘텐츠 링크를 참조하십시오.
 
 .단계
 . 업그레이드된 노드 2에 있는 모든 물리적 포트 나열:

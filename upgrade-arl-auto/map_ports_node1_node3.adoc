@@ -215,7 +215,7 @@ network port modify -node node4 -port e1b -ipspace Cluster -mtu 9000
 `network interface modify -vserver node3 -lif data1 failover-policy broadcast-domainwide -failover-group fg1`
 
 +
-을 참조하십시오 link:other_references.html["참조"] 자세한 내용은 _네트워크 관리_ 또는 _ONTAP 9 명령: 수동 페이지 참조_에 연결하십시오.
+자세한 내용은 link:other_references.html["참조"]를 참조하여 _Network Management_ 또는 _ONTAP 9 Command reference_에 연결하십시오.
 
 . 노드 3의 변경 사항을 확인합니다.
 +
