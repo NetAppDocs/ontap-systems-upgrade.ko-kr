@@ -9,5 +9,19 @@
 +
 OKM을 구성하거나 CLI 또는 REST API를 사용하여 업데이트할 때 입력한 암호입니다.
 
-. 를 실행하여 키 관리자 정보를 백업합니다 `security key-manager onboard show-backup` 명령.
+. 암호와 키 관리자 작동을 확인하십시오.
++
+`security key-manager onboard sync`
+
++
+메시지가 표시되면 이전 단계에서 기록한 클러스터 전체 OKM 암호를 입력합니다.
+
+. 다음 명령의 출력을 검토하여 cc-mode가 활성화되었는지 확인하십시오.
++
+`security key-manager config show`
+
+. 키 관리자 정보를 백업합니다.
++
+`security key-manager onboard show-backup`
+
 
