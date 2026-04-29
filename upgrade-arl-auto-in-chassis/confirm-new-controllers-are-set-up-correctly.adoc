@@ -139,3 +139,6 @@ SP에 대한 정보는 link:other-references.html["참조"]_System Administratio
 
 .작업을 마친 후
 node1과 node2에서 Storage Encryption이 활성화된 경우 link:set-up-storage-encryption-new-module.html["새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다"] 섹션을 완료하십시오. 그렇지 않은 경우 link:decommission-old-system.html["기존 시스템을 폐기합니다"] 섹션을 완료하십시오.
+
+.다음 단계
+새 컨트롤러가 올바르게 설정되었는지 확인한 후 link:set-up-storage-encryption-new-module.html["새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다"].

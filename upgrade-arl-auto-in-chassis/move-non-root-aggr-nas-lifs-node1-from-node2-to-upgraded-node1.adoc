@@ -203,3 +203,6 @@ system controller replace resume
 
 
 
+
+.다음 단계
+node1의 루트가 아닌 애그리게이트 및 NAS 데이터 LIF를 node2에서 업그레이드된 node1로 이동한 후 link:relocate-non-root-aggr-nas-lifs-from-node2-to-node1.html["루트가 아닌 애그리게이트 및 NAS 데이터 LIF를 node2에서 node1로 재배치합니다"].

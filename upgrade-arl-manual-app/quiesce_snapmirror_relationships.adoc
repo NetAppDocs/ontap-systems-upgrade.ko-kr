@@ -34,3 +34,6 @@ SnapMirror 관계가 에 없는 경우 중단이 실패합니다 `Transferring` 
 `snapmirror quiesce -destination-vserver *`
 
 
+
+.다음 단계
+SnapMirror 관계를 중지한 후 link:prepare_for_netboot.html["netboot 준비"].

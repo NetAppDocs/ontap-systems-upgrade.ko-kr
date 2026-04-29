@@ -143,3 +143,6 @@ link:other_references.html["참조"]로 이동하여 SP에 대한 정보는 _Sys
 
 .작업을 마친 후
 노드 3과 노드 4에서 스토리지 암호화가 설정된 경우 의 단계를 완료합니다 link:set_up_storage_encryption_new_controller.html["새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다"]. 그렇지 않으면 의 단계를 완료합니다 link:decommission_old_system.html["기존 시스템을 폐기합니다"].
+
+.다음 단계
+새 컨트롤러가 올바르게 설정되었는지 확인한 후link:set_up_storage_encryption_new_controller.html["새 컨트롤러 모듈에서 스토리지 암호화를 설정합니다"].

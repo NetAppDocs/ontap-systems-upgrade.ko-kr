@@ -60,3 +60,6 @@ volumes              ok
 `system health alert show`
 
 
+
+.다음 단계
+MetroCluster 구성의 상태를 확인한 후 link:check_for_metrocluster_config_errors.html["MetroCluster 구성 오류를 확인하세요"].

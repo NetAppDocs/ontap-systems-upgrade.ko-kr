@@ -20,7 +20,7 @@ entries:
   - title: 업그레이드할 노드를 준비합니다
     url: "/upgrade-arl-auto-in-chassis/prepare-nodes-for-upgrade.html"
   - title: Onboard Key Manager를 사용하여 스토리지 암호화를 관리합니다
-    url: "/upgrade-arl-auto-in-chassis/manage-storage-encryption-using-okm.html"
+    url: "/upgrade-arl-auto-in-chassis/complete-preparation-for-upgrade.html"
 - title: 2단계. 리소스를 재배치하고 노드1을 폐기합니다
   entries:
   - title: 노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치합니다
@@ -61,18 +61,18 @@ entries:
     url: "/upgrade-arl-auto-in-chassis/relocate-failed-or-vetoed-aggr-node1.html"
   - title: 노드2를 폐기합니다
     url: "/upgrade-arl-auto-in-chassis/retire-node2.html"
-- title: 5단계. 노드 2에 교체 시스템 모듈을 설치합니다
+- title: 5단계. node2 교체 시스템 모듈을 설치합니다
   entries:
-  - title: 노드 2에 교체 시스템 모듈을 설치합니다
+  - title: node2 시스템 모듈을 교체합니다
     entries:
-    - title: AFF A30, AFF A50, AFF C30 또는 AFF C60을 설치합니다
-      url: "/upgrade-arl-auto-in-chassis/install-aff-a30-a50-c30-c50-node2.html"
-    - title: AFF A90 또는 AFF A70을 설치합니다
-      url: "/upgrade-arl-auto-in-chassis/install-affa90-affa70-on-node2.html"
-    - title: ASA A150, AFF A150 또는 FAS2820를 설치합니다
-      url: "/upgrade-arl-auto-in-chassis/install-asa150-affa150-fas2820-on-node2.html"
-    - title: ASA A900, AFF A900 또는 FAS9500을 설치합니다
-      url: "/upgrade-arl-auto-in-chassis/install-asa900-affa900-fas9500-on-node2.html"
+    - title: AFF A250 또는 AFF C250를 교체합니다
+      url: "/upgrade-arl-auto-in-chassis/replace-node2-affa250-affc250.html"
+    - title: AFF A800 또는 AFF C800를 교체합니다
+      url: "/upgrade-arl-auto-in-chassis/replace-node2-affa800-affc800.html"
+    - title: AFF A220, AFF A200, AFF C190, FAS2620 또는 FAS2720을 교체합니다
+      url: "/upgrade-arl-auto-in-chassis/replace-node2-affa220-affa200-affc190-fas2620-fas2720.html"
+    - title: AFF A700 또는 FAS9000를 교체합니다
+      url: "/upgrade-arl-auto-in-chassis/replace-node2-aff700-fas900.html"
   - title: netboot 노드2
     url: "/upgrade-arl-auto-in-chassis/netboot-node2.html"
 - title: 6단계. 교체 시스템 모듈을 사용하여 노드2를 부팅합니다

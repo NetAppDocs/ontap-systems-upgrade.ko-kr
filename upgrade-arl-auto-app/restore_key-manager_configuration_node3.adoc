@@ -42,3 +42,6 @@ node3    svm1      ""           00000000000000000200000000000a008a81976 true
                                 2190178f9350e071fbb90f00000000000000000
 ----
 
+
+.다음 단계
+node3에서 키 관리자 구성을 복원한 후 link:move_non-root_aggr_and_nas_data_lifs_node1_from_node2_to_node3.html["node1이 소유한 루트가 아닌 애그리게이트 및 NAS 데이터 LIF를 node2에서 node3으로 이동합니다"].

@@ -219,3 +219,6 @@ f-a    2b      fc       target    cna      -          online
 
 . [[man_check_4_Step13]] 포트에 케이블을 연결합니다.
 
+
+.다음 단계
+노드4에서 FC 또는 UTA/UTA2 구성을 설정한 후link:map_ports_node2_node4.html["node2에서 node4로 포트 매핑"].

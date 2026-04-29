@@ -51,5 +51,5 @@ summary: 스위치에 연결된 클러스터 업그레이드를 위한 새로운
 
 
 
-.다음은 무엇입니까?
-link:move-non-root-aggr-and-nas-data-lifs-back-to-node2.html["루트 이외의 애그리게이트 및 NAS 데이터 LIF를 노드 2로 다시 이동합니다"]
+.다음 단계
+RCF 구성을 확인한 후 link:move-non-root-aggr-and-nas-data-lifs-back-to-node2.html["루트가 아닌 애그리게이트 및 NAS 데이터 LIF를 node2로 다시 이동합니다"].

@@ -140,3 +140,6 @@ AFF A800 시스템에 필요한 추가 단계는link:reassign-node1-disks-to-nod
 
 .관련 정보
 참조하다 link:other_references.html["참조"] _ONTAP 9 문서_에 링크합니다.
+
+.다음 단계
+이 ARL 절차를 사용할지 여부를 결정한 후 link:required_tools_and_documentation.html["필수 도구 및 문서"]에 대해 알아보십시오.

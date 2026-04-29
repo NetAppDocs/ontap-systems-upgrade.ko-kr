@@ -69,3 +69,5 @@ LIF를 기록합니다 `adapter` 의 정보 `network interface show -data-protoc
 
 |  |  |  |  |  |  
 |===
+.다음 단계
+각 LIF에 대한  `adapter` 및  `switch-port` 정보를 기록한 후 link:relocate_non_root_aggr_node2_node3.html["루트가 아닌 애그리게이트를 node2에서 node3으로 재배치합니다"].

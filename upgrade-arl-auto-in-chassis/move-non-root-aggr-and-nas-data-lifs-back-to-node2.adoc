@@ -134,3 +134,6 @@ system controller replace resume
 
 
 
+
+.다음 단계
+루트가 아닌 애그리게이트 및 NAS 데이터 LIF를 node2로 다시 이동한 후 link:manage-authentication-using-kmip-servers.html["KMIP 서버를 사용하여 인증 관리"].

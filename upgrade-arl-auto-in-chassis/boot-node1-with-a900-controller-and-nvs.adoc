@@ -81,7 +81,7 @@ NOTE: 절차의 앞부분에서 아직 수행하지 않은 경우 기술 자료 
 ====
 .. 특수 부팅 메뉴로 이동하여 옵션을 선택합니다 `(10) Set Onboard Key Manager recovery secrets`.
 +
-절차 초반에 기록해 둔 암호와 백업 정보를 입력하십시오. link:manage-storage-encryption-using-okm.html["Onboard Key Manager를 사용하여 스토리지 암호화를 관리합니다"]을 참조하십시오.
+절차 초반에 기록해 둔 암호와 백업 정보를 입력하십시오. link:complete-preparation-for-upgrade.html#manage-storage-encryption-using-okm["Onboard Key Manager를 사용하여 스토리지 암호화를 관리합니다"]을 참조하십시오.
 
 
 
@@ -254,3 +254,6 @@ Login:
 
 ====
 
+
+.다음 단계
+교체 시스템 모듈로 node1을 부팅한 후 link:verify-node1-installation.html["node1 설치를 확인합니다"].

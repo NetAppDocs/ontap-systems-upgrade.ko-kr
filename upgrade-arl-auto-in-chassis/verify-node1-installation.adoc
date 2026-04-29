@@ -23,6 +23,12 @@ AFF A250, AFF C250, AFF A800 또는 AFF C800 업그레이드의 경우 물리적
 
 절차의 이 시점에서 노드 1이 쿼럼 자동 연결을 시도할 때 컨트롤러 업그레이드 작업이 일시 중지되어야 합니다.
 
+
+
+== 1단계: node1이 쿼럼 상태인지 확인합니다.
+
+node1이 쿼럼 상태인지 확인합니다. 그런 다음 컨트롤러 교체 작업을 재개합니다.
+
 .단계
 . 노드 1이 쿼럼에 연결되었는지 확인합니다.
 +
@@ -112,12 +118,12 @@ To complete the Network Reachability task, the ONTAP network configuration must 
 
 NOTE: 이 절차에서 section_re-creating vLANs, ifgrp, broadcast domain_이 node1_의 _Restore 네트워크 구성 으로 변경되었습니다.
 
-. 컨트롤러 교체가 일시 중지 상태인 경우 로 진행합니다 <<노드 1에서 네트워크 구성을 복원합니다>>.
+. 컨트롤러 교체가 일시 중지된 상태에서 <<restore_network_configuration_on_node1,노드 1에서 네트워크 구성을 복원합니다>>로 진행하십시오.
 
 
 
 
-== 노드 1에서 네트워크 구성을 복원합니다
+== 2단계: node1의 네트워크 구성을 복원합니다
 
 노드 1이 쿼럼에 있고 노드 2와 통신할 수 있는지 확인한 후 노드 1의 VLAN, 인터페이스 그룹 및 브로드캐스트 도메인이 노드 1에 표시되는지 확인합니다. 또한 모든 node1 네트워크 포트가 올바른 브로드캐스트 도메인에 구성되어 있는지 확인합니다.
 
@@ -214,7 +220,7 @@ Warning: Repairing port "node1:e1b" may cause it to move into a different broadc
 `network port reachability show`
 
 +
-도달 가능성 복구가 수행되면 ONTAP는 포트를 올바른 브로드캐스트 도메인에 배치하려고 시도합니다. 그러나 포트의 도달 가능 여부를 확인할 수 없고 기존 브로드캐스트 도메인에 속하지 않는 경우 ONTAP는 이러한 포트에 대한 새 브로드캐스트 도메인을 만듭니다.
+연결성 복구 작업이 수행되는 동안 ONTAP은 포트를 올바른 브로드캐스트 도메인에 배치하려고 시도합니다. 그러나 ONTAP이 포트의 연결성을 확인할 수 없고 해당 포트가 기존 브로드캐스트 도메인에 속하지 않는 경우 ONTAP은 해당 포트에 대해 새로운 브로드캐스트 도메인을 생성합니다.
 
 . 포트 도달 가능성 확인:
 +
@@ -248,3 +254,6 @@ Warning: Repairing port "node1:e1b" may cause it to move into a different broadc
 `network interface show -fields home-port,status-admin`
 
 
+
+.다음 단계
+노드1 설치를 확인한 후 link:restore-key-manager-config-upgraded-node1.html["업그레이드된 node1에서 키 관리자 구성을 복원합니다"].

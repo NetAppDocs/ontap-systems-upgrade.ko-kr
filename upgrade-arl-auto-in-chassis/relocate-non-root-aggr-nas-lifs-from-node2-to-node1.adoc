@@ -71,3 +71,6 @@ aggr_2	      825.0GB	  825.0GB	  0%	  online	  1	 node1   raid_dp  normal
 `network interface show -curr-node _node2_ -role data`
 
 
+
+.다음 단계
+루트가 아닌 애그리게이트 및 NAS 데이터 LIF를 node2에서 node1로 재배치한 후link:relocate-failed-or-vetoed-aggr-node1.html["실패했거나 거부된 애그리게이트를 node1로 재배치합니다"].

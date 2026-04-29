@@ -157,7 +157,7 @@ node2          node1          true     Connected to node1
 `storage aggregate show -nodes _node_name_ -is-home false -fields owner-name, home-name, state`
 
 +
-노드 1과 노드 2가 현재 소유자인 Aggregate(홈 소유자가 아님)를 소유하지 않으면 시스템이 다음 예와 유사한 메시지를 반환합니다.
+node1과 node2 모두 현재 소유자(단, 홈 소유자는 아님)인 애그리게이트를 소유하지 않은 경우, 시스템은 다음 예와 유사한 메시지를 반환합니다.
 
 +
 ....

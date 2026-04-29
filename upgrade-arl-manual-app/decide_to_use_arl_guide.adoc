@@ -49,3 +49,6 @@ link:../upgrade-arl-auto-in-chassis/decide-to-use-the-aggregate-relocation-guide
 
 .관련 정보
 참조하다 link:other_references.html["참조"] _ONTAP 9 문서_에 링크합니다.
+
+.다음 단계
+이 ARL 절차를 사용할지 여부를 결정한 후link:arl_upgrade_workflow.html["ARL 업그레이드 워크플로를 검토하십시오"].

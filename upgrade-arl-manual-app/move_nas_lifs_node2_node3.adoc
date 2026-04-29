@@ -149,3 +149,6 @@ Distribution Function: ip
 
 
 
+
+.다음 단계
+node2가 소유한 NAS 데이터 LIF를 node3으로 이동한 후link:record_node2_information.html["노드2 정보 기록"].

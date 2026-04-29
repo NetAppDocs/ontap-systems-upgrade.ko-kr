@@ -268,7 +268,7 @@ NOTE: 절차의 앞부분에서 아직 수행하지 않은 경우 기술 자료 
 |===
 .. 특수 부팅 메뉴로 이동하여 옵션을 선택합니다 `(10) Set Onboard Key Manager recovery secrets`.
 +
-절차 초반에 기록해 둔 암호와 백업 정보를 입력하십시오. link:manage_storage_encryption_using_okm.html["Onboard Key Manager를 사용하여 스토리지 암호화를 관리합니다"]을 참조하십시오.
+절차 초반에 기록해 둔 암호와 백업 정보를 입력하십시오. link:complete-preparation-for-upgrade.html#manage_storage_encryption_using_okm["Onboard Key Manager를 사용하여 스토리지 암호화를 관리합니다"]을 참조하십시오.
 
 
 
@@ -411,9 +411,9 @@ Login:
 ====
 +
 
-NOTE: 위의 콘솔 출력 예에서 시스템이 ADP(고급 디스크 파티셔닝) 디스크를 사용하는 경우 ONTAP에서 파트너 노드 이름을 묻는 메시지를 표시합니다.
+NOTE: 위 콘솔 출력 예에서 시스템이 ADP(Advanced Disk Partitioning) 디스크를 사용하는 경우 ONTAP에서 파트너 노드 이름을 입력하라는 메시지를 표시합니다.
 
-. [[auto_check_4_step27]] LOADER 프롬프트에서 부팅합니다.
+. [[auto_check_4_step27]]LOADER 프롬프트에서 노드를 부팅합니다.
 +
 `boot_ontap menu`
 
@@ -466,3 +466,6 @@ NOTE: 이 단계에서 오류가 발생할 수 있습니다. 오류가 발생하
 
 
 
+
+.다음 단계
+node4를 설치하고 부팅한 후 link:verify_node4_installation.html["node4 설치를 확인하십시오"].

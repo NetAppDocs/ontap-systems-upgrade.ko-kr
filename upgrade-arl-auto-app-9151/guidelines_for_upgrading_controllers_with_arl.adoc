@@ -62,3 +62,6 @@ ARL을 사용한 컨트롤러 업그레이드는 SnapLock 엔터프라이즈 및
 컨트롤러 업그레이드 중 문제가 발생하면 다음을 참조하세요.link:aggregate_relocation_failures.html["문제 해결"] 더 많은 정보와 가능한 해결책을 알아보세요.
 
 발생한 문제에 대한 해결책을 찾지 못한 경우 기술 지원 부서에 문의하십시오.
+
+.다음 단계
+ARL을 이용한 컨트롤러 업그레이드 지침을 검토한 후link:overview_of_the_arl_upgrade.html["ARL 업그레이드 순서에 대해 알아보십시오"].

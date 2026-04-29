@@ -42,3 +42,6 @@ node1    svm1      ""           00000000000000000200000000000a008a81976 true
                                 2190178f9350e071fbb90f00000000000000000
 ----
 
+
+.다음 단계
+업그레이드된 node1에서 키 관리자 구성을 복원한 후 link:move-non-root-aggr-nas-lifs-node1-from-node2-to-upgraded-node1.html["node2에서 업그레이드된 node1로 node1의 루트가 아닌 애그리게이트 및 NAS 데이터 LIF를 이동합니다"].

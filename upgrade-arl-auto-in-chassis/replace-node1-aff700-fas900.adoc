@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-in-chassis/replace-node1-aff700-fas900.html
 keywords: aff, asa, fas, replace, node1, system, modules 
 summary: ARL을 사용하여 같은 섀시에서 컨트롤러 모델을 업그레이드하는 경우 AFF A700 또는 FAS9000 노드1 시스템 모듈을 교체합니다. 
 ---
-= AFF A700 또는 FAS9000 컨트롤러 및 NVRAM 모듈을 교체합니다
+= 노드1 AFF A700 또는 FAS9000 컨트롤러 및 NVRAM 모듈 교체
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -185,7 +185,7 @@ image:black_circle_two.png["두 번째"]
 | 캠 핸들이 잠금 해제 위치에 있습니다 
 |===
 . 모듈이 장착되면 즉시 직렬 콘솔을 연결하고 노드 1의 자동 부팅을 중단시킵니다.
-. 자동 부팅을 중단하고 나면 로더 프롬프트에서 노드 1이 중지됩니다. 자동 부팅을 중지하고 노드1의 부팅을 시작하는 경우, 프롬프트가 표시될 때까지 기다린 다음 Ctrl+C를 눌러 부팅 메뉴로 이동합니다. 부팅 메뉴에서 노드가 중지되면 옵션을 사용하여 `8` 노드를 재부팅하고 재부팅 중 자동 부팅을 중단합니다.
+. AUTOBOOT를 중단하면 node1이 LOADER 프롬프트에서 멈춥니다. AUTOBOOT를 제때 중단하지 못하고 node1이 부팅을 시작하면 프롬프트가 나타날 때까지 기다린 후 Ctrl-C를 눌러 부팅 메뉴로 이동합니다. 노드가 부팅 메뉴에서 멈추면 옵션 `8`을 사용하여 노드를 재부팅하고 재부팅 중에 AUTOBOOT를 중단하십시오.
 . node1의 Loader> 프롬프트에서 기본 환경 변수를 설정합니다.
 +
 [source, cli]
@@ -199,3 +199,6 @@ set-defaults
 saveenv
 ----
 
+
+.다음 단계
+ASA A900, AFF A900 또는 FAS9500 컨트롤러 및 NVRAM 모듈을 설치한 후 link:netboot-node1.html["netboot node1"].

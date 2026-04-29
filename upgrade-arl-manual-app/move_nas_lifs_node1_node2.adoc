@@ -110,3 +110,6 @@ NOTE: MetroCluster 구성의 경우, 대상 SVM(스토리지 가상 머신)의 L
 `network interface show -curr-node _node1_ -role data`
 
 
+
+.다음 단계
+node1이 소유한 NAS 데이터 LIF를 node2로 이동한 후link:record_node1_information.html["노드1 정보 기록"].

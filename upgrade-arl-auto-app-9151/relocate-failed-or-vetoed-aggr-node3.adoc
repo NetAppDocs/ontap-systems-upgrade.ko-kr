@@ -41,3 +41,6 @@ summary: 'ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할
 `storage aggregate relocation start -node node2 -destination node3 -aggregate-list <aggregate_list> -ndo-controller-upgrade true -override-vetoes true -override-destination-checks true` 
 |===
 
+
+.다음 단계
+실패했거나 거부된 애그리게이트를 node3으로 재배치한 후 link:retire_node2.html["node2를 폐기합니다"].
