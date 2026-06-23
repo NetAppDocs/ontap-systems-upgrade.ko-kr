@@ -380,16 +380,10 @@
   <block id="f8cd2564c015235fc797e229583e1023" category="list-text">[[man_check_4_Step13]] 포트에 케이블을 연결합니다.</block>
   <block id="d60c463bb4096f3ed4bd1618626dfe10" category="doc">문제 해결</block>
   <block id="9fd68cc494a9f57cae67ac737ab1370f" category="paragraph">노드 쌍을 업그레이드하는 동안 장애가 발생할 수 있습니다. 노드가 충돌하거나 애그리게이트가 재배치되지 않거나 LIF가 마이그레이션되지 않을 수 있습니다. 장애 원인 및 해결 방법은 업그레이드 절차 중 장애가 발생한 시기에 따라 다릅니다.</block>
-  <block id="71c5d3d7f0857c67830fb002783fd24e" category="paragraph">섹션의 절차의 각 단계를 설명하는 표를 참조하십시오 <block ref="25c64b56e1634b7195570b2ce4c1228b" category="inline-link-macro-rx"></block>. 발생할 수 있는 실패에 대한 정보는 절차 단계별로 나와 있습니다.</block>
   <block id="b02aac451baf6d7b36d981f898537961" category="inline-link-macro">애그리게이트 재배치 실패</block>
-  <block id="96518cf6fc4836f38d5963152c3b52fc" category="list-text"><block ref="96518cf6fc4836f38d5963152c3b52fc" category="inline-link-macro-rx"></block></block>
-  <block id="b41eca4a9e61478c5412544da1b31c9f" category="list-text"><block ref="b41eca4a9e61478c5412544da1b31c9f" category="inline-link-macro-rx"></block></block>
   <block id="e33c48b52ab7d302b4af41aca3bbe858" category="inline-link-macro">절차의 여러 단계에서 발생할 수 있는 문제입니다</block>
-  <block id="03f183bce69c6c170ce7d98b73a0da9b" category="list-text"><block ref="03f183bce69c6c170ce7d98b73a0da9b" category="inline-link-macro-rx"></block></block>
   <block id="06d473a91334306e0ea337d0cf403b02" category="inline-link-macro">LIF 마이그레이션 실패</block>
-  <block id="bffc8177304b2cba0a93e9425c22a1b7" category="list-text"><block ref="bffc8177304b2cba0a93e9425c22a1b7" category="inline-link-macro-rx"></block></block>
   <block id="5558cf6a71b5cb1c7c5c61639dd48b9f" category="inline-link-macro">업그레이드 후 LIF가 잘못된 포트에 있습니다</block>
-  <block id="e74451404fb8d41f6db27c4f815f8cf3" category="list-text"><block ref="e74451404fb8d41f6db27c4f815f8cf3" category="inline-link-macro-rx"></block></block>
   <block id="cb42877b8f5a499b59fbb4b10124a134" category="summary">ONTAP 9.7 이하를 실행하는 컨트롤러에서 수동 ARL 업그레이드 중에 node3을 설치 및 부팅하고 ONTAP 소프트웨어를 설치합니다.</block>
   <block id="5c7c176cb23c0fd455f08f6713c4569c" category="paragraph">랙에 노드 3을 설치하고, 노드 1의 연결을 노드 3으로 전송하고, 노드 3을 부팅하고, ONTAP를 설치해야 합니다. 또한 노드 1의 스페어 디스크, 루트 볼륨에 속한 디스크 및 이전에 노드 2로 재배치되지 않은 모든 비루트 애그리게이트를 재할당해야 합니다.</block>
   <block id="550ffaa7219faf74146770514db0d8e8" category="inline-link-macro">netboot를 준비합니다</block>
@@ -1782,7 +1776,6 @@
   <block id="b029dd94e134cfaf963a04051ff43f6d" category="admonition">내부 드라이브(예: FAS2700 또는 AFF A250)를 지원하지만 내부 드라이브가 없는 시스템을 업그레이드하는 경우 을 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 및 _Aggregate Relocation 의 절차에 따라 사용 중인 ONTAP 버전에 맞는 컨트롤러 Hardware_content를 수동으로 업그레이드하십시오.</block>
   <block id="70a3b031f6a4e388e4285d647440ec82" category="list-text">원래 컨트롤러에 연결된 디스크 쉘프를 지원하지 않는 컨트롤러 교체</block>
   <block id="23498de552873202eefb3139773f663c" category="paragraph">을 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 디스크 지원 정보를 위해 _Hardware Universe_에 연결하려면.</block>
-  <block id="d5457a285ea7fce244bde8387644b062" category="list-text">내장 드라이브가 있는 엔트리 레벨 컨트롤러(예: FAS 2500).</block>
   <block id="14fc1fec490b9f5ad23d58c3c55d4441" category="paragraph">내부 드라이브를 사용하여 엔트리 레벨 컨트롤러를 업그레이드하려면 를 참조하십시오 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 볼륨 또는 스토리지를 이동하여 _ 업그레이드 에 연결하고 _ 볼륨 _ 을(를) 이동하여 clustered Data ONTAP을 실행하는 노드 쌍 업그레이드 절차로 이동합니다.</block>
   <block id="e13e6c141a78d2d49110f9de675a4ce7" category="summary">을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 node2를 종료하고 랙 또는 섀시에서 분리합니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="3b70100fce1839004dba40191f90a2c9" category="list-text">작업을 다시 시작합니다.</block>
@@ -5425,9 +5418,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="4ff3a20772d8d7adf38ea1a25699b898" category="paragraph">ONTAP 라이센스에 대한 자세한 내용은 <block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block>를 참조하여 _시스템 관리 참조_에 연결하십시오.</block>
   <block id="9de6a6f6ea48099b1305eeb9301f7679" category="paragraph">업그레이드 준비를 마친 후 <block ref="0d08e260c4bde2d13bb947f0a9e09267" category="inline-link-macro-rx"></block>.</block>
   <block id="8f77a5ae2857206a750f5c0ad3144dba" category="paragraph">새 컨트롤러가 올바르게 설정되었는지 확인한 후 <block ref="3971d535deb9d86527af888c19f530a0" category="inline-link-macro-rx"></block>.</block>
-  <block id="8d20c5aabf9dd75444b513dba9105128" category="list-text">컨트롤러 하드웨어를 업그레이드하는 다른 방법을 선호하고 볼륨 이동 작업을 수행할 의향이 있다면 <block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block>를 참조하여 _볼륨 또는 스토리지 이동을 통한 업그레이드_로 연결하십시오.</block>
-  <block id="e7832b913f3afc75dba2c326b1f78e53" category="paragraph"><block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block>를 참조하여 _ONTAP 9 Documentation_에 연결하십시오.</block>
-  <block id="a2bbeda24395d719b706b64dfe948579" category="paragraph">이 ARL 절차를 사용하기로 결정한 후<block ref="91151593e881bd87765e26c1297041b3" category="inline-link-macro-rx"></block>.</block>
   <block id="507d933d47a6537d92195e190c11484a" category="list-text"><block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block>를 참조하여 _NetApp Support Site_에 연결하고 로그인하십시오.</block>
   <block id="9f92af96b5d3b869fcf7eab42bd5cc08" category="paragraph">기존 시스템을 폐기한 후<block ref="f4079db79b5429ce771ea3a34eb1e8f9" category="inline-link-macro-rx"></block>.</block>
   <block id="e7b8e0fba9c9b33b762bd4e7d2cb39c1" category="paragraph">컨트롤러 업그레이드 지침을 검토한 후 <block ref="7eb250b820c3db26ee334554a9610b65" category="inline-link-macro-rx"></block>.</block>
@@ -5605,4 +5595,23 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="8695aaca9524014699a6d443a2a534fa" category="paragraph">각 LIF에 대한 <block ref="8a7a38cfa57d4ac98cced700b804556a" prefix=" " category="inline-code"></block> 및 <block ref="3139ea911ab60226789083923e2852c9" prefix=" " category="inline-code"></block> 정보를 기록한 후 <block ref="0e10c1b69c827b2c86d2f4757a767a1f" category="inline-link-macro-rx"></block>.</block>
   <block id="2e7f5b6308a3207b532f2eb213ce3976" category="sidebar">5단계. node2 교체 시스템 모듈을 설치합니다</block>
   <block id="5a71019ad7fb5de4924f41950c599ee0" category="sidebar">node2 시스템 모듈을 교체합니다</block>
+  <block id="c61e96543ff55077f64d8dd03940c2c6" category="cell">AFF A70</block>
+  <block id="6733c91021834f836a56aa42deec9ed1" category="cell">9.18.1 이상</block>
+  <block id="f8f6ba2d572ef729148f2d89d8ff810a" category="cell">AFF A30</block>
+  <block id="bab1b59b0a2ad746796448276777fdbd" category="cell">AFF C30</block>
+  <block id="7a1f08f539146079eaeae8f4a563cce2" category="cell">AFF C60</block>
+  <block id="017db3debbf4b1ed577798b78fd96b66" category="cell">FAS70</block>
+  <block id="ae53f9b6c37e8ea6aae42847aa6b0621" category="list-text">내부 드라이브가 있는 엔트리 레벨 컨트롤러(예: FAS2750).</block>
+  <block id="d3444d99e26820a0501e10f63ff02ce8" category="cell">AFF A70 ^1^</block>
+  <block id="21e93d495fc43df48584edd71b0d597d" category="cell">AFF A30 ^1^</block>
+  <block id="224aecc1813d58390c83fb8decc63b6b" category="cell">AFF A20 ^1^</block>
+  <block id="9c72db8ed6f22f44a2b4fa3a8e594dff" category="cell">AFF A30 ^3^, AFF A50</block>
+  <block id="358489a49dc54c3e41e29084805d95cb" category="cell">AFF C30 ^1^</block>
+  <block id="9194367b74a77f509bf82a9c405501e3" category="cell">FAS70 ^1^</block>
+  <block id="eb5f65df42e892b67421158d46262d5b" category="paragraph">^3^ 2노드 스위치가 없는 클러스터 구성에서 AFF A20을 AFF A30으로 업그레이드하는 경우 특정 포트 연결 요구 사항이 있습니다.</block>
+  <block id="b9defe65cc630cb29fcf83583ad21bf6" category="list-text">AFF A20은 클러스터 인터커넥트를 위해 X60132A(4포트 10/25GbE CX7) 및 X60131A(2포트 10/25GbE CX6-LX)를 지원합니다.</block>
+  <block id="d8c33c1b9cb7049a65e4a3bb2c51cb30" category="list-text">AFF A30은 클러스터 인터커넥트에 X60130A(2포트 100GbE CX6-DX)만 지원합니다.</block>
+  <block id="eb0245b89d287738a56a5047aeb3152b" category="list-text">AFF A20과 AFF A30을 임시로 연결하려면 10/25GbE 임시 카드를 사용하십시오. 4포트 또는 2포트 10/25GbE 카드는 AFF A20에서 클러스터링을 지원합니다. AFF A20과 AFF A30에 동일한 카드를 사용하는 것이 좋습니다. 새 카드가 없는 경우 AFF A20의 카드를 임시 클러스터 인터커넥트로 사용할 수 있습니다.</block>
+  <block id="f3cccb510b48124791f68ef8a99fca3a" category="list-text">AFF A30 노드3이 온라인 상태가 되면 HA IC 포트를 100GbE에 연결하고 클러스터 LIF를 10/25GbE 포트에 배치하려고 시도합니다. ONTAP은 이러한 포트가 AFF A20에 연결된 것으로 감지합니다. ONTAP이 이러한 포트를 자동으로 감지하지 못하는 경우, 임시 클러스터 포트를 수동으로 수정할 수 있습니다. 그런 다음 필요한 경우 클러스터 LIF를 임시 클러스터 포트로 이동할 수 있습니다.</block>
+  <block id="9aa79fb991cdc044a96dc2dbd05e3bd6" category="list-text">AFF A20 node1을 업그레이드한 후, 업그레이드 준비를 위해 AFF A20 node2가 다운되면 임시 10/25GbE 클러스터 포트에서 연결을 제거하고 100GbE 공유 클러스터 포트만 사용해야 합니다. AFF A30 node3과 node4가 100GbE 포트로 연결되면 연결이 활성화되고 업그레이드를 완료할 수 있습니다.</block>
 </blocks>

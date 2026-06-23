@@ -52,7 +52,7 @@ ARL을 사용한 컨트롤러 업그레이드는 SnapLock Enterprise 및 SnapLoc
 +
 을 참조하십시오 link:other_references.html["참조"] 디스크 지원 정보를 위해 _Hardware Universe_에 연결하려면.
 
-* 내장 드라이브가 있는 엔트리 레벨 컨트롤러(예: FAS 2500).
+* 내부 드라이브가 있는 엔트리 레벨 컨트롤러(예: FAS2750).
 +
 내부 드라이브를 사용하여 엔트리 레벨 컨트롤러를 업그레이드하려면 를 참조하십시오 link:other_references.html["참조"] 볼륨 또는 스토리지를 이동하여 _ 업그레이드 에 연결하고 _ 볼륨 _ 을(를) 이동하여 clustered Data ONTAP을 실행하는 노드 쌍 업그레이드 절차로 이동합니다.
 
