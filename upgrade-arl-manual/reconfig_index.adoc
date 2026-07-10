@@ -27,7 +27,7 @@ ONTAP 9.1 이전에 기존 FC 스위치 레이아웃을 구성하고 ONTAP 9.1 �
 이 절차는 무중단 운영이며 디스크를 제로화하면 완료하는 데 약 4시간이 소요됩니다(랙 및 스택 제외).
 
 .단계
-. link:send_custom_asup_message_prior_reconfig_switches.html["스위치를 다시 구성하기 전에 사용자 지정 AutoSupport 메시지를 보냅니다"]
+. link:send_custom_autosupport_message_prior_reconfig_switches.html["스위치를 다시 구성하기 전에 사용자 지정 AutoSupport 메시지를 보냅니다"]
 . link:verify_health_mcc_config.html["MetroCluster 구성의 상태를 확인합니다"]
 . link:check_mcc_config_errors.html["MetroCluster 구성 오류를 확인합니다"]
 . link:persist_disable_switches.html["스위치를 영구적으로 비활성화합니다"]

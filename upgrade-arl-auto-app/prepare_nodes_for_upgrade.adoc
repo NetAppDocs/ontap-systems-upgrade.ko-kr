@@ -18,6 +18,7 @@ summary: '를 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업�
 
 
 
+[[step-1-prepare-the-nodes]]
 == 1단계: 노드 준비
 
 컨트롤러 교체 프로세스를 시작하고 사전 점검을 실행합니다. 필요한 경우 사용 중인 자체 암호화 드라이브의 유형을 확인합니다.
@@ -25,19 +26,25 @@ summary: '를 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업�
 .단계
 . ONTAP 명령줄에 다음 명령을 입력하여 컨트롤러 교체 프로세스를 시작합니다.
 +
-`system controller replace start -nodes _node_names_`
-
+[source, cli]
+----
+system controller replace start -nodes <node_names>
+----
 +
 [NOTE]
 ====
 ** ONTAP 9.10.1부터 자동 협상 전환(통계청) 기반 업그레이드 절차가 4노드 MetroCluster FC 구성의 기본값입니다. 4노드 MetroCluster FC 구성을 업그레이드할 경우 를 실행할 때 `system controller replace start` 명령, 당신은 을 설정하여 통계청 기반 절차를 시작하는 것을 방지해야 한다 `-nso` 매개 변수 대상 `false`:
 +
-`system controller replace start -nodes _node_names_ -nso false`
-
+[source, cli]
+----
+system controller replace start -nodes <node_names> -nso false
+----
 ** 명령은 advanced 권한 수준에서만 실행할 수 `system controller replace start` 있습니다.
 +
-`set -privilege advanced`
-
+[source, cli]
+----
+set -privilege advanced
+----
 
 
 ====
@@ -106,7 +113,7 @@ Controller replacement operation has been paused for user intervention.
 | 클러스터 LIF 상태입니다 | 클러스터 LIF가 두 노드에 대해 작동 중인지 확인합니다. 클러스터 LIF가 작동 중지되면 작업이 실패합니다. 
 
 
-| ASUP 상태 점검 | ASUP 알림이 구성되지 않으면 작업이 실패합니다. 컨트롤러 교체 절차를 시작하기 전에 ASUP를 활성화해야 합니다. 
+| AutoSupport 상태 확인 | AutoSupport 알림이 구성되지 않은 경우 작업이 실패합니다. 컨트롤러 교체 절차를 시작하기 전에 AutoSupport를 활성화해야 합니다. 
 
 
 | CPU 사용률 검사 | 교체할 노드에 대해 CPU 활용률이 50%를 초과하는지 확인합니다. CPU 사용량이 상당한 시간 동안 50% 이상인 경우 작업이 실패합니다. 
@@ -127,25 +134,90 @@ NOTE: 업그레이드를 시작하기 전에 FAS8080, AFF8080 시스템과 같�
 각 노드에 연결된 시리얼 포트에서 다음 명령의 출력을 개별적으로 실행 및 저장합니다.
 
 +
-** `vserver services name-service dns show`
-** `network interface show -curr-node _local_ -role _cluster,intercluster,node-mgmt,cluster-mgmt,data_`
-** `network port show -node _local_ -type physical`
-** `service-processor show -node _local_ -instance`
-** `network fcp adapter show -node _local_`
-** `network port ifgrp show -node _local_`
-** `system node show -instance -node _local_`
-** `run -node _local_ sysconfig`
-** `storage aggregate show -node _local_`
-** `volume show -node _local_`
-** `storage array config show -switch _switch_name_`
-** `system license show -owner _local_`
-** `storage encryption disk show`
-** `security key-manager onboard show-backup`
-** `security key-manager external show`
-** `security key-manager external show-status`
-** `network port reachability show -detail -node _local_`
-
-
+[source, cli]
+----
+vserver services name-service dns show
+----
++
+[source, cli]
+----
+network interface show -curr-node <local> -role cluster,intercluster,node-mgmt,cluster-mgmt,data
+----
++
+[source, cli]
+----
+network port show -node <local> -type physical
+----
++
+[source, cli]
+----
+service-processor show -node <local> -instance
+----
++
+[source, cli]
+----
+network fcp adapter show -node <local>
+----
++
+[source, cli]
+----
+network port ifgrp show -node <local>
+----
++
+[source, cli]
+----
+system node show -instance -node <local>
+----
++
+[source, cli]
+----
+run -node <local> sysconfig
+----
++
+[source, cli]
+----
+storage aggregate show -node <local>
+----
++
+[source, cli]
+----
+volume show -node <local>
+----
++
+[source, cli]
+----
+storage array config show -switch <switch_name>
+----
++
+[source, cli]
+----
+system license show -owner <local>
+----
++
+[source, cli]
+----
+storage encryption disk show
+----
++
+[source, cli]
+----
+security key-manager onboard show-backup
+----
++
+[source, cli]
+----
+security key-manager external show
+----
++
+[source, cli]
+----
+security key-manager external show-status
+----
++
+[source, cli]
+----
+network port reachability show -detail -node <local>
+----
 +
 
 NOTE: 온보드 키 관리자(OKM)를 사용하는 NetApp 볼륨 암호화(NVE) 또는 NetApp 애그리게이트 암호화(NAE)가 사용 중인 경우, 키 관리자 암호를 준비하여 절차의 뒷부분에서 키 관리자 재동기화를 완료합니다.
@@ -171,6 +243,7 @@ https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryptio
 
 
 
+[[step-2-correct-aggregate-ownership-if-an-arl-precheck-fails]]
 == 2단계: ARL 사전 점검이 실패할 경우 애그리게이트 소유권을 수정합니다
 
 애그리게이트 상태 확인에 실패하면 파트너 노드가 소유한 애그리게이트를 홈 소유자 노드로 반환한 후 사전 확인 프로세스를 다시 시작해야 합니다.
@@ -178,12 +251,16 @@ https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryptio
 .단계
 . 파트너 노드가 현재 소유한 애그리게이트를 홈 소유자 노드로 반환:
 +
-`storage aggregate relocation start -node _source_node_ -destination _destination-node_ -aggregate-list *`
-
+[source, cli]
+----
+storage aggregate relocation start -node <source_node> -destination <destination_node> -aggregate-list *
+----
 . 노드 1과 노드 2가 현재 소유자인 애그리게이트를 소유하지 않고 홈 소유자가 아닌 경우:
 +
-`storage aggregate show -nodes _node_name_ -is-home false -fields owner-name, home-name, state`
-
+[source, cli]
+----
+storage aggregate show -nodes <node_name> -is-home false -fields owner-name, home-name, state
+----
 +
 다음 예제는 노드가 Aggregate의 현재 소유자이자 홈 소유자인 경우 명령의 출력을 보여줍니다.
 
@@ -201,9 +278,12 @@ aggr4       node1      node1       online
 4 entries were displayed.
 ----
 . 컨트롤러 교체 프로세스를 다시 시작합니다.
++
+[source, cli]
+----
+system controller replace start -nodes <node_names>
+----
 
-
-`system controller replace start -nodes _node_names_`
 
 .다음 단계
 노드를 준비한 후 link:complete-preparation-for-upgrade.html["업그레이드 준비를 완료합니다"].

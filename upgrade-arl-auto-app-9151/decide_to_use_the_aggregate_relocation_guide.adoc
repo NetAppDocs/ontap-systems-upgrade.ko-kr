@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/decide_to_use_the_aggregate_relocation_guide.html 
 keywords: deciding, aggregate, relocation, content, storage, controllers, administrators, ontap, ha, high, availability 
-summary: '명령을 사용하여 ARL을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할지 여부를 `system controller replace` 결정합니다.' 
+summary: 'ONTAP 9.15.1 이상 버전에 도입된 컨트롤러로 업그레이드할 때 `system controller replace` 명령어를 사용하여 ARL을 사용할지 여부를 결정하십시오.' 
 ---
 = 이 집계 이전 절차를 사용할지 결정하십시오.
 :hardbreaks:
@@ -14,12 +14,13 @@ summary: '명령을 사용하여 ARL을 사용하여 ONTAP 9.15.1 이상을 실�
 
 
 [role="lead"]
-컨트롤러 하드웨어를 업그레이드하는 데는 여러 가지 애그리게이트 재배치(ARL) 방법이 있습니다. 이 ARL 절차에서는 ONTAP 9.15.1 이상에서 도입된 AFF 및 FAS 스토리지 시스템의 HA 컨트롤러 쌍을 기존 디스크와 디스크에 저장된 데이터를 유지하면서 새 컨트롤러로 업그레이드하는 방법을 설명합니다. 이 절차는 복잡하므로 숙련된 ONTAP 관리자만 사용해야 합니다.
+컨트롤러 하드웨어를 업그레이드하기 위한 몇 가지 애그리게이트 재배치(ARL) 방법이 있습니다. 이 ARL 절차에서는 기존 디스크와 디스크에 저장된 데이터를 유지하면서 AFF 및 FAS 스토리지 시스템의 HA 컨트롤러 쌍을 ONTAP 9.15.1 이상 버전에 도입된 컨트롤러로 업그레이드하는 방법을 설명합니다. 이 절차는 복잡하므로 숙련된 ONTAP 관리자만 사용해야 합니다.
 
 이 ARL 절차가 컨트롤러 하드웨어 업그레이드에 적합한지 결정하는 데 도움이 되도록 지원되는 업그레이드와 지원되지 않는 업그레이드에 대한 다음 모든 상황을 검토해야 합니다.
 
 
 
+[[supported-upgrades-for-this-arl-procedure]]
 == 이 ARL 절차에 지원되는 업그레이드
 
 다음과 같은 상황에서 이 ARL 절차를 사용하여 노드 쌍을 업그레이드할 수 있습니다.
@@ -35,6 +36,7 @@ NOTE: 이 절차를 통해 NetApp 스토리지 암호화(NSE), NetApp 볼륨 암
 
 
 
+[[upgrades-not-supported-for-this-arl-procedure]]
 == 이 ARL 절차에는 업그레이드가 지원되지 않습니다.
 
 다음과 같은 상황에서는 이 ARL 절차를 사용하여 노드 쌍을 업그레이드할 수 없습니다.
@@ -57,13 +59,15 @@ NOTE: 이 절차를 통해 NetApp 스토리지 암호화(NSE), NetApp 볼륨 암
 | AFF C800 를 참조하십시오 | AFF C80 를 참조하십시오 
 |===
 +
-위의 표에 나열된 업그레이드를 수행하려면 "system controller replace" 명령을 사용하여 동일한 섀시에 있는 컨트롤러 모델을 업그레이드하는 방법(_)을 참조하십시오.link:other_references.html["참조"]
+위 표에 나열된 업그레이드를 수행하려면 link:other_references.html["참조"]을 참조하여 _"system controller replace" 명령을 사용하여 동일 섀시의 컨트롤러 모델 업그레이드_에 연결하십시오.
 
 * MetroCluster FC 또는 IP 구성을 업그레이드합니다. MetroCluster 구성을 업그레이드하려면 link:other_references.html["참조"] _MetroCluster 업그레이드 및 확장 설명서_ 링크를 참조하십시오.
 
 
 
 
+[[supported-system-upgrade-combinations]]
+[[sys_commands_9151_supported_systems]]
 == 지원되는 시스템 업그레이드 조합
 
 다음 표는 ONTAP 9.15.1 이상에서 도입된 AFF 및 FAS 시스템에 대해 ARL을 사용하여 지원되는 컨트롤러 업그레이드 조합을 보여줍니다. 원하는 컨트롤러 업그레이드 조합이 목록에 없는 경우 기술 지원팀에 문의하십시오.
@@ -108,6 +112,7 @@ AFF A20, AFF A50, AFF A70 및 AFF A90는 HA 구성의 컨트롤러 2개와 단�
 
 
 
+[[choose-a-different-hardware-upgrade-procedure]]
 == 다른 하드웨어 업그레이드 절차를 선택하세요
 
 * link:../upgrade-arl/index.html["컨트롤러 하드웨어 업그레이드에 사용 가능한 대체 ARL 방법을 검토하세요."]..

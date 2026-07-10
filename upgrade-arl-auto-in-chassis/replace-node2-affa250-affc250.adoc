@@ -23,6 +23,7 @@ CAUTION: 노드1과 노드2가 동일한 섀시에 있고 동일한 전원 공�
 
 
 
+[[step-1-remove-the-aff-a250-or-aff-c250-controller-module]]
 == 1단계: AFF A250 또는 AFF C250 컨트롤러 모듈 제거
 
 노드2 컨트롤러 모듈을 제거하려면 케이블 관리 장치를 제거하고 잠금 래치를 해제하십시오. 그런 다음 섀시에서 컨트롤러 모듈을 제거하십시오.
@@ -77,6 +78,7 @@ CAUTION: node1과 node2의 전원 연결이 서로 겹쳐 있습니다. node2의
 
 
 
+[[step-2-install-the-aff-a30-aff-a50-aff-c30-or-aff-c60-controller-module]]
 == 2단계: AFF A30, AFF A50, AFF C30 또는 AFF C60 컨트롤러 모듈을 설치합니다
 
 업그레이드를 위해 받은 교체용 컨트롤러 모듈을 node2에 설치하십시오.

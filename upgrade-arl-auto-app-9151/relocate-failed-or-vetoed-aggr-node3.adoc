@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/relocate-failed-or-vetoed-aggr-node3.html 
 keywords: relocating, failed, vetoed, aggregates, relocation, operation 
-summary: 'ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 실패하거나 거부된 집계를 수동으로 node3로 다시 이동하려면 다음을 사용합니다. `system controller replace` 명령.' 
+summary: 'ONTAP 9.15.1 이상에 도입된 컨트롤러로 업그레이드할 때  `system controller replace` 명령을 사용하여 실패했거나 거부된 애그리게이트를 수동으로 node3으로 재배치하십시오.' 
 ---
 = 실패하거나 거부된 집계를 node3로 다시 이동합니다.
 :hardbreaks:

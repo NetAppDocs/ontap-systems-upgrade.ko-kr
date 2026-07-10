@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-in-chassis/cable-node1-for-shared-cluster-HA-storage.html 
 keywords: cluster, ha, aff, a800, shared, storage, data, management 
-summary: 이전에 AFF A800 노드 1에 연결되었던 클러스터, HA, 스토리지 및 데이터 연결을 새로 설치된 AFF A90 또는 AFF A70 노드1에 연결합니다 
+summary: 이전에 AFF A800 노드1에 연결되어 있던 클러스터, HA, 스토리지 및 데이터 연결을 새로 설치된 AFF A90 또는 AFF A70 노드1에 연결하십시오. 
 ---
 = 공유 클러스터-HA 및 스토리지의 경우 노드 1을 케이블로 연결합니다
 :hardbreaks:
@@ -34,6 +34,7 @@ summary: 이전에 AFF A800 노드 1에 연결되었던 클러스터, HA, 스토
 |===
 
 
+[[connect-the-e0m-and-bmc-ports]]
 == e0M과 BMC 포트를 연결합니다
 
 기존 시스템에 관리 포트(e0M)와 BMC 포트가 있을 경우 e0M 및 BMC 포트가 결합되고 교체 시스템의 "렌치" 포트를 통해 액세스됩니다. 교체 시스템에 연결하기 전에 e0M과 BMC 포트가 기존 시스템의 동일한 스위치 및 서브넷에 연결되어 있는지 확인해야 합니다.
@@ -54,6 +55,7 @@ summary: 이전에 AFF A800 노드 1에 연결되었던 클러스터, HA, 스토
 |===
 
 
+[[connect-to-a-two-node-switchless-cluster]]
 == 스위치가 없는 2노드 클러스터에 연결합니다
 
 다음 표에서는 스위치가 없는 2노드 클러스터 구성에 대한 스위치 포트 사용량을 보여 줍니다.
@@ -99,6 +101,8 @@ summary: 이전에 AFF A800 노드 1에 연결되었던 클러스터, HA, 스토
 |===
 
 
+[[connect-to-a-switch-attached-cluster]]
+[[connect-switch-attached-cluster]]
 == 스위치 연결 클러스터에 연결합니다
 
 스위치 연결 클러스터의 경우 AFF A30, AFF A50, AFF A70, AFF A90, AFF C30, AFF C60 또는 AFF C80(교체) 노드에 대해 다음 요구사항을 충족하는지 확인하십시오.

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/lif_migration_failure.html 
 keywords: lif, migration, failure, mtu 
-summary: '명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 단계 2, 단계 3 또는 단계 5에서 마이그레이션 후 LIF가 온라인 상태가 아닙니다 `system controller replace` .' 
+summary: 'ONTAP 9.15.1 이상 버전에 도입된 컨트롤러로 업그레이드할 때 `system controller replace` 명령을 사용하여 2단계, 3단계 또는 5단계 마이그레이션 후 LIF가 온라인 상태가 되지 않습니다.' 
 ---
 = LIF 마이그레이션 실패
 :hardbreaks:

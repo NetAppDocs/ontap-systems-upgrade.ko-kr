@@ -26,6 +26,7 @@ CAUTION: 노드1과 노드2가 동일한 섀시에 있고 동일한 전원 공�
 
 
 
+[[step-1-remove-the-aff-a220-aff-a200-aff-c190-fas2620-or-fas2720-controller-module]]
 == 1단계: AFF A220, AFF A200, AFF C190, FAS2620 또는 FAS2720 컨트롤러 모듈을 제거합니다
 
 node1 컨트롤러 내부의 구성 요소에 액세스하려면 시스템에서 컨트롤러 모듈을 제거한 다음 컨트롤러 모듈의 덮개를 제거합니다.
@@ -48,6 +49,7 @@ image:drw_2240_x_opening_cam_latch.png["캠 핸들 열기"]
 
 
 
+[[step-2-install-the-asa-a150-aff-a150-or-fas2820-controller-module]]
 == 2단계: ASA A150, AFF A150 또는 FAS2820 컨트롤러 모듈을 설치합니다
 
 ASA A150, AFF A150 또는 FAS2820 컨트롤러 모듈을 노드1에 설치, 케이블 연결, 연결합니다.

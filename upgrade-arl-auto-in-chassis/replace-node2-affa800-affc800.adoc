@@ -26,6 +26,7 @@ CAUTION: 노드1과 노드2가 동일한 섀시에 있고 동일한 전원 공�
 
 
 
+[[step-1-remove-the-aff-a800-or-aff-c800-controller-module]]
 == 1단계: AFF A800 또는 AFF C800 컨트롤러 모듈을 제거합니다
 
 기존 node2 모듈에서 케이블 관리 장치를 제거하고 컨트롤러를 섀시에서 약간 밖으로 이동합니다.
@@ -107,6 +108,7 @@ image:black_circle_two.png["두 번째"]
 
 
 
+[[step-2-install-the-aff-a90-aff-a70-or-aff-c80-controller-module]]
 == 2단계: AFF A90, AFF A70 또는 AFF C80 컨트롤러 모듈을 설치합니다
 
 노드2에 업그레이드를 위해 받은 AFF A90 또는 AFF A70 컨트롤러 모듈을 설치합니다.

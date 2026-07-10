@@ -4,6 +4,7 @@
 
 
 
+[[step-2-correct-aggregate-ownership-if-an-arl-precheck-fails]]
 == 2단계: ARL 사전 점검이 실패할 경우 애그리게이트 소유권을 수정합니다
 
 애그리게이트 상태 확인에 실패하면 파트너 노드가 소유한 애그리게이트를 홈 소유자 노드로 반환한 후 사전 확인 프로세스를 다시 시작해야 합니다.
@@ -11,12 +12,16 @@
 .단계
 . 파트너 노드가 현재 소유한 애그리게이트를 홈 소유자 노드로 반환:
 +
-`storage aggregate relocation start -node _source_node_ -destination _destination-node_ -aggregate-list *`
-
+[source, cli]
+----
+storage aggregate relocation start -node <source_node> -destination <destination_node> -aggregate-list *
+----
 . 노드 1과 노드 2가 현재 소유자인 애그리게이트를 소유하지 않고 홈 소유자가 아닌 경우:
 +
-`storage aggregate show -nodes _node_name_ -is-home false -fields owner-name, home-name, state`
-
+[source, cli]
+----
+storage aggregate show -nodes <node_name> -is-home false -fields owner-name, home-name, state
+----
 +
 다음 예제는 노드가 Aggregate의 현재 소유자이자 홈 소유자인 경우 명령의 출력을 보여줍니다.
 
@@ -34,6 +39,9 @@ aggr4       node1      node1       online
 4 entries were displayed.
 ----
 . 컨트롤러 교체 프로세스를 다시 시작합니다.
++
+[source, cli]
+----
+system controller replace start -nodes <node_names>
+----
 
-
-`system controller replace start -nodes _node_names_`

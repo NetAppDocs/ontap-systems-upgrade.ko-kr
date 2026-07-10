@@ -23,6 +23,7 @@ summary: ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업�
 
 
 
+[[step-1-verify-that-node2-is-in-quorum]]
 == 1단계: node2가 쿼럼 상태인지 확인합니다.
 
 node2가 쿼럼 상태인지 확인합니다. 그런 다음 컨트롤러 교체 작업을 재개합니다.
@@ -152,6 +153,8 @@ NOTE: 이 절차에서 section_re-creating vLANs, ifgrp, broadcast domain_이 no
 
 
 
+[[step-2-restore-network-configuration-on-node2]]
+[[restore_network_configuration_on_node2]]
 == 2단계: node2의 네트워크 구성을 복원합니다
 
 노드 2가 쿼럼에 있고 노드 1과 통신할 수 있는지 확인한 후 노드 1의 VLAN, 인터페이스 그룹 및 브로드캐스트 도메인이 노드 2에 표시되는지 확인합니다. 또한 모든 node2 네트워크 포트가 올바른 브로드캐스트 도메인에 구성되어 있는지 확인합니다.

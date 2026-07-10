@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-in-chassis/netboot-node2.html 
 keywords: preparing, prepare, netboot, ontap, node2 
-summary: ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드할 때 해당 교체 노드2 시스템 모듈을 교체한 후 해당 모듈을 netboot 해야 할 수 있습니다. 
+summary: ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드할 때 해당 교체 시스템 모듈을 교체한 후 node2를 netboot해야 합니다. 
 ---
 = netboot 노드2
 :hardbreaks:

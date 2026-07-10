@@ -4,6 +4,7 @@
 
 
 
+[[choose-a-different-hardware-upgrade-procedure]]
 == 다른 하드웨어 업그레이드 절차를 선택하세요
 
 * link:../upgrade-arl/index.html["컨트롤러 하드웨어 업그레이드에 사용 가능한 대체 ARL 방법을 검토하세요."]..

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/guidelines_for_upgrading_controllers_with_arl.html 
 keywords: guidelines, upgrading, controllers, ARL 
-summary: '명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 수 있는지 `system controller replace` 이해합니다.' 
+summary: 'ONTAP 9.15.1 이상 버전에 도입된 컨트롤러로 업그레이드할 수 있는지 `system controller replace` 명령을 사용하여 확인하십시오.' 
 ---
 = ARL을 사용한 컨트롤러 업그레이드 지침
 :hardbreaks:
@@ -14,10 +14,11 @@ summary: '명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤�
 
 
 [role="lead"]
-ARL을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러 쌍을 업그레이드할 수 있는지 여부는 플랫폼과 원래 컨트롤러와 교체 컨트롤러 모두의 구성에 따라 달라집니다.
+ARL을 사용하여 ONTAP 9.15.1 이상에 도입된 컨트롤러 쌍으로 업그레이드할 수 있는지 여부는 플랫폼과 기존 컨트롤러 및 교체 컨트롤러 모두의 구성에 따라 다릅니다.
 
 
 
+[[supported-upgrades-for-arl]]
 == ARL에 대한 업그레이드가 지원됩니다
 
 이 ARL 절차를 사용하여 노드 쌍을 업그레이드하기 전에 다음 요구 사항을 검토하여 구성이 지원되는지 확인하십시오.
@@ -41,12 +42,14 @@ ARL을 사용한 컨트롤러 업그레이드는 SnapLock 엔터프라이즈 및
 
 
 
+[[two-node-switchless-clusters]]
 == 스위치가 없는 2노드 클러스터
 
 스위치가 없는 2노드 클러스터에서 노드를 업그레이드할 경우 업그레이드를 수행하는 동안 스위치가 없는 클러스터에 노드를 그대로 둘 수 있습니다. 이러한 LUN을 스위치 클러스터로 변환할 필요는 없습니다.
 
 
 
+[[upgrades-not-supported-for-arl]]
 == ARL에 대한 업그레이드가 지원되지 않습니다
 
 원래 컨트롤러에 연결된 디스크 쉘프를 지원하지 않는 교체 컨트롤러는 업그레이드할 수 없습니다.
@@ -57,6 +60,7 @@ ARL을 사용한 컨트롤러 업그레이드는 SnapLock 엔터프라이즈 및
 
 
 
+[[troubleshoot]]
 == 문제 해결
 
 컨트롤러 업그레이드 중 문제가 발생하면 다음을 참조하세요.link:aggregate_relocation_failures.html["문제 해결"] 더 많은 정보와 가능한 해결책을 알아보세요.

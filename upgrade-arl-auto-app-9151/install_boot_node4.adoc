@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/install_boot_node4.html 
 keywords: install, boot, node4, install ONTAP 
-summary: '명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 node4를 설치 및 부팅하고 ONTAP 소프트웨어를 `system controller replace` 설치합니다.' 
+summary: 'ONTAP 9.15.1 이상에 도입된 컨트롤러로 업그레이드할 때 `system controller replace` 명령을 사용하여 node4를 설치 및 부팅하고 ONTAP 소프트웨어를 설치합니다.' 
 ---
 = 노드 4를 설치하고 부팅합니다
 :hardbreaks:

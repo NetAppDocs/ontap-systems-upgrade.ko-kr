@@ -39,6 +39,8 @@ link:../upgrade-arl-auto-in-chassis/decide-to-use-the-aggregate-relocation-guide
 ====
 
 
+[[supported-system-upgrade-combinations]]
+[[sys_commands_98_supported_systems]]
 == 지원되는 시스템 업그레이드 조합
 
 다음 표는 이 ARL 절차를 사용하여 컨트롤러 업그레이드를 수행하기 위한 지원되는 시스템 매트릭스를 보여줍니다.
@@ -132,6 +134,7 @@ AFF A800 시스템에 필요한 추가 단계는link:reassign-node1-disks-to-nod
 ====
 
 
+[[choose-a-different-hardware-upgrade-procedure]]
 == 다른 하드웨어 업그레이드 절차를 선택하세요
 
 * link:../upgrade-arl/index.html["컨트롤러 하드웨어 업그레이드에 사용 가능한 대체 ARL 방법을 검토하세요."]..

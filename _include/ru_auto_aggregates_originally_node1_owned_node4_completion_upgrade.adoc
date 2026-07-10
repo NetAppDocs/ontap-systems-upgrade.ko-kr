@@ -4,6 +4,7 @@
 
 
 
+[[aggregates-originally-on-node1-are-owned-by-node4-after-completion-of-the-upgrade]]
 == 노드 1의 원래 애그리게이트는 업그레이드 완료 후 노드 4에서 소유합니다
 
 업그레이드 절차를 마치면 노드 3이 원래 노드 1을 홈 노드로 사용했던 새로운 애그리게이트 홈 노드가 됩니다. 업그레이드 후에 재배치할 수 있습니다.

@@ -25,6 +25,7 @@ AFF A250, AFF C250, AFF A800 또는 AFF C800 업그레이드의 경우 물리적
 
 
 
+[[step-1-verify-that-node1-is-in-quorum]]
 == 1단계: node1이 쿼럼 상태인지 확인합니다.
 
 node1이 쿼럼 상태인지 확인합니다. 그런 다음 컨트롤러 교체 작업을 재개합니다.
@@ -123,6 +124,8 @@ NOTE: 이 절차에서 section_re-creating vLANs, ifgrp, broadcast domain_이 no
 
 
 
+[[step-2-restore-network-configuration-on-node1]]
+[[restore_network_configuration_on_node1]]
 == 2단계: node1의 네트워크 구성을 복원합니다
 
 노드 1이 쿼럼에 있고 노드 2와 통신할 수 있는지 확인한 후 노드 1의 VLAN, 인터페이스 그룹 및 브로드캐스트 도메인이 노드 1에 표시되는지 확인합니다. 또한 모든 node1 네트워크 포트가 올바른 브로드캐스트 도메인에 구성되어 있는지 확인합니다.

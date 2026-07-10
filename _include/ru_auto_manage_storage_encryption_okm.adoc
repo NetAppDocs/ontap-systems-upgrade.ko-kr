@@ -4,6 +4,7 @@
 
 
 
+[[manage-storage-encryption-using-the-onboard-key-manager]]
 == Onboard Key Manager를 사용하여 스토리지 암호화를 관리합니다
 
 Onboard Key Manager(OKM)를 사용하여 암호화 키를 관리하십시오. OKM이 설정되어 있는 경우 업그레이드를 시작하기 전에 암호와 백업 자료를 기록해야 합니다.

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/prepare_nodes_for_upgrade.html 
 keywords: preparing, nodes, upgrade 
-summary: '명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 노드를 준비하고 일련의 사전 점검을 `system controller replace` 실행합니다.' 
+summary: 'ONTAP 9.15.1 이상 버전에 도입된 컨트롤러로 업그레이드할 때는  `system controller replace` 명령을 사용하여 노드를 준비하고 일련의 사전 점검을 실행하십시오.' 
 ---
 = 업그레이드할 노드를 준비합니다
 :hardbreaks:
@@ -18,19 +18,28 @@ summary: '명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤�
 
 
 
-== 1단계: 노드 준비
+[[step-1-prepare-node1-and-node2]]
+== 1단계: 노드1과 노드2를 준비합니다.
 
-컨트롤러 교체 프로세스를 시작하고 사전 점검을 실행합니다. 필요한 경우 사용 중인 자체 암호화 드라이브의 유형을 확인합니다.
+컨트롤러 교체 프로세스를 시작하고 노드1과 노드2에서 사전 점검을 실행합니다. 필요한 경우 사용 중인 자체 암호화 드라이브의 유형을 확인합니다.
 
 .단계
 . ONTAP 명령줄에 다음 명령을 입력하여 컨트롤러 교체 프로세스를 시작합니다.
 +
-`system controller replace start -nodes <node_names>`
-
+[source, cli]
+----
+system controller replace start -nodes <node_names>
+----
 +
+[NOTE]
+====
+명령은 advanced 권한 수준에서만 실행할 수 `system controller replace start` 있습니다.
 
-NOTE: system controller replace start 명령은 advanced 권한 수준에서만 실행할 수 있습니다. `set -privilege advanced`
-
+[source, cli]
+----
+set -privilege advanced
+----
+====
 +
 다음 예와 유사한 출력이 표시됩니다. 출력에는 클러스터에서 실행 중인 ONTAP 버전이 표시됩니다.
 
@@ -92,7 +101,7 @@ Controller replacement operation has been paused for user intervention.
 | 클러스터 LIF 상태입니다 | 클러스터 LIF가 두 노드에 대해 작동 중인지 확인합니다. 클러스터 LIF가 작동 중지되면 작업이 실패합니다. 
 
 
-| ASUP 상태 점검 | ASUP 알림이 구성되지 않으면 작업이 실패합니다. 컨트롤러 교체 절차를 시작하기 전에 ASUP를 활성화해야 합니다. 
+| AutoSupport 상태 확인 | AutoSupport 알림이 구성되지 않은 경우 작업이 실패합니다. 컨트롤러 교체 절차를 시작하기 전에 AutoSupport를 활성화해야 합니다. 
 
 
 | CPU 사용률 검사 | 교체할 노드에 대해 CPU 활용률이 50%를 초과하는지 확인합니다. CPU 사용량이 상당한 시간 동안 50% 이상인 경우 작업이 실패합니다. 
@@ -123,25 +132,90 @@ AFF 700과 같은 시스템이 있는 경우, 업그레이드를 시작하기 �
 각 노드에 연결된 시리얼 포트에서 다음 명령의 출력을 개별적으로 실행 및 저장합니다.
 
 +
-** `vserver services name-service dns show`
-** `network interface show -curr-node <local> -role <cluster,intercluster,node-mgmt,cluster-mgmt,data>`
-** `network port show -node <local> -type physical`
-** `service-processor show -node <local> -instance`
-** `network fcp adapter show -node <local>`
-** `network port ifgrp show -node <local>`
-** `system node show -instance -node <local>`
-** `run -node <local> sysconfig`
-** `storage aggregate show -r`
-** `storage aggregate show -node <local>`
-** `volume show -node <local>`
-** `system license show -owner <local>`
-** `storage encryption disk show`
-** `security key-manager onboard show-backup`
-** `security key-manager external show`
-** `security key-manager external show-status`
-** `network port reachability show -detail -node <local>`
-
-
+[source, cli]
+----
+vserver services name-service dns show
+----
++
+[source, cli]
+----
+network interface show -curr-node <local> -role cluster,intercluster,node-mgmt,cluster-mgmt,data
+----
++
+[source, cli]
+----
+network port show -node <local> -type physical
+----
++
+[source, cli]
+----
+service-processor show -node <local> -instance
+----
++
+[source, cli]
+----
+network fcp adapter show -node <local>
+----
++
+[source, cli]
+----
+network port ifgrp show -node <local>
+----
++
+[source, cli]
+----
+system node show -instance -node <local>
+----
++
+[source, cli]
+----
+run -node <local> sysconfig
+----
++
+[source, cli]
+----
+storage aggregate show -r
+----
++
+[source, cli]
+----
+storage aggregate show -node <local>
+----
++
+[source, cli]
+----
+volume show -node <local>
+----
++
+[source, cli]
+----
+system license show -owner <local>
+----
++
+[source, cli]
+----
+storage encryption disk show
+----
++
+[source, cli]
+----
+security key-manager onboard show-backup
+----
++
+[source, cli]
+----
+security key-manager external show
+----
++
+[source, cli]
+----
+security key-manager external show-status
+----
++
+[source, cli]
+----
+network port reachability show -detail -node <local>
+----
 +
 
 NOTE: 온보드 키 관리자(OKM)를 사용하는 NetApp 볼륨 암호화(NVE) 또는 NetApp 애그리게이트 암호화(NAE)가 사용 중인 경우, 키 관리자 암호를 준비하여 절차의 뒷부분에서 키 관리자 재동기화를 완료합니다.
@@ -160,6 +234,7 @@ https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryptio
 
 
 
+[[step-2-correct-aggregate-ownership-if-an-arl-precheck-fails]]
 == 2단계: ARL 사전 점검이 실패할 경우 애그리게이트 소유권을 수정합니다
 
 애그리게이트 상태 확인에 실패하면 파트너 노드가 소유한 애그리게이트를 홈 소유자 노드로 반환한 후 사전 확인 프로세스를 다시 시작해야 합니다.
@@ -167,12 +242,16 @@ https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryptio
 .단계
 . 파트너 노드가 현재 소유한 애그리게이트를 홈 소유자 노드로 반환:
 +
-`storage aggregate relocation start -node _source_node_ -destination _destination-node_ -aggregate-list *`
-
+[source, cli]
+----
+storage aggregate relocation start -node <source_node> -destination <destination_node> -aggregate-list *
+----
 . 노드 1과 노드 2가 현재 소유자인 애그리게이트를 소유하지 않고 홈 소유자가 아닌 경우:
 +
-`storage aggregate show -nodes _node_name_ -is-home false -fields owner-name, home-name, state`
-
+[source, cli]
+----
+storage aggregate show -nodes <node_name> -is-home false -fields owner-name, home-name, state
+----
 +
 다음 예제는 노드가 Aggregate의 현재 소유자이자 홈 소유자인 경우 명령의 출력을 보여줍니다.
 
@@ -190,9 +269,61 @@ aggr4       node1      node1       online
 4 entries were displayed.
 ----
 . 컨트롤러 교체 프로세스를 다시 시작합니다.
++
+[source, cli]
+----
+system controller replace start -nodes <node_names>
+----
 
 
-`system controller replace start -nodes _node_names_`
+
+
+[[step-3-prepare-node3-and-node4]]
+== 3단계: 노드3과 노드4를 준비합니다.
+
+노드3과 노드4에서 빌드된 이미지가 NODAR(저장 데이터 암호화 없음) 이미지인지 확인하십시오. 빌드된 이미지가 NODAR 이미지인 경우, DARE(저장 데이터 암호화) 이미지를 설치해야 합니다.
+
+.이 작업에 대해
+노드3과 노드4에서 다음 단계를 수행하십시오.
+
+.단계
+. 노드를 부팅 메뉴로 부팅합니다.
++
+[source, cli]
+----
+LOADER> boot_ontap menu
+----
+. 시스템셸을 입력하십시오:
++
+[source, cli]
+----
+systemshell
+----
+. [[check-build]]빌드가 NODAR 이미지인지 확인합니다.
++
+[source, cli]
+----
+cat /BUILD
+----
++
+명령 출력에서  `build-type`이(가) NODAR 이미지인지 확인하십시오. 예를 들어,  `DEBUG SIM NODAR`.
+
++
+
+NOTE:  `build-type`가 NODAR 이미지가 아닌 경우, 해당 빌드는 DARE 이미지입니다.
+
+. 빌드가 NODAR 이미지인 경우 DARE 이미지를 설치하십시오.
++
+.. 시스템 셸 및 부팅 메뉴를 종료합니다.
++
+[source, cli]
+----
+halt
+----
+.. DARE 이미지를 설치하십시오. 자세한 내용은 기술 자료 문서 link:https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/Netbooting_a_FAS_and_AFF_Controller_in_ONTAP_9["ONTAP 9에서 FAS 및 AFF 컨트롤러의 네트워크 부팅"^]를 참조하십시오.
+
+
+
 
 .다음 단계
 노드를 준비한 후 link:complete-preparation-for-upgrade.html["업그레이드 준비를 완료합니다"].

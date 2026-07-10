@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/ensure_new_controllers_are_set_up_correctly.html 
 keywords: confirm, controllers, set up, ha, node3, node4, node2, lif, cluster, high, availability 
-summary: '명령을 사용하여 HA 쌍을 활성화하고, 노드3 및 노드4 스토리지 액세스를 확인하고, ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드한 후 애그리게이트 소유권을 `system controller replace` 확인합니다.' 
+summary: 'ONTAP 9.15.1 이상에 도입된 컨트롤러로 업그레이드한 후 HA 페어를 활성화하고, node3 및 node4의 스토리지 액세스를 확인하고, 애그리게이트 소유권을 확인하려면 `system controller replace` 명령을 사용하십시오.' 
 ---
 = 새 컨트롤러가 올바르게 설정되었는지 확인합니다
 :hardbreaks:

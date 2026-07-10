@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/retire_node2.html 
 keywords: retire, node2 
-summary: '명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤러를 업그레이드할 때 노드2를 종료하고 랙 또는 섀시에서 분리합니다 `system controller replace` .' 
+summary: 'ONTAP 9.15.1 이상 버전에 도입된 컨트롤러로 업그레이드할 때는  `system controller replace` 명령을 사용하여 노드2를 종료하고 랙 또는 섀시에서 제거하십시오.' 
 ---
 = 노드2를 폐기합니다
 :hardbreaks:

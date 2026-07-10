@@ -18,6 +18,7 @@ summary: '명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤�
 
 
 
+[[reference-content]]
 == 참조 콘텐츠
 
 이 업그레이드와 관련된 내용은 아래 표에 나와 있습니다.
@@ -73,6 +74,7 @@ summary: '명령을 사용하여 ONTAP 9.15.1 이상을 실행하는 컨트롤�
 |===
 
 
+[[reference-sites]]
 == 참조 사이트
 
 를 클릭합니다 link:https://mysupport.netapp.com["NetApp Support 사이트"^] 또한 시스템에 사용할 수 있는 네트워크 인터페이스 카드(NIC) 및 기타 하드웨어에 대한 설명서도 포함되어 있습니다. 또한 에는 도 포함되어 있습니다 link:https://hwu.netapp.com["Hardware Universe"^], 새 시스템에서 지원하는 하드웨어에 대한 정보를 제공합니다.

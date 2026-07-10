@@ -37,6 +37,8 @@ link:../upgrade-arl-auto-in-chassis/decide-to-use-the-aggregate-relocation-guide
 ====
 
 
+[[supported-system-upgrade-combinations]]
+[[sys_commands_95_97_supported_systems]]
 == 지원되는 시스템 업그레이드 조합
 
 다음 표는 이 ARL 절차를 사용하여 컨트롤러 업그레이드에 지원되는 모델 매트릭스를 보여줍니다.
@@ -77,6 +79,7 @@ AFF 9.7P2에서 ONTAP A700 시스템에 대한 ^1^ARL 자동 업그레이드가 
 
 
 
+[[choose-a-different-hardware-upgrade-procedure]]
 == 다른 하드웨어 업그레이드 절차를 선택하세요
 
 * link:../upgrade-arl/index.html["컨트롤러 하드웨어 업그레이드에 사용 가능한 대체 ARL 방법을 검토하세요."]..

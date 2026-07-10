@@ -4,6 +4,7 @@
 
 
 
+[[connect-to-a-switch-attached-cluster]]
 == 스위치 연결 클러스터에 연결합니다
 
 스위치 연결 클러스터의 경우 AFF A30, AFF A50, AFF A70, AFF A90, AFF C30, AFF C60 또는 AFF C80(교체) 노드에 대해 다음 요구사항을 충족하는지 확인하십시오.

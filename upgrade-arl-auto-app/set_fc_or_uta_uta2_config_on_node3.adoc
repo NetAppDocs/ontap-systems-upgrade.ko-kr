@@ -22,10 +22,12 @@ summary: '을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업�
 
 NOTE: NetApp 마케팅 자료에서는 UTA2 라는 용어를 사용하여 통합 네트워크 어댑터(CNA) 어댑터 및 포트를 참조할 수 있습니다. 그러나 CLI에서는 CNA라는 용어를 사용합니다.
 
-node3에 온보드 FC 포트, 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드(예: ONTAP 9.15.1부터 도입된 AFF 및 FAS 시스템)가 없고 스토리지 디스크가 있는 시스템을 업그레이드하는 경우 다음으로 건너뛸 수 있습니다.link:reassign-node1-disks-to-node3.html["노드1 디스크를 노드3에 재할당합니다"] .
+노드3에 온보드 FC 포트, 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드가 없는 경우(예: ONTAP 9.15.1 이상에서 도입된 AFF 및 FAS 시스템) 스토리지 디스크를 사용하여 시스템을 업그레이드하는 경우 link:reassign-node1-disks-to-node3.html["노드1 디스크를 노드3에 재할당합니다"]로 건너뛸 수 있습니다.
 
 
 
+[[step-1-configure-fc-ports-on-node3]]
+[[configure-fc-ports-on-node3]]
 == 1단계: node3에서 FC 포트를 구성합니다
 
 노드3에 FC 포트가 있는 경우(온보드 또는 추가 FC 어댑터에 있음), 시스템이 배송될 때 포트가 미리 구성되어 있지 않으므로 서비스를 시작하기 전에 노드에서 포트 구성을 설정해야 합니다.  포트를 구성하지 않으면 서비스가 중단될 수 있습니다.
@@ -94,6 +96,8 @@ IMPORTANT: 유지 관리 모드 셸 프롬프트에서 이 섹션의 명령을 �
 
 
 
+[[step-2-check-and-configure-utauta2-ports-on-node3]]
+[[check-config-uta-uta2-node3]]
 == 2단계: node3에서 UTA/UTA2 포트를 확인하고 구성합니다
 
 노드 3에 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드를 사용하는 경우, 업그레이드 시스템을 사용할 방식에 따라 포트 구성을 확인하고 필요에 따라 포트를 다시 구성해야 합니다.

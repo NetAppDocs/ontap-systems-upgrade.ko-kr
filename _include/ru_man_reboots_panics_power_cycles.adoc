@@ -6,12 +6,14 @@
 
 
 
+[[reboots-panics-or-power-cycles-during-stage-2]]
 == 2단계 중에 재부팅, 패닉 또는 전원 사이클을 수행할 수 있습니다
 
 2단계 전후에 충돌이 발생할 수 있습니다. 이 경우 노드 1에서 노드 2로 애그리게이트를 재배치하고, 노드 1이 소유한 데이터 LIF 및 SAN LIF를 노드 2로 이동하고, 노드 1 정보를 기록하고, 노드 1을 폐기합니다.
 
 
 
+[[node1-or-node2-crashes-before-stage-2-with-ha-still-enabled]]
 === HA가 활성화된 상태에서 2단계 전에 노드 1 또는 노드 2가 충돌합니다
 
 2단계 전에 노드 1이나 노드 2가 충돌하는 경우 아직 재배치된 애그리게이트가 없고 HA 구성이 여전히 활성화되어 있습니다.
@@ -26,6 +28,7 @@
 
 
 
+[[node1-crashes-during-or-just-after-stage-2-with-ha-still-enabled]]
 === HA가 활성화된 상태에서 2단계 도중 또는 직후에 노드 1이 충돌합니다
 
 일부 또는 모든 애그리게이트가 node1에서 node2로 재배치되었으며 HA는 여전히 활성화되어 있습니다. Node2는 node1의 루트 볼륨과 재배치되지 않은 루트가 아닌 애그리게이트를 인계받습니다.
@@ -40,6 +43,7 @@
 
 
 
+[[node1-crashes-after-stage-2-while-ha-is-disabled]]
 === HA가 사용되지 않는 동안 2단계 후에 노드 1이 충돌합니다
 
 노드 2는 인수되지 않지만 모든 비루트 애그리게이트에서 데이터를 계속 처리하고 있습니다.
@@ -54,6 +58,7 @@
 
 
 
+[[node2-fails-during-or-after-stage-2-with-ha-still-enabled]]
 === HA가 활성화된 상태에서 2단계 중 또는 이후에 노드 2에 장애가 발생합니다
 
 노드 1은 해당 애그리게이트의 일부 또는 전부를 노드 2로 재배치했습니다. HA가 활성화되었습니다.
@@ -68,6 +73,7 @@ Node1은 node2의 모든 애그리게이트와 node2로 재배치했던 자체 �
 
 
 
+[[node2-crashes-after-stage-2-and-after-ha-is-disabled]]
 === 2단계 이후 및 HA를 사용하지 않도록 설정한 후 노드 2가 충돌합니다
 
 노드 1이 적용되지 않습니다.
@@ -82,12 +88,14 @@ node2가 부팅되는 동안 모든 애그리게이트에 대해 클라이언트
 
 
 
+[[reboots-panics-or-power-cycles-during-stage-3]]
 == 3단계 중에 재부팅, 패닉 또는 전원 사이클을 수행할 수 있습니다
 
 노드 3을 설치 및 부팅하고, 노드 1에서 노드 3으로 포트를 매핑하고, 노드 1과 노드 2에 속하는 데이터 LIF 및 SAN LIF를 노드 3으로 이동한 다음, 노드 2에서 노드 3으로 모든 애그리게이트를 재배치하는 동안 또는 3단계 직후에 장애가 발생할 수 있습니다.
 
 
 
+[[node2-crash-during-stage-3-with-ha-disabled-and-before-relocating-any-aggregates]]
 === 3단계에서 HA를 사용하지 않도록 설정하고 애그리게이트를 재배치할 때 노드 2가 충돌합니다
 
 HA가 이미 비활성화되어 있으므로 node2 충돌 후 node3가 테이크오버를 수행하지 않습니다.
@@ -102,6 +110,7 @@ node2가 부팅되는 동안 모든 애그리게이트에 대해 클라이언트
 
 
 
+[[node2-crashes-during-stage-3-after-relocating-some-or-all-aggregates]]
 === 일부 또는 모든 애그리게이트를 재배치하고 3단계에서 노드 2가 충돌합니다
 
 Node2는 일부 또는 모든 애그리게이트를 node3로 재배치했으며, node3는 재배치된 애그리게이트의 데이터를 제공합니다. HA가 비활성화되어 있습니다.
@@ -117,6 +126,7 @@ Node2는 일부 또는 모든 애그리게이트를 node3로 재배치했으며,
 
 
 
+[[node3-crashes-during-stage-3-and-before-node2-has-relocated-any-aggregates]]
 === 노드 3이 3단계 중에 또는 노드 2가 애그리게이트를 재배치하기 전에 노드 3이 충돌합니다
 
 노드 2는 인수되지 않지만 모든 비루트 애그리게이트에서 데이터를 계속 처리하고 있습니다.
@@ -128,6 +138,7 @@ Node2는 일부 또는 모든 애그리게이트를 node3로 재배치했으며,
 
 
 
+[[node3-crashes-during-stage-3-during-aggregate-relocation]]
 === 노드 3은 애그리게이트 재배치 중에 3단계 중에 충돌합니다
 
 node2가 애그리게이트를 node3으로 재배치하는 동안 node3이 충돌하면 node2는 나머지 애그리게이트의 재배치를 중단합니다.
@@ -143,6 +154,7 @@ node2가 애그리게이트를 node3으로 재배치하는 동안 node3이 충�
 
 
 
+[[node3-fails-to-boot-after-crashing-in-stage-3]]
 === 단계 3에서 충돌 후 Node3가 부팅되지 않습니다
 
 3단계에서는 심각한 장애로 인해 장애가 발생한 후 노드 3을 부팅할 수 없습니다.
@@ -153,6 +165,7 @@ node2가 애그리게이트를 node3으로 재배치하는 동안 node3이 충�
 
 
 
+[[node2-crashes-after-stage-3-but-before-stage-5]]
 === 3단계 후 5단계 전에 노드 2가 충돌합니다
 
 NODE3은 계속해서 모든 애그리게이트에서 데이터를 제공합니다. HA 쌍이 사용되지 않습니다.
@@ -164,6 +177,7 @@ NODE3은 계속해서 모든 애그리게이트에서 데이터를 제공합니�
 
 
 
+[[node3-crashes-after-stage-3-but-before-stage-5]]
 === Node3은 3단계 후 5단계 전에 충돌합니다
 
 Node3은 3단계 후 5단계 전에 충돌합니다. HA 쌍이 사용되지 않습니다.
@@ -178,12 +192,14 @@ Node3은 3단계 후 5단계 전에 충돌합니다. HA 쌍이 사용되지 않�
 
 
 
+[[reboots-panics-or-power-cycles-during-stage-5]]
 == 5단계 중에 재부팅, 패닉 또는 전원 사이클을 수행할 수 있습니다
 
 노드 4를 설치 및 부팅하고, 노드 2에서 노드 4로 포트를 매핑하고, 노드 2에 속하는 데이터 LIF 및 SAN LIF를 노드 3에서 노드 4로 이동한 다음, 노드 3의 모든 애그리게이트를 노드 4로 재배치하는 단계 5에서 충돌이 발생할 수 있습니다.
 
 
 
+[[node3-crashes-during-stage-5]]
 === 5단계 중에 Node3이 충돌합니다
 
 Node3는 노드 2의 일부 또는 전부를 노드 4로 재배치했습니다. Node4는 인수되지 않지만, 노드 3이 이미 재배치된 비루트 애그리게이트를 계속 제공합니다. HA 쌍이 사용되지 않습니다.
@@ -199,6 +215,7 @@ Node3는 노드 2의 일부 또는 전부를 노드 4로 재배치했습니다. 
 
 
 
+[[node4-crashes-during-stage-5]]
 === 5단계 중에 Node4가 충돌합니다
 
 Node3는 노드 2의 일부 또는 전부를 노드 4로 재배치했습니다. Node3는 인수된 것이 아니라, 노드 3이 소유한 비루트 애그리게이트뿐만 아니라 재배치되지 않은 Aggregate를 계속 제공합니다. HA가 비활성화되었습니다.
