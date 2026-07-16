@@ -3223,10 +3223,7 @@
   <block id="c5dc6358f70b9b01e402df306b4756e6" category="summary">필요한 경우 ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 NVE 또는 NAE용 새 컨트롤러 모듈을 구성하십시오.</block>
   <block id="f0a0eea61e7c18706f2be0d0b664df19" category="doc">새 컨트롤러 모듈에서 NetApp 볼륨 또는 애그리게이트 암호화를 설정합니다</block>
   <block id="9c5b8b5e0f9e3862ddb4d7aea590526d" category="paragraph">2단계에서는 비루트 애그리게이트를 노드 1에서 노드 2로 재배치하고, 장애가 발생하거나 거부된 애그리게이트를 포함하여 노드 1이 소유한 비 SAN 데이터 LIF를 노드 2로 이동합니다. 또한 프로시저에서 나중에 사용할 수 있도록 필요한 node1 정보를 기록하고 node1을 폐기합니다.</block>
-  <block id="b1d2d80254a37ea644bb2f1ced221235" category="paragraph">3단계에서는 노드 3을 설치 및 부팅하고, 노드 1에서 노드 3으로 클러스터 및 노드 관리 포트를 매핑하며, 노드 1에 속하는 데이터 LIF 및 SAN LIF를 노드 2에서 노드 3으로 이동합니다. 또한 노드 2에서 노드 3으로 모든 애그리게이트를 재배치하고 노드 2가 소유한 데이터 LIF 및 SAN LIF를 노드 3으로 이동합니다.</block>
   <block id="14404b4da2811fbc2d79f7bd9ba708f3" category="paragraph">4단계에서는 나중에 사용할 수 있도록 필요한 노드 2 정보를 기록한 다음 노드 2를 폐기합니다. 집계 소유권은 변경되지 않습니다.</block>
-  <block id="7e21a9c9d8227ac88401921ab1292b41" category="paragraph">5단계에서는 노드 4를 설치 및 부팅하고, 노드 2에서 노드 4로 클러스터 및 노드 관리 포트를 매핑하며, 노드 2에 속하는 데이터 LIF 및 SAN LIF를 노드 3에서 노드 4로 이동합니다. 또한 노드 3에서 노드 4로 노드 2 애그리게이트를 재배치하고 노드 2가 소유한 데이터 LIF 및 SAN LIF를 노드 3으로 이동합니다.</block>
-  <block id="3bd7ed4f2ac8c8bee0e26402197de3f8" category="paragraph">6단계에서는 새 노드가 올바르게 설정되었는지 확인하고, 새 노드가 암호화를 사용하는 경우 Storage Encryption 또는 NetApp Volume Encryption을 설정합니다. 또한 이전 노드의 서비스를 해제하고 SnapMirror 작업을 재개해야 합니다.</block>
   <block id="a6b2bef9fee39460e6de895c83a49b09" category="paragraph">2단계에서는 노드 1이 아닌 Aggregate 및 NAS 데이터 LIF를 노드 2로 이동합니다. 이 프로세스는 대부분 자동화되어 있으며 사용자가 상태를 확인할 수 있도록 작업이 일시 중지됩니다. 작업을 수동으로 재개해야 합니다. 필요한 경우 장애가 발생한 애그리게이트를 재이동하거나 거부권을 행사합니다. 노드 1을 폐기하기 전에 프로시저에서 나중에 사용할 수 있도록 노드1 정보를 기록합니다. 나중에 프로시저에서 netboot node3 및 node4를 준비할 수도 있습니다.</block>
   <block id="b782fb0a43ba5a997562172fe5afc493" category="paragraph">4단계에서는 비루트 애그리게이트 및 NAS 데이터 LIF를 노드 2에서 노드 3으로 재배치합니다. 노드2를 폐기하기 전에 프로시저에서 나중에 사용할 수 있도록 노드2 정보도 기록합니다.</block>
   <block id="ee70b93b550a5730542d0185fb89b3ce" category="paragraph">6단계에서는 새 노드가 올바르게 설정되었는지 확인하고, 새 노드가 암호화를 사용하도록 설정된 경우 Storage Encryption 또는 NVE를 구성하고 설정합니다. 또한 이전 노드의 사용을 중지하고 SnapMirror 작업을 다시 시작해야 합니다.</block>
@@ -5591,4 +5588,14 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="296dded36176a3c0cddf588327506ee0" category="summary">ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드할 때 해당 교체 시스템 모듈을 교체한 후 node2를 netboot해야 합니다.</block>
   <block id="f22b666a8f2e5bcdb8fb87b0f8aa7d19" category="summary">ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드할 때 실패하거나 거부된 애그리게이트를 node1으로 수동으로 재배치합니다.</block>
   <block id="579119c4e708317159df0e8381e43324" category="list-text"><block ref="579119c4e708317159df0e8381e43324" category="inline-link-macro-rx"></block></block>
+  <block id="599b54171a77643ce7931a9986ea7c42" category="paragraph">노드 쌍을 업그레이드하려면 기존 노드를 준비하고 기존 노드와 새 노드 모두에서 업그레이드 단계를 따릅니다. 그런 다음 기존 노드를 사용 중지합니다.</block>
+  <block id="d3f5a62906fe227e98435313989c588d" category="paragraph">기존 컨트롤러 하드웨어를 교체용 컨트롤러 하드웨어로 HA 페어 구성을 활용하여 루트가 아닌 어그리게이트의 소유권을 재배치하는 방식으로 한 번에 하나의 컨트롤러씩 업그레이드합니다. 올바른 업그레이드 노드에 도달하려면 모든 루트가 아닌 어그리게이트의 소유권을 두 번 재배치해야 합니다.</block>
+  <block id="017f0198cb149e001e7d1fbdbfeff2ab" category="paragraph">다음 표는 각 단계별 주요 작업과 단계 종료 시 애그리게이트 소유권 현황을 설명합니다. 자세한 단계는 절차 뒷부분에 제공됩니다.</block>
+  <block id="926cb196a2b3f1a08efba3993217d3e0" category="paragraph">1단계에서는 필요한 경우 내부 디스크 드라이브에 루트 애그리게이트 또는 데이터 애그리게이트가 없는지 확인하고, 노드를 업그레이드할 준비를 하고, 사전 검사를 실행합니다. 필요한 경우 스토리지 암호화를 위해 디스크 키를 재설정하고 새 컨트롤러의 네트워크 부팅을 준비합니다.</block>
+  <block id="49ddc20064f4f29a69131c6812872ce2" category="paragraph">3단계에서는 노드3을 설치하고 부팅한 다음 노드1에서 노드3으로 클러스터 및 노드 관리 포트를 매핑합니다. NetApp 볼륨 암호화(NVE)를 사용하는 경우 키 관리자 구성을 복원합니다. 그런 다음 노드1에 속한 데이터 LIF 및 SAN LIF를 노드2에서 노드3으로 이동하고, 모든 애그리게이트를 노드2에서 노드3으로 재배치한 다음, 노드2가 소유한 데이터 LIF 및 SAN LIF를 노드3으로 이동합니다.</block>
+  <block id="af49fa765409efddf18e8edd7d047f69" category="paragraph">5단계에서는 노드4를 설치하고 부팅한 다음 노드2에서 노드4로 클러스터 및 노드 관리 포트를 매핑합니다. NetApp 볼륨 암호화(NVE)를 사용하는 경우 키 관리자 구성을 복원합니다. 그런 다음 노드2에 속하는 데이터 LIF 및 SAN LIF를 노드3에서 노드4로 이동하고, 노드2의 애그리게이트를 노드3에서 노드4로 재배치한 다음, 노드2가 소유한 데이터 LIF 및 SAN LIF를 노드3으로 이동합니다.</block>
+  <block id="12177ec5bd50eaf788179fbe2ab3d1ff" category="summary">필요한 경우 ONTAP 9.8 이상을 실행하는 컨트롤러에서 수동 ARL 업그레이드 중에 node4의 키 관리자 구성을 복원하십시오.</block>
+  <block id="74b1deeae7ed2c75aa8ad4c2ddea9d93" category="summary">필요한 경우 ONTAP 9.8 이상을 실행하는 컨트롤러에서 수동 ARL 업그레이드 중에 node3의 키 관리자 구성을 복원하십시오.</block>
+  <block id="8ad3199cfb5e6cb3fc2da5bb1354e4c8" category="sidebar">node3에서 키 관리자 구성 복원</block>
+  <block id="2cd0e87e95581377b5e99bb14328f296" category="sidebar">노드4에서 키 관리자 구성 복원</block>
 </blocks>
