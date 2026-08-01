@@ -22,4 +22,4 @@ summary: ONTAP 9.7 이하를 실행하는 컨트롤러에서 수동 ARL 업그�
 * #2 십자 드라이버
 
 
-로 이동합니다 link:other_references.html["참조"] 섹션을 클릭하여 이 업그레이드에 필요한 참조 문서 목록을 액세스합니다.
+link:other-references.html["참조"] 섹션으로 이동하여 이 업그레이드에 필요한 참조 문서 목록을 확인하십시오.

@@ -20,6 +20,8 @@ summary: 볼륨을 새 노드로 이동한 후에는 클러스터에서 원래 �
 ----
 storage failover modify -node <original_node_name> -enabled false
 ----
+
+
 . 권한 수준을 고급으로 변경합니다.
 +
 [source, cli]
@@ -165,6 +167,7 @@ set -privilege admin
 ----
 
 
+[[return-admin]]
 . <<disable-ha,2>>에서 <<return-admin,11>>까지의 단계를 반복하여 클러스터에서 페일오버 파트너를 제거합니다.
 . 클러스터에 노드가 2개만 남아 있는 경우 2노드 클러스터의 고가용성을 구성합니다.
 +
@@ -175,4 +178,4 @@ cluster ha modify -configured true
 
 
 .다음 단계
-link:upgrade-complete-move-volumes.html["볼륨 이동 업그레이드를 완료하세요"]
+기존 노드를 제거한 후, link:upgrade-complete-move-volumes.html["볼륨 이동 업그레이드를 완료합니다"].

@@ -16,7 +16,7 @@ summary: '을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업�
 [role="lead"]
 MetroCluster 구성의 전환, 복구 및 스위치백 작업을 확인해야 합니다.
 
-을 참조하십시오 link:other_references.html["참조"] MetroCluster 관리 및 재해 복구_컨텐츠에 연결하고 협상된 전환, 복구 및 스위치백에 대해 설명된 절차를 사용합니다.
+link:other-references.html["참조"]를 참조하여 _MetroCluster 관리 및 재해 복구_ 콘텐츠에 연결하고, 협상된 전환, 복구 및 스위치백에 대해 언급된 절차를 따르십시오.
 
 .다음 단계
 전환, 복구 및 스위치백을 확인한 후 link:overview_of_the_arl_upgrade.html["ARL 업그레이드 순서에 대해 알아보십시오"].

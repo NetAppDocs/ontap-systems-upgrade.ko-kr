@@ -61,7 +61,7 @@ entries:
     url: "/upgrade-arl-auto-in-chassis/relocate-failed-or-vetoed-aggr-node1.html"
   - title: 노드2를 폐기합니다
     url: "/upgrade-arl-auto-in-chassis/retire-node2.html"
-- title: 5단계. node2 교체 시스템 모듈을 설치합니다
+- title: 5단계. 노드2 대체 시스템 모듈 설치
   entries:
   - title: node2 시스템 모듈을 교체합니다
     entries:

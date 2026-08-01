@@ -128,7 +128,7 @@ High Availability Configured: false
 `cluster show`
 
 +
-노드의 수가 짝수인 클러스터에서 타이 가능성이 있기 때문에 노드 하나에 epsilon이라는 추가 분수 투표 중량이 있습니다. 을 참조하십시오 link:other_references.html["참조"] 자세한 내용은 _시스템 관리 참조_에 대한 링크를 참조하십시오.
+짝수 개의 노드로 구성된 클러스터에서는 동점이 발생할 가능성이 있으므로, 하나의 노드에는 엡실론(epsilon)이라는 추가적인 소수점 투표 가중치가 부여됩니다. 자세한 내용은 link:other-references.html["참조"]을 참조하여 _System Administration Reference_를 확인하십시오.
 
 +
 [NOTE]

@@ -110,4 +110,4 @@ entries:
   - title: 업그레이드 후 LIF가 잘못된 포트에 있습니다
     url: "/upgrade-arl-manual-app/lifs_invalid_ports_after_upgrade.html"
 - title: 참조
-  url: "/upgrade-arl-manual-app/other_references.html"
+  url: "/upgrade-arl-manual-app/other-references.html"

@@ -51,4 +51,4 @@ https://library.netapp.com/ecm/ecm_download_file/ECMP1140535["NetApp CN1610 클�
 
 
 .다음 단계
-link:upgrade-install-and-join-new-nodes-move-vols.html["새 노드를 설치하고 이를 클러스터에 연결합니다"]
+업그레이드 준비를 마친 후, link:upgrade-install-and-join-new-nodes-move-vols.html["새 노드를 설치하고 클러스터에 추가합니다."].

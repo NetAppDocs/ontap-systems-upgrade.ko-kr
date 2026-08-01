@@ -124,3 +124,6 @@ link:https://docs.netapp.com/us-en/ontap/san-admin/index.html["CLI를 통한 SAN
 LOADER 프롬프트에서 시스템이 중지됩니다
 
 
+
+.다음 단계
+새 노드를 설정한 후, 선택적으로 link:upgrade-move-internal-drives.html["원래 노드에서 내부 드라이브를 이동합니다."] 또는 link:upgrade-convert-node-to-shelf.html["원래 노드를 드라이브 셸프로 변환합니다."]. 그런 다음, link:upgrade-attach-shelves-reassign-disks.html["스토리지 셸프를 연결하고 디스크 소유권을 다시 할당합니다."].

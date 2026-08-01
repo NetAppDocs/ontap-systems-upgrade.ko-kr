@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: upgrade-arl-manual-app/other_references.html 
+permalink: upgrade-arl-manual-app/other-references.html 
 keywords: other references, documentation, hardware universe, content, documentation center, information 
 summary: ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레이드를 지원하는 데 필요한 참조 콘텐츠 및 웹 사이트입니다. 
 ---

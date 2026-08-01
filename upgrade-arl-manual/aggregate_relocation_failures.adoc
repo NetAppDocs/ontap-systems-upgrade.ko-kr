@@ -39,7 +39,7 @@ summary: ONTAP 9.7 이하를 실행하는 컨트롤러에서 수동 ARL 업그�
 
 
 +
- `storage aggregate relocation start`,  `override-vetoes` 및  `override-destination-checks` 옵션에 대한 자세한 내용은 link:other_references.html["참조"]를 참조하여 _ONTAP 9 명령 참조_에 연결하십시오.
+ `storage aggregate relocation start`,  `override-vetoes` 및  `override-destination-checks` 옵션에 대한 자세한 내용은 link:other-references.html["참조"]를 참조하여 _ONTAP 9 명령 참조_에 연결하십시오.
 
 
 

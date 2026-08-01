@@ -22,7 +22,7 @@ summary: '을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업�
 * #2 십자 드라이버
 
 
-로 이동합니다 link:other_references.html["참조"] 섹션을 참조하여 이 업그레이드에 필요한 참조 문서 및 참조 사이트 목록에 액세스합니다
+link:other-references.html["참조"] 섹션으로 이동하여 이 업그레이드에 필요한 참조 문서 및 참조 사이트 목록을 확인하십시오.
 
 .다음 단계
 필요한 도구와 문서를 검토한 후 link:guidelines_for_upgrading_controllers_with_arl.html["ARL을 사용한 컨트롤러 업그레이드 지침"]에 대해 알아보세요.

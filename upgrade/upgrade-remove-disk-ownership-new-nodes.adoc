@@ -100,3 +100,6 @@ This is a disruptive operation and will result in the
 `halt`
 
 
+
+.다음 단계
+새 노드에 연결된 디스크의 소유권을 제거한 후, link:upgrade-reset-default-configuration-node3-and-node4.html["새 노드의 기본 구성을 재설정합니다"].

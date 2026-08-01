@@ -114,4 +114,4 @@ NOTE: 스토리지 구성에 암호화가 활성화된 볼륨이 포함되어 �
 
 
 .다음 단계
-link:upgrade-move-lifs-to-new-nodes.html["비 SAN 데이터 LIF 및 클러스터 관리 LIF를 새 노드로 이동합니다"]
+애그리게이트를 생성하고 볼륨을 새 노드로 이동한 후, link:upgrade-move-lifs-to-new-nodes.html["SAN 데이터 외 LIF와 클러스터 관리 LIF를 새 노드로 이동합니다."].

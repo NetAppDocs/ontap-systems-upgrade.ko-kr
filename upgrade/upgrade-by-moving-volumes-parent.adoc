@@ -50,3 +50,6 @@ iSCSI SAN 볼륨을 새 노드로 이동하기 전에 새 iSCSI 연결을 생성
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-8.png["8개"]link:upgrade-complete-move-volumes.html["업그레이드를 완료합니다"]
 [role="quick-margin-para"]
 볼륨을 이동하여 업그레이드 절차를 완료하려면 서비스 프로세서(SP)를 구성하고, 새 라이센스를 설치하고, AutoSupport를 설정해야 합니다. 저장소 또는 볼륨 암호화를 설정하고 FC 또는 NCA 포트를 구성해야 할 수도 있습니다.
+
+.다음 단계
+볼륨 이동을 통한 업그레이드에 대해 알게 된 후, link:upgrade-prepare-when-moving-volumes.html["업그레이드 준비"].

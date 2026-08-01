@@ -54,3 +54,6 @@ Rebooting to finish wipeconfig request.
 
 . 부팅 메뉴에서 8을 입력하여 노드를 재부팅하고, AUTOBOOT 중에 Ctrl-C를 입력하여 LOADER 프롬프트에서 노드를 중지합니다.
 
+
+.다음 단계
+새 노드의 기본 구성을 재설정한 후, link:upgrade-install-new-nodes.html["새 노드를 설치합니다"].

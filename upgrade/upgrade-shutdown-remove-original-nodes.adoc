@@ -125,3 +125,6 @@ Use "storage failover modify -node <nodename> -onreboot false" to turn it OFF.
 . 노드 1과 노드 2에서 모든 케이블을 레이블 지정하고 제거합니다.
 . 노드 1과 노드 2가 포함된 섀시를 제거합니다.
 
+
+.다음 단계
+기존 노드를 종료한 후, link:upgrade-remove-disk-ownership-new-nodes.html["새 노드에 연결된 디스크의 소유권을 제거합니다."].

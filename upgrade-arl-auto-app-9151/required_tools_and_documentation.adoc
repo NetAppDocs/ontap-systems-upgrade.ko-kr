@@ -22,7 +22,7 @@ summary: 'ONTAP 9.15.1 이상 버전에 도입된 컨트롤러를 `system contro
 * #2 십자 드라이버
 
 
-로 이동합니다 link:other_references.html["참조"] 섹션을 참조하여 이 업그레이드에 필요한 참조 문서 및 참조 사이트 목록에 액세스합니다
+link:other-references.html["참조"] 섹션으로 이동하여 이 업그레이드에 필요한 참조 문서 및 참조 사이트 목록을 확인하십시오.
 
 .다음 단계
 필요한 도구와 문서를 검토한 후 link:guidelines_for_upgrading_controllers_with_arl.html["ARL을 사용하여 컨트롤러를 업그레이드하는 지침에 대해 알아보십시오"].

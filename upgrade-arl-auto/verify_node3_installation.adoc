@@ -46,7 +46,7 @@ summary: '을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 업그레�
 노드 3이 쿼럼에 있고 노드 2와 통신할 수 있는지 확인한 후 노드 3에서 노드 1의 VLAN, 인터페이스 그룹 및 브로드캐스트 도메인을 다시 만들어야 합니다. 노드3 포트도 새로 다시 생성된 브로드캐스트 도메인에 추가해야 합니다.
 
 .이 작업에 대해
-VLAN, 인터페이스 그룹 및 브로드캐스트 도메인을 만들고 다시 만드는 방법에 대한 자세한 내용은 를 참조하십시오 link:other_references.html["참조"] 네트워크 관리 _ 에 대한 링크를 제공합니다.
+VLAN, 인터페이스 그룹 및 브로드캐스트 도메인 생성 및 재생성에 대한 자세한 내용은 link:other-references.html["참조"]로 이동하여 _Network Management_를 참조하십시오.
 
 .단계
 . 에 기록된 노드 1 정보를 사용하여 노드 3에서 VLAN을 다시 생성합니다 link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["노드 1이 소유한 루트 이외의 Aggregate 및 NAS 데이터 LIF를 노드 2로 재배치합니다"] 섹션:
