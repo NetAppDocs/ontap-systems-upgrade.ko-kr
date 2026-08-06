@@ -47,10 +47,7 @@ Local System ID: 101268854
 +
 노드3의 시스템 ID를 기록하여 <<reassign-disks-and-aggregates,5단계>>에서 사용합니다.
 
-
-
-[[reassign-disks-and-aggregates]]
-. 디스크와 데이터 애그리게이트를 재할당합니다.
+. [[reassign-disks-and-aggregates]]디스크 및 데이터 집합체를 재할당합니다.
 +
 [role="tabbed-block"]
 ====

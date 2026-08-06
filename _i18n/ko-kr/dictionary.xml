@@ -335,7 +335,6 @@
   <block id="9bcd562ef44a8e11e5fd0e0492ebe6c4" category="paragraph">다음 예제와 같이 시스템이 node1에 대한 정보를 표시합니다.</block>
   <block id="5ff20c188ceb23808ed9b47d8e5637ff" category="inline-link-macro">노드3을 설치하고 부팅합니다</block>
   <block id="5b9519c4c2b57166c18827dfa9f50f7c" category="list-text">[[man_record_node1_step12]] 섹션에 사용할 NVRAM 시스템 ID 번호를 기록합니다 <block ref="b27daeccf5fbd8a2e88a3636ee615b74" category="inline-link-macro-rx"></block>.</block>
-  <block id="8dc470d3ebc8fcb9ed95d55471e7303a" category="summary">ONTAP 9.7 이하를 실행하는 컨트롤러에서 수동 ARL 업그레이드 중에 노드 4 온보드 FC 포트, UTA/UTA2 포트 또는 UTA/UTA2 카드를 구성합니다.</block>
   <block id="df5267f8e4bbfa9add1dd732e6b68e41" category="doc">노드 4에 FC 또는 UTA/UTA2 구성을 설정합니다</block>
   <block id="291e8826d2b19041a0543b448060f314" category="paragraph">노드 4에 온보드 FC 포트, 온보드 UTA/UTA2(Unified Target Adapter) 포트 또는 UTA/UTA2 카드가 있는 경우, 나머지 절차를 완료하기 전에 설정을 구성해야 합니다.</block>
   <block id="d3724945a8761461ffee756c3d88b5f7" category="paragraph">노드 4에 온보드 FC 포트, 온보드 UTA/UTA2 포트 또는 UTA/UTA2 카드가 없는 경우 스토리지 디스크를 사용하여 시스템을 업그레이드하는 경우 로 건너뛸 수 있습니다 <block ref="fface1ac702bde6d72ceb6e55eb8b2b6" category="inline-link-macro-rx"></block>.</block>
@@ -1891,7 +1890,6 @@
   <block id="312ce282bc7d7bc7d34249cfcaff7db6" category="summary">필요한 경우 를 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 노드 4의 키 관리자 구성을 복원합니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="594ac9e04c14065852f0e508c7b91ccb" category="paragraph">다음 단계를 수행하여 암호화 구성을 새 노드에 동기화합니다.</block>
   <block id="53cd5409b5ec64b4f5341cb93a822fab" category="summary">필요한 경우 를 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 노드 3의 Key-Manager 구성을 복원합니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
-  <block id="bc8355e3ba73925a2f4cf661fa66be6a" category="summary">을 사용하여 ONTAP 9.8 이상을 실행하는 컨트롤러를 업그레이드할 때 노드 4 온보드 FC 포트, UTA/UTA2 포트 또는 UTA/UTA2 카드를 구성하십시오<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="ede48791c6a4d48413c294cc39314600" category="list-text">노드 4의 FC 설정을 노드 1에서 앞서 캡처한 설정과 비교합니다.</block>
   <block id="59df83a3d8dd25ad19619fe75cc32a49" category="list-text">[[step8]] 다음 작업 중 하나를 수행합니다.</block>
   <block id="585bb8123c8fd5789aad3617861008af" category="paragraph">UTA/UTA2 포트를 네이티브 FC 모드 또는 UTA/UTA2A 모드로 구성할 수 있습니다. FC 모드는 FC 이니시에이터 및 FC 타겟을 지원하며, UTA/UTA2 모드를 사용하면 동시 NIC 및 FCoE 트래픽이 동일한 10GbE SFP+ 인터페이스를 공유하고 FC 타겟을 지원할 수 있습니다.</block>
@@ -2212,7 +2210,6 @@
   <block id="7a0381687cdc9de622bbd1da886f7a53" category="paragraph">다음 명령을 실행하면 페일오버 정책이 로 설정됩니다<block ref="4d3a5ab1d88aca3bc6215a1001691935" prefix=" " category="inline-code"></block> 에서는 페일오버 그룹 "fg1"의 포트를 노드 3의 LIF "data1"의 페일오버 타겟으로 사용합니다.</block>
   <block id="cb78b2e3deaeee9f6221f0adf18ae798" category="paragraph"><block ref="9a65e778a0d4a24c7fd69146b7d50dde" prefix="" category="inline-code"></block></block>
   <block id="3ab0e6df482466ba6428f0535b2e2564" category="summary">을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 업그레이드할 때 node2와 HA 쌍을 비활성화하고 노드 1을 종료합니다<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
-  <block id="7625a2790853e03d706fd2e8a29fb7ba" category="summary">을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 업그레이드할 때 노드 4 온보드 FC 포트, UTA/UTA2 포트 또는 UTA/UTA2 카드를 구성하십시오<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="bbd7c8e76a5f5fdedf0347fb039be29b" category="summary">을 사용하여 ONTAP 9.5를 실행하는 컨트롤러를 9.7로 업그레이드할 때 여러 단계에서 시스템이 충돌합니다(재부팅, 패닉 또는 전원 사이클 통과)<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="47d2d2bfe5e2f318b6d816e5adc3929d" category="paragraph">이 단계에서 노드 3이 충돌하면 HA가 이미 사용되지 않으므로 테이크오버가 발생하지 않습니다.</block>
   <block id="f361f80547aae98b60e1c7ecc861a027" category="paragraph">노드 3이 재부팅될 때까지 이미 재배치되었던 루트 이외의 애그리게이트는 운영 중단이 있습니다.</block>
@@ -2452,7 +2449,6 @@
   <block id="52a370bfb3df9d6787958443a448c014" category="inline-link-macro">7단계: 업그레이드를 완료합니다</block>
   <block id="be1c64568381eb09df4f452433b584eb" category="inline-link-macro">ONTAP 9.8 이상을 사용하여 네트워크 포트를 매핑합니다</block>
   <block id="c8ff2d709da7bd973a342d6eb7c6952c" category="inline-link-macro">ONTAP 9.8 이상에서 최종 업그레이드 단계를 수행합니다</block>
-  <block id="c9b87fd8826330d02eb0f7e03c49023c" category="summary">볼륨을 이동하여 업그레이드 절차를 완료하려면 서비스 프로세서\(SP\)를 구성하고 새 라이센스를 설치한 다음 AutoSupport를 설정해야 합니다. 스토리지 또는 볼륨 암호화를 설정하고 FC 또는 NCA 포트를 구성해야 할 수도 있습니다.</block>
   <block id="2d425665af37b9989f89179649650990" category="doc">업그레이드를 완료합니다</block>
   <block id="758ed2ce94a0d48e369a05e9792df5bf" category="paragraph">볼륨을 이동하여 업그레이드 절차를 완료하려면 서비스 프로세서(SP)를 구성하고 새 라이센스를 설치하고 AutoSupport를 설정해야 합니다. 스토리지 또는 볼륨 암호화를 설정하고 FC 또는 NCA 포트를 구성해야 할 수도 있습니다.</block>
   <block id="8f581810d42d6aab9a995890e97f0a55" category="list-text">필요에 따라 새 노드에서 SP를 구성합니다.</block>
@@ -2575,7 +2571,6 @@
   <block id="6b0020689d6a1c40c97b6df1736d8e38" category="inline-link-macro">ONTAP 9.7 이전 버전에서 최종 업그레이드 단계를 수행합니다</block>
   <block id="051662f99e538a90d87104fddd664c40" category="inline-link">네트워크 인터페이스 생성</block>
   <block id="0b3461f9ff1cc0e9748c51914f12d1ac" category="paragraph">클러스터 환경 요구사항에 따라 이 절차 이전에 삭제한 SAN LIF를 새로 생성하거나 SAN LIF를 다시 생성할 수 있습니다. 를 사용하여 SAN LIF를 생성하거나 재생성할 수 있습니다<block ref="307c1988750a87c4014551385f0a3aa7" category="inline-link-rx"></block> OnCommand ® System Manager_documentation을 사용한 _Cluster 관리 절차</block>
-  <block id="2f22c527d871517945ac34102d2f6931" category="summary">스토리지를 이동하여 업그레이드 절차를 완료하려면 새 노드에서 사용되지 않는 포트 및 LIF를 삭제하고, 스토리지 페일오버 또는 고가용성을 다시 설정하고, 서비스 프로세서\(SP\)를 구성하고, 새 라이센스를 설치하고, AutoSupport를 설정해야 합니다. 스토리지 또는 볼륨 암호화를 설정하고 FC 또는 CNA 포트를 구성해야 할 수도 있습니다.</block>
   <block id="5112ce36807c8e031c9ab063bc28ce71" category="doc">ONTAP 9.7 이전 버전에서 최종 업그레이드 단계를 수행합니다</block>
   <block id="de87a7c00dcfcf1112ca50efd583f924" category="paragraph">스토리지를 이동하여 업그레이드 절차를 완료하려면 새 노드에서 사용되지 않는 포트 및 LIF를 삭제하고, 스토리지 페일오버 또는 고가용성을 재설정하고, 서비스 프로세서(SP)를 구성하고, 새 라이센스를 설치하고, AutoSupport를 설정해야 합니다. 스토리지 또는 볼륨 암호화를 설정하고 FC 또는 CNA 포트를 구성해야 할 수도 있습니다.</block>
   <block id="cef52224881fd5dedd26a040c1359ee9" category="inline-xref-macro">ONTAP 9.8 이상에서 최종 업그레이드 단계를 수행합니다</block>
@@ -2714,7 +2709,6 @@
   <block id="3c3916219a878033fa2aaddd792ed605" category="list-text">변환된 드라이브 쉘프를 새 시스템의 SAS 포트에 연결하고, 아웃오브밴드 ACP 케이블을 사용하는 경우 새 노드의 ACP 포트에 연결합니다.</block>
   <block id="28391dfe8511b351c91dba3094b1ba03" category="list-text">변환된 드라이브 쉘프 및 새 노드에 연결된 다른 드라이브 쉘프의 전원을 켭니다.</block>
   <block id="c2f0cd821e5ee148eb1900a96d516f19" category="list-text">새 노드의 전원을 켠 다음 Ctrl+C를 눌러 각 노드의 부팅 프로세스를 중단함으로써 부팅 환경 프롬프트에 액세스합니다.</block>
-  <block id="4d3a4f006fa6b11c769a39a41cac5793" category="summary">스토리지를 이동하여 업그레이드 절차를 완료하려면 새 노드에서 사용되지 않는 포트 및 LIF를 삭제하고, 스토리지 페일오버 또는 고가용성을 다시 설정하고, 서비스 프로세서(SP\)를 구성하고, 새 라이센스를 설치하고, AutoSupport를 설정해야 합니다. 스토리지 또는 볼륨 암호화를 설정하고 FC 또는 CNA 포트를 구성해야 할 수도 있습니다.</block>
   <block id="0bde8f7cae6f7006cf8059b9d923c0a4" category="inline-xref-macro">ONTAP 9.7 이전 버전에서 최종 업그레이드 단계 수행</block>
   <block id="602dfb74c3c65622a6e81f6da6da5716" category="paragraph">고가용성 재활성화:<block ref="acc3b99f812f210de5147296e269009d" prefix=" " category="inline-code"></block></block>
   <block id="68e75079cb8b3e7a53d47ecb9c69a59e" category="paragraph">스토리지 페일오버 다시 설정:<block ref="d1cccee3a49795b9594a03c793e6456b" prefix=" " category="inline-code"></block></block>
@@ -2915,7 +2909,6 @@
   <block id="000ffb8f7270dfe4b3ee36da16c47b89" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 특정 정보를 수집합니다.</block>
   <block id="afe5b70a93730d0b136c0f9de3376f9e" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 node2 클러스터 네트워크, 관리, FC 포트 및 NVRAM 시스템 ID에 대한 정보를 기록합니다.</block>
   <block id="00b7688be7e2c70e950c77f4946b4705" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 node1 클러스터 네트워크, 관리, FC 포트 및 NVRAM 시스템 ID에 대한 정보를 기록합니다.</block>
-  <block id="92f11749596b34888281bb0c579c2d25" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러에서 수동 ARL 업그레이드 중에 노드 4 온보드 FC 포트, UTA/UTA2 포트 또는 UTA/UTA2 카드를 구성합니다.</block>
   <block id="118f7a6ae9a5d6b5cd8f73c4762b1730" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러에서 수동 ARL 업그레이드 중에 node3을 설치 및 부팅하고 ONTAP 소프트웨어를 설치합니다.</block>
   <block id="c6834152ce1c2fbdaa43b11fcc10df66" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러의 수동 ARL 업그레이드 중에 내부 디스크 드라이브에 루트 또는 데이터 애그리게이트가 포함되어 있지 않은지 확인합니다.</block>
   <block id="0623848243436b0f8821316dbca47636" category="summary">ONTAP 9.8 이상을 실행하는 컨트롤러에서 수동 ARL 업그레이드를 완료한 후 이전 시스템이 더 이상 작동하지 않음을 NetApp에 알려 주십시오.</block>
@@ -3411,7 +3404,6 @@
   <block id="cac76ada4fbfca68ed190eb21810e1af" category="cell">FAS2820</block>
   <block id="0ad9e0a8a319618923e172d4571038eb" category="summary">필요한 경우 ARL을 사용하여 동일한 섀시의 컨트롤러 모델을 업그레이드할 때 업그레이드된 노드1에서 Key-manager 구성을 복원합니다.</block>
   <block id="f41084761f1192d11c824e139538a13d" category="summary">필요한 경우 ARL을 사용하여 동일한 섀시에서 컨트롤러 모델을 업그레이드할 때 스토리지 암호화를 구성하고, SSL 인증서를 설치하고, 키 관리 서버를 설정합니다.</block>
-  <block id="82896d30ec8a78dd386c091a8c2121e6" category="inline-link-macro">노드1 시스템 모듈을 교체합니다</block>
   <block id="644e220a44e1ff19f9d586b2ec3ee2d5" category="summary">업그레이드를 시작하기 전에 동일한 섀시에서 컨트롤러 모델을 업그레이드할 수 있는 올바른 하드웨어가 있는지 확인하십시오.</block>
   <block id="4e106a6c623eb6811b42be00dbde2ef3" category="cell">컨트롤러 모듈 2개</block>
   <block id="327579b68dffec79f2bcb176142f3d56" category="cell">컨트롤러 2개 및 NVRAM 모듈 2개</block>
@@ -5486,7 +5478,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="d14ed5362debdfbe14cf14c4dcedb45e" category="list-text">노드2의 케이블을 노드4에 연결합니다.</block>
   <block id="8ada17b153e1b3f1e2dd2eacad90b1e5" category="admonition">이 업그레이드 절차를 진행하는 동안에는 노드 3 또는 노드 4에 새 셸프를 연결하지 마십시오. 컨트롤러 업그레이드가 완료된 후에는 시스템에 중단 없이 새 셸프를 연결할 수 있습니다.</block>
   <block id="091cb162e71110eda2cc11ee235e5a9c" category="paragraph">노드3의 시스템 ID를 기록하여 <block ref="3cda7ea9d16e86f3996fa25936d101de" category="inline-xref-macro-rx"></block>에서 사용합니다.</block>
-  <block id="c27d8f687453de71fe99b9638caaee93" category="list-text">디스크와 데이터 애그리게이트를 재할당합니다.</block>
   <block id="576404acc1d2c468d9604cd99464b3e9" category="open-title">노드3으로 재할당</block>
   <block id="19c7bb430e4d1bead9d5461984527c74" category="paragraph">노드1의 여유 디스크, 루트 애그리게이트에 속하는 디스크 및 모든 데이터 애그리게이트를 노드3으로 재할당합니다.</block>
   <block id="9e1eb9f52027541a9bd23e4f05a40757" category="paragraph"><block ref="3e85ddaa3eb6367e1aff5787943cd287" prefix="" category="inline-code"></block></block>
@@ -5595,4 +5586,12 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="7a5a00d513b1d27412425615c75af559" category="list-text">MetroCluster ONTAP 9.7 이하 버전을 실행하는 MetroCluster 구성의 경우, <block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block>ONTAP 9.7 이하 버전을 실행하는 컨트롤러 하드웨어를 수동으로 업그레이드하기 위한 애그리게이트 재배치 사용_ 링크를 참조하십시오.</block>
   <block id="2b661462fc016dd9ae9c124f189c3cb4" category="list-text">MetroCluster IP 구성 및 Fabric MetroCluster 구성에 대한 추가 업그레이드 옵션은 <block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block>_MetroCluster 업그레이드 및 확장_ 콘텐츠 링크를 참조하십시오.</block>
   <block id="217f0692dd6e3dd9e6ae89ae211d2e5e" category="sidebar">5단계. 노드2 대체 시스템 모듈 설치</block>
+  <block id="05de9e82bcc80e2e8396f0e503d037fd" category="list-text">[[reassign-disks-and-aggregates]]디스크 및 데이터 집합체를 재할당합니다.</block>
+  <block id="dcb35290a699d5cd152b36befe0de1e2" category="summary">볼륨 이동을 통한 업그레이드 절차를 완료하려면 서비스 프로세서(SP)를 구성하고, 새 라이선스를 설치하고, AutoSupport를 설정해야 합니다. 또한 스토리지 또는 볼륨 암호화를 설정하고 FC 또는 NCA 포트를 구성해야 할 수도 있습니다.</block>
+  <block id="c4d0156d9500edcd23bba4f179a52fa7" category="summary">스토리지를 이동시켜 업그레이드하는 절차를 완료하려면 새 노드에서 사용하지 않는 포트와 LIF를 삭제하고, 스토리지 페일오버 또는 고가용성을 다시 활성화하고, 서비스 프로세서(SP)를 구성하고, 새 라이선스를 설치하고, AutoSupport를 설정해야 합니다. 또한 스토리지 또는 볼륨 암호화를 설정하고 FC 또는 CNA 포트를 구성해야 할 수도 있습니다.</block>
+  <block id="aba8d067afe2b03d0a12cd1327ec564a" category="summary">ONTAP 9.5에서 9.7로 컨트롤러를 업그레이드할 때 system controller replace 명령을 사용하여 노드4 온보드 FC 포트, UTA 및 UTA2 포트 또는 UTA 및 UTA2 카드를 구성하십시오.</block>
+  <block id="6d20cbcee6958032c968a7b309bba444" category="summary">ONTAP 9.8 이상 버전을 실행하는 컨트롤러를 업그레이드할 때 시스템 컨트롤러 교체 명령을 사용하여 노드4 온보드 FC 포트, UTA 및 UTA2 포트 또는 UTA 및 UTA2 카드를 구성하십시오.</block>
+  <block id="298812a1d89c69933bb37fd82a6a5814" category="summary">ONTAP 9.7 이하 버전을 실행하는 컨트롤러에서 수동 ARL 업그레이드를 수행하는 동안 노드4 온보드 FC 포트, UTA 및 UTA2 포트 또는 UTA 및 UTA2 카드를 구성하십시오.</block>
+  <block id="db5d818f482843c95ffb191e7d48c35e" category="summary">ONTAP 9.8 이상 버전을 실행하는 컨트롤러에서 수동 ARL 업그레이드 중에 노드4 온보드 FC 포트, UTA 및 UTA2 포트 또는 UTA 및 UTA2 카드를 구성합니다.</block>
+  <block id="1d1d3bd3fe7acd738c89cf279d744e1b" category="sidebar">노드1 시스템 모듈 교체</block>
 </blocks>

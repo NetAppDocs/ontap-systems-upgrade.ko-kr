@@ -29,7 +29,7 @@ entries:
     url: "/upgrade-arl-auto-in-chassis/relocate-failed-or-vetoed-aggr-node2.html"
   - title: 노드1을 폐기합니다
     url: "/upgrade-arl-auto-in-chassis/retire-node1.html"
-  - title: 노드1 시스템 모듈을 교체합니다
+  - title: 노드1 시스템 모듈 교체
     entries:
     - title: AFF A250 또는 AFF C250를 교체합니다
       url: "/upgrade-arl-auto-in-chassis/replace-node1-affa250-affc250.html"
