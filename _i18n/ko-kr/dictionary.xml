@@ -3485,7 +3485,6 @@
   <block id="1cb0cfe1b06273ad55b3f7189d138bb6" category="paragraph">이 절차는 자동 디스크 할당 및 네트워크 포트 도달 가능성 검사를 사용하여 컨트롤러 업그레이드 환경을 단순화하는 자동화된 절차를 단계별로 설명합니다.</block>
   <block id="7903419bce057c444e1bce59010158ec" category="paragraph">해당 교체 시스템 모듈을 교체한 후 netboot node1을 입력해야 합니다. netboot라는 용어는 원격 서버에 저장된 ONTAP 이미지에서 부팅한다는 것을 의미합니다. netboot를 준비할 때 시스템이 액세스할 수 있는 웹 서버에 ONTAP 9 부트 이미지 사본을 추가합니다.</block>
   <block id="aeadb581bc234293016c883a2bc49cc9" category="paragraph">노드 1을 폐기하려면 자동화된 작업을 다시 시작하여 노드 2와 HA 쌍을 비활성화하고 노드 1을 올바르게 종료합니다.</block>
-  <block id="656030f2bc1d7ad32243a38c007d0770" category="paragraph">교체 시스템 모듈을 사용하여 노드 1을 부팅한 후 올바르게 설치되었는지 확인합니다. 노드 2가 쿼럼에 참가할 때까지 기다린 다음 컨트롤러 교체 작업을 다시 시작해야 합니다.</block>
   <block id="fc654fff4abe048148189ff6fa5e3c9c" category="paragraph">올바른 설정을 확인하려면 HA 쌍이 설정되었는지 확인합니다. 또한 노드 1과 노드 2가 서로의 스토리지에 액세스할 수 있고 클러스터의 다른 노드에 속하는 데이터 LIF가 소유하지 않는지 확인합니다. 또한 모든 데이터 애그리게이트가 올바른 홈 노드에 있고 두 노드의 볼륨이 온라인 상태인지 확인합니다. 새 노드 중 하나에 통합 대상 어댑터가 있는 경우 포트 구성을 복원해야 하며 어댑터 사용을 변경해야 할 수도 있습니다.</block>
   <block id="37e06fbb743ab1c1935f7d96672ee924" category="paragraph">해당 교체 노드2 시스템 모듈을 교체한 후 해당 모듈을 netboot 해야 할 수 있습니다. netboot라는 용어는 원격 서버에 저장된 ONTAP 이미지에서 부팅한다는 것을 의미합니다. netboot를 준비할 때 시스템이 액세스할 수 있는 웹 서버에 ONTAP 9 부트 이미지 사본을 넣습니다.</block>
   <block id="c6c7619b1c0744976ce686ab06900424" category="paragraph">1단계에서는 사전 점검을 통해 업그레이드에 적합한 하드웨어가 있는지 확인하고, 필요한 경우 애그리게이트 소유권을 수정합니다. Onboard Key Manager를 사용하여 스토리지 암호화를 관리하는 경우 특정 정보를 기록해야 하며 SnapMirror 관계를 중지할 수 있습니다.</block>
@@ -5594,4 +5593,5 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="298812a1d89c69933bb37fd82a6a5814" category="summary">ONTAP 9.7 이하 버전을 실행하는 컨트롤러에서 수동 ARL 업그레이드를 수행하는 동안 노드4 온보드 FC 포트, UTA 및 UTA2 포트 또는 UTA 및 UTA2 카드를 구성하십시오.</block>
   <block id="db5d818f482843c95ffb191e7d48c35e" category="summary">ONTAP 9.8 이상 버전을 실행하는 컨트롤러에서 수동 ARL 업그레이드 중에 노드4 온보드 FC 포트, UTA 및 UTA2 포트 또는 UTA 및 UTA2 카드를 구성합니다.</block>
   <block id="1d1d3bd3fe7acd738c89cf279d744e1b" category="sidebar">노드1 시스템 모듈 교체</block>
+  <block id="61a8342f8a44813141884475de4e2a3c" category="paragraph">교체 시스템 모듈로 노드2를 부팅한 후, 모듈이 올바르게 설치되었는지 확인합니다. 노드2가 쿼럼에 참여할 때까지 기다린 후 컨트롤러 교체 작업을 재개해야 합니다.</block>
 </blocks>
