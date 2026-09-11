@@ -173,7 +173,7 @@ node1과 node2 모두 현재 소유자(단, 홈 소유자는 아님)인 애그�
 
 +
 ....
-cluster::> storage aggregate show -node node2 -is-home false -fields owner-name,homename,state
+cluster::> storage aggregate show -node node2 -is-home false -fields owner-name,home-name,state
 There are no entries matching your query.
 ....
 +
