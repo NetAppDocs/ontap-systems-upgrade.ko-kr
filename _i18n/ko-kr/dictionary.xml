@@ -4683,7 +4683,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="7c83d808889f08051a5ca591ce7c8e27" category="list-text">[[relocate-step1]]다음 하위 단계를 완료하여 루트가 아닌 집계를 다시 배치합니다.</block>
   <block id="fc0d545a8e3aca29e30f066934728447" category="list-text">node3에서 파트너 시스템 ID가 올바르게 설정되었는지 확인하세요.</block>
   <block id="dfcbf33b107ee8cbdb248e3973591ecd" category="list-text">[[relocate-step5]]루트가 아닌 집계를 다시 배치합니다.</block>
-  <block id="ed787946b7250668aadee490b38bc4a4" category="section-title">어떤 업그레이드 절차를 사용해야 합니까?</block>
   <block id="dd04b613766be00015be37c27c9287a8" category="paragraph">적절한 업그레이드 절차를 선택하려면 아래 표에 나열된 모든 질문을 검토하세요.</block>
   <block id="40c8ff48fe09ea0079684fdd1a250ec0" category="cell">자신에게 물어보세요…</block>
   <block id="3b67351e5cad04409e6a96d3746ac449" category="cell">만약 당신의 대답이 '예'라면, 당신은 이렇게 할 수 있습니다...</block>
@@ -4712,7 +4711,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="4c57db980fd04065c39ac4dffcef854a" category="section-title">예: FAS9500 에서 FAS90으로 업그레이드</block>
   <block id="a97ea56b0e00b2379736ae60869ff66a" category="cell">질문</block>
   <block id="67ca848a550c561e54a81891f0d6d223" category="cell">예시 답변</block>
-  <block id="be3ad2de4d2b8e3ba0b5c1aa4b8cb05b" category="cell">아니요. FAS9500 과 FAS90은 모두 ONTAP 9.15.1을 실행합니다.</block>
   <block id="d3334963d764fa4e8de5f77317d6ec86" category="cell">중단을 초래하는 업그레이드를 수행하고 싶습니까?</block>
   <block id="5eeadbc38fb7c86d39e9b4b88587473b" category="cell">아니요. 업그레이드하는 동안 프로덕션 환경을 온라인 상태로 유지하고 싶습니다.</block>
   <block id="980384b8326ad5f69899ae62e2ab1ecb" category="cell">네. 시스템이 모듈식인지 통합형인지에 따라 볼륨을 이동하거나 ARL(집계 재배치)을 사용하여 업그레이드할 수 있습니다.</block>
@@ -5594,4 +5592,14 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="db5d818f482843c95ffb191e7d48c35e" category="summary">ONTAP 9.8 이상 버전을 실행하는 컨트롤러에서 수동 ARL 업그레이드 중에 노드4 온보드 FC 포트, UTA 및 UTA2 포트 또는 UTA 및 UTA2 카드를 구성합니다.</block>
   <block id="1d1d3bd3fe7acd738c89cf279d744e1b" category="sidebar">노드1 시스템 모듈 교체</block>
   <block id="61a8342f8a44813141884475de4e2a3c" category="paragraph">교체 시스템 모듈로 노드2를 부팅한 후, 모듈이 올바르게 설치되었는지 확인합니다. 노드2가 쿼럼에 참여할 때까지 기다린 후 컨트롤러 교체 작업을 재개해야 합니다.</block>
+  <block id="3be649079389687b52aca5285e2b20a4" category="section-title">1단계: 올바른 업그레이드 절차 선택</block>
+  <block id="77020be1e60162ee3900759f339c0767" category="section-title">2단계: 업그레이드 준비</block>
+  <block id="a28e21a67dff4d848427cfa15fde856f" category="paragraph">업그레이드 절차를 시작하기 전에 아래 표에 나열된 모든 질문을 검토하십시오.</block>
+  <block id="5e3622ee3829e87e1095b6d7f01beaf1" category="cell">답변이 '예'인 경우 다음을 수행해야 합니다…</block>
+  <block id="2376e2a677900d01e271835b28de0a94" category="cell">원래 시스템의 클러스터에 FC SAN 구성이 존재합니까?</block>
+  <block id="89dcc1d78edaf637785c6ecfca413588" category="inline-link-macro">ONTAP 시스템을 사용한 FC 및 FCoE 조닝에 대해 알아보기</block>
+  <block id="d9be8a4f16ec08dcf1f5e6d2439c4637" category="inline-link-macro">ONTAP 시스템에 권장되는 FC 및 FCoE zoning 구성</block>
+  <block id="f835dc79760f269bbfd81a777b78620d" category="cell">기존 시스템과 교체 시스템 모두에서 모든 노드의 SAN zoning 구성을 검증합니다. <block ref="b0267be2c10e97b47f1f9bcbc029b474" category="inline-link-macro-rx"></block> 및 <block ref="0b12576218c74a7268436563b74ec582" category="inline-link-macro-rx"></block>를 참조하십시오.</block>
+  <block id="7fb0d242758a1608211c466843e7f7e8" category="cell">아니요. FAS9500과 FAS90 모두 ONTAP 9.17.1을 실행합니다.</block>
+  <block id="e051a964e918207a93d794544866c861" category="cell">예. 기존 시스템과 교체 시스템 모두에서 모든 노드의 SAN zoning 구성을 검증했습니다.</block>
 </blocks>

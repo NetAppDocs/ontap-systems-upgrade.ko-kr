@@ -18,8 +18,8 @@ NOTE: ASA R2 교체 시스템으로의 ASA 업그레이드는 지원되지 않�
 
 
 
-[[which-upgrade-procedure-should-i-use]]
-== 어떤 업그레이드 절차를 사용해야 합니까?
+[[step-1-select-the-correct-upgrade-procedure]]
+== 1단계: 올바른 업그레이드 절차 선택
 
 적절한 업그레이드 절차를 선택하려면 아래 표에 나열된 모든 질문을 검토하세요.
 
@@ -68,10 +68,24 @@ ARL은 대체 시술입니다.  새로운 노드로 클러스터를 확장하거
 | 통합 시스템이 있는데, 기존 섀시와 디스크는 그대로 두고 컨트롤러 모듈만 교체하여 업그레이드하고 싶습니까? | link:upgrade-arl-auto-in-chassis/index.html["ARL을 사용하여 업그레이드하면 동일한 섀시, 디스크 및 디스크에 저장된 데이터를 그대로 유지할 수 있습니다"]. 
 
 
+| MetroCluster 구성을 업그레이드하고 있나요? | 참조하다link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["MetroCluster 구성을 업그레이드, 새로 고침 또는 확장합니다"^] . 
+|===
+
+
+[[step-2-prepare-for-the-upgrade]]
+== 2단계: 업그레이드 준비
+
+업그레이드 절차를 시작하기 전에 아래 표에 나열된 모든 질문을 검토하십시오.
+
+[cols="30,70"]
+|===
+| 자신에게 물어보세요… | 답변이 '예'인 경우 다음을 수행해야 합니다… 
+
+
 | SVM을 이전하나요? | 참조하다link:https://docs.netapp.com/us-en/ontap/svm-migrate/index.html#svm-migration-workflow["SVM 데이터 이동성 개요"^] . 
 
 
-| MetroCluster 구성을 업그레이드하고 있나요? | 참조하다link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["MetroCluster 구성을 업그레이드, 새로 고침 또는 확장합니다"^] . 
+| 원래 시스템의 클러스터에 FC SAN 구성이 존재합니까? | 기존 시스템과 교체 시스템 모두에서 모든 노드의 SAN zoning 구성을 검증합니다. link:https://docs.netapp.com/us-en/ontap/san-config/fibre-channel-fcoe-zoning-concept.html["ONTAP 시스템을 사용한 FC 및 FCoE 조닝에 대해 알아보기"^] 및 link:https://docs.netapp.com/us-en/ontap/san-config/fc-fcoe-recommended-zoning-configuration.html["ONTAP 시스템에 권장되는 FC 및 FCoE zoning 구성"^]를 참조하십시오. 
 
 
 | 개별 구성 요소를 교체하는 건가요? | 를 참조하세요link:https://docs.netapp.com/us-en/ontap-systems/index.html["ONTAP 하드웨어 시스템 설명서"^] 해당 구성 요소의 현장 교체 가능 장치(FRU) 전단지를 찾으세요. 
@@ -88,7 +102,7 @@ ARL은 대체 시술입니다.  새로운 노드로 클러스터를 확장하거
 | 질문 | 예시 답변 
 
 
-| 원래 노드와 새 노드에서 서로 다른 소프트웨어 버전을 실행하고 있나요? | 아니요. FAS9500 과 FAS90은 모두 ONTAP 9.15.1을 실행합니다. 
+| 원래 노드와 새 노드에서 서로 다른 소프트웨어 버전을 실행하고 있나요? | 아니요. FAS9500과 FAS90 모두 ONTAP 9.17.1을 실행합니다. 
 
 
 | 중단을 초래하는 업그레이드를 수행하고 싶습니까? | 아니요. 업그레이드하는 동안 프로덕션 환경을 온라인 상태로 유지하고 싶습니다. 
@@ -110,6 +124,9 @@ ARL은 대체 시술입니다.  새로운 노드로 클러스터를 확장하거
 
 
 | MetroCluster 구성을 업그레이드하고 있나요? | 아니요. 이것은 표준 HA 쌍 클러스터입니다. 
+
+
+| 원래 시스템의 클러스터에 FC SAN 구성이 존재합니까? | 예. 기존 시스템과 교체 시스템 모두에서 모든 노드의 SAN zoning 구성을 검증했습니다. 
 
 
 | 개별 구성 요소를 교체하는 건가요? | 아니요. 전체 컨트롤러 시스템을 업그레이드하고 있습니다. 
