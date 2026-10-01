@@ -58,7 +58,7 @@ Local System ID: 101268854
 `disk reassign -s <node1_sysid> -d <node3_sysid> -p <node4_sysid>`
 
 ** 해당 매개변수  `node1_sysid`는 _원래 노드 종료_에서 기록한 값입니다. link:upgrade-shutdown-remove-original-nodes.html#shutdown_node_step5["5단계"].
-** 매개변수 `-p <node2_sysid>`는 공유 디스크가 있는 경우에만 지정하십시오.
+** 매개변수 `-p <node4_sysid>`는 공유 디스크가 있는 경우에만 지정하십시오.
 
 
 --
