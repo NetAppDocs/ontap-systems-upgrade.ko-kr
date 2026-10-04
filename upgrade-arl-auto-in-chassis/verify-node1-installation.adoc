@@ -48,19 +48,19 @@ node1이 쿼럼 상태인지 확인합니다. 그런 다음 컨트롤러 교체 
 --
 node1이 자동으로 쿼럼에 가입하지 않으면:
 
-.. e1a 및 e1b 포트의 IP 공간을 확인하세요.
+.. link:https://docs.netapp.com/us-en/ontap-systems/index.html["node1 클러스터 포트를 확인하십시오"^], 그런 다음 node1 클러스터 포트의 IPspace를 확인하십시오:
 +
 `network port show`
 
-.. IPspace가 "클러스터"가 아닌 경우 e1a 및 e1b에서 IPspace를 "클러스터"로 변경합니다.
+.. IPspace가 "Cluster"가 아닌 경우, node1 클러스터 포트에서 IPspace를 "Cluster"로 변경하십시오:
 +
 `network port modify -node <node_name> -port <port> -ipspace Cluster`
 
-.. 포트 e1a 및 e1b의 IP 공간이 "클러스터"인지 확인하세요.
+.. node1 클러스터 포트의 IPspace가 "Cluster"인지 확인하십시오:
 +
 `network port show`
 
-.. node1 클러스터 LIF를 e1a 및 e1b로 마이그레이션:
+.. node1 클러스터 LIF를 node1 클러스터 포트로 마이그레이션합니다:
 +
 `network interface migrate -vserver Cluster -lif <cluster_lif1> -destination-node <node1_name> -destination-port <port_name>`
 

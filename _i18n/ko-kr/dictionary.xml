@@ -4037,7 +4037,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="6969dcd136606aa6e90d53d2c4679e06" category="paragraph">다음 표에서는 스위치가 없는 2노드 클러스터 구성에 대한 스위치 포트 사용량을 보여 줍니다.</block>
   <block id="4aa636d0c8e798111a1395c5cf44abef" category="cell">AFF A800, AFF C800</block>
   <block id="50c089c00eacadfe94238545067e1673" category="cell">AFF A90 를 참조하십시오</block>
-  <block id="5550daaa14d688eff5dec2550faa2310" category="cell">AFF A70, AFF C80</block>
   <block id="7aa0e0e616d3fc05f7dffaa202340f4a" category="cell">AFF A250, AFF C250</block>
   <block id="1cb4f6c34cb1af85680c6d9e63b2a86d" category="cell">AFF A30, AFF C30, AFF C60</block>
   <block id="96640993dd2592a16c29226daf83b860" category="cell">e0c를 참조하십시오</block>
@@ -4323,18 +4322,12 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="9ba9fc17d25add4ac88b7024499346f7" category="list-text">2노드 스위치리스 클러스터</block>
   <block id="52d148b751b072a5e6cbab835ff50cf9" category="list-text">AFF A250 또는 AFF C250 시스템을 AFF A50, AFF A30, AFF C30 또는 AFF C60 시스템으로 업그레이드하는 스위치</block>
   <block id="ad9425984a7bc421520e577ca8fa6ddc" category="paragraph">node1이 자동으로 쿼럼에 가입하지 않으면:</block>
-  <block id="2231f07924ae996a2e0335ca51ba8392" category="list-text">e1a 및 e1b 포트의 IP 공간을 확인하세요.</block>
-  <block id="0d93c01fb211fce895dfa56e9352568e" category="list-text">IPspace가 "클러스터"가 아닌 경우 e1a 및 e1b에서 IPspace를 "클러스터"로 변경합니다.</block>
   <block id="a1f7471b255af2ce2f4e24b7a18b4a16" category="paragraph"><block ref="cad49231dc9ae0f7b5b6641644cb0645" prefix="" category="inline-code"></block></block>
-  <block id="ae96d089b3070a0b74bbf4c5f24a60cf" category="list-text">포트 e1a 및 e1b의 IP 공간이 "클러스터"인지 확인하세요.</block>
-  <block id="fb988694e04918b3f444ccf586100c68" category="list-text">node1 클러스터 LIF를 e1a 및 e1b로 마이그레이션:</block>
   <block id="61c7967406d3bbed687be2a2fc12fcf4" category="paragraph"><block ref="77201bdbdb5e1ca6ded21c787e6a1867" prefix="" category="inline-code"></block></block>
   <block id="15a6776356964e218cf6e75d5da438bd" category="list-text">[[verify-node1-step3]]node1과 node2가 동일한 클러스터에 속해 있고 클러스터가 정상인지 확인합니다.</block>
   <block id="c304740fab96c115c91a4885305cfe13" category="list-text">이 단계는 다음 업그레이드 구성에 적용됩니다. 다른 모든 시스템 업그레이드의 경우 이 단계를 건너뛰고 다음으로 이동하세요. <block ref="951e745f9f2e3bc74db45f10f0613198" category="inline-xref-macro-rx"></block> :</block>
   <block id="fcea2edfedf4023a086d1314bc04b894" category="list-text">AFF A250 또는 AFF C250 시스템에 연결된 스위치를 AFF A50, AFF A30, AFF C30 또는 AFF C60 시스템으로 업그레이드합니다.</block>
   <block id="c4f73b57af257708b4f825fe0c01f8ee" category="paragraph">node2가 자동으로 쿼럼에 가입하지 않는 경우:</block>
-  <block id="e8623263345db747257101b539fb116a" category="list-text">node2 클러스터 LIF를 e1a 및 e1b로 마이그레이션:</block>
-  <block id="d36a262908ec596b885d26e7d3c6d090" category="paragraph"><block ref="6cc1893d0214df3ba1a4423c8b22edce" prefix="" category="inline-code"></block></block>
   <block id="41a1ac985b3da653ac747735364a61fb" category="list-text">[[verify-node2-step3]]node2와 node1이 동일한 클러스터에 속해 있고 클러스터가 정상인지 확인합니다.</block>
   <block id="ffaf5c38853aa6ef5e68631e0c4a1fef" category="list-text">이 단계는 AFF A250 또는 AFF C250에서 AFF A50, AFF A30, AFF C60 또는 AFF C30으로의 2노드 스위치리스 구성 업그레이드에만 적용됩니다. 다른 모든 시스템 업그레이드의 경우 이 단계를 건너뛰고 다음으로 이동하십시오. <block ref="9c9730c4fd859d78bd3d35e76120bbfc" category="inline-xref-macro-rx"></block> :</block>
   <block id="41d1809ae493139fc48f336155c6154c" category="paragraph">"클러스터" 브로드캐스트 도메인의 클러스터 포트가 e4a, e2a, e1a, e1b 포트 또는 e4a, e4b, e1a, e1b 포트인지 확인하세요.</block>
@@ -4353,7 +4346,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="9f5509ea50f3262c2f159d77123f8919" category="list-text">"클러스터" 브로드캐스트 도메인에서 e1a 및 e1b를 제거합니다.</block>
   <block id="f910ea599d5c2c8323c69531d555ec1b" category="paragraph"><block ref="ab4601f65b55ba79472e7008227a23e9" prefix="" category="inline-code"></block></block>
   <block id="66f26ee54c8814e8b94c065e49d16560" category="list-text">"클러스터" 브로드캐스트 도메인에 클러스터 포트 e4a, e2a 또는 e4a, e4b만 있는지 확인하십시오.</block>
-  <block id="b69f8307541b180c301c75852eeaeab7" category="paragraph"><block ref="4362cc8f3c40a5a0a0d9d77b951e1b94" prefix="" category="inline-code"></block></block>
   <block id="536d47e1ce71a4699256360221b299eb" category="list-text">e1a node1과 e1a node2, e1b node1과 e1b node2 사이의 케이블 연결을 제거하여 유효한 클러스터 HA 연결만 사용되고 중복 연결이 없는지 확인합니다.</block>
   <block id="f538030e7f546e5024b1bb99775e742a" category="list-text">[[verify-node2-step6]]컨트롤러 교체 작업의 상태를 확인하고 일시 정지 상태이며 노드2가 새 컨트롤러 설치 및 케이블 이동과 같은 물리적 작업을 수행하기 위해 중단되기 전 상태와 동일한지 확인합니다.</block>
   <block id="3fae990073be4bfc21bbdb3956f8c532" category="list-text">2노드 스위치리스 업그레이드 구성을 위한 4포트 10/25GbE 카드 카드인 X60132A</block>
@@ -5602,4 +5594,16 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="7fb0d242758a1608211c466843e7f7e8" category="cell">아니요. FAS9500과 FAS90 모두 ONTAP 9.17.1을 실행합니다.</block>
   <block id="e051a964e918207a93d794544866c861" category="cell">예. 기존 시스템과 교체 시스템 모두에서 모든 노드의 SAN zoning 구성을 검증했습니다.</block>
   <block id="43dcdbe1e8ea835042c3b1cb3b2fc2ed" category="list-text">매개변수<block ref="94d835dc16c43f3c9f59b46dd31e5c6f" prefix=" " category="inline-code"></block>는 공유 디스크가 있는 경우에만 지정하십시오.</block>
+  <block id="4ebed744f743f3731cc934e74c9bc795" category="cell">AFF A90, AFF A70</block>
+  <block id="83f9d97b7e0ce392def1b9cc710cba11" category="inline-link-macro">node1 클러스터 포트를 확인하십시오</block>
+  <block id="a6a3edad85463f469d690690a1b3871e" category="list-text"><block ref="d3ce79281d1fc913d4518e97c134277e" category="inline-link-macro-rx"></block>, 그런 다음 node1 클러스터 포트의 IPspace를 확인하십시오:</block>
+  <block id="7ef4ee596b07314d814764248359bf8c" category="list-text">IPspace가 "Cluster"가 아닌 경우, node1 클러스터 포트에서 IPspace를 "Cluster"로 변경하십시오:</block>
+  <block id="35aa0c7bd70cebb8ea8c32f81d5010f5" category="list-text">node1 클러스터 포트의 IPspace가 "Cluster"인지 확인하십시오:</block>
+  <block id="212a783c3adc8fba942feba1ebe87929" category="list-text">node1 클러스터 LIF를 node1 클러스터 포트로 마이그레이션합니다:</block>
+  <block id="e78d26f3d2ad418d8f7dc95adfd4dfc9" category="inline-link-macro">node2 클러스터 포트를 확인하십시오</block>
+  <block id="d3d540283e32086fa0cd53dbe57ac5b9" category="list-text"><block ref="123312d0cba1b403a57a4961530c18ea" category="inline-link-macro-rx"></block>, 그런 다음 node2 클러스터 포트의 IPspace를 확인하십시오:</block>
+  <block id="3d73676012cd6dba883facfc39930fe0" category="list-text">IPspace가 "Cluster"가 아닌 경우, node2 클러스터 포트에서 IPspace를 "Cluster"로 변경하십시오:</block>
+  <block id="f654c91b68b6a4c46bc8036bb0a1247a" category="list-text">node2 클러스터 포트의 IPspace가 "Cluster"인지 확인하십시오:</block>
+  <block id="e25c139136794abce425d3fa0a956e7c" category="list-text">노드2 클러스터 LIF를 노드2 클러스터 포트로 마이그레이션합니다:</block>
+  <block id="0038bfbc8a298594554dbee7e17ca566" category="paragraph"><block ref="2206b486a3e9547383ad932f7fc33509" prefix="" category="inline-code"></block></block>
 </blocks>

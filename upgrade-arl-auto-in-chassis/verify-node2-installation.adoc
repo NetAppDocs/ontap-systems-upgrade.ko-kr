@@ -46,21 +46,21 @@ node2가 쿼럼 상태인지 확인합니다. 그런 다음 컨트롤러 교체 
 --
 node2가 자동으로 쿼럼에 가입하지 않는 경우:
 
-.. e1a 및 e1b 포트의 IP 공간을 확인하세요.
+.. link:https://docs.netapp.com/us-en/ontap-systems/index.html["node2 클러스터 포트를 확인하십시오"^], 그런 다음 node2 클러스터 포트의 IPspace를 확인하십시오:
 +
 `network port show`
 
-.. IPspace가 "클러스터"가 아닌 경우 e1a 및 e1b에서 IPspace를 "클러스터"로 변경합니다.
+.. IPspace가 "Cluster"가 아닌 경우, node2 클러스터 포트에서 IPspace를 "Cluster"로 변경하십시오:
 +
 `network port modify -node <node_name> -port <port> -ipspace Cluster`
 
-.. 포트 e1a 및 e1b의 IP 공간이 "클러스터"인지 확인하세요.
+.. node2 클러스터 포트의 IPspace가 "Cluster"인지 확인하십시오:
 +
 `network port show`
 
-.. node2 클러스터 LIF를 e1a 및 e1b로 마이그레이션:
+.. 노드2 클러스터 LIF를 노드2 클러스터 포트로 마이그레이션합니다:
 +
-`network interface migrate -vserver Cluster -lif <cluster_lif1> -destination-node <node2_name> -destination-port <port_name`
+`network interface migrate -vserver Cluster -lif <cluster_lif1> -destination-node <node2_name> -destination-port <port_name>`
 
 
 
@@ -107,7 +107,7 @@ e2a가 있고 100GbE 네트워크 포트인 경우, 이는 기본 두 번째 클
 
 .. "클러스터" 브로드캐스트 도메인에 클러스터 포트 e4a, e2a 또는 e4a, e4b만 있는지 확인하십시오.
 +
-`broadcast domain show`
+`network port broadcast-domain show`
 
 .. e1a node1과 e1a node2, e1b node1과 e1b node2 사이의 케이블 연결을 제거하여 유효한 클러스터 HA 연결만 사용되고 중복 연결이 없는지 확인합니다.
 
