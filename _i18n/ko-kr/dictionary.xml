@@ -4888,8 +4888,6 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="ce39be5d7f3311f3002d90b356ccdc14" category="cell">FAS2620^4^, FAS2720^4^</block>
   <block id="ed2a65a81b323e108bb0f144e03c3c4f" category="paragraph">^4^다음 표는 컨트롤러 업그레이드 조합에 대해 지원되는 ONTAP 버전을 보여줍니다.</block>
   <block id="b69791a38ba725881c6a2fc5ecab63cb" category="cell">9.13.1 이상</block>
-  <block id="e1a6f05f3e6c48b5646a68b138034f8d" category="cell">FAS2760</block>
-  <block id="d03f05e2115035868849d9a9b6ed185f" category="cell">9.11.1P7 이하</block>
   <block id="d431073ae71950468aefd4d8436e1ef0" category="paragraph">교체 모듈이 설치된 Node1이 이제 부팅 준비가 완료되었습니다. 지원되는 교체 모듈은 <block ref="1148bc021ec205bbffacd287de2b889b" category="inline-link-macro-rx"></block>에 나열되어 있습니다.</block>
   <block id="be478cf082a439418badbebb9d611315" category="paragraph">교체 모듈이 설치된 Node2가 이제 부팅 준비가 완료되었습니다. 지원되는 교체 모듈 목록은 <block ref="1148bc021ec205bbffacd287de2b889b" category="inline-link-macro-rx"></block>에 있습니다.</block>
   <block id="cab3f425a0777f41648c6d4726a06447" category="summary">동일한 섀시, 디스크 및 디스크에 저장된 데이터에서 컨트롤러 모델을 업그레이드하는 ARL 절차를 사용할지 여부를 결정하십시오.</block>
@@ -5606,4 +5604,5 @@ ONTAP 9.8부터<block ref="5e9ba5cfa6f3b94ec0f02e2b3ea161d9" prefix=" " category
   <block id="f654c91b68b6a4c46bc8036bb0a1247a" category="list-text">node2 클러스터 포트의 IPspace가 "Cluster"인지 확인하십시오:</block>
   <block id="e25c139136794abce425d3fa0a956e7c" category="list-text">노드2 클러스터 LIF를 노드2 클러스터 포트로 마이그레이션합니다:</block>
   <block id="0038bfbc8a298594554dbee7e17ca566" category="paragraph"><block ref="2206b486a3e9547383ad932f7fc33509" prefix="" category="inline-code"></block></block>
+  <block id="d4ca4de004c509fdca6f6baba9d067b3" category="cell">9.11.1 이상</block>
 </blocks>
